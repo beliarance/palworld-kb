@@ -1003,7 +1003,7 @@
    "workers": "Handiwork",
    "capacity": null,
    "power": true,
-   "function": "accessory, ammo, armor, consumable, other, sphere, technology, weapon",
+   "function": "Универсальный верстак: основная станция для 44 рецептов и альтернатива ещё для 474 (accessory/ammo/armor/consumable/sphere/technology/weapon). На tech 67+ заменяет оружейные и сферные линии. Материалы (Polymer и т.п.) — всё ещё на Production-линиях/печах.",
    "energy_per_sec": 2000
   },
   {
@@ -1611,10 +1611,10 @@
     "Paloxite Ingot": 50,
     "Ancient Civilization Core": 10
    },
-   "function": "Due to its complex structure, only one Pal can be assigned to it.",
+   "function": "Uses the power of the World Tree to produce ALL kinds of wood and ore. Only one Pal can be assigned (Deforest_Mining = Lumbering/Mining). На tech 78+ потенциально заменяет отдельные шахты — какие именно ресурсы покрывает (уголь? кварц? соралит?), в игре не проверено (gap).",
    "energy_per_sec": 800,
    "ancient_tech": true,
-   "workers": null,
+   "workers": "Mining + Lumbering (1 пал)",
    "capacity": null,
    "power": true
   },

@@ -293,14 +293,24 @@ class Planner:
         sites = []
         # ВНИМАНИЕ: "Mine"/"Electric Mine"/"Ice Mine" — ловушки (Defenses), не добыча!
         # в игре можно поставить по 1 КАЖДОГО типа — добавляем все доступные по tech
-        ALL_SITES = ["Stone Pit", "Logging Site", "Logging Site II",
-                     "Ore Mining Site", "Ore Mining Site II",
-                     "Coal Mine", "Sulfur Mine", "Pure Quartz Quarry",
-                     "Hexolite Quartz Mine", "Soralite Quarry"]
-        for m in ALL_SITES:
-            if self.best([m]):
+        # семьи с одинаковым продуктом — только лучшая (Ore I/II дают одно и то же);
+        # Logging I (Wood) и II (Hardwood) — разные продукты, обе
+        SITE_FAMS = [["Stone Pit"], ["Logging Site"], ["Logging Site II"],
+                     ["Ore Mining Site", "Ore Mining Site II"],
+                     ["Coal Mine"], ["Sulfur Mine"], ["Pure Quartz Quarry"],
+                     ["Hexolite Quartz Mine"], ["Soralite Quarry"]]
+        for fam in SITE_FAMS:
+            m = self.best(fam)
+            if m:
                 self.add(m, 1)
                 sites.append(m)
+        if self.best(["Ore Mining Site", "Ore Mining Site II"]) == "Ore Mining Site II":
+            self.notes.append("Ore Mining Site I даёт ту же руду — можно доставить для второго потока, если есть слоты")
+        if a.tech >= 78 and "Ancient Material Synthesizer" in self.structs:
+            self.add("Ancient Material Synthesizer", 1)
+            self.hire_best("Mining", 6, 1, "Ancient Material Synthesizer (производит ВСЕ виды дерева и руды, 1 пал)")
+            self.notes.append("Ancient Material Synthesizer (tech 78): все виды дерева/руды с одного здания — "
+                              "потенциально заменяет отдельные шахты (что именно покрывает — проверь в игре)")
         ext = self.best(["Crude Oil Extractor", "High-Pressure Crude Oil Extractor"])
         if ext:
             self.add(ext, 1)
@@ -324,12 +334,17 @@ class Planner:
         furn = self.best(["Primitive Furnace", "Improved Furnace", "Electric Furnace", "Gigantic Furnace", "Ancient Furnace"])
         self.add(furn, 2)
         self.hire_best("Kindling", 6, 2, "печи")
-        for fam in [["Production Assembly Line", "Production Assembly Line II", "Advanced Workshop"],
-                    ["Weapon Workbench", "Weapon Assembly Line", "Weapon Assembly Line II", "Advanced Weapon Assembly Line"],
-                    ["Sphere Workbench", "Sphere Assembly Line", "Sphere Assembly Line II", "Advanced Sphere Assembly Line"]]:
-            s = self.best(fam)
-            if s:
-                self.add(s, 1)
+        self.add(self.best(["Production Assembly Line", "Production Assembly Line II", "Advanced Workshop"]), 1)
+        if a.tech >= 67 and "Ancient Workbench" in self.structs:
+            self.add("Ancient Workbench", 1)
+            self.notes.append("Ancient Workbench (tech 67, 2000⚡/с): универсал — заменяет оружейную и сферную линии "
+                              "(основная станция 44 рецептов + альтернатива для 474); Production-линия остаётся для материалов")
+        else:
+            for fam in [["Weapon Workbench", "Weapon Assembly Line", "Weapon Assembly Line II", "Advanced Weapon Assembly Line"],
+                        ["Sphere Workbench", "Sphere Assembly Line", "Sphere Assembly Line II", "Advanced Sphere Assembly Line"]]:
+                s = self.best(fam)
+                if s:
+                    self.add(s, 1)
         n_hands = max(4, round(10 / self.q()))
         self.hire_best("Handiwork", 6, n_hands, "сборочные линии/верстаки")
         # крафт-ранч: пал-материалы для компонентов (Computer/AI Core/Cement/Coolant)

@@ -518,9 +518,15 @@ class BasePlan {
   presetMineCraft(){
     const o=this.o;
     const sites=[];
-    for(const m of ["Stone Pit","Logging Site","Logging Site II","Ore Mining Site","Ore Mining Site II",
-        "Coal Mine","Sulfur Mine","Pure Quartz Quarry","Hexolite Quartz Mine","Soralite Quarry"]){
-      if(this.best([m])){ this.add(m,1); sites.push(m); } }
+    for(const fam of [["Stone Pit"],["Logging Site"],["Logging Site II"],["Ore Mining Site","Ore Mining Site II"],
+        ["Coal Mine"],["Sulfur Mine"],["Pure Quartz Quarry"],["Hexolite Quartz Mine"],["Soralite Quarry"]]){
+      const m=this.best(fam); if(m){ this.add(m,1); sites.push(m); } }
+    if(this.best(["Ore Mining Site","Ore Mining Site II"])==="Ore Mining Site II")
+      this.notes.push("Ore Mining Site I даёт ту же руду — можно доставить для второго потока");
+    if(o.tech>=78&&this.structs["Ancient Material Synthesizer"]){
+      this.add("Ancient Material Synthesizer",1);
+      this.hireBest("Mining",6,1,"Ancient Material Synthesizer (ВСЕ виды дерева и руды, 1 пал)");
+      this.notes.push("Ancient Material Synthesizer (78): все виды дерева/руды с одного здания — что именно покрывает, проверь в игре"); }
     this.notes.push(`Добыча (${sites.length} станций, по 1 на базу): ${sites.join(", ")}`);
     this.supportCore([["suitability:Mining","+1 Mining всем"],["suitability:Handiwork","+1 Handiwork всем"],
       ["suitability:Transporting","+1 Transport всем"],["sanity_save","SAN базы"]]);
@@ -530,10 +536,14 @@ class BasePlan {
     if(lSites.length) this.hireBest("Lumbering",5,Math.max(1,Math.round(lSites.length*0.8/this.q())),`лесопилки: ${lSites.join("/")}`);
     this.add(this.best(["Primitive Furnace","Improved Furnace","Electric Furnace","Gigantic Furnace","Ancient Furnace"]),2);
     this.hireBest("Kindling",6,2,"печи");
-    for(const fam of [["Production Assembly Line","Production Assembly Line II","Advanced Workshop"],
-        ["Weapon Workbench","Weapon Assembly Line","Weapon Assembly Line II","Advanced Weapon Assembly Line"],
-        ["Sphere Workbench","Sphere Assembly Line","Sphere Assembly Line II","Advanced Sphere Assembly Line"]]){
-      const s=this.best(fam); if(s) this.add(s,1); }
+    this.add(this.best(["Production Assembly Line","Production Assembly Line II","Advanced Workshop"]),1);
+    if(o.tech>=67&&this.structs["Ancient Workbench"]){
+      this.add("Ancient Workbench",1);
+      this.notes.push("Ancient Workbench (67, 2000⚡/с): универсал — заменяет оружейную и сферную линии; Production остаётся для материалов");
+    } else {
+      for(const fam of [["Weapon Workbench","Weapon Assembly Line","Weapon Assembly Line II","Advanced Weapon Assembly Line"],
+          ["Sphere Workbench","Sphere Assembly Line","Sphere Assembly Line II","Advanced Sphere Assembly Line"]]){
+        const s=this.best(fam); if(s) this.add(s,1); } }
     const ext=this.best(["Crude Oil Extractor","High-Pressure Crude Oil Extractor"]);
     if(ext){ this.add(ext,1);
       this.notes.push(`${ext}: без палов, только ⚡${this.structs[ext].energy_per_sec}/с`+
