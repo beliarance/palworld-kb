@@ -79,8 +79,21 @@ class Planner:
         if count > 0:
             self.pals.append((species, math.ceil(count), role))
 
+    def food_ws(self):
+        """Бонус Work Speed от кормёжки базы buff-едой (флэт +N к WS)."""
+        if self.args.food_buff <= 0:
+            return 0
+        # доступность buff-блюда по tech: Salad (+30) с tech 25; ниже — нет буфф-еды
+        if self.args.tech >= (self.structs.get("Tomato Plantation", {}).get("tech_level") or 25):
+            return self.args.food_buff
+        return 0
+
     def q(self):
-        return QUALITY[self.args.workforce]
+        """Эффективный множитель работы = (база 70 × пассивки + бонус еды)/70 × буст звёзд.
+        Звёзды (конденсер) поднимают уровень работы: 4★ = +1 ур. всем работам.
+        Прыжок ур.8→9 ≈ ×1.68 (крафт) / ×1.41 (поле); берём среднее ×1.55."""
+        star = 1.55 if self.args.stars else 1.0
+        return (70 * QUALITY[self.args.workforce] + self.food_ws()) / 70 * star
 
     # ---------- общие модули ----------
     def infra(self, slots):
@@ -597,8 +610,17 @@ class Planner:
     def report(self):
         a = self.args
         total_pals = sum(c for _, c, _ in self.pals)
-        print(f"═══ База: {a.preset}  |  слоты {a.slots}  |  tech {a.tech}  |  еда: {a.food}  |  "
-              f"Work Speed {round(70 * self.q())} ({a.workforce}) ═══\n")
+        fw = self.food_ws()
+        parts = [f"{a.workforce}"]
+        if fw:
+            parts.append(f"еда +{fw:.0f}")
+        if a.stars:
+            parts.append("4★ ×1.55")
+        ws_txt = f"Work Speed {round(70 * self.q())} ({', '.join(parts)})"
+        print(f"═══ База: {a.preset}  |  слоты {a.slots}  |  tech {a.tech}  |  еда: {a.food}  |  {ws_txt} ═══\n")
+        if a.stars:
+            self.notes.append("Рабочие 4★: +1 ур. работы (≈×1.55). Цена: 116 дублей вида на каждого пала — "
+                              "оправдано для постоянного ядра базы, не для одноразовых")
         print("ПАЛЫ".ljust(60) + f"[{total_pals}/{a.slots} слотов]")
         num = lambda s: (self.idx["pals"].get(s) or {}).get("number")
         for sp, c, role in self.pals:
@@ -668,6 +690,10 @@ def main():
                     help="(breeding) минут на яйцо (по умолчанию 5 из данных; для хатчери замерь в игре)")
     ap.add_argument("--no-spoilage", dest="spoilage", action="store_false",
                     help="настройка мира «еда не портится»: без холодильника и Cooling-пала, хватит Feed Box")
+    ap.add_argument("--stars", action="store_true",
+                    help="рабочие сконденсированы до 4★ (+1 ур. работы ≈ ×1.55 скорости; цена — 116 дублей на пала)")
+    ap.add_argument("--food-buff", type=float, default=30,
+                    help="бонус Work Speed от кормёжки buff-едой: Salad +30 (по умолч.), Minestrone +40, 0 = без буффа")
     ap.add_argument("--food-per-plot", type=float, default=70,
                     help="аппетит-единиц (Σ FoodAmount), которые кормит одна грядка (~70; скорости голода в данных нет)")
     ap.add_argument("--per-station", type=int, default=1,

@@ -444,7 +444,11 @@ function transInfo(n){ const p=D.idx.pals[n]||{}; const t=p.work?.Transporting;
 class BasePlan {
   constructor(o){ this.o=o; this.structs=Object.fromEntries(D.bb.structures.map(s=>[s.name,s]));
     this.regions=D.regions.regions||{}; this.buildings={}; this.crew=[]; this.notes=[]; this.assume=[]; }
-  q(){ return QUALITY[this.o.workforce]; }
+  foodWs(){ const b=this.o.foodBuff??30;
+    if(b<=0) return 0;
+    return this.o.tech>=((this.structs["Tomato Plantation"]||{}).tech_level||25)?b:0; }
+  q(){ const star=this.o.stars?1.55:1.0;  // 4★: +1 ур. работы ≈ ×1.55 (крафт 1.68/поле 1.41)
+    return (70*QUALITY[this.o.workforce]+this.foodWs())/70*star; }
   best(cands){ const a=cands.filter(c=>this.structs[c]&&(this.structs[c].tech_level||0)<=this.o.tech); return a[a.length-1]||null; }
   add(n,c=1){ if(n&&c>0) this.buildings[n]=(this.buildings[n]||0)+c; }
   hire(sp,c,role,task){ if(c>0) this.crew.push([sp,Math.ceil(c),role,task||null]); }
@@ -803,12 +807,14 @@ function builderOpts(){
   if(metal) document.getElementById("ptech").value=METALS[metal];
   return {preset:val("pp"),slots:+val("pslots")||50,tech:+val("ptech")||60,food:val("pfood"),
     workforce:val("pwf"),roster:val("proster"),lux:document.getElementById("plux").checked,
+    stars:document.getElementById("pstars").checked,
     ranchRate:+val("pranch")||12,plantYield:+val("pyield")||60,cookRate:+val("pcook")||30,
     plantsPerWorker:3,farms:+val("pfarms")||null,dish:val("pdish")||"Salad",dishRate:+val("pdishrate")||30,
     eggInterval:+val("peggint")||5,eggBoost:+val("peggboost")||1.35,
     incubation:val("pincub")===""?1:+val("pincub"),cake:val("pcake")||"Cake",
     perStation:+val("ppers")||1,spoilage:document.getElementById("pspoil").checked,
-    foodPerPlot:+val("pfpp")||15,dishes:plannerDishes.length?plannerDishes:null};
+    foodPerPlot:+val("pfpp")||70,foodBuff:val("pfbuff")===""?30:+val("pfbuff"),
+    dishes:plannerDishes.length?plannerDishes:null};
 }
 
 render.planner = () => {
@@ -831,6 +837,7 @@ render.planner = () => {
       <option value="passives" selected>WS 154 — +пассивки (Artisan/Serious/Work Slave)</option>
       <option value="max">WS 192 — макс (Remarkable Craftsmanship-стек)</option></select>
     <select id="proster"><option value="top">Ростер: топ</option><option value="easy">Ростер: легко достать</option></select>
+    <label title="конденсер 4★: +1 ур. работы ≈ ×1.55; цена 116 дублей/пал"><input type="checkbox" id="pstars"> 4★ рабочие</label>
     <label><input type="checkbox" id="plux"> люкс</label>
   </div>
   <div class="row fld fld-breeding" style="margin-top:8px">
@@ -856,6 +863,7 @@ render.planner = () => {
     <label class="dim">плантация ед/час <input type="number" id="pyield" value="60" style="width:60px;min-width:60px"></label>
     <label class="dim">готовок/час на повара <input type="number" id="pcook" value="30" style="width:60px;min-width:60px"></label>
     <label class="dim" title="аппетит-единиц (Σ FoodAmount) на грядку; скорости голода в данных нет">аппетита/грядку <input type="number" id="pfpp" value="70" style="width:70px;min-width:70px"></label>
+    <label class="dim" title="бонус Work Speed от кормёжки buff-едой: Salad +30, Minestrone +40, 0 = без">WS от еды <input type="number" id="pfbuff" value="30" style="width:60px;min-width:60px"></label>
   </div></details></div>
   <div id="bout"></div>`;
   const updateVis=()=>{
@@ -864,7 +872,7 @@ render.planner = () => {
   };
   document.getElementById("pp").addEventListener("input",updateVis);
   window._updateVis=updateVis;
-  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","peggboost","pincub","pcake","ppers","pspoil","pfpp"]){
+  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","peggboost","pincub","pcake","ppers","pspoil","pfpp","pfbuff","pstars"]){
     document.getElementById(id).addEventListener("input",()=>{
       if(!baseDirty && BASE.buildings.length) seedFromPreset();
       else if(baseDirty){ const el=document.getElementById("rebuild-hint"); if(el) el.style.display=""; }
@@ -1011,7 +1019,9 @@ function drawBase(){
   out.innerHTML=`
   <div class="card"><div class="big">${crewTotal}/${slots} слотов
     ${crewTotal>slots?`<span class="bad">перебор на ${crewTotal-slots}</span>`:`<span class="ok">свободно ${slots-crewTotal}</span>`}
-    <span class="tag" title="базовый Work Speed 70 + пассивки/еда">WS ${Math.floor(70*QUALITY[builderOpts().workforce])}</span>
+    ${(()=>{const o=builderOpts();const p=new BasePlan(o);const fw=p.foodWs();
+      const bits=[o.workforce]; if(fw) bits.push("еда +"+fw); if(o.stars) bits.push("4★ ×1.55");
+      return `<span class="tag" title="база 70 × пассивки + еда × звёзды">WS ${Math.floor(70*p.q())} (${bits.join(", ")})</span>`;})()}
     ${power?`<span class="tag">⚡ ${power.toLocaleString()}/с</span>`:""}</div></div>
   <div class="grid" style="grid-template-columns:1fr 1fr;align-items:start">
     <div><h3>Здания (клик — сменить тир)</h3>
