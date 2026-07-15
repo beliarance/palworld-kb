@@ -454,16 +454,24 @@ class BasePlan {
       return `ловится: ${regs[0]}`+(c?` (${c[0]}, ${c[1]})`:""); }
     if((p.alpha||[]).length) return "альфа: "+p.alpha[0].split(" - ").pop();
     return (p.get_via||[]).slice(-1)[0]||""; }
+  addPlantations(plantsN, PL){
+    const total=Object.values(plantsN).reduce((a,b)=>a+b,0);
+    if(this.o.tech>=78&&this.structs["Ancient Farm"]&&total){
+      this.add("Ancient Farm",total);
+      this.notes.push(`Ancient Farm x${total}: растит ВСЕ культуры в одном компактном здании (вместо раздельных плантаций), 4 места; Watering+Planting+Gathering 6+`);
+    } else for(const [crop,n] of Object.entries(plantsN)){ const pl=this.best([PL[crop]]); if(pl) this.add(pl,n); }
+    return total;
+  }
   hireTransport(){
     const prod=Object.entries(this.buildings).filter(([n])=>{
       const st=this.structs[n]||{}; return st.workers||/Plantation|Ranch|Mill|Kitchen|Furnace|Workbench|Assembly|Pit|Site|Mine|Quarry|Farm|Pot|Oven/.test(n);
     }).reduce((a,[,c])=>a+c,0);
-    const n=Math.max(2,Math.ceil(prod/3.5));
+    const n=Math.max(1,Math.ceil(prod/8));
     const ranked=(D.idx.inverted.work.Transporting||[]).map(([nm])=>[nm,transInfo(nm)])
       .sort((a,b)=>b[1].score-a[1].score);
     const [top,ti]=ranked[0];
-    this.hire(top,n,`транспорт: несёт ${ti.cap}, шаг(гружён) ${ti.walk} (пропускная ${(ti.score/1000).toFixed(1)}k) — 1 на ~3.5 здания`,"Transporting");
-    this.assume.push(`Транспорт: ${n} палов на ${prod} производящих зданий (1 на ~3.5); гружёные ходят шагом (подтверждено игроком)`);
+    this.hire(top,n,`транспорт: несёт ${ti.cap}, шаг(гружён) ${ti.walk} (пропускная ${(ti.score/1000).toFixed(1)}k) — добивка к самовывозу`,"Transporting");
+    this.assume.push(`Транспорт: ${n} выделенных на ${prod} зданий (1 на ~8). Рабочие палы с навыком Transporting сами носят выхлоп в простое — выделенных нужно мало`);
   }
   hireBest(task,minLv,count,role){
     const ranked=D.idx.inverted.work[task]||[]; if(!ranked.length) return;
@@ -567,7 +575,7 @@ class BasePlan {
     this.add("Ranch",Math.ceil(Object.values(L.ranch).reduce((a,b)=>a+b,0)/4));
     const PL={"Red Berries":"Berry Plantation","Wheat":"Wheat Plantation","Tomato":"Tomato Plantation",
       "Lettuce":"Lettuce Plantation","Potato":"Potato Plantation","Carrot":"Carrot Plantation","Onion":"Onion Plantation"};
-    for(const [crop,n] of Object.entries(L.plantsN)){ const pl=this.best([PL[crop]]); if(pl) this.add(pl,n); }
+    this.addPlantations(L.plantsN, PL);
     if(L.mills){ this.add("Mill",L.mills); this.hireBest("Watering",4,L.mills,"мельница"); }
     for(const [n,perH] of Object.entries(L.acc.imports))
       this.notes.push(`⚠ привозное для торта «${o.cake||"Cake"}»: ${n} x${perH.toFixed(0)}/час`);
@@ -671,10 +679,11 @@ class BasePlan {
         for(const [m,q] of Object.entries(itemByName[name].recipe.materials)) expand(m,q*perH,depth+1); }
       else imports[name]=(imports[name]||0)+perH; };
     for(const [m,q] of Object.entries(it.recipe.materials)) expand(m,q*rate);
+    const plantsN={};
     for(const [crop,perH] of Object.entries(plants)){
-      const pl=this.best([PLANTS[crop]]);
-      if(pl) this.add(pl,Math.ceil(perH/o.plantYield)); else imports[crop]=(imports[crop]||0)+perH; }
-    const totalPl=Object.values(PLANTS).reduce((a,p)=>a+(this.buildings[p]||0),0);
+      if(this.best([PLANTS[crop]])||(o.tech>=78&&this.structs["Ancient Farm"])) plantsN[crop]=Math.ceil(perH/o.plantYield);
+      else imports[crop]=(imports[crop]||0)+perH; }
+    const totalPl=this.addPlantations(plantsN, PLANTS);
     if(totalPl){
       const trio=Math.ceil(totalPl/(o.plantsPerWorker*this.q()));
       this.hireBest("Planting",3,trio,"посадка"); this.hireBest("Watering",3,trio,"полив"); this.hireBest("Gathering",3,trio,"сбор");

@@ -142,7 +142,8 @@ class Planner:
                    if (self.structs.get(n, {}).get("workers")
                        or any(k in n for k in ("Plantation", "Ranch", "Mill", "Kitchen", "Furnace",
                                                "Workbench", "Assembly", "Pit", "Site", "Mine", "Quarry", "Farm", "Pot", "Oven"))))
-        n = max(2, math.ceil(prod / 3.5))
+        # рабочие палы с навыком Transporting сами таскают выхлоп в простое — выделенных нужно немного
+        n = max(1, math.ceil(prod / 8))
         best, bi = None, None
         for nm, lv in self.idx["inverted"]["work"].get("Transporting", []):
             p = self.idx["pals"][nm]
@@ -151,9 +152,24 @@ class Planner:
             if not best or score > bi["score"]:
                 best, bi = nm, {"score": score, "cap": self.TRANS_CAP[lv], "run": p.get("run"), "walk": p.get("walk")}
         self.hire(best, n, f"транспорт: несёт {bi['cap']}, шаг(гружён) {bi['walk']} / бег {bi['run']} "
-                           f"(пропускная {bi['score']//1000}k) — 1 на ~3.5 здания")
-        self.assumptions.append(f"Транспорт: {n} палов на {prod} производящих зданий (1 на ~3.5); "
-                                f"гружёные ходят шагом (подтверждено игроком)")
+                           f"(пропускная {bi['score']//1000}k) — добивка к самовывозу")
+        self.assumptions.append(f"Транспорт: {n} выделенных на {prod} зданий (1 на ~8). "
+                                f"Большинство рабочих палов с навыком Transporting сами носят выхлоп в простое, "
+                                f"поэтому выделенных нужно мало — крути, если сундуки далеко от станций")
+
+    def add_plantations(self, plants_n, PLANTS):
+        """Ставит плантации; на tech 78+ Ancient Farm заменяет все раздельные (растит любые культуры)."""
+        total = sum(plants_n.values())
+        if self.args.tech >= 78 and "Ancient Farm" in self.structs and total:
+            self.add("Ancient Farm", total)
+            self.notes.append(f"Ancient Farm x{total}: растит ВСЕ культуры в одном компактном здании "
+                              "(вместо раздельных плантаций), 4 места; требует Watering+Planting+Gathering 6+")
+        else:
+            for crop, n in plants_n.items():
+                pl = self.best([PLANTS[crop]])
+                if pl:
+                    self.add(pl, n)
+        return total
 
     def hire_best(self, task, min_level, count, role):
         """Нанять лучшего по задаче; в роли указать альтернативу попроще (--roster easy меняет их местами)."""
@@ -297,10 +313,7 @@ class Planner:
             prod = next((p for p in line["ranch_prod"] if rm[p][0] == sp), "?")
             self.hire(sp, n, f"ранч: {prod} ({line['ranch_prod'].get(prod, 0):.0f}/час)")
         self.add("Ranch", math.ceil(sum(line["ranch"].values()) / 4))
-        for crop, n in line["plants_n"].items():
-            pl = self.best([line["PLANTS"][crop]])
-            if pl:
-                self.add(pl, n)
+        self.add_plantations(line["plants_n"], line["PLANTS"])
         for name, per_h in line["imports"].items():
             self.notes.append(f"⚠ привозное для торта «{a.cake}»: {name} x{per_h:.0f}/час")
         if line["mills"]:
@@ -515,14 +528,13 @@ class Planner:
         for m, q in it["recipe"]["materials"].items():
             expand(m, q * rate)
 
+        plants_n = {}
         for crop, per_h in need_plants.items():
-            n = math.ceil(per_h / a.plant_yield)
-            pl = self.best([PLANTS[crop]])
-            if pl:
-                self.add(pl, n)
+            if self.best([PLANTS[crop]]) or (a.tech >= 78 and "Ancient Farm" in self.structs):
+                plants_n[crop] = math.ceil(per_h / a.plant_yield)
             else:
                 imports[crop] = imports.get(crop, 0) + per_h
-        total_pl = sum(self.buildings.get(p, 0) for p in PLANTS.values())
+        total_pl = self.add_plantations(plants_n, PLANTS)
         if total_pl:
             self.plant_crew(total_pl)
             self.support_core([("crop_growth", "Lullu"), ("crop_yield", "Prunelia"),
