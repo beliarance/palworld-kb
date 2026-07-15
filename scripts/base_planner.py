@@ -146,13 +146,14 @@ class Planner:
         best, bi = None, None
         for nm, lv in self.idx["inverted"]["work"].get("Transporting", []):
             p = self.idx["pals"][nm]
-            score = self.TRANS_CAP[lv] * (p.get("run") or 0)
+            # гружёные ходят ШАГОМ (подтверждено игроком)
+            score = self.TRANS_CAP[lv] * (p.get("walk") or 0)
             if not best or score > bi["score"]:
                 best, bi = nm, {"score": score, "cap": self.TRANS_CAP[lv], "run": p.get("run"), "walk": p.get("walk")}
-        self.hire(best, n, f"транспорт: несёт {bi['cap']}, бег {bi['run']}/шаг {bi['walk']} "
+        self.hire(best, n, f"транспорт: несёт {bi['cap']}, шаг(гружён) {bi['walk']} / бег {bi['run']} "
                            f"(пропускная {bi['score']//1000}k) — 1 на ~3.5 здания")
         self.assumptions.append(f"Транспорт: {n} палов на {prod} производящих зданий (1 на ~3.5); "
-                                f"скорость с грузом = «бег» (в данных не документирована)")
+                                f"гружёные ходят шагом (подтверждено игроком)")
 
     def hire_best(self, task, min_level, count, role):
         """Нанять лучшего по задаче; в роли указать альтернативу попроще (--roster easy меняет их местами)."""

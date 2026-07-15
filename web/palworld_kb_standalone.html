@@ -438,7 +438,8 @@ function crewGroup(c){
 }
 function transInfo(n){ const p=D.idx.pals[n]||{}; const t=p.work?.Transporting;
   if(!t) return null; const cap=TRANS_CAP[t]||0;
-  return {cap, walk:p.walk||0, run:p.run||0, score:cap*(p.run||0)}; }
+  // гружёные ходят ШАГОМ (подтверждено игроком) — пропускная = вместимость x шаг
+  return {cap, walk:p.walk||0, run:p.run||0, score:cap*(p.walk||0)}; }
 
 class BasePlan {
   constructor(o){ this.o=o; this.structs=Object.fromEntries(D.bb.structures.map(s=>[s.name,s]));
@@ -461,8 +462,8 @@ class BasePlan {
     const ranked=(D.idx.inverted.work.Transporting||[]).map(([nm])=>[nm,transInfo(nm)])
       .sort((a,b)=>b[1].score-a[1].score);
     const [top,ti]=ranked[0];
-    this.hire(top,n,`транспорт: несёт ${ti.cap}, бег ${ti.run} (пропускная ${(ti.score/1000).toFixed(0)}k) — 1 на ~3.5 здания`,"Transporting");
-    this.assume.push(`Транспорт: ${n} палов на ${prod} производящих зданий (1 на ~3.5); скорость с грузом = «бег» (не документировано)`);
+    this.hire(top,n,`транспорт: несёт ${ti.cap}, шаг(гружён) ${ti.walk} (пропускная ${(ti.score/1000).toFixed(1)}k) — 1 на ~3.5 здания`,"Transporting");
+    this.assume.push(`Транспорт: ${n} палов на ${prod} производящих зданий (1 на ~3.5); гружёные ходят шагом (подтверждено игроком)`);
   }
   hireBest(task,minLv,count,role){
     const ranked=D.idx.inverted.work[task]||[]; if(!ranked.length) return;
@@ -867,10 +868,10 @@ function drawBase(){
         alts=alts.map(([nm,lv])=>[nm,lv,transInfo(nm)]).sort((a,b)=>b[2].score-a[2].score).slice(0,10);
       card+=`<div style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px">Замена (${c.task.replace("_"," ")}${c.task==="Transporting"?", по пропускной способности":""}): `+
         alts.map(([nm,lv,ti])=>{const cur=nm===c.sp;
-          const info=ti?` несёт ${ti.cap} · бег ${ti.run}/шаг ${ti.walk}`:` ${lv}`;
+          const info=ti?` несёт ${ti.cap} · шаг(гружён) ${ti.walk} / бег ${ti.run}`:` ${lv}`;
           return `<span class="tag ${cur?"":"clicky"}" style="${cur?"border-color:var(--acc)":""}"
             ${cur?"":`onclick="BASE.crew[${i}].sp='${nm.replace(/'/g,"\\'")}';openC=null;baseDirty=true;drawBase()"`}>${esc(nm)}${sizeBadge(nm)}${(D.idx.pals[nm]||{}).nocturnal?" 🌙":""} <span class="dim">${info}${plan.easyGet(nm)?"":" 🔒"}</span></span>`;}).join(" ")+
-        `<div class="sub">🔒 = нет дикого спавна вне эндгейма${c.task==="Transporting"?"; скорость с грузом = допущение «бег»":""}</div></div>`;
+        `<div class="sub">🔒 = нет дикого спавна вне эндгейма${c.task==="Transporting"?"; гружёные ходят шагом (подтверждено)":""}</div></div>`;
     } else if(openC===i){
       card+=`<div class="sub" style="margin-top:4px">Саппорт/уникальная роль — замен нет. ${esc(plan.hint(c.sp))}</div>`;
     }
