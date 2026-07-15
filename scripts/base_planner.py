@@ -334,12 +334,14 @@ class Planner:
         furn = self.best(["Primitive Furnace", "Improved Furnace", "Electric Furnace", "Gigantic Furnace", "Ancient Furnace"])
         self.add(furn, 2)
         self.hire_best("Kindling", 6, 2, "печи")
-        self.add(self.best(["Production Assembly Line", "Production Assembly Line II", "Advanced Workshop"]), 1)
         if a.tech >= 67 and "Ancient Workbench" in self.structs:
-            self.add("Ancient Workbench", 1)
-            self.notes.append("Ancient Workbench (tech 67, 2000⚡/с): универсал — заменяет оружейную и сферную линии "
-                              "(основная станция 44 рецептов + альтернатива для 474); Production-линия остаётся для материалов")
+            self.add("Ancient Workbench", 2)
+            self.hire_best("Medicine", 6, 1, "Ancient Workbench (требует Handiwork И Medicine 6+)")
+            self.notes.append("Ancient Workbench (tech 67, 2000⚡/с) x2: крафтит ВСЁ включая материалы "
+                              "(Polymer/Computer/AI Core) — заменяет production/weapon/sphere линии. "
+                              "Требует палов с Handiwork И Medicine Production 6+ (Handiwork-ядро уже в составе)")
         else:
+            self.add(self.best(["Production Assembly Line", "Production Assembly Line II", "Advanced Workshop"]), 1)
             for fam in [["Weapon Workbench", "Weapon Assembly Line", "Weapon Assembly Line II", "Advanced Weapon Assembly Line"],
                         ["Sphere Workbench", "Sphere Assembly Line", "Sphere Assembly Line II", "Advanced Sphere Assembly Line"]]:
                 s = self.best(fam)

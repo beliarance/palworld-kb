@@ -536,11 +536,12 @@ class BasePlan {
     if(lSites.length) this.hireBest("Lumbering",5,Math.max(1,Math.round(lSites.length*0.8/this.q())),`лесопилки: ${lSites.join("/")}`);
     this.add(this.best(["Primitive Furnace","Improved Furnace","Electric Furnace","Gigantic Furnace","Ancient Furnace"]),2);
     this.hireBest("Kindling",6,2,"печи");
-    this.add(this.best(["Production Assembly Line","Production Assembly Line II","Advanced Workshop"]),1);
     if(o.tech>=67&&this.structs["Ancient Workbench"]){
-      this.add("Ancient Workbench",1);
-      this.notes.push("Ancient Workbench (67, 2000⚡/с): универсал — заменяет оружейную и сферную линии; Production остаётся для материалов");
+      this.add("Ancient Workbench",2);
+      this.hireBest("Medicine",6,1,"Ancient Workbench (требует Handiwork И Medicine 6+)");
+      this.notes.push("Ancient Workbench (67, 2000⚡/с) x2: крафтит ВСЁ включая материалы — заменяет production/weapon/sphere линии; требует Handiwork И Medicine 6+");
     } else {
+      this.add(this.best(["Production Assembly Line","Production Assembly Line II","Advanced Workshop"]),1);
       for(const fam of [["Weapon Workbench","Weapon Assembly Line","Weapon Assembly Line II","Advanced Weapon Assembly Line"],
           ["Sphere Workbench","Sphere Assembly Line","Sphere Assembly Line II","Advanced Sphere Assembly Line"]]){
         const s=this.best(fam); if(s) this.add(s,1); } }

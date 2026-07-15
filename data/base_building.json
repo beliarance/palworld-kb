@@ -1000,11 +1000,20 @@
     "AI Core": 5,
     "Bio Battery": 20
    },
-   "workers": "Handiwork",
+   "workers": "Handiwork + Medicine Production",
    "capacity": null,
    "power": true,
-   "function": "Универсальный верстак: основная станция для 44 рецептов и альтернатива ещё для 474 (accessory/ammo/armor/consumable/sphere/technology/weapon). На tech 67+ заменяет оружейные и сферные линии. Материалы (Polymer и т.п.) — всё ещё на Production-линиях/печах.",
-   "energy_per_sec": 2000
+   "function": "Универсальный верстак: крафтит ВСЁ, включая материалы (Polymer, Carbon Fiber, Computer, Circuit Board, Bio Battery, AI Core) — основная станция 44 рецептов + альтернатива для 474. На печах остаются только слитки/Plasteel, на кухнях — еда. Требует палов с high-level Handiwork И Medicine Production.",
+   "energy_per_sec": 2000,
+   "worker_req": {
+    "tasks": [
+     "Handiwork",
+     "Medicine Production"
+    ],
+    "high_level": true,
+    "min_level": 6,
+    "min_level_note": "6+ со слов игрока (PRELIMINARY)"
+   }
   },
   {
    "name": "Crusher",
@@ -2962,7 +2971,8 @@
   "2026-07-15: function-описания дозаполнены у станций, добавленных 07-15; worker_req распарсен из описаний локально.",
   "2026-07-15: +40 функциональных зданий со Structures-индекса paldb (все шахты Lumbering/Mining категории, сундуки, пруды, алтарь, ресайклеры). Прежняя заметка 'шахт для Coal/Sulfur/Quartz нет' была ошибкой поиска по слагам — опровергнута.",
   "2026-07-15: работники добывающих станций назначены по типу продукта (руда/уголь/кварц/нефть = Mining, лес = Lumbering) — подтверждено игроком; ранний парс ошибочно брал Handiwork из workload-таблицы ПОСТРОЙКИ здания.",
-  "2026-07-15: Crude Oil Extractor работает без палов (только электричество) - подтверждено игроком; High-Pressure предположительно тоже, не проверено. Таблица 'Workload/Handiwork' на paldb - это workload ПОСТРОЙКИ."
+  "2026-07-15: Crude Oil Extractor работает без палов (только электричество) - подтверждено игроком; High-Pressure предположительно тоже, не проверено. Таблица 'Workload/Handiwork' на paldb - это workload ПОСТРОЙКИ.",
+  "2026-07-15: Ancient Workbench крафтит и материалы (подтверждено items.json: Polymer/Computer/AI Core имеют его альтернативой) — Production-линия на 67+ не нужна. Дозаполнены worker_req у станций, чьи описания были затёрты при раннем сборе."
  ],
  "gaps": [
   "Per-crop plantation yield_per_harvest and absolute growth-cycle seconds are undocumented in fetched sources (yield scales with gatherer DropNumRate; see plantation_cycles).",
