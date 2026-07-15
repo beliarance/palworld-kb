@@ -716,7 +716,16 @@
    "workers": null,
    "capacity": null,
    "power": false,
-   "function": "A special kitchen based on ancient technology that can create everything from existing dishes to entirely new recipes. It retains heat through fire and completes cooking with manual preparation, allowing it to prepare any kind of cuisine. It requires Pals with high-level Kindling and Handiwork suitability."
+   "function": "A special kitchen based on ancient technology that can create everything from existing dishes to entirely new recipes. It retains heat through fire and completes cooking with manual preparation, allowing it to prepare any kind of cuisine. It requires Pals with high-level Kindling and Handiwork suitability.",
+   "worker_req": {
+    "tasks": [
+     "Kindling",
+     "Handiwork"
+    ],
+    "high_level": true,
+    "min_level": 6,
+    "min_level_note": "6+ со слов игрока (PRELIMINARY); paldb пишет 'high-level' без цифры"
+   }
   },
   {
    "name": "Ancient Monitoring Stand",
@@ -786,7 +795,16 @@
    "workers": "Generating Electricity (min Lv6)",
    "capacity": "2 pals",
    "power": false,
-   "function": "A highly efficient power generator restored from lost ancient technology. It produces massive amounts of electricity, but is prone to overheating while in operation. It requires Pals with high-level Generating Electricity and any level of Watering suitability."
+   "function": "A highly efficient power generator restored from lost ancient technology. It produces massive amounts of electricity, but is prone to overheating while in operation. It requires Pals with high-level Generating Electricity and any level of Watering suitability.",
+   "worker_req": {
+    "tasks": [
+     "Watering",
+     "Generating Electricity"
+    ],
+    "high_level": true,
+    "min_level": 6,
+    "min_level_note": "6+ со слов игрока (PRELIMINARY); paldb пишет 'high-level' без цифры"
+   }
   },
   {
    "name": "Ancient Hatchery",
@@ -832,7 +850,17 @@
    "workers": "Planting + Watering + Gathering",
    "capacity": null,
    "power": false,
-   "function": "A special cultivation device based on ancient technology that harnesses the power of the World Tree to grow all kinds of plants on Palpagos Island. Smaller than a berry plantation and suitable for indoor placement, it still follows the same cultivation process as standard plots. It requires Pals with high-level Planting, Watering, and Harvesting suitability."
+   "function": "A special cultivation device based on ancient technology that harnesses the power of the World Tree to grow all kinds of plants on Palpagos Island. Smaller than a berry plantation and suitable for indoor placement, it still follows the same cultivation process as standard plots. It requires Pals with high-level Planting, Watering, and Harvesting suitability.",
+   "worker_req": {
+    "tasks": [
+     "Watering",
+     "Planting",
+     "Gathering"
+    ],
+    "high_level": true,
+    "min_level": 6,
+    "min_level_note": "6+ со слов игрока (PRELIMINARY); paldb пишет 'high-level' без цифры"
+   }
   },
   {
    "name": "Stone Pit",
@@ -904,7 +932,7 @@
    "workers": "Handiwork",
    "capacity": null,
    "power": true,
-   "function": "sphere",
+   "function": "Requires Pals that can work with their hands.",
    "energy_per_sec": 1000
   },
   {
@@ -919,7 +947,7 @@
    "workers": "Handiwork",
    "capacity": null,
    "power": true,
-   "function": "weapon",
+   "function": "Requires Pals that can work with their hands.",
    "energy_per_sec": 1000
   },
   {
@@ -935,7 +963,7 @@
    "workers": "Handiwork",
    "capacity": null,
    "power": true,
-   "function": "ammo, material, weapon",
+   "function": "Requires Pals that can work with their hands.",
    "energy_per_sec": 1000
   },
   {
@@ -948,11 +976,20 @@
     "Computer": 30,
     "Ancient Civilization Core": 10
    },
-   "workers": "Kindling",
+   "workers": "Kindling + Cooling",
    "capacity": null,
    "power": true,
-   "function": "material",
-   "energy_per_sec": 3000
+   "function": "It requires Pals with high-level Kindling and Cooling suitability.",
+   "energy_per_sec": 3000,
+   "worker_req": {
+    "tasks": [
+     "Kindling",
+     "Cooling"
+    ],
+    "high_level": true,
+    "min_level": 6,
+    "min_level_note": "6+ со слов игрока (PRELIMINARY); paldb пишет 'high-level' без цифры"
+   }
   },
   {
    "name": "Ancient Workbench",
@@ -981,7 +1018,7 @@
    "workers": "Watering",
    "capacity": null,
    "power": false,
-   "function": "material"
+   "function": "Requires Pal with the Watering trait to spin the water turbine."
   },
   {
    "name": "Electric Furnace",
@@ -996,7 +1033,7 @@
    "workers": "Kindling",
    "capacity": null,
    "power": true,
-   "function": "material",
+   "function": "It requires electricity to use, but is quicker to process.",
    "energy_per_sec": 500
   },
   {
@@ -1012,7 +1049,7 @@
    "workers": "Kindling",
    "capacity": null,
    "power": true,
-   "function": "material",
+   "function": "By growing in size, multiple Pals can collaborate to perform smelting.",
    "energy_per_sec": 1500
   },
   {
@@ -1028,7 +1065,7 @@
    "workers": "Handiwork",
    "capacity": null,
    "power": true,
-   "function": "material",
+   "function": "Warning: building this facility may draw severe scrutiny from the PIDF.",
    "energy_per_sec": 200
   },
   {
@@ -1058,7 +1095,7 @@
    "workers": "Kindling",
    "capacity": null,
    "power": false,
-   "function": "material"
+   "function": "The quality has improved, but the processing speed is still unsatisfactory."
   },
   {
    "name": "Pal Gear Workbench",
@@ -1072,7 +1109,7 @@
    "workers": "Handiwork",
    "capacity": null,
    "power": false,
-   "function": "key_item"
+   "function": "Make a saddle to ride Pals, or make a gun for Pals to use."
   },
   {
    "name": "Primitive Furnace",
@@ -1086,7 +1123,7 @@
    "workers": "Kindling",
    "capacity": null,
    "power": false,
-   "function": "material"
+   "function": "The quality leaves much to desire, and processing is slow."
   },
   {
    "name": "Primitive Workbench",
@@ -1098,7 +1135,7 @@
    "workers": "Handiwork",
    "capacity": null,
    "power": false,
-   "function": "ammo, armor, consumable, key_item, material, sphere, technology, weapon"
+   "function": "Requires a Pal that can work with their hands."
   },
   {
    "name": "Production Assembly Line",
@@ -1145,7 +1182,7 @@
    "workers": "Handiwork",
    "capacity": null,
    "power": true,
-   "function": "sphere",
+   "function": "Requires Pals that can work with their hands.",
    "energy_per_sec": 200
   },
   {
@@ -1161,7 +1198,7 @@
    "workers": "Handiwork",
    "capacity": null,
    "power": true,
-   "function": "sphere",
+   "function": "Requires Pals that can work with their hands.",
    "energy_per_sec": 400
   },
   {
@@ -1177,7 +1214,7 @@
    "workers": "Handiwork",
    "capacity": null,
    "power": false,
-   "function": "other, sphere"
+   "function": "Requires Pals that can work with their hands."
   },
   {
    "name": "Weapon Assembly Line",
@@ -1192,7 +1229,7 @@
    "workers": "Handiwork",
    "capacity": null,
    "power": true,
-   "function": "weapon",
+   "function": "Requires Pals that can work with their hands.",
    "energy_per_sec": 200
   },
   {
@@ -1208,7 +1245,7 @@
    "workers": "Handiwork",
    "capacity": null,
    "power": true,
-   "function": "weapon",
+   "function": "Requires Pals that can work with their hands.",
    "energy_per_sec": 400
   },
   {
@@ -1223,7 +1260,7 @@
    "workers": "Handiwork",
    "capacity": null,
    "power": false,
-   "function": "weapon"
+   "function": "Requires Pals that can work with their hands."
   }
  ],
  "foods": [
@@ -2195,7 +2232,8 @@
   "DISCREPANCY: expeditions.json lists Pal Expedition Station at tech 15 (Wood 20, Stone 20, Paldium Fragment 5); paldb 1.0 page shows tech 22 (Wooden Board 10, Stone 100, Paldium Fragment 20). This file follows paldb.",
   "In 1.0 there is no plain 'Pal Bed': tiers are Straw Pal Bed (3) -> Fluffy Pal Bed (24) -> Large Pal Bed (36) -> Pal Pod (56) -> Ancient Pal Bed (73).",
   "2026-07-15: добавлены placeable-добывающие станции (Stone Pit, Ore Mining Site tech 24, Logging Site, Crude Oil Extractor) — изначальный сбор их пропустил. Placeable-шахт для Coal/Sulfur/Quartz/Paldium в 1.0 НЕТ (paldb: у этих ресурсов нет производящей постройки) — только точки на карте.",
-  "2026-07-15: добавлены 22 крафт-станции (печи, верстаки, сборочные линии) со страниц paldb — изначальный сбор покрывал только Pal/Food категории."
+  "2026-07-15: добавлены 22 крафт-станции (печи, верстаки, сборочные линии) со страниц paldb — изначальный сбор покрывал только Pal/Food категории.",
+  "2026-07-15: function-описания дозаполнены у станций, добавленных 07-15; worker_req распарсен из описаний локально."
  ],
  "gaps": [
   "Per-crop plantation yield_per_harvest and absolute growth-cycle seconds are undocumented in fetched sources (yield scales with gatherer DropNumRate; see plantation_cycles).",

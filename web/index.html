@@ -419,7 +419,7 @@ class BasePlan {
   q(){ return QUALITY[this.o.workforce]; }
   best(cands){ const a=cands.filter(c=>this.structs[c]&&(this.structs[c].tech_level||0)<=this.o.tech); return a[a.length-1]||null; }
   add(n,c=1){ if(n&&c>0) this.buildings[n]=(this.buildings[n]||0)+c; }
-  hire(sp,c,role){ if(c>0) this.crew.push([sp,Math.ceil(c),role]); }
+  hire(sp,c,role,task){ if(c>0) this.crew.push([sp,Math.ceil(c),role,task||null]); }
   easyGet(n){ const p=D.idx.pals[n]||{}; return (p.regions||[]).some(r=>!r.includes("World Tree")&&!r.includes("Sunreach")); }
   hint(n){ const p=D.idx.pals[n]||{}; const regs=(p.regions||[]).filter(r=>!r.includes("World Tree"));
     if(regs.length){ const base=regs[0].replace(/\s*\[Lv\.[^\]]*\]$/,"").trim(); const c=this.regions[regs[0]]||this.regions[base];
@@ -436,7 +436,7 @@ class BasePlan {
     let note=`${role} (${task} ${lv[prim]})`;
     if(alt!==prim){ const tag=this.o.roster==="easy"?"топ":"проще"; note+=` | ${tag}: ${alt} (#${(D.idx.pals[alt]||{}).number}, ${lv[alt]})`; }
     if(!this.easyGet(prim)){ const h=this.hint(prim); if(h) note+=` [${h}]`; }
-    this.hire(prim,count,note); }
+    this.hire(prim,count,note,task); }
   supportCore(kinds){ const tags=D.idx.inverted.partner_tags;
     for(const [kind,why] of kinds) for(const n of (tags["base_support:"+kind]||[]).slice(0,1)){
       const h=this.hint(n); this.hire(n,1,`саппорт: ${why}`+(h?` [${h}]`:"")); } }
@@ -583,67 +583,205 @@ class BasePlan {
     return h; }
 }
 
+/* --- интерактивный билдер базы --- */
+const FAMILIES = [
+  ["Straw Pal Bed","Fluffy Pal Bed","Large Pal Bed","Pal Pod","Ancient Pal Bed"],
+  ["Hot Spring","High Quality Hot Spring","Ancient Hot Spring"],
+  ["Campfire","Cooking Pot","Electric Kitchen","Large-Scale Stone Oven","Ancient Kitchen"],
+  ["Egg Incubator","Electric Egg Incubator","Large Incubator","Large-Scale Electric Egg Incubator"],
+  ["Breeding Farm","Ancient Hatchery"],
+  ["Human-Powered Generator","Power Generator","Large Power Generator","Ancient Power Generator"],
+  ["Primitive Furnace","Improved Furnace","Electric Furnace","Gigantic Furnace","Ancient Furnace"],
+  ["Medieval Medicine Workbench","Electric Medicine Workbench","Advanced Medicine Workbench"],
+  ["Clinic","Ancient Clinic"],
+  ["Monitoring Stand","High Quality Monitoring Stand","Ancient Monitoring Stand"],
+  ["Primitive Workbench","High Quality Workbench","Production Assembly Line","Production Assembly Line II","Advanced Workshop","Ancient Workbench"],
+  ["Weapon Workbench","Weapon Assembly Line","Weapon Assembly Line II","Advanced Weapon Assembly Line"],
+  ["Sphere Workbench","Sphere Assembly Line","Sphere Assembly Line II","Advanced Sphere Assembly Line"],
+  ["Cooler Box","Refrigerator","Cold Food Box"],
+  ["Heater","Electric Heater"],["Cooler","Electric Cooler"],
+  ["Berry Plantation","Wheat Plantation","Tomato Plantation","Lettuce Plantation","Potato Plantation","Carrot Plantation","Onion Plantation"],
+];
+const TASK_LIST = ["Kindling","Watering","Planting","Generating_Electricity","Handiwork","Gathering",
+  "Lumbering","Mining","Medicine","Cooling","Transporting","Farming"];
+function familyOf(name){ return FAMILIES.find(f=>f.includes(name)) || [name]; }
+function structTasks(s){
+  if(s.worker_req) return s.worker_req.tasks.map(t=>t.replace("Generating Electricity","Generating_Electricity").replace("Medicine Production","Medicine"));
+  const w=(s.workers||"")+"";
+  return TASK_LIST.filter(t=>w.toLowerCase().includes(t.replace("_"," ").toLowerCase()));
+}
+function topWorkers(task, n=8, easyOnly=false, minLv=1){
+  const ranked=D.idx.inverted.work[task]||[];
+  const plan=new BasePlan({roster:"top"});
+  return ranked.filter(([nm,lv])=>lv>=minLv&&(!easyOnly||plan.easyGet(nm))).slice(0,n);
+}
+
+let BASE = {buildings:[], crew:[]};
+let openB=null, openC=null;
+
+function seedFromPreset(){
+  const o=builderOpts();
+  const plan=new BasePlan(o).run();
+  BASE.buildings=Object.entries(plan.buildings).map(([name,count])=>({name,count}));
+  BASE.crew=plan.crew.map(([sp,count,role,task])=>({sp,count,role,task}));
+  BASE.notes=plan.notes; BASE.assume=plan.assume;
+  openB=openC=null; drawBase();
+}
+function builderOpts(){
+  const val=id=>document.getElementById(id).value;
+  const metal=val("pmetal");
+  if(metal) document.getElementById("ptech").value=METALS[metal];
+  return {preset:val("pp"),slots:+val("pslots")||50,tech:+val("ptech")||60,food:val("pfood"),
+    workforce:val("pwf"),roster:val("proster"),lux:document.getElementById("plux").checked,
+    ranchRate:+val("pranch")||12,plantYield:+val("pyield")||60,cookRate:+val("pcook")||30,
+    plantsPerWorker:3,farms:+val("pfarms")||null};
+}
+
 render.planner = () => {
   V().innerHTML = `<div class="card"><div class="row">
     <select id="pp"><option value="breeding">Бридинг</option><option value="mine-craft">Майнинг+крафт</option>
       <option value="oil">Нефть</option><option value="food">Еда-хаб</option><option value="starter">Стартовая</option></select>
+    <button class="tag clicky" style="cursor:pointer;font-size:13px" onclick="seedFromPreset()">⚙ применить пресет</button>
+    <button class="tag clicky" style="cursor:pointer;font-size:13px" onclick="BASE={buildings:[],crew:[]};drawBase()">✨ пустая база</button>
     <label>Слоты <input type="number" id="pslots" value="50" min="5" max="100" style="width:70px;min-width:70px"></label>
-    <select id="pmetal" title="доступный металл задаёт тир зданий">
+    <select id="pmetal">
       <option value="">Металл: вручную (tech)</option>
-      <option value="ingot">Металл: Ingot (tech ≤33)</option>
-      <option value="refined">Металл: Refined (≤43)</option>
-      <option value="pal-metal">Металл: Pal Metal (≤57)</option>
-      <option value="coralum">Металл: Coralum (≤65)</option>
-      <option value="soralite">Металл: Soralite (≤73)</option>
-      <option value="paloxite">Металл: Paloxite (все)</option>
+      <option value="ingot">Ingot (tech ≤33)</option><option value="refined">Refined (≤43)</option>
+      <option value="pal-metal">Pal Metal (≤57)</option><option value="coralum">Coralum (≤65)</option>
+      <option value="soralite">Soralite (≤73)</option><option value="paloxite">Paloxite (все)</option>
     </select>
     <label>Tech <input type="number" id="ptech" value="60" min="1" max="99" style="width:70px;min-width:70px"></label>
     <select id="pfood"><option value="self">Еда: на месте</option><option value="shipped">Еда: привозная</option></select>
-    <select id="pwf"><option value="baseline">Дикие палы (x1.0)</option><option value="passives" selected>Бридовые (x2.2)</option><option value="max">4-пассивки (x2.75)</option></select>
+    <select id="pwf"><option value="baseline">Дикие (x1.0)</option><option value="passives" selected>Бридовые (x2.2)</option><option value="max">4-пассивки (x2.75)</option></select>
     <select id="proster"><option value="top">Ростер: топ</option><option value="easy">Ростер: легко достать</option></select>
-    <label><input type="checkbox" id="plux"> люкс-кровати</label>
+    <label><input type="checkbox" id="plux"> люкс</label>
   </div><div class="row" style="margin-top:8px">
     <label class="dim">ранч дроп/час <input type="number" id="pranch" value="12" style="width:60px;min-width:60px"></label>
     <label class="dim">плантация ед/час <input type="number" id="pyield" value="60" style="width:60px;min-width:60px"></label>
-    <label class="dim">тортов/час на повара <input type="number" id="pcook" value="30" style="width:60px;min-width:60px"></label>
-    <label class="dim">ферм (авто если пусто) <input type="number" id="pfarms" style="width:60px;min-width:60px"></label>
-  </div><div class="row" style="margin-top:8px">
-    <input type="text" id="pextra" list="structlist" placeholder="Доп. здание (необязательное)…" style="min-width:260px">
-    <input type="number" id="pextraqty" value="1" min="1" style="width:60px;min-width:60px">
-    <button class="tag clicky" style="cursor:pointer" onclick="plannerAddExtra()">+ добавить</button>
-    <span id="pextras"></span>
-  </div>
-  <datalist id="structlist">${D.bb.structures.map(s=>`<option value="${esc(s.name)}">`).join("")}</datalist>
-  </div><div id="pout"></div>`;
-  const calc=()=>{
-    const metal=val("pmetal");
-    if(metal) document.getElementById("ptech").value=METALS[metal];
-    const o={preset:val("pp"),slots:+val("pslots")||50,tech:+val("ptech")||60,food:val("pfood"),
-      workforce:val("pwf"),roster:val("proster"),lux:document.getElementById("plux").checked,
-      ranchRate:+val("pranch")||12,plantYield:+val("pyield")||60,cookRate:+val("pcook")||30,
-      plantsPerWorker:3,farms:+val("pfarms")||null};
-    try {
-      const plan=new BasePlan(o).run();
-      for(const [name,qty] of plannerExtras){ plan.add(name,qty); plan.notes.push(`Доп. здание: ${name} x${qty}`); }
-      document.getElementById("pout").innerHTML=plan.html();
-    }
-    catch(e){ document.getElementById("pout").innerHTML=`<div class="card bad">Ошибка: ${esc(e.message)}</div>`; }
-    document.getElementById("pextras").innerHTML=plannerExtras.map(([n,q],i)=>
-      `<span class="tag">${esc(n)} x${q} <span class="clicky" onclick="plannerDelExtra(${i})">✕</span></span>`).join("");
-  };
-  window._plannerCalc=calc;
-  const val=id=>document.getElementById(id).value;
-  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms"])
-    document.getElementById(id).addEventListener("input",calc);
-  calc();
+    <label class="dim">тортов/час <input type="number" id="pcook" value="30" style="width:60px;min-width:60px"></label>
+    <label class="dim">ферм <input type="number" id="pfarms" style="width:60px;min-width:60px"></label>
+  </div></div>
+  <div id="bout"></div>`;
+  drawBase();
 };
-let plannerExtras=[];
-function plannerAddExtra(){
-  const n=document.getElementById("pextra").value.trim(), q=+document.getElementById("pextraqty").value||1;
-  const hit=D.bb.structures.find(s=>s.name.toLowerCase()===n.toLowerCase());
-  if(hit){ plannerExtras.push([hit.name,q]); document.getElementById("pextra").value=""; window._plannerCalc(); }
+
+function drawBase(){
+  const out=document.getElementById("bout"); if(!out) return;
+  const slots=+document.getElementById("pslots").value||50;
+  const crewTotal=BASE.crew.reduce((a,c)=>a+c.count,0);
+  const structs=Object.fromEntries(D.bb.structures.map(s=>[s.name,s]));
+  const num=s=>(D.idx.pals[s]||{}).number;
+  const plan=new BasePlan(builderOpts());
+
+  // здания
+  let bh=BASE.buildings.map((b,i)=>{
+    const s=structs[b.name]||{};
+    const tasks=structTasks(s);
+    const req=s.worker_req;
+    const fam=familyOf(b.name).filter(n=>structs[n]);
+    let card=`<div class="card" style="margin-bottom:8px">
+      <div class="row" style="justify-content:space-between">
+        <div><span class="clicky big" style="font-size:15px" onclick="openB=openB===${i}?null:${i};openC=null;drawBase()">${esc(b.name)}</span>
+          <span class="dim">tech ${s.tech_level??"?"}${s.power?" ⚡"+(s.energy_per_sec?s.energy_per_sec+"/с":""):""}</span></div>
+        <div><span class="tag clicky" onclick="BASE.buildings[${i}].count++;drawBase()">+</span>
+          <b class="mono"> x${b.count} </b>
+          <span class="tag clicky" onclick="if(--BASE.buildings[${i}].count<1)BASE.buildings.splice(${i},1);drawBase()">−</span>
+          <span class="tag clicky" onclick="BASE.buildings.splice(${i},1);drawBase()">✕</span></div>
+      </div>
+      <div class="dim">${Object.entries(s.materials||{}).map(([m,q])=>`${itemLink(m)} x${q*b.count}`).join(", ")||"?"}</div>`;
+    if(req) card+=`<div class="warn">Требует палов: ${req.tasks.join(" + ")} ${req.high_level?`(уровень ${req.min_level}+, PRELIMINARY)`:""}</div>`;
+    if(tasks.length){
+      const sugg=tasks.map(t=>{const top=topWorkers(t,2,false,req?req.min_level:1);
+        return top.map(([nm,lv])=>`${palLink(nm)} <span class="dim mono">${t.replace("_"," ")} ${lv}</span>
+          <span class="tag clicky" onclick="builderHire('${nm.replace(/'/g,"\\'")}','${t}','${esc(b.name)}')">нанять</span>`).join(" · ");}).join("<br>");
+      card+=`<div style="margin-top:4px">Палы: ${sugg}</div>`;
+    }
+    if(openB===i&&fam.length>1){
+      card+=`<div style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px">Другой тир: `+
+        fam.map(n=>{const fs=structs[n];const cur=n===b.name;
+          return `<span class="tag ${cur?"":"clicky"}" style="${cur?"border-color:var(--acc)":""}"
+            ${cur?"":`onclick="BASE.buildings[${i}].name='${n.replace(/'/g,"\\'")}';openB=null;drawBase()"`}>${esc(n)} <span class="dim">t${fs.tech_level??"?"}</span></span>`;}).join(" ")+`</div>`;
+    }
+    return card+`</div>`;
+  }).join("");
+
+  // палы
+  let ch=BASE.crew.map((c,i)=>{
+    let card=`<div class="card" style="margin-bottom:8px"><div class="row" style="justify-content:space-between">
+      <div><span class="clicky" style="font-weight:700" onclick="openC=openC===${i}?null:${i};openB=null;drawBase()">${esc(c.sp)}${num(c.sp)?` <span class="dim">(#${num(c.sp)})</span>`:""}</span>
+        <span class="dim"> — ${esc(c.role||"")}</span></div>
+      <div><span class="tag clicky" onclick="BASE.crew[${i}].count++;drawBase()">+</span>
+        <b class="mono"> x${c.count} </b>
+        <span class="tag clicky" onclick="if(--BASE.crew[${i}].count<1)BASE.crew.splice(${i},1);drawBase()">−</span>
+        <span class="tag clicky" onclick="BASE.crew.splice(${i},1);drawBase()">✕</span></div></div>`;
+    if(openC===i&&c.task){
+      const alts=topWorkers(c.task,10);
+      card+=`<div style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px">Замена (${c.task.replace("_"," ")}): `+
+        alts.map(([nm,lv])=>{const cur=nm===c.sp;
+          return `<span class="tag ${cur?"":"clicky"}" style="${cur?"border-color:var(--acc)":""}"
+            ${cur?"":`onclick="BASE.crew[${i}].sp='${nm.replace(/'/g,"\\'")}';openC=null;drawBase()"`}>${esc(nm)} <span class="dim">${lv}${plan.easyGet(nm)?"":" 🔒"}</span></span>`;}).join(" ")+
+        `<div class="sub">🔒 = нет дикого спавна вне эндгейма</div></div>`;
+    } else if(openC===i){
+      card+=`<div class="sub" style="margin-top:4px">Саппорт/уникальная роль — замен нет. ${esc(plan.hint(c.sp))}</div>`;
+    }
+    return card+`</div>`;
+  }).join("");
+
+  // смета
+  const bill={};
+  for(const b of BASE.buildings){ const s=structs[b.name]||{};
+    for(const [m,q] of Object.entries(s.materials||{})) bill[m]=(bill[m]||0)+q*b.count; }
+  const power=BASE.buildings.reduce((a,b)=>a+((structs[b.name]||{}).energy_per_sec||0)*b.count,0);
+
+  out.innerHTML=`
+  <div class="card"><div class="big">${crewTotal}/${slots} слотов
+    ${crewTotal>slots?`<span class="bad">перебор на ${crewTotal-slots}</span>`:`<span class="ok">свободно ${slots-crewTotal}</span>`}
+    ${power?`<span class="tag">⚡ ${power.toLocaleString()}/с</span>`:""}</div></div>
+  <div class="grid" style="grid-template-columns:1fr 1fr;align-items:start">
+    <div><h3>Здания (клик — сменить тир)</h3>
+      <div class="row" style="margin-bottom:8px">
+        <input type="text" id="baddb" list="structlist" placeholder="+ здание…" style="min-width:220px">
+        <button class="tag clicky" style="cursor:pointer" onclick="builderAddBuilding()">добавить</button>
+      </div>
+      <datalist id="structlist">${D.bb.structures.map(s=>`<option value="${esc(s.name)}">`).join("")}</datalist>
+      ${bh||'<div class="dim">пусто — примени пресет или добавь здания</div>'}</div>
+    <div><h3>Палы (клик — заменить)</h3>
+      <div class="row" style="margin-bottom:8px">
+        <select id="ptask">${TASK_LIST.map(t=>`<option>${t}</option>`).join("")}</select>
+        <label class="dim">ур.≥ <input type="number" id="pminlv" value="1" min="1" max="10" style="width:55px;min-width:55px"></label>
+        <label class="dim"><input type="checkbox" id="peasy"> легко достать</label>
+        <button class="tag clicky" style="cursor:pointer" onclick="builderShowPicker()">показать всех</button>
+      </div>
+      <div id="picker"></div>
+      ${ch||'<div class="dim">пусто</div>'}</div>
+  </div>
+  <div class="card"><h3>Итого материалов</h3>
+    ${Object.entries(bill).sort().map(([m,q])=>`<span class="tag">${itemLink(m)} x${q}</span>`).join("")||'<span class="dim">—</span>'}</div>
+  ${BASE.notes?.length?`<div class="card"><h3>Заметки пресета</h3><ul>${BASE.notes.map(n=>`<li>${esc(n)}</li>`).join("")}</ul></div>`:""}
+  ${BASE.assume?.length?`<div class="card dim"><h3>Допущения</h3><ul>${BASE.assume.map(n=>`<li>${esc(n)}</li>`).join("")}</ul></div>`:""}`;
 }
-function plannerDelExtra(i){ plannerExtras.splice(i,1); window._plannerCalc(); }
+function builderAddBuilding(){
+  const n=document.getElementById("baddb").value.trim();
+  const hit=D.bb.structures.find(s=>s.name.toLowerCase()===n.toLowerCase());
+  if(hit){ const ex=BASE.buildings.find(b=>b.name===hit.name);
+    if(ex) ex.count++; else BASE.buildings.push({name:hit.name,count:1});
+    drawBase(); }
+}
+function builderHire(sp,task,forB){
+  const ex=BASE.crew.find(c=>c.sp===sp&&c.task===task);
+  if(ex) ex.count++; else BASE.crew.push({sp,count:1,role:`для: ${forB}`,task});
+  drawBase();
+}
+function builderShowPicker(){
+  const task=document.getElementById("ptask").value, minLv=+document.getElementById("pminlv").value||1,
+        easy=document.getElementById("peasy").checked;
+  const list=topWorkers(task,999,easy,minLv);
+  document.getElementById("picker").innerHTML=`<div class="card" style="max-height:300px;overflow-y:auto">
+    <table>${list.map(([nm,lv])=>`<tr><td>${palLink(nm)}</td><td class="mono">${task.replace("_"," ")} ${lv}</td>
+      <td class="dim">${new BasePlan({roster:"top"}).easyGet(nm)?"дикий спавн":"сложный"}</td>
+      <td><span class="tag clicky" onclick="builderHire('${nm.replace(/'/g,"\\'")}','${task}','вручную')">нанять</span></td></tr>`).join("")}
+    </table></div>`;
+}
 
 loadAll().then(()=>{
   document.getElementById("loading").style.display="none";
