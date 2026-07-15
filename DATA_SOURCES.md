@@ -178,6 +178,26 @@
   на самом paldb имеют плейсхолдер `T_icon_unknown.webp` — оставлен как есть.
   NB: часть файлов cdn.paldb.cc отдаёт 403 без заголовка `Referer: https://paldb.cc/`.
 
+## data/merchants.json — торговцы и магазины (2026-07-15)
+
+- **paldb.cc/en/Merchant** — все 587 листингов «Wandering Merchant» (предмет → код
+  магазина), 38 магазинов. **paldb.cc/en/<Shop_Code>** (38 страниц) — ассортимент,
+  цены и валюта каждого магазина (пустая колонка цены = продажа за Gold Coin по
+  стандартной цене предмета). **paldb.cc/en/Caravan_Merchant** + 23 страницы NPC —
+  имена караванных торговцев 1.0 → коды Caravan_Shop_1–25 (посещают базу игрока).
+  **paldb.cc/js/map_data_en.js** — точные координаты маркеров торговцев на карте:
+  Wandering Merchant (4 поселения, href=Village_Shop_1), Duneshelter (Desert_Shop_1/2),
+  Fisherman's Point (Volcano_Shop_1/2), Arena Merchant (631,16) = Arena_Shop_1
+  (Battle Ticket), Medal Merchant (4 церкви) = Medal_Shop_1 (Dog Coin), PIDF Bounty
+  Officer (3 поселения) = Bounty_Shop_1 (Successful Bounty Token); там же Pal
+  Merchant / Black Marketeer (продают палов → `pal_traders`).
+  Скрипт: `scripts/collectors/fetch_merchants.py` (резюмируемый, кэш страниц).
+- В `items.json` 228 плейсхолдеров «Sold by merchants (N shop listings)» заменены на
+  конкретные строки «Sold by <торговец> (<цена/валюта>) - <локация (координаты)>».
+- Пробелы: Vagrant_Trader_1_1/2/3 — личность/локация не документированы (в т.ч.
+  websearch 2026-07-15 ничего не дал); Wander_Shop_1 (случайный бродячий торговец) и
+  Dungeon_Shop_01 (в данжах) фиксированных координат не имеют by design.
+
 ## docs/ — гайды (компиляции, собраны 2026-07-14)
 
 - `breeding_mechanics.md` — game8.co (cake, инхерит пассивок, condenser, IV, пассивки),

@@ -445,10 +445,14 @@ class Planner:
         self.hire("Anubis", 2, "верстаки (Handiwork 6) — пара с Sekhmet")
         self.hire("Sekhmet", 1, "буст Anubis +20~40% и себе +30~60% на верстаках")
         self.hire_transport()
-        cool = self.best(["Cooler Box", "Refrigerator"])
-        if cool:
-            self.add(cool, 1)
-            self.hire_best("Cooling", 3, 1, "холодильник")
+        if a.spoilage:
+            cool = self.best(["Cooler Box", "Refrigerator"])
+            if cool:
+                self.add(cool, 1)
+                self.hire_best("Cooling", 3, 1, "холодильник (замедляет порчу)")
+        else:
+            self.notes.append("Порча выключена (настройка мира): холодильник и Cooling-пал не нужны — "
+                              "хватает Feed Box; слот и Ice-пал сэкономлены")
         if a.food == "self":
             self.food_module(a.slots)
             self.plant_crew(self.buildings.get("Tomato Plantation", 0) + self.buildings.get("Lettuce Plantation", 0)
@@ -622,6 +626,8 @@ def main():
     ap.add_argument("--dish-rate", type=float, default=30, help="(food) блюд/час")
     ap.add_argument("--egg-interval", type=float, default=None,
                     help="(breeding) минут на яйцо (по умолчанию 5 из данных; для хатчери замерь в игре)")
+    ap.add_argument("--no-spoilage", dest="spoilage", action="store_false",
+                    help="настройка мира «еда не портится»: без холодильника и Cooling-пала, хватит Feed Box")
     ap.add_argument("--per-station", type=int, default=1,
                     help="(mine-craft) палов на добывающую станцию 1..3 (у шахт 3 места; больше = быстрее добыча)")
     ap.add_argument("--cake", default="Cake",

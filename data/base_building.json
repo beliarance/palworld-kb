@@ -12,7 +12,8 @@
    "workers": "Kindling",
    "capacity": "1 worker slots",
    "power": false,
-   "function": "Needed for cooking food. It can only be used to grill simple ingredients. Requires a Fire Pal to light a flame."
+   "function": "Needed for cooking food. It can only be used to grill simple ingredients. Requires a Fire Pal to light a flame.",
+   "worker_slots": null
   },
   {
    "name": "Palbox",
@@ -26,7 +27,8 @@
    "workers": null,
    "capacity": "defines base area; base pal slots managed via Palbox (15 base workers by default, expandable via base missions)",
    "power": false,
-   "function": "Facility for storing captured Pals. Pals inside gradually recover Health. Area around this facility becomes a base."
+   "function": "Facility for storing captured Pals. Pals inside gradually recover Health. Area around this facility becomes a base.",
+   "worker_slots": null
   },
   {
    "name": "Straw Pal Bed",
@@ -39,7 +41,8 @@
    "workers": null,
    "capacity": "1 pal",
    "power": false,
-   "function": "A straw bed for Pals. Pals can rest on it when injured, or to sleep at night. It isn't soft, but it's better than nothing."
+   "function": "A straw bed for Pals. Pals can rest on it when injured, or to sleep at night. It isn't soft, but it's better than nothing.",
+   "worker_slots": null
   },
   {
    "name": "Feed Box",
@@ -51,7 +54,8 @@
    "workers": null,
    "capacity": null,
    "power": false,
-   "function": "A box for storing Pal food. Pals can feed from it when hungry. Make sure to keep it well-stocked to keep your Pals happy."
+   "function": "A box for storing Pal food. Pals can feed from it when hungry. Make sure to keep it well-stocked to keep your Pals happy.",
+   "worker_slots": null
   },
   {
    "name": "Berry Plantation",
@@ -65,7 +69,8 @@
    "workers": "Planting + Watering + Gathering",
    "capacity": null,
    "power": false,
-   "function": "A farm that can grow Red Berries . Harvest time is quick, but eating them doesn't provide much sustenance. Requires a few Pals to plant seeds, water, and harvest the crops."
+   "function": "A farm that can grow Red Berries . Harvest time is quick, but eating them doesn't provide much sustenance. Requires a few Pals to plant seeds, water, and harvest the crops.",
+   "worker_slots": 4
   },
   {
    "name": "Ranch",
@@ -79,7 +84,8 @@
    "workers": "Farming (pal partner skill determines produce)",
    "capacity": "4 pals assigned",
    "power": false,
-   "function": "Farm for raising sheep and fowl-like Pals. Assign a Pal with the appropriate Partner Skill to a farm to produce items."
+   "function": "Farm for raising sheep and fowl-like Pals. Assign a Pal with the appropriate Partner Skill to a farm to produce items.",
+   "worker_slots": 4
   },
   {
    "name": "Monitoring Stand",
@@ -92,7 +98,8 @@
    "workers": null,
    "capacity": null,
    "power": false,
-   "function": "Command your Pals to work on various things inside a base. You can allow or prohibit individual kinds of work."
+   "function": "Command your Pals to work on various things inside a base. You can allow or prohibit individual kinds of work.",
+   "worker_slots": null
   },
   {
    "name": "Hot Spring",
@@ -107,7 +114,8 @@
    "workers": null,
    "capacity": null,
    "power": false,
-   "function": "Facility where Pals on base can rest. Restores SAN after a long day of hard work."
+   "function": "Facility where Pals on base can rest. Restores SAN after a long day of hard work.",
+   "worker_slots": null
   },
   {
    "name": "Statue of Power",
@@ -120,7 +128,8 @@
    "workers": null,
    "capacity": null,
    "power": false,
-   "function": "Stone statue spoken of in legends on Palpagos Island. Offer up Lifmunk Effigy to receive strange powers."
+   "function": "Stone statue spoken of in legends on Palpagos Island. Offer up Lifmunk Effigy to receive strange powers.",
+   "worker_slots": null
   },
   {
    "name": "Egg Incubator",
@@ -135,7 +144,8 @@
    "workers": null,
    "capacity": "1 egg",
    "power": false,
-   "function": "Used for incubating a Pal Egg. If a Pal Egg is left in it, it will automatically hatch after some time has passed."
+   "function": "Used for incubating a Pal Egg. If a Pal Egg is left in it, it will automatically hatch after some time has passed.",
+   "worker_slots": null
   },
   {
    "name": "Medieval Medicine Workbench",
@@ -149,7 +159,8 @@
    "workers": "Medicine Production",
    "capacity": null,
    "power": false,
-   "function": "A facility for making Pal medicine. It can only produce simple medicines. Leave its operation to a Pal that can make medicine."
+   "function": "A facility for making Pal medicine. It can only produce simple medicines. Leave its operation to a Pal that can make medicine.",
+   "worker_slots": null
   },
   {
    "name": "Cooler Box",
@@ -163,7 +174,8 @@
    "workers": "Cooling",
    "capacity": "1 worker slots",
    "power": false,
-   "function": "Small food vault. Assign an Ice Pal to help prevent food stored inside from spoiling."
+   "function": "Small food vault. Assign an Ice Pal to help prevent food stored inside from spoiling.",
+   "worker_slots": null
   },
   {
    "name": "Pal Essence Condenser",
@@ -177,7 +189,8 @@
    "workers": null,
    "capacity": null,
    "power": false,
-   "function": "A chamber for increasing a Pal's rank. Pals can surpass their physical limitations if given a concentrated extract taken from a Pal of the same type."
+   "function": "A chamber for increasing a Pal's rank. Pals can surpass their physical limitations if given a concentrated extract taken from a Pal of the same type.",
+   "worker_slots": null
   },
   {
    "name": "Mill",
@@ -191,7 +204,8 @@
    "workers": "Watering",
    "capacity": null,
    "power": false,
-   "function": "Facility for milling Wheat to produce Flour . Requires Pal with the Watering trait to spin the water turbine."
+   "function": "Facility for milling Wheat to produce Flour . Requires Pal with the Watering trait to spin the water turbine.",
+   "worker_slots": null
   },
   {
    "name": "Wheat Plantation",
@@ -205,7 +219,8 @@
    "workers": "Planting + Watering + Gathering",
    "capacity": null,
    "power": false,
-   "function": "A farm that can grow Wheat . It requires an average amount of time to harvest. Requires a few Pals to plant seeds, water, and harvest crops."
+   "function": "A farm that can grow Wheat . It requires an average amount of time to harvest. Requires a few Pals to plant seeds, water, and harvest crops.",
+   "worker_slots": 4
   },
   {
    "name": "Cooking Pot",
@@ -219,7 +234,8 @@
    "workers": "Kindling",
    "capacity": null,
    "power": false,
-   "function": "Needed for cooking food. Use of a cooking pot allows for a wider variety of meal preparation. Requires a Fire Pal to light a flame."
+   "function": "Needed for cooking food. Use of a cooking pot allows for a wider variety of meal preparation. Requires a Fire Pal to light a flame.",
+   "worker_slots": null
   },
   {
    "name": "Heater",
@@ -233,7 +249,8 @@
    "workers": "Kindling",
    "capacity": "1 worker slots",
    "power": false,
-   "function": "A device that blows warm air, raising the temperature of a base. It doesn't provide much warmth, but helps one to endure somewhat cold environments. Requires a Fire Pal to light a flame."
+   "function": "A device that blows warm air, raising the temperature of a base. It doesn't provide much warmth, but helps one to endure somewhat cold environments. Requires a Fire Pal to light a flame.",
+   "worker_slots": null
   },
   {
    "name": "Cooler",
@@ -247,7 +264,8 @@
    "workers": "Cooling",
    "capacity": "1 worker slots",
    "power": false,
-   "function": "A device that blows cool air, lowering the temperature of a base. It doesn't provide much relief from the heat, but helps one to endure somewhat hot environments. Requires an Ice Pal for cooling."
+   "function": "A device that blows cool air, lowering the temperature of a base. It doesn't provide much relief from the heat, but helps one to endure somewhat hot environments. Requires an Ice Pal for cooling.",
+   "worker_slots": null
   },
   {
    "name": "Breeding Farm",
@@ -261,7 +279,8 @@
    "workers": "any 1 male + 1 female pal pair (not a work suitability)",
    "capacity": "2 pals (1 male + 1 female)",
    "power": false,
-   "function": "Assign one male and one female Pal to produce eggs. Placing Cake in the facility is required for production."
+   "function": "Assign one male and one female Pal to produce eggs. Placing Cake in the facility is required for production.",
+   "worker_slots": 2
   },
   {
    "name": "Pal Labor Research Lab",
@@ -274,7 +293,8 @@
    "workers": null,
    "capacity": null,
    "power": false,
-   "function": "A facility for conducting research on the various tasks of Pals. By assigning tasks to Pals in this facility, research progresses, granting various benefits."
+   "function": "A facility for conducting research on the various tasks of Pals. By assigning tasks to Pals in this facility, research progresses, granting various benefits.",
+   "worker_slots": null
   },
   {
    "name": "Tomato Plantation",
@@ -289,7 +309,8 @@
    "workers": "Planting + Watering + Gathering",
    "capacity": null,
    "power": false,
-   "function": "A farm that can grow Tomato . They take time to harvest, but increase the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops."
+   "function": "A farm that can grow Tomato . They take time to harvest, but increase the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops.",
+   "worker_slots": 4
   },
   {
    "name": "Pal Expedition Station",
@@ -304,7 +325,8 @@
    "workers": null,
    "capacity": null,
    "power": false,
-   "function": "A facility that allows Pals to be sent on expeditions to places like dungeons. The dispatched Pals engage in battles and gather items, bringing back resources to the base."
+   "function": "A facility that allows Pals to be sent on expeditions to places like dungeons. The dispatched Pals engage in battles and gather items, bringing back resources to the base.",
+   "worker_slots": null
   },
   {
    "name": "Clinic",
@@ -318,7 +340,8 @@
    "workers": "Medicine Production",
    "capacity": "1 worker slots",
    "power": false,
-   "function": "A basic medical facility for managing the health of Pals working at the base. Assigning a Pal with Medicine Production suitability helps reduce SAN depletion and prevent illness and injury. While sanitation has its limits, it plays a crucial role in early base development."
+   "function": "A basic medical facility for managing the health of Pals working at the base. Assigning a Pal with Medicine Production suitability helps reduce SAN depletion and prevent illness and injury. While sanitation has its limits, it plays a crucial role in early base development.",
+   "worker_slots": null
   },
   {
    "name": "Fluffy Pal Bed",
@@ -333,7 +356,8 @@
    "workers": null,
    "capacity": "1 pal",
    "power": false,
-   "function": "A fluffy bed that Pals can get a good rest on. Pals can rest on it when injured, or to sleep at night. Pals love sleeping on fluffy beds like this."
+   "function": "A fluffy bed that Pals can get a good rest on. Pals can rest on it when injured, or to sleep at night. Pals love sleeping on fluffy beds like this.",
+   "worker_slots": null
   },
   {
    "name": "Medicine Rack",
@@ -347,7 +371,8 @@
    "workers": null,
    "capacity": null,
    "power": false,
-   "function": "A shelf for storing medicine. Sick Pals will come here to take their medicine. Be sure to keep the medicine stocked."
+   "function": "A shelf for storing medicine. Sick Pals will come here to take their medicine. Be sure to keep the medicine stocked.",
+   "worker_slots": null
   },
   {
    "name": "Lettuce Plantation",
@@ -362,7 +387,8 @@
    "workers": "Planting + Watering + Gathering",
    "capacity": null,
    "power": false,
-   "function": "A farm that can grow Lettuce . It takes time to harvest, but increases the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops."
+   "function": "A farm that can grow Lettuce . It takes time to harvest, but increases the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops.",
+   "worker_slots": 4
   },
   {
    "name": "Human-Powered Generator",
@@ -375,7 +401,8 @@
    "workers": "any pal (converts labor to power, drains SAN)",
    "capacity": "1 worker slots",
    "power": false,
-   "function": "A facility that converts rotational motion into electrical energy. The efficiency is low, and the Pals working here will experience a decrease in SAN value, but they will gain experience points."
+   "function": "A facility that converts rotational motion into electrical energy. The efficiency is low, and the Pals working here will experience a decrease in SAN value, but they will gain experience points.",
+   "worker_slots": null
   },
   {
    "name": "Power Generator",
@@ -388,7 +415,8 @@
    "workers": "Generating Electricity",
    "capacity": "1 worker slots",
    "power": false,
-   "function": "A power generator fueled by Electric Pals. Electric equipment won't run without this."
+   "function": "A power generator fueled by Electric Pals. Electric equipment won't run without this.",
+   "worker_slots": null
   },
   {
    "name": "High Quality Monitoring Stand",
@@ -401,7 +429,8 @@
    "workers": null,
    "capacity": null,
    "power": false,
-   "function": "A refined monitoring station with improved materials and structure. In addition to being able to issue work orders, the system also lowers the SAN cost for Pals working at the base. Working conditions are slightly improved, making Pals less likely to become dissatisfied."
+   "function": "A refined monitoring station with improved materials and structure. In addition to being able to issue work orders, the system also lowers the SAN cost for Pals working at the base. Working conditions are slightly improved, making Pals less likely to become dissatisfied.",
+   "worker_slots": null
   },
   {
    "name": "Potato Plantation",
@@ -416,7 +445,8 @@
    "workers": "Planting + Watering + Gathering",
    "capacity": null,
    "power": false,
-   "function": "A farm where you can grow Potato . It takes time to harvest, but increases the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops."
+   "function": "A farm where you can grow Potato . It takes time to harvest, but increases the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops.",
+   "worker_slots": 4
   },
   {
    "name": "High Quality Hot Spring",
@@ -431,7 +461,8 @@
    "workers": null,
    "capacity": null,
    "power": false,
-   "function": "Facility where Pals on base can rest. Now comfier and restores more SAN."
+   "function": "Facility where Pals on base can rest. Now comfier and restores more SAN.",
+   "worker_slots": null
   },
   {
    "name": "Carrot Plantation",
@@ -446,7 +477,8 @@
    "workers": "Planting + Watering + Gathering",
    "capacity": null,
    "power": false,
-   "function": "A farm where you can grow Carrot . It takes time to harvest, but increases the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops."
+   "function": "A farm where you can grow Carrot . It takes time to harvest, but increases the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops.",
+   "worker_slots": 4
   },
   {
    "name": "Electric Egg Incubator",
@@ -462,7 +494,8 @@
    "capacity": "1 egg",
    "power": true,
    "function": "Device for incubating Pal eggs. Requires electricity, but automatically keeps the inside of the incubator at appropriate temperatures.",
-   "energy_per_sec": 200
+   "energy_per_sec": 200,
+   "worker_slots": null
   },
   {
    "name": "Large Pal Bed",
@@ -477,7 +510,8 @@
    "workers": null,
    "capacity": "1 pal (fits large pals)",
    "power": false,
-   "function": "A fluffy bed that Pals can get a good rest on. Pals can rest on it when injured, or to sleep at night. Even large Pals can sleep soundly on a bed like this."
+   "function": "A fluffy bed that Pals can get a good rest on. Pals can rest on it when injured, or to sleep at night. Even large Pals can sleep soundly on a bed like this.",
+   "worker_slots": null
   },
   {
    "name": "Onion Plantation",
@@ -492,7 +526,8 @@
    "workers": "Planting + Watering + Gathering",
    "capacity": null,
    "power": false,
-   "function": "A farm where you can grow Onion . It takes time to harvest, but increases the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops."
+   "function": "A farm where you can grow Onion . It takes time to harvest, but increases the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops.",
+   "worker_slots": 4
   },
   {
    "name": "Accumulator",
@@ -507,7 +542,8 @@
    "workers": null,
    "capacity": null,
    "power": false,
-   "function": "A facility for storing excess electricity generated by the Power Generator ."
+   "function": "A facility for storing excess electricity generated by the Power Generator .",
+   "worker_slots": null
   },
   {
    "name": "Refrigerator",
@@ -523,7 +559,8 @@
    "capacity": "1 worker slots",
    "power": true,
    "function": "Large food vault. Assign an Ice Pal to help prevent food stored inside from spoiling.",
-   "energy_per_sec": 50
+   "energy_per_sec": 50,
+   "worker_slots": null
   },
   {
    "name": "Electric Heater",
@@ -539,7 +576,8 @@
    "capacity": null,
    "power": true,
    "function": "A device that blows warm air, raising the temperature of a base. Using electricity, it can really heat things up. Requires a Fire Pal to light a flame.",
-   "energy_per_sec": 100
+   "energy_per_sec": 100,
+   "worker_slots": null
   },
   {
    "name": "Electric Kitchen",
@@ -555,7 +593,8 @@
    "capacity": null,
    "power": true,
    "function": "Needed for cooking food. It requires electricity to run, but allows a large amount of meals to be prepared rapidly. Requires a Fire Pal to light a flame.",
-   "energy_per_sec": 50
+   "energy_per_sec": 50,
+   "worker_slots": null
   },
   {
    "name": "Electric Cooler",
@@ -570,7 +609,8 @@
    "capacity": null,
    "power": true,
    "function": "A device that blows cool air, lowering the temperature of a base. Using electricity, it can really lower the temperature. Requires an Ice Pal for cooling.",
-   "energy_per_sec": 100
+   "energy_per_sec": 100,
+   "worker_slots": null
   },
   {
    "name": "Electric Medicine Workbench",
@@ -585,7 +625,8 @@
    "capacity": null,
    "power": true,
    "function": "A facility for making Pal medicine. It requires electricity, but can produce high quality medicine. Leave its operation to a Pal that can make medicine.",
-   "energy_per_sec": 50
+   "energy_per_sec": 50,
+   "worker_slots": null
   },
   {
    "name": "Electric Pylon",
@@ -599,7 +640,8 @@
    "workers": null,
    "capacity": null,
    "power": false,
-   "function": "Place in base to improve electricity generating speed. Placing more than one has no additional effect."
+   "function": "Place in base to improve electricity generating speed. Placing more than one has no additional effect.",
+   "worker_slots": null
   },
   {
    "name": "Large Incubator",
@@ -614,7 +656,8 @@
    "workers": null,
    "capacity": "10 eggs",
    "power": false,
-   "function": "Device for incubating Pal eggs. It automatically maintains a suitable temperature and can hatch multiple eggs at once."
+   "function": "Device for incubating Pal eggs. It automatically maintains a suitable temperature and can hatch multiple eggs at once.",
+   "worker_slots": null
   },
   {
    "name": "Large-Scale Stone Oven",
@@ -629,7 +672,8 @@
    "workers": "Kindling",
    "capacity": null,
    "power": false,
-   "function": "Needed for cooking food. By becoming larger, multiple Pals can cooperate to cook together. Requires a Fire Pal to light a flame."
+   "function": "Needed for cooking food. By becoming larger, multiple Pals can cooperate to cook together. Requires a Fire Pal to light a flame.",
+   "worker_slots": null
   },
   {
    "name": "Large Power Generator",
@@ -642,7 +686,8 @@
    "workers": "Generating Electricity",
    "capacity": "2 pals",
    "power": false,
-   "function": "A power generator fueled by Electric Pals. Larger and with improved power generation efficiency."
+   "function": "A power generator fueled by Electric Pals. Larger and with improved power generation efficiency.",
+   "worker_slots": null
   },
   {
    "name": "Cold Food Box",
@@ -656,7 +701,8 @@
    "workers": "Cooling",
    "capacity": "1 worker slots",
    "power": false,
-   "function": "A feeding box that can be kept cold. Assign an Ice Pal to it and the food inside will be less likely to spoil."
+   "function": "A feeding box that can be kept cold. Assign an Ice Pal to it and the food inside will be less likely to spoil.",
+   "worker_slots": null
   },
   {
    "name": "Pal Pod",
@@ -670,7 +716,8 @@
    "workers": null,
    "capacity": "1 pal",
    "power": false,
-   "function": "A healing pod for Pals. Used when Pals are injured or to rest at night. Thanks to technological advancements, the healing amount has increased."
+   "function": "A healing pod for Pals. Used when Pals are injured or to rest at night. Thanks to technological advancements, the healing amount has increased.",
+   "worker_slots": null
   },
   {
    "name": "Large-Scale Electric Egg Incubator",
@@ -686,7 +733,8 @@
    "capacity": "10 eggs",
    "power": true,
    "function": "Device for incubating Pal eggs. While power supply is required, it allows multiple eggs to be incubated simultaneously at the optimal temperature.",
-   "energy_per_sec": 800
+   "energy_per_sec": 800,
+   "worker_slots": null
   },
   {
    "name": "Advanced Medicine Workbench",
@@ -701,7 +749,8 @@
    "capacity": "1 worker slots",
    "power": true,
    "function": "A facility for making medicine to cure Pals' illnesses. With advanced technology, it can also create unknown medicines. Assign the task to a Pal capable of pharmacy work.",
-   "energy_per_sec": 1000
+   "energy_per_sec": 1000,
+   "worker_slots": null
   },
   {
    "name": "Ancient Kitchen",
@@ -725,7 +774,8 @@
     "high_level": true,
     "min_level": 6,
     "min_level_note": "6+ со слов игрока (PRELIMINARY); paldb пишет 'high-level' без цифры"
-   }
+   },
+   "worker_slots": null
   },
   {
    "name": "Ancient Monitoring Stand",
@@ -738,7 +788,8 @@
    "workers": null,
    "capacity": null,
    "power": false,
-   "function": "A monitoring station based on ancient technology, embedded with Red Paldium. It issues commands across the entire base through a holographic interface, reducing SAN depletion in Pals. A special wavelength surrounds the base, keeping Pals calm even in harsh working environments."
+   "function": "A monitoring station based on ancient technology, embedded with Red Paldium. It issues commands across the entire base through a holographic interface, reducing SAN depletion in Pals. A special wavelength surrounds the base, keeping Pals calm even in harsh working environments.",
+   "worker_slots": null
   },
   {
    "name": "Skillfruit Orchard",
@@ -752,7 +803,8 @@
    "workers": "Planting + Watering + Gathering",
    "capacity": null,
    "power": false,
-   "function": "A farm where Skillfruits can be cultivated. By planting the original fruit in the ground, multiple fruits of the same type can be harvested."
+   "function": "A farm where Skillfruits can be cultivated. By planting the original fruit in the ground, multiple fruits of the same type can be harvested.",
+   "worker_slots": null
   },
   {
    "name": "Ancient Clinic",
@@ -767,7 +819,8 @@
    "workers": "Medicine Production",
    "capacity": "1 worker slots",
    "power": false,
-   "function": "A top-tier medical facility that reproduces advanced ancient medical technology. It offers significantly greater protective capability than a standard clinic. By assigning a Pal with Medicine Production suitability, even bases with harsh working conditions can maintain the highest level of hygiene."
+   "function": "A top-tier medical facility that reproduces advanced ancient medical technology. It offers significantly greater protective capability than a standard clinic. By assigning a Pal with Medicine Production suitability, even bases with harsh working conditions can maintain the highest level of hygiene.",
+   "worker_slots": null
   },
   {
    "name": "Ancient Pal Bed",
@@ -781,7 +834,8 @@
    "workers": null,
    "capacity": "1 pal (fits large pals)",
    "power": false,
-   "function": "A ulitmate Pal Bed made from ancient recovery pod with soft matress. It offers one of the highest SAN recovery rates of all Pal beds, quickly relieving fatigue. It is the same size as a Large Pal Bed, allowing large Pals to rest comfortably."
+   "function": "A ulitmate Pal Bed made from ancient recovery pod with soft matress. It offers one of the highest SAN recovery rates of all Pal beds, quickly relieving fatigue. It is the same size as a Large Pal Bed, allowing large Pals to rest comfortably.",
+   "worker_slots": null
   },
   {
    "name": "Ancient Power Generator",
@@ -804,7 +858,8 @@
     "high_level": true,
     "min_level": 6,
     "min_level_note": "6+ со слов игрока (PRELIMINARY); paldb пишет 'high-level' без цифры"
-   }
+   },
+   "worker_slots": null
   },
   {
    "name": "Ancient Hatchery",
@@ -820,7 +875,8 @@
    "capacity": "2 pals (pair) + 10 egg slots, auto-incubates",
    "power": true,
    "function": "An advanced breeding facility of ancient civilization technology, enclosed in electronic glass. It fully automates everything from egg production to incubation at high speed, and increases the inheritance rate of rare skills. Pals are managed through holograms, it requires minimal pasture space.",
-   "energy_per_sec": 1200
+   "energy_per_sec": 1200,
+   "worker_slots": 2
   },
   {
    "name": "Ancient Hot Spring",
@@ -835,7 +891,8 @@
    "workers": null,
    "capacity": null,
    "power": false,
-   "function": "A hot spring built with ancient technology, filled with special water infused with Paldium. It offers the highest SAN recovery of all hot springs and also restores Health. It is the same size as a standard hot spring, and can fully heal injured Pals."
+   "function": "A hot spring built with ancient technology, filled with special water infused with Paldium. It offers the highest SAN recovery of all hot springs and also restores Health. It is the same size as a standard hot spring, and can fully heal injured Pals.",
+   "worker_slots": null
   },
   {
    "name": "Ancient Farm",
@@ -860,7 +917,8 @@
     "high_level": true,
     "min_level": 6,
     "min_level_note": "6+ со слов игрока (PRELIMINARY); paldb пишет 'high-level' без цифры"
-   }
+   },
+   "worker_slots": 4
   },
   {
    "name": "Stone Pit",
@@ -921,7 +979,7 @@
    "capacity": null,
    "power": true,
    "function": "Produces Crude Oil x1 per cycle AUTOMATICALLY - no pal needed, only power (2000/s). Player-verified 2026-07-15. Ставится на нефтяные точки.",
-   "worker_slots": null
+   "worker_slots": 0
   },
   {
    "name": "Advanced Sphere Assembly Line",
@@ -937,7 +995,8 @@
    "capacity": null,
    "power": true,
    "function": "Requires Pals that can work with their hands.",
-   "energy_per_sec": 1000
+   "energy_per_sec": 1000,
+   "worker_slots": null
   },
   {
    "name": "Advanced Weapon Assembly Line",
@@ -952,7 +1011,8 @@
    "capacity": null,
    "power": true,
    "function": "Requires Pals that can work with their hands.",
-   "energy_per_sec": 1000
+   "energy_per_sec": 1000,
+   "worker_slots": null
   },
   {
    "name": "Advanced Workshop",
@@ -968,7 +1028,8 @@
    "capacity": null,
    "power": true,
    "function": "Requires Pals that can work with their hands.",
-   "energy_per_sec": 1000
+   "energy_per_sec": 1000,
+   "worker_slots": null
   },
   {
    "name": "Ancient Furnace",
@@ -993,7 +1054,8 @@
     "high_level": true,
     "min_level": 6,
     "min_level_note": "6+ со слов игрока (PRELIMINARY); paldb пишет 'high-level' без цифры"
-   }
+   },
+   "worker_slots": null
   },
   {
    "name": "Ancient Workbench",
@@ -1017,7 +1079,8 @@
     "high_level": true,
     "min_level": 6,
     "min_level_note": "6+ со слов игрока (PRELIMINARY)"
-   }
+   },
+   "worker_slots": null
   },
   {
    "name": "Crusher",
@@ -1031,7 +1094,8 @@
    "workers": "Watering",
    "capacity": null,
    "power": false,
-   "function": "Requires Pal with the Watering trait to spin the water turbine."
+   "function": "Requires Pal with the Watering trait to spin the water turbine.",
+   "worker_slots": null
   },
   {
    "name": "Electric Furnace",
@@ -1047,7 +1111,8 @@
    "capacity": null,
    "power": true,
    "function": "It requires electricity to use, but is quicker to process.",
-   "energy_per_sec": 500
+   "energy_per_sec": 500,
+   "worker_slots": null
   },
   {
    "name": "Gigantic Furnace",
@@ -1063,7 +1128,8 @@
    "capacity": null,
    "power": true,
    "function": "By growing in size, multiple Pals can collaborate to perform smelting.",
-   "energy_per_sec": 1500
+   "energy_per_sec": 1500,
+   "worker_slots": null
   },
   {
    "name": "Gold Coin Assembly Line",
@@ -1079,7 +1145,8 @@
    "capacity": null,
    "power": true,
    "function": "Warning: building this facility may draw severe scrutiny from the PIDF.",
-   "energy_per_sec": 200
+   "energy_per_sec": 200,
+   "worker_slots": null
   },
   {
    "name": "High Quality Workbench",
@@ -1093,7 +1160,8 @@
    "workers": "Handiwork",
    "capacity": null,
    "power": false,
-   "function": "accessory, ammo, armor, consumable, key_item, material, technology, weapon"
+   "function": "accessory, ammo, armor, consumable, key_item, material, technology, weapon",
+   "worker_slots": null
   },
   {
    "name": "Improved Furnace",
@@ -1108,7 +1176,8 @@
    "workers": "Kindling",
    "capacity": null,
    "power": false,
-   "function": "The quality has improved, but the processing speed is still unsatisfactory."
+   "function": "The quality has improved, but the processing speed is still unsatisfactory.",
+   "worker_slots": null
   },
   {
    "name": "Pal Gear Workbench",
@@ -1122,7 +1191,8 @@
    "workers": "Handiwork",
    "capacity": null,
    "power": false,
-   "function": "Make a saddle to ride Pals, or make a gun for Pals to use."
+   "function": "Make a saddle to ride Pals, or make a gun for Pals to use.",
+   "worker_slots": null
   },
   {
    "name": "Primitive Furnace",
@@ -1136,7 +1206,8 @@
    "workers": "Kindling",
    "capacity": null,
    "power": false,
-   "function": "The quality leaves much to desire, and processing is slow."
+   "function": "The quality leaves much to desire, and processing is slow.",
+   "worker_slots": null
   },
   {
    "name": "Primitive Workbench",
@@ -1148,7 +1219,8 @@
    "workers": "Handiwork",
    "capacity": null,
    "power": false,
-   "function": "Requires a Pal that can work with their hands."
+   "function": "Requires a Pal that can work with their hands.",
+   "worker_slots": null
   },
   {
    "name": "Production Assembly Line",
@@ -1164,7 +1236,8 @@
    "capacity": null,
    "power": true,
    "function": "accessory, ammo, armor, key_item, material, technology, weapon",
-   "energy_per_sec": 200
+   "energy_per_sec": 200,
+   "worker_slots": null
   },
   {
    "name": "Production Assembly Line II",
@@ -1180,7 +1253,8 @@
    "capacity": null,
    "power": true,
    "function": "ammo, armor, consumable, key_item, material, technology, weapon",
-   "energy_per_sec": 400
+   "energy_per_sec": 400,
+   "worker_slots": null
   },
   {
    "name": "Sphere Assembly Line",
@@ -1196,7 +1270,8 @@
    "capacity": null,
    "power": true,
    "function": "Requires Pals that can work with their hands.",
-   "energy_per_sec": 200
+   "energy_per_sec": 200,
+   "worker_slots": null
   },
   {
    "name": "Sphere Assembly Line II",
@@ -1212,7 +1287,8 @@
    "capacity": null,
    "power": true,
    "function": "Requires Pals that can work with their hands.",
-   "energy_per_sec": 400
+   "energy_per_sec": 400,
+   "worker_slots": null
   },
   {
    "name": "Sphere Workbench",
@@ -1227,7 +1303,8 @@
    "workers": "Handiwork",
    "capacity": null,
    "power": false,
-   "function": "Requires Pals that can work with their hands."
+   "function": "Requires Pals that can work with their hands.",
+   "worker_slots": null
   },
   {
    "name": "Weapon Assembly Line",
@@ -1243,7 +1320,8 @@
    "capacity": null,
    "power": true,
    "function": "Requires Pals that can work with their hands.",
-   "energy_per_sec": 200
+   "energy_per_sec": 200,
+   "worker_slots": null
   },
   {
    "name": "Weapon Assembly Line II",
@@ -1259,7 +1337,8 @@
    "capacity": null,
    "power": true,
    "function": "Requires Pals that can work with their hands.",
-   "energy_per_sec": 400
+   "energy_per_sec": 400,
+   "worker_slots": null
   },
   {
    "name": "Weapon Workbench",
@@ -1273,7 +1352,8 @@
    "workers": "Handiwork",
    "capacity": null,
    "power": false,
-   "function": "Requires Pals that can work with their hands."
+   "function": "Requires Pals that can work with their hands.",
+   "worker_slots": null
   },
   {
    "name": "Mine",
@@ -1287,7 +1367,8 @@
    "workers": null,
    "capacity": null,
    "power": false,
-   "category_note": "defensive trap (не добыча!); Electric/Ice версии повышают шанс поимки наступившего пала"
+   "category_note": "defensive trap (не добыча!); Electric/Ice версии повышают шанс поимки наступившего пала",
+   "worker_slots": null
   },
   {
    "name": "Electric Mine",
@@ -1301,7 +1382,8 @@
    "workers": null,
    "capacity": null,
    "power": false,
-   "category_note": "defensive trap (не добыча!); Electric/Ice версии повышают шанс поимки наступившего пала"
+   "category_note": "defensive trap (не добыча!); Electric/Ice версии повышают шанс поимки наступившего пала",
+   "worker_slots": null
   },
   {
    "name": "Coal Mine",
@@ -1331,7 +1413,8 @@
    "workers": null,
    "capacity": null,
    "power": false,
-   "category_note": "defensive trap (не добыча!); Electric/Ice версии повышают шанс поимки наступившего пала"
+   "category_note": "defensive trap (не добыча!); Electric/Ice версии повышают шанс поимки наступившего пала",
+   "worker_slots": null
   },
   {
    "name": "Sulfur Mine",
@@ -1442,7 +1525,7 @@
    "workers": null,
    "capacity": null,
    "power": true,
-   "worker_slots": null
+   "worker_slots": 0
   },
   {
    "name": "WoodCreator",
@@ -1454,7 +1537,8 @@
    "ancient_tech": false,
    "workers": "Lumbering",
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Repair Bench",
@@ -1467,7 +1551,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Pal Dressing Facility",
@@ -1480,7 +1565,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Guild Chest",
@@ -1494,7 +1580,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Dimensional Pal Storage",
@@ -1508,7 +1595,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Global Palbox",
@@ -1522,7 +1610,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Fishing Pond",
@@ -1536,7 +1625,8 @@
    "ancient_tech": false,
    "workers": "Handiwork (workload)",
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Large Fishing Pond",
@@ -1551,7 +1641,8 @@
    "ancient_tech": false,
    "workers": "Handiwork (workload)",
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Summoning Altar",
@@ -1564,7 +1655,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Item Retrieval Machine",
@@ -1578,7 +1670,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Pal Surgery Table",
@@ -1592,7 +1685,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Pal Disassembly Conveyor",
@@ -1607,7 +1701,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Ancient Relic Recycler",
@@ -1623,7 +1718,8 @@
    "ancient_tech": true,
    "workers": null,
    "capacity": null,
-   "power": true
+   "power": true,
+   "worker_slots": null
   },
   {
    "name": "Ancient Material Synthesizer",
@@ -1638,7 +1734,7 @@
    "workers": "Mining + Lumbering (1 пал)",
    "capacity": null,
    "power": true,
-   "worker_slots": null
+   "worker_slots": 1
   },
   {
    "name": "Beta Wave Generator",
@@ -1652,7 +1748,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Refrigerated Crusher",
@@ -1668,7 +1765,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": true
+   "power": true,
+   "worker_slots": null
   },
   {
    "name": "Witch Cauldron",
@@ -1683,7 +1781,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Water Fountain",
@@ -1697,7 +1796,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Silo",
@@ -1712,7 +1812,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Flower Bed",
@@ -1727,7 +1828,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Wooden Chest",
@@ -1740,7 +1842,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Metal Chest",
@@ -1753,7 +1856,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Refined Metal Chest",
@@ -1767,7 +1871,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Advanced Chest",
@@ -1781,7 +1886,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Shoddy Bed",
@@ -1795,7 +1901,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Fine Bed",
@@ -1810,7 +1917,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Ancient Turret",
@@ -1824,7 +1932,8 @@
    "ancient_tech": true,
    "workers": null,
    "capacity": null,
-   "power": true
+   "power": true,
+   "worker_slots": null
   },
   {
    "name": "Ancient Air Conditioner",
@@ -1839,7 +1948,8 @@
    "ancient_tech": true,
    "workers": null,
    "capacity": null,
-   "power": true
+   "power": true,
+   "worker_slots": null
   },
   {
    "name": "Palbox Control Device",
@@ -1852,7 +1962,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   },
   {
    "name": "Drafting Table",
@@ -1866,7 +1977,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": null
   }
  ],
  "foods": [
@@ -2986,7 +3098,8 @@
   "2026-07-15: работники добывающих станций назначены по типу продукта (руда/уголь/кварц/нефть = Mining, лес = Lumbering) — подтверждено игроком; ранний парс ошибочно брал Handiwork из workload-таблицы ПОСТРОЙКИ здания.",
   "2026-07-15: Crude Oil Extractor работает без палов (только электричество) - подтверждено игроком; High-Pressure предположительно тоже, не проверено. Таблица 'Workload/Handiwork' на paldb - это workload ПОСТРОЙКИ.",
   "2026-07-15: Ancient Workbench крафтит и материалы (подтверждено items.json: Polymer/Computer/AI Core имеют его альтернативой) — Production-линия на 67+ не нужна. Дозаполнены worker_req у станций, чьи описания были затёрты при раннем сборе.",
-  "2026-07-15: worker_slots=3 у placeable добывающих станций (Pit/Mining Site/Quarry/Coal/Sulfur/Logging) — сообщено игроком; до 3 палов на станцию стакают скорость добычи. paldb это поле не публикует."
+  "2026-07-15: worker_slots=3 у placeable добывающих станций (Pit/Mining Site/Quarry/Coal/Sulfur/Logging) — сообщено игроком; до 3 палов на станцию стакают скорость добычи. paldb это поле не публикует.",
+  "2026-07-15: worker_slots — подтверждённые значения (шахты/лесопилки 3, Ranch 4, плантации 4, Synthesizer 1, экстракторы нефти 0-без палов, брид-фермы 2-пара). paldb число мест НЕ публикует — у остальных зданий worker_slots=null, планировщик считает как 1 (одноместные верстаки/печи). gap."
  ],
  "gaps": [
   "Per-crop plantation yield_per_harvest and absolute growth-cycle seconds are undocumented in fetched sources (yield scales with gatherer DropNumRate; see plantation_cycles).",

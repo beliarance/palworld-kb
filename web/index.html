@@ -634,7 +634,8 @@ class BasePlan {
     this.hire("Ribbuny Botan",1,"оружейный верстак (+200~400%)");
     this.hire("Anubis",2,"верстаки — пара с Sekhmet"); this.hire("Sekhmet",1,"буст Anubis +20~40%");
     this.hireTransport();
-    const cool=this.best(["Cooler Box","Refrigerator"]); if(cool){ this.add(cool,1); this.hireBest("Cooling",3,1,"холодильник"); }
+    if(o.spoilage){ const cool=this.best(["Cooler Box","Refrigerator"]); if(cool){ this.add(cool,1); this.hireBest("Cooling",3,1,"холодильник (замедляет порчу)"); } }
+    else this.notes.push("Порча выключена (настройка мира): холодильник и Cooling-пал не нужны — хватает Feed Box");
     if(o.food==="self") this.foodModule(o.slots);
     this.infra(o.slots); this.power(true);
     this.notes.push("Placeable-шахты: по 1 каждого типа на базу — майнинг+крафт на одной базе эффективнее"); }
@@ -778,7 +779,8 @@ function builderOpts(){
     plantsPerWorker:3,farms:+val("pfarms")||null,dish:val("pdish")||"Salad",dishRate:+val("pdishrate")||30,
     eggInterval:+val("peggint")||5,eggBoost:+val("peggboost")||1.35,
     incubation:val("pincub")===""?1:+val("pincub"),cake:val("pcake")||"Cake",
-    perStation:+val("ppers")||1,dishes:plannerDishes.length?plannerDishes:null};
+    perStation:+val("ppers")||1,spoilage:document.getElementById("pspoil").checked,
+    dishes:plannerDishes.length?plannerDishes:null};
 }
 
 render.planner = () => {
@@ -809,6 +811,7 @@ render.planner = () => {
   </div>
   <div class="row fld fld-mine-craft" style="margin-top:8px">
     <label class="dim" title="у шахт до 3 мест; больше палов на станцию = быстрее добыча">палов на станцию <input type="number" id="ppers" value="1" min="1" max="3" style="width:60px;min-width:60px"></label>
+    <label class="dim" title="настройка мира: если еда не портится — холодильник не нужен"><input type="checkbox" id="pspoil" checked> еда портится</label>
   </div>
   <div class="row fld fld-food" style="margin-top:8px">
     <select id="pdish"></select>
@@ -829,7 +832,7 @@ render.planner = () => {
   };
   document.getElementById("pp").addEventListener("input",updateVis);
   window._updateVis=updateVis;
-  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","peggboost","pincub","pcake","ppers"]){
+  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","peggboost","pincub","pcake","ppers","pspoil"]){
     document.getElementById(id).addEventListener("input",()=>{
       if(!baseDirty && BASE.buildings.length) seedFromPreset();
       else if(baseDirty){ const el=document.getElementById("rebuild-hint"); if(el) el.style.display=""; }
