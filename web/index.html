@@ -510,36 +510,65 @@ class BasePlan {
     this.add(gen,heavy?2:1);
     if(gen!=="Human-Powered Generator") this.hireBest("Generating_Electricity",6,heavy?2:1,"электрик");
     if(heavy&&this.best(["Accumulator"])) this.add("Accumulator",2); }
+  chainCalc(name, ratePerH, acc){
+    // раскладка рецепта до плантаций/ранча/привозного; acc={plants,ranch,imports,crafts}
+    const PLANTS={"Red Berries":"Berry Plantation","Wheat":"Wheat Plantation","Tomato":"Tomato Plantation",
+      "Lettuce":"Lettuce Plantation","Potato":"Potato Plantation","Carrot":"Carrot Plantation","Onion":"Onion Plantation"};
+    const ranchMap=D.idx.inverted.ranch_produce;
+    const expand=(n,perH,depth=0)=>{
+      if(PLANTS[n]) acc.plants[n]=(acc.plants[n]||0)+perH;
+      else if(ranchMap[n]) acc.ranch[n]=(acc.ranch[n]||0)+perH;
+      else if(depth<5&&itemByName[n]?.recipe){ acc.crafts[n]=(acc.crafts[n]||0)+perH;
+        for(const [m,q] of Object.entries(itemByName[n].recipe.materials)) expand(m,q*perH,depth+1); }
+      else acc.imports[n]=(acc.imports[n]||0)+perH; };
+    const it=itemByName[name];
+    if(it?.recipe) for(const [m,q] of Object.entries(it.recipe.materials)) expand(m,q*ratePerH);
+    return acc;
+  }
   breedingStaffFor(farms){
-    const o=this.o, cakes=farms*60/(o.eggInterval||D.bb.rates.breeding_egg_interval_minutes)*(o.eggBoost||1.35);
-    const per={Flour:5*cakes,RedBerries:8*cakes,Milk:7*cakes,Egg:8*cakes,Honey:2*cakes};
-    const rr=o.ranchRate*this.q();
-    const ranch={Mozzarina:Math.ceil(per.Milk/rr),Chikipi:Math.ceil(per.Egg/rr),Beegarde:Math.ceil(per.Honey/rr)};
-    const wheat=Math.ceil(per.Flour*3/o.plantYield), berry=Math.ceil(per.RedBerries/o.plantYield);
-    const trio=3*Math.ceil((wheat+berry)/(o.plantsPerWorker*this.q()));
-    const cooks=Math.max(1,Math.ceil(cakes/(o.cookRate*this.q())));
-    const mills=Math.max(1,Math.ceil(per.Flour/60));
+    const o=this.o, cake=o.cake||"Cake";
+    const eggsPerCake=cake==="Vegetable Cake"?2:1;
+    const cakes=farms*60/(o.eggInterval||D.bb.rates.breeding_egg_interval_minutes)*(o.eggBoost||1.0);
+    const acc=this.chainCalc(cake,cakes,{plants:{},ranch:{},imports:{},crafts:{}});
+    const rr=o.ranchRate*this.q(), ranchMap=D.idx.inverted.ranch_produce;
+    const ranch={};
+    for(const [prod,perH] of Object.entries(acc.ranch)) ranch[ranchMap[prod][0]]=Math.ceil(perH/rr);
+    const plantsN={}; let totPl=0;
+    for(const [crop,perH] of Object.entries(acc.plants)){ plantsN[crop]=Math.ceil(perH/o.plantYield); totPl+=plantsN[crop]; }
+    const trio=3*Math.ceil(totPl/(o.plantsPerWorker*this.q()));
+    const ops=cakes+Object.values(acc.crafts).reduce((a,b)=>a+b,0)-(acc.crafts.Flour||0);
+    const cooks=Math.max(1,Math.ceil(ops/(o.cookRate*this.q())));
+    const mills=acc.crafts.Flour?Math.max(1,Math.ceil(acc.crafts.Flour/60)):0;
     const heads=2*farms+Object.values(ranch).reduce((a,b)=>a+b,0)+trio+cooks+mills;
-    return {cakes,per,ranch,wheat,berry,trio,cooks,mills,heads}; }
+    return {cakes,eggs:cakes*eggsPerCake,acc,ranch,plantsN,trio,cooks,mills,heads}; }
   presetBreeding(){
     const o=this.o, hatch=o.tech>=76&&this.structs["Ancient Hatchery"], farm=hatch?"Ancient Hatchery":"Breeding Farm";
     const budget=o.slots-13-(o.food==="self"?4:0);
     let farms=o.farms||1;
     if(!o.farms) while(farms<40&&this.breedingStaffFor(farms+1).heads<=budget) farms++;
     const L=this.breedingStaffFor(farms);
-    const sup=[["egg_speed","яйца +20~50%"]];
+    const sup=[["egg_speed","яйца +20~50%"],["base_defense","ПВО базы от рейдов"]];
     if(o.incubation>0) sup.push(["incubation","инкубация -20~40%"]);
     else this.notes.push("Инкубация мгновенная (мир = 0): инкубаторы и Dynamoff не нужны");
     this.supportCore(sup.concat([["crop_growth","рост культур +50~70%"],
       ["crop_yield","урожай +18~35%"],["sanity_save","SAN -10~15% утечка"],["suitability:Watering","+1 Watering всем"],["suitability:Planting","+1 Planting всем"]]));
     this.hire("Woolipop Terra",1,"саппорт: голод -15~25% + Caramel Cotton Candy");
     this.add(farm,farms); this.hire("(пары родителей)",2*farms,`в ${farm} x${farms}`);
-    for(const [sp,n] of Object.entries(L.ranch)) this.hire(sp,n,`ранч (${({Mozzarina:"Milk",Chikipi:"Egg",Beegarde:"Honey"})[sp]})`);
+    const rm=D.idx.inverted.ranch_produce;
+    for(const [sp,n] of Object.entries(L.ranch)){
+      const prod=Object.keys(L.acc.ranch).find(p=>rm[p][0]===sp)||"?";
+      this.hire(sp,n,`ранч: ${prod} (${(L.acc.ranch[prod]||0).toFixed(0)}/час)`); }
     this.add("Ranch",Math.ceil(Object.values(L.ranch).reduce((a,b)=>a+b,0)/4));
-    this.add("Wheat Plantation",L.wheat); this.add("Berry Plantation",L.berry);
-    this.add("Mill",L.mills); this.hireBest("Watering",4,L.mills,"мельница");
-    const kit=this.best(["Cooking Pot","Electric Kitchen","Large-Scale Stone Oven","Ancient Kitchen"]);
-    this.add(kit,L.cooks); this.hireBest("Kindling",4,L.cooks,"повар тортов");
+    const PL={"Red Berries":"Berry Plantation","Wheat":"Wheat Plantation","Tomato":"Tomato Plantation",
+      "Lettuce":"Lettuce Plantation","Potato":"Potato Plantation","Carrot":"Carrot Plantation","Onion":"Onion Plantation"};
+    for(const [crop,n] of Object.entries(L.plantsN)){ const pl=this.best([PL[crop]]); if(pl) this.add(pl,n); }
+    if(L.mills){ this.add("Mill",L.mills); this.hireBest("Watering",4,L.mills,"мельница"); }
+    for(const [n,perH] of Object.entries(L.acc.imports))
+      this.notes.push(`⚠ привозное для торта «${o.cake||"Cake"}»: ${n} x${perH.toFixed(0)}/час`);
+    const cakeStation=itemByName[o.cake||"Cake"]?.recipe?.station||"Cooking Pot";
+    const kit=this.structs[cakeStation]&&(this.structs[cakeStation].tech_level||0)<=o.tech?cakeStation:
+      this.best(["Cooking Pot","Electric Kitchen","Large-Scale Stone Oven","Ancient Kitchen"]);
+    this.add(kit,L.cooks); this.hireBest("Kindling",4,L.cooks,`повар тортов (${o.cake||"Cake"})`);
     const tr=L.trio/3;
     this.hireBest("Planting",3,tr,"посадка"); this.hireBest("Watering",3,tr,"полив"); this.hireBest("Gathering",3,tr,"сбор");
     this.hireTransport();
@@ -549,7 +578,7 @@ class BasePlan {
         this.assume.push(`Инкубаторы: ${nI} = фермы x2 x множитель мира ${o.incubation}`); } }
     if(o.food==="self") this.foodModule(o.slots); else this.notes.push("Еда привозная — вози Salad/Pizza guild chest'ом");
     this.infra(o.slots); if(hatch||(kit&&this.structs[kit]?.power)) this.power(hatch);
-    this.notes.push(`${farm} x${farms}: ~${L.cakes.toFixed(0)} яиц/час (${(L.cakes*24).toFixed(0)}/сутки) с учётом Braloha x${o.eggBoost||1.35}`);
+    this.notes.push(`${farm} x${farms}: ~${L.eggs.toFixed(0)} яиц/час (${(L.eggs*24).toFixed(0)}/сутки), тортов ${L.cakes.toFixed(0)}/час; буст x${o.eggBoost||1.0} (1.0 = торты лимитируют, Braloha просто без простоев)`+(o.cake==="Vegetable Cake"?" — Vegetable Cake: 2 яйца за цикл!":""));
     if(hatch) this.notes.push("⚠ Ancient Hatchery: скорость кладки принята как у фермы (5 мин/яйцо); гайды говорят '~10 сек/цикл' (PRELIMINARY) — замерь и впиши в «яйцо, мин»");
     this.notes.push("В пати при сборе яиц: Broncherry Aqua (альфа-яйца 45~55%) + Grintale (лишнее яйцо 50~75%)");
     this.assume.push(`Ранч ${o.ranchRate} дропов/час, кухня ${o.cookRate} тортов/час на повара — x качество`); }
@@ -566,7 +595,7 @@ class BasePlan {
       this.hireBest("Mining",6,1,"Ancient Material Synthesizer (ВСЕ виды дерева и руды, 1 пал)");
       this.notes.push("Ancient Material Synthesizer (78): все виды дерева/руды с одного здания — что именно покрывает, проверь в игре"); }
     this.notes.push(`Добыча (${sites.length} станций, по 1 на базу): ${sites.join(", ")}`);
-    this.supportCore([["suitability:Mining","+1 Mining всем"],["suitability:Handiwork","+1 Handiwork всем"],
+    this.supportCore([["suitability:Mining","+1 Mining всем"],["base_defense","ПВО базы от рейдов"],["suitability:Handiwork","+1 Handiwork всем"],
       ["suitability:Transporting","+1 Transport всем"],["sanity_save","SAN базы"]]);
     const structsW=Object.fromEntries(D.bb.structures.map(x=>[x.name,x]));
     const mSites=sites.filter(x=>(structsW[x].workers||"")==="Mining"), lSites=sites.filter(x=>(structsW[x].workers||"")==="Lumbering");
@@ -605,10 +634,17 @@ class BasePlan {
     this.infra(o.slots); this.power(true);
     this.notes.push("Placeable-шахты: по 1 каждого типа на базу — майнинг+крафт на одной базе эффективнее"); }
   presetFood(){
-    const o=this.o, dish=o.dish||"Salad";
+    const o=this.o;
+    const dishes=o.dishes||[{dish:o.dish||"Salad",rate:o.dishRate}];
+    for(const d of dishes) this.foodChain(d.dish,d.rate);
+    this.hireTransport(); this.infra(o.slots);
+    if(dishes.some(d=>this.structs[itemByName[d.dish]?.recipe?.station]?.power)) this.power(false);
+    this.assume.push(`Плантация ${o.plantYield}/час; ранч ${o.ranchRate}/час; кухня ${o.cookRate} оп/час на повара`);
+  }
+  foodChain(dish, rate){
+    const o=this.o;
     const fd=D.bb.foods.find(f=>f.name===dish), it=itemByName[dish];
     if(!fd||!it||!it.recipe){ this.notes.push(`Блюдо '${dish}' не найдено/без рецепта — выбери в селекторе`); return; }
-    const rate=o.dishRate;
     this.notes.push(`Блюдо: ${dish} [${fd.category}] — сытость ${fd.nutrition}, SAN +${fd.sanity}${fd.buffs?", "+fd.buffs.join(", "):""}; цель ${rate} блюд/час`);
     const PLANTS={"Red Berries":"Berry Plantation","Wheat":"Wheat Plantation","Tomato":"Tomato Plantation",
       "Lettuce":"Lettuce Plantation","Potato":"Potato Plantation","Carrot":"Carrot Plantation","Onion":"Onion Plantation"};
@@ -641,11 +677,7 @@ class BasePlan {
       const nK=Math.max(1,Math.ceil(ops/(o.cookRate*this.q())));
       this.add(station,nK); this.hireBest("Kindling",4,nK,`повар (${dish} + полуфабрикаты, ${ops.toFixed(0)} оп/час)`); }
     for(const [n,perH] of Object.entries(imports)) this.notes.push(`⚠ привозной ингредиент: ${n} x${perH.toFixed(0)}/час (плантации нет — охота/рыбалка/закупка)`);
-    for(const [n,perH] of Object.entries(crafts)) this.notes.push(`полуфабрикат: ${n} x${perH.toFixed(0)}/час (на месте)`);
-    this.hireTransport();
-    this.infra(o.slots);
-    if(this.structs[station]?.power) this.power(false);
-    this.assume.push(`${rate} блюд/час; плантация ${o.plantYield}/час; ранч ${o.ranchRate}/час; кухня ${o.cookRate} оп/час на повара`); }
+    for(const [n,perH] of Object.entries(crafts)) this.notes.push(`полуфабрикат: ${n} x${perH.toFixed(0)}/час (на месте)`); }
   presetStarter(){
     this.o.tech=Math.min(this.o.tech,20);
     for(const [s,n] of [["Palbox",1],["Wooden Chest",3],["Feed Box",1],["Ranch",1],["Berry Plantation",2],["Wheat Plantation",1],
@@ -656,7 +688,8 @@ class BasePlan {
     this.hireBest("Planting",2,1,"посадка"); this.hireBest("Watering",2,1,"полив"); this.hireBest("Transporting",2,2,"переноска"); }
   run(){
     ({breeding:()=>this.presetBreeding(),"mine-craft":()=>this.presetMineCraft(),
-      food:()=>this.presetFood(),starter:()=>this.presetStarter()})[this.o.preset]();
+      food:()=>this.presetFood(),starter:()=>this.presetStarter(),
+      free:()=>{ this.notes.push("Свободное творчество: собирай базу вручную — «+ здание» и пикер палов справа"); }})[this.o.preset]();
     return this; }
   html(){
     const total=this.crew.reduce((a,[,c])=>a+c,0), o=this.o;
@@ -739,12 +772,13 @@ function builderOpts(){
     ranchRate:+val("pranch")||12,plantYield:+val("pyield")||60,cookRate:+val("pcook")||30,
     plantsPerWorker:3,farms:+val("pfarms")||null,dish:val("pdish")||"Salad",dishRate:+val("pdishrate")||30,
     eggInterval:+val("peggint")||5,eggBoost:+val("peggboost")||1.35,
-    incubation:val("pincub")===""?1:+val("pincub")};
+    incubation:val("pincub")===""?1:+val("pincub"),cake:val("pcake")||"Cake",
+    dishes:plannerDishes.length?plannerDishes:null};
 }
 
 render.planner = () => {
   V().innerHTML = `<div class="card"><div class="row">
-    <select id="pp"><option value="breeding">Бридинг</option><option value="mine-craft">Майнинг+крафт</option><option value="food">Еда-хаб</option><option value="starter">Стартовая</option></select>
+    <select id="pp"><option value="breeding">🥚 Бридинг</option><option value="mine-craft">⛏ Майнинг+крафт</option><option value="food">🍽 Еда-хаб</option><option value="starter">🏕 Стартовая</option><option value="free">✨ Свободное творчество</option></select>
     <button class="tag clicky" style="cursor:pointer;font-size:13px" onclick="seedFromPreset()">⚙ применить пресет</button>
     <span id="rebuild-hint" class="warn" style="display:none">параметры изменены — «применить пресет» перестроит (ручные правки сбросятся)</span>
     <button class="tag clicky" style="cursor:pointer;font-size:13px" onclick="BASE={buildings:[],crew:[]};openB=openC=null;drawBase()">🗑 очистить всё</button>
@@ -760,19 +794,34 @@ render.planner = () => {
     <select id="pwf"><option value="baseline">Дикие (x1.0)</option><option value="passives" selected>Бридовые (x2.2)</option><option value="max">4-пассивки (x2.75)</option></select>
     <select id="proster"><option value="top">Ростер: топ</option><option value="easy">Ростер: легко достать</option></select>
     <label><input type="checkbox" id="plux"> люкс</label>
-  </div><div class="row" style="margin-top:8px">
-    <label class="dim">ранч дроп/час <input type="number" id="pranch" value="12" style="width:60px;min-width:60px"></label>
-    <label class="dim">плантация ед/час <input type="number" id="pyield" value="60" style="width:60px;min-width:60px"></label>
-    <label class="dim">тортов/час <input type="number" id="pcook" value="30" style="width:60px;min-width:60px"></label>
+  </div>
+  <div class="row fld fld-breeding" style="margin-top:8px">
+    <select id="pcake" title="какой торт производить"><option>Cake</option><option>Mushroom Cake</option><option>Vegetable Cake</option><option>Extravagant Vegetable Cake</option><option>Special Cake</option></select>
     <label class="dim">ферм <input type="number" id="pfarms" style="width:60px;min-width:60px"></label>
     <label class="dim">яйцо, мин <input type="number" id="peggint" value="5" step="0.1" style="width:60px;min-width:60px"></label>
-    <label class="dim">буст яиц x <input type="number" id="peggboost" value="1.35" step="0.05" style="width:60px;min-width:60px"></label>
+    <label class="dim" title="1.0 = торты лимитируют (Braloha без простоев); 1.35+ = линия под буст">буст яиц x <input type="number" id="peggboost" value="1.0" step="0.05" style="width:60px;min-width:60px"></label>
     <label class="dim" title="настройка мира: 0 = мгновенная инкубация">инкубация (мир) <input type="number" id="pincub" value="1" step="0.5" min="0" style="width:60px;min-width:60px"></label>
+  </div>
+  <div class="row fld fld-food" style="margin-top:8px">
     <select id="pdish"></select>
     <label class="dim">блюд/час <input type="number" id="pdishrate" value="30" style="width:60px;min-width:60px"></label>
-  </div></div>
+    <button class="tag clicky" style="cursor:pointer" onclick="addDish()">+ ещё блюдо</button>
+    <span id="dishchips"></span>
+  </div>
+  <details style="margin-top:8px"><summary class="dim" style="cursor:pointer">⚙ допущения (скорости ранча/плантаций/кухни)</summary>
+  <div class="row" style="margin-top:6px">
+    <label class="dim">ранч дроп/час <input type="number" id="pranch" value="12" style="width:60px;min-width:60px"></label>
+    <label class="dim">плантация ед/час <input type="number" id="pyield" value="60" style="width:60px;min-width:60px"></label>
+    <label class="dim">готовок/час на повара <input type="number" id="pcook" value="30" style="width:60px;min-width:60px"></label>
+  </div></details></div>
   <div id="bout"></div>`;
-  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","peggboost","pincub"]){
+  const updateVis=()=>{
+    const t=document.getElementById("pp").value;
+    document.querySelectorAll(".fld").forEach(el=>{ el.style.display=el.classList.contains("fld-"+t)?"":"none"; });
+  };
+  document.getElementById("pp").addEventListener("input",updateVis);
+  window._updateVis=updateVis;
+  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","peggboost","pincub","pcake"]){
     document.getElementById(id).addEventListener("input",()=>{
       if(!baseDirty && BASE.buildings.length) seedFromPreset();
       else if(baseDirty){ const el=document.getElementById("rebuild-hint"); if(el) el.style.display=""; }
@@ -784,8 +833,22 @@ render.planner = () => {
     ["base_buff","combat","breeding","meal"].map(cat=>
       `<optgroup label="${cats[cat]}">`+D.bb.foods.filter(f=>f.category===cat&&itemByName[f.name]?.recipe)
         .map(f=>`<option value="${esc(f.name)}">${esc(f.name)} — сыт.${f.nutrition}${f.buffs?", "+f.buffs.join("/"):""}</option>`).join("")+"</optgroup>").join("");
+  updateVis();
+  drawDishChips();
   drawBase();
 };
+let plannerDishes=[]; // [{dish, rate}] — несколько рецептов для еда-хаба
+function addDish(){
+  const d=document.getElementById("pdish").value, r=+document.getElementById("pdishrate").value||30;
+  if(d){ plannerDishes.push({dish:d,rate:r}); drawDishChips();
+    if(!baseDirty&&BASE.buildings.length) seedFromPreset(); }
+}
+function delDish(i){ plannerDishes.splice(i,1); drawDishChips(); if(!baseDirty&&BASE.buildings.length) seedFromPreset(); }
+function drawDishChips(){
+  const el=document.getElementById("dishchips");
+  if(el) el.innerHTML=plannerDishes.map((d,i)=>
+    `<span class="tag">${esc(d.dish)} x${d.rate}/ч <span class="clicky" onclick="delDish(${i})">✕</span></span>`).join("");
+}
 
 function drawBase(){
   const out=document.getElementById("bout"); if(!out) return;

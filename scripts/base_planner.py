@@ -234,21 +234,41 @@ class Planner:
         """Подсчёт голов тортовой линии на `farms` ферм (без найма). Возвращает словарь."""
         a = self.args
         interval = a.egg_interval or self.bb["rates"]["breeding_egg_interval_minutes"]
-        # Braloha (+20~50% скорость яиц) есть в саппортах — торты нужны чаще
         cakes_h = farms * 60 / interval * a.egg_boost
-        need = {"Flour": 5, "Red Berries": 8, "Milk": 7, "Egg": 8, "Honey": 2}
-        per_h = {k: v * cakes_h for k, v in need.items()}
-        rr = a.ranch_rate * self.q()   # пассивки ускоряют и ранч-палов
-        ranch = {ing: math.ceil(per_h[m] / rr) for ing, m in
-                 [("Mozzarina", "Milk"), ("Chikipi", "Egg"), ("Beegarde", "Honey")]}
-        wheat = math.ceil(per_h["Flour"] * 3 / a.plant_yield)
-        berry = math.ceil(per_h["Red Berries"] / a.plant_yield)
-        trio = 3 * math.ceil((wheat + berry) / (a.plants_per_worker * self.q()))
-        cooks = max(1, math.ceil(cakes_h / (a.cook_rate * self.q())))
-        mills = max(1, math.ceil(per_h["Flour"] / 60))
-        heads = 2 * farms + sum(ranch.values()) + trio + cooks + mills  # родители в фермах тоже слоты
-        return {"cakes_h": cakes_h, "per_h": per_h, "ranch": ranch, "mills": mills,
-                "wheat": wheat, "berry": berry, "trio": trio, "cooks": cooks, "heads": heads}
+        cake = a.cake
+        eggs_per_cake = 2 if cake == "Vegetable Cake" else 1
+        # цепочка по рецепту выбранного торта (как в food-пресете)
+        PLANTS = {"Red Berries": "Berry Plantation", "Wheat": "Wheat Plantation",
+                  "Tomato": "Tomato Plantation", "Lettuce": "Lettuce Plantation",
+                  "Potato": "Potato Plantation", "Carrot": "Carrot Plantation", "Onion": "Onion Plantation"}
+        ranch_map = self.idx["inverted"]["ranch_produce"]
+        plants, ranch_prod, imports, crafts = {}, {}, {}, {}
+
+        def expand(name, per_hour, depth=0):
+            if name in PLANTS:
+                plants[name] = plants.get(name, 0) + per_hour
+            elif name in ranch_map:
+                ranch_prod[name] = ranch_prod.get(name, 0) + per_hour
+            elif depth < 5 and self.items.get(name, {}).get("recipe"):
+                crafts[name] = crafts.get(name, 0) + per_hour
+                for m, q in self.items[name]["recipe"]["materials"].items():
+                    expand(m, q * per_hour, depth + 1)
+            else:
+                imports[name] = imports.get(name, 0) + per_hour
+
+        for m, q in (self.items.get(cake, {}).get("recipe") or {"materials": {}})["materials"].items():
+            expand(m, q * cakes_h)
+        rr = a.ranch_rate * self.q()
+        ranch = {ranch_map[p][0]: math.ceil(v / rr) for p, v in ranch_prod.items()}
+        plants_n = {c: math.ceil(v / a.plant_yield) for c, v in plants.items()}
+        trio = 3 * math.ceil(sum(plants_n.values()) / (a.plants_per_worker * self.q())) if plants_n else 0
+        ops = cakes_h + sum(crafts.values()) - crafts.get("Flour", 0)
+        cooks = max(1, math.ceil(ops / (a.cook_rate * self.q())))
+        mills = max(1, math.ceil(crafts.get("Flour", 0) / 60)) if crafts.get("Flour") else 0
+        heads = 2 * farms + sum(ranch.values()) + trio + cooks + mills
+        return {"cakes_h": cakes_h, "eggs_h": cakes_h * eggs_per_cake, "ranch": ranch,
+                "ranch_prod": ranch_prod, "plants_n": plants_n, "PLANTS": PLANTS,
+                "imports": imports, "trio": trio, "cooks": cooks, "mills": mills, "heads": heads}
 
     def preset_breeding(self):
         a = self.args
@@ -265,7 +285,7 @@ class Planner:
                 farms += 1
         line = self.breeding_staff_for(farms)
 
-        support_kinds = [("egg_speed", "яйца +20~50%")]
+        support_kinds = [("egg_speed", "яйца +20~50%"), ("base_defense", "ПВО базы от рейдов")]
         if a.incubation > 0:
             support_kinds.append(("incubation", "инкубация -20~40%"))
         else:
@@ -278,17 +298,24 @@ class Planner:
 
         self.add(farm_name, farms)
         self.hire("(пары родителей)", 2 * farms, f"в {farm_name} x{farms}")
+        rm = self.idx["inverted"]["ranch_produce"]
         for sp, n in line["ranch"].items():
-            ing = {"Mozzarina": "Milk", "Chikipi": "Egg", "Beegarde": "Honey"}[sp]
-            self.hire(sp, n, f"ранч: {ing} ({line['per_h'][ing]:.0f}/час)")
+            prod = next((p for p in line["ranch_prod"] if rm[p][0] == sp), "?")
+            self.hire(sp, n, f"ранч: {prod} ({line['ranch_prod'].get(prod, 0):.0f}/час)")
         self.add("Ranch", math.ceil(sum(line["ranch"].values()) / 4))
-        self.add("Wheat Plantation", line["wheat"])
-        self.add("Berry Plantation", line["berry"])
-        self.add("Mill", line["mills"])
-        self.hire_best("Watering", 4, line["mills"], "мельница")
-        kitchen = self.best(["Cooking Pot", "Electric Kitchen", "Large-Scale Stone Oven", "Ancient Kitchen"])
+        for crop, n in line["plants_n"].items():
+            pl = self.best([line["PLANTS"][crop]])
+            if pl:
+                self.add(pl, n)
+        for name, per_h in line["imports"].items():
+            self.notes.append(f"⚠ привозное для торта «{a.cake}»: {name} x{per_h:.0f}/час")
+        if line["mills"]:
+            self.add("Mill", line["mills"])
+            self.hire_best("Watering", 4, line["mills"], "мельница")
+        cake_station = (self.items.get(a.cake, {}).get("recipe") or {}).get("station")
+        kitchen = cake_station if cake_station in self.structs and             (self.structs[cake_station]["tech_level"] or 0) <= a.tech else             self.best(["Cooking Pot", "Electric Kitchen", "Large-Scale Stone Oven", "Ancient Kitchen"])
         self.add(kitchen, line["cooks"])
-        self.hire_best("Kindling", 4, line["cooks"], "повар тортов")
+        self.hire_best("Kindling", 4, line["cooks"], f"повар тортов ({a.cake})")
         n_trio = line["trio"] // 3
         self.hire_best("Planting", 3, n_trio, "посадка")
         self.hire_best("Watering", 3, n_trio, "полив")
@@ -310,8 +337,8 @@ class Planner:
         if hatchery or (kitchen and self.structs.get(kitchen, {}).get("power")):
             self.power(heavy=hatchery)
 
-        self.notes.append(f"{farm_name} x{farms}: ~{line['cakes_h']:.0f} яиц/час = {line['cakes_h']*24:.0f}/сутки "
-                          f"при полном снабжении тортами (с учётом Braloha x{a.egg_boost})"
+        self.notes.append(f"{farm_name} x{farms}: ~{line['eggs_h']:.0f} яиц/час = {line['eggs_h']*24:.0f}/сутки, тортов {line['cakes_h']:.0f}/час "
+                          f"при полном снабжении тортами (x буст {a.egg_boost} (1.0 = торты лимитируют, Braloha без простоев))"
                           + (" (авто-инкубация, 10 слотов яиц)" if hatchery else ""))
         if hatchery:
             self.notes.append("⚠ Ancient Hatchery: скорость производства яиц принята как у обычной фермы "
@@ -359,6 +386,7 @@ class Planner:
                               + ("; ставится в любой точке" if "High-Pressure" in ext else "; нужна нефтяная точка"))
         self.notes.append(f"Добыча ({len(sites)} станций, по 1 на базу): {', '.join(sites)}")
         self.support_core([("suitability:Mining", "+1 Mining всем (Tetroise)"),
+                           ("base_defense", "ПВО базы от рейдов (Panthalus)"),
                            ("suitability:Handiwork", "+1 Handiwork всем (Ribbuny)"),
                            ("suitability:Transporting", "+1 Transport всем (Wumpo)"),
                            ("sanity_save", "SAN базы (Shroomer Noct)")])
@@ -588,10 +616,14 @@ def main():
     ap.add_argument("--dish-rate", type=float, default=30, help="(food) блюд/час")
     ap.add_argument("--egg-interval", type=float, default=None,
                     help="(breeding) минут на яйцо (по умолчанию 5 из данных; для хатчери замерь в игре)")
+    ap.add_argument("--cake", default="Cake",
+                    choices=["Cake", "Mushroom Cake", "Vegetable Cake", "Extravagant Vegetable Cake", "Special Cake"],
+                    help="(breeding) какой торт производить (Vegetable = 2 яйца за цикл)")
     ap.add_argument("--incubation", type=float, default=1,
                     help="(breeding) множитель скорости инкубации из настроек МИРА: 0 = мгновенно (без инкубаторов и Dynamoff)")
-    ap.add_argument("--egg-boost", type=float, default=1.35,
-                    help="(breeding) множитель скорости яиц от Braloha +20~50%% (середина 1.35)")
+    ap.add_argument("--egg-boost", type=float, default=1.0,
+                    help="(breeding) 1.0 = тортовая линия под базовую скорость (Braloha лишь убирает простои); "
+                         "1.35-1.5 = линия под реализованный буст Braloha (яйца +20~50%%)")
     ap.add_argument("--ranch-rate", type=float, default=12, help="дропов/час на ранч-пала (ДОПУЩЕНИЕ)")
     ap.add_argument("--plant-yield", type=float, default=60, help="единиц урожая/час с плантации (ДОПУЩЕНИЕ)")
     ap.add_argument("--cook-rate", type=float, default=30, help="тортов/час на повара (ДОПУЩЕНИЕ)")
