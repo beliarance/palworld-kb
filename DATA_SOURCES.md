@@ -169,6 +169,15 @@
   (+ уровневые подзоны через отрезание суффикса `[Lv. X-Y]`). Входы в данжи
   для данжевых альфа-боссов не документированы — пробел.
 
+## data/icons.json — карта "items" (иконки предметов, 2026-07-15)
+
+- https://paldb.cc/en/Items (страница-список всех предметов): пары slug → cdn-URL иконки
+  извлечены одним запросом (`scripts/collectors/fetch_item_icons.py`,
+  кэш — `data/raw/item_icon_urls.json`). Покрытие 1195/1195 имён из items.json.
+  4 предмета (Mythical Wooden Board, Potage, Sunreach Rapid-Fire/Single-Shot Ammo)
+  на самом paldb имеют плейсхолдер `T_icon_unknown.webp` — оставлен как есть.
+  NB: часть файлов cdn.paldb.cc отдаёт 403 без заголовка `Referer: https://paldb.cc/`.
+
 ## docs/ — гайды (компиляции, собраны 2026-07-14)
 
 - `breeding_mechanics.md` — game8.co (cake, инхерит пассивок, condenser, IV, пассивки),
