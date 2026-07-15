@@ -1854,7 +1854,9 @@
    "sanity": null,
    "work_speed_buff": null,
    "spoil_notes": null,
-   "notes": "A home-cooked meal from a doting farmer. It gives off an absolutely mouthwatering aroma."
+   "notes": "A home-cooked meal from a doting farmer. It gives off an absolutely mouthwatering aroma.",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Flour",
@@ -1862,7 +1864,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 2400 seconds (base timer)",
-   "notes": "Flour made from grinding Wheat . It can be used as an ingredient in making Bread ."
+   "notes": "Flour made from grinding Wheat . It can be used as an ingredient in making Bread .",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Wheat",
@@ -1870,7 +1874,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 2400 seconds (base timer)",
-   "notes": "An ingredient that forms the base of various dishes. Wheat is a common crop in many parts of the world."
+   "notes": "An ingredient that forms the base of various dishes. Wheat is a common crop in many parts of the world.",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Onion",
@@ -1878,7 +1884,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 2701 seconds (base timer)",
-   "notes": "A cherished and easy-to-grow vegetable with a rich history. Not suitable for eating raw."
+   "notes": "A cherished and easy-to-grow vegetable with a rich history. Not suitable for eating raw.",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Carrot",
@@ -1886,7 +1894,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 2701 seconds (base timer)",
-   "notes": "A vibrant, nutrient-rich root vegetable. Not suitable for raw consumption."
+   "notes": "A vibrant, nutrient-rich root vegetable. Not suitable for raw consumption.",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Honey",
@@ -1894,7 +1904,9 @@
    "sanity": 3.0,
    "work_speed_buff": null,
    "spoil_notes": null,
-   "notes": "Honey harvested from Beegarde . It's sweet and tasty."
+   "notes": "Honey harvested from Beegarde . It's sweet and tasty.",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Potato",
@@ -1902,7 +1914,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 2701 seconds (base timer)",
-   "notes": "A hardy and filling crop that grows in any terrain. Not suitable for raw consumption."
+   "notes": "A hardy and filling crop that grows in any terrain. Not suitable for raw consumption.",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Milk",
@@ -1910,7 +1924,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 600 seconds (base timer)",
-   "notes": "Drink it as is, or use it in various meals. Can be milked from Mozzarina ."
+   "notes": "Drink it as is, or use it in various meals. Can be milked from Mozzarina .",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Mushroom",
@@ -1918,7 +1934,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 901 seconds (base timer)",
-   "notes": "A mushroom that can be eaten raw. They can be found anywhere on the island."
+   "notes": "A mushroom that can be eaten raw. They can be found anywhere on the island.",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Lettuce",
@@ -1926,7 +1944,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 600 seconds (base timer)",
-   "notes": "A leafy green. When it comes to salad, this is a must. It has an exquisitely crunchy texture and refreshing taste."
+   "notes": "A leafy green. When it comes to salad, this is a must. It has an exquisitely crunchy texture and refreshing taste.",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Red Berries",
@@ -1934,7 +1954,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 600 seconds (base timer)",
-   "notes": "A versatile ingredient that is delicious raw or cooked. They can be found anywhere on the island."
+   "notes": "A versatile ingredient that is delicious raw or cooked. They can be found anywhere on the island.",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Tomato",
@@ -1942,7 +1964,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 600 seconds (base timer)",
-   "notes": "A fresh ingredient that brightens any dish. Filled with lycopene, they’re also very healthy."
+   "notes": "A fresh ingredient that brightens any dish. Filled with lycopene, they’re also very healthy.",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Egg",
@@ -1950,7 +1974,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 600 seconds (base timer)",
-   "notes": "Delicious when fried, but can also be used to cook various meals. Chikipi produce them."
+   "notes": "Delicious when fried, but can also be used to cook various meals. Chikipi produce them.",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Hot Milk",
@@ -1958,7 +1984,9 @@
    "sanity": 1.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 600 seconds (base timer)",
-   "notes": "Even more delicious when warmed up. Great for keeping hunger away."
+   "notes": "Even more delicious when warmed up. Great for keeping hunger away.",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Baked Mushroom",
@@ -1966,7 +1994,9 @@
    "sanity": 1.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 1800 seconds (base timer)",
-   "notes": "Cooking this mushroom enhances its nutritional value. Curiously, it's also quite filling."
+   "notes": "Cooking this mushroom enhances its nutritional value. Curiously, it's also quite filling.",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Raw Meat",
@@ -1974,7 +2004,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 600 seconds (base timer)",
-   "notes": "Pal meat. It’s so fresh that even a human could safely eat it raw."
+   "notes": "Pal meat. It’s so fresh that even a human could safely eat it raw.",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Baked Berries",
@@ -1982,7 +2014,9 @@
    "sanity": 1.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 901 seconds (base timer)",
-   "notes": "Cooking enhances their nutritional value, and surprisingly, they are quite filling."
+   "notes": "Cooking enhances their nutritional value, and surprisingly, they are quite filling.",
+   "buffs": null,
+   "category": "meal"
   },
   {
    "name": "Fried Egg",
@@ -1990,7 +2024,9 @@
    "sanity": 1.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 1200 seconds (base timer)",
-   "notes": "An Egg now fried and even more delicious. Great for keeping hunger away."
+   "notes": "An Egg now fried and even more delicious. Great for keeping hunger away.",
+   "buffs": null,
+   "category": "meal"
   },
   {
    "name": "Bread",
@@ -1998,7 +2034,9 @@
    "sanity": 4.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 1200 seconds (base timer)",
-   "notes": "Bread made from baked Flour . A tasty staple food."
+   "notes": "Bread made from baked Flour . A tasty staple food.",
+   "buffs": null,
+   "category": "meal"
   },
   {
    "name": "French Fries",
@@ -2006,7 +2044,9 @@
    "sanity": 10.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 600 seconds (base timer)",
-   "notes": "A dish made by deep-frying Potato . Once you start eating, you can't stop. Eating it will make it harder for your SAN value to decrease for a period of time."
+   "notes": "A dish made by deep-frying Potato . Once you start eating, you can't stop. Eating it will make it harder for your SAN value to decrease for a period of time.",
+   "buffs": null,
+   "category": "meal"
   },
   {
    "name": "Corn",
@@ -2014,7 +2054,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 1800 seconds (base timer)",
-   "notes": "en Text"
+   "notes": "en Text",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Grape",
@@ -2022,7 +2064,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 1800 seconds (base timer)",
-   "notes": "Grape"
+   "notes": "Grape",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Pancake",
@@ -2030,7 +2074,9 @@
    "sanity": 5.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 1200 seconds (base timer)",
-   "notes": "A dish made by mixing Flour and Milk together then baking. Eating it progressively decreases the rate at which one's sanity decreases for a period of time."
+   "notes": "A dish made by mixing Flour and Milk together then baking. Eating it progressively decreases the rate at which one's sanity decreases for a period of time.",
+   "buffs": null,
+   "category": "meal"
   },
   {
    "name": "Grilled Meat",
@@ -2038,7 +2084,9 @@
    "sanity": 3.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 600 seconds (base timer)",
-   "notes": "Grilled meat. A full stomach leads to smiling faces."
+   "notes": "Grilled meat. A full stomach leads to smiling faces.",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Pumpkin",
@@ -2046,7 +2094,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 1800 seconds (base timer)",
-   "notes": "en Text"
+   "notes": "en Text",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Jam-Filled Bun",
@@ -2054,7 +2104,9 @@
    "sanity": 6.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 3600 seconds (base timer)",
-   "notes": "Bread with jam spread on it. The sweetness of the berries complements it perfectly."
+   "notes": "Bread with jam spread on it. The sweetness of the berries complements it perfectly.",
+   "buffs": null,
+   "category": "meal"
   },
   {
    "name": "Mushroom Soup",
@@ -2062,7 +2114,9 @@
    "sanity": 7.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 1200 seconds (base timer)",
-   "notes": "Cream soup made of Mushroom s. Eating it allows you to stay fuller for slightly longer for a period of time."
+   "notes": "Cream soup made of Mushroom s. Eating it allows you to stay fuller for slightly longer for a period of time.",
+   "buffs": null,
+   "category": "meal"
   },
   {
    "name": "Stir-Fried Vegetables",
@@ -2070,7 +2124,12 @@
    "sanity": 7.0,
    "work_speed_buff": "Work Speed +10 for 600s",
    "spoil_notes": "spoils in 600 seconds (base timer)",
-   "notes": "A dish made by stir-frying Carrot and Onion . A simple and delicious way to enjoy vegetables. Eating it will slightly increase your work speed and improve your Defense by 10% for a period of time."
+   "notes": "A dish made by stir-frying Carrot and Onion . A simple and delicious way to enjoy vegetables. Eating it will slightly increase your work speed and improve your Defense by 10% for a period of time.",
+   "buffs": [
+    "Work Speed +10 for 600s",
+    "Defense +10%"
+   ],
+   "category": "base_buff"
   },
   {
    "name": "Marinated Mushrooms",
@@ -2078,7 +2137,11 @@
    "sanity": 7.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 1200 seconds (base timer)",
-   "notes": "A dish made by marinating Mushroom s in a marinade. Eating it improves Defense by +10% for a period of time."
+   "notes": "A dish made by marinating Mushroom s in a marinade. Eating it improves Defense by +10% for a period of time.",
+   "buffs": [
+    "Defense +10%"
+   ],
+   "category": "combat"
   },
   {
    "name": "Omelet",
@@ -2086,7 +2149,11 @@
    "sanity": 7.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 1200 seconds (base timer)",
-   "notes": "A dish made by frying an Egg and topping it with ketchup. Eating it improves Attack by +10% for a period of time."
+   "notes": "A dish made by frying an Egg and topping it with ketchup. Eating it improves Attack by +10% for a period of time.",
+   "buffs": [
+    "Attack +10%"
+   ],
+   "category": "combat"
   },
   {
    "name": "Grilled Fish",
@@ -2094,7 +2161,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 3600 seconds (base timer)",
-   "notes": "Grilled Fish"
+   "notes": "Grilled Fish",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Salad",
@@ -2102,7 +2171,11 @@
    "sanity": 11.0,
    "work_speed_buff": "Work Speed +30 for 600s",
    "spoil_notes": "spoils in 1200 seconds (base timer)",
-   "notes": "A Salad made by mixing Lettuce and Tomato . Eating it slightly improves work speed for a period of time."
+   "notes": "A Salad made by mixing Lettuce and Tomato . Eating it slightly improves work speed for a period of time.",
+   "buffs": [
+    "Work Speed +30 for 600s"
+   ],
+   "category": "base_buff"
   },
   {
    "name": "Potage",
@@ -2110,7 +2183,9 @@
    "sanity": 2.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 3600 seconds (base timer)",
-   "notes": "Potage"
+   "notes": "Potage",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Seafood Salad",
@@ -2118,7 +2193,9 @@
    "sanity": 1.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 1200 seconds (base timer)",
-   "notes": "A healthy salad made with Gloopie Tentacle and Lettuce . Eating it will slightly increase EXP gain for a period of time."
+   "notes": "A healthy salad made with Gloopie Tentacle and Lettuce . Eating it will slightly increase EXP gain for a period of time.",
+   "buffs": null,
+   "category": "meal"
   },
   {
    "name": "Corn Soup",
@@ -2126,7 +2203,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 3600 seconds (base timer)",
-   "notes": "Corn Soup"
+   "notes": "Corn Soup",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Sandwich",
@@ -2134,7 +2213,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 3600 seconds (base timer)",
-   "notes": "Sandwich"
+   "notes": "Sandwich",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Seafood Soup",
@@ -2142,7 +2223,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 3600 seconds (base timer)",
-   "notes": "Seafood Soup"
+   "notes": "Seafood Soup",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Stew",
@@ -2150,7 +2233,9 @@
    "sanity": 0.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 3600 seconds (base timer)",
-   "notes": "Stew"
+   "notes": "Stew",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Hot Dog",
@@ -2158,7 +2243,9 @@
    "sanity": 7.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 3600 seconds (base timer)",
-   "notes": "A culinary dinner sandwiching a sausage in an Bread . Consumption leads to an improved sense of fullness for a specific period."
+   "notes": "A culinary dinner sandwiching a sausage in an Bread . Consumption leads to an improved sense of fullness for a specific period.",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "Gratin",
@@ -2166,7 +2253,11 @@
    "sanity": 14.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 600 seconds (base timer)",
-   "notes": "A dish made by coating potatoes with sauce and baking them to perfection. Best enjoyed hot and fresh. Eating it will provide lasting fullness and increase your Defense by 10% for a period of time."
+   "notes": "A dish made by coating potatoes with sauce and baking them to perfection. Best enjoyed hot and fresh. Eating it will provide lasting fullness and increase your Defense by 10% for a period of time.",
+   "buffs": [
+    "Defense +10%"
+   ],
+   "category": "combat"
   },
   {
    "name": "Spring Rolls",
@@ -2174,7 +2265,11 @@
    "sanity": 14.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 600 seconds (base timer)",
-   "notes": "A dish made by wrapping vegetables and mushrooms in a thin skin and deep-frying them. The crispy texture is delightful. Eating it will make it harder for your SAN value to decrease and increase your Attack by 10% for a period of time."
+   "notes": "A dish made by wrapping vegetables and mushrooms in a thin skin and deep-frying them. The crispy texture is delightful. Eating it will make it harder for your SAN value to decrease and increase your Attack by 10% for a period of time.",
+   "buffs": [
+    "Attack +10%"
+   ],
+   "category": "combat"
   },
   {
    "name": "Carbonara",
@@ -2182,7 +2277,11 @@
    "sanity": 16.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 1200 seconds (base timer)",
-   "notes": "A dish mixing pasta with Egg and Milk . Eating it makes it improves Defense by +20% for a period of time."
+   "notes": "A dish mixing pasta with Egg and Milk . Eating it makes it improves Defense by +20% for a period of time.",
+   "buffs": [
+    "Defense +20%"
+   ],
+   "category": "combat"
   },
   {
    "name": "Minestrone",
@@ -2190,7 +2289,11 @@
    "sanity": 18.0,
    "work_speed_buff": "Work Speed +40 for 600s",
    "spoil_notes": "spoils in 600 seconds (base timer)",
-   "notes": "A soup simmered with a variety of vegetables. Drinking it warms you to the core. Eating it will increase your work speed for a period of time."
+   "notes": "A soup simmered with a variety of vegetables. Drinking it warms you to the core. Eating it will increase your work speed for a period of time.",
+   "buffs": [
+    "Work Speed +40 for 600s"
+   ],
+   "category": "base_buff"
   },
   {
    "name": "Mushroom Quiche",
@@ -2198,7 +2301,9 @@
    "sanity": 23.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 600 seconds (base timer)",
-   "notes": "A dish made by baking a pastry crust filled with eggs, vegetables, mushrooms, and cream. It’s delicious even when cooled. Eating it will help you stay fuller for a while and make it harder for your SAN value to decrease for a period of time."
+   "notes": "A dish made by baking a pastry crust filled with eggs, vegetables, mushrooms, and cream. It’s delicious even when cooled. Eating it will help you stay fuller for a while and make it harder for your SAN value to decrease for a period of time.",
+   "buffs": null,
+   "category": "meal"
   },
   {
    "name": "Pizza",
@@ -2206,7 +2311,11 @@
    "sanity": 23.0,
    "work_speed_buff": "Work Speed +30 for 600s",
    "spoil_notes": "spoils in 1200 seconds (base timer)",
-   "notes": "A dish made by piling Red Berries , Tomato and cheese on Bread . Eating it slightly improves work speed and allows you to stay fuller for slightly longer for a period of time."
+   "notes": "A dish made by piling Red Berries , Tomato and cheese on Bread . Eating it slightly improves work speed and allows you to stay fuller for slightly longer for a period of time.",
+   "buffs": [
+    "Work Speed +30 for 600s"
+   ],
+   "category": "base_buff"
   },
   {
    "name": "Seafood Pasta",
@@ -2214,7 +2323,11 @@
    "sanity": 15.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 1800 seconds (base timer)",
-   "notes": "Fresh pasta is tossed with fragrant seafood in this exceptional dish, using Gloopie tentacles to elevate it even further. When eaten, it nullifies damage from explosions for a certain period of time."
+   "notes": "Fresh pasta is tossed with fragrant seafood in this exceptional dish, using Gloopie tentacles to elevate it even further. When eaten, it nullifies damage from explosions for a certain period of time.",
+   "buffs": [
+    "Explosion immunity"
+   ],
+   "category": "combat"
   },
   {
    "name": "Mushroom Stew",
@@ -2222,7 +2335,12 @@
    "sanity": 11.0,
    "work_speed_buff": "Work Speed +10 for 600s",
    "spoil_notes": "spoils in 3600 seconds (base timer)",
-   "notes": "A stew made with Mushroom . Consumption elevates work speed and offers Attack +10% for a particular duration."
+   "notes": "A stew made with Mushroom . Consumption elevates work speed and offers Attack +10% for a particular duration.",
+   "buffs": [
+    "Work Speed +10 for 600s",
+    "Attack +10%"
+   ],
+   "category": "base_buff"
   },
   {
    "name": "Curry",
@@ -2230,7 +2348,9 @@
    "sanity": 12.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 3600 seconds (base timer)",
-   "notes": "Curry"
+   "notes": "Curry",
+   "buffs": null,
+   "category": "ingredient"
   },
   {
    "name": "BLT",
@@ -2238,7 +2358,11 @@
    "sanity": 22.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 3600 seconds (base timer)",
-   "notes": "A dish where bacon, Lettuce , Tomato are sandwiched in Bread . Consumption increases Attack by +15% for a while."
+   "notes": "A dish where bacon, Lettuce , Tomato are sandwiched in Bread . Consumption increases Attack by +15% for a while.",
+   "buffs": [
+    "Attack +15%"
+   ],
+   "category": "combat"
   },
   {
    "name": "Hamburger",
@@ -2246,7 +2370,11 @@
    "sanity": 22.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 3600 seconds (base timer)",
-   "notes": "A dish where a hamburger, Lettuce the Tomato are contained in the Bread . When eaten, it boosts one's stomach fullness and Attack by +10% for a while."
+   "notes": "A dish where a hamburger, Lettuce the Tomato are contained in the Bread . When eaten, it boosts one's stomach fullness and Attack by +10% for a while.",
+   "buffs": [
+    "Attack +10%"
+   ],
+   "category": "combat"
   },
   {
    "name": "Cheeseburger",
@@ -2254,7 +2382,11 @@
    "sanity": 22.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 3600 seconds (base timer)",
-   "notes": "A meal made with a Hamburger with cheese squeezed between it. Upon consumption, it increases the satiety level for a certain period as well as Defense +10%."
+   "notes": "A meal made with a Hamburger with cheese squeezed between it. Upon consumption, it increases the satiety level for a certain period as well as Defense +10%.",
+   "buffs": [
+    "Defense +10%"
+   ],
+   "category": "combat"
   },
   {
    "name": "Cake",
@@ -2262,7 +2394,9 @@
    "sanity": 82.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 1200 seconds (base timer)",
-   "notes": "A dish eaten during celebrations. Put it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg."
+   "notes": "A dish eaten during celebrations. Put it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg.",
+   "buffs": null,
+   "category": "breeding"
   },
   {
    "name": "Mushroom Cake",
@@ -2270,7 +2404,9 @@
    "sanity": 84.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 1200 seconds (base timer)",
-   "notes": "Place it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg. The talents of the resulting Pals will grow slightly more easily."
+   "notes": "Place it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg. The talents of the resulting Pals will grow slightly more easily.",
+   "buffs": null,
+   "category": "breeding"
   },
   {
    "name": "Vegetable Cake",
@@ -2278,7 +2414,9 @@
    "sanity": 87.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 1200 seconds (base timer)",
-   "notes": "Place it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg. Lay eggs twice at once."
+   "notes": "Place it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg. Lay eggs twice at once.",
+   "buffs": null,
+   "category": "breeding"
   },
   {
    "name": "Extravagant Vegetable Cake",
@@ -2286,7 +2424,9 @@
    "sanity": 90.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 1200 seconds (base timer)",
-   "notes": "Place it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg. Mutations are more likely to occur, and talents will grow more easily."
+   "notes": "Place it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg. Mutations are more likely to occur, and talents will grow more easily.",
+   "buffs": null,
+   "category": "breeding"
   },
   {
    "name": "Special Cake",
@@ -2294,7 +2434,9 @@
    "sanity": 92.0,
    "work_speed_buff": null,
    "spoil_notes": "spoils in 1200 seconds (base timer)",
-   "notes": "Place it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg. More likely inherit multiple passive skills from their parents."
+   "notes": "Place it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg. More likely inherit multiple passive skills from their parents.",
+   "buffs": null,
+   "category": "breeding"
   }
  ],
  "pal_food_amount": {

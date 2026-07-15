@@ -363,24 +363,82 @@ class Planner:
                           "High-Pressure (tech 51) — В ЛЮБОЙ точке, но жрёт 3000 энергии/с — нужен Ancient Power Generator")
 
     def preset_food(self):
+        """Еда-хаб под конкретное блюдо: --dish "Pizza" --dish-rate 30 (блюд/час)."""
         a = self.args
-        self.support_core([("crop_growth", "Lullu"), ("crop_yield", "Prunelia"),
-                           ("suitability:Planting", "Petallia"), ("suitability:Watering", "Amione"),
-                           ("suitability:Farming", "+1 Farming всем (Cinnamoth)")])
-        for pl in ["Berry Plantation", "Wheat Plantation", "Tomato Plantation", "Lettuce Plantation",
-                   "Potato Plantation", "Carrot Plantation", "Onion Plantation"]:
-            s = self.best([pl])
-            if s:
-                self.add(s, 2)
-        total_pl = sum(self.buildings.get(p, 0) for p in list(self.buildings) if "Plantation" in p)
-        self.plant_crew(total_pl)
-        kitchen = self.best(["Cooking Pot", "Electric Kitchen", "Large-Scale Stone Oven", "Ancient Kitchen"])
-        self.add(kitchen, 2)
-        self.hire_best("Kindling", 5, 2, "повар")
-        self.hire("Eidrolon", 2, "транспорт")
+        dish = a.dish or "Salad"
+        foods = {f["name"]: f for f in self.bb["foods"]}
+        fd = foods.get(dish)
+        it = self.items.get(dish)
+        if not fd or not it or not it.get("recipe"):
+            sys.exit(f"Блюдо '{dish}' не найдено или без рецепта. Варианты: " +
+                     ", ".join(sorted(n for n, f in foods.items()
+                                      if f.get("category") in ("meal", "base_buff", "combat", "breeding")
+                                      and self.items.get(n, {}).get("recipe"))))
+        rate = a.dish_rate
+        buffs = ", ".join(fd.get("buffs") or []) or "без баффов"
+        self.notes.append(f"Блюдо: {dish} [{fd.get('category')}] — сытость {fd.get('nutrition')}, "
+                          f"SAN +{fd.get('sanity')}, {buffs}; цель {rate} блюд/час")
+
+        PLANTS = {"Red Berries": "Berry Plantation", "Wheat": "Wheat Plantation",
+                  "Tomato": "Tomato Plantation", "Lettuce": "Lettuce Plantation",
+                  "Potato": "Potato Plantation", "Carrot": "Carrot Plantation", "Onion": "Onion Plantation"}
+        ranch_map = self.idx["inverted"]["ranch_produce"]
+        need_plants, need_ranch, imports, crafts = {}, {}, {}, {}
+
+        def expand(name, per_hour, depth=0):
+            if name in PLANTS:
+                need_plants[name] = need_plants.get(name, 0) + per_hour
+            elif name in ranch_map:
+                need_ranch[name] = need_ranch.get(name, 0) + per_hour
+            elif depth < 5 and self.items.get(name, {}).get("recipe"):
+                r = self.items[name]["recipe"]
+                crafts[name] = crafts.get(name, 0) + per_hour
+                for m, q in r["materials"].items():
+                    expand(m, q * per_hour, depth + 1)
+            else:
+                imports[name] = imports.get(name, 0) + per_hour
+
+        for m, q in it["recipe"]["materials"].items():
+            expand(m, q * rate)
+
+        for crop, per_h in need_plants.items():
+            n = math.ceil(per_h / a.plant_yield)
+            pl = self.best([PLANTS[crop]])
+            if pl:
+                self.add(pl, n)
+            else:
+                imports[crop] = imports.get(crop, 0) + per_h
+        total_pl = sum(self.buildings.get(p, 0) for p in PLANTS.values())
+        if total_pl:
+            self.plant_crew(total_pl)
+            self.support_core([("crop_growth", "Lullu"), ("crop_yield", "Prunelia"),
+                               ("suitability:Planting", "+1 Planting"), ("suitability:Watering", "+1 Watering")])
+        for prod, per_h in need_ranch.items():
+            sp = ranch_map[prod][0]
+            self.hire(sp, math.ceil(per_h / (a.ranch_rate * self.q())), f"ранч: {prod} ({per_h:.0f}/час)")
+        if need_ranch:
+            ranchers = sum(math.ceil(v / (a.ranch_rate * self.q())) for v in need_ranch.values())
+            self.add("Ranch", math.ceil(ranchers / 4))
+            self.support_core([("suitability:Farming", "+1 Farming всем")])
+        if "Wheat" in need_plants or "Flour" in crafts:
+            self.add("Mill", max(1, math.ceil(crafts.get("Flour", 0) / 60)))
+            self.hire_best("Watering", 4, 1, "мельница")
+        station = it["recipe"].get("station")
+        if station and station in self.structs:
+            ops = sum(crafts.values()) + rate
+            n_k = max(1, math.ceil(ops / (a.cook_rate * self.q())))
+            self.add(station, n_k)
+            self.hire_best("Kindling", 4, n_k, f"повар ({dish} + полуфабрикаты, {ops:.0f} операций/час)")
+        for name, per_h in imports.items():
+            self.notes.append(f"⚠ привозной ингредиент: {name} x{per_h:.0f}/час (охота/рыбалка/закупка — плантации нет)")
+        for name, per_h in crafts.items():
+            self.notes.append(f"полуфабрикат: {name} x{per_h:.0f}/час (крафтится на месте)")
+        self.hire("Eidrolon", 1, "транспорт")
         self.infra(a.slots)
-        self.power()
-        self.notes.append("Хаб еды нужен только при --food shipped на других базах; при self-режимах почти не нужен")
+        if self.structs.get(station, {}).get("power"):
+            self.power(False)
+        self.assumptions.append(f"{a.dish_rate} блюд/час (--dish-rate); плантация {a.plant_yield}/час; "
+                                f"ранч {a.ranch_rate}/час; кухня {a.cook_rate} операций/час на повара")
 
     def preset_starter(self):
         self.args.tech = min(self.args.tech, 20)
@@ -465,6 +523,8 @@ def main():
                     help="доступный металл вместо --tech: ingot|refined|pal-metal|coralum|soralite|paloxite")
     ap.add_argument("--extra", default="",
                     help="доп. здания: 'Statue of Power:1,Pal Essence Condenser:1'")
+    ap.add_argument("--dish", help="(food) целевое блюдо, например 'Pizza' или 'Cake'")
+    ap.add_argument("--dish-rate", type=float, default=30, help="(food) блюд/час")
     ap.add_argument("--ranch-rate", type=float, default=12, help="дропов/час на ранч-пала (ДОПУЩЕНИЕ)")
     ap.add_argument("--plant-yield", type=float, default=60, help="единиц урожая/час с плантации (ДОПУЩЕНИЕ)")
     ap.add_argument("--cook-rate", type=float, default=30, help="тортов/час на повара (ДОПУЩЕНИЕ)")

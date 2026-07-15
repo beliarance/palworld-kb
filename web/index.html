@@ -551,17 +551,47 @@ class BasePlan {
     this.infra(o.slots); this.power(true); this.hireBest("Generating_Electricity",7,2,"электрик (экстракторы прожорливы)");
     this.notes.push("Ставится на нефтяные точки: Sakurajima NW (-646, 270)"); }
   presetFood(){
-    const o=this.o;
-    this.supportCore([["crop_growth","Lullu"],["crop_yield","Prunelia"],["suitability:Planting","+1 Planting"],
-      ["suitability:Watering","+1 Watering"],["suitability:Farming","+1 Farming"]]);
-    let tot=0;
-    for(const pl of ["Berry Plantation","Wheat Plantation","Tomato Plantation","Lettuce Plantation","Potato Plantation","Carrot Plantation","Onion Plantation"]){
-      const s=this.best([pl]); if(s){ this.add(s,2); tot+=2; } }
-    const trio=Math.ceil(tot/(o.plantsPerWorker*this.q()));
-    this.hireBest("Planting",3,trio,"посадка"); this.hireBest("Watering",3,trio,"полив"); this.hireBest("Gathering",3,trio,"сбор");
-    this.add(this.best(["Cooking Pot","Electric Kitchen","Large-Scale Stone Oven","Ancient Kitchen"]),2);
-    this.hireBest("Kindling",5,2,"повар"); this.hire("Eidrolon",2,"транспорт");
-    this.infra(o.slots); this.power(false); }
+    const o=this.o, dish=o.dish||"Salad";
+    const fd=D.bb.foods.find(f=>f.name===dish), it=itemByName[dish];
+    if(!fd||!it||!it.recipe){ this.notes.push(`Блюдо '${dish}' не найдено/без рецепта — выбери в селекторе`); return; }
+    const rate=o.dishRate;
+    this.notes.push(`Блюдо: ${dish} [${fd.category}] — сытость ${fd.nutrition}, SAN +${fd.sanity}${fd.buffs?", "+fd.buffs.join(", "):""}; цель ${rate} блюд/час`);
+    const PLANTS={"Red Berries":"Berry Plantation","Wheat":"Wheat Plantation","Tomato":"Tomato Plantation",
+      "Lettuce":"Lettuce Plantation","Potato":"Potato Plantation","Carrot":"Carrot Plantation","Onion":"Onion Plantation"};
+    const ranchMap=D.idx.inverted.ranch_produce;
+    const plants={},ranch={},imports={},crafts={};
+    const expand=(name,perH,depth=0)=>{
+      if(PLANTS[name]) plants[name]=(plants[name]||0)+perH;
+      else if(ranchMap[name]) ranch[name]=(ranch[name]||0)+perH;
+      else if(depth<5&&itemByName[name]?.recipe){ crafts[name]=(crafts[name]||0)+perH;
+        for(const [m,q] of Object.entries(itemByName[name].recipe.materials)) expand(m,q*perH,depth+1); }
+      else imports[name]=(imports[name]||0)+perH; };
+    for(const [m,q] of Object.entries(it.recipe.materials)) expand(m,q*rate);
+    for(const [crop,perH] of Object.entries(plants)){
+      const pl=this.best([PLANTS[crop]]);
+      if(pl) this.add(pl,Math.ceil(perH/o.plantYield)); else imports[crop]=(imports[crop]||0)+perH; }
+    const totalPl=Object.values(PLANTS).reduce((a,p)=>a+(this.buildings[p]||0),0);
+    if(totalPl){
+      const trio=Math.ceil(totalPl/(o.plantsPerWorker*this.q()));
+      this.hireBest("Planting",3,trio,"посадка"); this.hireBest("Watering",3,trio,"полив"); this.hireBest("Gathering",3,trio,"сбор");
+      this.supportCore([["crop_growth","Lullu"],["crop_yield","Prunelia"],["suitability:Planting","+1 Planting"],["suitability:Watering","+1 Watering"]]); }
+    let ranchers=0;
+    for(const [prod,perH] of Object.entries(ranch)){
+      const sp=ranchMap[prod][0], n=Math.ceil(perH/(o.ranchRate*this.q()));
+      this.hire(sp,n,`ранч: ${prod} (${perH.toFixed(0)}/час)`); ranchers+=n; }
+    if(ranchers){ this.add("Ranch",Math.ceil(ranchers/4)); this.supportCore([["suitability:Farming","+1 Farming всем"]]); }
+    if(plants["Wheat"]||crafts["Flour"]){ this.add("Mill",Math.max(1,Math.ceil((crafts["Flour"]||0)/60))); this.hireBest("Watering",4,1,"мельница"); }
+    const station=it.recipe.station;
+    if(station&&this.structs[station]){
+      const ops=Object.values(crafts).reduce((a,b)=>a+b,0)+rate;
+      const nK=Math.max(1,Math.ceil(ops/(o.cookRate*this.q())));
+      this.add(station,nK); this.hireBest("Kindling",4,nK,`повар (${dish} + полуфабрикаты, ${ops.toFixed(0)} оп/час)`); }
+    for(const [n,perH] of Object.entries(imports)) this.notes.push(`⚠ привозной ингредиент: ${n} x${perH.toFixed(0)}/час (плантации нет — охота/рыбалка/закупка)`);
+    for(const [n,perH] of Object.entries(crafts)) this.notes.push(`полуфабрикат: ${n} x${perH.toFixed(0)}/час (на месте)`);
+    this.hire("Eidrolon",1,"транспорт");
+    this.infra(o.slots);
+    if(this.structs[station]?.power) this.power(false);
+    this.assume.push(`${rate} блюд/час; плантация ${o.plantYield}/час; ранч ${o.ranchRate}/час; кухня ${o.cookRate} оп/час на повара`); }
   presetStarter(){
     this.o.tech=Math.min(this.o.tech,20);
     for(const [s,n] of [["Palbox",1],["Wooden Chest",3],["Feed Box",1],["Ranch",1],["Berry Plantation",2],["Wheat Plantation",1],
@@ -650,7 +680,7 @@ function builderOpts(){
   return {preset:val("pp"),slots:+val("pslots")||50,tech:+val("ptech")||60,food:val("pfood"),
     workforce:val("pwf"),roster:val("proster"),lux:document.getElementById("plux").checked,
     ranchRate:+val("pranch")||12,plantYield:+val("pyield")||60,cookRate:+val("pcook")||30,
-    plantsPerWorker:3,farms:+val("pfarms")||null};
+    plantsPerWorker:3,farms:+val("pfarms")||null,dish:val("pdish")||"Salad",dishRate:+val("pdishrate")||30};
 }
 
 render.planner = () => {
@@ -676,8 +706,16 @@ render.planner = () => {
     <label class="dim">плантация ед/час <input type="number" id="pyield" value="60" style="width:60px;min-width:60px"></label>
     <label class="dim">тортов/час <input type="number" id="pcook" value="30" style="width:60px;min-width:60px"></label>
     <label class="dim">ферм <input type="number" id="pfarms" style="width:60px;min-width:60px"></label>
+    <select id="pdish"></select>
+    <label class="dim">блюд/час <input type="number" id="pdishrate" value="30" style="width:60px;min-width:60px"></label>
   </div></div>
   <div id="bout"></div>`;
+  const dishSel=document.getElementById("pdish");
+  const cats={base_buff:"🏭 база",combat:"⚔️ бой",breeding:"🥚 бридинг",meal:"🍽 обычная"};
+  dishSel.innerHTML='<option value="">Блюдо (для Еда-хаб)…</option>'+
+    ["base_buff","combat","breeding","meal"].map(cat=>
+      `<optgroup label="${cats[cat]}">`+D.bb.foods.filter(f=>f.category===cat&&itemByName[f.name]?.recipe)
+        .map(f=>`<option value="${esc(f.name)}">${esc(f.name)} — сыт.${f.nutrition}${f.buffs?", "+f.buffs.join("/"):""}</option>`).join("")+"</optgroup>").join("");
   drawBase();
 };
 
