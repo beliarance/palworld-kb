@@ -535,6 +535,10 @@ class BasePlan {
         ["Weapon Workbench","Weapon Assembly Line","Weapon Assembly Line II","Advanced Weapon Assembly Line"],
         ["Sphere Workbench","Sphere Assembly Line","Sphere Assembly Line II","Advanced Sphere Assembly Line"]]){
       const s=this.best(fam); if(s) this.add(s,1); }
+    const ext=this.best(["Crude Oil Extractor","High-Pressure Crude Oil Extractor"]);
+    if(ext){ this.add(ext,1);
+      this.notes.push(`${ext}: без палов, только ⚡${this.structs[ext].energy_per_sec}/с`+
+        (ext.includes("High-Pressure")?"; в любой точке":"; нужна нефтяная точка")); }
     this.hireBest("Handiwork",6,Math.max(4,Math.round(10/this.q())),"сборочные линии");
     this.hire("Ribbuny Botan",1,"оружейный верстак (+200~400%)");
     this.hire("Anubis",2,"верстаки — пара с Sekhmet"); this.hire("Sekhmet",1,"буст Anubis +20~40%");
@@ -543,14 +547,6 @@ class BasePlan {
     if(o.food==="self") this.foodModule(o.slots);
     this.infra(o.slots); this.power(true);
     this.notes.push("Placeable-шахты: по 1 каждого типа на базу — майнинг+крафт на одной базе эффективнее"); }
-  presetOil(){
-    const o=this.o, ext=this.best(["Crude Oil Extractor","High-Pressure Crude Oil Extractor"]); if(ext) this.add(ext,4);
-    if(ext==="High-Pressure Crude Oil Extractor") this.notes.push("High-Pressure: ставится в ЛЮБОЙ точке, но 3000⚡/с каждый — считай генераторы");
-    this.supportCore([["suitability:Transporting","+1 Transport всем"],["sanity_save","SAN базы"]]);
-    this.hire("Eidrolon",2,"транспорт нефти");
-    if(o.food==="self") this.foodModule(o.slots);
-    this.infra(o.slots); this.power(true); this.hireBest("Generating_Electricity",7,2,"электрик (экстракторы прожорливы)");
-    this.notes.push("Ставится на нефтяные точки: Sakurajima NW (-646, 270)"); }
   presetFood(){
     const o=this.o, dish=o.dish||"Salad";
     const fd=D.bb.foods.find(f=>f.name===dish), it=itemByName[dish];
@@ -602,7 +598,7 @@ class BasePlan {
     this.hireBest("Kindling",2,1,"печь/готовка"); this.hireBest("Handiwork",2,2,"верстаки");
     this.hireBest("Planting",2,1,"посадка"); this.hireBest("Watering",2,1,"полив"); this.hireBest("Transporting",2,2,"переноска"); }
   run(){
-    ({breeding:()=>this.presetBreeding(),"mine-craft":()=>this.presetMineCraft(),oil:()=>this.presetOil(),
+    ({breeding:()=>this.presetBreeding(),"mine-craft":()=>this.presetMineCraft(),
       food:()=>this.presetFood(),starter:()=>this.presetStarter()})[this.o.preset]();
     return this; }
   html(){
@@ -688,8 +684,7 @@ function builderOpts(){
 
 render.planner = () => {
   V().innerHTML = `<div class="card"><div class="row">
-    <select id="pp"><option value="breeding">Бридинг</option><option value="mine-craft">Майнинг+крафт</option>
-      <option value="oil">Нефть</option><option value="food">Еда-хаб</option><option value="starter">Стартовая</option></select>
+    <select id="pp"><option value="breeding">Бридинг</option><option value="mine-craft">Майнинг+крафт</option><option value="food">Еда-хаб</option><option value="starter">Стартовая</option></select>
     <button class="tag clicky" style="cursor:pointer;font-size:13px" onclick="seedFromPreset()">⚙ применить пресет</button>
     <span id="rebuild-hint" class="warn" style="display:none">параметры изменены — «применить пресет» перестроит (ручные правки сбросятся)</span>
     <button class="tag clicky" style="cursor:pointer;font-size:13px" onclick="BASE={buildings:[],crew:[]};openB=openC=null;drawBase()">🗑 очистить всё</button>

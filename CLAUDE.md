@@ -94,7 +94,7 @@ resource <name>               лучшие места фарма ресурса 
 между базами) — читать соответствующий гайд в `docs/`.
 
 **Конструктор баз** — `python3 scripts/base_planner.py <preset> [опции]`:
-пресеты `breeding | mine-craft | oil | food | starter`; опции `--slots N --tech N
+пресеты `breeding | mine-craft | food | starter` (нефть — 1 экстрактор внутри mine-craft, работает без палов); опции `--slots N --tech N
 --food self|shipped --workforce baseline|passives|max --roster top|easy --farms N --raw --lux
 --metal ingot|refined|pal-metal|coralum|soralite|paloxite` (задаёт тир вместо --tech)
 `--extra "Statue of Power:1,..."` (необязательные здания в смету).

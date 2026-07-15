@@ -3,9 +3,8 @@
 
   python3 scripts/base_planner.py breeding  --slots 50 --tech 76
   python3 scripts/base_planner.py mine-craft --slots 50 --tech 60 --food self
-  python3 scripts/base_planner.py oil --slots 50 --tech 55 --workforce passives
 
-Пресеты: breeding, mine-craft, oil, food, starter.
+Пресеты: breeding, mine-craft, food, starter.
 Опции:
   --slots N            рабочих слотов на базе (по умолчанию 50)
   --tech N             доступный уровень технологий (по умолчанию 60) — здания выбираются по нему
@@ -302,8 +301,13 @@ class Planner:
             if self.best([m]):
                 self.add(m, 1)
                 sites.append(m)
-        self.notes.append(f"Добыча ({len(sites)} станций, по 1 на базу): {', '.join(sites)}. "
-                          "Работают Handiwork-циклами (paldb: workload)")
+        ext = self.best(["Crude Oil Extractor", "High-Pressure Crude Oil Extractor"])
+        if ext:
+            self.add(ext, 1)
+            self.notes.append(f"{ext}: работает БЕЗ палов, только электричество "
+                              f"({self.structs[ext].get('energy_per_sec')}/с)"
+                              + ("; ставится в любой точке" if "High-Pressure" in ext else "; нужна нефтяная точка"))
+        self.notes.append(f"Добыча ({len(sites)} станций, по 1 на базу): {', '.join(sites)}")
         self.support_core([("suitability:Mining", "+1 Mining всем (Tetroise)"),
                            ("suitability:Handiwork", "+1 Handiwork всем (Ribbuny)"),
                            ("suitability:Transporting", "+1 Transport всем (Wumpo)"),
@@ -343,24 +347,6 @@ class Planner:
         self.infra(a.slots)
         self.power(heavy=True)
         self.notes.append("Placeable-шахты лимитированы 1 шт каждого типа на базу — потому майнинг+крафт на одной базе эффективнее")
-
-    def preset_oil(self):
-        a = self.args
-        ext = self.best(["Crude Oil Extractor", "High-Pressure Crude Oil Extractor"])
-        n = 4
-        if ext:
-            self.add(ext, n)
-        self.support_core([("suitability:Transporting", "+1 Transport всем (Wumpo)"),
-                           ("sanity_save", "SAN базы (Shroomer Noct)")])
-        self.hire("Eidrolon", 2, "транспорт нефти")
-        if a.food == "self":
-            self.food_module(a.slots)
-            self.plant_crew(self.buildings.get("Tomato Plantation", 0) + self.buildings.get("Lettuce Plantation", 0))
-        self.infra(a.slots)
-        self.power(heavy=True)
-        self.hire_best("Generating_Electricity", 7, 2, "электрик (экстракторы прожорливы)")
-        self.notes.append("Crude Oil Extractor (tech 50) ставится на нефтяные точки (Sakurajima NW (-646,270)); "
-                          "High-Pressure (tech 51) — В ЛЮБОЙ точке, но жрёт 3000 энергии/с — нужен Ancient Power Generator")
 
     def preset_food(self):
         """Еда-хаб под конкретное блюдо: --dish "Pizza" --dish-rate 30 (блюд/час)."""
@@ -509,7 +495,7 @@ class Planner:
 
 def main():
     ap = argparse.ArgumentParser(description="Palworld 1.0 base planner")
-    ap.add_argument("preset", choices=["breeding", "mine-craft", "oil", "food", "starter"])
+    ap.add_argument("preset", choices=["breeding", "mine-craft", "food", "starter"])
     ap.add_argument("--slots", type=int, default=50)
     ap.add_argument("--tech", type=int, default=60)
     ap.add_argument("--food", choices=["self", "shipped"], default="self")
@@ -534,7 +520,7 @@ def main():
         args.tech = METALS[args.metal]
     pl = Planner(args)
     {"breeding": pl.preset_breeding, "mine-craft": pl.preset_mine_craft,
-     "oil": pl.preset_oil, "food": pl.preset_food, "starter": pl.preset_starter}[args.preset]()
+     "food": pl.preset_food, "starter": pl.preset_starter}[args.preset]()
     if args.metal:
         pl.notes.append(f"Тир зданий по металлу '{args.metal}' -> tech <= {args.tech}")
     for chunk in filter(None, args.extra.split(",")):
