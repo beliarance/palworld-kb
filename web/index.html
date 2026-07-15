@@ -523,11 +523,20 @@ class BasePlan {
     this.add("Feed Box",Math.max(2,Math.floor(slots/20))); this.add("Palbox",1);
     this.add(this.best(["Medieval Medicine Workbench","Medicine Workbench","Electric Medicine Workbench"]),1);
     const cl=this.best(["Clinic","Ancient Clinic"]); if(cl) this.add(cl,1);
-    this.hireBest("Medicine",1,1,"медик"); }
+    if(!this.tryDual("Medicine",3,"медик")) this.hireBest("Medicine",1,1,"медик"); }
+  tryDual(task,minLv,label){
+    // навесить вторую роль на саппорт-пала с нужным навыком (аура работает while at base)
+    for(const c of this.crew){ const role=c[3]===undefined?c[2]:c[2];
+      if((c[2]||"").startsWith("саппорт") && !(c[2]||"").includes(" + ")){
+        const lv=((D.idx.pals[c[0]]||{}).work||{})[task]||0;
+        if(lv>=minLv){ c[2]=`${c[2]}  + ${label} (${task} ${lv})`; return true; } } }
+    return false; }
   power(heavy){
     const gen=this.best(["Human-Powered Generator","Power Generator","Large Power Generator","Ancient Power Generator"]);
     this.add(gen,heavy?2:1);
-    if(gen!=="Human-Powered Generator") this.hireBest("Generating_Electricity",6,heavy?2:1,"электрик");
+    if(gen!=="Human-Powered Generator"){ const n=heavy?2:1;
+      const got=this.tryDual("Generating_Electricity",4,"электрик");
+      if(n-(got?1:0)>0) this.hireBest("Generating_Electricity",6,n-(got?1:0),"электрик"); }
     if(heavy&&this.best(["Accumulator"])) this.add("Accumulator",2); }
   chainCalc(name, ratePerH, acc){
     // раскладка рецепта до плантаций/ранча/привозного; acc={plants,ranch,imports,crafts}
@@ -987,9 +996,9 @@ function drawBase(){
   }).join("");
   function crewCard(i){ const c=BASE.crew[i];
     let card=`<div class="card" style="margin-bottom:8px"><div class="row" style="justify-content:space-between">
-      <div>${palIcon(c.sp)}<span class="clicky" style="font-weight:700" onclick="openC=openC===${i}?null:${i};openB=null;drawBase()">${esc(c.sp)}${num(c.sp)?` <span class="dim">(#${num(c.sp)})</span>`:""}</span>${sizeBadge(c.sp)}
+      <div>${palIcon(c.sp)}<span style="font-weight:700">${palLink(c.sp)}</span>${sizeBadge(c.sp)}
         <span class="dim"> — ${esc(c.role||"")}</span></div>
-      <div><span class="tag clicky" onclick="BASE.crew[${i}].count++;baseDirty=true;drawBase()">+</span>
+      <div>${c.task?`<span class="tag clicky" onclick="openC=openC===${i}?null:${i};openB=null;drawBase()">${openC===i?"▾":"⇄"} замена</span> `:""}<span class="tag clicky" onclick="BASE.crew[${i}].count++;baseDirty=true;drawBase()">+</span>
         <b class="mono"> x${c.count} </b>
         <span class="tag clicky" onclick="if(--BASE.crew[${i}].count<1)BASE.crew.splice(${i},1);baseDirty=true;drawBase()">−</span>
         <span class="tag clicky" onclick="BASE.crew.splice(${i},1);baseDirty=true;drawBase()">✕</span></div></div>`;

@@ -115,14 +115,19 @@ class Planner:
         clinic = self.best(["Clinic", "Ancient Clinic"])
         if clinic:
             self.add(clinic, 1)
-        self.hire_best("Medicine", 1, 1, "медик (лечит/варит меды)")
+        # медика по возможности вешаем на саппорт-пала с навыком Medicine (Petallia/Mycora/Lullu)
+        if not self.try_dual("Medicine", 3, "медик"):
+            self.hire_best("Medicine", 1, 1, "медик (лечит/варит меды)")
 
     def power(self, heavy=False):
         gen = self.best(["Human-Powered Generator", "Power Generator", "Large Power Generator", "Ancient Power Generator"])
         n = 2 if heavy else 1
         self.add(gen, n)
         if gen != "Human-Powered Generator":
-            self.hire_best("Generating_Electricity", 6, n, "электрик")
+            # первого электрика по возможности вешаем на саппорта (Dynamoff Elec 6)
+            got = self.try_dual("Generating_Electricity", 4, "электрик") if n >= 1 else False
+            if n - (1 if got else 0) > 0:
+                self.hire_best("Generating_Electricity", 6, n - (1 if got else 0), "электрик")
         acc = self.best(["Accumulator"])
         if acc and heavy:
             self.add(acc, 2)
@@ -205,6 +210,17 @@ class Planner:
             if hint:
                 note += f"  [{hint}]"
         self.hire(primary, count, note)
+
+    def try_dual(self, task, min_level, label):
+        """Навесить вторую роль на уже нанятого саппорт-пала, если у него есть нужный навык.
+        Аура работает «while at base», так что саппорт может параллельно работать. Экономит слот."""
+        for i, (sp, cnt, role) in enumerate(self.pals):
+            if role.startswith("саппорт") and " + " not in role:
+                lv = (self.idx["pals"].get(sp) or {}).get("work", {}).get(task, 0)
+                if lv >= min_level:
+                    self.pals[i] = (sp, cnt, f"{role}  + {label} ({task} {lv})")
+                    return True
+        return False
 
     def support_core(self, kinds):
         """Саппорт-палы с базовыми аурами (виды уникальны — альтернатив нет, даём где ловить)."""
