@@ -232,7 +232,7 @@ class Planner:
         salad_ok = self.args.tech >= (self.structs.get("Tomato Plantation", {}).get("tech_level") or 99)
         food_plants = {}
         if salad_ok:
-            pairs = max(1, plots // 2)
+            pairs = max(1, -(-plots // 2))  # ceil: не недокармливаем
             self.add("Tomato Plantation", pairs)
             self.add("Lettuce Plantation", pairs)
             food_plants = {"Tomato": pairs, "Lettuce": pairs}
@@ -694,8 +694,9 @@ def main():
                     help="рабочие сконденсированы до 4★ (+1 ур. работы ≈ ×1.55 скорости; цена — 116 дублей на пала)")
     ap.add_argument("--food-buff", type=float, default=30,
                     help="бонус Work Speed от кормёжки buff-едой: Salad +30 (по умолч.), Minestrone +40, 0 = без буффа")
-    ap.add_argument("--food-per-plot", type=float, default=70,
-                    help="аппетит-единиц (Σ FoodAmount), которые кормит одна грядка (~70; скорости голода в данных нет)")
+    ap.add_argument("--food-per-plot", type=float, default=55,
+                    help="аппетит-единиц (Σ FoodAmount) на грядку (~55, калибр. по гайду dungeonpath 2 Berry+1 Wheat→17 палов; "
+                         "абсолютной скорости голода в данных нет)")
     ap.add_argument("--per-station", type=int, default=1,
                     help="(mine-craft) палов на добывающую станцию 1..3 (у шахт 3 места; больше = быстрее добыча)")
     ap.add_argument("--cake", default="Cake",

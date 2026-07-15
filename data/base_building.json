@@ -3077,7 +3077,36 @@
     "10": "1000"
    }
   },
-  "hunger_drain_notes": "Per-species hunger stats on paldb: FoodAmount (appetite 1-10, see pal_food_amount) and FullStomachDecreaseRate (multiplier, 1 = default; see pal_hunger_rate_multiplier_nondefault). Absolute satiety/sec baseline undocumented. Passives: Diet Lover -15% hunger rate, Dainty Eater -10%, Mastery of Fasting -20%, Glutton +10%, Bottomless Stomach +15%. World setting PalStomachDecreaceRate (default 1.0) scales all pal hunger. SAN: Workaholic -15% SAN drain; Hot Spring restores SAN (base rate 0.5), higher tiers restore more; Ancient Hot Spring also restores HP."
+  "hunger_drain_notes": "Per-species hunger stats on paldb: FoodAmount (appetite 1-10, see pal_food_amount) and FullStomachDecreaseRate (multiplier, 1 = default; see pal_hunger_rate_multiplier_nondefault). Absolute satiety/sec baseline undocumented. Passives: Diet Lover -15% hunger rate, Dainty Eater -10%, Mastery of Fasting -20%, Glutton +10%, Bottomless Stomach +15%. World setting PalStomachDecreaceRate (default 1.0) scales all pal hunger. SAN: Workaholic -15% SAN drain; Hot Spring restores SAN (base rate 0.5), higher tiers restore more; Ancient Hot Spring also restores HP.",
+  "hunger_research": {
+   "absolute_drain_rate": "НЕ задокументирована нигде (вики/paldb/датамайн подтверждают отсутствие); часто цитируемое «~1 еда/6с = 10/мин» — иллюстрация автора Steam-поста, НЕ измерение",
+   "FullStomachDecreaseRate": "per-species множитель дренажа, у всех = 1.0 (paldb, подтв. на Anubis)",
+   "max_stomach": "MaxFullStomach — отдельный от FoodAmount стат ёмкости желудка (SheepBall 150, крупные палы 250+); фиксирован по виду, не растёт с уровнем (датамайн Pal-Editor)",
+   "world_setting": "PalStomachDecreaceRate = 1.0 по умолчанию (сервер-конфиг); масштабирует базовый дренаж",
+   "feed_behavior": "палы едят из Feed Box до ~50% сытости (частые дозаправки, не до полного); варёное съедается раз в 10-15 мин, сырьё раз в ~2 мин",
+   "hunger_passives": {
+    "Diet Lover": -0.15,
+    "Dainty Eater": -0.1,
+    "Mastery of Fasting": -0.2,
+    "Glutton": 0.1,
+    "Bottomless Stomach": 0.15
+   },
+   "food_restore": {
+    "Jam-Filled Bun": "satiety +51, SAN +6",
+    "Salad": "~84 nutrition + SAN",
+    "French Fries": "35 satiety, 10 SAN",
+    "note": "выше тир = больше сытости и SAN"
+   },
+   "plantation_ratio_guide": "dungeonpath: 2 Berry + 1 Wheat + Mill (Jam-Filled Buns) кормят 15-20 палов с запасом; сырьём ~2 Berry на 10 палов. Единственная конкретная пропорция из сообщества (guide-stated)",
+   "sources": [
+    "palworld.wiki.gg/wiki/Food",
+    "palworld.wiki.gg/wiki/Hunger",
+    "paldb.cc (FoodAmount/FullStomachDecreaseRate)",
+    "dungeonpath.com/posts/palworld/food-recipes-feeding-guide",
+    "DefaultPalWorldSettings.ini",
+    "steamcommunity форумы (анекдоты о темпе поедания)"
+   ]
+  }
  },
  "notes": [
   "Pal appetite ('Food' icons on paldb) = FoodAmount stat; 1.0 scale is 1-10 (observed values 1-9 across all 299 pals).",
@@ -3099,7 +3128,8 @@
   "2026-07-15: Crude Oil Extractor работает без палов (только электричество) - подтверждено игроком; High-Pressure предположительно тоже, не проверено. Таблица 'Workload/Handiwork' на paldb - это workload ПОСТРОЙКИ.",
   "2026-07-15: Ancient Workbench крафтит и материалы (подтверждено items.json: Polymer/Computer/AI Core имеют его альтернативой) — Production-линия на 67+ не нужна. Дозаполнены worker_req у станций, чьи описания были затёрты при раннем сборе.",
   "2026-07-15: worker_slots=3 у placeable добывающих станций (Pit/Mining Site/Quarry/Coal/Sulfur/Logging) — сообщено игроком; до 3 палов на станцию стакают скорость добычи. paldb это поле не публикует.",
-  "2026-07-15: worker_slots — подтверждённые значения (шахты/лесопилки 3, Ranch 4, плантации 4, Synthesizer 1, экстракторы нефти 0-без палов, брид-фермы 2-пара). paldb число мест НЕ публикует — у остальных зданий worker_slots=null, планировщик считает как 1 (одноместные верстаки/печи). gap."
+  "2026-07-15: worker_slots — подтверждённые значения (шахты/лесопилки 3, Ranch 4, плантации 4, Synthesizer 1, экстракторы нефти 0-без палов, брид-фермы 2-пара). paldb число мест НЕ публикует — у остальных зданий worker_slots=null, планировщик считает как 1 (одноместные верстаки/печи). gap.",
+  "2026-07-16: веб-исследование скорости голода — абсолютный темп нигде не документирован (gap подтверждён); калибровка кормовой модели по гайду dungeonpath (2 Berry+1 Wheat→~17 палов). Детали в rates.hunger_research."
  ],
  "gaps": [
   "Per-crop plantation yield_per_harvest and absolute growth-cycle seconds are undocumented in fetched sources (yield scales with gatherer DropNumRate; see plantation_cycles).",

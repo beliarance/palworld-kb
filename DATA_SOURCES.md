@@ -198,6 +198,18 @@
   websearch 2026-07-15 ничего не дал); Wander_Shop_1 (случайный бродячий торговец) и
   Dungeon_Shop_01 (в данжах) фиксированных координат не имеют by design.
 
+## Скорость голода / кормовая модель — веб-исследование (2026-07-16)
+
+- **Абсолютный темп голода НЕ задокументирован** нигде (palworld.wiki.gg/Food+Hunger, paldb,
+  датамайн Pal-Editor). Часто цитируемое «~1 еда/6с» — иллюстрация автора Steam-поста, не измерение.
+- Подтверждено: `FullStomachDecreaseRate`=1.0 у всех (paldb), мировой `PalStomachDecreaceRate`=1.0
+  (DefaultPalWorldSettings.ini), палы едят до ~50% сытости, варёное раз в 10-15 мин.
+- Пассивки голода: Diet Lover −15%, Dainty Eater −10%, Mastery of Fasting −20%,
+  Glutton +10%, Bottomless Stomach +15% (palworld.fandom).
+- Кормовая модель планировщика откалибрована по гайду **dungeonpath** (2 Berry + 1 Wheat + Mill
+  → 15-20 палов варёными булками): `--food-per-plot ≈ 55` аппетит-единиц/грядку. Детали и все
+  URL — в `data/base_building.json` → `rates.hunger_research`.
+
 ## docs/ — гайды (компиляции, собраны 2026-07-14)
 
 - `breeding_mechanics.md` — game8.co (cake, инхерит пассивок, condenser, IV, пассивки),

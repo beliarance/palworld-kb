@@ -494,14 +494,14 @@ class BasePlan {
     return this.crew.reduce((a,c)=>a+c[1]*(fa[c[0]]||5),0); }
   foodModule(slots, shareCrew){
     // спрос = Σ FoodAmount реального ростера (крупные едят больше); скорости голода в данных нет
-    const perPlot=this.o.foodPerPlot||70;
+    const perPlot=this.o.foodPerPlot||55;
     let appetite=this.rosterAppetite();
     appetite+=Math.max(0,slots-this.crew.reduce((a,c)=>a+c[1],0))*4.6;
     const plots=Math.max(2,Math.ceil(appetite/perPlot));
     const saladOk=this.o.tech>=((this.structs["Tomato Plantation"]||{}).tech_level||99);
     let n=0;
     if(saladOk){ const st=this.best(["Cooking Pot","Electric Kitchen","Large-Scale Stone Oven","Ancient Kitchen"]);
-      const pairs=Math.max(1,Math.floor(plots/2));
+      const pairs=Math.max(1,Math.ceil(plots/2));
       this.add("Tomato Plantation",pairs); this.add("Lettuce Plantation",pairs); this.add(st,1); n=pairs*2;
       this.hireBest("Kindling",3,1,"ЕДА: повар салатов");
       this.notes.push(`ЕДА (self): Salad — ${pairs}x Tomato + ${pairs}x Lettuce, повар на ${st}`);
@@ -812,7 +812,7 @@ function builderOpts(){
     eggInterval:+val("peggint")||5,eggBoost:+val("peggboost")||1.35,
     incubation:val("pincub")===""?1:+val("pincub"),cake:val("pcake")||"Cake",
     perStation:+val("ppers")||1,spoilage:document.getElementById("pspoil").checked,
-    foodPerPlot:+val("pfpp")||70,foodBuff:val("pfbuff")===""?30:+val("pfbuff"),
+    foodPerPlot:+val("pfpp")||55,foodBuff:val("pfbuff")===""?30:+val("pfbuff"),
     dishes:plannerDishes.length?plannerDishes:null};
 }
 
@@ -861,7 +861,7 @@ render.planner = () => {
     <label class="dim">ранч дроп/час <input type="number" id="pranch" value="12" style="width:60px;min-width:60px"></label>
     <label class="dim">плантация ед/час <input type="number" id="pyield" value="60" style="width:60px;min-width:60px"></label>
     <label class="dim">готовок/час на повара <input type="number" id="pcook" value="30" style="width:60px;min-width:60px"></label>
-    <label class="dim" title="аппетит-единиц (Σ FoodAmount) на грядку; скорости голода в данных нет">аппетита/грядку <input type="number" id="pfpp" value="70" style="width:70px;min-width:70px"></label>
+    <label class="dim" title="аппетит-единиц (Σ FoodAmount) на грядку; скорости голода в данных нет">аппетита/грядку <input type="number" id="pfpp" value="55" style="width:70px;min-width:70px"></label>
     <label class="dim" title="бонус Work Speed от кормёжки buff-едой: Salad +30, Minestrone +40, 0 = без">WS от еды <input type="number" id="pfbuff" value="30" style="width:60px;min-width:60px"></label>
   </div></details></div>
   <div id="bout"></div>`;
