@@ -132,7 +132,12 @@ function nav(){
   document.getElementById("nav").innerHTML = TABS.map(([k,t])=>
     `<button class="${k===cur?'active':''}" onclick="go('${k}')">${t}</button>`).join("");
 }
-function go(tab){ cur=tab; nav(); render[tab](); }
+function go(tab, push=true){ cur=tab; nav(); render[tab]();
+  if(push){ try{ history.pushState({tab}, "", "#"+tab); }catch(e){} } }
+window.addEventListener("popstate", e=>{
+  const t=(e.state&&e.state.tab)||location.hash.slice(1)||"pal";
+  if(render[t]){ cur=t; nav(); render[t](); }
+});
 const V = () => document.getElementById("view");
 const datalist = (id,names)=>`<datalist id="${id}">${names.map(n=>`<option value="${esc(n)}">`).join("")}</datalist>`;
 
@@ -510,13 +515,16 @@ class BasePlan {
   presetMineCraft(){
     const o=this.o;
     const sites=[];
-    for(const m of ["Stone Pit","Ore Mining Site","Logging Site"]){ const s=this.best([m]); if(s){ this.add(s,1); sites.push(s); } }
-    if(!sites.includes("Ore Mining Site")) this.notes.push("Ore Mining Site требует tech 24 — до этого ставь базу на рудные точки");
-    this.notes.push("Добывающие станции работают Handiwork-циклами. Placeable-шахт для Coal/Sulfur/Quartz в 1.0 нет — под них база на точках + Mining-палы");
+    for(const fam of [["Stone Pit"],["Logging Site"],["Logging Site II"],["Ore Mining Site","Ore Mining Site II"],
+        ["Coal Mine"],["Sulfur Mine"],["Pure Quartz Quarry"],["Hexolite Quartz Mine"],["Soralite Quarry"]]){
+      const s=this.best(fam); if(s){ this.add(s,1); sites.push(s); } }
+    this.notes.push(`Добыча (${sites.length} станций, по 1 на базу): ${sites.join(", ")}`);
     this.supportCore([["suitability:Mining","+1 Mining всем"],["suitability:Handiwork","+1 Handiwork всем"],
       ["suitability:Transporting","+1 Transport всем"],["sanity_save","SAN базы"]]);
-    this.hireBest("Handiwork",5,Math.max(2,Math.round(sites.length*2/this.q())),`добыча: ${sites.join("/")||"рудные точки"}`);
-    this.hireBest("Mining",6,Math.max(2,Math.round(4/this.q())),"шахтёр (рудные точки + Ore Mining Site)");
+    const structsW=Object.fromEntries(D.bb.structures.map(x=>[x.name,x]));
+    const mSites=sites.filter(x=>(structsW[x].workers||"")==="Mining"), hSites=sites.filter(x=>!mSites.includes(x));
+    if(hSites.length) this.hireBest("Handiwork",5,Math.max(1,Math.round(hSites.length*0.8/this.q())),`добыча (Handiwork): ${hSites.join("/")}`);
+    if(mSites.length) this.hireBest("Mining",6,Math.max(1,Math.round(mSites.length*0.8/this.q())),`добыча (Mining): ${mSites.join("/")}`);
     this.add(this.best(["Primitive Furnace","Improved Furnace","Electric Furnace","Gigantic Furnace","Ancient Furnace"]),2);
     this.hireBest("Kindling",6,2,"печи");
     for(const fam of [["Production Assembly Line","Production Assembly Line II","Advanced Workshop"],
@@ -532,7 +540,8 @@ class BasePlan {
     this.infra(o.slots); this.power(true);
     this.notes.push("Placeable-шахты: по 1 каждого типа на базу — майнинг+крафт на одной базе эффективнее"); }
   presetOil(){
-    const o=this.o, ext=this.best(["Crude Oil Extractor"]); if(ext) this.add(ext,4);
+    const o=this.o, ext=this.best(["Crude Oil Extractor","High-Pressure Crude Oil Extractor"]); if(ext) this.add(ext,4);
+    if(ext==="High-Pressure Crude Oil Extractor") this.notes.push("High-Pressure: ставится в ЛЮБОЙ точке, но 3000⚡/с каждый — считай генераторы");
     this.supportCore([["suitability:Transporting","+1 Transport всем"],["sanity_save","SAN базы"]]);
     this.hire("Eidrolon",2,"транспорт нефти");
     if(o.food==="self") this.foodModule(o.slots);
@@ -601,6 +610,10 @@ const FAMILIES = [
   ["Cooler Box","Refrigerator","Cold Food Box"],
   ["Heater","Electric Heater"],["Cooler","Electric Cooler"],
   ["Berry Plantation","Wheat Plantation","Tomato Plantation","Lettuce Plantation","Potato Plantation","Carrot Plantation","Onion Plantation"],
+  ["Ore Mining Site","Ore Mining Site II"],["Logging Site","Logging Site II"],
+  ["Crude Oil Extractor","High-Pressure Crude Oil Extractor"],
+  ["Wooden Chest","Metal Chest","Refined Metal Chest","Advanced Chest"],
+  ["Fishing Pond","Large Fishing Pond"],
 ];
 const TASK_LIST = ["Kindling","Watering","Planting","Generating_Electricity","Handiwork","Gathering",
   "Lumbering","Mining","Medicine","Cooling","Transporting","Farming"];
@@ -642,7 +655,7 @@ render.planner = () => {
     <select id="pp"><option value="breeding">Бридинг</option><option value="mine-craft">Майнинг+крафт</option>
       <option value="oil">Нефть</option><option value="food">Еда-хаб</option><option value="starter">Стартовая</option></select>
     <button class="tag clicky" style="cursor:pointer;font-size:13px" onclick="seedFromPreset()">⚙ применить пресет</button>
-    <button class="tag clicky" style="cursor:pointer;font-size:13px" onclick="BASE={buildings:[],crew:[]};drawBase()">✨ пустая база</button>
+    <button class="tag clicky" style="cursor:pointer;font-size:13px" onclick="BASE={buildings:[],crew:[]};openB=openC=null;drawBase()">🗑 очистить всё</button>
     <label>Слоты <input type="number" id="pslots" value="50" min="5" max="100" style="width:70px;min-width:70px"></label>
     <select id="pmetal">
       <option value="">Металл: вручную (tech)</option>
@@ -692,8 +705,12 @@ function drawBase(){
     if(req) card+=`<div class="warn">Требует палов: ${req.tasks.join(" + ")} ${req.high_level?`(уровень ${req.min_level}+, PRELIMINARY)`:""}</div>`;
     if(tasks.length){
       const sugg=tasks.map(t=>{const top=topWorkers(t,2,false,req?req.min_level:1);
-        return top.map(([nm,lv])=>`${palLink(nm)} <span class="dim mono">${t.replace("_"," ")} ${lv}</span>
-          <span class="tag clicky" onclick="builderHire('${nm.replace(/'/g,"\\'")}','${t}','${esc(b.name)}')">нанять</span>`).join(" · ");}).join("<br>");
+        return top.map(([nm,lv])=>{
+          const hired=BASE.crew.filter(c=>c.sp===nm&&c.task===t).reduce((a,c)=>a+c.count,0);
+          return `${palLink(nm)} <span class="dim mono">${t.replace("_"," ")} ${lv}</span>
+          <span class="tag clicky" onclick="builderHire('${nm.replace(/'/g,"\\'")}','${t}','${esc(b.name)}')">нанять</span>`+
+          (hired?` <b class="ok mono">x${hired}</b> <span class="tag clicky" onclick="builderFire('${nm.replace(/'/g,"\\'")}','${t}')">убрать</span>`:"");
+        }).join(" · ");}).join("<br>");
       card+=`<div style="margin-top:4px">Палы: ${sugg}</div>`;
     }
     if(openB===i&&fam.length>1){
@@ -772,6 +789,10 @@ function builderHire(sp,task,forB){
   if(ex) ex.count++; else BASE.crew.push({sp,count:1,role:`для: ${forB}`,task});
   drawBase();
 }
+function builderFire(sp,task){
+  const i=BASE.crew.findIndex(c=>c.sp===sp&&c.task===task);
+  if(i>=0){ if(--BASE.crew[i].count<1) BASE.crew.splice(i,1); drawBase(); }
+}
 function builderShowPicker(){
   const task=document.getElementById("ptask").value, minLv=+document.getElementById("pminlv").value||1,
         easy=document.getElementById("peasy").checked;
@@ -786,7 +807,10 @@ function builderShowPicker(){
 loadAll().then(()=>{
   document.getElementById("loading").style.display="none";
   document.getElementById("view").style.display="";
+  const h=location.hash.slice(1);
+  if(render[h]) cur=h;
   nav(); render[cur]();
+  try{ history.replaceState({tab:cur}, "", "#"+cur); }catch(e){}
 }).catch(e=>{
   document.getElementById("loading").innerHTML=`<span class="bad">Ошибка загрузки данных: ${esc(e.message)}</span><br>
   Открой через локальный сервер: <code>python3 -m http.server 8842</code> из корня проекта → <code>http://localhost:8842/web/</code>`;

@@ -90,8 +90,9 @@
      "notes": "9 coal + 3 ore nodes — biggest pure-coal cluster; extreme heat/cold cycle. (pre-1.0 guide)"
     }
    ],
-   "base_recommendation": "Yes — the classic 'coal+ore base' at the Verdant Brook peak (190, -40) is the single best resource base: both Refined Ingot inputs on one unraidable summit. Alternative pure-coal outpost: north of Duneshelter (327, 485) with 9 nodes. NOTE: placeable Coal Mine does NOT exist in 1.0 (nexttier claim contradicted by paldb 2026-07-15) - coal comes from map nodes/drops/expeditions only.",
+   "base_recommendation": "Yes — the classic 'coal+ore base' at the Verdant Brook peak (190, -40) is the single best resource base: both Refined Ingot inputs on one unraidable summit. Alternative pure-coal outpost: north of Duneshelter (327, 485) with 9 nodes. Coal Mine placeable EXISTS: tech 37 (paldb, Structures index 2026-07-15) - automates coal at any base mid-game.",
    "other_sources": [
+    "Coal Mine (placeable, tech 37)",
     "Blazamut and some fire-Pal drops",
     "expeditions",
     "dungeon chests"
@@ -574,7 +575,8 @@
   "World Tree gather rule (1.0): Paloxite/Mythical Wood/Radiant Gems/Ancient Relics vanish on approach unless buffed with World Tree Holy Water (self + active Pal) or accompanied by a Pal with the Dimensional Leap passive (hatch Large Ominous Eggs found in the zone).",
   "World Tree access: complete Sunreach (unlocked by beating Bjorn & Bastigor at Feybreak Tower, then disabling six defense modules).",
   "Oil Rigs in 1.0: three rigs (starter barge ~Lv 30 near spawn; Lv 50+ Stronghold at ~(608, -435) SE of Marsh Island; Rayne Syndicate Platform Lv 50+); 1.0 lets you capture rig-controlled enemy Pals.",
-  "2026-07-14: Coralum Ore entry added - salvage route user-verified in-game, confirmed against paldb Powerful_Fishing_Magnet loot table."
+  "2026-07-14: Coralum Ore entry added - salvage route user-verified in-game, confirmed against paldb Powerful_Fishing_Magnet loot table.",
+  "2026-07-15: Coal Mine подтверждена (tech 37); предыдущая правка о её отсутствии была ошибкой поиска."
  ],
  "gaps": [
   "Coordinate conflict for the 'behind Desolate Church' ore spot: (72, -400) (ScalaCube) vs (-256, -120) (drawpie/xmodhub 1.0 roundups) — not reconciled; the (72, -400) figure matches the church's actual position on the starter island.",

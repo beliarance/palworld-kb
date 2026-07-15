@@ -1261,6 +1261,590 @@
    "capacity": null,
    "power": false,
    "function": "Requires Pals that can work with their hands."
+  },
+  {
+   "name": "Mine",
+   "tech_level": 30,
+   "materials": {
+    "Ingot": 5,
+    "Flame Organ": 2
+   },
+   "function": "Trap that explodes when a Pal steps on it. It deals damage to a wide area.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false,
+   "category_note": "defensive trap (не добыча!); Electric/Ice версии повышают шанс поимки наступившего пала"
+  },
+  {
+   "name": "Electric Mine",
+   "tech_level": 33,
+   "materials": {
+    "Ingot": 5,
+    "Electric Organ": 2
+   },
+   "function": "Trap that electrocutes the Pal that steps on it. The electrocuted Pal has a higher capture rate with the sphere.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false,
+   "category_note": "defensive trap (не добыча!); Electric/Ice версии повышают шанс поимки наступившего пала"
+  },
+  {
+   "name": "Coal Mine",
+   "tech_level": 37,
+   "materials": {
+    "Stone": 70,
+    "Coal": 100,
+    "Paldium Fragment": 30,
+    "Ancient Civilization Parts": 10
+   },
+   "function": "Produces Coal x1 per workload cycle. Leave it to a Pal that is good at mining.",
+   "ancient_tech": false,
+   "workers": "Mining",
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Ice Mine",
+   "tech_level": 38,
+   "materials": {
+    "Ingot": 5,
+    "Ice Organ": 2
+   },
+   "function": "Trap that freezes the Pal that steps on it. The frozen Pal has a higher capture rate with the sphere.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false,
+   "category_note": "defensive trap (не добыча!); Electric/Ice версии повышают шанс поимки наступившего пала"
+  },
+  {
+   "name": "Sulfur Mine",
+   "tech_level": 46,
+   "materials": {
+    "Stone": 70,
+    "Sulfur": 100,
+    "Paldium Fragment": 30,
+    "Ancient Civilization Parts": 10
+   },
+   "function": "Produces Sulfur x1 per workload cycle. Leave it to a Pal that is good at mining.",
+   "ancient_tech": false,
+   "workers": "Mining",
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Pure Quartz Quarry",
+   "tech_level": 52,
+   "materials": {
+    "Stone": 70,
+    "Pure Quartz": 100,
+    "Paldium Fragment": 30,
+    "Ancient Civilization Parts": 10
+   },
+   "function": "Produces Pure Quartz x1 per workload cycle. (document.getElementById(\"consent-box\").style.display = window[\"__tcfapi\"]",
+   "ancient_tech": false,
+   "workers": "Handiwork (workload)",
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Hexolite Quartz Mine",
+   "tech_level": 62,
+   "materials": {
+    "Stone": 70,
+    "Hexolite Quartz": 100,
+    "Ancient Civilization Parts": 10
+   },
+   "function": "Produces Hexolite Quartz x1 per workload cycle. Leave it to a Pal that is good at mining.",
+   "ancient_tech": false,
+   "workers": "Mining",
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Soralite Quarry",
+   "tech_level": 72,
+   "materials": {
+    "Stone": 70,
+    "Soralite": 100,
+    "Ancient Civilization Parts": 10
+   },
+   "function": "Produces Soralite x1 per workload cycle. Leave it to a Pal that is good at mining.",
+   "ancient_tech": false,
+   "workers": "Mining",
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Ore Mining Site II",
+   "tech_level": 39,
+   "materials": {
+    "Stone": 100,
+    "Ingot": 50,
+    "Paldium Fragment": 40,
+    "Ancient Civilization Parts": 10
+   },
+   "function": "Produces Ore x1 per workload cycle. is hard work that requires physical endurance.",
+   "ancient_tech": false,
+   "workers": "Handiwork (workload)",
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Logging Site II",
+   "tech_level": 43,
+   "materials": {
+    "Hardwood": 100,
+    "Stone": 50,
+    "Paldium Fragment": 20,
+    "Ancient Civilization Parts": 5
+   },
+   "function": "Produces Hardwood x1 per workload cycle. Cutting wood is hard work that requires much physical endurance.",
+   "ancient_tech": false,
+   "workers": "Handiwork (workload)",
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "High-Pressure Crude Oil Extractor",
+   "tech_level": 51,
+   "materials": {
+    "Pal Metal Ingot": 300,
+    "Circuit Board": 50,
+    "Bio Battery": 50,
+    "Ancient Civilization Parts": 10
+   },
+   "function": "Produces Crude Oil x1 per workload cycle. It requires a far greater supply of electricity than the",
+   "energy_per_sec": 3000,
+   "ancient_tech": false,
+   "workers": "Handiwork (workload)",
+   "capacity": null,
+   "power": true
+  },
+  {
+   "name": "WoodCreator",
+   "materials": {
+    "Wood": 15,
+    "Stone": 5
+   },
+   "function": "(document.getElementById(\"consent-box\").style.display = window[\"__tcfapi\"]",
+   "ancient_tech": false,
+   "workers": "Handiwork (workload)",
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Repair Bench",
+   "tech_level": 2,
+   "materials": {
+    "Wood": 10,
+    "Stone": 10
+   },
+   "function": "(document.getElementById(\"consent-box\").style.display = window[\"__tcfapi\"]",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Pal Dressing Facility",
+   "tech_level": 2,
+   "materials": {
+    "Stone": 10,
+    "Paldium Fragment": 10
+   },
+   "function": "Skins obtained inside and outside the game can be applied here!",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Guild Chest",
+   "tech_level": 41,
+   "materials": {
+    "Refined Ingot": 50,
+    "Paldium Fragment": 100,
+    "Ancient Civilization Parts": 10
+   },
+   "function": "The items inside are shared across all bases where it is placed.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Dimensional Pal Storage",
+   "tech_level": 20,
+   "materials": {
+    "Ingot": 20,
+    "Paldium Fragment": 40,
+    "Ancient Civilization Parts": 5
+   },
+   "function": "If you set it to private, it can serve as your personal Pal storage.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Global Palbox",
+   "tech_level": 3,
+   "materials": {
+    "Paldium Fragment": 3,
+    "Wood": 5,
+    "Stone": 15
+   },
+   "function": "The stored genetic data can also be transferred to other worlds.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Fishing Pond",
+   "tech_level": 31,
+   "materials": {
+    "Wooden Board": 15,
+    "Cement": 30,
+    "Cryogenic Coolant": 3
+   },
+   "function": "Requires Pals that can work with their hands.",
+   "ancient_tech": false,
+   "workers": "Handiwork (workload)",
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Large Fishing Pond",
+   "tech_level": 69,
+   "materials": {
+    "High Quality Wooden Board": 20,
+    "Stone": 30,
+    "Coralum Ingot": 10,
+    "High Quality Pal Oil": 20
+   },
+   "function": "Requires Pals that can work with their hands.",
+   "ancient_tech": false,
+   "workers": "Handiwork (workload)",
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Summoning Altar",
+   "tech_level": 33,
+   "materials": {
+    "Stone": 100,
+    "Paldium Fragment": 20
+   },
+   "function": "Adequate caution and battle readiness is paramount.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Item Retrieval Machine",
+   "tech_level": 49,
+   "materials": {
+    "Pal Metal Ingot": 100,
+    "Paldium Fragment": 30,
+    "Bio Battery": 4
+   },
+   "function": "A device that lets you freely access items from all chests in the base.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Pal Surgery Table",
+   "tech_level": 38,
+   "materials": {
+    "Refined Ingot": 30,
+    "High Quality Cloth": 20,
+    "Corrosive Solvent": 10
+   },
+   "function": "A facility where surgery can be performed on Pals to change their gender or passive skills.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Pal Disassembly Conveyor",
+   "tech_level": 56,
+   "materials": {
+    "Pal Metal Ingot": 100,
+    "Computer": 15,
+    "Nail": 30,
+    "Plasteel": 30
+   },
+   "function": "A dream-like facility that automatically butchers any Pal that is placed inside.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Ancient Relic Recycler",
+   "tech_level": 74,
+   "materials": {
+    "Paloxite Ingot": 50,
+    "Mythical Wood": 50,
+    "Ancient Civilization Parts": 30,
+    "Ancient Civilization Core": 20
+   },
+   "function": "A highly specialized facility designed for the efficient use of relics without waste.",
+   "energy_per_sec": 800,
+   "ancient_tech": true,
+   "workers": null,
+   "capacity": null,
+   "power": true
+  },
+  {
+   "name": "Ancient Material Synthesizer",
+   "tech_level": 78,
+   "materials": {
+    "Paloxite Ingot": 50,
+    "Ancient Civilization Core": 10
+   },
+   "function": "Due to its complex structure, only one Pal can be assigned to it.",
+   "energy_per_sec": 800,
+   "ancient_tech": true,
+   "workers": null,
+   "capacity": null,
+   "power": true
+  },
+  {
+   "name": "Beta Wave Generator",
+   "tech_level": 46,
+   "materials": {
+    "Pal Metal Ingot": 40,
+    "Circuit Board": 30,
+    "Bio Battery": 5
+   },
+   "function": "Placing more than one has no additional effect.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Refrigerated Crusher",
+   "tech_level": 54,
+   "materials": {
+    "Pal Metal Ingot": 50,
+    "Plasteel": 30,
+    "Cryogenic Coolant": 25,
+    "Corrosive Solvent": 20
+   },
+   "function": "Requires a power supply and a Pal with Cooling suitability, but it's very efficient.",
+   "energy_per_sec": 300,
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": true
+  },
+  {
+   "name": "Witch Cauldron",
+   "tech_level": 32,
+   "materials": {
+    "Ingot": 10,
+    "Stone": 20,
+    "Cryogenic Coolant": 5,
+    "High Quality Pal Oil": 3
+   },
+   "function": "Placing more than one has no additional effect.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Water Fountain",
+   "tech_level": 23,
+   "materials": {
+    "Ingot": 20,
+    "Stone": 50,
+    "Aquatic Pal Fluids": 8
+   },
+   "function": "Placing more than one has no additional effect.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Silo",
+   "tech_level": 25,
+   "materials": {
+    "Wood": 30,
+    "Stone": 20,
+    "Fiber": 30,
+    "Cement": 10
+   },
+   "function": "Placing more than one has no additional effect.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Flower Bed",
+   "tech_level": 24,
+   "materials": {
+    "Wood": 30,
+    "Stone": 50,
+    "Cement": 20,
+    "Beautiful Flower": 10
+   },
+   "function": "Placing more than one has no additional effect.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Wooden Chest",
+   "tech_level": 2,
+   "materials": {
+    "Wood": 15,
+    "Stone": 5
+   },
+   "function": "It's probably not the best thing to store valuables in.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Metal Chest",
+   "tech_level": 13,
+   "materials": {
+    "Ingot": 5,
+    "Wood": 10
+   },
+   "function": "The increased size allows for the storage of more things.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Refined Metal Chest",
+   "tech_level": 39,
+   "materials": {
+    "Refined Ingot": 5,
+    "Hardwood": 10,
+    "Nail": 10
+   },
+   "function": "It is useful as a large, secure storage box.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Advanced Chest",
+   "tech_level": 59,
+   "materials": {
+    "Hexolite": 20,
+    "Carbon Fiber": 20,
+    "Computer": 2
+   },
+   "function": "It is useful as a large, secure storage box.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Shoddy Bed",
+   "tech_level": 3,
+   "materials": {
+    "Wood": 20,
+    "Fiber": 5,
+    "Wool": 1
+   },
+   "function": "You won't be able to sleep soundly without a roof over your head.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Fine Bed",
+   "tech_level": 28,
+   "materials": {
+    "Cloth": 10,
+    "Wood": 50,
+    "Nail": 10,
+    "Fiber": 20
+   },
+   "function": "You won't be able to sleep soundly without a roof over your head.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Ancient Turret",
+   "materials": {
+    "Ingot": 30,
+    "Nail": 10,
+    "Cement": 15
+   },
+   "function": "However, despite its immense power, it requires a massive amount of electricity to operate.",
+   "energy_per_sec": 10,
+   "ancient_tech": true,
+   "workers": null,
+   "capacity": null,
+   "power": true
+  },
+  {
+   "name": "Ancient Air Conditioner",
+   "materials": {
+    "Paloxite Ingot": 30,
+    "AI Core": 10,
+    "Thermal Core": 5,
+    "Cryogenic Coolant": 5
+   },
+   "function": "(document.getElementById(\"consent-box\").style.display = window[\"__tcfapi\"]",
+   "energy_per_sec": 500,
+   "ancient_tech": true,
+   "workers": null,
+   "capacity": null,
+   "power": true
+  },
+  {
+   "name": "Palbox Control Device",
+   "tech_level": 32,
+   "materials": {
+    "Ingot": 20,
+    "Paldium Fragment": 30
+   },
+   "function": "Set it up wherever you'd like and build a base of your own design.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
+  },
+  {
+   "name": "Drafting Table",
+   "tech_level": 45,
+   "materials": {
+    "Refined Ingot": 20,
+    "High Quality Wooden Board": 10,
+    "Charcoal": 30
+   },
+   "function": "A facility that lets you combine multiple schematics to create more advanced ones.",
+   "ancient_tech": false,
+   "workers": null,
+   "capacity": null,
+   "power": false
   }
  ],
  "foods": [
@@ -2233,7 +2817,8 @@
   "In 1.0 there is no plain 'Pal Bed': tiers are Straw Pal Bed (3) -> Fluffy Pal Bed (24) -> Large Pal Bed (36) -> Pal Pod (56) -> Ancient Pal Bed (73).",
   "2026-07-15: добавлены placeable-добывающие станции (Stone Pit, Ore Mining Site tech 24, Logging Site, Crude Oil Extractor) — изначальный сбор их пропустил. Placeable-шахт для Coal/Sulfur/Quartz/Paldium в 1.0 НЕТ (paldb: у этих ресурсов нет производящей постройки) — только точки на карте.",
   "2026-07-15: добавлены 22 крафт-станции (печи, верстаки, сборочные линии) со страниц paldb — изначальный сбор покрывал только Pal/Food категории.",
-  "2026-07-15: function-описания дозаполнены у станций, добавленных 07-15; worker_req распарсен из описаний локально."
+  "2026-07-15: function-описания дозаполнены у станций, добавленных 07-15; worker_req распарсен из описаний локально.",
+  "2026-07-15: +40 функциональных зданий со Structures-индекса paldb (все шахты Lumbering/Mining категории, сундуки, пруды, алтарь, ресайклеры). Прежняя заметка 'шахт для Coal/Sulfur/Quartz нет' была ошибкой поиска по слагам — опровергнута."
  ],
  "gaps": [
   "Per-crop plantation yield_per_harvest and absolute growth-cycle seconds are undocumented in fetched sources (yield scales with gatherer DropNumRate; see plantation_cycles).",

@@ -292,22 +292,31 @@ class Planner:
         a = self.args
         # самообеспечение сырьём: placeable-станции добычи (по 1 на базу)
         sites = []
-        for m in ["Stone Pit", "Ore Mining Site", "Logging Site"]:
-            s = self.best([m])
+        # ВНИМАНИЕ: "Mine"/"Electric Mine"/"Ice Mine" — ловушки (Defenses), не добыча!
+        MINE_FAMILIES = [["Stone Pit"], ["Logging Site"], ["Logging Site II"],
+                         ["Ore Mining Site", "Ore Mining Site II"],
+                         ["Coal Mine"], ["Sulfur Mine"], ["Pure Quartz Quarry"],
+                         ["Hexolite Quartz Mine"], ["Soralite Quarry"]]
+        for fam in MINE_FAMILIES:
+            s = self.best(fam)
             if s:
                 self.add(s, 1)
                 sites.append(s)
-        if "Ore Mining Site" not in sites:
-            self.notes.append("Ore Mining Site требует tech 24 — до этого ставь базу прямо на рудные точки (см. resource coal/ore)")
-        self.notes.append("Добывающие станции работают Handiwork-циклами (paldb: workload). "
-                          "Placeable-шахт для Coal/Sulfur/Quartz нет в 1.0 — под них база на точках + Mining-палы")
+        self.notes.append(f"Добыча ({len(sites)} станций, по 1 на базу): {', '.join(sites)}. "
+                          "Работают Handiwork-циклами (paldb: workload)")
         self.support_core([("suitability:Mining", "+1 Mining всем (Tetroise)"),
                            ("suitability:Handiwork", "+1 Handiwork всем (Ribbuny)"),
                            ("suitability:Transporting", "+1 Transport всем (Wumpo)"),
                            ("sanity_save", "SAN базы (Shroomer Noct)")])
-        n_site_hands = max(2, round(len(sites) * 2 / self.q()))
-        self.hire_best("Handiwork", 5, n_site_hands, f"добыча: {'/'.join(sites) or 'рудные точки'}")
-        self.hire_best("Mining", 6, max(2, round(4 / self.q())), "шахтёр (рудные точки на базе + Ore Mining Site)")
+        mining_sites = [x for x in sites if self.structs[x].get("workers") == "Mining"]
+        hand_sites = [x for x in sites if x not in mining_sites]
+        if hand_sites:
+            self.hire_best("Handiwork", 5, max(1, round(len(hand_sites) * 0.8 / self.q())),
+                           f"добыча (Handiwork): {'/'.join(hand_sites)}")
+        if mining_sites:
+            self.hire_best("Mining", 6, max(1, round(len(mining_sites) * 0.8 / self.q())),
+                           f"добыча (Mining): {'/'.join(mining_sites)}")
+        self.hire_best("Mining", 6, max(1, round(2 / self.q())), "шахтёр (рудные точки на базе, если есть)")
         furn = self.best(["Primitive Furnace", "Improved Furnace", "Electric Furnace", "Gigantic Furnace", "Ancient Furnace"])
         self.add(furn, 2)
         self.hire_best("Kindling", 6, 2, "печи")
@@ -337,7 +346,7 @@ class Planner:
 
     def preset_oil(self):
         a = self.args
-        ext = self.best(["Crude Oil Extractor"])
+        ext = self.best(["Crude Oil Extractor", "High-Pressure Crude Oil Extractor"])
         n = 4
         if ext:
             self.add(ext, n)
@@ -350,7 +359,8 @@ class Planner:
         self.infra(a.slots)
         self.power(heavy=True)
         self.hire_best("Generating_Electricity", 7, 2, "электрик (экстракторы прожорливы)")
-        self.notes.append("База ставится на нефтяные точки (см. resource_nodes.json: Sakurajima NW (-646,270))")
+        self.notes.append("Crude Oil Extractor (tech 50) ставится на нефтяные точки (Sakurajima NW (-646,270)); "
+                          "High-Pressure (tech 51) — В ЛЮБОЙ точке, но жрёт 3000 энергии/с — нужен Ancient Power Generator")
 
     def preset_food(self):
         a = self.args
