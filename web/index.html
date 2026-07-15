@@ -421,6 +421,20 @@ render.skills = () => {
 const QUALITY = {baseline:1.0, passives:2.2, max:2.75};
 const METALS = {"ingot":33,"refined":43,"pal-metal":57,"coralum":65,"soralite":73,"paloxite":99};
 const TRANS_CAP = {1:2,2:5,3:10,4:20,5:40,6:70,7:120,8:200,9:320,10:500};
+const sizeBadge = n => { const sz=(D.idx.pals[n]||{}).size; return sz?` <span class="tag" style="padding:0 5px;font-size:10.5px">${sz}</span>`:""; };
+function crewGroup(c){
+  const r=(c.role||"");
+  if(/саппорт/i.test(r)) return "🎯 Саппорт";
+  if(c.for==="Ranch"||/ранч/i.test(r)) return "🐄 Ранчо";
+  if(c.task==="Transporting"||/транспорт/i.test(r)) return "📦 Транспорт";
+  if(/ЕДА|повар|салат/i.test(r)) return "🍽 Еда";
+  if(/добыча|шахтёр|лесопилк|Synthesizer/i.test(r)||c.task==="Mining"||c.task==="Lumbering") return "⛏ Добыча";
+  if(/посадка|полив|сбор|мельница|плантаци/i.test(r)||["Planting","Watering","Gathering"].includes(c.task)) return "🌾 Ферма";
+  if(/родителей|ферм|Hatchery/i.test(r)) return "🥚 Бридинг";
+  if(/сборочн|верстак|печи|Workbench|торт/i.test(r)||["Handiwork","Kindling"].includes(c.task)) return "🔧 Крафт";
+  if(/медик|электрик|холодильник/i.test(r)||["Medicine","Generating_Electricity","Cooling"].includes(c.task)) return "🏥 Инфраструктура";
+  return "❓ Прочее";
+}
 function transInfo(n){ const p=D.idx.pals[n]||{}; const t=p.work?.Transporting;
   if(!t) return null; const cap=TRANS_CAP[t]||0;
   return {cap, walk:p.walk||0, run:p.run||0, score:cap*(p.run||0)}; }
@@ -829,10 +843,18 @@ function drawBase(){
     return card+`</div>`;
   }).join("");
 
-  // палы
-  let ch=BASE.crew.map((c,i)=>{
+  // палы: группировка по разделам
+  const GROUP_ORDER=["🎯 Саппорт","⛏ Добыча","🔧 Крафт","🌾 Ферма","🐄 Ранчо","🥚 Бридинг","🍽 Еда","📦 Транспорт","🏥 Инфраструктура","❓ Прочее"];
+  const grouped={};
+  BASE.crew.forEach((c,i)=>{ const g=crewGroup(c); (grouped[g]=grouped[g]||[]).push(i); });
+  let ch=GROUP_ORDER.filter(g=>grouped[g]).map(g=>{
+    const n=grouped[g].reduce((a,i)=>a+BASE.crew[i].count,0);
+    return `<div style="margin:10px 0 4px"><b style="color:var(--acc2)">${g}</b> <span class="dim">(${n})</span></div>`+
+      grouped[g].map(i=>crewCard(i)).join("");
+  }).join("");
+  function crewCard(i){ const c=BASE.crew[i];
     let card=`<div class="card" style="margin-bottom:8px"><div class="row" style="justify-content:space-between">
-      <div>${palIcon(c.sp)}<span class="clicky" style="font-weight:700" onclick="openC=openC===${i}?null:${i};openB=null;drawBase()">${esc(c.sp)}${num(c.sp)?` <span class="dim">(#${num(c.sp)})</span>`:""}</span>
+      <div>${palIcon(c.sp)}<span class="clicky" style="font-weight:700" onclick="openC=openC===${i}?null:${i};openB=null;drawBase()">${esc(c.sp)}${num(c.sp)?` <span class="dim">(#${num(c.sp)})</span>`:""}</span>${sizeBadge(c.sp)}
         <span class="dim"> — ${esc(c.role||"")}</span></div>
       <div><span class="tag clicky" onclick="BASE.crew[${i}].count++;baseDirty=true;drawBase()">+</span>
         <b class="mono"> x${c.count} </b>
@@ -846,13 +868,13 @@ function drawBase(){
         alts.map(([nm,lv,ti])=>{const cur=nm===c.sp;
           const info=ti?` несёт ${ti.cap} · бег ${ti.run}/шаг ${ti.walk}`:` ${lv}`;
           return `<span class="tag ${cur?"":"clicky"}" style="${cur?"border-color:var(--acc)":""}"
-            ${cur?"":`onclick="BASE.crew[${i}].sp='${nm.replace(/'/g,"\\'")}';openC=null;baseDirty=true;drawBase()"`}>${esc(nm)}${(D.idx.pals[nm]||{}).nocturnal?" 🌙":""} <span class="dim">${info}${plan.easyGet(nm)?"":" 🔒"}</span></span>`;}).join(" ")+
+            ${cur?"":`onclick="BASE.crew[${i}].sp='${nm.replace(/'/g,"\\'")}';openC=null;baseDirty=true;drawBase()"`}>${esc(nm)}${sizeBadge(nm)}${(D.idx.pals[nm]||{}).nocturnal?" 🌙":""} <span class="dim">${info}${plan.easyGet(nm)?"":" 🔒"}</span></span>`;}).join(" ")+
         `<div class="sub">🔒 = нет дикого спавна вне эндгейма${c.task==="Transporting"?"; скорость с грузом = допущение «бег»":""}</div></div>`;
     } else if(openC===i){
       card+=`<div class="sub" style="margin-top:4px">Саппорт/уникальная роль — замен нет. ${esc(plan.hint(c.sp))}</div>`;
     }
     return card+`</div>`;
-  }).join("");
+  }
 
   // смета
   const bill={};
@@ -912,7 +934,7 @@ function ranchPickerHtml(i){
       oninput="ranchPick.q=this.value;drawBase();(function(){const e=document.getElementById('rpq');if(e){e.focus();e.setSelectionRange(e.value.length,e.value.length);}})();"
       style="margin:6px 0">
     <div style="max-height:260px;overflow-y:auto"><table>${producers.map(([n,p])=>
-      `<tr><td>${palIcon(n)}${palLink(n)}${p.nocturnal?" 🌙":""}</td>
+      `<tr><td>${palIcon(n)}${palLink(n)}${sizeBadge(n)}${p.nocturnal?" 🌙":""}</td>
        <td class="dim">${esc((p.ranch_produce||[]).join(", "))}</td>
        <td class="mono">F${p.work.Farming||"-"}</td>
        <td class="dim">${plan.easyGet(n)?"":"🔒"}</td>
@@ -940,10 +962,11 @@ function openPalPicker(i, task, forB, minLv){
 }
 function palPickerHtml(){
   if(!pickerFor) return "";
-  const {task, forB, minLv, q, easy}=pickerFor;
+  const {task, forB, minLv, q, easy, size}=pickerFor;
   const plan=new BasePlan({roster:"top"});
   const list=(D.idx.inverted.work[task]||[]).filter(([nm,lv])=>lv>=1&&(!easy||plan.easyGet(nm))
-    &&(!q||nm.toLowerCase().includes(q.toLowerCase())));
+    &&(!q||nm.toLowerCase().includes(q.toLowerCase()))
+    &&(!size||(D.idx.pals[nm]||{}).size===size));
   return `<div class="card" style="margin-top:6px;border-color:var(--acc)">
     <div class="row" style="justify-content:space-between">
       <b>Выбор пала: ${task.replace("_"," ")} для «${esc(forB)}»</b>
@@ -953,9 +976,12 @@ function palPickerHtml(){
         oninput="pickerFor.q=this.value;drawBase();(function(){const e=document.getElementById('ppq');if(e){e.focus();e.setSelectionRange(e.value.length,e.value.length);}})();" id="ppq">
       <label class="dim"><input type="checkbox" ${easy?"checked":""}
         onchange="pickerFor.easy=this.checked;drawBase()"> легко достать</label>
+      <select onchange="pickerFor.size=this.value;drawBase()">
+        <option value="">размер: любой</option>
+        ${["XS","S","M","L","XL"].map(z=>`<option ${size===z?"selected":""}>${z}</option>`).join("")}</select>
       ${minLv>1?`<span class="warn">здание требует уровень ${minLv}+</span>`:""}</div>
     <div style="max-height:260px;overflow-y:auto"><table>${list.slice(0,60).map(([nm,lv])=>
-      `<tr${lv<minLv?' style="opacity:.45"':''}><td>${palIcon(nm)}${palLink(nm)}${(D.idx.pals[nm]||{}).nocturnal?" 🌙":""}</td>
+      `<tr${lv<minLv?' style="opacity:.45"':''}><td>${palIcon(nm)}${palLink(nm)}${sizeBadge(nm)}${(D.idx.pals[nm]||{}).nocturnal?" 🌙":""}</td>
        <td class="mono">${lv}</td>
        <td class="dim">${plan.easyGet(nm)?"дикий спавн":"сложный"}</td>
        <td><span class="tag clicky" onclick="builderHire('${nm.replace(/'/g,"\\'")}','${task}','${forB.replace(/'/g,"\\'")}')">нанять</span></td></tr>`).join("")}

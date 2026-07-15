@@ -39,7 +39,8 @@
    "base_worker",
    "mining"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Amione",
@@ -74,7 +75,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Anubis",
@@ -115,7 +117,8 @@
    "mining",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Arsox",
@@ -152,7 +155,8 @@
    "lumbering",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Astegon",
@@ -195,7 +199,8 @@
    "base_worker",
    "mining"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "XL"
  },
  {
   "name": "Astralym",
@@ -227,7 +232,8 @@
   "role_tags": [
    "fighter"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Azurmane",
@@ -268,7 +274,8 @@
    "base_worker",
    "electricity"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Azurobe",
@@ -310,7 +317,8 @@
    "base_worker",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Azurobe Cryst",
@@ -352,7 +360,8 @@
    "base_worker",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Bakemi",
@@ -389,7 +398,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "S"
  },
  {
   "name": "Bastigor",
@@ -432,7 +442,8 @@
    "lumbering",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Beakon",
@@ -474,7 +485,8 @@
    "transport",
    "electricity"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Beakon Cryst",
@@ -516,7 +528,8 @@
    "transport",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Beegarde",
@@ -553,7 +566,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Bellanoir",
@@ -589,7 +603,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Bellanoir Libero",
@@ -626,7 +641,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Blazamut",
@@ -668,7 +684,8 @@
    "mining",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Blazamut Ryu",
@@ -711,7 +728,8 @@
    "mining",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Blazehowl",
@@ -752,7 +770,8 @@
    "lumbering",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Blazehowl Noct",
@@ -794,7 +813,8 @@
    "lumbering",
    "kindling"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "L"
  },
  {
   "name": "Blue Slime",
@@ -829,7 +849,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Braloha",
@@ -870,7 +891,8 @@
    "base_worker",
    "mining"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Bristla",
@@ -906,7 +928,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Broncherry",
@@ -945,7 +968,8 @@
    "mount",
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Broncherry Aqua",
@@ -986,7 +1010,8 @@
    "base_worker",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Bulldosu",
@@ -1023,7 +1048,8 @@
    "mining",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Bushi",
@@ -1061,7 +1087,8 @@
    "transport",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Bushi Noct",
@@ -1101,7 +1128,8 @@
    "transport",
    "kindling"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Caprity",
@@ -1137,7 +1165,8 @@
    "base_worker",
    "farming"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Caprity Noct",
@@ -1174,7 +1203,8 @@
    "base_worker",
    "farming"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "S"
  },
  {
   "name": "Carnibora",
@@ -1213,7 +1243,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Cattiva",
@@ -1248,7 +1279,8 @@
    "mining",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Cave Bat",
@@ -1281,7 +1313,8 @@
   "role_tags": [
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Cawgnito",
@@ -1318,7 +1351,8 @@
    "lumbering",
    "farming"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Celaray",
@@ -1353,7 +1387,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Celaray Lux",
@@ -1390,7 +1425,8 @@
    "electricity",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Celesdir",
@@ -1430,7 +1466,8 @@
    "base_worker",
    "lumbering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Celesdir Noct",
@@ -1470,7 +1507,8 @@
    "base_worker",
    "lumbering"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Chikipi",
@@ -1505,7 +1543,8 @@
    "base_worker",
    "farming"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Chillet",
@@ -1546,7 +1585,8 @@
    "base_worker",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Chillet Ignis",
@@ -1587,7 +1627,8 @@
    "base_worker",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Cinnamoth",
@@ -1623,7 +1664,8 @@
    "base_worker",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Clovee",
@@ -1657,7 +1699,8 @@
   "role_tags": [
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Cremis",
@@ -1691,7 +1734,8 @@
    "base_worker",
    "farming"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Croajiro",
@@ -1727,7 +1771,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Croajiro Noct",
@@ -1765,7 +1810,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "XS"
  },
  {
   "name": "Cryolinx",
@@ -1802,7 +1848,8 @@
    "transport",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Cryolinx Terra",
@@ -1839,7 +1886,8 @@
    "lumbering",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Daedream",
@@ -1874,7 +1922,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "XS"
  },
  {
   "name": "Dandilord",
@@ -1916,7 +1965,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Dazemu",
@@ -1950,7 +2000,8 @@
    "mount",
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Dazzi",
@@ -1986,7 +2037,8 @@
    "transport",
    "electricity"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Dazzi Noct",
@@ -2025,7 +2077,8 @@
    "electricity",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "XS"
  },
  {
   "name": "Demon Eye",
@@ -2059,7 +2112,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "S"
  },
  {
   "name": "Depresso",
@@ -2095,7 +2149,8 @@
    "farming",
    "transport"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "XS"
  },
  {
   "name": "Digtoise",
@@ -2130,7 +2185,8 @@
    "base_worker",
    "mining"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Dinossom",
@@ -2167,7 +2223,8 @@
    "base_worker",
    "lumbering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Dinossom Lux",
@@ -2205,7 +2262,8 @@
    "lumbering",
    "electricity"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Direhowl",
@@ -2241,7 +2299,8 @@
    "mount",
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Dogen",
@@ -2277,7 +2336,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Dualith",
@@ -2320,7 +2380,8 @@
    "lumbering",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Dualith Noct",
@@ -2363,7 +2424,8 @@
    "lumbering",
    "transport"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "XL"
  },
  {
   "name": "Dumud",
@@ -2402,7 +2464,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Dumud Gild",
@@ -2442,7 +2505,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Dupin",
@@ -2483,7 +2547,8 @@
    "kindling",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Dynamoff",
@@ -2520,7 +2585,8 @@
    "transport",
    "electricity"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Eidrolon",
@@ -2563,7 +2629,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "L"
  },
  {
   "name": "Eidrolon Ignis",
@@ -2607,7 +2674,8 @@
    "transport",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Eikthyrdeer",
@@ -2647,7 +2715,8 @@
    "base_worker",
    "lumbering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Eikthyrdeer Terra",
@@ -2687,7 +2756,8 @@
    "base_worker",
    "lumbering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Elgrove",
@@ -2728,7 +2798,8 @@
    "lumbering",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Elgrove Cryst",
@@ -2770,7 +2841,8 @@
    "transport",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Elizabee",
@@ -2806,7 +2878,8 @@
    "lumbering",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Elphidran",
@@ -2847,7 +2920,8 @@
    "base_worker",
    "lumbering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Elphidran Aqua",
@@ -2890,7 +2964,8 @@
    "lumbering",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Enchanted Sword",
@@ -2924,7 +2999,8 @@
    "base_worker",
    "lumbering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Eye of Cthulhu",
@@ -2958,7 +3034,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "L"
  },
  {
   "name": "Faleris",
@@ -3000,7 +3077,8 @@
    "transport",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Faleris Aqua",
@@ -3042,7 +3120,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Felbat",
@@ -3077,7 +3156,8 @@
    "base_worker",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Fenglope",
@@ -3117,7 +3197,8 @@
    "base_worker",
    "lumbering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Fenglope Lux",
@@ -3158,7 +3239,8 @@
    "lumbering",
    "electricity"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Finsider",
@@ -3195,7 +3277,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Finsider Ignis",
@@ -3234,7 +3317,8 @@
    "kindling",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Flambelle",
@@ -3271,7 +3355,8 @@
    "transport",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Flaracle",
@@ -3312,7 +3397,8 @@
    "transport",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Flopie",
@@ -3348,7 +3434,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Foxcicle",
@@ -3384,7 +3471,8 @@
    "farming",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Foxparks",
@@ -3419,7 +3507,8 @@
    "base_worker",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Foxparks Cryst",
@@ -3454,7 +3543,8 @@
    "base_worker",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Frostallion",
@@ -3492,7 +3582,8 @@
    "base_worker",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Frostallion Noct",
@@ -3529,7 +3620,8 @@
    "fighter",
    "base_worker"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "L"
  },
  {
   "name": "Frostplume",
@@ -3563,7 +3655,8 @@
    "base_worker",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Fuack",
@@ -3599,7 +3692,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Fuack Ignis",
@@ -3638,7 +3732,8 @@
    "kindling",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Fuddler",
@@ -3673,7 +3768,8 @@
    "mining",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Galeclaw",
@@ -3708,7 +3804,8 @@
    "fighter",
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Ghangler",
@@ -3748,7 +3845,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Ghangler Ignis",
@@ -3789,7 +3887,8 @@
    "kindling",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Gildane",
@@ -3823,7 +3922,8 @@
    "mount",
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Gildra",
@@ -3861,7 +3961,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Gloopie",
@@ -3899,7 +4000,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "S"
  },
  {
   "name": "Gloopie Primo",
@@ -3936,7 +4038,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Gobfin",
@@ -3971,7 +4074,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Gobfin Ignis",
@@ -4006,7 +4110,8 @@
    "transport",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Gorirat",
@@ -4046,7 +4151,8 @@
    "lumbering",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Gorirat Terra",
@@ -4086,7 +4192,8 @@
    "mining",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Green Slime",
@@ -4121,7 +4228,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Grintale",
@@ -4155,7 +4263,8 @@
    "mount",
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Grizzbolt",
@@ -4198,7 +4307,8 @@
    "transport",
    "electricity"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Gumoss",
@@ -4233,7 +4343,8 @@
   "role_tags": [
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Hangyu",
@@ -4268,7 +4379,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Hangyu Cryst",
@@ -4304,7 +4416,8 @@
    "transport",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Hartalis",
@@ -4342,7 +4455,8 @@
    "base_worker",
    "lumbering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Helzephyr",
@@ -4384,7 +4498,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "L"
  },
  {
   "name": "Helzephyr Lux",
@@ -4428,7 +4543,8 @@
    "transport",
    "electricity"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "L"
  },
  {
   "name": "Herbil",
@@ -4464,7 +4580,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Hoocrates",
@@ -4498,7 +4615,8 @@
   "role_tags": [
    "base_worker"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "XS"
  },
  {
   "name": "Hoodle",
@@ -4533,7 +4651,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "XS"
  },
  {
   "name": "Icelyn",
@@ -4569,7 +4688,8 @@
    "cooling",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Illuminant Bat",
@@ -4602,7 +4722,8 @@
   "role_tags": [
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Illuminant Slime",
@@ -4637,7 +4758,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Incineram",
@@ -4676,7 +4798,8 @@
    "transport",
    "kindling"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Incineram Noct",
@@ -4713,7 +4836,8 @@
    "mining",
    "transport"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Jelliette",
@@ -4750,7 +4874,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Jellroy",
@@ -4788,7 +4913,8 @@
    "watering",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "S"
  },
  {
   "name": "Jetragon",
@@ -4827,7 +4953,8 @@
    "fighter",
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Jolthog",
@@ -4861,7 +4988,8 @@
    "base_worker",
    "electricity"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Jolthog Cryst",
@@ -4895,7 +5023,8 @@
    "base_worker",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Jormuntide",
@@ -4938,7 +5067,8 @@
    "base_worker",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Jormuntide Ignis",
@@ -4980,7 +5110,8 @@
    "base_worker",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Katress",
@@ -5017,7 +5148,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Katress Ignis",
@@ -5056,7 +5188,8 @@
    "kindling",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Kelpsea",
@@ -5092,7 +5225,8 @@
    "farming",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Kelpsea Ignis",
@@ -5128,7 +5262,8 @@
    "farming",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Kikit",
@@ -5164,7 +5299,8 @@
    "base_worker",
    "mining"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Killamari",
@@ -5202,7 +5338,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "XS"
  },
  {
   "name": "Killamari Primo",
@@ -5239,7 +5376,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Kingpaca",
@@ -5278,7 +5416,8 @@
    "mount",
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Kingpaca Cryst",
@@ -5314,7 +5453,8 @@
    "base_worker",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Kitsun",
@@ -5350,7 +5490,8 @@
    "base_worker",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Kitsun Noct",
@@ -5387,7 +5528,8 @@
    "base_worker",
    "kindling"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Knocklem",
@@ -5427,7 +5569,8 @@
    "mining",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Knocklem Ignis",
@@ -5468,7 +5611,8 @@
    "transport",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Lamball",
@@ -5504,7 +5648,8 @@
    "farming",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Lapiron",
@@ -5539,7 +5684,8 @@
    "mining",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Lapure",
@@ -5572,7 +5718,8 @@
   "role_tags": [
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Leafan",
@@ -5606,7 +5753,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Leezpunk",
@@ -5642,7 +5790,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "S"
  },
  {
   "name": "Leezpunk Ignis",
@@ -5679,7 +5828,8 @@
    "transport",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Lifmunk",
@@ -5715,7 +5865,8 @@
    "lumbering",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Loomen",
@@ -5756,7 +5907,8 @@
    "kindling",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Loupmoon",
@@ -5790,7 +5942,8 @@
    "fighter",
    "base_worker"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Loupmoon Cryst",
@@ -5825,7 +5978,8 @@
    "base_worker",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Lovander",
@@ -5865,7 +6019,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "L"
  },
  {
   "name": "Lullu",
@@ -5900,7 +6055,8 @@
    "base_worker",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Lunaris",
@@ -5934,7 +6090,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Lyleen",
@@ -5974,7 +6131,8 @@
    "base_worker",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Lyleen Noct",
@@ -6014,7 +6172,8 @@
    "base_worker",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "L"
  },
  {
   "name": "Majex",
@@ -6056,7 +6215,8 @@
    "kindling",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Mammorest",
@@ -6098,7 +6258,8 @@
    "mining",
    "lumbering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Mammorest Cryst",
@@ -6141,7 +6302,8 @@
    "lumbering",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Maraith",
@@ -6178,7 +6340,8 @@
    "base_worker",
    "mining"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Mau",
@@ -6213,7 +6376,8 @@
    "base_worker",
    "farming"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "XS"
  },
  {
   "name": "Mau Cryst",
@@ -6249,7 +6413,8 @@
    "farming",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Melpaca",
@@ -6285,7 +6450,8 @@
    "base_worker",
    "farming"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Menasting",
@@ -6322,7 +6488,8 @@
    "mining",
    "lumbering"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "L"
  },
  {
   "name": "Menasting Terra",
@@ -6358,7 +6525,8 @@
    "mining",
    "lumbering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Mimog",
@@ -6394,7 +6562,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Moldron",
@@ -6437,7 +6606,8 @@
    "mining",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Moldron Cryst",
@@ -6476,7 +6646,8 @@
    "mining",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Mossanda",
@@ -6517,7 +6688,8 @@
    "lumbering",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Mossanda Lux",
@@ -6559,7 +6731,8 @@
    "transport",
    "electricity"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Mozzarina",
@@ -6594,7 +6767,8 @@
    "base_worker",
    "farming"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Muffly",
@@ -6629,7 +6803,8 @@
    "transport",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Munchill",
@@ -6668,7 +6843,8 @@
    "watering",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Mycora",
@@ -6707,7 +6883,8 @@
    "base_worker",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Necromus",
@@ -6746,7 +6923,8 @@
    "mining",
    "lumbering"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "L"
  },
  {
   "name": "Needoll",
@@ -6780,7 +6958,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Needoll Noct",
@@ -6816,7 +6995,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "XS"
  },
  {
   "name": "Neptilius",
@@ -6856,7 +7036,8 @@
    "base_worker",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Nitemary",
@@ -6890,7 +7071,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "S"
  },
  {
   "name": "Nitemary Botan",
@@ -6929,7 +7111,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Nitewing",
@@ -6964,7 +7147,8 @@
    "flyer",
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Nox",
@@ -6998,7 +7182,8 @@
   "role_tags": [
    "base_worker"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "XS"
  },
  {
   "name": "Nyafia",
@@ -7033,7 +7218,8 @@
    "lumbering",
    "transport"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Omascul",
@@ -7066,7 +7252,8 @@
   "role_tags": [
    "base_worker"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "S"
  },
  {
   "name": "Ophydia",
@@ -7107,7 +7294,8 @@
    "base_worker",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Orserk",
@@ -7149,7 +7337,8 @@
    "transport",
    "electricity"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Paladius",
@@ -7188,7 +7377,8 @@
    "mining",
    "lumbering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Palumba",
@@ -7225,7 +7415,8 @@
    "base_worker",
    "mining"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Panthalus",
@@ -7261,7 +7452,8 @@
    "flyer",
    "fighter"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Pengullet",
@@ -7299,7 +7491,8 @@
    "watering",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Pengullet Lux",
@@ -7337,7 +7530,8 @@
    "electricity",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Penking",
@@ -7376,7 +7570,8 @@
    "watering",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Penking Lux",
@@ -7415,7 +7610,8 @@
    "electricity",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Petallia",
@@ -7451,7 +7647,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Petallia Ignis",
@@ -7486,7 +7683,8 @@
    "kindling",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Pierdon",
@@ -7522,7 +7720,8 @@
    "base_worker",
    "mining"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Pierdon Cryst",
@@ -7562,7 +7761,8 @@
    "mining",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Polapup",
@@ -7599,7 +7799,8 @@
    "watering",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Polapup Terra",
@@ -7641,7 +7842,8 @@
    "mining",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Prixter",
@@ -7677,7 +7879,8 @@
    "lumbering",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "S"
  },
  {
   "name": "Prixter Lux",
@@ -7714,7 +7917,8 @@
    "electricity",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Prunelia",
@@ -7752,7 +7956,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "S"
  },
  {
   "name": "Puffolt",
@@ -7787,7 +7992,8 @@
    "transport",
    "electricity"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Pupperai",
@@ -7822,7 +8028,8 @@
    "lumbering",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Purple Slime",
@@ -7857,7 +8064,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "S"
  },
  {
   "name": "Pyrin",
@@ -7898,7 +8106,8 @@
    "lumbering",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Pyrin Noct",
@@ -7940,7 +8149,8 @@
    "lumbering",
    "kindling"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "L"
  },
  {
   "name": "Quivern",
@@ -7982,7 +8192,8 @@
    "mining",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Quivern Botan",
@@ -8025,7 +8236,8 @@
    "mining",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Ragnahawk",
@@ -8067,7 +8279,8 @@
    "transport",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Rainbow Slime",
@@ -8102,7 +8315,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Rayhound",
@@ -8137,7 +8351,8 @@
    "base_worker",
    "electricity"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Rayhound Cryst",
@@ -8177,7 +8392,8 @@
    "base_worker",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Red Slime",
@@ -8212,7 +8428,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Reindrix",
@@ -8253,7 +8470,8 @@
    "lumbering",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Relaxaurus",
@@ -8295,7 +8513,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Relaxaurus Lux",
@@ -8338,7 +8557,8 @@
    "transport",
    "electricity"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Renjishi",
@@ -8379,7 +8599,8 @@
    "transport",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Reptyro",
@@ -8416,7 +8637,8 @@
    "mining",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Reptyro Cryst",
@@ -8453,7 +8675,8 @@
    "mining",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Ribbuny",
@@ -8490,7 +8713,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Ribbuny Botan",
@@ -8527,7 +8751,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Robinquill",
@@ -8564,7 +8789,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Robinquill Terra",
@@ -8602,7 +8828,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Rooby",
@@ -8638,7 +8865,8 @@
    "farming",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Roujay",
@@ -8679,7 +8907,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Rushoar",
@@ -8716,7 +8945,8 @@
    "base_worker",
    "mining"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Sekhmet",
@@ -8756,7 +8986,8 @@
    "mining",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Selyne",
@@ -8799,7 +9030,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "L"
  },
  {
   "name": "Shadowbeak",
@@ -8840,7 +9072,8 @@
    "fighter",
    "base_worker"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "L"
  },
  {
   "name": "Shaolong",
@@ -8883,7 +9116,8 @@
    "base_worker",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Shroomer",
@@ -8924,7 +9158,8 @@
    "lumbering",
    "farming"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Shroomer Noct",
@@ -8961,7 +9196,8 @@
    "base_worker",
    "lumbering"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "S"
  },
  {
   "name": "Sibelyx",
@@ -8998,7 +9234,8 @@
    "cooling",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Sibelyx Primo",
@@ -9038,7 +9275,8 @@
    "farming",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Silvance",
@@ -9079,7 +9317,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Silvegis",
@@ -9119,7 +9358,8 @@
    "base_worker",
    "lumbering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Skutlass",
@@ -9155,7 +9395,8 @@
    "lumbering",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Skutlass Ignis",
@@ -9197,7 +9438,8 @@
    "kindling",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Slowatt",
@@ -9232,7 +9474,8 @@
    "base_worker",
    "electricity"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Smokie",
@@ -9265,7 +9508,8 @@
   "role_tags": [
    "base_worker"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "XS"
  },
  {
   "name": "Smokie Cryst",
@@ -9305,7 +9549,8 @@
    "base_worker",
    "cooling"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "XS"
  },
  {
   "name": "Snock",
@@ -9340,7 +9585,8 @@
    "base_worker",
    "electricity"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Snock Lux",
@@ -9380,7 +9626,8 @@
    "base_worker",
    "electricity"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Snugloo",
@@ -9421,7 +9668,8 @@
    "transport",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Solenne",
@@ -9461,7 +9709,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Solmora",
@@ -9499,7 +9748,8 @@
    "fishing",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Solmora Lux",
@@ -9543,7 +9793,8 @@
    "electricity",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Sootseer",
@@ -9583,7 +9834,8 @@
    "farming",
    "kindling"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Souffline",
@@ -9617,7 +9869,8 @@
    "base_worker",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Sparkit",
@@ -9653,7 +9906,8 @@
    "transport",
    "electricity"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Splatterina",
@@ -9694,7 +9948,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Starryon",
@@ -9733,7 +9988,8 @@
    "mount",
    "base_worker"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Starryon Primo",
@@ -9772,7 +10028,8 @@
    "mount",
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Surfent",
@@ -9809,7 +10066,8 @@
    "farming",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Surfent Terra",
@@ -9844,7 +10102,8 @@
    "mount",
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Suzaku",
@@ -9885,7 +10144,8 @@
    "base_worker",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Suzaku Aqua",
@@ -9926,7 +10186,8 @@
    "base_worker",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Swee",
@@ -9961,7 +10222,8 @@
    "base_worker",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Sweepa",
@@ -9996,7 +10258,8 @@
    "base_worker",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Tanzee",
@@ -10031,7 +10294,8 @@
    "lumbering",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Tanzee Ignis",
@@ -10068,7 +10332,8 @@
    "transport",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Tarantriss",
@@ -10105,7 +10370,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "S"
  },
  {
   "name": "Teafant",
@@ -10139,7 +10405,8 @@
    "base_worker",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Tetroise",
@@ -10179,7 +10446,8 @@
    "base_worker",
    "mining"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Tetroise Primo",
@@ -10219,7 +10487,8 @@
    "base_worker",
    "mining"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Tocotoco",
@@ -10253,7 +10522,8 @@
   "role_tags": [
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Tombat",
@@ -10289,7 +10559,8 @@
    "mining",
    "transport"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Tropicaw",
@@ -10323,7 +10594,8 @@
   "role_tags": [
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Turtacle",
@@ -10360,7 +10632,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Turtacle Terra",
@@ -10398,7 +10671,8 @@
    "transport",
    "watering"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Univolt",
@@ -10439,7 +10713,8 @@
    "lumbering",
    "electricity"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Univolt Cryst",
@@ -10480,7 +10755,8 @@
    "lumbering",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Vaelet",
@@ -10518,7 +10794,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Valentail",
@@ -10551,7 +10828,8 @@
   "role_tags": [
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Vanwyrm",
@@ -10591,7 +10869,8 @@
    "transport",
    "kindling"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "L"
  },
  {
   "name": "Vanwyrm Cryst",
@@ -10632,7 +10911,8 @@
    "transport",
    "cooling"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "L"
  },
  {
   "name": "Venusa",
@@ -10672,7 +10952,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "S"
  },
  {
   "name": "Verdash",
@@ -10708,7 +10989,8 @@
    "lumbering",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Vixy",
@@ -10743,7 +11025,8 @@
    "base_worker",
    "farming"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  },
  {
   "name": "Warsect",
@@ -10784,7 +11067,8 @@
    "lumbering",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Warsect Terra",
@@ -10819,7 +11103,8 @@
    "mining",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Whalaska",
@@ -10862,7 +11147,8 @@
    "watering",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Whalaska Ignis",
@@ -10906,7 +11192,8 @@
    "kindling",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XL"
  },
  {
   "name": "Wispaw",
@@ -10947,7 +11234,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "S"
  },
  {
   "name": "Wistella",
@@ -10987,7 +11275,8 @@
    "transport",
    "medicine"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "S"
  },
  {
   "name": "Wixen",
@@ -11023,7 +11312,8 @@
    "transport",
    "kindling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "M"
  },
  {
   "name": "Wixen Noct",
@@ -11060,7 +11350,8 @@
    "transport",
    "kindling"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "M"
  },
  {
   "name": "Woolipop",
@@ -11095,7 +11386,8 @@
    "base_worker",
    "farming"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Woolipop Terra",
@@ -11130,7 +11422,8 @@
    "base_worker",
    "farming"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "S"
  },
  {
   "name": "Wumpo",
@@ -11172,7 +11465,8 @@
    "transport",
    "cooling"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Wumpo Botan",
@@ -11213,7 +11507,8 @@
    "lumbering",
    "transport"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Xenogard",
@@ -11250,7 +11545,8 @@
    "base_worker",
    "mining"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "L"
  },
  {
   "name": "Xenolord",
@@ -11287,7 +11583,8 @@
    "fighter",
    "base_worker"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "L"
  },
  {
   "name": "Xenovader",
@@ -11323,7 +11620,8 @@
    "lumbering",
    "transport"
   ],
-  "nocturnal": true
+  "nocturnal": true,
+  "size": "S"
  },
  {
   "name": "Yakumo",
@@ -11357,6 +11655,7 @@
    "mount",
    "base_worker"
   ],
-  "nocturnal": false
+  "nocturnal": false,
+  "size": "XS"
  }
 ]
