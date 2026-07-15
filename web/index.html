@@ -738,7 +738,8 @@ function builderOpts(){
     workforce:val("pwf"),roster:val("proster"),lux:document.getElementById("plux").checked,
     ranchRate:+val("pranch")||12,plantYield:+val("pyield")||60,cookRate:+val("pcook")||30,
     plantsPerWorker:3,farms:+val("pfarms")||null,dish:val("pdish")||"Salad",dishRate:+val("pdishrate")||30,
-    eggInterval:+val("peggint")||5,eggBoost:+val("peggboost")||1.35,incubation:+val("pincub")||0};
+    eggInterval:+val("peggint")||5,eggBoost:+val("peggboost")||1.35,
+    incubation:val("pincub")===""?1:+val("pincub")};
 }
 
 render.planner = () => {
