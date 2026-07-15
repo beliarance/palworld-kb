@@ -200,38 +200,42 @@ class Planner:
                 hint = self.catch_hint(n)
                 self.hire(n, 1, f"саппорт: {why}" + (f"  [{hint}]" if hint else ""))
 
-    def food_module(self, roster_slots):
-        """Кормовой модуль: салаты (томат+латук) или ягоды на низком tech."""
-        appetite = 5.0  # средний FoodAmount по типичному ростеру
-        fa = self.bb["pal_food_amount"]
-        avg = sum(v for v in fa.values() if v) / max(1, len([v for v in fa.values() if v]))
-        demand = roster_slots * avg  # в FoodAmount-единицах
+    def food_module(self, roster_slots, share_crew=False):
+        """Кормовой модуль. Возвращает число кормовых грядок.
+        share_crew=True: грядки обслуживает общая тройка базы (не нанимаем свою — брид/еда-базы,
+        где Planting/Watering/Gathering-палы уже есть и покрывают ВСЕ плантации)."""
+        # точной скорости голода в данных нет (gap) — берём «1 грядка кормит ~15 палов»
+        # (Salad: сытость 84, палы едят редко); настраивается --food-per-plot
+        plots = max(2, math.ceil(roster_slots / self.args.food_per_plot))
         salad_ok = self.args.tech >= (self.structs.get("Tomato Plantation", {}).get("tech_level") or 99)
+        food_plants = {}
         if salad_ok:
+            pairs = max(1, plots // 2)
+            self.add("Tomato Plantation", pairs)
+            self.add("Lettuce Plantation", pairs)
+            food_plants = {"Tomato": pairs, "Lettuce": pairs}
             station = self.best(["Cooking Pot", "Electric Kitchen", "Large-Scale Stone Oven", "Ancient Kitchen"])
-            plant_pairs = max(1, math.ceil(demand / (self.args.plant_yield * 1.5)))
-            self.add("Tomato Plantation", plant_pairs)
-            self.add("Lettuce Plantation", plant_pairs)
             self.add(station, 1)
             self.hire_best("Kindling", 3, 1, "ЕДА: повар салатов")
-            n_trio = math.ceil(plant_pairs * 2 / (self.args.plants_per_worker * self.q()))
-            self.hire_best("Planting", 3, n_trio, "ЕДА: посадка томатов/латука")
-            self.hire_best("Watering", 3, n_trio, "ЕДА: полив томатов/латука")
-            self.hire_best("Gathering", 3, n_trio, "ЕДА: сбор томатов/латука")
-            self.notes.append(f"ЕДА (self): Salad (сытость 84, SAN +11, work speed +30 на 600с) — "
-                              f"{plant_pairs}x Tomato + {plant_pairs}x Lettuce Plantation, повар на {station}")
+            self.notes.append(f"ЕДА (self): Salad — {pairs}x Tomato + {pairs}x Lettuce, повар на {station}")
         else:
-            n = max(2, math.ceil(demand / self.args.plant_yield))
-            self.add("Berry Plantation", n)
+            self.add("Berry Plantation", plots)
+            food_plants = {"Red Berries": plots}
             self.add("Campfire", 1)
             self.hire_best("Kindling", 2, 1, "ЕДА: жарка ягод")
-            self.hire_best("Planting", 2, 1, "ЕДА: ягодные плантации")
-            self.hire_best("Watering", 2, 1, "ЕДА: полив ягод")
-            self.notes.append(f"ЕДА (self): Baked Berries ({n}x Berry Plantation; низкий tech — "
-                              f"апгрейдись до Salad при tech 25)")
+            self.notes.append(f"ЕДА (self): Baked Berries — {plots}x Berry Plantation (апгрейд до Salad на tech 25)")
+        n = sum(food_plants.values())
+        if not share_crew:
+            crew = max(1, math.ceil(n / (self.args.plants_per_worker * self.q())))
+            self.hire_best("Planting", 3, crew, "ЕДА: посадка")
+            self.hire_best("Watering", 3, crew, "ЕДА: полив")
+            # Gathering палов не берём: собранное подхватывают при простое (авто-сбор)
+        else:
+            self.notes.append("Кормовые грядки обслуживает общая тройка базы (отдельные рабочие не нужны)")
         self.assumptions.append(
-            f"Спрос на еду: {roster_slots} палов x средний аппетит {avg:.1f} = {demand:.0f} FoodAmount-ед.; "
-            f"выработка плантации принята {self.args.plant_yield}/час (--plant-yield)")
+            f"Еда: {n} грядок на {roster_slots} палов (1 грядка ~ {self.args.food_per_plot} палов; "
+            f"точной скорости голода в данных нет — --food-per-plot). Salad долго держит сытость")
+        return n
 
     def plant_crew(self, plantations):
         """Штат на N плантаций: посадка+полив+сбор."""
@@ -323,10 +327,15 @@ class Planner:
         kitchen = cake_station if cake_station in self.structs and             (self.structs[cake_station]["tech_level"] or 0) <= a.tech else             self.best(["Cooking Pot", "Electric Kitchen", "Large-Scale Stone Oven", "Ancient Kitchen"])
         self.add(kitchen, line["cooks"])
         self.hire_best("Kindling", 4, line["cooks"], f"повар тортов ({a.cake})")
-        n_trio = line["trio"] // 3
-        self.hire_best("Planting", 3, n_trio, "посадка")
-        self.hire_best("Watering", 3, n_trio, "полив")
-        self.hire_best("Gathering", 3, n_trio, "сбор")
+        # кормовые грядки ставим до тройки, чтобы ОДНА тройка покрыла и торт, и салат
+        food_plots = self.food_module(a.slots, share_crew=True) if a.food == "self" else 0
+        if a.food != "self":
+            self.notes.append("Еда привозная (--food shipped): вози Salad/Pizza guild chest'ом")
+        cake_plots = sum(line["plants_n"].values())
+        n_trio = max(1, math.ceil((cake_plots + food_plots) / (a.plants_per_worker * self.q())))
+        self.hire_best("Planting", 3, n_trio, f"посадка (все {cake_plots + food_plots} грядок)")
+        self.hire_best("Watering", 3, n_trio, "полив (все грядки)")
+        self.hire_best("Gathering", 3, n_trio, "сбор (все грядки)")
         self.hire_transport()
         if a.incubation > 0 and not hatchery:
             inc = self.best(["Egg Incubator", "Electric Egg Incubator", "Large Egg Incubator",
@@ -339,10 +348,6 @@ class Planner:
                 self.add(inc, n_inc)
                 self.assumptions.append(f"Инкубаторы: {n_inc} = фермы x2 x мир {a.incubation} / вместимость {cap} "
                                         "(точное время инкубации по типам яиц в данных нет)")
-        if a.food == "self":
-            self.food_module(a.slots)
-        else:
-            self.notes.append("Еда привозная (--food shipped): вози Salad/Pizza guild chest'ом")
         self.infra(a.slots)
         if hatchery or (kitchen and self.structs.get(kitchen, {}).get("power")):
             self.power(heavy=hatchery)
@@ -482,9 +487,7 @@ class Planner:
             self.notes.append("Порча выключена (настройка мира): холодильник и Cooling-пал не нужны — "
                               "хватает Feed Box; слот и Ice-пал сэкономлены")
         if a.food == "self":
-            self.food_module(a.slots)
-            self.plant_crew(self.buildings.get("Tomato Plantation", 0) + self.buildings.get("Lettuce Plantation", 0)
-                            + self.buildings.get("Berry Plantation", 0))
+            self.food_module(a.slots)  # сам нанимает лёгкую бригаду (посадка+полив)
         self.infra(a.slots)
         self.power(heavy=True)
         self.notes.append("Placeable-шахты лимитированы 1 шт каждого типа на базу — потому майнинг+крафт на одной базе эффективнее")
@@ -655,6 +658,8 @@ def main():
                     help="(breeding) минут на яйцо (по умолчанию 5 из данных; для хатчери замерь в игре)")
     ap.add_argument("--no-spoilage", dest="spoilage", action="store_false",
                     help="настройка мира «еда не портится»: без холодильника и Cooling-пала, хватит Feed Box")
+    ap.add_argument("--food-per-plot", type=float, default=15,
+                    help="сколько палов кормит одна грядка (по умолчанию 15; точной скорости голода в данных нет)")
     ap.add_argument("--per-station", type=int, default=1,
                     help="(mine-craft) палов на добывающую станцию 1..3 (у шахт 3 места; больше = быстрее добыча)")
     ap.add_argument("--cake", default="Cake",
