@@ -663,7 +663,7 @@ function topWorkers(task, n=8, easyOnly=false, minLv=1){
 }
 
 let BASE = {buildings:[], crew:[]};
-let openB=null, openC=null;
+let openB=null, openC=null, baseDirty=false;
 
 function seedFromPreset(){
   const o=builderOpts();
@@ -671,7 +671,9 @@ function seedFromPreset(){
   BASE.buildings=Object.entries(plan.buildings).map(([name,count])=>({name,count}));
   BASE.crew=plan.crew.map(([sp,count,role,task])=>({sp,count,role,task}));
   BASE.notes=plan.notes; BASE.assume=plan.assume;
-  openB=openC=null; drawBase();
+  openB=openC=null; baseDirty=false;
+  const hint=document.getElementById("rebuild-hint"); if(hint) hint.style.display="none";
+  drawBase();
 }
 function builderOpts(){
   const val=id=>document.getElementById(id).value;
@@ -688,6 +690,7 @@ render.planner = () => {
     <select id="pp"><option value="breeding">Бридинг</option><option value="mine-craft">Майнинг+крафт</option>
       <option value="oil">Нефть</option><option value="food">Еда-хаб</option><option value="starter">Стартовая</option></select>
     <button class="tag clicky" style="cursor:pointer;font-size:13px" onclick="seedFromPreset()">⚙ применить пресет</button>
+    <span id="rebuild-hint" class="warn" style="display:none">параметры изменены — «применить пресет» перестроит (ручные правки сбросятся)</span>
     <button class="tag clicky" style="cursor:pointer;font-size:13px" onclick="BASE={buildings:[],crew:[]};openB=openC=null;drawBase()">🗑 очистить всё</button>
     <label>Слоты <input type="number" id="pslots" value="50" min="5" max="100" style="width:70px;min-width:70px"></label>
     <select id="pmetal">
@@ -710,6 +713,12 @@ render.planner = () => {
     <label class="dim">блюд/час <input type="number" id="pdishrate" value="30" style="width:60px;min-width:60px"></label>
   </div></div>
   <div id="bout"></div>`;
+  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate"]){
+    document.getElementById(id).addEventListener("input",()=>{
+      if(!baseDirty && BASE.buildings.length) seedFromPreset();
+      else if(baseDirty){ const el=document.getElementById("rebuild-hint"); if(el) el.style.display=""; }
+    });
+  }
   const dishSel=document.getElementById("pdish");
   const cats={base_buff:"🏭 база",combat:"⚔️ бой",breeding:"🥚 бридинг",meal:"🍽 обычная"};
   dishSel.innerHTML='<option value="">Блюдо (для Еда-хаб)…</option>'+
@@ -737,10 +746,10 @@ function drawBase(){
       <div class="row" style="justify-content:space-between">
         <div>${structIcon(b.name)}<span class="clicky big" style="font-size:15px" onclick="openB=openB===${i}?null:${i};openC=null;drawBase()">${esc(b.name)}</span>
           <span class="dim">tech ${s.tech_level??"?"}${s.power?" ⚡"+(s.energy_per_sec?s.energy_per_sec+"/с":""):""}</span></div>
-        <div><span class="tag clicky" onclick="BASE.buildings[${i}].count++;drawBase()">+</span>
+        <div><span class="tag clicky" onclick="BASE.buildings[${i}].count++;baseDirty=true;drawBase()">+</span>
           <b class="mono"> x${b.count} </b>
-          <span class="tag clicky" onclick="if(--BASE.buildings[${i}].count<1)BASE.buildings.splice(${i},1);drawBase()">−</span>
-          <span class="tag clicky" onclick="BASE.buildings.splice(${i},1);drawBase()">✕</span></div>
+          <span class="tag clicky" onclick="if(--BASE.buildings[${i}].count<1)BASE.buildings.splice(${i},1);baseDirty=true;drawBase()">−</span>
+          <span class="tag clicky" onclick="BASE.buildings.splice(${i},1);baseDirty=true;drawBase()">✕</span></div>
       </div>
       <div class="dim">${Object.entries(s.materials||{}).map(([m,q])=>`${itemLink(m)} x${q*b.count}`).join(", ")||"?"}</div>
       ${s.function?`<div class="sub" style="margin-top:3px">📋 ${esc(s.function.length>140?s.function.slice(0,140)+"…":s.function)}</div>`:""}`;
@@ -761,7 +770,7 @@ function drawBase(){
       card+=`<div style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px">Другой тир: `+
         fam.map(n=>{const fs=structs[n];const cur=n===b.name;
           return `<span class="tag ${cur?"":"clicky"}" style="${cur?"border-color:var(--acc)":""}"
-            ${cur?"":`onclick="BASE.buildings[${i}].name='${n.replace(/'/g,"\\'")}';openB=null;drawBase()"`}>${esc(n)} <span class="dim">t${fs.tech_level??"?"}</span></span>`;}).join(" ")+`</div>`;
+            ${cur?"":`onclick="BASE.buildings[${i}].name='${n.replace(/'/g,"\\'")}';openB=null;baseDirty=true;drawBase()"`}>${esc(n)} <span class="dim">t${fs.tech_level??"?"}</span></span>`;}).join(" ")+`</div>`;
     }
     return card+`</div>`;
   }).join("");
@@ -771,16 +780,16 @@ function drawBase(){
     let card=`<div class="card" style="margin-bottom:8px"><div class="row" style="justify-content:space-between">
       <div>${palIcon(c.sp)}<span class="clicky" style="font-weight:700" onclick="openC=openC===${i}?null:${i};openB=null;drawBase()">${esc(c.sp)}${num(c.sp)?` <span class="dim">(#${num(c.sp)})</span>`:""}</span>
         <span class="dim"> — ${esc(c.role||"")}</span></div>
-      <div><span class="tag clicky" onclick="BASE.crew[${i}].count++;drawBase()">+</span>
+      <div><span class="tag clicky" onclick="BASE.crew[${i}].count++;baseDirty=true;drawBase()">+</span>
         <b class="mono"> x${c.count} </b>
-        <span class="tag clicky" onclick="if(--BASE.crew[${i}].count<1)BASE.crew.splice(${i},1);drawBase()">−</span>
-        <span class="tag clicky" onclick="BASE.crew.splice(${i},1);drawBase()">✕</span></div></div>`;
+        <span class="tag clicky" onclick="if(--BASE.crew[${i}].count<1)BASE.crew.splice(${i},1);baseDirty=true;drawBase()">−</span>
+        <span class="tag clicky" onclick="BASE.crew.splice(${i},1);baseDirty=true;drawBase()">✕</span></div></div>`;
     if(openC===i&&c.task){
       const alts=topWorkers(c.task,10);
       card+=`<div style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px">Замена (${c.task.replace("_"," ")}): `+
         alts.map(([nm,lv])=>{const cur=nm===c.sp;
           return `<span class="tag ${cur?"":"clicky"}" style="${cur?"border-color:var(--acc)":""}"
-            ${cur?"":`onclick="BASE.crew[${i}].sp='${nm.replace(/'/g,"\\'")}';openC=null;drawBase()"`}>${esc(nm)} <span class="dim">${lv}${plan.easyGet(nm)?"":" 🔒"}</span></span>`;}).join(" ")+
+            ${cur?"":`onclick="BASE.crew[${i}].sp='${nm.replace(/'/g,"\\'")}';openC=null;baseDirty=true;drawBase()"`}>${esc(nm)} <span class="dim">${lv}${plan.easyGet(nm)?"":" 🔒"}</span></span>`;}).join(" ")+
         `<div class="sub">🔒 = нет дикого спавна вне эндгейма</div></div>`;
     } else if(openC===i){
       card+=`<div class="sub" style="margin-top:4px">Саппорт/уникальная роль — замен нет. ${esc(plan.hint(c.sp))}</div>`;
@@ -859,16 +868,16 @@ function builderAddBuilding(){
   const hit=D.bb.structures.find(s=>s.name.toLowerCase()===n.toLowerCase());
   if(hit){ const ex=BASE.buildings.find(b=>b.name===hit.name);
     if(ex) ex.count++; else BASE.buildings.push({name:hit.name,count:1});
-    drawBase(); }
+    baseDirty=true; drawBase(); }
 }
 function builderHire(sp,task,forB){
   const ex=BASE.crew.find(c=>c.sp===sp&&c.task===task&&c.for===forB);
   if(ex) ex.count++; else BASE.crew.push({sp,count:1,role:`для: ${forB}`,task,for:forB});
-  drawBase();
+  baseDirty=true; drawBase();
 }
 function builderFire(sp,task,forB){
   const i=BASE.crew.findIndex(c=>c.sp===sp&&c.task===task&&c.for===forB);
-  if(i>=0){ if(--BASE.crew[i].count<1) BASE.crew.splice(i,1); drawBase(); }
+  if(i>=0){ if(--BASE.crew[i].count<1) BASE.crew.splice(i,1); baseDirty=true; drawBase(); }
 }
 function builderShowPicker(){
   const task=document.getElementById("ptask").value, minLv=+document.getElementById("pminlv").value||1,
