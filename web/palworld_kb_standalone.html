@@ -155,7 +155,7 @@ render.pal = () => {
   document.getElementById("palq").addEventListener("input",e=>{ if(P[e.target.value]) showPal(e.target.value); });
 };
 function showPal(name){
-  if(cur!=="pal"){ cur="pal"; nav(); render.pal(); document.getElementById("palq").value=name; }
+  if(cur!=="pal"){ go("pal"); document.getElementById("palq").value=name; }
   const p=P[name]; if(!p) return;
   const loc=D.loc.pals[name]||{};
   const learn=(D.skills.learnsets[name]||[]).slice().sort((a,b)=>a.level-b.level);
@@ -306,7 +306,7 @@ function craftTree(name, qty, depth, out, raw){
   } else raw[name]=(raw[name]||0)+qty;
 }
 function showItem(name){
-  if(cur!=="items"){ cur="items"; nav(); render.items(); document.getElementById("itemq").value=name; }
+  if(cur!=="items"){ go("items"); document.getElementById("itemq").value=name; }
   const it=itemByName[name]; if(!it) return;
   let html=`<div class="card"><div class="big">${itemIcon(it.name)}${esc(it.name)} <span class="tag">${esc(it.category)}</span>${it.tech_level?`<span class="tag">tech ${it.tech_level}</span>`:""}</div>`;
   if(it.recipe){
@@ -705,11 +705,13 @@ function drawBase(){
           <span class="tag clicky" onclick="if(--BASE.buildings[${i}].count<1)BASE.buildings.splice(${i},1);drawBase()">−</span>
           <span class="tag clicky" onclick="BASE.buildings.splice(${i},1);drawBase()">✕</span></div>
       </div>
-      <div class="dim">${Object.entries(s.materials||{}).map(([m,q])=>`${itemLink(m)} x${q*b.count}`).join(", ")||"?"}</div>`;
+      <div class="dim">${Object.entries(s.materials||{}).map(([m,q])=>`${itemLink(m)} x${q*b.count}`).join(", ")||"?"}</div>
+      ${s.function?`<div class="sub" style="margin-top:3px">📋 ${esc(s.function.length>140?s.function.slice(0,140)+"…":s.function)}</div>`:""}`;
     if(req) card+=`<div class="warn">Требует палов: ${req.tasks.join(" + ")} ${req.high_level?`(уровень ${req.min_level}+, PRELIMINARY)`:""}</div>`;
     if(tasks.length){
       const sugg=tasks.map(t=>{const top=topWorkers(t,2,false,req?req.min_level:1);
-        return top.map(([nm,lv])=>{
+        const picker=`<span class="tag clicky" onclick="openPalPicker(${i},'${t}','${esc(b.name)}',${req?req.min_level:1})">🔍 выбрать</span>`;
+        return picker+" "+top.map(([nm,lv])=>{
           const hired=BASE.crew.filter(c=>c.sp===nm&&c.task===t&&c.for===b.name).reduce((a,c)=>a+c.count,0);
           return `${palIcon(nm)}${palLink(nm)} <span class="dim mono">${t.replace("_"," ")} ${lv}</span>
           <span class="tag clicky" onclick="builderHire('${nm.replace(/'/g,"\\'")}','${t}','${esc(b.name)}')">нанять</span>`+
@@ -717,6 +719,7 @@ function drawBase(){
         }).join(" · ");}).join("<br>");
       card+=`<div style="margin-top:4px">Палы: ${sugg}</div>`;
     }
+    if(pickerFor&&pickerFor.i===i) card+=palPickerHtml();
     if(openB===i&&fam.length>1){
       card+=`<div style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px">Другой тир: `+
         fam.map(n=>{const fs=structs[n];const cur=n===b.name;
@@ -785,6 +788,34 @@ function drawBase(){
     ${Object.entries(bill).sort().map(([m,q])=>`<span class="tag">${itemIcon(m)}${itemLink(m)} x${q}</span>`).join("")||'<span class="dim">—</span>'}</div>
   ${BASE.notes?.length?`<div class="card"><h3>Заметки пресета</h3><ul>${BASE.notes.map(n=>`<li>${esc(n)}</li>`).join("")}</ul></div>`:""}
   ${BASE.assume?.length?`<div class="card dim"><h3>Допущения</h3><ul>${BASE.assume.map(n=>`<li>${esc(n)}</li>`).join("")}</ul></div>`:""}`;
+}
+let pickerFor=null; // {i, task, forB, minLv}
+function openPalPicker(i, task, forB, minLv){
+  pickerFor = (pickerFor && pickerFor.i===i && pickerFor.task===task) ? null : {i, task, forB, minLv, q:"", easy:false};
+  drawBase();
+}
+function palPickerHtml(){
+  if(!pickerFor) return "";
+  const {task, forB, minLv, q, easy}=pickerFor;
+  const plan=new BasePlan({roster:"top"});
+  const list=(D.idx.inverted.work[task]||[]).filter(([nm,lv])=>lv>=1&&(!easy||plan.easyGet(nm))
+    &&(!q||nm.toLowerCase().includes(q.toLowerCase())));
+  return `<div class="card" style="margin-top:6px;border-color:var(--acc)">
+    <div class="row" style="justify-content:space-between">
+      <b>Выбор пала: ${task.replace("_"," ")} для «${esc(forB)}»</b>
+      <span class="tag clicky" onclick="pickerFor=null;drawBase()">✕ закрыть</span></div>
+    <div class="row" style="margin:6px 0">
+      <input type="text" placeholder="поиск…" value="${esc(q)}"
+        oninput="pickerFor.q=this.value;drawBase();(function(){const e=document.getElementById('ppq');if(e){e.focus();e.setSelectionRange(e.value.length,e.value.length);}})();" id="ppq">
+      <label class="dim"><input type="checkbox" ${easy?"checked":""}
+        onchange="pickerFor.easy=this.checked;drawBase()"> легко достать</label>
+      ${minLv>1?`<span class="warn">здание требует уровень ${minLv}+</span>`:""}</div>
+    <div style="max-height:260px;overflow-y:auto"><table>${list.slice(0,60).map(([nm,lv])=>
+      `<tr${lv<minLv?' style="opacity:.45"':''}><td>${palIcon(nm)}${palLink(nm)}</td>
+       <td class="mono">${lv}</td>
+       <td class="dim">${plan.easyGet(nm)?"дикий спавн":"сложный"}</td>
+       <td><span class="tag clicky" onclick="builderHire('${nm.replace(/'/g,"\\'")}','${task}','${forB.replace(/'/g,"\\'")}')">нанять</span></td></tr>`).join("")}
+    </table></div></div>`;
 }
 function builderAddBuilding(){
   const n=document.getElementById("baddb").value.trim();
