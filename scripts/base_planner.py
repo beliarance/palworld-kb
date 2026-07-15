@@ -395,17 +395,16 @@ class Planner:
                            ("sanity_save", "SAN базы (Shroomer Noct)")])
         mining_sites = [x for x in sites if self.structs[x].get("workers") == "Mining"]
         lumber_sites = [x for x in sites if self.structs[x].get("workers") == "Lumbering"]
-        # placeable-станции обслуживаются 1 палом каждая: один пал не стоит у двух станций сразу,
-        # а уровень навыка лишь ускоряет добычу на его станции (не сокращает число тел)
-        if mining_sites:
-            self.hire_best("Mining", 6, len(mining_sites),
-                           f"добыча: 1 пал/станцию — {'/'.join(mining_sites)}")
-        if lumber_sites:
-            self.hire_best("Lumbering", 5, len(lumber_sites),
-                           f"лесопилки: 1 пал/станцию — {'/'.join(lumber_sites)}")
-        self.notes.append("Добыча: 1 пал на каждую станцию (placeable-шахты — одиночные, один пал у одной "
-                          "станции; уровень ускоряет добычу на ней, но не заменяет второе тело). "
-                          "Плюс шахтёры под рудные точки, если база стоит на месторождении")
+        # у станций до worker_slots мест (обычно 3); --per-station задаёт, сколько занять
+        def staff(site_list, task, min_lv, label):
+            for site in site_list:
+                slots = self.structs[site].get("worker_slots") or 1
+                n = max(1, min(self.args.per_station, slots))
+                self.hire_best(task, min_lv, n, f"{label}: {site} ({n}/{slots} мест)")
+        staff(mining_sites, "Mining", 6, "добыча")
+        staff(lumber_sites, "Lumbering", 5, "лесопилка")
+        self.notes.append(f"Добыча: {self.args.per_station} пал(ов) на станцию (--per-station, у шахт до 3 мест — "
+                          "больше палов = быстрее добыча на станции). 1 = все станции работают, но не на макс. скорости")
         furn = self.best(["Primitive Furnace", "Improved Furnace", "Electric Furnace", "Gigantic Furnace", "Ancient Furnace"])
         self.add(furn, 2)
         self.hire_best("Kindling", 6, 2, "печи")
@@ -623,6 +622,8 @@ def main():
     ap.add_argument("--dish-rate", type=float, default=30, help="(food) блюд/час")
     ap.add_argument("--egg-interval", type=float, default=None,
                     help="(breeding) минут на яйцо (по умолчанию 5 из данных; для хатчери замерь в игре)")
+    ap.add_argument("--per-station", type=int, default=1,
+                    help="(mine-craft) палов на добывающую станцию 1..3 (у шахт 3 места; больше = быстрее добыча)")
     ap.add_argument("--cake", default="Cake",
                     choices=["Cake", "Mushroom Cake", "Vegetable Cake", "Extravagant Vegetable Cake", "Special Cake"],
                     help="(breeding) какой торт производить (Vegetable = 2 яйца за цикл)")

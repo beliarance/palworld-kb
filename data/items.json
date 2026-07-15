@@ -125,7 +125,7 @@
     "Dropped by Azure Covenant Enforcer x200–400 (50%)",
     "Dropped by PIDF Rider x50–200 (40%)",
     "Dropped by Elder x100–300 (40%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by PIDF Bounty Officer (x2000 for 1 Successful Bounty Token) - Small Settlement (74, -477), Fisherman's Point (-479, -748), Duneshelter (345, 361)",
     "Found in treasure chests",
     "Ranch: Mau, Mau Cryst, Vixy (Farming)",
     "Grass01: x700–1000 (100%)",
@@ -293,7 +293,7 @@
     "Dropped by Azurobe Cryst (100%)",
     "Dropped by Gildra (100%)",
     "Dropped by Bakemi (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Also craftable at: High Quality Workbench, Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench"
@@ -313,7 +313,7 @@
     "Dropped by Sibelyx (100%)",
     "Dropped by Selyne (100%)",
     "Dropped by Sibelyx Primo (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests",
     "Ranch: Sibelyx (Farming)"
    ],
@@ -363,7 +363,7 @@
     "Dropped by The Desert's Wrath Surfent Terra x2–3 (100%)",
     "Dropped by Knocklem Ignis x2–3 (100%)",
     "Dropped by Pierdon x4–5 (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Vagrant Trader (Gold) - location unknown",
     "Found in treasure chests",
     "Mining ore nodes (rust-brown rocks)",
     "DevTest01: x1–2 (33.333%)",
@@ -445,7 +445,7 @@
     "Dropped by Quivern Botan x2–3 (100%)",
     "Dropped by Dualith x3–5 (100%)",
     "Dropped by Tropicaw x1–2 (100%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -549,7 +549,16 @@
     "Dropped by Snugloo x1–2 (100%)",
     "Dropped by Roujay x3–4 (100%)",
     "Dropped by PIDF Rider x1–3 (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Foraging Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Authorized Materials Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Element Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests",
     "Grass01_Drop: x1 (6.414%)",
     "Grass Dungeon_Drop: x1 (18.966%)",
@@ -655,7 +664,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Vagrant Trader (Gold) - location unknown",
     "Mining stone nodes",
     "Stone Pit at base (Mining pals)"
    ]
@@ -669,7 +678,12 @@
     "Dropped by Gumoss (100%)",
     "Dropped by Ribbuny (100%)",
     "Dropped by Clovee (100%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Village Grocer (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Farm Peddler (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Grocer (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -684,7 +698,11 @@
     "Dropped by Bristla (100%)",
     "Dropped by Vaelet (50%)",
     "Dropped by Braloha (50%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Farm Peddler (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Grocer (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -698,7 +716,12 @@
     "Dropped by Hangyu (100%)",
     "Dropped by Herbil (100%)",
     "Dropped by Souffline (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Village Grocer (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Farm Peddler (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Grocer (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -708,7 +731,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Vagrant Trader (Gold) - location unknown",
     "Found in treasure chests",
     "Chopping trees / ground pickup",
     "Logging Site at base (Lumbering pals)"
@@ -724,7 +747,10 @@
     "Dropped by Mossanda Lux (100%)",
     "Dropped by Wumpo Botan (100%)",
     "Dropped by Palumba (100%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Vagrant Trader (Gold) - location unknown"
    ]
   },
   {
@@ -751,7 +777,14 @@
     "Dropped by Cremis (100%)",
     "Dropped by Woolipop Terra (100%)",
     "Dropped by Snugloo (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Foraging Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Authorized Materials Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Element Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests",
     "Ranch: Lamball, Cremis, Melpaca (Farming)"
    ]
@@ -925,7 +958,10 @@
     "Dropped by Hunter of the Steppe Direhowl (3%)",
     "Dropped by Tetroise (100%)",
     "Dropped by Roujay (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
     "Found in treasure chests"
    ]
   },
@@ -940,7 +976,10 @@
     "Dropped by Relaxaurus Lux (5%)",
     "Dropped by Selyne (100%)",
     "Dropped by Menasting Terra (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
     "Found in treasure chests"
    ]
   },
@@ -951,7 +990,10 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Tetroise Primo (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
     "Found in treasure chests"
    ]
   },
@@ -970,7 +1012,10 @@
     "Dropped by Neptilius (30%)",
     "Dropped by Panthalus (100%)",
     "Dropped by [Master] Moon Lord (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
     "Found in treasure chests"
    ]
   },
@@ -1762,7 +1807,12 @@
     "Dropped by Ophydia x4–5 (100%)",
     "Dropped by Astralym x1 (100%)",
     "Dropped by Loomen x2–3 (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Element Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests",
     "Ranch: Dumud (Farming)",
     "Expedition_Desert_Hard: x10–20 (100%)",
@@ -1818,7 +1868,12 @@
     "Dropped by Puffolt x1 (100%)",
     "Dropped by Slowatt x1–2 (100%)",
     "Dropped by PIDF Rider x1–2 (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Authorized Materials Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Element Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests",
     "CharacterSpawnItem_ElecSnail_1: x1 (100%)",
     "CharacterSpawnItem_ElecSnail_2: x1–2 (100%)",
@@ -1861,7 +1916,12 @@
     "Dropped by Loomen x2 (100%)",
     "Dropped by Dandilord x4–5 (100%)",
     "Dropped by Venusa x2–3 (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Authorized Materials Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Element Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests",
     "Expedition_Feybreak_Hard: x10–20 (100%)"
    ]
@@ -1917,7 +1977,13 @@
     "Dropped by Flaracle x3–4 (100%)",
     "Dropped by Majex x2 (100%)",
     "Dropped by Dupin x2 (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Authorized Materials Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Element Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests",
     "Ranch: Flambelle (Farming)",
     "Volcano_Drop: x2–3 (3.166%)",
@@ -1977,7 +2043,12 @@
     "Dropped by Elgrove Cryst x2–3 (100%)",
     "Dropped by Pierdon Cryst x4–5 (100%)",
     "Dropped by Muffly x1 (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Authorized Materials Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Element Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests",
     "Snow_Drop: x1 (4.909%)",
     "Expedition_Snow_Hard: x10–20 (100%)",
@@ -2023,7 +2094,16 @@
     "Dropped by Ghangler Ignis x2–3 (100%)",
     "Dropped by Pupperai x1 (100%)",
     "Dropped by Bulldosu x2–3 (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Foraging Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Authorized Materials Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Element Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -2087,7 +2167,16 @@
     "Dropped by Shaolong x1 (100%)",
     "Dropped by Hoodle x1–2 (100%)",
     "Dropped by Bakemi x2 (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Foraging Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Authorized Materials Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Element Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests",
     "CharacterSpawnItem_Horn_1: x1 (100%)",
     "CharacterSpawnItem_Horn_2: x1–2 (100%)",
@@ -2144,7 +2233,13 @@
     "Dropped by Slowatt x1 (100%)",
     "Dropped by Amione x2 (100%)",
     "Dropped by Venusa x2–3 (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Foraging Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Authorized Materials Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Element Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests",
     "Expedition_Grass_Hard: x10–20 (100%)",
     "Forest_WaterTreasure: x10–20 (86.957%)",
@@ -2174,7 +2269,8 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Tocotoco (50%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Element Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -2184,7 +2280,8 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Gumoss (50%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Element Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -2195,7 +2292,8 @@
    "obtained_from": [
     "Dropped by Penking (50%)",
     "Dropped by Penking Lux (50%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Element Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -2206,7 +2304,8 @@
    "obtained_from": [
     "Dropped by Katress (50%)",
     "Dropped by Katress Ignis (50%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Element Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -2240,7 +2339,10 @@
     "Dropped by Pure Bloom Dragon Ophydia x2–3 (100%)",
     "Dropped by Astralym x2–3 (100%)",
     "Dropped by Water God Shaolong x2–3 (100%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map"
    ]
   },
   {
@@ -2289,7 +2391,10 @@
     "Dropped by Totally Toasty Muffly x2–3 (100%)",
     "Dropped by Blooming Crooner Tropicaw x2–3 (100%)",
     "Dropped by Pitch Black Pilferer Roujay x2–3 (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
     "Found in treasure chests"
    ]
   },
@@ -2394,7 +2499,10 @@
     "Dropped by Salon Shunner Venusa x2–3 (100%)",
     "Dropped by Eclipsed Siren Bellanoir x2–3 (100%)",
     "Dropped by Twilight Siren Bellanoir Libero x2–3 (100%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map"
    ]
   },
   {
@@ -2449,7 +2557,10 @@
     "Dropped by Longing in the Deep Ghangler Ignis x2–3 (100%)",
     "Dropped by Golden Blade of Duat Gildra x2–3 (100%)",
     "Dropped by Cutthroat Sun Snuffer Sekhmet x2–3 (100%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map"
    ]
   },
   {
@@ -2543,7 +2654,10 @@
     "Dropped by Dubiously Lucky Clovee x2–3 (100%)",
     "Dropped by Plays Both Sides Valentail x2–3 (100%)",
     "Dropped by Alpine Dwarf Snugloo x2–3 (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
     "Found in treasure chests"
    ]
   },
@@ -2639,7 +2753,7 @@
    "obtained_from": [
     "Dropped by Ribbuny (100%)",
     "Dropped by Ribbuny Botan (50%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -2649,7 +2763,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Swee (50%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -2660,7 +2774,7 @@
    "obtained_from": [
     "Dropped by Killamari (50%)",
     "Dropped by Killamari Primo (50%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -2671,7 +2785,7 @@
    "obtained_from": [
     "Dropped by Dazzi (100%)",
     "Dropped by Dazzi Noct (100%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -2682,7 +2796,7 @@
    "obtained_from": [
     "Dropped by Leezpunk (50%)",
     "Dropped by Leezpunk Ignis (50%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Legendary Materials Merchant (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -2897,7 +3011,8 @@
     "Dropped by Petallia (100%)",
     "Dropped by Robinquill (100%)",
     "Dropped by Robinquill Terra (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Grocer (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -2913,7 +3028,8 @@
     "Dropped by Prunelia (50%)",
     "Dropped by Ribbuny Botan (100%)",
     "Dropped by Palumba (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Grocer (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -2927,7 +3043,8 @@
     "Dropped by Broncherry Aqua (100%)",
     "Dropped by Vaelet (50%)",
     "Dropped by Palumba (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Grocer (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -3187,7 +3304,7 @@
    },
    "obtained_from": [
     "Dropped by Lunaris (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
     "Found in treasure chests",
     "Mining blue Paldium nodes",
     "Riverbed glowing stones",
@@ -3206,7 +3323,11 @@
     "Dropped by Flopie (100%)",
     "Dropped by Braloha (50%)",
     "Dropped by Rampaging Flopie (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Farm Peddler (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Grocer (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -5796,7 +5917,13 @@
     "Dropped by Caprity Noct (100%)",
     "Dropped by Quivern Botan (60%)",
     "Dropped by Braloha (60%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Village Grocer (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Farm Peddler (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Grocer (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests",
     "Wild berry bushes",
     "Berry Plantation at base",
@@ -5843,7 +5970,7 @@
     "Dropped by Counterfeiter Mimic x1–2 (40%)",
     "Dropped by Horse Rustler Billy x1–2 (40%)",
     "Dropped by Negotiator x1–2 (40%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Vagrant Trader (Gold) - location unknown",
     "Found in treasure chests",
     "Grass01: x2–3 (21.698%)",
     "Treasure_Grass_Grade_01: x3–5 (0%)",
@@ -5858,7 +5985,11 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Farm Peddler (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Grocer (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -5867,7 +5998,13 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Village Grocer (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Farm Peddler (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Grocer (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -5888,7 +6025,11 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Farm Peddler (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Grocer (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -5898,7 +6039,14 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Chikipi (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Butcher in Training (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Surf & Turf Master (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Expert Hunter (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests",
     "Wild ground pickup near Chikipi",
     "Ranch: Chikipi (Farming)"
@@ -5912,7 +6060,13 @@
    "obtained_from": [
     "Dropped by Mozzarina (100%)",
     "Dropped by Cattle Rustler Lasso (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Surf & Turf Master (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Expert Hunter (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests",
     "Ranch: Mozzarina (Farming)"
    ]
@@ -5942,7 +6096,11 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Bakery Stand Baker (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Local Restaurateur (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Novice Gourmet (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Gourmet (Gold) - Visits player base (caravan merchant event)"
    ],
    "notes": "Also craftable at: Electric Kitchen, Large-Scale Stone Oven, Ancient Kitchen"
   },
@@ -5972,7 +6130,11 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Bakery Stand Baker (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Local Restaurateur (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Novice Gourmet (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Gourmet (Gold) - Visits player base (caravan merchant event)"
    ],
    "notes": "Also craftable at: Electric Kitchen, Large-Scale Stone Oven, Ancient Kitchen"
   },
@@ -6002,7 +6164,11 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Bakery Stand Baker (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Local Restaurateur (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Novice Gourmet (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Gourmet (Gold) - Visits player base (caravan merchant event)"
    ],
    "notes": "Also craftable at: Electric Kitchen, Large-Scale Stone Oven, Ancient Kitchen"
   },
@@ -6018,7 +6184,9 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Local Restaurateur (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Novice Gourmet (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Gourmet (Gold) - Visits player base (caravan merchant event)"
    ],
    "notes": "Also craftable at: Electric Kitchen, Large-Scale Stone Oven, Ancient Kitchen"
   },
@@ -6100,7 +6268,7 @@
     "Dropped by Serial Cheater Siren (100%)",
     "Dropped by Tanzee Ignis (100%)",
     "Dropped by Mycora (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Grocer (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -6150,7 +6318,12 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Chikipi (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Butcher in Training (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Surf & Turf Master (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Expert Hunter (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -6161,7 +6334,12 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Lamball (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Butcher in Training (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Surf & Turf Master (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Expert Hunter (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -6173,7 +6351,10 @@
    "obtained_from": [
     "Dropped by Kelpsea (100%)",
     "Dropped by Kelpsea Ignis (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Surf & Turf Master (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Expert Hunter (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -6184,7 +6365,8 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Galeclaw (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Expert Hunter (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -6195,7 +6377,11 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Rushoar (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Butcher in Training (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Surf & Turf Master (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Expert Hunter (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -6207,7 +6393,10 @@
    "obtained_from": [
     "Dropped by Dumud (100%)",
     "Dropped by Dumud Gild (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Surf & Turf Master (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Expert Hunter (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -6219,7 +6408,8 @@
    "obtained_from": [
     "Dropped by Eikthyrdeer (100%)",
     "Dropped by Eikthyrdeer Terra (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Expert Hunter (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -6230,7 +6420,8 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Reindrix (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Expert Hunter (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -6242,7 +6433,8 @@
    "obtained_from": [
     "Dropped by Caprity (100%)",
     "Dropped by Caprity Noct (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Expert Hunter (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -6253,7 +6445,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Mozzarina (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -6265,7 +6457,7 @@
    "obtained_from": [
     "Dropped by Broncherry (100%)",
     "Dropped by Broncherry Aqua (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -6278,7 +6470,7 @@
     "Dropped by Mammorest (100%)",
     "Dropped by Mammorest Cryst (100%)",
     "Dropped by Rampaging Mammorest Cryst (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -6589,7 +6781,8 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Novice Gourmet (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Gourmet (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Also craftable at: Large-Scale Stone Oven, Ancient Kitchen"
@@ -6607,7 +6800,8 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Novice Gourmet (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Gourmet (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Also craftable at: Large-Scale Stone Oven, Ancient Kitchen"
@@ -6684,7 +6878,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Grocer (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -6697,7 +6891,7 @@
     "Dropped by Shroomer Noct (100%)",
     "Dropped by Dualith Noct (100%)",
     "Dropped by Mycora (50%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Legendary Grocer (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -6706,7 +6900,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Legendary Grocer (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -6716,7 +6910,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Ribbuny Botan (100%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Legendary Grocer (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -6725,7 +6919,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Legendary Grocer (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -6848,7 +7042,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Gourmet (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Also craftable at: Ancient Kitchen"
@@ -6867,7 +7061,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Gourmet (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Also craftable at: Ancient Kitchen"
@@ -6897,7 +7091,7 @@
    "obtained_from": [
     "Dropped by Gloopie (100%)",
     "Dropped by Gloopie Primo (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -6908,7 +7102,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Jelliette (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -6919,7 +7113,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Jellroy (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -6930,7 +7124,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Munchill (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ]
   },
@@ -6960,7 +7154,9 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Local Restaurateur (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Novice Gourmet (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Gourmet (Gold) - Visits player base (caravan merchant event)"
    ],
    "notes": "Also craftable at: Electric Kitchen, Large-Scale Stone Oven, Ancient Kitchen"
   },
@@ -6976,7 +7172,9 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Local Restaurateur (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Novice Gourmet (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Gourmet (Gold) - Visits player base (caravan merchant event)"
    ],
    "notes": "Also craftable at: Electric Kitchen, Large-Scale Stone Oven, Ancient Kitchen"
   },
@@ -7005,7 +7203,8 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Novice Gourmet (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Gourmet (Gold) - Visits player base (caravan merchant event)"
    ],
    "notes": "Also craftable at: Large-Scale Stone Oven, Ancient Kitchen"
   },
@@ -7027,7 +7226,7 @@
    "obtained_from": [
     "Dropped by Skutlass (100%)",
     "Dropped by Skutlass Ignis (100%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Legendary Game Hunter (Gold) - Visits player base (caravan merchant event)"
    ]
   },
   {
@@ -7302,7 +7501,14 @@
     "Dropped by Vaelet (100%)",
     "Dropped by Prunelia (100%)",
     "Dropped by Rampaging Flopie (20%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
+    "Sold by Shady Pharmacist (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Authorized Pharmacist (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Pharmacist (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Also craftable at: Electric Medicine Workbench, Advanced Medicine Workbench, Ancient Workbench"
@@ -7326,7 +7532,13 @@
     "Dropped by Gloating Narcissist Ego (5%)",
     "Dropped by Hostile Defender Brick (5%)",
     "Dropped by Well-Meaning Quack Quill (50%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Authorized Pharmacist (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Pharmacist (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Also craftable at: Electric Medicine Workbench, Advanced Medicine Workbench, Ancient Workbench"
@@ -7345,7 +7557,12 @@
    },
    "obtained_from": [
     "Dropped by PAL Genetic Research Unit Executioner (10%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Pharmacist (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Also craftable at: Electric Medicine Workbench, Advanced Medicine Workbench, Ancient Workbench"
@@ -7381,7 +7598,10 @@
    },
    "obtained_from": [
     "Dropped by Lovander (1%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Shady Pharmacist (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Authorized Pharmacist (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Pharmacist (Gold) - Visits player base (caravan merchant event)"
    ],
    "notes": "Also craftable at: Electric Medicine Workbench, Advanced Medicine Workbench, Ancient Workbench"
   },
@@ -7400,7 +7620,8 @@
    },
    "obtained_from": [
     "Dropped by Lovander (1%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Authorized Pharmacist (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Pharmacist (Gold) - Visits player base (caravan merchant event)"
    ],
    "notes": "Also craftable at: Electric Medicine Workbench, Advanced Medicine Workbench, Ancient Workbench"
   },
@@ -7438,7 +7659,7 @@
     "Dropped by Purveyor of Wisdom Hoocrates (1%)",
     "Dropped by Phantasmal Furball Wixen Noct (1%)",
     "Dropped by Fire-Licked Feline Katress Ignis (1%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by PIDF Bounty Officer (5 Successful Bounty Token) - Small Settlement (74, -477), Fisherman's Point (-479, -748), Duneshelter (345, 361)",
     "Found in treasure chests"
    ]
   },
@@ -7520,7 +7741,8 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (2.33%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (30 Battle Ticket) - Arena (631, 16)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
     "Found in treasure chests"
    ]
   },
@@ -7581,7 +7803,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (1.75%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
     "Found in treasure chests"
    ]
   },
@@ -7602,7 +7824,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (1.4%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
     "Found in treasure chests"
    ]
   },
@@ -7643,7 +7865,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (1.4%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
     "Found in treasure chests"
    ]
   },
@@ -7664,7 +7886,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (2.33%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
     "Found in treasure chests"
    ]
   },
@@ -7675,7 +7897,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (0.75%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (45 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -7716,7 +7938,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (2.33%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
     "Found in treasure chests"
    ]
   },
@@ -7777,7 +7999,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (1.75%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
     "Found in treasure chests"
    ]
   },
@@ -7818,7 +8040,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (5%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
     "Found in treasure chests"
    ]
   },
@@ -7829,7 +8051,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (7%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
     "Found in treasure chests"
    ]
   },
@@ -8011,7 +8233,7 @@
    "obtained_from": [
     "Dropped by Invader from Space Xenolord (100%)",
     "Dropped by Skillfruit Orchard (1%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (45 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -8167,7 +8389,10 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Shady Pharmacist (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Authorized Pharmacist (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Pharmacist (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Also craftable at: Electric Medicine Workbench, Advanced Medicine Workbench, Ancient Workbench"
@@ -8186,7 +8411,8 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Authorized Pharmacist (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Pharmacist (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Also craftable at: Electric Medicine Workbench, Advanced Medicine Workbench, Ancient Workbench"
@@ -8210,7 +8436,7 @@
     "Dropped by Lyleen Noct (100%)",
     "Dropped by Solenne (50%)",
     "Dropped by Bellanoir Libero (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Pharmacist (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Also craftable at: Advanced Medicine Workbench, Ancient Workbench"
@@ -8307,7 +8533,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Medal Merchant (200 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
     "Found in treasure chests"
    ],
    "notes": "Also craftable at: Advanced Medicine Workbench, Ancient Workbench"
@@ -8324,7 +8550,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Medal Merchant (200 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
     "Found in treasure chests"
    ],
    "notes": "Also craftable at: Advanced Medicine Workbench, Ancient Workbench"
@@ -8341,7 +8567,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Medal Merchant (200 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
     "Found in treasure chests"
    ],
    "notes": "Also craftable at: Advanced Medicine Workbench, Ancient Workbench"
@@ -8358,7 +8584,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Medal Merchant (200 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
     "Found in treasure chests"
    ],
    "notes": "Also craftable at: Advanced Medicine Workbench, Ancient Workbench"
@@ -8375,7 +8601,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Medal Merchant (200 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
     "Found in treasure chests"
    ],
    "notes": "Also craftable at: Advanced Medicine Workbench, Ancient Workbench"
@@ -8457,7 +8683,7 @@
     "Dropped by [Master] Moon Lord x2–3 (100%)",
     "Dropped by King of Salvation Hartalis x4–6 (100%)",
     "Dropped by King of Salvation (Ultra) Hartalis x10 (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (50 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests",
     "EnemyCamp_Sakurajima_Seabase_Goal: x1 (100%)",
     "EnemyCamp_Yamijima_Seabase_Goal: x1 (100%)",
@@ -8494,7 +8720,9 @@
    "obtained_from": [
     "Dropped by Moon Lord (33.3%)",
     "Dropped by [Master] Moon Lord (33.3%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (100 Battle Ticket) - Arena (631, 16)",
+    "Sold by Medal Merchant (200 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
+    "Sold by PIDF Bounty Officer (25 Successful Bounty Token) - Small Settlement (74, -477), Fisherman's Point (-479, -748), Duneshelter (345, 361)",
     "Found in treasure chests"
    ]
   },
@@ -8513,7 +8741,9 @@
    "obtained_from": [
     "Dropped by Moon Lord (33.3%)",
     "Dropped by [Master] Moon Lord (33.3%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (100 Battle Ticket) - Arena (631, 16)",
+    "Sold by Medal Merchant (200 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
+    "Sold by PIDF Bounty Officer (25 Successful Bounty Token) - Small Settlement (74, -477), Fisherman's Point (-479, -748), Duneshelter (345, 361)",
     "Found in treasure chests"
    ]
   },
@@ -8532,7 +8762,9 @@
    "obtained_from": [
     "Dropped by Moon Lord (33.3%)",
     "Dropped by [Master] Moon Lord (33.3%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (100 Battle Ticket) - Arena (631, 16)",
+    "Sold by Medal Merchant (200 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
+    "Sold by PIDF Bounty Officer (25 Successful Bounty Token) - Small Settlement (74, -477), Fisherman's Point (-479, -748), Duneshelter (345, 361)",
     "Found in treasure chests"
    ]
   },
@@ -8558,7 +8790,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by PIDF Bounty Officer (50 Successful Bounty Token) - Small Settlement (74, -477), Fisherman's Point (-479, -748), Duneshelter (345, 361)",
     "Found in treasure chests"
    ]
   },
@@ -8616,7 +8848,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (2.33%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (30 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -8677,7 +8909,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (0.75%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (30 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -8698,7 +8930,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (0.6%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (30 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -8709,7 +8941,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (0.6%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (45 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -8720,7 +8952,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (0.75%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (30 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -8731,7 +8963,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (0.75%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (30 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -8793,7 +9025,7 @@
    "obtained_from": [
     "Dropped by Eclipsed Siren Bellanoir (100%)",
     "Dropped by Skillfruit Orchard (0.6%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (30 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -8805,7 +9037,7 @@
    "obtained_from": [
     "Dropped by Incarnation of the Eternal Flame Blazamut Ryu (100%)",
     "Dropped by Skillfruit Orchard (1%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (30 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -8854,7 +9086,7 @@
    "obtained_from": [
     "Dropped by King of Salvation Hartalis (100%)",
     "Dropped by Skillfruit Orchard (1.5%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (45 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -8865,7 +9097,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (0.75%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (30 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -8946,7 +9178,7 @@
    "obtained_from": [
     "Dropped by King of Salvation Hartalis (33.3%)",
     "Dropped by King of Salvation (Ultra) Hartalis (33.3%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Medal Merchant (300 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
     "Found in treasure chests"
    ]
   },
@@ -8958,7 +9190,7 @@
    "obtained_from": [
     "Dropped by King of Salvation Hartalis (33.3%)",
     "Dropped by King of Salvation (Ultra) Hartalis (33.3%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Medal Merchant (300 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
     "Found in treasure chests"
    ]
   },
@@ -8970,7 +9202,7 @@
    "obtained_from": [
     "Dropped by King of Salvation Hartalis (33.3%)",
     "Dropped by King of Salvation (Ultra) Hartalis (33.3%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Medal Merchant (300 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
     "Found in treasure chests"
    ]
   },
@@ -8982,7 +9214,7 @@
    "obtained_from": [
     "Dropped by Invader from Space Xenolord (33.3%)",
     "Dropped by Invader from Space (Ultra) Xenolord (33.3%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Medal Merchant (300 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
     "Found in treasure chests"
    ]
   },
@@ -8994,7 +9226,7 @@
    "obtained_from": [
     "Dropped by Invader from Space Xenolord (33.3%)",
     "Dropped by Invader from Space (Ultra) Xenolord (33.3%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Medal Merchant (300 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
     "Found in treasure chests"
    ]
   },
@@ -9006,7 +9238,7 @@
    "obtained_from": [
     "Dropped by Incarnation of the Eternal Flame Blazamut Ryu (33.3%)",
     "Dropped by Incarnation of the Eternal Flame (Ultra) Blazamut Ryu (33.3%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Medal Merchant (300 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
     "Found in treasure chests"
    ]
   },
@@ -9018,7 +9250,7 @@
    "obtained_from": [
     "Dropped by Incarnation of the Eternal Flame Blazamut Ryu (33.3%)",
     "Dropped by Incarnation of the Eternal Flame (Ultra) Blazamut Ryu (33.3%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Medal Merchant (300 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
     "Found in treasure chests"
    ]
   },
@@ -9030,7 +9262,7 @@
    "obtained_from": [
     "Dropped by Incarnation of the Eternal Flame Blazamut Ryu (33.3%)",
     "Dropped by Incarnation of the Eternal Flame (Ultra) Blazamut Ryu (33.3%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Medal Merchant (300 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
     "Found in treasure chests"
    ]
   },
@@ -9043,7 +9275,7 @@
     "Dropped by Eclipsed Siren Bellanoir (33.3%)",
     "Dropped by Twilight Siren Bellanoir Libero (33.3%)",
     "Dropped by Twilight Siren (Ultra) Bellanoir Libero (33.3%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Medal Merchant (300 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
     "Found in treasure chests"
    ]
   },
@@ -9055,7 +9287,7 @@
    "obtained_from": [
     "Dropped by Invader from Space Xenolord (33.3%)",
     "Dropped by Invader from Space (Ultra) Xenolord (33.3%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Medal Merchant (300 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
     "Found in treasure chests"
    ]
   },
@@ -9068,7 +9300,7 @@
     "Dropped by Eclipsed Siren Bellanoir (33.3%)",
     "Dropped by Twilight Siren Bellanoir Libero (33.3%)",
     "Dropped by Twilight Siren (Ultra) Bellanoir Libero (33.3%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Medal Merchant (300 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
     "Found in treasure chests"
    ]
   },
@@ -9081,7 +9313,7 @@
     "Dropped by Eclipsed Siren Bellanoir (33.3%)",
     "Dropped by Twilight Siren Bellanoir Libero (33.3%)",
     "Dropped by Twilight Siren (Ultra) Bellanoir Libero (33.3%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Medal Merchant (300 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)",
     "Found in treasure chests"
    ]
   },
@@ -9120,7 +9352,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (1.75%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (30 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -9131,7 +9363,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (0.6%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (30 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -9152,7 +9384,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (0.6%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (30 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -9162,7 +9394,8 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (35 Battle Ticket) - Arena (631, 16)",
+    "Sold by PIDF Bounty Officer (7 Successful Bounty Token) - Small Settlement (74, -477), Fisherman's Point (-479, -748), Duneshelter (345, 361)",
     "Found in treasure chests"
    ]
   },
@@ -9173,7 +9406,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (0.75%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (45 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -9212,7 +9445,7 @@
    "obtained_from": [
     "Dropped by Twilight Siren Bellanoir Libero (100%)",
     "Dropped by Skillfruit Orchard (0.6%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (45 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -9223,7 +9456,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (1%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (30 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -9234,7 +9467,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (1.75%)",
-    "Sold by merchants (1 shop listings)"
+    "Sold by Arena Merchant (30 Battle Ticket) - Arena (631, 16)"
    ]
   },
   {
@@ -9244,7 +9477,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (0.6%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (30 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -9261,7 +9494,10 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch; Also craftable at: High Quality Workbench, Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench"
@@ -9279,7 +9515,8 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (343, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-477, -748)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch; Also craftable at: High Quality Workbench, Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench"
@@ -9326,7 +9563,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by PIDF Bounty Officer (15 Successful Bounty Token) - Small Settlement (74, -477), Fisherman's Point (-479, -748), Duneshelter (345, 361)",
     "Found in treasure chests"
    ]
   },
@@ -9337,7 +9574,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (0.6%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (45 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -9348,7 +9585,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (0.6%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (45 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -9359,7 +9596,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (0.75%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (45 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -9722,7 +9959,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (0.6%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (45 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -9733,7 +9970,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (0.6%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (30 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -9744,7 +9981,7 @@
    "recipe": null,
    "obtained_from": [
     "Dropped by Skillfruit Orchard (0.6%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Arena Merchant (45 Battle Ticket) - Arena (631, 16)",
     "Found in treasure chests"
    ]
   },
@@ -10528,7 +10765,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-479, -749)"
    ],
    "notes": "Also craftable at: Weapon Assembly Line, Weapon Assembly Line II, Advanced Weapon Assembly Line, Ancient Workbench"
   },
@@ -10700,7 +10937,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Wandering Merchant (Gold) - Duneshelter (342, 362)"
    ],
    "notes": "Also craftable at: Weapon Assembly Line, Weapon Assembly Line II, Advanced Weapon Assembly Line, Ancient Workbench"
   },
@@ -12134,7 +12371,8 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Wandering Merchant (Gold) - Duneshelter (342, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-479, -749)"
    ],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench"
   },
@@ -12151,7 +12389,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Wandering Merchant (Gold) - Duneshelter (342, 362)"
    ],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench"
   },
@@ -12262,7 +12500,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Medal Merchant (25 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)"
    ],
    "notes": "paldb.cc lists no crafting station for this recipe - schematic/event-based craft made at the standard workbench or assembly line for this item type"
   },
@@ -12277,7 +12515,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Medal Merchant (25 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)"
    ],
    "notes": "paldb.cc lists no crafting station for this recipe - schematic/event-based craft made at the standard workbench or assembly line for this item type"
   },
@@ -12318,7 +12556,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Medal Merchant (25 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)"
    ],
    "notes": "paldb.cc lists no crafting station for this recipe - schematic/event-based craft made at the standard workbench or assembly line for this item type"
   },
@@ -12346,7 +12584,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Medal Merchant (25 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)"
    ],
    "notes": "paldb.cc lists no crafting station for this recipe - schematic/event-based craft made at the standard workbench or assembly line for this item type"
   },
@@ -12361,7 +12599,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Medal Merchant (25 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)"
    ],
    "notes": "paldb.cc lists no crafting station for this recipe - schematic/event-based craft made at the standard workbench or assembly line for this item type"
   },
@@ -12402,7 +12640,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Medal Merchant (25 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)"
    ],
    "notes": "paldb.cc lists no crafting station for this recipe - schematic/event-based craft made at the standard workbench or assembly line for this item type"
   },
@@ -13004,7 +13242,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by PIDF Bounty Officer (5 Successful Bounty Token) - Small Settlement (74, -477), Fisherman's Point (-479, -748), Duneshelter (345, 361)"
    ]
   },
   {
@@ -13013,7 +13251,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Medal Merchant (25 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)"
    ]
   },
   {
@@ -13022,7 +13260,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by PIDF Bounty Officer (5 Successful Bounty Token) - Small Settlement (74, -477), Fisherman's Point (-479, -748), Duneshelter (345, 361)"
    ]
   },
   {
@@ -13046,7 +13284,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Arena Merchant (80 Battle Ticket) - Arena (631, 16)"
    ]
   },
   {
@@ -13055,7 +13293,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Medal Merchant (25 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)"
    ]
   },
   {
@@ -13064,7 +13302,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by PIDF Bounty Officer (5 Successful Bounty Token) - Small Settlement (74, -477), Fisherman's Point (-479, -748), Duneshelter (345, 361)"
    ]
   },
   {
@@ -13073,7 +13311,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Medal Merchant (25 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)"
    ]
   },
   {
@@ -13082,7 +13320,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Arena Merchant (100 Battle Ticket) - Arena (631, 16)"
    ]
   },
   {
@@ -13091,7 +13329,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Arena Merchant (80 Battle Ticket) - Arena (631, 16)"
    ]
   },
   {
@@ -13100,7 +13338,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Arena Merchant (80 Battle Ticket) - Arena (631, 16)"
    ]
   },
   {
@@ -13109,7 +13347,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Arena Merchant (80 Battle Ticket) - Arena (631, 16)"
    ]
   },
   {
@@ -13118,7 +13356,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Arena Merchant (80 Battle Ticket) - Arena (631, 16)"
    ]
   },
   {
@@ -13127,7 +13365,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Arena Merchant (80 Battle Ticket) - Arena (631, 16)"
    ]
   },
   {
@@ -14487,7 +14725,13 @@
     "Dropped by Syndicate Crossbowman (100%)",
     "Dropped by Moonflower Genin (100%)",
     "Dropped by Moonflower Jonin (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Smugglers' Lackey (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Mercenary Supplier (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Heavy Arms Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch; Also craftable at: High Quality Workbench, Weapon Workbench, Production Assembly Line, Weapon Assembly Line, Production Assembly Line II, Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
@@ -14505,7 +14749,12 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Smugglers' Lackey (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Mercenary Supplier (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Heavy Arms Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch; Also craftable at: High Quality Workbench, Weapon Workbench, Production Assembly Line, Weapon Assembly Line, Production Assembly Line II, Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
@@ -14523,7 +14772,13 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-479, -749)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Smugglers' Lackey (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Mercenary Supplier (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Heavy Arms Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch; Also craftable at: High Quality Workbench, Weapon Workbench, Production Assembly Line, Weapon Assembly Line, Production Assembly Line II, Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
@@ -14544,7 +14799,9 @@
     "Dropped by Syndicate Elite (100%)",
     "Dropped by Brothers of the Eternal Pyre Martyr (100%)",
     "Dropped by PIDF Rocketeer (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Heavy Arms Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch; Also craftable at: Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
@@ -14563,7 +14820,8 @@
    "obtained_from": [
     "Dropped by Syndicate Laser Rifleman (100%)",
     "Dropped by PIDF Technophile (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x20 per batch; Also craftable at: Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
@@ -14595,7 +14853,14 @@
    },
    "obtained_from": [
     "Dropped by PIDF Guard (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (342, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-479, -749)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Mercenary Supplier (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Heavy Arms Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x20 per batch; Also craftable at: Weapon Workbench, Production Assembly Line, Weapon Assembly Line, Production Assembly Line II, Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
@@ -14613,7 +14878,14 @@
    },
    "obtained_from": [
     "Dropped by PIDF Rifleman (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (342, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-479, -749)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Mercenary Supplier (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Heavy Arms Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch; Also craftable at: Weapon Workbench, Production Assembly Line, Weapon Assembly Line, Production Assembly Line II, Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
@@ -14633,7 +14905,14 @@
     "Dropped by Guard (100%)",
     "Dropped by Syndicate Hunter (100%)",
     "Dropped by PIDF Elite (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (342, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-479, -749)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Mercenary Supplier (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Heavy Arms Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch; Also craftable at: Weapon Workbench, Production Assembly Line, Weapon Assembly Line, Production Assembly Line II, Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
@@ -14655,7 +14934,15 @@
     "Dropped by Intimidating Interviewer Grill (100%)",
     "Dropped by PIDF Rifleman (100%)",
     "Dropped by Elder (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (342, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-479, -749)",
+    "Sold by Wandering Merchant (Gold) - Inside dungeons (random)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Smugglers' Lackey (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Mercenary Supplier (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Heavy Arms Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x20 per batch; Also craftable at: Weapon Workbench, Production Assembly Line, Weapon Assembly Line, Production Assembly Line II, Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
@@ -14682,7 +14969,12 @@
     "Dropped by Workplace Tyrant Whip x1 (100%)",
     "Dropped by Trigger-Happy Gunslinger Clint x1–10 (100%)",
     "Dropped by Slacker Chief x1–2 (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Duneshelter (342, 362)",
+    "Sold by Wandering Merchant (Gold) - Fisherman's Point (-479, -749)",
+    "Sold by Wandering Merchant (Gold) - Random roaming spawns across the map",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Heavy Arms Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests",
     "Junk_Snow: x5–10 (25%)",
     "Lv55 Oilrig Greater Chest: x100–200 (14.286%)",
@@ -14708,7 +15000,9 @@
    },
    "obtained_from": [
     "Dropped by PIDF Cleaner (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Heavy Arms Merchant (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch; Also craftable at: Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
@@ -14730,7 +15024,8 @@
     "Dropped by PAL Genetic Research Unit Executioner (100%)",
     "Dropped by Feybreak Berserker (100%)",
     "Dropped by PIDF Interceptor (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch; Also craftable at: Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
@@ -14752,7 +15047,8 @@
     "Dropped by PAL Genetic Research Unit Executioner (100%)",
     "Dropped by Feybreak Warrior (100%)",
     "Dropped by PIDF Veteran (100%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch; Also craftable at: Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
@@ -14769,7 +15065,8 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x50 per batch; Also craftable at: Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
@@ -14785,7 +15082,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)"
    ],
    "notes": "Crafts x10 per batch; Also craftable at: Weapon Assembly Line, Production Assembly Line II, Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
   },
@@ -14801,7 +15098,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch; Also craftable at: Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
@@ -14818,7 +15115,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x50 per batch; Also craftable at: Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
@@ -14835,7 +15132,8 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch; Also craftable at: High Quality Workbench, Weapon Workbench, Production Assembly Line, Weapon Assembly Line, Production Assembly Line II, Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
@@ -14852,7 +15150,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch; Also craftable at: High Quality Workbench, Weapon Workbench, Production Assembly Line, Weapon Assembly Line, Production Assembly Line II, Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
@@ -14869,7 +15167,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)"
    ],
    "notes": "Crafts x10 per batch; Also craftable at: Advanced Weapon Assembly Line, Ancient Workbench"
   },
@@ -14885,7 +15183,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)"
    ],
    "notes": "Crafts x20 per batch; Also craftable at: Advanced Weapon Assembly Line, Ancient Workbench"
   },
@@ -14901,7 +15199,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)"
    ],
    "notes": "Crafts x10 per batch; Also craftable at: Advanced Weapon Assembly Line, Ancient Workbench"
   },
@@ -14917,7 +15215,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)"
    ],
    "notes": "Crafts x10 per batch; Also craftable at: Weapon Workbench, Production Assembly Line, Weapon Assembly Line, Production Assembly Line II, Weapon Assembly Line II, Advanced Workshop, Advanced Weapon Assembly Line, Ancient Workbench"
   },
@@ -14934,7 +15232,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch"
@@ -14952,7 +15250,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x20 per batch"
@@ -14970,7 +15268,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch"
@@ -14986,7 +15284,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch"
@@ -15003,7 +15301,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x20 per batch"
@@ -15020,7 +15318,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch"
@@ -15037,7 +15335,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x20 per batch"
@@ -15054,7 +15352,7 @@
     }
    },
    "obtained_from": [
-    "Sold by merchants (1 shop listings)",
+    "Sold by Legendary Ammo Merchant (Gold) - Visits player base (caravan merchant event)",
     "Found in treasure chests"
    ],
    "notes": "Crafts x10 per batch"
@@ -15135,7 +15433,9 @@
     "Dropped by Serial Borrower  Pinch x1–2 (40%)",
     "Dropped by ArenaShop x1–2 (40%)",
     "Dropped by PIDF Rifleman x1–2 (40%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Wandering Merchant (Gold) - Small Settlement (76, -474), Isle of Silence Church Ruins (-397, 18), Marsh Island Church Ruins (433, -271), Sea Breeze Archipelago (-188, -601)",
+    "Sold by Caravan Leader (Gold) - Visits player base (caravan merchant event)",
+    "Sold by Vagrant Trader (Gold) - location unknown",
     "Found in treasure chests",
     "Grass01: x1–3 (26.415%)",
     "PalSphere: x1–3 (100%)",
@@ -15187,7 +15487,7 @@
     "Dropped by PIDF Rocketeer x1–2 (40%)",
     "Dropped by PIDF Interceptor x1–2 (40%)",
     "Dropped by PIDF Rider x1–2 (40%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Vagrant Trader (Gold) - location unknown",
     "Found in treasure chests",
     "Grass01: x1 (86.957%)",
     "PalSphere_Mega: x1–3 (100%)",
@@ -15232,7 +15532,7 @@
     "Dropped by Syndicate Crusher (100%)",
     "Dropped by Intimidating Interviewer Grill (40%)",
     "Dropped by Elder (40%)",
-    "Sold by merchants (1 shop listings)",
+    "Sold by Vagrant Trader (Gold) - location unknown",
     "Found in treasure chests"
    ],
    "notes": "Also craftable at: Sphere Assembly Line, Sphere Assembly Line II, Advanced Sphere Assembly Line, Ancient Workbench"
@@ -16947,7 +17247,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Medal Merchant (50 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)"
    ]
   },
   {
@@ -16956,7 +17256,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Medal Merchant (300 Dog Coin) - Desolate Church (63, -412), Isle of Silence Church Ruins (-454, -12), Marsh Island Church Ruins (401, -273), Sea Breeze Archipelago Church (-63, -534)"
    ]
   },
   {
@@ -17910,7 +18210,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Arena Merchant (50 Battle Ticket) - Arena (631, 16)"
    ]
   },
   {
@@ -17919,7 +18219,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Arena Merchant (50 Battle Ticket) - Arena (631, 16)"
    ]
   },
   {
@@ -17928,7 +18228,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Arena Merchant (50 Battle Ticket) - Arena (631, 16)"
    ]
   },
   {
@@ -17937,7 +18237,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by PIDF Bounty Officer (15 Successful Bounty Token) - Small Settlement (74, -477), Fisherman's Point (-479, -748), Duneshelter (345, 361)"
    ]
   },
   {
@@ -17946,7 +18246,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by PIDF Bounty Officer (15 Successful Bounty Token) - Small Settlement (74, -477), Fisherman's Point (-479, -748), Duneshelter (345, 361)"
    ]
   },
   {
@@ -17955,7 +18255,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by PIDF Bounty Officer (15 Successful Bounty Token) - Small Settlement (74, -477), Fisherman's Point (-479, -748), Duneshelter (345, 361)"
    ]
   },
   {
@@ -18287,7 +18587,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by PIDF Bounty Officer (15 Successful Bounty Token) - Small Settlement (74, -477), Fisherman's Point (-479, -748), Duneshelter (345, 361)"
    ]
   },
   {
@@ -18296,7 +18596,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by PIDF Bounty Officer (15 Successful Bounty Token) - Small Settlement (74, -477), Fisherman's Point (-479, -748), Duneshelter (345, 361)"
    ]
   },
   {
@@ -18305,7 +18605,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by PIDF Bounty Officer (15 Successful Bounty Token) - Small Settlement (74, -477), Fisherman's Point (-479, -748), Duneshelter (345, 361)"
    ]
   },
   {
@@ -18314,7 +18614,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Arena Merchant (50 Battle Ticket) - Arena (631, 16)"
    ]
   },
   {
@@ -18323,7 +18623,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Arena Merchant (50 Battle Ticket) - Arena (631, 16)"
    ]
   },
   {
@@ -19122,7 +19422,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by PIDF Bounty Officer (15 Successful Bounty Token) - Small Settlement (74, -477), Fisherman's Point (-479, -748), Duneshelter (345, 361)"
    ]
   },
   {
@@ -19131,7 +19431,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Arena Merchant (50 Battle Ticket) - Arena (631, 16)"
    ]
   },
   {
@@ -19140,7 +19440,7 @@
    "tech_level": null,
    "recipe": null,
    "obtained_from": [
-    "Sold by merchants (1 shop listings)"
+    "Sold by Arena Merchant (50 Battle Ticket) - Arena (631, 16)"
    ]
   },
   {
@@ -19709,7 +20009,7 @@
   "Scraped from paldb.cc (site data version v1.0.0, 2026/07/10 - matches game 1.0).",
   "recipe.station is the lowest-tier station; higher-tier alternatives are in the item's notes field.",
   "obtained_from drop probabilities are per-kill/per-capture rates from paldb.cc drop tables; entries may include human NPCs and bosses as well as pals.",
-  "'Sold by merchants (N shop listings)' summarizes paldb.cc Wandering Merchant tables (village/wandering/caravan/dungeon shops).",
+  "Merchant sources are per-shop: 'Sold by <merchant> (<price>) - <location (coords)>'; full shop tables in data/merchants.json.",
   "Mining-node, ranch (Farming) and wild-gathering sources are hand-added overlays for well-known base resources; paldb.cc does not list them in a structured way.",
   "key_item entries (journals, quest items, maps) are included for completeness; many legitimately have no recipe or listed source.",
   "Internal/cut-content entries with code-like names (e.g. Berries2, NPC_WEAPON) were filtered out.",

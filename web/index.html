@@ -600,10 +600,12 @@ class BasePlan {
       ["suitability:Transporting","+1 Transport всем"],["sanity_save","SAN базы"]]);
     const structsW=Object.fromEntries(D.bb.structures.map(x=>[x.name,x]));
     const mSites=sites.filter(x=>(structsW[x].workers||"")==="Mining"), lSites=sites.filter(x=>(structsW[x].workers||"")==="Lumbering");
-    // 1 пал на станцию: placeable-шахты одиночные, уровень ускоряет добычу на станции, но не заменяет тело
-    if(mSites.length) this.hireBest("Mining",6,mSites.length,`добыча: 1 пал/станцию — ${mSites.join("/")}`);
-    if(lSites.length) this.hireBest("Lumbering",5,lSites.length,`лесопилки: 1 пал/станцию — ${lSites.join("/")}`);
-    this.notes.push("Добыча: 1 пал на каждую станцию (placeable-шахты одиночные; уровень ускоряет добычу на станции, но один пал не стоит у двух сразу)");
+    const perSt=o.perStation||1;
+    const staff=(list,task,minLv,label)=>{ for(const site of list){
+      const slots=structsW[site].worker_slots||1, n=Math.max(1,Math.min(perSt,slots));
+      this.hireBest(task,minLv,n,`${label}: ${site} (${n}/${slots} мест)`); } };
+    staff(mSites,"Mining",6,"добыча"); staff(lSites,"Lumbering",5,"лесопилка");
+    this.notes.push(`Добыча: ${perSt} пал(ов) на станцию (у шахт до 3 мест — больше палов = быстрее добыча). 1 = все станции работают, но не на макс. скорости`);
     this.add(this.best(["Primitive Furnace","Improved Furnace","Electric Furnace","Gigantic Furnace","Ancient Furnace"]),2);
     this.hireBest("Kindling",6,2,"печи");
     if(o.tech>=67&&this.structs["Ancient Workbench"]){
@@ -776,7 +778,7 @@ function builderOpts(){
     plantsPerWorker:3,farms:+val("pfarms")||null,dish:val("pdish")||"Salad",dishRate:+val("pdishrate")||30,
     eggInterval:+val("peggint")||5,eggBoost:+val("peggboost")||1.35,
     incubation:val("pincub")===""?1:+val("pincub"),cake:val("pcake")||"Cake",
-    dishes:plannerDishes.length?plannerDishes:null};
+    perStation:+val("ppers")||1,dishes:plannerDishes.length?plannerDishes:null};
 }
 
 render.planner = () => {
@@ -805,6 +807,9 @@ render.planner = () => {
     <label class="dim" title="1.0 = торты лимитируют (Braloha без простоев); 1.35+ = линия под буст">буст яиц x <input type="number" id="peggboost" value="1.0" step="0.05" style="width:60px;min-width:60px"></label>
     <label class="dim" title="настройка мира: 0 = мгновенная инкубация">инкубация (мир) <input type="number" id="pincub" value="1" step="0.5" min="0" style="width:60px;min-width:60px"></label>
   </div>
+  <div class="row fld fld-mine-craft" style="margin-top:8px">
+    <label class="dim" title="у шахт до 3 мест; больше палов на станцию = быстрее добыча">палов на станцию <input type="number" id="ppers" value="1" min="1" max="3" style="width:60px;min-width:60px"></label>
+  </div>
   <div class="row fld fld-food" style="margin-top:8px">
     <select id="pdish"></select>
     <label class="dim">блюд/час <input type="number" id="pdishrate" value="30" style="width:60px;min-width:60px"></label>
@@ -824,7 +829,7 @@ render.planner = () => {
   };
   document.getElementById("pp").addEventListener("input",updateVis);
   window._updateVis=updateVis;
-  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","peggboost","pincub","pcake"]){
+  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","peggboost","pincub","pcake","ppers"]){
     document.getElementById(id).addEventListener("input",()=>{
       if(!baseDirty && BASE.buildings.length) seedFromPreset();
       else if(baseDirty){ const el=document.getElementById("rebuild-hint"); if(el) el.style.display=""; }

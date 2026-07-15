@@ -1,0 +1,2946 @@
+{
+ "game_version": "1.0",
+ "updated": "2026-07-15",
+ "shops": {
+  "Arena_Shop_1": {
+   "merchant": "Arena Merchant",
+   "currency": "Battle Ticket",
+   "locations": [
+    {
+     "area": "Arena",
+     "coordinates": "(631, 16)",
+     "level": 46
+    }
+   ],
+   "items": [
+    {
+     "name": "Marksman Revolver Schematic 4",
+     "price": 1300
+    },
+    {
+     "name": "Core Eject Shotgun Schematic 4",
+     "price": 1300
+    },
+    {
+     "name": "V1 Armor Schematic 4",
+     "price": 1000
+    },
+    {
+     "name": "V2 Armor Schematic 4",
+     "price": 1000
+    },
+    {
+     "name": "Energy Shotgun Schematic 4",
+     "price": 1500
+    },
+    {
+     "name": "Charge Rifle Schematic 4",
+     "price": 1500
+    },
+    {
+     "name": "Overheat Rifle Schematic 4",
+     "price": 1500
+    },
+    {
+     "name": "Energy Shotgun Schematic 3",
+     "price": 600
+    },
+    {
+     "name": "Charge Rifle Schematic 3",
+     "price": 600
+    },
+    {
+     "name": "Overheat Rifle Schematic 3",
+     "price": 600
+    },
+    {
+     "name": "Kingpaca Headband",
+     "price": 80
+    },
+    {
+     "name": "Tarantriss Hat",
+     "price": 80
+    },
+    {
+     "name": "Ghangler Accessory",
+     "price": 80
+    },
+    {
+     "name": "Icelyn Hat",
+     "price": 80
+    },
+    {
+     "name": "Shroomer Hat",
+     "price": 80
+    },
+    {
+     "name": "Splatterina Hat",
+     "price": 80
+    },
+    {
+     "name": "Dandilord Hat",
+     "price": 100
+    },
+    {
+     "name": "Implant: Serenity",
+     "price": 50
+    },
+    {
+     "name": "Implant: Infinite Stamina",
+     "price": 50
+    },
+    {
+     "name": "Implant: Runner",
+     "price": 50
+    },
+    {
+     "name": "Implant: Ace Swimmer",
+     "price": 50
+    },
+    {
+     "name": "Implant: Noble",
+     "price": 50
+    },
+    {
+     "name": "Implant: Healing Coach",
+     "price": 50
+    },
+    {
+     "name": "Implant: Reload Master",
+     "price": 50
+    },
+    {
+     "name": "Pal Reverser",
+     "price": 35
+    },
+    {
+     "name": "Training Crystal",
+     "price": 50
+    },
+    {
+     "name": "Life Fruit",
+     "price": 100
+    },
+    {
+     "name": "Power Fruit",
+     "price": 100
+    },
+    {
+     "name": "Stout Fruit",
+     "price": 100
+    },
+    {
+     "name": "Skill Fruit: Holy Burst",
+     "price": 45
+    },
+    {
+     "name": "Skill Fruit: Implode",
+     "price": 30
+    },
+    {
+     "name": "Skill Fruit: Air Blade",
+     "price": 30
+    },
+    {
+     "name": "Dark Skill Fruit: Dark Whisp",
+     "price": 45
+    },
+    {
+     "name": "Dark Skill Fruit: Apocalypse",
+     "price": 30
+    },
+    {
+     "name": "Dark Skill Fruit: Poison Shower",
+     "price": 30
+    },
+    {
+     "name": "Dragon Skill Fruit: Dragon Meteor",
+     "price": 45
+    },
+    {
+     "name": "Dragon Skill Fruit: Charge Cannon",
+     "price": 30
+    },
+    {
+     "name": "Dragon Skill Fruit: Beam Slicer",
+     "price": 30
+    },
+    {
+     "name": "Ice Skill Fruit: Absolute Frost",
+     "price": 45
+    },
+    {
+     "name": "Ice Skill Fruit: Icicle Bullet",
+     "price": 30
+    },
+    {
+     "name": "Ice Skill Fruit: Freeze Wall",
+     "price": 30
+    },
+    {
+     "name": "Fire Skill Fruit: Fire Ball",
+     "price": 45
+    },
+    {
+     "name": "Fire Skill Fruit: Volcanic Rain",
+     "price": 30
+    },
+    {
+     "name": "Fire Skill Fruit: Flame Funnel",
+     "price": 30
+    },
+    {
+     "name": "Water Skill Fruit: Geyser Gush",
+     "price": 45
+    },
+    {
+     "name": "Water Skill Fruit: Aqua Surge",
+     "price": 45
+    },
+    {
+     "name": "Water Skill Fruit: Hydro Slicer",
+     "price": 30
+    },
+    {
+     "name": "Electric Skill Fruit: Thunderstorm",
+     "price": 45
+    },
+    {
+     "name": "Thunder Skill Fruit: All Range Thunder",
+     "price": 30
+    },
+    {
+     "name": "Electric Skill Fruit: Thunder Rain",
+     "price": 30
+    },
+    {
+     "name": "Ground Skill Fruit: Rocky Impact",
+     "price": 45
+    },
+    {
+     "name": "Ground Skill Fruit: Sand Twister",
+     "price": 30
+    },
+    {
+     "name": "Ground Skill Fruit: Rockburst",
+     "price": 30
+    },
+    {
+     "name": "Grass Skill Fruit: Wind Blast",
+     "price": 45
+    },
+    {
+     "name": "Grass Skill Fruit: Crosswind",
+     "price": 45
+    },
+    {
+     "name": "Grass Skill Fruit: Reflect Leaf",
+     "price": 30
+    }
+   ]
+  },
+  "Bounty_Shop_1": {
+   "merchant": "PIDF Bounty Officer",
+   "currency": "Successful Bounty Token",
+   "locations": [
+    {
+     "area": "Small Settlement",
+     "coordinates": "(74, -477)",
+     "level": 13
+    },
+    {
+     "area": "Fisherman's Point",
+     "coordinates": "(-479, -748)",
+     "level": 39
+    },
+    {
+     "area": "Duneshelter",
+     "coordinates": "(345, 361)",
+     "level": 45
+    }
+   ],
+   "items": [
+    {
+     "name": "Gold Coin",
+     "price": 1,
+     "qty": 2000
+    },
+    {
+     "name": "Advanced Technical Manual",
+     "price": 5
+    },
+    {
+     "name": "Pal Reverser",
+     "price": 7
+    },
+    {
+     "name": "Croajiro Cap",
+     "price": 5
+    },
+    {
+     "name": "Herbil Headband",
+     "price": 5
+    },
+    {
+     "name": "Turtacle Cap",
+     "price": 5
+    },
+    {
+     "name": "Kinship Peach",
+     "price": 15
+    },
+    {
+     "name": "Implant: Musclehead",
+     "price": 15
+    },
+    {
+     "name": "Implant: Burly Body",
+     "price": 15
+    },
+    {
+     "name": "Implant: Artisan",
+     "price": 15
+    },
+    {
+     "name": "Implant: Vanguard",
+     "price": 15
+    },
+    {
+     "name": "Implant: Stronghold Strategist",
+     "price": 15
+    },
+    {
+     "name": "Implant: Motivational Leader",
+     "price": 15
+    },
+    {
+     "name": "Implant: Wellness Watcher",
+     "price": 15
+    },
+    {
+     "name": "Life Fruit",
+     "price": 25
+    },
+    {
+     "name": "Power Fruit",
+     "price": 25
+    },
+    {
+     "name": "Stout Fruit",
+     "price": 25
+    },
+    {
+     "name": "Ripe Starfruit",
+     "price": 50
+    }
+   ]
+  },
+  "Caravan_Shop_1": {
+   "merchant": "Caravan Leader",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Arrow",
+     "price": null
+    },
+    {
+     "name": "Poison Arrow",
+     "price": null
+    },
+    {
+     "name": "Fire Arrow",
+     "price": null
+    },
+    {
+     "name": "Reinforced Arrow",
+     "price": null
+    },
+    {
+     "name": "Coarse Ammo",
+     "price": null
+    },
+    {
+     "name": "Pal Sphere",
+     "price": null
+    },
+    {
+     "name": "Aquatic Pal Fluids",
+     "price": null
+    },
+    {
+     "name": "Venom Gland",
+     "price": null
+    },
+    {
+     "name": "Flame Organ",
+     "price": null
+    },
+    {
+     "name": "Berry Seeds",
+     "price": null
+    },
+    {
+     "name": "Wheat Seeds",
+     "price": null
+    },
+    {
+     "name": "Egg",
+     "price": null
+    },
+    {
+     "name": "Milk",
+     "price": null
+    },
+    {
+     "name": "Red Berries",
+     "price": null
+    },
+    {
+     "name": "Wheat",
+     "price": null
+    },
+    {
+     "name": "Wool",
+     "price": null
+    },
+    {
+     "name": "Leather",
+     "price": null
+    },
+    {
+     "name": "Bone",
+     "price": null
+    },
+    {
+     "name": "Horn",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_10": {
+   "merchant": "Heavy Arms Merchant",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Arrow",
+     "price": null
+    },
+    {
+     "name": "Poison Arrow",
+     "price": null
+    },
+    {
+     "name": "Fire Arrow",
+     "price": null
+    },
+    {
+     "name": "Coarse Ammo",
+     "price": null
+    },
+    {
+     "name": "Handgun Ammo",
+     "price": null
+    },
+    {
+     "name": "Rifle Ammo",
+     "price": null
+    },
+    {
+     "name": "Shotgun Shell",
+     "price": null
+    },
+    {
+     "name": "Assault Rifle Ammo",
+     "price": null
+    },
+    {
+     "name": "Rocket Ammo",
+     "price": null
+    },
+    {
+     "name": "Flamethrower Fuel",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_11": {
+   "merchant": "Legendary Ammo Merchant",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Arrow",
+     "price": null
+    },
+    {
+     "name": "Poison Arrow",
+     "price": null
+    },
+    {
+     "name": "Fire Arrow",
+     "price": null
+    },
+    {
+     "name": "Coarse Ammo",
+     "price": null
+    },
+    {
+     "name": "Handgun Ammo",
+     "price": null
+    },
+    {
+     "name": "Rifle Ammo",
+     "price": null
+    },
+    {
+     "name": "Shotgun Shell",
+     "price": null
+    },
+    {
+     "name": "Assault Rifle Ammo",
+     "price": null
+    },
+    {
+     "name": "Rocket Ammo",
+     "price": null
+    },
+    {
+     "name": "Flamethrower Fuel",
+     "price": null
+    },
+    {
+     "name": "Missile Ammo",
+     "price": null
+    },
+    {
+     "name": "Grenade Ammo",
+     "price": null
+    },
+    {
+     "name": "Gatling Gun Ammo",
+     "price": null
+    },
+    {
+     "name": "Meteorite Ammo",
+     "price": null
+    },
+    {
+     "name": "Plasma Cartridge",
+     "price": null
+    },
+    {
+     "name": "Laser Gatling Cartridge",
+     "price": null
+    },
+    {
+     "name": "Charge Rifle Ammo",
+     "price": null
+    },
+    {
+     "name": "Overheat Rifle Ammo",
+     "price": null
+    },
+    {
+     "name": "Energy Shotgun Ammo",
+     "price": null
+    },
+    {
+     "name": "Boost Gun Ammo",
+     "price": null
+    },
+    {
+     "name": "Beam Scatter Ammo",
+     "price": null
+    },
+    {
+     "name": "Plasma Rifle Ammo",
+     "price": null
+    },
+    {
+     "name": "Beam Launcher Ammo",
+     "price": null
+    },
+    {
+     "name": "Mechanical Bow Ammo",
+     "price": null
+    },
+    {
+     "name": "Combat SMG Ammo",
+     "price": null
+    },
+    {
+     "name": "Prototype Shotgun Ammo",
+     "price": null
+    },
+    {
+     "name": "Heavy Assault Rifle Ammo",
+     "price": null
+    },
+    {
+     "name": "Tactical Grenade Launcher Ammo",
+     "price": null
+    },
+    {
+     "name": "Energy Cartridge",
+     "price": null
+    },
+    {
+     "name": "Reinforced Arrow",
+     "price": null
+    },
+    {
+     "name": "Advanced Arrow",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_12": {
+   "merchant": "Village Grocer",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Red Berries",
+     "price": null
+    },
+    {
+     "name": "Berry Seeds",
+     "price": null
+    },
+    {
+     "name": "Wheat Seeds",
+     "price": null
+    },
+    {
+     "name": "Wheat",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_13": {
+   "merchant": "Farm Peddler",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Red Berries",
+     "price": null
+    },
+    {
+     "name": "Berry Seeds",
+     "price": null
+    },
+    {
+     "name": "Wheat Seeds",
+     "price": null
+    },
+    {
+     "name": "Wheat",
+     "price": null
+    },
+    {
+     "name": "Tomato Seeds",
+     "price": null
+    },
+    {
+     "name": "Tomato",
+     "price": null
+    },
+    {
+     "name": "Lettuce",
+     "price": null
+    },
+    {
+     "name": "Lettuce Seeds",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_14": {
+   "merchant": "Legendary Grocer",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Red Berries",
+     "price": null
+    },
+    {
+     "name": "Berry Seeds",
+     "price": null
+    },
+    {
+     "name": "Wheat Seeds",
+     "price": null
+    },
+    {
+     "name": "Wheat",
+     "price": null
+    },
+    {
+     "name": "Tomato Seeds",
+     "price": null
+    },
+    {
+     "name": "Tomato",
+     "price": null
+    },
+    {
+     "name": "Lettuce",
+     "price": null
+    },
+    {
+     "name": "Lettuce Seeds",
+     "price": null
+    },
+    {
+     "name": "Mushroom",
+     "price": null
+    },
+    {
+     "name": "Cavern Mushroom",
+     "price": null
+    },
+    {
+     "name": "Mysterious Mushroom",
+     "price": null
+    },
+    {
+     "name": "Potato Seeds",
+     "price": null
+    },
+    {
+     "name": "Potato",
+     "price": null
+    },
+    {
+     "name": "Carrot Seeds",
+     "price": null
+    },
+    {
+     "name": "Carrot",
+     "price": null
+    },
+    {
+     "name": "Onion Seeds",
+     "price": null
+    },
+    {
+     "name": "Onion",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_15": {
+   "merchant": "Shady Pharmacist",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Low Grade Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "Suspicious Juice",
+     "price": null
+    },
+    {
+     "name": "Low Quality Recovery Meds",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_16": {
+   "merchant": "Authorized Pharmacist",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Low Grade Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "Suspicious Juice",
+     "price": null
+    },
+    {
+     "name": "Low Quality Recovery Meds",
+     "price": null
+    },
+    {
+     "name": "Strange Juice",
+     "price": null
+    },
+    {
+     "name": "Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "Recovery Meds",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_17": {
+   "merchant": "Legendary Pharmacist",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Low Grade Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "Suspicious Juice",
+     "price": null
+    },
+    {
+     "name": "Low Quality Recovery Meds",
+     "price": null
+    },
+    {
+     "name": "Strange Juice",
+     "price": null
+    },
+    {
+     "name": "Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "Recovery Meds",
+     "price": null
+    },
+    {
+     "name": "High Grade Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "High Quality Recovery Meds",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_18": {
+   "merchant": "Bakery Stand Baker",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Jam-Filled Bun",
+     "price": null
+    },
+    {
+     "name": "Omelet",
+     "price": null
+    },
+    {
+     "name": "Marinated Mushrooms",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_19": {
+   "merchant": "Local Restaurateur",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Jam-Filled Bun",
+     "price": null
+    },
+    {
+     "name": "Omelet",
+     "price": null
+    },
+    {
+     "name": "Marinated Mushrooms",
+     "price": null
+    },
+    {
+     "name": "Mushroom Soup",
+     "price": null
+    },
+    {
+     "name": "Jelliette's Jiggly Jelly",
+     "price": null
+    },
+    {
+     "name": "Jellroy's Jolly Jelly",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_2": {
+   "merchant": "Caravan Leader",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Handgun Ammo",
+     "price": null
+    },
+    {
+     "name": "Rifle Ammo",
+     "price": null
+    },
+    {
+     "name": "Shotgun Shell",
+     "price": null
+    },
+    {
+     "name": "Assault Rifle Ammo",
+     "price": null
+    },
+    {
+     "name": "High Quality Pal Oil",
+     "price": null
+    },
+    {
+     "name": "Electric Organ",
+     "price": null
+    },
+    {
+     "name": "Ice Organ",
+     "price": null
+    },
+    {
+     "name": "Tomato Seeds",
+     "price": null
+    },
+    {
+     "name": "Lettuce Seeds",
+     "price": null
+    },
+    {
+     "name": "Potato Seeds",
+     "price": null
+    },
+    {
+     "name": "Carrot Seeds",
+     "price": null
+    },
+    {
+     "name": "Onion Seeds",
+     "price": null
+    },
+    {
+     "name": "Tomato",
+     "price": null
+    },
+    {
+     "name": "Lettuce",
+     "price": null
+    },
+    {
+     "name": "Cloth",
+     "price": null
+    },
+    {
+     "name": "Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "High Grade Medical Supplies",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_20": {
+   "merchant": "Novice Gourmet",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Jam-Filled Bun",
+     "price": null
+    },
+    {
+     "name": "Omelet",
+     "price": null
+    },
+    {
+     "name": "Marinated Mushrooms",
+     "price": null
+    },
+    {
+     "name": "Mushroom Soup",
+     "price": null
+    },
+    {
+     "name": "Jelliette's Jiggly Jelly",
+     "price": null
+    },
+    {
+     "name": "Jellroy's Jolly Jelly",
+     "price": null
+    },
+    {
+     "name": "Seafood Salad",
+     "price": null
+    },
+    {
+     "name": "Eikthyrdeer Loco Moco",
+     "price": null
+    },
+    {
+     "name": "Eikthyrdeer Stew",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_21": {
+   "merchant": "Legendary Gourmet",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Jam-Filled Bun",
+     "price": null
+    },
+    {
+     "name": "Omelet",
+     "price": null
+    },
+    {
+     "name": "Marinated Mushrooms",
+     "price": null
+    },
+    {
+     "name": "Mushroom Soup",
+     "price": null
+    },
+    {
+     "name": "Jelliette's Jiggly Jelly",
+     "price": null
+    },
+    {
+     "name": "Jellroy's Jolly Jelly",
+     "price": null
+    },
+    {
+     "name": "Seafood Salad",
+     "price": null
+    },
+    {
+     "name": "Eikthyrdeer Loco Moco",
+     "price": null
+    },
+    {
+     "name": "Eikthyrdeer Stew",
+     "price": null
+    },
+    {
+     "name": "Mammorest Curry",
+     "price": null
+    },
+    {
+     "name": "Galeclaw Nikujaga",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_22": {
+   "merchant": "Foraging Merchant",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Wool",
+     "price": null
+    },
+    {
+     "name": "Leather",
+     "price": null
+    },
+    {
+     "name": "Bone",
+     "price": null
+    },
+    {
+     "name": "Horn",
+     "price": null
+    },
+    {
+     "name": "Aquatic Pal Fluids",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_23": {
+   "merchant": "Authorized Materials Merchant",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Wool",
+     "price": null
+    },
+    {
+     "name": "Leather",
+     "price": null
+    },
+    {
+     "name": "Bone",
+     "price": null
+    },
+    {
+     "name": "Horn",
+     "price": null
+    },
+    {
+     "name": "Aquatic Pal Fluids",
+     "price": null
+    },
+    {
+     "name": "Flame Organ",
+     "price": null
+    },
+    {
+     "name": "Ice Organ",
+     "price": null
+    },
+    {
+     "name": "Electric Organ",
+     "price": null
+    },
+    {
+     "name": "Venom Gland",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_24": {
+   "merchant": "Element Merchant",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Wool",
+     "price": null
+    },
+    {
+     "name": "Leather",
+     "price": null
+    },
+    {
+     "name": "Bone",
+     "price": null
+    },
+    {
+     "name": "Horn",
+     "price": null
+    },
+    {
+     "name": "Aquatic Pal Fluids",
+     "price": null
+    },
+    {
+     "name": "Flame Organ",
+     "price": null
+    },
+    {
+     "name": "Ice Organ",
+     "price": null
+    },
+    {
+     "name": "Electric Organ",
+     "price": null
+    },
+    {
+     "name": "Venom Gland",
+     "price": null
+    },
+    {
+     "name": "High Quality Pal Oil",
+     "price": null
+    },
+    {
+     "name": "Katress Hair",
+     "price": null
+    },
+    {
+     "name": "Penking Plume",
+     "price": null
+    },
+    {
+     "name": "Tocotoco Feather",
+     "price": null
+    },
+    {
+     "name": "Gumoss Leaf",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_25": {
+   "merchant": "Legendary Materials Merchant",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Wool",
+     "price": null
+    },
+    {
+     "name": "Leather",
+     "price": null
+    },
+    {
+     "name": "Bone",
+     "price": null
+    },
+    {
+     "name": "Horn",
+     "price": null
+    },
+    {
+     "name": "Aquatic Pal Fluids",
+     "price": null
+    },
+    {
+     "name": "Flame Organ",
+     "price": null
+    },
+    {
+     "name": "Ice Organ",
+     "price": null
+    },
+    {
+     "name": "Electric Organ",
+     "price": null
+    },
+    {
+     "name": "Venom Gland",
+     "price": null
+    },
+    {
+     "name": "High Quality Pal Oil",
+     "price": null
+    },
+    {
+     "name": "Katress Hair",
+     "price": null
+    },
+    {
+     "name": "Penking Plume",
+     "price": null
+    },
+    {
+     "name": "Tocotoco Feather",
+     "price": null
+    },
+    {
+     "name": "Gumoss Leaf",
+     "price": null
+    },
+    {
+     "name": "Ribbuny Ribbon",
+     "price": null
+    },
+    {
+     "name": "Swee Hair",
+     "price": null
+    },
+    {
+     "name": "Killamari Tentacle",
+     "price": null
+    },
+    {
+     "name": "Dazzi Cloud",
+     "price": null
+    },
+    {
+     "name": "Leezpunk Crest",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_3": {
+   "merchant": "Caravan Leader",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Rocket Ammo",
+     "price": null
+    },
+    {
+     "name": "Energy Cartridge",
+     "price": null
+    },
+    {
+     "name": "Flamethrower Fuel",
+     "price": null
+    },
+    {
+     "name": "Grenade Ammo",
+     "price": null
+    },
+    {
+     "name": "Gatling Gun Ammo",
+     "price": null
+    },
+    {
+     "name": "Missile Ammo",
+     "price": null
+    },
+    {
+     "name": "Potato Seeds",
+     "price": null
+    },
+    {
+     "name": "Carrot Seeds",
+     "price": null
+    },
+    {
+     "name": "Onion Seeds",
+     "price": null
+    },
+    {
+     "name": "High Quality Cloth",
+     "price": null
+    },
+    {
+     "name": "Beautiful Flower",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_4": {
+   "merchant": "Butcher in Training",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Chikipi Poultry",
+     "price": null
+    },
+    {
+     "name": "Lamball Mutton",
+     "price": null
+    },
+    {
+     "name": "Egg",
+     "price": null
+    },
+    {
+     "name": "Rushoar Pork",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_5": {
+   "merchant": "Surf & Turf Master",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Chikipi Poultry",
+     "price": null
+    },
+    {
+     "name": "Lamball Mutton",
+     "price": null
+    },
+    {
+     "name": "Egg",
+     "price": null
+    },
+    {
+     "name": "Rushoar Pork",
+     "price": null
+    },
+    {
+     "name": "Raw Kelpsea",
+     "price": null
+    },
+    {
+     "name": "Raw Dumud",
+     "price": null
+    },
+    {
+     "name": "Milk",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_6": {
+   "merchant": "Expert Hunter",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Chikipi Poultry",
+     "price": null
+    },
+    {
+     "name": "Lamball Mutton",
+     "price": null
+    },
+    {
+     "name": "Egg",
+     "price": null
+    },
+    {
+     "name": "Rushoar Pork",
+     "price": null
+    },
+    {
+     "name": "Raw Kelpsea",
+     "price": null
+    },
+    {
+     "name": "Raw Dumud",
+     "price": null
+    },
+    {
+     "name": "Milk",
+     "price": null
+    },
+    {
+     "name": "Eikthyrdeer Venison",
+     "price": null
+    },
+    {
+     "name": "Reindrix Venison",
+     "price": null
+    },
+    {
+     "name": "Galeclaw Poultry",
+     "price": null
+    },
+    {
+     "name": "Caprity Meat",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_7": {
+   "merchant": "Legendary Game Hunter",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Chikipi Poultry",
+     "price": null
+    },
+    {
+     "name": "Lamball Mutton",
+     "price": null
+    },
+    {
+     "name": "Egg",
+     "price": null
+    },
+    {
+     "name": "Rushoar Pork",
+     "price": null
+    },
+    {
+     "name": "Raw Kelpsea",
+     "price": null
+    },
+    {
+     "name": "Raw Dumud",
+     "price": null
+    },
+    {
+     "name": "Milk",
+     "price": null
+    },
+    {
+     "name": "Eikthyrdeer Venison",
+     "price": null
+    },
+    {
+     "name": "Reindrix Venison",
+     "price": null
+    },
+    {
+     "name": "Galeclaw Poultry",
+     "price": null
+    },
+    {
+     "name": "Caprity Meat",
+     "price": null
+    },
+    {
+     "name": "Skutlass Sashimi",
+     "price": null
+    },
+    {
+     "name": "Gloopie Tentacle",
+     "price": null
+    },
+    {
+     "name": "Jelliette Bell Flesh",
+     "price": null
+    },
+    {
+     "name": "Jellroy Bell Flesh",
+     "price": null
+    },
+    {
+     "name": "Munchill Meat",
+     "price": null
+    },
+    {
+     "name": "Mozzarina Meat",
+     "price": null
+    },
+    {
+     "name": "Broncherry Meat",
+     "price": null
+    },
+    {
+     "name": "Mammorest Meat",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_8": {
+   "merchant": "Smugglers' Lackey",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Arrow",
+     "price": null
+    },
+    {
+     "name": "Poison Arrow",
+     "price": null
+    },
+    {
+     "name": "Fire Arrow",
+     "price": null
+    },
+    {
+     "name": "Coarse Ammo",
+     "price": null
+    }
+   ]
+  },
+  "Caravan_Shop_9": {
+   "merchant": "Mercenary Supplier",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Visits player base (caravan merchant event)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Arrow",
+     "price": null
+    },
+    {
+     "name": "Poison Arrow",
+     "price": null
+    },
+    {
+     "name": "Fire Arrow",
+     "price": null
+    },
+    {
+     "name": "Coarse Ammo",
+     "price": null
+    },
+    {
+     "name": "Handgun Ammo",
+     "price": null
+    },
+    {
+     "name": "Rifle Ammo",
+     "price": null
+    },
+    {
+     "name": "Shotgun Shell",
+     "price": null
+    }
+   ]
+  },
+  "Desert_Shop_1": {
+   "merchant": "Wandering Merchant",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Duneshelter",
+     "coordinates": "(343, 362)",
+     "level": 43
+    }
+   ],
+   "items": [
+    {
+     "name": "Hardwood",
+     "price": null
+    },
+    {
+     "name": "Simple Bait",
+     "price": null
+    },
+    {
+     "name": "High Quality Bait",
+     "price": null
+    },
+    {
+     "name": "Ground Skill Fruit: Sand Tornado",
+     "price": null
+    },
+    {
+     "name": "Ground Skill Fruit: Stone Cannon",
+     "price": null
+    },
+    {
+     "name": "Grass Skill Fruit: Seed Mine",
+     "price": null
+    },
+    {
+     "name": "Low Grade Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "High Grade Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "Tomato",
+     "price": null
+    },
+    {
+     "name": "Lettuce",
+     "price": null
+    },
+    {
+     "name": "Leather",
+     "price": null
+    },
+    {
+     "name": "Bone",
+     "price": null
+    },
+    {
+     "name": "Horn",
+     "price": null
+    },
+    {
+     "name": "Ice Organ",
+     "price": null
+    },
+    {
+     "name": "High Quality Pal Oil",
+     "price": null
+    },
+    {
+     "name": "Tomato Seeds",
+     "price": null
+    },
+    {
+     "name": "Lettuce Seeds",
+     "price": null
+    },
+    {
+     "name": "Ruby",
+     "price": null
+    },
+    {
+     "name": "Sapphire",
+     "price": null
+    },
+    {
+     "name": "Emerald",
+     "price": null
+    },
+    {
+     "name": "Diamond",
+     "price": null
+    },
+    {
+     "name": "Precious Dragon Stone",
+     "price": null
+    },
+    {
+     "name": "Precious Plume",
+     "price": null
+    },
+    {
+     "name": "Precious Entrails",
+     "price": null
+    },
+    {
+     "name": "Precious Claw",
+     "price": null
+    },
+    {
+     "name": "Precious Pelt",
+     "price": null
+    }
+   ]
+  },
+  "Desert_Shop_2": {
+   "merchant": "Wandering Merchant",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Duneshelter",
+     "coordinates": "(342, 362)",
+     "level": 45
+    }
+   ],
+   "items": [
+    {
+     "name": "Soft Hat Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Silk Hat Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Tricorne Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Exploration Cap Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Grinning Tocotoco Cap Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Katress Cap Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Leezpunk Hood Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Heat Resistant Pelt Armor",
+     "price": null
+    },
+    {
+     "name": "Cold Resistant Pelt Armor",
+     "price": null
+    },
+    {
+     "name": "Musket",
+     "price": null
+    },
+    {
+     "name": "Coarse Ammo",
+     "price": null
+    },
+    {
+     "name": "Handgun Ammo",
+     "price": null
+    },
+    {
+     "name": "Rifle Ammo",
+     "price": null
+    },
+    {
+     "name": "Shotgun Shell",
+     "price": null
+    },
+    {
+     "name": "Assault Rifle Ammo",
+     "price": null
+    },
+    {
+     "name": "Ruby",
+     "price": null
+    },
+    {
+     "name": "Sapphire",
+     "price": null
+    },
+    {
+     "name": "Emerald",
+     "price": null
+    },
+    {
+     "name": "Diamond",
+     "price": null
+    },
+    {
+     "name": "Precious Dragon Stone",
+     "price": null
+    },
+    {
+     "name": "Precious Plume",
+     "price": null
+    },
+    {
+     "name": "Precious Entrails",
+     "price": null
+    },
+    {
+     "name": "Precious Claw",
+     "price": null
+    },
+    {
+     "name": "Precious Pelt",
+     "price": null
+    }
+   ]
+  },
+  "Dungeon_Shop_01": {
+   "merchant": "Wandering Merchant",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Inside dungeons (random)",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Chikipi Poultry",
+     "price": null
+    },
+    {
+     "name": "Lamball Mutton",
+     "price": null
+    },
+    {
+     "name": "Egg",
+     "price": null
+    },
+    {
+     "name": "Rushoar Pork",
+     "price": null
+    },
+    {
+     "name": "Raw Kelpsea",
+     "price": null
+    },
+    {
+     "name": "Raw Dumud",
+     "price": null
+    },
+    {
+     "name": "Milk",
+     "price": null
+    },
+    {
+     "name": "Arrow",
+     "price": null
+    },
+    {
+     "name": "Poison Arrow",
+     "price": null
+    },
+    {
+     "name": "Fire Arrow",
+     "price": null
+    },
+    {
+     "name": "Coarse Ammo",
+     "price": null
+    },
+    {
+     "name": "Handgun Ammo",
+     "price": null
+    },
+    {
+     "name": "Rifle Ammo",
+     "price": null
+    },
+    {
+     "name": "Shotgun Shell",
+     "price": null
+    },
+    {
+     "name": "Red Berries",
+     "price": null
+    },
+    {
+     "name": "Berry Seeds",
+     "price": null
+    },
+    {
+     "name": "Wheat Seeds",
+     "price": null
+    },
+    {
+     "name": "Wheat",
+     "price": null
+    },
+    {
+     "name": "Low Grade Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "Suspicious Juice",
+     "price": null
+    },
+    {
+     "name": "Low Quality Recovery Meds",
+     "price": null
+    },
+    {
+     "name": "Jam-Filled Bun",
+     "price": null
+    },
+    {
+     "name": "Omelet",
+     "price": null
+    },
+    {
+     "name": "Marinated Mushrooms",
+     "price": null
+    },
+    {
+     "name": "Wool",
+     "price": null
+    },
+    {
+     "name": "Leather",
+     "price": null
+    },
+    {
+     "name": "Bone",
+     "price": null
+    },
+    {
+     "name": "Horn",
+     "price": null
+    },
+    {
+     "name": "Aquatic Pal Fluids",
+     "price": null
+    },
+    {
+     "name": "Flame Organ",
+     "price": null
+    },
+    {
+     "name": "Ice Organ",
+     "price": null
+    },
+    {
+     "name": "Electric Organ",
+     "price": null
+    },
+    {
+     "name": "Venom Gland",
+     "price": null
+    }
+   ]
+  },
+  "Medal_Shop_1": {
+   "merchant": "Medal Merchant",
+   "currency": "Dog Coin",
+   "locations": [
+    {
+     "area": "Desolate Church",
+     "coordinates": "(63, -412)",
+     "level": 50
+    },
+    {
+     "area": "Isle of Silence Church Ruins",
+     "coordinates": "(-454, -12)",
+     "level": 50
+    },
+    {
+     "area": "Marsh Island Church Ruins",
+     "coordinates": "(401, -273)",
+     "level": 50
+    },
+    {
+     "area": "Sea Breeze Archipelago Church",
+     "coordinates": "(-63, -534)",
+     "level": 50
+    }
+   ],
+   "items": [
+    {
+     "name": "Mysterious Accessory Box",
+     "price": 50
+    },
+    {
+     "name": "Mystic Accessory Box",
+     "price": 300
+    },
+    {
+     "name": "Cattiva Hat",
+     "price": 25
+    },
+    {
+     "name": "Lamball Helm",
+     "price": 25
+    },
+    {
+     "name": "Chikipi Cap",
+     "price": 25
+    },
+    {
+     "name": "Cawgnito Hat",
+     "price": 25
+    },
+    {
+     "name": "Dumud Helm",
+     "price": 25
+    },
+    {
+     "name": "Sibelyx Hat",
+     "price": 25
+    },
+    {
+     "name": "Lyleen Accessory",
+     "price": 25
+    },
+    {
+     "name": "Gloopie Hat",
+     "price": 25
+    },
+    {
+     "name": "Jelliette Hat",
+     "price": 25
+    },
+    {
+     "name": "Life Fruit",
+     "price": 200
+    },
+    {
+     "name": "Power Fruit",
+     "price": 200
+    },
+    {
+     "name": "Stout Fruit",
+     "price": 200
+    },
+    {
+     "name": "Vital Elixir",
+     "price": 200
+    },
+    {
+     "name": "Stamina Elixir",
+     "price": 200
+    },
+    {
+     "name": "Might Elixir",
+     "price": 200
+    },
+    {
+     "name": "Speed Elixir",
+     "price": 200
+    },
+    {
+     "name": "Burden Elixir",
+     "price": 200
+    },
+    {
+     "name": "Starfruit ☆1",
+     "price": 50
+    },
+    {
+     "name": "Starfruit ☆2",
+     "price": 100
+    },
+    {
+     "name": "Starfruit ☆3",
+     "price": 200
+    },
+    {
+     "name": "Starfruit ☆4",
+     "price": 400
+    },
+    {
+     "name": "Lily's Spear Schematic 4",
+     "price": 600
+    },
+    {
+     "name": "Enhanced Lily's Spear Schematic 4",
+     "price": 840
+    },
+    {
+     "name": "Applied Kindling Handbook I",
+     "price": 300
+    },
+    {
+     "name": "Applied Watering Handbook I",
+     "price": 300
+    },
+    {
+     "name": "Applied Planting Handbook I",
+     "price": 300
+    },
+    {
+     "name": "Applied Generating Electricity Handbook I",
+     "price": 300
+    },
+    {
+     "name": "Applied Handiwork Handbook I",
+     "price": 300
+    },
+    {
+     "name": "Applied Gathering Handbook I",
+     "price": 300
+    },
+    {
+     "name": "Applied Lumbering Handbook I",
+     "price": 300
+    },
+    {
+     "name": "Applied Mining Handbook I",
+     "price": 300
+    },
+    {
+     "name": "Applied Medicine Production Handbook I",
+     "price": 300
+    },
+    {
+     "name": "Applied Cooling Handbook I",
+     "price": 300
+    },
+    {
+     "name": "Applied Transporting Handbook I",
+     "price": 300
+    },
+    {
+     "name": "Applied Ranching Handbook I",
+     "price": 300
+    }
+   ]
+  },
+  "Vagrant_Trader_1_1": {
+   "merchant": "Vagrant Trader",
+   "currency": "Gold Coin",
+   "locations": [],
+   "items": [
+    {
+     "name": "Wood",
+     "price": null
+    },
+    {
+     "name": "Hardwood",
+     "price": null
+    },
+    {
+     "name": "Stone",
+     "price": null
+    },
+    {
+     "name": "Ore",
+     "price": null
+    }
+   ]
+  },
+  "Vagrant_Trader_1_2": {
+   "merchant": "Vagrant Trader",
+   "currency": "Gold Coin",
+   "locations": [],
+   "items": [
+    {
+     "name": "Bread",
+     "price": null
+    }
+   ]
+  },
+  "Vagrant_Trader_1_3": {
+   "merchant": "Vagrant Trader",
+   "currency": "Gold Coin",
+   "locations": [],
+   "items": [
+    {
+     "name": "Pal Sphere",
+     "price": null
+    },
+    {
+     "name": "Mega Sphere",
+     "price": null
+    },
+    {
+     "name": "Giga Sphere",
+     "price": null
+    }
+   ]
+  },
+  "Village_Shop_1": {
+   "merchant": "Wandering Merchant",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Small Settlement",
+     "coordinates": "(76, -474)",
+     "level": 12
+    },
+    {
+     "area": "Isle of Silence Church Ruins",
+     "coordinates": "(-397, 18)",
+     "level": 14
+    },
+    {
+     "area": "Marsh Island Church Ruins",
+     "coordinates": "(433, -271)",
+     "level": 15
+    },
+    {
+     "area": "Sea Breeze Archipelago",
+     "coordinates": "(-188, -601)",
+     "level": 22
+    }
+   ],
+   "items": [
+    {
+     "name": "Long-Eared Headband Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Witch Hat Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Farming Hat Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Bowler Hat Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Tocotoco Cap Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Gumoss Cap Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Penking Cap Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Ribbuny Headband Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Hardwood",
+     "price": null
+    },
+    {
+     "name": "Pal Sphere",
+     "price": null
+    },
+    {
+     "name": "Simple Bait",
+     "price": null
+    },
+    {
+     "name": "Arrow",
+     "price": null
+    },
+    {
+     "name": "Low Grade Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "High Grade Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "Berry Seeds",
+     "price": null
+    },
+    {
+     "name": "Wheat Seeds",
+     "price": null
+    },
+    {
+     "name": "Egg",
+     "price": null
+    },
+    {
+     "name": "Milk",
+     "price": null
+    },
+    {
+     "name": "Red Berries",
+     "price": null
+    },
+    {
+     "name": "Wheat",
+     "price": null
+    },
+    {
+     "name": "Chikipi Poultry",
+     "price": null
+    },
+    {
+     "name": "Lamball Mutton",
+     "price": null
+    },
+    {
+     "name": "Wool",
+     "price": null
+    },
+    {
+     "name": "Leather",
+     "price": null
+    },
+    {
+     "name": "Bone",
+     "price": null
+    },
+    {
+     "name": "Horn",
+     "price": null
+    },
+    {
+     "name": "Electric Organ",
+     "price": null
+    },
+    {
+     "name": "Venom Gland",
+     "price": null
+    },
+    {
+     "name": "Flame Organ",
+     "price": null
+    },
+    {
+     "name": "Ruby",
+     "price": null
+    },
+    {
+     "name": "Sapphire",
+     "price": null
+    },
+    {
+     "name": "Emerald",
+     "price": null
+    },
+    {
+     "name": "Diamond",
+     "price": null
+    },
+    {
+     "name": "Precious Dragon Stone",
+     "price": null
+    },
+    {
+     "name": "Precious Plume",
+     "price": null
+    },
+    {
+     "name": "Precious Entrails",
+     "price": null
+    },
+    {
+     "name": "Precious Claw",
+     "price": null
+    },
+    {
+     "name": "Precious Pelt",
+     "price": null
+    }
+   ]
+  },
+  "Volcano_Shop_1": {
+   "merchant": "Wandering Merchant",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Fisherman's Point",
+     "coordinates": "(-477, -748)",
+     "level": 30
+    }
+   ],
+   "items": [
+    {
+     "name": "Hardwood",
+     "price": null
+    },
+    {
+     "name": "Simple Bait",
+     "price": null
+    },
+    {
+     "name": "High Quality Bait",
+     "price": null
+    },
+    {
+     "name": "Fire Skill Fruit: Ignis Breath",
+     "price": null
+    },
+    {
+     "name": "Fire Skill Fruit: Flare Storm",
+     "price": null
+    },
+    {
+     "name": "Water Skill Fruit: Aqua Burst",
+     "price": null
+    },
+    {
+     "name": "Low Grade Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "High Grade Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "Tomato",
+     "price": null
+    },
+    {
+     "name": "Lettuce",
+     "price": null
+    },
+    {
+     "name": "Leather",
+     "price": null
+    },
+    {
+     "name": "Bone",
+     "price": null
+    },
+    {
+     "name": "Horn",
+     "price": null
+    },
+    {
+     "name": "Flame Organ",
+     "price": null
+    },
+    {
+     "name": "High Quality Pal Oil",
+     "price": null
+    },
+    {
+     "name": "Tomato Seeds",
+     "price": null
+    },
+    {
+     "name": "Lettuce Seeds",
+     "price": null
+    },
+    {
+     "name": "Ruby",
+     "price": null
+    },
+    {
+     "name": "Sapphire",
+     "price": null
+    },
+    {
+     "name": "Emerald",
+     "price": null
+    },
+    {
+     "name": "Diamond",
+     "price": null
+    },
+    {
+     "name": "Precious Dragon Stone",
+     "price": null
+    },
+    {
+     "name": "Precious Plume",
+     "price": null
+    },
+    {
+     "name": "Precious Entrails",
+     "price": null
+    },
+    {
+     "name": "Precious Claw",
+     "price": null
+    },
+    {
+     "name": "Precious Pelt",
+     "price": null
+    }
+   ]
+  },
+  "Volcano_Shop_2": {
+   "merchant": "Wandering Merchant",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Fisherman's Point",
+     "coordinates": "(-479, -749)",
+     "level": 28
+    }
+   ],
+   "items": [
+    {
+     "name": "Monarch's Crown Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Golden Crown Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Helmet Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Graduation Cap Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Killamari Cap Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Swee Cap Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Dazzi Hat Schematic 1",
+     "price": null
+    },
+    {
+     "name": "Heat Resistant Pelt Armor",
+     "price": null
+    },
+    {
+     "name": "Fire Arrow",
+     "price": null
+    },
+    {
+     "name": "Makeshift Handgun",
+     "price": null
+    },
+    {
+     "name": "Coarse Ammo",
+     "price": null
+    },
+    {
+     "name": "Handgun Ammo",
+     "price": null
+    },
+    {
+     "name": "Rifle Ammo",
+     "price": null
+    },
+    {
+     "name": "Shotgun Shell",
+     "price": null
+    },
+    {
+     "name": "Assault Rifle Ammo",
+     "price": null
+    },
+    {
+     "name": "Ruby",
+     "price": null
+    },
+    {
+     "name": "Sapphire",
+     "price": null
+    },
+    {
+     "name": "Emerald",
+     "price": null
+    },
+    {
+     "name": "Diamond",
+     "price": null
+    },
+    {
+     "name": "Precious Dragon Stone",
+     "price": null
+    },
+    {
+     "name": "Precious Plume",
+     "price": null
+    },
+    {
+     "name": "Precious Entrails",
+     "price": null
+    },
+    {
+     "name": "Precious Claw",
+     "price": null
+    },
+    {
+     "name": "Precious Pelt",
+     "price": null
+    }
+   ]
+  },
+  "Wander_Shop_1": {
+   "merchant": "Wandering Merchant",
+   "currency": "Gold Coin",
+   "locations": [
+    {
+     "area": "Random roaming spawns across the map",
+     "coordinates": null
+    }
+   ],
+   "items": [
+    {
+     "name": "Paldium Fragment",
+     "price": null
+    },
+    {
+     "name": "Skill Fruit: Implode",
+     "price": null
+    },
+    {
+     "name": "Water Skill Fruit: Acid Rain",
+     "price": null
+    },
+    {
+     "name": "Electric Skill Fruit: Lock-on Laser",
+     "price": null
+    },
+    {
+     "name": "Egg",
+     "price": null
+    },
+    {
+     "name": "Milk",
+     "price": null
+    },
+    {
+     "name": "Red Berries",
+     "price": null
+    },
+    {
+     "name": "Wheat",
+     "price": null
+    },
+    {
+     "name": "Low Grade Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "High Grade Medical Supplies",
+     "price": null
+    },
+    {
+     "name": "Wool",
+     "price": null
+    },
+    {
+     "name": "Leather",
+     "price": null
+    },
+    {
+     "name": "Bone",
+     "price": null
+    },
+    {
+     "name": "Horn",
+     "price": null
+    },
+    {
+     "name": "Aquatic Pal Fluids",
+     "price": null
+    },
+    {
+     "name": "High Quality Pal Oil",
+     "price": null
+    },
+    {
+     "name": "Simple Bait",
+     "price": null
+    },
+    {
+     "name": "Coarse Ammo",
+     "price": null
+    },
+    {
+     "name": "Handgun Ammo",
+     "price": null
+    },
+    {
+     "name": "Rifle Ammo",
+     "price": null
+    },
+    {
+     "name": "Shotgun Shell",
+     "price": null
+    },
+    {
+     "name": "Assault Rifle Ammo",
+     "price": null
+    },
+    {
+     "name": "Ruby",
+     "price": null
+    },
+    {
+     "name": "Sapphire",
+     "price": null
+    },
+    {
+     "name": "Emerald",
+     "price": null
+    },
+    {
+     "name": "Diamond",
+     "price": null
+    },
+    {
+     "name": "Precious Dragon Stone",
+     "price": null
+    },
+    {
+     "name": "Precious Plume",
+     "price": null
+    },
+    {
+     "name": "Precious Entrails",
+     "price": null
+    },
+    {
+     "name": "Precious Claw",
+     "price": null
+    },
+    {
+     "name": "Precious Pelt",
+     "price": null
+    }
+   ]
+  }
+ },
+ "pal_traders": {
+  "Black_Marketeer": {
+   "merchant": "Black Marketeer",
+   "trades": "Sells and buys Pals for Gold Coin (rare/illegal stock; 92 Pal listings on paldb.cc/en/Black_Marketeer)",
+   "locations": [
+    {
+     "area": "Deep Bamboo Thicket",
+     "coordinates": "(-293, -186)",
+     "level": 47
+    },
+    {
+     "area": "Desolate Church",
+     "coordinates": "(41, -403)",
+     "level": 43
+    },
+    {
+     "area": "Eastern Wild Island",
+     "coordinates": "(460, -125)",
+     "level": 45
+    },
+    {
+     "area": "Desiccated Dunes",
+     "coordinates": "(525, 333)",
+     "level": 54
+    }
+   ]
+  },
+  "Pal_Merchant": {
+   "merchant": "Pal Merchant",
+   "trades": "Sells and buys Pals for Gold Coin (common Pals)",
+   "locations": [
+    {
+     "area": "Sea Breeze Archipelago",
+     "coordinates": "(-181, -620)",
+     "level": 14
+    },
+    {
+     "area": "Isle of Silence Church Ruins",
+     "coordinates": "(-396, 16)",
+     "level": 11
+    },
+    {
+     "area": "Fisherman's Point",
+     "coordinates": "(-477, -752)",
+     "level": 27
+    },
+    {
+     "area": "Duneshelter",
+     "coordinates": "(342, 358)",
+     "level": 43
+    },
+    {
+     "area": "Marsh Island Church Ruins",
+     "coordinates": "(433, -272)",
+     "level": 13
+    },
+    {
+     "area": "Small Settlement",
+     "coordinates": "(78, -480)",
+     "level": 12
+    }
+   ]
+  }
+ },
+ "notes": [
+  "Shop stock/prices scraped from paldb.cc per-shop pages (site data v1.0.0, 2026/07/10).",
+  "An empty price column on paldb.cc means the shop sells for Gold Coin at the item's standard buy value; such items carry price=null and the shop currency defaults to Gold Coin.",
+  "items[].qty is the stack size sold per purchase (only present when >1), e.g. Bounty shop sells Gold Coin x2000 for 1 Successful Bounty Token.",
+  "Coordinates are exact NPC map markers from paldb.cc map data (js/map_data_en.js); 'area' is the nearest label from data/regions.json.",
+  "Arena_Shop_1/Medal_Shop_1/Bounty_Shop_1 were tied to their map markers via the merchant NPC that uses that currency (Arena Merchant/Battle Ticket, Medal Merchant/Dog Coin, PIDF Bounty Officer/Successful Bounty Token).",
+  "Caravan_Shop_1-25 are the 1.0 visiting caravan merchants: they spawn at the player's base (frequency scales with base level), no fixed map location.",
+  "Wander_Shop_1 is the roaming Wandering Merchant variant (internal id SalesPerson_Wander): random spawns, no fixed coordinates.",
+  "Dungeon_Shop_01 is the Wandering Merchant found inside randomly generated dungeons (internal id NPC_Dungeon_Shop).",
+  "pal_traders lists Pal-selling NPCs (Pal Merchant, Black Marketeer) with map coordinates; their Pal stock is out of scope for items.json."
+ ],
+ "gaps": [
+  "Vagrant_Trader_1_1/2/3: merchant identity and location are not documented on paldb.cc or community guides; internal name suggests a roaming trader. Location unknown.",
+  "Gold prices for Gold Coin shops are not listed by paldb.cc (game uses the item's standard buy value), so price=null for those entries.",
+  "Wander_Shop_1 and Dungeon_Shop_01 have no fixed coordinates by design (random spawns)."
+ ],
+ "sources": [
+  {
+   "url": "https://paldb.cc/en/Merchant",
+   "what": "all 587 Wandering Merchant shop listings (item -> shop id)",
+   "fetched": "2026-07-15"
+  },
+  {
+   "url": "https://paldb.cc/en/<Shop_Code> (38 shop pages)",
+   "what": "per-shop stock, prices, currencies",
+   "fetched": "2026-07-15"
+  },
+  {
+   "url": "https://paldb.cc/en/Caravan_Merchant + 23 NPC pages",
+   "what": "caravan merchant NPC names -> Caravan_Shop_N mapping",
+   "fetched": "2026-07-15"
+  },
+  {
+   "url": "https://paldb.cc/js/map_data_en.js",
+   "what": "merchant NPC map markers (exact coordinates)",
+   "fetched": "2026-07-15"
+  }
+ ]
+}

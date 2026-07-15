@@ -874,7 +874,8 @@
    "workers": "Mining",
    "capacity": null,
    "power": false,
-   "function": "Placeable production site: Stone x1 per workload cycle. SAN -0.15/target while working."
+   "function": "Placeable production site: Stone x1 per workload cycle. SAN -0.15/target while working.",
+   "worker_slots": 3
   },
   {
    "name": "Ore Mining Site",
@@ -889,7 +890,8 @@
    "workers": "Mining",
    "capacity": null,
    "power": false,
-   "function": "Placeable production site: Ore x1 per workload cycle. SAN -0.15/target while working."
+   "function": "Placeable production site: Ore x1 per workload cycle. SAN -0.15/target while working.",
+   "worker_slots": 3
   },
   {
    "name": "Logging Site",
@@ -903,7 +905,8 @@
    "workers": "Lumbering",
    "capacity": null,
    "power": false,
-   "function": "Placeable production site: Wood x1 per workload cycle. SAN -0.15/target while working."
+   "function": "Placeable production site: Wood x1 per workload cycle. SAN -0.15/target while working.",
+   "worker_slots": 3
   },
   {
    "name": "Crude Oil Extractor",
@@ -917,7 +920,8 @@
    "workers": null,
    "capacity": null,
    "power": true,
-   "function": "Produces Crude Oil x1 per cycle AUTOMATICALLY - no pal needed, only power (2000/s). Player-verified 2026-07-15. Ставится на нефтяные точки."
+   "function": "Produces Crude Oil x1 per cycle AUTOMATICALLY - no pal needed, only power (2000/s). Player-verified 2026-07-15. Ставится на нефтяные точки.",
+   "worker_slots": null
   },
   {
    "name": "Advanced Sphere Assembly Line",
@@ -1312,7 +1316,8 @@
    "ancient_tech": false,
    "workers": "Mining",
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": 3
   },
   {
    "name": "Ice Mine",
@@ -1341,7 +1346,8 @@
    "ancient_tech": false,
    "workers": "Mining",
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": 3
   },
   {
    "name": "Pure Quartz Quarry",
@@ -1356,7 +1362,8 @@
    "ancient_tech": false,
    "workers": "Mining",
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": 3
   },
   {
    "name": "Hexolite Quartz Mine",
@@ -1370,7 +1377,8 @@
    "ancient_tech": false,
    "workers": "Mining",
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": 3
   },
   {
    "name": "Soralite Quarry",
@@ -1384,7 +1392,8 @@
    "ancient_tech": false,
    "workers": "Mining",
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": 3
   },
   {
    "name": "Ore Mining Site II",
@@ -1399,7 +1408,8 @@
    "ancient_tech": false,
    "workers": "Mining",
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": 3
   },
   {
    "name": "Logging Site II",
@@ -1414,7 +1424,8 @@
    "ancient_tech": false,
    "workers": "Lumbering",
    "capacity": null,
-   "power": false
+   "power": false,
+   "worker_slots": 3
   },
   {
    "name": "High-Pressure Crude Oil Extractor",
@@ -1430,7 +1441,8 @@
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
-   "power": true
+   "power": true,
+   "worker_slots": null
   },
   {
    "name": "WoodCreator",
@@ -1625,7 +1637,8 @@
    "ancient_tech": true,
    "workers": "Mining + Lumbering (1 пал)",
    "capacity": null,
-   "power": true
+   "power": true,
+   "worker_slots": null
   },
   {
    "name": "Beta Wave Generator",
@@ -2972,7 +2985,8 @@
   "2026-07-15: +40 функциональных зданий со Structures-индекса paldb (все шахты Lumbering/Mining категории, сундуки, пруды, алтарь, ресайклеры). Прежняя заметка 'шахт для Coal/Sulfur/Quartz нет' была ошибкой поиска по слагам — опровергнута.",
   "2026-07-15: работники добывающих станций назначены по типу продукта (руда/уголь/кварц/нефть = Mining, лес = Lumbering) — подтверждено игроком; ранний парс ошибочно брал Handiwork из workload-таблицы ПОСТРОЙКИ здания.",
   "2026-07-15: Crude Oil Extractor работает без палов (только электричество) - подтверждено игроком; High-Pressure предположительно тоже, не проверено. Таблица 'Workload/Handiwork' на paldb - это workload ПОСТРОЙКИ.",
-  "2026-07-15: Ancient Workbench крафтит и материалы (подтверждено items.json: Polymer/Computer/AI Core имеют его альтернативой) — Production-линия на 67+ не нужна. Дозаполнены worker_req у станций, чьи описания были затёрты при раннем сборе."
+  "2026-07-15: Ancient Workbench крафтит и материалы (подтверждено items.json: Polymer/Computer/AI Core имеют его альтернативой) — Production-линия на 67+ не нужна. Дозаполнены worker_req у станций, чьи описания были затёрты при раннем сборе.",
+  "2026-07-15: worker_slots=3 у placeable добывающих станций (Pit/Mining Site/Quarry/Coal/Sulfur/Logging) — сообщено игроком; до 3 палов на станцию стакают скорость добычи. paldb это поле не публикует."
  ],
  "gaps": [
   "Per-crop plantation yield_per_harvest and absolute growth-cycle seconds are undocumented in fetched sources (yield scales with gatherer DropNumRate; see plantation_cycles).",
