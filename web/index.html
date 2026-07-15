@@ -600,8 +600,10 @@ class BasePlan {
       ["suitability:Transporting","+1 Transport всем"],["sanity_save","SAN базы"]]);
     const structsW=Object.fromEntries(D.bb.structures.map(x=>[x.name,x]));
     const mSites=sites.filter(x=>(structsW[x].workers||"")==="Mining"), lSites=sites.filter(x=>(structsW[x].workers||"")==="Lumbering");
-    if(mSites.length) this.hireBest("Mining",6,Math.max(1,Math.round(mSites.length*0.8/this.q())),`добыча (Mining): ${mSites.join("/")}`);
-    if(lSites.length) this.hireBest("Lumbering",5,Math.max(1,Math.round(lSites.length*0.8/this.q())),`лесопилки: ${lSites.join("/")}`);
+    // 1 пал на станцию: placeable-шахты одиночные, уровень ускоряет добычу на станции, но не заменяет тело
+    if(mSites.length) this.hireBest("Mining",6,mSites.length,`добыча: 1 пал/станцию — ${mSites.join("/")}`);
+    if(lSites.length) this.hireBest("Lumbering",5,lSites.length,`лесопилки: 1 пал/станцию — ${lSites.join("/")}`);
+    this.notes.push("Добыча: 1 пал на каждую станцию (placeable-шахты одиночные; уровень ускоряет добычу на станции, но один пал не стоит у двух сразу)");
     this.add(this.best(["Primitive Furnace","Improved Furnace","Electric Furnace","Gigantic Furnace","Ancient Furnace"]),2);
     this.hireBest("Kindling",6,2,"печи");
     if(o.tech>=67&&this.structs["Ancient Workbench"]){

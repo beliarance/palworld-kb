@@ -394,14 +394,18 @@ class Planner:
                            ("suitability:Transporting", "+1 Transport всем (Wumpo)"),
                            ("sanity_save", "SAN базы (Shroomer Noct)")])
         mining_sites = [x for x in sites if self.structs[x].get("workers") == "Mining"]
-        hand_sites = [x for x in sites if x not in mining_sites]
-        if hand_sites:
-            self.hire_best("Handiwork", 5, max(1, round(len(hand_sites) * 0.8 / self.q())),
-                           f"добыча (Handiwork): {'/'.join(hand_sites)}")
+        lumber_sites = [x for x in sites if self.structs[x].get("workers") == "Lumbering"]
+        # placeable-станции обслуживаются 1 палом каждая: один пал не стоит у двух станций сразу,
+        # а уровень навыка лишь ускоряет добычу на его станции (не сокращает число тел)
         if mining_sites:
-            self.hire_best("Mining", 6, max(1, round(len(mining_sites) * 0.8 / self.q())),
-                           f"добыча (Mining): {'/'.join(mining_sites)}")
-        self.hire_best("Mining", 6, max(1, round(2 / self.q())), "шахтёр (рудные точки на базе, если есть)")
+            self.hire_best("Mining", 6, len(mining_sites),
+                           f"добыча: 1 пал/станцию — {'/'.join(mining_sites)}")
+        if lumber_sites:
+            self.hire_best("Lumbering", 5, len(lumber_sites),
+                           f"лесопилки: 1 пал/станцию — {'/'.join(lumber_sites)}")
+        self.notes.append("Добыча: 1 пал на каждую станцию (placeable-шахты — одиночные, один пал у одной "
+                          "станции; уровень ускоряет добычу на ней, но не заменяет второе тело). "
+                          "Плюс шахтёры под рудные точки, если база стоит на месторождении")
         furn = self.best(["Primitive Furnace", "Improved Furnace", "Electric Furnace", "Gigantic Furnace", "Ancient Furnace"])
         self.add(furn, 2)
         self.hire_best("Kindling", 6, 2, "печи")
