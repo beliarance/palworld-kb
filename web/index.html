@@ -793,13 +793,16 @@ function drawBase(){
     else if(tasks.length){
       const sugg=tasks.map(t=>{const top=topWorkers(t,2,false,req?req.min_level:1);
         const picker=`<span class="tag clicky" onclick="openPalPicker(${i},'${t}','${esc(b.name)}',${req?req.min_level:1})">🔍 выбрать</span>`;
-        return picker+" "+top.map(([nm,lv])=>{
+        const row=top.map(([nm,lv])=>{
           const hired=BASE.crew.filter(c=>c.sp===nm&&c.task===t&&c.for===b.name).reduce((a,c)=>a+c.count,0);
-          return `${palIcon(nm)}${palLink(nm)} <span class="dim mono">${t.replace("_"," ")} ${lv}</span>
+          return `${palIcon(nm)}${palLink(nm)} <span class="dim mono">${lv}</span>
           <span class="tag clicky" onclick="builderHire('${nm.replace(/'/g,"\\'")}','${t}','${esc(b.name)}')">нанять</span>`+
           (hired?` <b class="ok mono">x${hired}</b> <span class="tag clicky" onclick="builderFire('${nm.replace(/'/g,"\\'")}','${t}','${esc(b.name)}')">убрать</span>`:"");
-        }).join(" · ");}).join("<br>");
-      card+=`<div style="margin-top:4px">Палы: ${sugg}</div>`;
+        }).join(" · ");
+        return `<div class="row" style="margin:3px 0;flex-wrap:wrap;gap:6px">
+          <b style="min-width:90px;color:var(--acc2)">${t.replace("_"," ")}</b> ${picker} ${row}</div>`;
+      }).join("");
+      card+=`<div style="margin-top:4px">${sugg}</div>`;
     }
     if(pickerFor&&pickerFor.i===i) card+=palPickerHtml();
     if(openB===i&&fam.length>1){
