@@ -914,10 +914,10 @@
    },
    "energy_per_sec": 2000,
    "ancient_tech": false,
-   "workers": "Mining",
+   "workers": null,
    "capacity": null,
    "power": true,
-   "function": "Placeable production site: Crude Oil x1 per workload cycle. SAN -0.15/target while working."
+   "function": "Produces Crude Oil x1 per cycle AUTOMATICALLY - no pal needed, only power (2000/s). Player-verified 2026-07-15. Ставится на нефтяные точки."
   },
   {
    "name": "Advanced Sphere Assembly Line",
@@ -1416,10 +1416,10 @@
     "Bio Battery": 50,
     "Ancient Civilization Parts": 10
    },
-   "function": "Produces Crude Oil x1 per workload cycle. It requires a far greater supply of electricity than the",
+   "function": "Produces Crude Oil x1 per cycle; placeable ANYWHERE (not just oil spots) but needs 3000 power/s. Предположительно автоматический как обычный экстрактор - нужны ли палы, в игре НЕ проверено (gap).",
    "energy_per_sec": 3000,
    "ancient_tech": false,
-   "workers": "Mining",
+   "workers": null,
    "capacity": null,
    "power": true
   },
@@ -2961,7 +2961,8 @@
   "2026-07-15: добавлены 22 крафт-станции (печи, верстаки, сборочные линии) со страниц paldb — изначальный сбор покрывал только Pal/Food категории.",
   "2026-07-15: function-описания дозаполнены у станций, добавленных 07-15; worker_req распарсен из описаний локально.",
   "2026-07-15: +40 функциональных зданий со Structures-индекса paldb (все шахты Lumbering/Mining категории, сундуки, пруды, алтарь, ресайклеры). Прежняя заметка 'шахт для Coal/Sulfur/Quartz нет' была ошибкой поиска по слагам — опровергнута.",
-  "2026-07-15: работники добывающих станций назначены по типу продукта (руда/уголь/кварц/нефть = Mining, лес = Lumbering) — подтверждено игроком; ранний парс ошибочно брал Handiwork из workload-таблицы ПОСТРОЙКИ здания."
+  "2026-07-15: работники добывающих станций назначены по типу продукта (руда/уголь/кварц/нефть = Mining, лес = Lumbering) — подтверждено игроком; ранний парс ошибочно брал Handiwork из workload-таблицы ПОСТРОЙКИ здания.",
+  "2026-07-15: Crude Oil Extractor работает без палов (только электричество) - подтверждено игроком; High-Pressure предположительно тоже, не проверено. Таблица 'Workload/Handiwork' на paldb - это workload ПОСТРОЙКИ."
  ],
  "gaps": [
   "Per-crop plantation yield_per_harvest and absolute growth-cycle seconds are undocumented in fetched sources (yield scales with gatherer DropNumRate; see plantation_cycles).",
