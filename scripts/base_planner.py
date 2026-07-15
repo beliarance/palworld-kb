@@ -180,9 +180,16 @@ class Planner:
         """Ставит плантации; на tech 78+ Ancient Farm заменяет все раздельные (растит любые культуры)."""
         total = sum(plants_n.values())
         if self.args.tech >= 78 and "Ancient Farm" in self.structs and total:
-            self.add("Ancient Farm", total)
-            self.notes.append(f"Ancient Farm x{total}: растит ВСЕ культуры в одном компактном здании "
-                              "(вместо раздельных плантаций), 4 места; требует Watering+Planting+Gathering 6+")
+            n_af = max(1, math.ceil(total / self.args.ancient_farm_yield))
+            self.add("Ancient Farm", n_af)
+            note = (f"Ancient Farm x{n_af}: растит ВСЕ культуры в одном компактном здании "
+                    "(вместо раздельных плантаций), 4 места, Watering+Planting+Gathering 6+")
+            if self.args.ancient_farm_yield == 1:
+                note += ". paldb: «same cultivation process» — скорость как у обычной грядки, " \
+                        "выигрыш в компактности; если по игре быстрее — задай --ancient-farm-yield N"
+            else:
+                note += f". Принято ×{self.args.ancient_farm_yield} к выработке грядки"
+            self.notes.append(note)
         else:
             for crop, n in plants_n.items():
                 pl = self.best([PLANTS[crop]])
@@ -708,6 +715,8 @@ def main():
                     help="настройка мира «еда не портится»: без холодильника и Cooling-пала, хватит Feed Box")
     ap.add_argument("--stars", action="store_true",
                     help="рабочие сконденсированы до 4★ (+1 ур. работы ≈ ×1.55 скорости; цена — 116 дублей на пала)")
+    ap.add_argument("--ancient-farm-yield", type=float, default=1,
+                    help="во сколько раз Ancient Farm производительнее обычной грядки (paldb: 1 = как обычная; подними, если по игре быстрее)")
     ap.add_argument("--food-buff", type=float, default=30,
                     help="бонус Work Speed от кормёжки buff-едой: Salad +30 (по умолч.), Minestrone +40, 0 = без буффа")
     ap.add_argument("--food-per-plot", type=float, default=55,

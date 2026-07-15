@@ -461,8 +461,10 @@ class BasePlan {
   addPlantations(plantsN, PL){
     const total=Object.values(plantsN).reduce((a,b)=>a+b,0);
     if(this.o.tech>=78&&this.structs["Ancient Farm"]&&total){
-      this.add("Ancient Farm",total);
-      this.notes.push(`Ancient Farm x${total}: растит ВСЕ культуры в одном компактном здании (вместо раздельных плантаций), 4 места; Watering+Planting+Gathering 6+`);
+      const afy=this.o.ancientFarmYield||1, nAf=Math.max(1,Math.ceil(total/afy));
+      this.add("Ancient Farm",nAf);
+      this.notes.push(`Ancient Farm x${nAf}: растит ВСЕ культуры в одном компактном здании, 4 места, Watering+Planting+Gathering 6+`+
+        (afy===1?". paldb: «same cultivation process» — скорость как у обычной грядки; если по игре быстрее — подними «Ancient Farm ×»":` (×${afy} к выработке)`));
     } else for(const [crop,n] of Object.entries(plantsN)){ const pl=this.best([PL[crop]]); if(pl) this.add(pl,n); }
     return total;
   }
@@ -823,7 +825,7 @@ function builderOpts(){
     incubation:val("pincub")===""?1:+val("pincub"),cake:val("pcake")||"Cake",
     perStation:+val("ppers")||1,spoilage:document.getElementById("pspoil").checked,
     foodPerPlot:+val("pfpp")||55,foodBuff:val("pfbuff")===""?30:+val("pfbuff"),
-    dishes:plannerDishes.length?plannerDishes:null};
+    ancientFarmYield:+val("pafy")||1,dishes:plannerDishes.length?plannerDishes:null};
 }
 
 render.planner = () => {
@@ -873,6 +875,7 @@ render.planner = () => {
     <label class="dim">готовок/час на повара <input type="number" id="pcook" value="30" style="width:60px;min-width:60px"></label>
     <label class="dim" title="аппетит-единиц (Σ FoodAmount) на грядку; скорости голода в данных нет">аппетита/грядку <input type="number" id="pfpp" value="55" style="width:70px;min-width:70px"></label>
     <label class="dim" title="бонус Work Speed от кормёжки buff-едой: Salad +30, Minestrone +40, 0 = без">WS от еды <input type="number" id="pfbuff" value="30" style="width:60px;min-width:60px"></label>
+    <label class="dim" title="во сколько раз Ancient Farm производительнее обычной грядки (paldb: 1 = как обычная)">Ancient Farm × <input type="number" id="pafy" value="1" step="0.5" style="width:60px;min-width:60px"></label>
   </div></details></div>
   <div id="bout"></div>`;
   const updateVis=()=>{
@@ -881,7 +884,7 @@ render.planner = () => {
   };
   document.getElementById("pp").addEventListener("input",updateVis);
   window._updateVis=updateVis;
-  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","peggboost","pincub","pcake","ppers","pspoil","pfpp","pfbuff","pstars"]){
+  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","peggboost","pincub","pcake","ppers","pspoil","pfpp","pfbuff","pstars","pafy"]){
     document.getElementById(id).addEventListener("input",()=>{
       if(!baseDirty && BASE.buildings.length) seedFromPreset();
       else if(baseDirty){ const el=document.getElementById("rebuild-hint"); if(el) el.style.display=""; }
