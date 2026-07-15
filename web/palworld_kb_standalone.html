@@ -575,8 +575,9 @@ class BasePlan {
     this.hireTransport();
     if(!hatch&&o.incubation>0){
       const inc=this.best(["Egg Incubator","Electric Egg Incubator","Large Incubator","Large-Scale Electric Egg Incubator"]);
-      if(inc){ const nI=Math.min(Math.ceil(farms*2*o.incubation),12); this.add(inc,nI);
-        this.assume.push(`Инкубаторы: ${nI} = фермы x2 x множитель мира ${o.incubation}`); } }
+      if(inc){ const cap=+((/(\d+)\s*egg/.exec(this.structs[inc].capacity||""))||[0,1])[1];
+        const nI=Math.max(1,Math.min(Math.ceil(farms*2*o.incubation/cap),12)); this.add(inc,nI);
+        this.assume.push(`Инкубаторы: ${nI} = фермы x2 x мир ${o.incubation} / вместимость ${cap}`); } }
     if(o.food==="self") this.foodModule(o.slots); else this.notes.push("Еда привозная — вози Salad/Pizza guild chest'ом");
     this.infra(o.slots); if(hatch||(kit&&this.structs[kit]?.power)) this.power(hatch);
     this.notes.push(`${farm} x${farms}: ~${L.eggs.toFixed(0)} яиц/час (${(L.eggs*24).toFixed(0)}/сутки), тортов ${L.cakes.toFixed(0)}/час; буст x${o.eggBoost||1.0} (1.0 = торты лимитируют, Braloha просто без простоев)`+(o.cake==="Vegetable Cake"?" — Vegetable Cake: 2 яйца за цикл!":""));
@@ -916,7 +917,7 @@ function drawBase(){
       card+=`<div style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px">Другой тир: `+
         fam.map(n=>{const fs=structs[n];const cur=n===b.name;
           return `<span class="tag ${cur?"":"clicky"}" style="${cur?"border-color:var(--acc)":""}"
-            ${cur?"":`onclick="BASE.buildings[${i}].name='${n.replace(/'/g,"\\'")}';openB=null;baseDirty=true;drawBase()"`}>${esc(n)} <span class="dim">t${fs.tech_level??"?"}</span></span>`;}).join(" ")+`</div>`;
+            ${cur?"":`onclick="swapTier(${i},'${n.replace(/'/g,"\\'")}')"`}>${esc(n)} <span class="dim">t${fs.tech_level??"?"}</span></span>`;}).join(" ")+`</div>`;
     }
     return card+`</div>`;
   }).join("");
@@ -1064,6 +1065,17 @@ function palPickerHtml(){
        <td class="dim">${plan.easyGet(nm)?"дикий спавн":"сложный"}</td>
        <td><span class="tag clicky" onclick="builderHire('${nm.replace(/'/g,"\\'")}','${task}','${forB.replace(/'/g,"\\'")}')">нанять</span></td></tr>`).join("")}
     </table></div></div>`;
+}
+function swapTier(i, newName){
+  const structs=Object.fromEntries(D.bb.structures.map(x=>[x.name,x]));
+  const capOf=n=>{ const m=/(\d+)\s*egg/.exec(structs[n]?.capacity||""); return m?+m[1]:null; };
+  const oldCap=capOf(BASE.buildings[i].name), newCap=capOf(newName);
+  if(oldCap&&newCap&&oldCap!==newCap){
+    const oldCount=BASE.buildings[i].count;
+    BASE.buildings[i].count=Math.max(1,Math.ceil(oldCount*oldCap/newCap));
+    BASE.notes=BASE.notes||[];
+  }
+  BASE.buildings[i].name=newName; openB=null; baseDirty=true; drawBase();
 }
 function builderAddBuilding(){
   const n=document.getElementById("baddb").value.trim();

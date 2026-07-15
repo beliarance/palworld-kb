@@ -325,9 +325,12 @@ class Planner:
             inc = self.best(["Egg Incubator", "Electric Egg Incubator", "Large Egg Incubator",
                              "Large-Scale Electric Egg Incubator"])
             if inc:
-                n_inc = min(math.ceil(farms * 2 * a.incubation), 12)
+                import re as _re
+                m = _re.search(r"(\d+)\s*egg", self.structs[inc].get("capacity") or "")
+                cap = int(m.group(1)) if m else 1
+                n_inc = max(1, min(math.ceil(farms * 2 * a.incubation / cap), 12))
                 self.add(inc, n_inc)
-                self.assumptions.append(f"Инкубаторы: {n_inc} = фермы x2 x множитель мира {a.incubation} "
+                self.assumptions.append(f"Инкубаторы: {n_inc} = фермы x2 x мир {a.incubation} / вместимость {cap} "
                                         "(точное время инкубации по типам яиц в данных нет)")
         if a.food == "self":
             self.food_module(a.slots)
