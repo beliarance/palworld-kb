@@ -121,6 +121,7 @@ def main():
             "atk": max(c.get("melee_attack") or 0, c.get("shot_attack") or 0),
             "def": c.get("defense"),
             "mount": c.get("mount_type"), "sprint": (c.get("movement") or {}).get("sprint"),
+            "walk": (c.get("movement") or {}).get("walk"), "run": (c.get("movement") or {}).get("run"),
             "partner_skill": ps_name, "partner_effect": eff,
             "partner_tags": tags, "ranch_produce": produce, "base_support": base_support or None,
             "drops": c.get("notable_drops") or [],

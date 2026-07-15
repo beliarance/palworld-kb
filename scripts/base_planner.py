@@ -134,6 +134,26 @@ class Planner:
         via = p.get("get_via") or []
         return via[-1] if via else ""
 
+    TRANS_CAP = {1: 2, 2: 5, 3: 10, 4: 20, 5: 40, 6: 70, 7: 120, 8: 200, 9: 320, 10: 500}
+
+    def hire_transport(self):
+        """Транспортники: число от производящих зданий, вид — по пропускной способности (несёт x бег)."""
+        prod = sum(c for n, c in self.buildings.items()
+                   if (self.structs.get(n, {}).get("workers")
+                       or any(k in n for k in ("Plantation", "Ranch", "Mill", "Kitchen", "Furnace",
+                                               "Workbench", "Assembly", "Pit", "Site", "Mine", "Quarry", "Farm", "Pot", "Oven"))))
+        n = max(2, math.ceil(prod / 3.5))
+        best, bi = None, None
+        for nm, lv in self.idx["inverted"]["work"].get("Transporting", []):
+            p = self.idx["pals"][nm]
+            score = self.TRANS_CAP[lv] * (p.get("run") or 0)
+            if not best or score > bi["score"]:
+                best, bi = nm, {"score": score, "cap": self.TRANS_CAP[lv], "run": p.get("run"), "walk": p.get("walk")}
+        self.hire(best, n, f"транспорт: несёт {bi['cap']}, бег {bi['run']}/шаг {bi['walk']} "
+                           f"(пропускная {bi['score']//1000}k) — 1 на ~3.5 здания")
+        self.assumptions.append(f"Транспорт: {n} палов на {prod} производящих зданий (1 на ~3.5); "
+                                f"скорость с грузом = «бег» (в данных не документирована)")
+
     def hire_best(self, task, min_level, count, role):
         """Нанять лучшего по задаче; в роли указать альтернативу попроще (--roster easy меняет их местами)."""
         ranked = self.idx["inverted"]["work"].get(task, [])
@@ -265,7 +285,7 @@ class Planner:
         self.hire_best("Planting", 3, n_trio, "посадка")
         self.hire_best("Watering", 3, n_trio, "полив")
         self.hire_best("Gathering", 3, n_trio, "сбор")
-        self.hire("Eidrolon", 2, "транспорт (Transport 6 x скорость 1400 — лучший по эффективности)")
+        self.hire_transport()
         inc = self.best(["Egg Incubator", "Electric Egg Incubator", "Large Egg Incubator"])
         if not hatchery and inc:
             self.add(inc, min(farms * 2, 12))
@@ -370,7 +390,7 @@ class Planner:
         self.hire("Ribbuny Botan", 1, "оружейный верстак (+200~400% на нём)")
         self.hire("Anubis", 2, "верстаки (Handiwork 6) — пара с Sekhmet")
         self.hire("Sekhmet", 1, "буст Anubis +20~40% и себе +30~60% на верстаках")
-        self.hire("Eidrolon", 3, "транспорт руды (скорость важнее уровня)")
+        self.hire_transport()
         cool = self.best(["Cooler Box", "Refrigerator"])
         if cool:
             self.add(cool, 1)
@@ -454,7 +474,7 @@ class Planner:
             self.notes.append(f"⚠ привозной ингредиент: {name} x{per_h:.0f}/час (охота/рыбалка/закупка — плантации нет)")
         for name, per_h in crafts.items():
             self.notes.append(f"полуфабрикат: {name} x{per_h:.0f}/час (крафтится на месте)")
-        self.hire("Eidrolon", 1, "транспорт")
+        self.hire_transport()
         self.infra(a.slots)
         if self.structs.get(station, {}).get("power"):
             self.power(False)

@@ -420,6 +420,10 @@ render.skills = () => {
 /* --- Конструктор баз (порт scripts/base_planner.py) --- */
 const QUALITY = {baseline:1.0, passives:2.2, max:2.75};
 const METALS = {"ingot":33,"refined":43,"pal-metal":57,"coralum":65,"soralite":73,"paloxite":99};
+const TRANS_CAP = {1:2,2:5,3:10,4:20,5:40,6:70,7:120,8:200,9:320,10:500};
+function transInfo(n){ const p=D.idx.pals[n]||{}; const t=p.work?.Transporting;
+  if(!t) return null; const cap=TRANS_CAP[t]||0;
+  return {cap, walk:p.walk||0, run:p.run||0, score:cap*(p.run||0)}; }
 
 class BasePlan {
   constructor(o){ this.o=o; this.structs=Object.fromEntries(D.bb.structures.map(s=>[s.name,s]));
@@ -434,6 +438,17 @@ class BasePlan {
       return `ловится: ${regs[0]}`+(c?` (${c[0]}, ${c[1]})`:""); }
     if((p.alpha||[]).length) return "альфа: "+p.alpha[0].split(" - ").pop();
     return (p.get_via||[]).slice(-1)[0]||""; }
+  hireTransport(){
+    const prod=Object.entries(this.buildings).filter(([n])=>{
+      const st=this.structs[n]||{}; return st.workers||/Plantation|Ranch|Mill|Kitchen|Furnace|Workbench|Assembly|Pit|Site|Mine|Quarry|Farm|Pot|Oven/.test(n);
+    }).reduce((a,[,c])=>a+c,0);
+    const n=Math.max(2,Math.ceil(prod/3.5));
+    const ranked=(D.idx.inverted.work.Transporting||[]).map(([nm])=>[nm,transInfo(nm)])
+      .sort((a,b)=>b[1].score-a[1].score);
+    const [top,ti]=ranked[0];
+    this.hire(top,n,`транспорт: несёт ${ti.cap}, бег ${ti.run} (пропускная ${(ti.score/1000).toFixed(0)}k) — 1 на ~3.5 здания`,"Transporting");
+    this.assume.push(`Транспорт: ${n} палов на ${prod} производящих зданий (1 на ~3.5); скорость с грузом = «бег» (не документировано)`);
+  }
   hireBest(task,minLv,count,role){
     const ranked=D.idx.inverted.work[task]||[]; if(!ranked.length) return;
     const top=(ranked.find(([n,lv])=>lv>=minLv)||ranked[0])[0];
@@ -508,7 +523,7 @@ class BasePlan {
     this.add(kit,L.cooks); this.hireBest("Kindling",4,L.cooks,"повар тортов");
     const tr=L.trio/3;
     this.hireBest("Planting",3,tr,"посадка"); this.hireBest("Watering",3,tr,"полив"); this.hireBest("Gathering",3,tr,"сбор");
-    this.hire("Eidrolon",2,"транспорт (Transport 6 x скорость 1400)");
+    this.hireTransport();
     if(!hatch){ const inc=this.best(["Egg Incubator","Electric Egg Incubator","Large Egg Incubator"]); if(inc) this.add(inc,Math.min(farms*2,12)); }
     if(o.food==="self") this.foodModule(o.slots); else this.notes.push("Еда привозная — вози Salad/Pizza guild chest'ом");
     this.infra(o.slots); if(hatch||(kit&&this.structs[kit]?.power)) this.power(hatch);
@@ -561,7 +576,7 @@ class BasePlan {
     this.notes.push("Крафт-ранч: пал-материалы для компонентов на месте; узкое место обычно Flame/Electric Organ под Computer — масштабируй их");
     this.hire("Ribbuny Botan",1,"оружейный верстак (+200~400%)");
     this.hire("Anubis",2,"верстаки — пара с Sekhmet"); this.hire("Sekhmet",1,"буст Anubis +20~40%");
-    this.hire("Eidrolon",3,"транспорт руды");
+    this.hireTransport();
     const cool=this.best(["Cooler Box","Refrigerator"]); if(cool){ this.add(cool,1); this.hireBest("Cooling",3,1,"холодильник"); }
     if(o.food==="self") this.foodModule(o.slots);
     this.infra(o.slots); this.power(true);
@@ -604,7 +619,7 @@ class BasePlan {
       this.add(station,nK); this.hireBest("Kindling",4,nK,`повар (${dish} + полуфабрикаты, ${ops.toFixed(0)} оп/час)`); }
     for(const [n,perH] of Object.entries(imports)) this.notes.push(`⚠ привозной ингредиент: ${n} x${perH.toFixed(0)}/час (плантации нет — охота/рыбалка/закупка)`);
     for(const [n,perH] of Object.entries(crafts)) this.notes.push(`полуфабрикат: ${n} x${perH.toFixed(0)}/час (на месте)`);
-    this.hire("Eidrolon",1,"транспорт");
+    this.hireTransport();
     this.infra(o.slots);
     if(this.structs[station]?.power) this.power(false);
     this.assume.push(`${rate} блюд/час; плантация ${o.plantYield}/час; ранч ${o.ranchRate}/час; кухня ${o.cookRate} оп/час на повара`); }
@@ -824,12 +839,15 @@ function drawBase(){
         <span class="tag clicky" onclick="if(--BASE.crew[${i}].count<1)BASE.crew.splice(${i},1);baseDirty=true;drawBase()">−</span>
         <span class="tag clicky" onclick="BASE.crew.splice(${i},1);baseDirty=true;drawBase()">✕</span></div></div>`;
     if(openC===i&&c.task){
-      const alts=topWorkers(c.task,10);
-      card+=`<div style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px">Замена (${c.task.replace("_"," ")}): `+
-        alts.map(([nm,lv])=>{const cur=nm===c.sp;
+      let alts=topWorkers(c.task,c.task==="Transporting"?30:10);
+      if(c.task==="Transporting")
+        alts=alts.map(([nm,lv])=>[nm,lv,transInfo(nm)]).sort((a,b)=>b[2].score-a[2].score).slice(0,10);
+      card+=`<div style="margin-top:6px;border-top:1px solid var(--border);padding-top:6px">Замена (${c.task.replace("_"," ")}${c.task==="Transporting"?", по пропускной способности":""}): `+
+        alts.map(([nm,lv,ti])=>{const cur=nm===c.sp;
+          const info=ti?` несёт ${ti.cap} · бег ${ti.run}/шаг ${ti.walk}`:` ${lv}`;
           return `<span class="tag ${cur?"":"clicky"}" style="${cur?"border-color:var(--acc)":""}"
-            ${cur?"":`onclick="BASE.crew[${i}].sp='${nm.replace(/'/g,"\\'")}';openC=null;baseDirty=true;drawBase()"`}>${esc(nm)}${(D.idx.pals[nm]||{}).nocturnal?" 🌙":""} <span class="dim">${lv}${plan.easyGet(nm)?"":" 🔒"}</span></span>`;}).join(" ")+
-        `<div class="sub">🔒 = нет дикого спавна вне эндгейма</div></div>`;
+            ${cur?"":`onclick="BASE.crew[${i}].sp='${nm.replace(/'/g,"\\'")}';openC=null;baseDirty=true;drawBase()"`}>${esc(nm)}${(D.idx.pals[nm]||{}).nocturnal?" 🌙":""} <span class="dim">${info}${plan.easyGet(nm)?"":" 🔒"}</span></span>`;}).join(" ")+
+        `<div class="sub">🔒 = нет дикого спавна вне эндгейма${c.task==="Transporting"?"; скорость с грузом = допущение «бег»":""}</div></div>`;
     } else if(openC===i){
       card+=`<div class="sub" style="margin-top:4px">Саппорт/уникальная роль — замен нет. ${esc(plan.hint(c.sp))}</div>`;
     }
