@@ -265,8 +265,12 @@ class Planner:
                 farms += 1
         line = self.breeding_staff_for(farms)
 
-        self.support_core([("egg_speed", "яйца +20~50%"), ("incubation", "инкубация -20~40%"),
-                           ("crop_growth", "рост культур +50~70%"), ("crop_yield", "урожай +18~35%"),
+        support_kinds = [("egg_speed", "яйца +20~50%")]
+        if a.incubation > 0:
+            support_kinds.append(("incubation", "инкубация -20~40%"))
+        else:
+            self.notes.append("Инкубация мгновенная (настройка мира = 0): инкубаторы и Dynamoff не нужны — слот сэкономлен")
+        self.support_core(support_kinds + [("crop_growth", "рост культур +50~70%"), ("crop_yield", "урожай +18~35%"),
                            ("sanity_save", "SAN базы -10~15% утечка"),
                            ("suitability:Watering", "+1 Watering всем"),
                            ("suitability:Planting", "+1 Planting всем")])
@@ -290,9 +294,14 @@ class Planner:
         self.hire_best("Watering", 3, n_trio, "полив")
         self.hire_best("Gathering", 3, n_trio, "сбор")
         self.hire_transport()
-        inc = self.best(["Egg Incubator", "Electric Egg Incubator", "Large Egg Incubator"])
-        if not hatchery and inc:
-            self.add(inc, min(farms * 2, 12))
+        if a.incubation > 0 and not hatchery:
+            inc = self.best(["Egg Incubator", "Electric Egg Incubator", "Large Egg Incubator",
+                             "Large-Scale Electric Egg Incubator"])
+            if inc:
+                n_inc = min(math.ceil(farms * 2 * a.incubation), 12)
+                self.add(inc, n_inc)
+                self.assumptions.append(f"Инкубаторы: {n_inc} = фермы x2 x множитель мира {a.incubation} "
+                                        "(точное время инкубации по типам яиц в данных нет)")
         if a.food == "self":
             self.food_module(a.slots)
         else:
@@ -579,6 +588,8 @@ def main():
     ap.add_argument("--dish-rate", type=float, default=30, help="(food) блюд/час")
     ap.add_argument("--egg-interval", type=float, default=None,
                     help="(breeding) минут на яйцо (по умолчанию 5 из данных; для хатчери замерь в игре)")
+    ap.add_argument("--incubation", type=float, default=1,
+                    help="(breeding) множитель скорости инкубации из настроек МИРА: 0 = мгновенно (без инкубаторов и Dynamoff)")
     ap.add_argument("--egg-boost", type=float, default=1.35,
                     help="(breeding) множитель скорости яиц от Braloha +20~50%% (середина 1.35)")
     ap.add_argument("--ranch-rate", type=float, default=12, help="дропов/час на ранч-пала (ДОПУЩЕНИЕ)")

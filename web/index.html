@@ -527,8 +527,11 @@ class BasePlan {
     let farms=o.farms||1;
     if(!o.farms) while(farms<40&&this.breedingStaffFor(farms+1).heads<=budget) farms++;
     const L=this.breedingStaffFor(farms);
-    this.supportCore([["egg_speed","яйца +20~50%"],["incubation","инкубация -20~40%"],["crop_growth","рост культур +50~70%"],
-      ["crop_yield","урожай +18~35%"],["sanity_save","SAN -10~15% утечка"],["suitability:Watering","+1 Watering всем"],["suitability:Planting","+1 Planting всем"]]);
+    const sup=[["egg_speed","яйца +20~50%"]];
+    if(o.incubation>0) sup.push(["incubation","инкубация -20~40%"]);
+    else this.notes.push("Инкубация мгновенная (мир = 0): инкубаторы и Dynamoff не нужны");
+    this.supportCore(sup.concat([["crop_growth","рост культур +50~70%"],
+      ["crop_yield","урожай +18~35%"],["sanity_save","SAN -10~15% утечка"],["suitability:Watering","+1 Watering всем"],["suitability:Planting","+1 Planting всем"]]));
     this.hire("Woolipop Terra",1,"саппорт: голод -15~25% + Caramel Cotton Candy");
     this.add(farm,farms); this.hire("(пары родителей)",2*farms,`в ${farm} x${farms}`);
     for(const [sp,n] of Object.entries(L.ranch)) this.hire(sp,n,`ранч (${({Mozzarina:"Milk",Chikipi:"Egg",Beegarde:"Honey"})[sp]})`);
@@ -540,7 +543,10 @@ class BasePlan {
     const tr=L.trio/3;
     this.hireBest("Planting",3,tr,"посадка"); this.hireBest("Watering",3,tr,"полив"); this.hireBest("Gathering",3,tr,"сбор");
     this.hireTransport();
-    if(!hatch){ const inc=this.best(["Egg Incubator","Electric Egg Incubator","Large Egg Incubator"]); if(inc) this.add(inc,Math.min(farms*2,12)); }
+    if(!hatch&&o.incubation>0){
+      const inc=this.best(["Egg Incubator","Electric Egg Incubator","Large Incubator","Large-Scale Electric Egg Incubator"]);
+      if(inc){ const nI=Math.min(Math.ceil(farms*2*o.incubation),12); this.add(inc,nI);
+        this.assume.push(`Инкубаторы: ${nI} = фермы x2 x множитель мира ${o.incubation}`); } }
     if(o.food==="self") this.foodModule(o.slots); else this.notes.push("Еда привозная — вози Salad/Pizza guild chest'ом");
     this.infra(o.slots); if(hatch||(kit&&this.structs[kit]?.power)) this.power(hatch);
     this.notes.push(`${farm} x${farms}: ~${L.cakes.toFixed(0)} яиц/час (${(L.cakes*24).toFixed(0)}/сутки) с учётом Braloha x${o.eggBoost||1.35}`);
@@ -732,7 +738,7 @@ function builderOpts(){
     workforce:val("pwf"),roster:val("proster"),lux:document.getElementById("plux").checked,
     ranchRate:+val("pranch")||12,plantYield:+val("pyield")||60,cookRate:+val("pcook")||30,
     plantsPerWorker:3,farms:+val("pfarms")||null,dish:val("pdish")||"Salad",dishRate:+val("pdishrate")||30,
-    eggInterval:+val("peggint")||5,eggBoost:+val("peggboost")||1.35};
+    eggInterval:+val("peggint")||5,eggBoost:+val("peggboost")||1.35,incubation:+val("pincub")||0};
 }
 
 render.planner = () => {
@@ -760,11 +766,12 @@ render.planner = () => {
     <label class="dim">ферм <input type="number" id="pfarms" style="width:60px;min-width:60px"></label>
     <label class="dim">яйцо, мин <input type="number" id="peggint" value="5" step="0.1" style="width:60px;min-width:60px"></label>
     <label class="dim">буст яиц x <input type="number" id="peggboost" value="1.35" step="0.05" style="width:60px;min-width:60px"></label>
+    <label class="dim" title="настройка мира: 0 = мгновенная инкубация">инкубация (мир) <input type="number" id="pincub" value="1" step="0.5" min="0" style="width:60px;min-width:60px"></label>
     <select id="pdish"></select>
     <label class="dim">блюд/час <input type="number" id="pdishrate" value="30" style="width:60px;min-width:60px"></label>
   </div></div>
   <div id="bout"></div>`;
-  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","peggboost"]){
+  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","peggboost","pincub"]){
     document.getElementById(id).addEventListener("input",()=>{
       if(!baseDirty && BASE.buildings.length) seedFromPreset();
       else if(baseDirty){ const el=document.getElementById("rebuild-hint"); if(el) el.style.display=""; }

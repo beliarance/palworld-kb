@@ -2753,7 +2753,7 @@
  "rates": {
   "breeding_egg_interval_minutes": 5,
   "cake_per_egg": 1,
-  "breeding_notes": "Breeding Farm: paldb lists 'Real Time 5 Mins' per egg cycle; 1 cake consumed per egg. Babysitter passive: +30% Breeding Speed and Hatching Speed for the assigned pal. Ancient Hatchery (tech 76): fully automated egg production + incubation, ~10s per cycle (guide-reported, preliminary), 10 egg slots, boosts inheritance rate of rare skills, does NOT raise Mutated Egg chance.",
+  "breeding_notes": "Breeding Farm: paldb lists 'Real Time 5 Mins' per egg cycle; 1 cake consumed per egg. Babysitter passive: +30% Breeding Speed and Hatching Speed for the assigned pal. Ancient Hatchery (tech 76): fully automated egg production + incubation, ~10s per cycle (guide-reported, preliminary), 10 egg slots, boosts inheritance rate of rare skills, does NOT raise Mutated Egg chance. World Setting 'Egg Incubation Speed' (настройка мира, сообщено игроком): множитель времени инкубации, 0 = яйца вылупляются мгновенно — тогда инкубаторы и ауры инкубации не нужны.",
   "cakes_breeding": {
    "Cake": "baseline; required for any breeding, no bonus",
    "Mushroom Cake": "talents (IVs) grow slightly faster",
