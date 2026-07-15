@@ -752,7 +752,7 @@ function topWorkers(task, n=8, easyOnly=false, minLv=1){
 }
 
 let BASE = {buildings:[], crew:[]};
-let openB=null, openC=null, baseDirty=false;
+let openB=null, openC=null, baseDirty=false, collapsedGroups=new Set();
 
 function seedFromPreset(){
   const o=builderOpts();
@@ -926,10 +926,16 @@ function drawBase(){
   const GROUP_ORDER=["🎯 Саппорт","⛏ Добыча","🔧 Крафт","🌾 Ферма","🐄 Ранчо","🥚 Бридинг","🍽 Еда","📦 Транспорт","🏥 Инфраструктура","❓ Прочее"];
   const grouped={};
   BASE.crew.forEach((c,i)=>{ const g=crewGroup(c); (grouped[g]=grouped[g]||[]).push(i); });
-  let ch=GROUP_ORDER.filter(g=>grouped[g]).map(g=>{
+  const shownGroups=GROUP_ORDER.filter(g=>grouped[g]);
+  let ch=`<div class="row" style="gap:6px;margin-bottom:6px">
+    <span class="tag clicky" onclick="collapsedGroups=new Set();drawBase()">развернуть всё</span>
+    <span class="tag clicky" onclick="collapsedGroups=new Set(${JSON.stringify(shownGroups)});drawBase()">свернуть всё</span></div>`;
+  ch+=shownGroups.map(g=>{
     const n=grouped[g].reduce((a,i)=>a+BASE.crew[i].count,0);
-    return `<div style="margin:10px 0 4px"><b style="color:var(--acc2)">${g}</b> <span class="dim">(${n})</span></div>`+
-      grouped[g].map(i=>crewCard(i)).join("");
+    const collapsed=collapsedGroups.has(g);
+    return `<div class="clicky" style="margin:10px 0 4px;user-select:none" onclick="collapsedGroups.has('${g}')?collapsedGroups.delete('${g}'):collapsedGroups.add('${g}');drawBase()">
+        <b style="color:var(--acc2)">${collapsed?"▸":"▾"} ${g}</b> <span class="dim">(${n})</span></div>`+
+      (collapsed?"":grouped[g].map(i=>crewCard(i)).join(""));
   }).join("");
   function crewCard(i){ const c=BASE.crew[i];
     let card=`<div class="card" style="margin-bottom:8px"><div class="row" style="justify-content:space-between">
