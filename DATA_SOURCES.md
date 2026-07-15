@@ -123,10 +123,19 @@
 ## data/base_building.json — базостроение для конструктора баз (собрано 2026-07-14/15)
 
 - **paldb.cc** (server-rendered, curl + regex-парсинг):
-  - 58 страниц построек (все категории строй-меню: Pal / Food / Production / Storage /
+  - 58 страниц построек (категории Pal / Food / часть Production / Storage /
     Infrastructure) — tech level, флаг ancient tech (`Special_` в tech id), материалы
     (кросс-проверены против таблицы Materials/Product/Schematic — 0 расхождений),
     энергопотребление (`Energy X Per Sec`), Worker Max, описания.
+  - **2026-07-15, дозаполнение до 125 структур**: изначальный сбор пропустил печи,
+    верстаки, сборочные линии и всю категорию Lumbering/Mining. Полный список найден
+    через индекс `/en/Structures` (487 зданий, декор/стены не собираем): +26 крафт-станций,
+    +4 добывающих, +41 функциональное (шахты Coal/Sulfur/Quartz/Hexolite/Soralite,
+    High-Pressure Oil Extractor, Guild Chest, пруды, алтарь, ресайклеры, сундуки).
+    `worker_req` (Kindling+Cooling у Ancient Furnace и т.п.) — из описаний;
+    min_level 6+ со слов игрока (PRELIMINARY). «Mine»/«Electric/Ice Mine» — ловушки.
+    Две мои промежуточные ошибки зафиксированы и исправлены: «шахт нет» (промах по
+    слагам) и заметка про Coal Mine в resource_nodes.
   - 56 страниц еды — Nutrition / SAN / Corruption (таймер порчи) / ворк-спид бафф;
     эффекты всех 5 тортов подтверждены текстами предметов 1.0.
   - 299 страниц палов — `FoodAmount` (аппетит, шкала 1–10, фактические значения 1–9) и
