@@ -200,13 +200,21 @@ class Planner:
                 hint = self.catch_hint(n)
                 self.hire(n, 1, f"саппорт: {why}" + (f"  [{hint}]" if hint else ""))
 
+    def roster_appetite(self):
+        """Суммарный аппетит уже нанятых палов = Σ count × FoodAmount (стат «сколько еды надо»)."""
+        fa = self.bb["pal_food_amount"]
+        return sum(c * (fa.get(sp) or 5) for sp, c, _ in self.pals)
+
     def food_module(self, roster_slots, share_crew=False):
         """Кормовой модуль. Возвращает число кормовых грядок.
         share_crew=True: грядки обслуживает общая тройка базы (не нанимаем свою — брид/еда-базы,
         где Planting/Watering/Gathering-палы уже есть и покрывают ВСЕ плантации)."""
-        # точной скорости голода в данных нет (gap) — берём «1 грядка кормит ~15 палов»
-        # (Salad: сытость 84, палы едят редко); настраивается --food-per-plot
-        plots = max(2, math.ceil(roster_slots / self.args.food_per_plot))
+        # спрос = сумма FoodAmount реального ростера (крупные палы едят больше мелких).
+        # точной скорости голода в данных нет (gap) — food_per_plot = «аппетит-единиц на грядку»
+        appetite = self.roster_appetite()
+        # добивка на ещё не нанятых (транспорт/тройка/повар) ~ средний аппетит
+        appetite += max(0, roster_slots - sum(c for _, c, _ in self.pals)) * 4.6
+        plots = max(2, math.ceil(appetite / self.args.food_per_plot))
         salad_ok = self.args.tech >= (self.structs.get("Tomato Plantation", {}).get("tech_level") or 99)
         food_plants = {}
         if salad_ok:
@@ -233,8 +241,8 @@ class Planner:
         else:
             self.notes.append("Кормовые грядки обслуживает общая тройка базы (отдельные рабочие не нужны)")
         self.assumptions.append(
-            f"Еда: {n} грядок на {roster_slots} палов (1 грядка ~ {self.args.food_per_plot} палов; "
-            f"точной скорости голода в данных нет — --food-per-plot). Salad долго держит сытость")
+            f"Еда: спрос {appetite:.0f} аппетит-единиц (Σ FoodAmount ростера) → {n} грядок "
+            f"(~{self.args.food_per_plot}/грядку; скорости голода в данных нет — --food-per-plot). Salad держит долго")
         return n
 
     def plant_crew(self, plantations):
@@ -658,8 +666,8 @@ def main():
                     help="(breeding) минут на яйцо (по умолчанию 5 из данных; для хатчери замерь в игре)")
     ap.add_argument("--no-spoilage", dest="spoilage", action="store_false",
                     help="настройка мира «еда не портится»: без холодильника и Cooling-пала, хватит Feed Box")
-    ap.add_argument("--food-per-plot", type=float, default=15,
-                    help="сколько палов кормит одна грядка (по умолчанию 15; точной скорости голода в данных нет)")
+    ap.add_argument("--food-per-plot", type=float, default=70,
+                    help="аппетит-единиц (Σ FoodAmount), которые кормит одна грядка (~70; скорости голода в данных нет)")
     ap.add_argument("--per-station", type=int, default=1,
                     help="(mine-craft) палов на добывающую станцию 1..3 (у шахт 3 места; больше = быстрее добыча)")
     ap.add_argument("--cake", default="Cake",

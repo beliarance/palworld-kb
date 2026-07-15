@@ -487,10 +487,14 @@ class BasePlan {
   supportCore(kinds){ const tags=D.idx.inverted.partner_tags;
     for(const [kind,why] of kinds) for(const n of (tags["base_support:"+kind]||[]).slice(0,1)){
       const h=this.hint(n); this.hire(n,1,`саппорт: ${why}`+(h?` [${h}]`:"")); } }
+  rosterAppetite(){ const fa=D.bb.pal_food_amount;
+    return this.crew.reduce((a,c)=>a+c[1]*(fa[c[0]]||5),0); }
   foodModule(slots, shareCrew){
-    // точной скорости голода в данных нет — «1 грядка кормит ~N палов» (Salad долго держит сытость)
-    const perPlot=this.o.foodPerPlot||15;
-    const plots=Math.max(2,Math.ceil(slots/perPlot));
+    // спрос = Σ FoodAmount реального ростера (крупные едят больше); скорости голода в данных нет
+    const perPlot=this.o.foodPerPlot||70;
+    let appetite=this.rosterAppetite();
+    appetite+=Math.max(0,slots-this.crew.reduce((a,c)=>a+c[1],0))*4.6;
+    const plots=Math.max(2,Math.ceil(appetite/perPlot));
     const saladOk=this.o.tech>=((this.structs["Tomato Plantation"]||{}).tech_level||99);
     let n=0;
     if(saladOk){ const st=this.best(["Cooking Pot","Electric Kitchen","Large-Scale Stone Oven","Ancient Kitchen"]);
@@ -504,7 +508,7 @@ class BasePlan {
     if(!shareCrew){ const crew=Math.max(1,Math.ceil(n/(this.o.plantsPerWorker*this.q())));
       this.hireBest("Planting",3,crew,"ЕДА: посадка"); this.hireBest("Watering",3,crew,"ЕДА: полив");
     } else this.notes.push("Кормовые грядки обслуживает общая тройка базы (отдельные рабочие не нужны)");
-    this.assume.push(`Еда: ${n} грядок на ${slots} палов (1 ~ ${perPlot} палов; скорости голода в данных нет)`);
+    this.assume.push(`Еда: спрос ${appetite.toFixed(0)} аппетит-единиц (Σ FoodAmount ростера) → ${n} грядок (~${perPlot}/грядку; скорости голода в данных нет)`);
     return n; }
   infra(slots){
     let beds=["Straw Pal Bed","Fluffy Pal Bed","Large Pal Bed","Pal Pod","Ancient Pal Pod"],
@@ -848,7 +852,7 @@ render.planner = () => {
     <label class="dim">ранч дроп/час <input type="number" id="pranch" value="12" style="width:60px;min-width:60px"></label>
     <label class="dim">плантация ед/час <input type="number" id="pyield" value="60" style="width:60px;min-width:60px"></label>
     <label class="dim">готовок/час на повара <input type="number" id="pcook" value="30" style="width:60px;min-width:60px"></label>
-    <label class="dim" title="сколько палов кормит одна грядка (скорости голода в данных нет)">палов на грядку <input type="number" id="pfpp" value="15" style="width:60px;min-width:60px"></label>
+    <label class="dim" title="аппетит-единиц (Σ FoodAmount) на грядку; скорости голода в данных нет">аппетита/грядку <input type="number" id="pfpp" value="70" style="width:70px;min-width:70px"></label>
   </div></details></div>
   <div id="bout"></div>`;
   const updateVis=()=>{
