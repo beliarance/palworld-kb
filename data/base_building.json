@@ -1,0 +1,1894 @@
+{
+ "game_version": "1.0",
+ "updated": "2026-07-14",
+ "structures": [
+  {
+   "name": "Campfire",
+   "tech_level": 2,
+   "ancient_tech": false,
+   "materials": {
+    "Wood": 10
+   },
+   "workers": "Kindling",
+   "capacity": "1 worker slots",
+   "power": false,
+   "function": "Needed for cooking food. It can only be used to grill simple ingredients. Requires a Fire Pal to light a flame."
+  },
+  {
+   "name": "Palbox",
+   "tech_level": 2,
+   "ancient_tech": false,
+   "materials": {
+    "Paldium Fragment": 1,
+    "Wood": 8,
+    "Stone": 3
+   },
+   "workers": null,
+   "capacity": "defines base area; base pal slots managed via Palbox (15 base workers by default, expandable via base missions)",
+   "power": false,
+   "function": "Facility for storing captured Pals. Pals inside gradually recover Health. Area around this facility becomes a base."
+  },
+  {
+   "name": "Straw Pal Bed",
+   "tech_level": 3,
+   "ancient_tech": false,
+   "materials": {
+    "Wood": 10,
+    "Fiber": 5
+   },
+   "workers": null,
+   "capacity": "1 pal",
+   "power": false,
+   "function": "A straw bed for Pals. Pals can rest on it when injured, or to sleep at night. It isn't soft, but it's better than nothing."
+  },
+  {
+   "name": "Feed Box",
+   "tech_level": 4,
+   "ancient_tech": false,
+   "materials": {
+    "Wood": 20
+   },
+   "workers": null,
+   "capacity": null,
+   "power": false,
+   "function": "A box for storing Pal food. Pals can feed from it when hungry. Make sure to keep it well-stocked to keep your Pals happy."
+  },
+  {
+   "name": "Berry Plantation",
+   "tech_level": 5,
+   "ancient_tech": false,
+   "materials": {
+    "Berry Seeds": 3,
+    "Wood": 10,
+    "Stone": 10
+   },
+   "workers": "Planting + Watering + Gathering",
+   "capacity": null,
+   "power": false,
+   "function": "A farm that can grow Red Berries . Harvest time is quick, but eating them doesn't provide much sustenance. Requires a few Pals to plant seeds, water, and harvest the crops."
+  },
+  {
+   "name": "Ranch",
+   "tech_level": 5,
+   "ancient_tech": false,
+   "materials": {
+    "Wood": 30,
+    "Stone": 20,
+    "Fiber": 30
+   },
+   "workers": "Farming (pal partner skill determines produce)",
+   "capacity": "4 pals assigned",
+   "power": false,
+   "function": "Farm for raising sheep and fowl-like Pals. Assign a Pal with the appropriate Partner Skill to a farm to produce items."
+  },
+  {
+   "name": "Monitoring Stand",
+   "tech_level": 7,
+   "ancient_tech": false,
+   "materials": {
+    "Wood": 30,
+    "Stone": 10
+   },
+   "workers": null,
+   "capacity": null,
+   "power": false,
+   "function": "Command your Pals to work on various things inside a base. You can allow or prohibit individual kinds of work."
+  },
+  {
+   "name": "Hot Spring",
+   "tech_level": 9,
+   "ancient_tech": false,
+   "materials": {
+    "Wood": 20,
+    "Stone": 15,
+    "Paldium Fragment": 7,
+    "Aquatic Pal Fluids": 3
+   },
+   "workers": null,
+   "capacity": null,
+   "power": false,
+   "function": "Facility where Pals on base can rest. Restores SAN after a long day of hard work."
+  },
+  {
+   "name": "Statue of Power",
+   "tech_level": 9,
+   "ancient_tech": false,
+   "materials": {
+    "Stone": 20,
+    "Paldium Fragment": 10
+   },
+   "workers": null,
+   "capacity": null,
+   "power": false,
+   "function": "Stone statue spoken of in legends on Palpagos Island. Offer up Lifmunk Effigy to receive strange powers."
+  },
+  {
+   "name": "Egg Incubator",
+   "tech_level": 10,
+   "ancient_tech": true,
+   "materials": {
+    "Paldium Fragment": 10,
+    "Cloth": 5,
+    "Stone": 30,
+    "Ancient Civilization Parts": 2
+   },
+   "workers": null,
+   "capacity": "1 egg",
+   "power": false,
+   "function": "Used for incubating a Pal Egg. If a Pal Egg is left in it, it will automatically hatch after some time has passed."
+  },
+  {
+   "name": "Medieval Medicine Workbench",
+   "tech_level": 12,
+   "ancient_tech": false,
+   "materials": {
+    "Wood": 30,
+    "Nail": 5,
+    "Paldium Fragment": 10
+   },
+   "workers": "Medicine Production",
+   "capacity": null,
+   "power": false,
+   "function": "A facility for making Pal medicine. It can only produce simple medicines. Leave its operation to a Pal that can make medicine."
+  },
+  {
+   "name": "Cooler Box",
+   "tech_level": 13,
+   "ancient_tech": false,
+   "materials": {
+    "Ingot": 10,
+    "Stone": 10,
+    "Ice Organ": 2
+   },
+   "workers": "Cooling",
+   "capacity": "1 worker slots",
+   "power": false,
+   "function": "Small food vault. Assign an Ice Pal to help prevent food stored inside from spoiling."
+  },
+  {
+   "name": "Pal Essence Condenser",
+   "tech_level": 14,
+   "ancient_tech": true,
+   "materials": {
+    "Paldium Fragment": 20,
+    "Ingot": 20,
+    "Ancient Civilization Parts": 5
+   },
+   "workers": null,
+   "capacity": null,
+   "power": false,
+   "function": "A chamber for increasing a Pal's rank. Pals can surpass their physical limitations if given a concentrated extract taken from a Pal of the same type."
+  },
+  {
+   "name": "Mill",
+   "tech_level": 15,
+   "ancient_tech": false,
+   "materials": {
+    "Wooden Board": 10,
+    "Stone": 40,
+    "Ingot": 10
+   },
+   "workers": "Watering",
+   "capacity": null,
+   "power": false,
+   "function": "Facility for milling Wheat to produce Flour . Requires Pal with the Watering trait to spin the water turbine."
+  },
+  {
+   "name": "Wheat Plantation",
+   "tech_level": 15,
+   "ancient_tech": false,
+   "materials": {
+    "Wheat Seeds": 3,
+    "Wood": 15,
+    "Stone": 15
+   },
+   "workers": "Planting + Watering + Gathering",
+   "capacity": null,
+   "power": false,
+   "function": "A farm that can grow Wheat . It requires an average amount of time to harvest. Requires a few Pals to plant seeds, water, and harvest crops."
+  },
+  {
+   "name": "Cooking Pot",
+   "tech_level": 17,
+   "ancient_tech": false,
+   "materials": {
+    "Wooden Board": 5,
+    "Ingot": 15,
+    "Flame Organ": 3
+   },
+   "workers": "Kindling",
+   "capacity": null,
+   "power": false,
+   "function": "Needed for cooking food. Use of a cooking pot allows for a wider variety of meal preparation. Requires a Fire Pal to light a flame."
+  },
+  {
+   "name": "Heater",
+   "tech_level": 17,
+   "ancient_tech": false,
+   "materials": {
+    "Ingot": 20,
+    "Charcoal": 10,
+    "Flame Organ": 5
+   },
+   "workers": "Kindling",
+   "capacity": "1 worker slots",
+   "power": false,
+   "function": "A device that blows warm air, raising the temperature of a base. It doesn't provide much warmth, but helps one to endure somewhat cold environments. Requires a Fire Pal to light a flame."
+  },
+  {
+   "name": "Cooler",
+   "tech_level": 18,
+   "ancient_tech": false,
+   "materials": {
+    "Ingot": 20,
+    "Stone": 20,
+    "Ice Organ": 5
+   },
+   "workers": "Cooling",
+   "capacity": "1 worker slots",
+   "power": false,
+   "function": "A device that blows cool air, lowering the temperature of a base. It doesn't provide much relief from the heat, but helps one to endure somewhat hot environments. Requires an Ice Pal for cooling."
+  },
+  {
+   "name": "Breeding Farm",
+   "tech_level": 19,
+   "ancient_tech": false,
+   "materials": {
+    "Wooden Board": 10,
+    "Stone": 20,
+    "Fiber": 50
+   },
+   "workers": "any 1 male + 1 female pal pair (not a work suitability)",
+   "capacity": "2 pals (1 male + 1 female)",
+   "power": false,
+   "function": "Assign one male and one female Pal to produce eggs. Placing Cake in the facility is required for production."
+  },
+  {
+   "name": "Pal Labor Research Lab",
+   "tech_level": 19,
+   "ancient_tech": false,
+   "materials": {
+    "Ingot": 30,
+    "Paldium Fragment": 30
+   },
+   "workers": null,
+   "capacity": null,
+   "power": false,
+   "function": "A facility for conducting research on the various tasks of Pals. By assigning tasks to Pals in this facility, research progresses, granting various benefits."
+  },
+  {
+   "name": "Tomato Plantation",
+   "tech_level": 21,
+   "ancient_tech": false,
+   "materials": {
+    "Tomato Seeds": 3,
+    "Wood": 70,
+    "Stone": 50,
+    "Aquatic Pal Fluids": 5
+   },
+   "workers": "Planting + Watering + Gathering",
+   "capacity": null,
+   "power": false,
+   "function": "A farm that can grow Tomato . They take time to harvest, but increase the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops."
+  },
+  {
+   "name": "Pal Expedition Station",
+   "tech_level": 22,
+   "ancient_tech": false,
+   "materials": {
+    "Wooden Board": 10,
+    "Stone": 100,
+    "Paldium Fragment": 20,
+    "Cement": 20
+   },
+   "workers": null,
+   "capacity": null,
+   "power": false,
+   "function": "A facility that allows Pals to be sent on expeditions to places like dungeons. The dispatched Pals engage in battles and gather items, bringing back resources to the base."
+  },
+  {
+   "name": "Clinic",
+   "tech_level": 24,
+   "ancient_tech": false,
+   "materials": {
+    "Wooden Board": 10,
+    "Cloth": 20,
+    "Nail": 15
+   },
+   "workers": "Medicine Production",
+   "capacity": "1 worker slots",
+   "power": false,
+   "function": "A basic medical facility for managing the health of Pals working at the base. Assigning a Pal with Medicine Production suitability helps reduce SAN depletion and prevent illness and injury. While sanitation has its limits, it plays a crucial role in early base development."
+  },
+  {
+   "name": "Fluffy Pal Bed",
+   "tech_level": 24,
+   "ancient_tech": false,
+   "materials": {
+    "Cloth": 5,
+    "Wooden Board": 3,
+    "Nail": 5,
+    "Fiber": 10
+   },
+   "workers": null,
+   "capacity": "1 pal",
+   "power": false,
+   "function": "A fluffy bed that Pals can get a good rest on. Pals can rest on it when injured, or to sleep at night. Pals love sleeping on fluffy beds like this."
+  },
+  {
+   "name": "Medicine Rack",
+   "tech_level": 24,
+   "ancient_tech": false,
+   "materials": {
+    "Ingot": 20,
+    "Wooden Board": 3,
+    "Cloth": 5
+   },
+   "workers": null,
+   "capacity": null,
+   "power": false,
+   "function": "A shelf for storing medicine. Sick Pals will come here to take their medicine. Be sure to keep the medicine stocked."
+  },
+  {
+   "name": "Lettuce Plantation",
+   "tech_level": 25,
+   "ancient_tech": false,
+   "materials": {
+    "Lettuce Seeds": 3,
+    "Wood": 100,
+    "Stone": 70,
+    "Aquatic Pal Fluids": 10
+   },
+   "workers": "Planting + Watering + Gathering",
+   "capacity": null,
+   "power": false,
+   "function": "A farm that can grow Lettuce . It takes time to harvest, but increases the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops."
+  },
+  {
+   "name": "Human-Powered Generator",
+   "tech_level": 26,
+   "ancient_tech": false,
+   "materials": {
+    "Wooden Board": 5,
+    "Electric Organ": 5
+   },
+   "workers": "any pal (converts labor to power, drains SAN)",
+   "capacity": "1 worker slots",
+   "power": false,
+   "function": "A facility that converts rotational motion into electrical energy. The efficiency is low, and the Pals working here will experience a decrease in SAN value, but they will gain experience points."
+  },
+  {
+   "name": "Power Generator",
+   "tech_level": 26,
+   "ancient_tech": false,
+   "materials": {
+    "Ingot": 50,
+    "Electric Organ": 20
+   },
+   "workers": "Generating Electricity",
+   "capacity": "1 worker slots",
+   "power": false,
+   "function": "A power generator fueled by Electric Pals. Electric equipment won't run without this."
+  },
+  {
+   "name": "High Quality Monitoring Stand",
+   "tech_level": 28,
+   "ancient_tech": false,
+   "materials": {
+    "Ingot": 100,
+    "Cement": 30
+   },
+   "workers": null,
+   "capacity": null,
+   "power": false,
+   "function": "A refined monitoring station with improved materials and structure. In addition to being able to issue work orders, the system also lowers the SAN cost for Pals working at the base. Working conditions are slightly improved, making Pals less likely to become dissatisfied."
+  },
+  {
+   "name": "Potato Plantation",
+   "tech_level": 29,
+   "ancient_tech": false,
+   "materials": {
+    "Potato Seeds": 3,
+    "Wood": 30,
+    "Stone": 20,
+    "Aquatic Pal Fluids": 3
+   },
+   "workers": "Planting + Watering + Gathering",
+   "capacity": null,
+   "power": false,
+   "function": "A farm where you can grow Potato . It takes time to harvest, but increases the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops."
+  },
+  {
+   "name": "High Quality Hot Spring",
+   "tech_level": 31,
+   "ancient_tech": false,
+   "materials": {
+    "Stone": 50,
+    "Wood": 50,
+    "Cryogenic Coolant": 3,
+    "Cement": 10
+   },
+   "workers": null,
+   "capacity": null,
+   "power": false,
+   "function": "Facility where Pals on base can rest. Now comfier and restores more SAN."
+  },
+  {
+   "name": "Carrot Plantation",
+   "tech_level": 32,
+   "ancient_tech": false,
+   "materials": {
+    "Carrot Seeds": 3,
+    "Wood": 30,
+    "Stone": 20,
+    "Aquatic Pal Fluids": 1
+   },
+   "workers": "Planting + Watering + Gathering",
+   "capacity": null,
+   "power": false,
+   "function": "A farm where you can grow Carrot . It takes time to harvest, but increases the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops."
+  },
+  {
+   "name": "Electric Egg Incubator",
+   "tech_level": 36,
+   "ancient_tech": true,
+   "materials": {
+    "Refined Ingot": 50,
+    "Circuit Board": 15,
+    "Ancient Civilization Parts": 5,
+    "Ancient Civilization Core": 2
+   },
+   "workers": null,
+   "capacity": "1 egg",
+   "power": true,
+   "function": "Device for incubating Pal eggs. Requires electricity, but automatically keeps the inside of the incubator at appropriate temperatures.",
+   "energy_per_sec": 200
+  },
+  {
+   "name": "Large Pal Bed",
+   "tech_level": 36,
+   "ancient_tech": false,
+   "materials": {
+    "High Quality Cloth": 5,
+    "Hardwood": 5,
+    "Nail": 20,
+    "Fiber": 20
+   },
+   "workers": null,
+   "capacity": "1 pal (fits large pals)",
+   "power": false,
+   "function": "A fluffy bed that Pals can get a good rest on. Pals can rest on it when injured, or to sleep at night. Even large Pals can sleep soundly on a bed like this."
+  },
+  {
+   "name": "Onion Plantation",
+   "tech_level": 36,
+   "ancient_tech": false,
+   "materials": {
+    "Onion Seeds": 3,
+    "Wood": 30,
+    "Stone": 20,
+    "Aquatic Pal Fluids": 2
+   },
+   "workers": "Planting + Watering + Gathering",
+   "capacity": null,
+   "power": false,
+   "function": "A farm where you can grow Onion . It takes time to harvest, but increases the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops."
+  },
+  {
+   "name": "Accumulator",
+   "tech_level": 37,
+   "ancient_tech": false,
+   "materials": {
+    "Ingot": 50,
+    "Electric Organ": 20,
+    "Cryogenic Coolant": 5,
+    "Corrosive Solvent": 5
+   },
+   "workers": null,
+   "capacity": null,
+   "power": false,
+   "function": "A facility for storing excess electricity generated by the Power Generator ."
+  },
+  {
+   "name": "Refrigerator",
+   "tech_level": 38,
+   "ancient_tech": false,
+   "materials": {
+    "Refined Ingot": 50,
+    "Polymer": 20,
+    "Cryogenic Coolant": 10,
+    "Circuit Board": 5
+   },
+   "workers": "Cooling",
+   "capacity": "1 worker slots",
+   "power": true,
+   "function": "Large food vault. Assign an Ice Pal to help prevent food stored inside from spoiling.",
+   "energy_per_sec": 50
+  },
+  {
+   "name": "Electric Heater",
+   "tech_level": 41,
+   "ancient_tech": false,
+   "materials": {
+    "Refined Ingot": 30,
+    "Circuit Board": 10,
+    "Cryogenic Coolant": 5,
+    "Flame Organ": 10
+   },
+   "workers": "Kindling",
+   "capacity": null,
+   "power": true,
+   "function": "A device that blows warm air, raising the temperature of a base. Using electricity, it can really heat things up. Requires a Fire Pal to light a flame.",
+   "energy_per_sec": 100
+  },
+  {
+   "name": "Electric Kitchen",
+   "tech_level": 41,
+   "ancient_tech": false,
+   "materials": {
+    "Refined Ingot": 30,
+    "Circuit Board": 5,
+    "Charcoal": 20,
+    "Flame Organ": 5
+   },
+   "workers": "Kindling",
+   "capacity": null,
+   "power": true,
+   "function": "Needed for cooking food. It requires electricity to run, but allows a large amount of meals to be prepared rapidly. Requires a Fire Pal to light a flame.",
+   "energy_per_sec": 50
+  },
+  {
+   "name": "Electric Cooler",
+   "tech_level": 42,
+   "ancient_tech": false,
+   "materials": {
+    "Refined Ingot": 30,
+    "Circuit Board": 10,
+    "Cryogenic Coolant": 10
+   },
+   "workers": "Cooling",
+   "capacity": null,
+   "power": true,
+   "function": "A device that blows cool air, lowering the temperature of a base. Using electricity, it can really lower the temperature. Requires an Ice Pal for cooling.",
+   "energy_per_sec": 100
+  },
+  {
+   "name": "Electric Medicine Workbench",
+   "tech_level": 43,
+   "ancient_tech": false,
+   "materials": {
+    "Refined Ingot": 40,
+    "Circuit Board": 10,
+    "Carbon Fiber": 10
+   },
+   "workers": "Medicine Production",
+   "capacity": null,
+   "power": true,
+   "function": "A facility for making Pal medicine. It requires electricity, but can produce high quality medicine. Leave its operation to a Pal that can make medicine.",
+   "energy_per_sec": 50
+  },
+  {
+   "name": "Electric Pylon",
+   "tech_level": 48,
+   "ancient_tech": false,
+   "materials": {
+    "Ingot": 20,
+    "Bio Battery": 2,
+    "Circuit Board": 5
+   },
+   "workers": null,
+   "capacity": null,
+   "power": false,
+   "function": "Place in base to improve electricity generating speed. Placing more than one has no additional effect."
+  },
+  {
+   "name": "Large Incubator",
+   "tech_level": 48,
+   "ancient_tech": false,
+   "materials": {
+    "Pal Metal Ingot": 50,
+    "High Quality Cloth": 20,
+    "Ancient Civilization Parts": 20,
+    "Ancient Civilization Core": 4
+   },
+   "workers": null,
+   "capacity": "10 eggs",
+   "power": false,
+   "function": "Device for incubating Pal eggs. It automatically maintains a suitable temperature and can hatch multiple eggs at once."
+  },
+  {
+   "name": "Large-Scale Stone Oven",
+   "tech_level": 49,
+   "ancient_tech": false,
+   "materials": {
+    "Cement": 200,
+    "Charcoal": 200,
+    "High Quality Wooden Board": 25,
+    "Cryogenic Coolant": 13
+   },
+   "workers": "Kindling",
+   "capacity": null,
+   "power": false,
+   "function": "Needed for cooking food. By becoming larger, multiple Pals can cooperate to cook together. Requires a Fire Pal to light a flame."
+  },
+  {
+   "name": "Large Power Generator",
+   "tech_level": 50,
+   "ancient_tech": false,
+   "materials": {
+    "Pal Metal Ingot": 200,
+    "Electric Organ": 200
+   },
+   "workers": "Generating Electricity",
+   "capacity": "2 pals",
+   "power": false,
+   "function": "A power generator fueled by Electric Pals. Larger and with improved power generation efficiency."
+  },
+  {
+   "name": "Cold Food Box",
+   "tech_level": 51,
+   "ancient_tech": false,
+   "materials": {
+    "Pal Metal Ingot": 20,
+    "Plasteel": 20,
+    "Cryogenic Coolant": 15
+   },
+   "workers": "Cooling",
+   "capacity": "1 worker slots",
+   "power": false,
+   "function": "A feeding box that can be kept cold. Assign an Ice Pal to it and the food inside will be less likely to spoil."
+  },
+  {
+   "name": "Pal Pod",
+   "tech_level": 56,
+   "ancient_tech": false,
+   "materials": {
+    "Pal Metal Ingot": 10,
+    "Cryogenic Coolant": 6,
+    "Computer": 3
+   },
+   "workers": null,
+   "capacity": "1 pal",
+   "power": false,
+   "function": "A healing pod for Pals. Used when Pals are injured or to rest at night. Thanks to technological advancements, the healing amount has increased."
+  },
+  {
+   "name": "Large-Scale Electric Egg Incubator",
+   "tech_level": 58,
+   "ancient_tech": false,
+   "materials": {
+    "Hexolite": 100,
+    "Circuit Board": 50,
+    "Ancient Civilization Parts": 30,
+    "Ancient Civilization Core": 20
+   },
+   "workers": null,
+   "capacity": "10 eggs",
+   "power": true,
+   "function": "Device for incubating Pal eggs. While power supply is required, it allows multiple eggs to be incubated simultaneously at the optimal temperature.",
+   "energy_per_sec": 800
+  },
+  {
+   "name": "Advanced Medicine Workbench",
+   "tech_level": 61,
+   "ancient_tech": false,
+   "materials": {
+    "Hexolite": 50,
+    "Plasteel": 50,
+    "Circuit Board": 30
+   },
+   "workers": "Medicine Production",
+   "capacity": "1 worker slots",
+   "power": true,
+   "function": "A facility for making medicine to cure Pals' illnesses. With advanced technology, it can also create unknown medicines. Assign the task to a Pal capable of pharmacy work.",
+   "energy_per_sec": 1000
+  },
+  {
+   "name": "Ancient Kitchen",
+   "tech_level": 70,
+   "ancient_tech": false,
+   "materials": {
+    "Soralite Ingot": 80,
+    "Thermal Core": 30,
+    "Cryogenic Coolant": 50,
+    "Ancient Civilization Core": 10
+   },
+   "workers": null,
+   "capacity": null,
+   "power": false,
+   "function": "A special kitchen based on ancient technology that can create everything from existing dishes to entirely new recipes. It retains heat through fire and completes cooking with manual preparation, allowing it to prepare any kind of cuisine. It requires Pals with high-level Kindling and Handiwork suitability."
+  },
+  {
+   "name": "Ancient Monitoring Stand",
+   "tech_level": 71,
+   "ancient_tech": false,
+   "materials": {
+    "Soralite Ingot": 100,
+    "Ancient Civilization Core": 5
+   },
+   "workers": null,
+   "capacity": null,
+   "power": false,
+   "function": "A monitoring station based on ancient technology, embedded with Red Paldium. It issues commands across the entire base through a holographic interface, reducing SAN depletion in Pals. A special wavelength surrounds the base, keeping Pals calm even in harsh working environments."
+  },
+  {
+   "name": "Skillfruit Orchard",
+   "tech_level": 71,
+   "ancient_tech": false,
+   "materials": {
+    "Mythical Wood": 200,
+    "Paldium Fragment": 500,
+    "Soralite": 150
+   },
+   "workers": "Planting + Watering + Gathering",
+   "capacity": null,
+   "power": false,
+   "function": "A farm where Skillfruits can be cultivated. By planting the original fruit in the ground, multiple fruits of the same type can be harvested."
+  },
+  {
+   "name": "Ancient Clinic",
+   "tech_level": 73,
+   "ancient_tech": false,
+   "materials": {
+    "Soralite Ingot": 50,
+    "Computer": 15,
+    "World Tree Holy Water": 45,
+    "Ancient Civilization Core": 10
+   },
+   "workers": "Medicine Production",
+   "capacity": "1 worker slots",
+   "power": false,
+   "function": "A top-tier medical facility that reproduces advanced ancient medical technology. It offers significantly greater protective capability than a standard clinic. By assigning a Pal with Medicine Production suitability, even bases with harsh working conditions can maintain the highest level of hygiene."
+  },
+  {
+   "name": "Ancient Pal Bed",
+   "tech_level": 73,
+   "ancient_tech": false,
+   "materials": {
+    "Soralite Ingot": 10,
+    "World Tree Holy Water": 2,
+    "Mythical Wood": 3
+   },
+   "workers": null,
+   "capacity": "1 pal (fits large pals)",
+   "power": false,
+   "function": "A ulitmate Pal Bed made from ancient recovery pod with soft matress. It offers one of the highest SAN recovery rates of all Pal beds, quickly relieving fatigue. It is the same size as a Large Pal Bed, allowing large Pals to rest comfortably."
+  },
+  {
+   "name": "Ancient Power Generator",
+   "tech_level": 75,
+   "ancient_tech": false,
+   "materials": {
+    "Paloxite Ingot": 100,
+    "Electric Organ": 200,
+    "Ancient Civilization Core": 10
+   },
+   "workers": "Generating Electricity (min Lv6)",
+   "capacity": "2 pals",
+   "power": false,
+   "function": "A highly efficient power generator restored from lost ancient technology. It produces massive amounts of electricity, but is prone to overheating while in operation. It requires Pals with high-level Generating Electricity and any level of Watering suitability."
+  },
+  {
+   "name": "Ancient Hatchery",
+   "tech_level": 76,
+   "ancient_tech": false,
+   "materials": {
+    "Paloxite Ingot": 100,
+    "AI Core": 50,
+    "Ancient Civilization Parts": 30,
+    "Ancient Civilization Core": 20
+   },
+   "workers": "any 1 male + 1 female pal pair (not a work suitability)",
+   "capacity": "2 pals (pair) + 10 egg slots, auto-incubates",
+   "power": true,
+   "function": "An advanced breeding facility of ancient civilization technology, enclosed in electronic glass. It fully automates everything from egg production to incubation at high speed, and increases the inheritance rate of rare skills. Pals are managed through holograms, it requires minimal pasture space.",
+   "energy_per_sec": 1200
+  },
+  {
+   "name": "Ancient Hot Spring",
+   "tech_level": 76,
+   "ancient_tech": false,
+   "materials": {
+    "Paloxite Ingot": 100,
+    "World Tree Holy Water": 10,
+    "Thermal Core": 20,
+    "Cryogenic Coolant": 20
+   },
+   "workers": null,
+   "capacity": null,
+   "power": false,
+   "function": "A hot spring built with ancient technology, filled with special water infused with Paldium. It offers the highest SAN recovery of all hot springs and also restores Health. It is the same size as a standard hot spring, and can fully heal injured Pals."
+  },
+  {
+   "name": "Ancient Farm",
+   "tech_level": 78,
+   "ancient_tech": false,
+   "materials": {
+    "Paloxite Ingot": 50,
+    "World Tree Holy Water": 50,
+    "Mythical Wood": 100,
+    "Ancient Civilization Core": 10
+   },
+   "workers": "Planting + Watering + Gathering",
+   "capacity": null,
+   "power": false,
+   "function": "A special cultivation device based on ancient technology that harnesses the power of the World Tree to grow all kinds of plants on Palpagos Island. Smaller than a berry plantation and suitable for indoor placement, it still follows the same cultivation process as standard plots. It requires Pals with high-level Planting, Watering, and Harvesting suitability."
+  }
+ ],
+ "foods": [
+  {
+   "name": "Farmer's Special Dish",
+   "nutrition": null,
+   "sanity": null,
+   "work_speed_buff": null,
+   "spoil_notes": null,
+   "notes": "A home-cooked meal from a doting farmer. It gives off an absolutely mouthwatering aroma."
+  },
+  {
+   "name": "Flour",
+   "nutrition": 3,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 2400 seconds (base timer)",
+   "notes": "Flour made from grinding Wheat . It can be used as an ingredient in making Bread ."
+  },
+  {
+   "name": "Wheat",
+   "nutrition": 6,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 2400 seconds (base timer)",
+   "notes": "An ingredient that forms the base of various dishes. Wheat is a common crop in many parts of the world."
+  },
+  {
+   "name": "Onion",
+   "nutrition": 9,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 2701 seconds (base timer)",
+   "notes": "A cherished and easy-to-grow vegetable with a rich history. Not suitable for eating raw."
+  },
+  {
+   "name": "Carrot",
+   "nutrition": 10,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 2701 seconds (base timer)",
+   "notes": "A vibrant, nutrient-rich root vegetable. Not suitable for raw consumption."
+  },
+  {
+   "name": "Honey",
+   "nutrition": 10,
+   "sanity": 3.0,
+   "work_speed_buff": null,
+   "spoil_notes": null,
+   "notes": "Honey harvested from Beegarde . It's sweet and tasty."
+  },
+  {
+   "name": "Potato",
+   "nutrition": 11,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 2701 seconds (base timer)",
+   "notes": "A hardy and filling crop that grows in any terrain. Not suitable for raw consumption."
+  },
+  {
+   "name": "Milk",
+   "nutrition": 12,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 600 seconds (base timer)",
+   "notes": "Drink it as is, or use it in various meals. Can be milked from Mozzarina ."
+  },
+  {
+   "name": "Mushroom",
+   "nutrition": 13,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 901 seconds (base timer)",
+   "notes": "A mushroom that can be eaten raw. They can be found anywhere on the island."
+  },
+  {
+   "name": "Lettuce",
+   "nutrition": 15,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 600 seconds (base timer)",
+   "notes": "A leafy green. When it comes to salad, this is a must. It has an exquisitely crunchy texture and refreshing taste."
+  },
+  {
+   "name": "Red Berries",
+   "nutrition": 15,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 600 seconds (base timer)",
+   "notes": "A versatile ingredient that is delicious raw or cooked. They can be found anywhere on the island."
+  },
+  {
+   "name": "Tomato",
+   "nutrition": 15,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 600 seconds (base timer)",
+   "notes": "A fresh ingredient that brightens any dish. Filled with lycopene, they’re also very healthy."
+  },
+  {
+   "name": "Egg",
+   "nutrition": 16,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 600 seconds (base timer)",
+   "notes": "Delicious when fried, but can also be used to cook various meals. Chikipi produce them."
+  },
+  {
+   "name": "Hot Milk",
+   "nutrition": 16,
+   "sanity": 1.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 600 seconds (base timer)",
+   "notes": "Even more delicious when warmed up. Great for keeping hunger away."
+  },
+  {
+   "name": "Baked Mushroom",
+   "nutrition": 18,
+   "sanity": 1.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 1800 seconds (base timer)",
+   "notes": "Cooking this mushroom enhances its nutritional value. Curiously, it's also quite filling."
+  },
+  {
+   "name": "Raw Meat",
+   "nutrition": 18,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 600 seconds (base timer)",
+   "notes": "Pal meat. It’s so fresh that even a human could safely eat it raw."
+  },
+  {
+   "name": "Baked Berries",
+   "nutrition": 21,
+   "sanity": 1.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 901 seconds (base timer)",
+   "notes": "Cooking enhances their nutritional value, and surprisingly, they are quite filling."
+  },
+  {
+   "name": "Fried Egg",
+   "nutrition": 23,
+   "sanity": 1.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 1200 seconds (base timer)",
+   "notes": "An Egg now fried and even more delicious. Great for keeping hunger away."
+  },
+  {
+   "name": "Bread",
+   "nutrition": 27,
+   "sanity": 4.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 1200 seconds (base timer)",
+   "notes": "Bread made from baked Flour . A tasty staple food."
+  },
+  {
+   "name": "French Fries",
+   "nutrition": 35,
+   "sanity": 10.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 600 seconds (base timer)",
+   "notes": "A dish made by deep-frying Potato . Once you start eating, you can't stop. Eating it will make it harder for your SAN value to decrease for a period of time."
+  },
+  {
+   "name": "Corn",
+   "nutrition": 40,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 1800 seconds (base timer)",
+   "notes": "en Text"
+  },
+  {
+   "name": "Grape",
+   "nutrition": 40,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 1800 seconds (base timer)",
+   "notes": "Grape"
+  },
+  {
+   "name": "Pancake",
+   "nutrition": 42,
+   "sanity": 5.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 1200 seconds (base timer)",
+   "notes": "A dish made by mixing Flour and Milk together then baking. Eating it progressively decreases the rate at which one's sanity decreases for a period of time."
+  },
+  {
+   "name": "Grilled Meat",
+   "nutrition": 45,
+   "sanity": 3.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 600 seconds (base timer)",
+   "notes": "Grilled meat. A full stomach leads to smiling faces."
+  },
+  {
+   "name": "Pumpkin",
+   "nutrition": 50,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 1800 seconds (base timer)",
+   "notes": "en Text"
+  },
+  {
+   "name": "Jam-Filled Bun",
+   "nutrition": 51,
+   "sanity": 6.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 3600 seconds (base timer)",
+   "notes": "Bread with jam spread on it. The sweetness of the berries complements it perfectly."
+  },
+  {
+   "name": "Mushroom Soup",
+   "nutrition": 52,
+   "sanity": 7.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 1200 seconds (base timer)",
+   "notes": "Cream soup made of Mushroom s. Eating it allows you to stay fuller for slightly longer for a period of time."
+  },
+  {
+   "name": "Stir-Fried Vegetables",
+   "nutrition": 54,
+   "sanity": 7.0,
+   "work_speed_buff": "Work Speed +10 for 600s",
+   "spoil_notes": "spoils in 600 seconds (base timer)",
+   "notes": "A dish made by stir-frying Carrot and Onion . A simple and delicious way to enjoy vegetables. Eating it will slightly increase your work speed and improve your Defense by 10% for a period of time."
+  },
+  {
+   "name": "Marinated Mushrooms",
+   "nutrition": 60,
+   "sanity": 7.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 1200 seconds (base timer)",
+   "notes": "A dish made by marinating Mushroom s in a marinade. Eating it improves Defense by +10% for a period of time."
+  },
+  {
+   "name": "Omelet",
+   "nutrition": 67,
+   "sanity": 7.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 1200 seconds (base timer)",
+   "notes": "A dish made by frying an Egg and topping it with ketchup. Eating it improves Attack by +10% for a period of time."
+  },
+  {
+   "name": "Grilled Fish",
+   "nutrition": 75,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 3600 seconds (base timer)",
+   "notes": "Grilled Fish"
+  },
+  {
+   "name": "Salad",
+   "nutrition": 84,
+   "sanity": 11.0,
+   "work_speed_buff": "Work Speed +30 for 600s",
+   "spoil_notes": "spoils in 1200 seconds (base timer)",
+   "notes": "A Salad made by mixing Lettuce and Tomato . Eating it slightly improves work speed for a period of time."
+  },
+  {
+   "name": "Potage",
+   "nutrition": 90,
+   "sanity": 2.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 3600 seconds (base timer)",
+   "notes": "Potage"
+  },
+  {
+   "name": "Seafood Salad",
+   "nutrition": 95,
+   "sanity": 1.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 1200 seconds (base timer)",
+   "notes": "A healthy salad made with Gloopie Tentacle and Lettuce . Eating it will slightly increase EXP gain for a period of time."
+  },
+  {
+   "name": "Corn Soup",
+   "nutrition": 100,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 3600 seconds (base timer)",
+   "notes": "Corn Soup"
+  },
+  {
+   "name": "Sandwich",
+   "nutrition": 100,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 3600 seconds (base timer)",
+   "notes": "Sandwich"
+  },
+  {
+   "name": "Seafood Soup",
+   "nutrition": 100,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 3600 seconds (base timer)",
+   "notes": "Seafood Soup"
+  },
+  {
+   "name": "Stew",
+   "nutrition": 100,
+   "sanity": 0.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 3600 seconds (base timer)",
+   "notes": "Stew"
+  },
+  {
+   "name": "Hot Dog",
+   "nutrition": 102,
+   "sanity": 7.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 3600 seconds (base timer)",
+   "notes": "A culinary dinner sandwiching a sausage in an Bread . Consumption leads to an improved sense of fullness for a specific period."
+  },
+  {
+   "name": "Gratin",
+   "nutrition": 113,
+   "sanity": 14.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 600 seconds (base timer)",
+   "notes": "A dish made by coating potatoes with sauce and baking them to perfection. Best enjoyed hot and fresh. Eating it will provide lasting fullness and increase your Defense by 10% for a period of time."
+  },
+  {
+   "name": "Spring Rolls",
+   "nutrition": 115,
+   "sanity": 14.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 600 seconds (base timer)",
+   "notes": "A dish made by wrapping vegetables and mushrooms in a thin skin and deep-frying them. The crispy texture is delightful. Eating it will make it harder for your SAN value to decrease and increase your Attack by 10% for a period of time."
+  },
+  {
+   "name": "Carbonara",
+   "nutrition": 129,
+   "sanity": 16.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 1200 seconds (base timer)",
+   "notes": "A dish mixing pasta with Egg and Milk . Eating it makes it improves Defense by +20% for a period of time."
+  },
+  {
+   "name": "Minestrone",
+   "nutrition": 146,
+   "sanity": 18.0,
+   "work_speed_buff": "Work Speed +40 for 600s",
+   "spoil_notes": "spoils in 600 seconds (base timer)",
+   "notes": "A soup simmered with a variety of vegetables. Drinking it warms you to the core. Eating it will increase your work speed for a period of time."
+  },
+  {
+   "name": "Mushroom Quiche",
+   "nutrition": 184,
+   "sanity": 23.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 600 seconds (base timer)",
+   "notes": "A dish made by baking a pastry crust filled with eggs, vegetables, mushrooms, and cream. It’s delicious even when cooled. Eating it will help you stay fuller for a while and make it harder for your SAN value to decrease for a period of time."
+  },
+  {
+   "name": "Pizza",
+   "nutrition": 184,
+   "sanity": 23.0,
+   "work_speed_buff": "Work Speed +30 for 600s",
+   "spoil_notes": "spoils in 1200 seconds (base timer)",
+   "notes": "A dish made by piling Red Berries , Tomato and cheese on Bread . Eating it slightly improves work speed and allows you to stay fuller for slightly longer for a period of time."
+  },
+  {
+   "name": "Seafood Pasta",
+   "nutrition": 193,
+   "sanity": 15.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 1800 seconds (base timer)",
+   "notes": "Fresh pasta is tossed with fragrant seafood in this exceptional dish, using Gloopie tentacles to elevate it even further. When eaten, it nullifies damage from explosions for a certain period of time."
+  },
+  {
+   "name": "Mushroom Stew",
+   "nutrition": 212,
+   "sanity": 11.0,
+   "work_speed_buff": "Work Speed +10 for 600s",
+   "spoil_notes": "spoils in 3600 seconds (base timer)",
+   "notes": "A stew made with Mushroom . Consumption elevates work speed and offers Attack +10% for a particular duration."
+  },
+  {
+   "name": "Curry",
+   "nutrition": 265,
+   "sanity": 12.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 3600 seconds (base timer)",
+   "notes": "Curry"
+  },
+  {
+   "name": "BLT",
+   "nutrition": 316,
+   "sanity": 22.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 3600 seconds (base timer)",
+   "notes": "A dish where bacon, Lettuce , Tomato are sandwiched in Bread . Consumption increases Attack by +15% for a while."
+  },
+  {
+   "name": "Hamburger",
+   "nutrition": 316,
+   "sanity": 22.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 3600 seconds (base timer)",
+   "notes": "A dish where a hamburger, Lettuce the Tomato are contained in the Bread . When eaten, it boosts one's stomach fullness and Attack by +10% for a while."
+  },
+  {
+   "name": "Cheeseburger",
+   "nutrition": 338,
+   "sanity": 22.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 3600 seconds (base timer)",
+   "notes": "A meal made with a Hamburger with cheese squeezed between it. Upon consumption, it increases the satiety level for a certain period as well as Defense +10%."
+  },
+  {
+   "name": "Cake",
+   "nutrition": 656,
+   "sanity": 82.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 1200 seconds (base timer)",
+   "notes": "A dish eaten during celebrations. Put it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg."
+  },
+  {
+   "name": "Mushroom Cake",
+   "nutrition": 676,
+   "sanity": 84.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 1200 seconds (base timer)",
+   "notes": "Place it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg. The talents of the resulting Pals will grow slightly more easily."
+  },
+  {
+   "name": "Vegetable Cake",
+   "nutrition": 696,
+   "sanity": 87.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 1200 seconds (base timer)",
+   "notes": "Place it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg. Lay eggs twice at once."
+  },
+  {
+   "name": "Extravagant Vegetable Cake",
+   "nutrition": 717,
+   "sanity": 90.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 1200 seconds (base timer)",
+   "notes": "Place it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg. Mutations are more likely to occur, and talents will grow more easily."
+  },
+  {
+   "name": "Special Cake",
+   "nutrition": 738,
+   "sanity": 92.0,
+   "work_speed_buff": null,
+   "spoil_notes": "spoils in 1200 seconds (base timer)",
+   "notes": "Place it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg. More likely inherit multiple passive skills from their parents."
+  }
+ ],
+ "pal_food_amount": {
+  "Aegidron": 9,
+  "Amione": 3,
+  "Anubis": 8,
+  "Arsox": 3,
+  "Astegon": 7,
+  "Astralym": 9,
+  "Azurmane": 8,
+  "Azurobe": 5,
+  "Azurobe Cryst": 5,
+  "Bakemi": 5,
+  "Bastigor": 9,
+  "Beakon": 5,
+  "Beakon Cryst": 5,
+  "Beegarde": 3,
+  "Bellanoir": 7,
+  "Bellanoir Libero": 7,
+  "Blazamut": 9,
+  "Blazamut Ryu": 9,
+  "Blazehowl": 6,
+  "Blazehowl Noct": 6,
+  "Blue Slime": 2,
+  "Braloha": 7,
+  "Bristla": 2,
+  "Broncherry": 6,
+  "Broncherry Aqua": 6,
+  "Bulldosu": 6,
+  "Bushi": 5,
+  "Bushi Noct": 5,
+  "Caprity": 2,
+  "Caprity Noct": 2,
+  "Carnibora": 7,
+  "Cattiva": 1,
+  "Cave Bat": 2,
+  "Cawgnito": 3,
+  "Celaray": 2,
+  "Celaray Lux": 2,
+  "Celesdir": 8,
+  "Celesdir Noct": 8,
+  "Chikipi": 1,
+  "Chillet": 3,
+  "Chillet Ignis": 3,
+  "Cinnamoth": 2,
+  "Clovee": 1,
+  "Cremis": 1,
+  "Croajiro": 2,
+  "Croajiro Noct": 2,
+  "Cryolinx": 7,
+  "Cryolinx Terra": 7,
+  "Daedream": 1,
+  "Dandilord": 9,
+  "Dazemu": 3,
+  "Dazzi": 2,
+  "Dazzi Noct": 2,
+  "Demon Eye": 2,
+  "Depresso": 1,
+  "Digtoise": 5,
+  "Dinossom": 4,
+  "Dinossom Lux": 4,
+  "Direhowl": 2,
+  "Dogen": 5,
+  "Dualith": 8,
+  "Dualith Noct": 8,
+  "Dumud": 3,
+  "Dumud Gild": 3,
+  "Dupin": 8,
+  "Dynamoff": 6,
+  "Eidrolon": 9,
+  "Eidrolon Ignis": 9,
+  "Eikthyrdeer": 2,
+  "Eikthyrdeer Terra": 2,
+  "Elgrove": 8,
+  "Elgrove Cryst": 8,
+  "Elizabee": 5,
+  "Elphidran": 3,
+  "Elphidran Aqua": 3,
+  "Enchanted Sword": 2,
+  "Eye of Cthulhu": 2,
+  "Faleris": 9,
+  "Faleris Aqua": 9,
+  "Felbat": 7,
+  "Fenglope": 5,
+  "Fenglope Lux": 5,
+  "Finsider": 2,
+  "Finsider Ignis": 2,
+  "Flambelle": 2,
+  "Flaracle": 8,
+  "Flopie": 2,
+  "Foxcicle": 4,
+  "Foxparks": 1,
+  "Foxparks Cryst": 1,
+  "Frostallion": 9,
+  "Frostallion Noct": 9,
+  "Frostplume": 5,
+  "Fuack": 1,
+  "Fuack Ignis": 1,
+  "Fuddler": 2,
+  "Galeclaw": 2,
+  "Ghangler": 7,
+  "Ghangler Ignis": 7,
+  "Gildane": 8,
+  "Gildra": 6,
+  "Gloopie": 3,
+  "Gloopie Primo": 3,
+  "Gobfin": 2,
+  "Gobfin Ignis": 2,
+  "Gorirat": 3,
+  "Gorirat Terra": 3,
+  "Green Slime": 2,
+  "Grintale": 4,
+  "Grizzbolt": 6,
+  "Gumoss": 1,
+  "Hangyu": 1,
+  "Hangyu Cryst": 1,
+  "Hartalis": 9,
+  "Helzephyr": 7,
+  "Helzephyr Lux": 7,
+  "Herbil": 1,
+  "Hoocrates": 1,
+  "Hoodle": 3,
+  "Icelyn": 5,
+  "Illuminant Bat": 2,
+  "Illuminant Slime": 3,
+  "Incineram": 5,
+  "Incineram Noct": 5,
+  "Jelliette": 3,
+  "Jellroy": 3,
+  "Jetragon": 9,
+  "Jolthog": 1,
+  "Jolthog Cryst": 1,
+  "Jormuntide": 8,
+  "Jormuntide Ignis": 8,
+  "Katress": 4,
+  "Katress Ignis": 4,
+  "Kelpsea": 1,
+  "Kelpsea Ignis": 1,
+  "Kikit": 3,
+  "Killamari": 2,
+  "Killamari Primo": 2,
+  "Kingpaca": 4,
+  "Kingpaca Cryst": 4,
+  "Kitsun": 5,
+  "Kitsun Noct": 5,
+  "Knocklem": 9,
+  "Knocklem Ignis": 9,
+  "Lamball": 1,
+  "Lapiron": 4,
+  "Lapure": 7,
+  "Leafan": 7,
+  "Leezpunk": 2,
+  "Leezpunk Ignis": 2,
+  "Lifmunk": 1,
+  "Loomen": 7,
+  "Loupmoon": 3,
+  "Loupmoon Cryst": 3,
+  "Lovander": 4,
+  "Lullu": 4,
+  "Lunaris": 4,
+  "Lyleen": 8,
+  "Lyleen Noct": 8,
+  "Majex": 8,
+  "Mammorest": 6,
+  "Mammorest Cryst": 6,
+  "Maraith": 5,
+  "Mau": 1,
+  "Mau Cryst": 1,
+  "Melpaca": 2,
+  "Menasting": 6,
+  "Menasting Terra": 6,
+  "Mimog": 3,
+  "Moldron": 8,
+  "Moldron Cryst": 8,
+  "Mossanda": 4,
+  "Mossanda Lux": 4,
+  "Mozzarina": 2,
+  "Muffly": 3,
+  "Munchill": 3,
+  "Mycora": 7,
+  "Necromus": 9,
+  "Needoll": 2,
+  "Needoll Noct": 2,
+  "Neptilius": 9,
+  "Nitemary": 6,
+  "Nitemary Botan": 6,
+  "Nitewing": 2,
+  "Nox": 1,
+  "Nyafia": 6,
+  "Omascul": 5,
+  "Ophydia": 9,
+  "Orserk": 9,
+  "Paladius": 9,
+  "Palumba": 6,
+  "Panthalus": 9,
+  "Pengullet": 1,
+  "Pengullet Lux": 1,
+  "Penking": 4,
+  "Penking Lux": 4,
+  "Petallia": 6,
+  "Petallia Ignis": 6,
+  "Pierdon": 8,
+  "Pierdon Cryst": 8,
+  "Polapup": 4,
+  "Polapup Terra": 4,
+  "Prixter": 5,
+  "Prixter Lux": 5,
+  "Prunelia": 5,
+  "Puffolt": 3,
+  "Pupperai": 1,
+  "Purple Slime": 3,
+  "Pyrin": 4,
+  "Pyrin Noct": 4,
+  "Quivern": 6,
+  "Quivern Botan": 6,
+  "Ragnahawk": 7,
+  "Rainbow Slime": 3,
+  "Rayhound": 4,
+  "Rayhound Cryst": 4,
+  "Red Slime": 3,
+  "Reindrix": 4,
+  "Relaxaurus": 7,
+  "Relaxaurus Lux": 7,
+  "Renjishi": 8,
+  "Reptyro": 7,
+  "Reptyro Cryst": 7,
+  "Ribbuny": 1,
+  "Ribbuny Botan": 1,
+  "Robinquill": 3,
+  "Robinquill Terra": 3,
+  "Rooby": 1,
+  "Roujay": 8,
+  "Rushoar": 1,
+  "Sekhmet": 7,
+  "Selyne": 9,
+  "Shadowbeak": 8,
+  "Shaolong": 9,
+  "Shroomer": 5,
+  "Shroomer Noct": 5,
+  "Sibelyx": 5,
+  "Sibelyx Primo": 5,
+  "Silvance": 9,
+  "Silvegis": 8,
+  "Skutlass": 5,
+  "Skutlass Ignis": 5,
+  "Slowatt": 4,
+  "Smokie": 3,
+  "Smokie Cryst": 3,
+  "Snock": 4,
+  "Snock Lux": 4,
+  "Snugloo": 5,
+  "Solenne": 9,
+  "Solmora": 6,
+  "Solmora Lux": 6,
+  "Sootseer": 7,
+  "Souffline": 3,
+  "Sparkit": 1,
+  "Splatterina": 7,
+  "Starryon": 6,
+  "Starryon Primo": 6,
+  "Surfent": 3,
+  "Surfent Terra": 3,
+  "Suzaku": 7,
+  "Suzaku Aqua": 7,
+  "Swee": 1,
+  "Sweepa": 4,
+  "Tanzee": 1,
+  "Tanzee Ignis": 1,
+  "Tarantriss": 4,
+  "Teafant": 1,
+  "Tetroise": 8,
+  "Tetroise Primo": 8,
+  "Tocotoco": 2,
+  "Tombat": 2,
+  "Tropicaw": 6,
+  "Turtacle": 3,
+  "Turtacle Terra": 3,
+  "Univolt": 3,
+  "Univolt Cryst": 3,
+  "Vaelet": 5,
+  "Valentail": 4,
+  "Vanwyrm": 5,
+  "Vanwyrm Cryst": 5,
+  "Venusa": 6,
+  "Verdash": 6,
+  "Vixy": 1,
+  "Warsect": 6,
+  "Warsect Terra": 6,
+  "Whalaska": 8,
+  "Whalaska Ignis": 8,
+  "Wispaw": 6,
+  "Wistella": 5,
+  "Wixen": 4,
+  "Wixen Noct": 4,
+  "Woolipop": 1,
+  "Woolipop Terra": 1,
+  "Wumpo": 7,
+  "Wumpo Botan": 7,
+  "Xenogard": 7,
+  "Xenolord": 8,
+  "Xenovader": 4,
+  "Yakumo": 3
+ },
+ "pal_hunger_rate_multiplier_nondefault": {},
+ "rates": {
+  "breeding_egg_interval_minutes": 5,
+  "cake_per_egg": 1,
+  "breeding_notes": "Breeding Farm: paldb lists 'Real Time 5 Mins' per egg cycle; 1 cake consumed per egg. Babysitter passive: +30% Breeding Speed and Hatching Speed for the assigned pal. Ancient Hatchery (tech 76): fully automated egg production + incubation, ~10s per cycle (guide-reported, preliminary), 10 egg slots, boosts inheritance rate of rare skills, does NOT raise Mutated Egg chance.",
+  "cakes_breeding": {
+   "Cake": "baseline; required for any breeding, no bonus",
+   "Mushroom Cake": "talents (IVs) grow slightly faster",
+   "Vegetable Cake": "pair lays two eggs at once",
+   "Extravagant Vegetable Cake": "mutation more likely + talents grow faster (sometimes miscalled 'Deluxe Vegetable Cake' in EA-era guides)",
+   "Special Cake": "more likely to inherit multiple passive skills from parents"
+  },
+  "plantation_cycles": [
+   {
+    "plantation": "Berry Plantation",
+    "yield_per_harvest": null,
+    "cycle_notes": "harvest time is quick (paldb)"
+   },
+   {
+    "plantation": "Wheat Plantation",
+    "yield_per_harvest": null,
+    "cycle_notes": "average time to harvest (paldb)"
+   },
+   {
+    "plantation": "Tomato Plantation",
+    "yield_per_harvest": null,
+    "cycle_notes": "takes time to harvest (paldb); exact base yield and cycle seconds undocumented"
+   },
+   {
+    "plantation": "Lettuce Plantation",
+    "yield_per_harvest": null,
+    "cycle_notes": "takes time to harvest (paldb); exact base yield and cycle seconds undocumented"
+   },
+   {
+    "plantation": "Potato Plantation",
+    "yield_per_harvest": null,
+    "cycle_notes": "takes time to harvest (paldb); exact base yield and cycle seconds undocumented"
+   },
+   {
+    "plantation": "Carrot Plantation",
+    "yield_per_harvest": null,
+    "cycle_notes": "takes time to harvest (paldb); exact base yield and cycle seconds undocumented"
+   },
+   {
+    "plantation": "Onion Plantation",
+    "yield_per_harvest": null,
+    "cycle_notes": "takes time to harvest (paldb); exact base yield and cycle seconds undocumented"
+   },
+   {
+    "plantation": "(all)",
+    "yield_per_harvest": null,
+    "cycle_notes": "Cycle: Planting -> growth timer -> Watering -> harvest via Gathering; harvest quantity scales with the gatherer's DropNumRate (x1 at Gathering Lv1 ... x5.5 at Lv10). Research Lab: Plantation Crop Growth Rate +5%/+10%, Plantation Harvest Yield +10%."
+   }
+  ],
+  "ranch_drop_interval_notes": "No fixed interval: ranch drops are per-pal partner-skill procs tied to the work animation; higher work speed = more procs. 4-star condensation drastically increases drop quantity. 1.0 caveat (guide-reported): Farming suitability level 5+ can bug ranch-pal AI, so producers are often kept at effective Farming <=4.",
+  "work_suitability_speed": "Suitability level 1-10 maps to a work-speed value per suitability (see work_speed_by_level; paldb per-suitability pages). Most crafting-type jobs (Kindling, Handiwork, Medicine, Cooling): 50/80/140/240/400/680/1100/1900/3200/5400. Field jobs (Planting, Watering, Lumbering, Mining, Gathering): 50/70/100/140/190/260/370/510/720/1000; Gathering also multiplies harvest drops (DropNumRate x1 at Lv1 to x5.5 at Lv10); Lumbering/Mining apply a DamageRate multiplier; Transporting value = carry capacity (pieces); Farming 12..30; Generating Electricity 250..4000.",
+  "work_suitability_boosts": "Base paldex levels cap at 8; effective levels 9-10 come from stacking: (1) Applied <Task> Handbook I items: +1 to that suitability, permanent, per individual pal (pal must already have the suitability); (2) Pal Essence Condenser: each star rank raises one existing suitability +1, max rank raises all; (3) partner-skill auras: certain pals give base-wide +1 to one job for all other base pals (12 such auras in 1.0, do not stack); (4) passives, e.g. Farmhand +1 / Ranch Master +2 Farming. Pal Labor Research Lab research grants %-bonuses (work speed +5/10%, plantation growth +5/10%, harvest yield +10%), not suitability levels.",
+  "work_speed_by_level": {
+   "Cooling": {
+    "1": "50",
+    "2": "80",
+    "3": "140",
+    "4": "240",
+    "5": "400",
+    "6": "680",
+    "7": "1100",
+    "8": "1900",
+    "9": "3200",
+    "10": "5400"
+   },
+   "Farming": {
+    "1": "12",
+    "2": "14",
+    "3": "16",
+    "4": "18",
+    "5": "20",
+    "6": "22",
+    "7": "24",
+    "8": "26",
+    "9": "28",
+    "10": "30"
+   },
+   "Gathering": {
+    "1": "50 (DropNumRate x1)",
+    "2": "70 (DropNumRate x1.5)",
+    "3": "100 (DropNumRate x2)",
+    "4": "140 (DropNumRate x2.5)",
+    "5": "190 (DropNumRate x3)",
+    "6": "260 (DropNumRate x3.5)",
+    "7": "370 (DropNumRate x4)",
+    "8": "510 (DropNumRate x4.5)",
+    "9": "720 (DropNumRate x5)",
+    "10": "1000 (DropNumRate x5.5)"
+   },
+   "Generating Electricity": {
+    "1": "250",
+    "2": "325",
+    "3": "400",
+    "4": "500",
+    "5": "750",
+    "6": "1000",
+    "7": "1500",
+    "8": "2000",
+    "9": "3000",
+    "10": "4000"
+   },
+   "Handiwork": {
+    "1": "50",
+    "2": "80",
+    "3": "140",
+    "4": "240",
+    "5": "400",
+    "6": "680",
+    "7": "1100",
+    "8": "1900",
+    "9": "3200",
+    "10": "5400"
+   },
+   "Kindling": {
+    "1": "50",
+    "2": "80",
+    "3": "140",
+    "4": "240",
+    "5": "400",
+    "6": "680",
+    "7": "1100",
+    "8": "1900",
+    "9": "3200",
+    "10": "5400"
+   },
+   "Lumbering": {
+    "1": "50 (DamageRate x0.05)",
+    "2": "70 (DamageRate x0.1)",
+    "3": "100 (DamageRate x0.18)",
+    "4": "140 (DamageRate x0.26)",
+    "5": "190 (DamageRate x0.38)",
+    "6": "260 (DamageRate x0.5)",
+    "7": "370 (DamageRate x0.6)",
+    "8": "510 (DamageRate x0.7)",
+    "9": "720 (DamageRate x0.85)",
+    "10": "1000 (DamageRate x1)"
+   },
+   "Medicine Production": {
+    "1": "50",
+    "2": "80",
+    "3": "140",
+    "4": "240",
+    "5": "400",
+    "6": "680",
+    "7": "1100",
+    "8": "1900",
+    "9": "3200",
+    "10": "5400"
+   },
+   "Mining": {
+    "1": "50 (DamageRate x0.07)",
+    "2": "70 (DamageRate x0.12)",
+    "3": "100 (DamageRate x0.23)",
+    "4": "140 (DamageRate x0.31)",
+    "5": "190 (DamageRate x0.43)",
+    "6": "260 (DamageRate x0.55)",
+    "7": "370 (DamageRate x0.65)",
+    "8": "510 (DamageRate x0.75)",
+    "9": "720 (DamageRate x0.9)",
+    "10": "1000 (DamageRate x1.1)"
+   },
+   "Planting": {
+    "1": "50",
+    "2": "70",
+    "3": "100",
+    "4": "140",
+    "5": "190",
+    "6": "260",
+    "7": "370",
+    "8": "510",
+    "9": "720",
+    "10": "1000"
+   },
+   "Transporting": {
+    "1": "2 Pieces",
+    "2": "5 Pieces",
+    "3": "10 Pieces",
+    "4": "20 Pieces",
+    "5": "40 Pieces",
+    "6": "70 Pieces",
+    "7": "120 Pieces",
+    "8": "200 Pieces",
+    "9": "320 Pieces",
+    "10": "500 Pieces"
+   },
+   "Watering": {
+    "1": "50",
+    "2": "70",
+    "3": "100",
+    "4": "140",
+    "5": "190",
+    "6": "260",
+    "7": "370",
+    "8": "510",
+    "9": "720",
+    "10": "1000"
+   }
+  },
+  "hunger_drain_notes": "Per-species hunger stats on paldb: FoodAmount (appetite 1-10, see pal_food_amount) and FullStomachDecreaseRate (multiplier, 1 = default; see pal_hunger_rate_multiplier_nondefault). Absolute satiety/sec baseline undocumented. Passives: Diet Lover -15% hunger rate, Dainty Eater -10%, Mastery of Fasting -20%, Glutton +10%, Bottomless Stomach +15%. World setting PalStomachDecreaceRate (default 1.0) scales all pal hunger. SAN: Workaholic -15% SAN drain; Hot Spring restores SAN (base rate 0.5), higher tiers restore more; Ancient Hot Spring also restores HP."
+ },
+ "notes": [
+  "Pal appetite ('Food' icons on paldb) = FoodAmount stat; 1.0 scale is 1-10 (observed values 1-9 across all 299 pals).",
+  "FullStomachDecreaseRate is 1.0 for every pal in the 1.0 data — species hunger differences come from FoodAmount alone.",
+  "All five cakes are breeding cakes: placed in the Breeding Farm chest (paldb 1.0 item descriptions confirm each effect, see rates.cakes_breeding). Nutrition/SAN: Cake 656/82, Mushroom 676/84, Vegetable 696/87, Extravagant Vegetable 717/90, Special 738/92.",
+  "'Deluxe Vegetable Cake' in EA-era guides = 'Extravagant Vegetable Cake' (canonical 1.0 name; no Deluxe cake exists).",
+  "Cake CAN be eaten by hungry pals if placed in the Feed Box (EA-era report, unverified for 1.0); cake in the Breeding Farm chest is not eaten by base pals and reportedly does not spoil there (EA-era, unverified for 1.0). Feed Box eating order: left-to-right slots; Feed Box has an allowed-items filter (EA-era Steam reports, unverified for 1.0).",
+  "power=true means the structure consumes electricity; energy_per_sec is paldb's consumption figure. Generators produce power scaled by the worker's Generating Electricity level (250 at Lv1 to 4000 at Lv10); Electric Pylon boosts generation speed (only one counts); Accumulator stores excess.",
+  "Egg temperature-comfort mechanic still present in 1.0: eggs hatch faster at their preferred temperature; electric incubators auto-regulate it.",
+  "High Quality (tech 28) and Ancient (tech 71) Monitoring Stands reduce SAN drain of working pals; Clinic/Ancient Clinic (Medicine Production worker) reduce SAN depletion and prevent illness.",
+  "Hot Spring SAN restore rate 0.5 (base tier); High Quality restores more; Ancient Hot Spring restores the most SAN and also heals HP.",
+  "DISCREPANCY: expeditions.json lists Pal Expedition Station at tech 15 (Wood 20, Stone 20, Paldium Fragment 5); paldb 1.0 page shows tech 22 (Wooden Board 10, Stone 100, Paldium Fragment 20). This file follows paldb.",
+  "In 1.0 there is no plain 'Pal Bed': tiers are Straw Pal Bed (3) -> Fluffy Pal Bed (24) -> Large Pal Bed (36) -> Pal Pod (56) -> Ancient Pal Bed (73)."
+ ],
+ "gaps": [
+  "Per-crop plantation yield_per_harvest and absolute growth-cycle seconds are undocumented in fetched sources (yield scales with gatherer DropNumRate; see plantation_cycles).",
+  "Absolute baseline hunger (satiety/sec) and SAN drain/sec are undocumented; only relative multipliers known.",
+  "Ancient Hatchery ~10s cycle and near-instant incubation are guide-reported (preliminary), not confirmed on paldb.",
+  "Palbox exact base-pal capacity and Feed Box slot count are not listed on their paldb pages.",
+  "Incubator hatch-speed multipliers (Electric ~1.5x is EA-era) and per-egg-size base hatch times unknown.",
+  "Farmer's Special Dish has no Nutrition/SAN listed on paldb.",
+  "Whether Applied <Task> Handbook tiers II+ exist is unconfirmed (only tier I pages found).",
+  "Feed Box eating order / cake-in-feed-box behavior not yet re-verified for 1.0 (EA-era sources)."
+ ],
+ "sources": [
+  {
+   "url": "https://paldb.cc/en/<structure slug>",
+   "what": "58 structure pages: tech level, ancient-tech flag, build materials, energy use, worker slots, function text (e.g. /en/Breeding_Farm, /en/Ancient_Hatchery)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://paldb.cc/en/<food slug>",
+   "what": "56 food item pages: Nutrition, SAN, spoil timer (Corruption), work-speed buffs, cake breeding effects",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://paldb.cc/en/<pal name>",
+   "what": "299 pal pages: FoodAmount (appetite) and FullStomachDecreaseRate stats",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://paldb.cc/en/Kindling ... /en/Farming",
+   "what": "12 work-suitability pages: exact work-speed value per level 1-10, DropNumRate/DamageRate multipliers, Research Lab effect lists",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://paldb.cc/en/Applied_Kindling_Handbook_I",
+   "what": "handbook item text: permanent +1 suitability per pal",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://nodecraft.com/support/games/palworld/general/palworld-work-suitability-level-10-explained",
+   "what": "1.0 mechanisms for reaching work suitability 9-10",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://www.palmods.gg/guides/whats-new/work-suitability",
+   "what": "1.0 suitability boosts: condensation +1/star, partner-skill base-wide auras",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://allthings.how/everything-that-changed-about-breeding-in-palworld-1-0/",
+   "what": "1.0 breeding: 1 cake = 1 egg, Ancient Hatchery automation/batching, cake effects",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://xgamingserver.com/blog/palworld-eggs-incubator-guide/",
+   "what": "1.0 incubator tiers, capacities, temperature mechanic",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://xgamingserver.com/blog/palworld-sanity-guide/",
+   "what": "1.0 SAN drain/recovery, hot spring rate 0.5, Depressed status",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://paldb.cc/en/Passive_Skills",
+   "what": "hunger/SAN passives: Diet Lover -15%, Dainty Eater -10%, Mastery of Fasting -20%, Glutton +10%, Bottomless Stomach +15%, Workaholic -15% SAN",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://thepalprofessor.com/plantations-guide/",
+   "what": "plantation workflow and gathering-level yield scaling (EA-era, unverified for 1.0)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://steamcommunity.com/app/1623730/discussions/0/595151065797631882/",
+   "what": "Feed Box eating order left-to-right, allowed-items filter (EA-era)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://docs.palworldgame.com/settings-and-operation/configuration/",
+   "what": "world setting PalStomachDecreaceRate (pal hunger slider)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://www.neonlightsmedia.com/blog/palworld-1-0-ranch-drops-guide",
+   "what": "1.0 ranch drop mechanics, 4-star condensation drop boost, Farming Lv5+ ranch AI bug",
+   "fetched": "2026-07-14"
+  }
+ ]
+}

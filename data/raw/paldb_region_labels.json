@@ -1,0 +1,722 @@
+[
+ {
+  "item": "Lv.55 Rayne Syndicate Oil Rig",
+  "type": "Region",
+  "id": "REGION_Oilrig_1",
+  "ipos": {
+   "X": 579,
+   "Y": -423
+  }
+ },
+ {
+  "item": "Desolate Church",
+  "type": "Region",
+  "id": "REGION_Grass_1_Church",
+  "ipos": {
+   "X": 65,
+   "Y": -412
+  }
+ },
+ {
+  "item": "Small Settlement",
+  "type": "Region",
+  "id": "REGION_Grass_1_Village",
+  "ipos": {
+   "X": 75,
+   "Y": -480
+  }
+ },
+ {
+  "item": "Fisherman's Point",
+  "type": "Region",
+  "id": "REGION_Volcano_1_Village",
+  "ipos": {
+   "X": -474,
+   "Y": -750
+  }
+ },
+ {
+  "item": "Duneshelter",
+  "type": "Region",
+  "id": "REGION_Desert_1_Village",
+  "ipos": {
+   "X": 349,
+   "Y": 353
+  }
+ },
+ {
+  "item": "Lv.30 Rayne Syndicate Test Drilling Rig",
+  "type": "Region",
+  "id": "REGION_Oilrig_2",
+  "ipos": {
+   "X": 169,
+   "Y": -297
+  }
+ },
+ {
+  "item": "Ancient Ritual Site",
+  "type": "Region",
+  "id": "REGION_Forest_Ruin",
+  "ipos": {
+   "X": -17,
+   "Y": -265
+  }
+ },
+ {
+  "item": "Lv.30-40 Mount Obsidian",
+  "type": "Region",
+  "id": "REGION_Volcano_1",
+  "ipos": {
+   "X": -587,
+   "Y": -484
+  }
+ },
+ {
+  "item": "Frostbound Mountains",
+  "type": "Region",
+  "id": "REGION_Frost_small",
+  "ipos": {
+   "X": 199,
+   "Y": 57
+  }
+ },
+ {
+  "item": "Lv.60 Rayne Syndicate Platform Oil Rig",
+  "type": "Region",
+  "id": "REGION_Oilrig_3",
+  "ipos": {
+   "X": -1722,
+   "Y": -1462
+  }
+ },
+ {
+  "item": "Lv.10-25 Twilight Dunes",
+  "type": "Region",
+  "id": "REGION_Desert_Small",
+  "ipos": {
+   "X": -124,
+   "Y": -100
+  }
+ },
+ {
+  "item": "Lv.20-30 Verdant Brook",
+  "type": "Region",
+  "id": "REGION_Forest_2",
+  "ipos": {
+   "X": 208,
+   "Y": -13
+  }
+ },
+ {
+  "item": "Azure Woodland",
+  "type": "Region",
+  "id": "REGION_Skyisland05",
+  "ipos": {
+   "X": -325,
+   "Y": -1332
+  }
+ },
+ {
+  "item": "The Azure Tapestry",
+  "type": "Region",
+  "id": "REGION_Skyisland01",
+  "ipos": {
+   "X": -446,
+   "Y": -1326
+  }
+ },
+ {
+  "item": "Dragonmark Peak",
+  "type": "Region",
+  "id": "REGION_Skyisland03",
+  "ipos": {
+   "X": -551,
+   "Y": -1304
+  }
+ },
+ {
+  "item": "Waterlily Gorge",
+  "type": "Region",
+  "id": "REGION_Skyisland02",
+  "ipos": {
+   "X": -554,
+   "Y": -1504
+  }
+ },
+ {
+  "item": "Arena",
+  "type": "Region",
+  "id": "REGION_Arena",
+  "ipos": {
+   "X": 633,
+   "Y": 18
+  }
+ },
+ {
+  "item": "Lv.50-60 Scorched Ashland",
+  "type": "Region",
+  "id": "REGION_Darkisland_FT01",
+  "ipos": {
+   "X": -805,
+   "Y": -954
+  }
+ },
+ {
+  "item": "Withered Seaside",
+  "type": "Region",
+  "id": "REGION_Darkisland_FT09",
+  "ipos": {
+   "X": -709,
+   "Y": -1103
+  }
+ },
+ {
+  "item": "Emberstone Plateau",
+  "type": "Region",
+  "id": "REGION_Darkisland11",
+  "ipos": {
+   "X": -790,
+   "Y": -1235
+  }
+ },
+ {
+  "item": "Loess Plains",
+  "type": "Region",
+  "id": "REGION_Darkisland_FT03",
+  "ipos": {
+   "X": -902,
+   "Y": -1416
+  }
+ },
+ {
+  "item": "Crystalized Ancient Tree",
+  "type": "Region",
+  "id": "REGION_Darkisland05",
+  "ipos": {
+   "X": -982,
+   "Y": -1165
+  }
+ },
+ {
+  "item": "Scorched Hill",
+  "type": "Region",
+  "id": "REGION_Darkisland_FT07",
+  "ipos": {
+   "X": -1041,
+   "Y": -1139
+  }
+ },
+ {
+  "item": "Deserted Ash Plateau",
+  "type": "Region",
+  "id": "REGION_Darkisland_FT08",
+  "ipos": {
+   "X": -1300,
+   "Y": -1198
+  }
+ },
+ {
+  "item": "Frozen Coral Hill",
+  "type": "Region",
+  "id": "REGION_Darkisland_FT10",
+  "ipos": {
+   "X": -1243,
+   "Y": -1531
+  }
+ },
+ {
+  "item": "Feybreak Shipwreck",
+  "type": "Region",
+  "id": "REGION_Darkisland03",
+  "ipos": {
+   "X": -1417,
+   "Y": -1450
+  }
+ },
+ {
+  "item": "The Oculus Gate, Tower in Sight",
+  "type": "Region",
+  "id": "REGION_Darkisland_FT05",
+  "ipos": {
+   "X": -1115,
+   "Y": -1355
+  }
+ },
+ {
+  "item": "Stone Pillar Cave",
+  "type": "Region",
+  "id": "REGION_Darkisland08",
+  "ipos": {
+   "X": -908,
+   "Y": -1093
+  }
+ },
+ {
+  "item": "Hidden Passage to the Oculus Gate",
+  "type": "Region",
+  "id": "REGION_Darkisland_FT04",
+  "ipos": {
+   "X": -1079,
+   "Y": -1283
+  }
+ },
+ {
+  "item": "-",
+  "type": "Region",
+  "id": "REGION_Array",
+  "ipos": {
+   "X": -1209,
+   "Y": -1354
+  }
+ },
+ {
+  "item": "Golden Hills",
+  "type": "Region",
+  "id": "REGION_Grass_3",
+  "ipos": {
+   "X": 36,
+   "Y": -476
+  }
+ },
+ {
+  "item": "Autumn Rocks",
+  "type": "Region",
+  "id": "REGION_Grass_4",
+  "ipos": {
+   "X": 98,
+   "Y": -318
+  }
+ },
+ {
+  "item": "Fortress Ruins",
+  "type": "Region",
+  "id": "REGION_Grass_5",
+  "ipos": {
+   "X": 194,
+   "Y": -353
+  }
+ },
+ {
+  "item": "Flying Fish Coast",
+  "type": "Region",
+  "id": "REGION_Grass_6",
+  "ipos": {
+   "X": 154,
+   "Y": -541
+  }
+ },
+ {
+  "item": "Gobfin's Turf",
+  "type": "Region",
+  "id": "REGION_Grass_7",
+  "ipos": {
+   "X": 153,
+   "Y": -173
+  }
+ },
+ {
+  "item": "Lv.10-20 Scars of War",
+  "type": "Region",
+  "id": "REGION_Grass_8",
+  "ipos": {
+   "X": 381,
+   "Y": -18
+  }
+ },
+ {
+  "item": "Lv.30-40 Foot of the Astral Mountains",
+  "type": "Region",
+  "id": "REGION_Frost_2",
+  "ipos": {
+   "X": -96,
+   "Y": 197
+  }
+ },
+ {
+  "item": "Abandoned Ruins",
+  "type": "Region",
+  "id": "REGION_Frost_3",
+  "ipos": {
+   "X": -152,
+   "Y": 295
+  }
+ },
+ {
+  "item": "Ruined Fortress City",
+  "type": "Region",
+  "id": "REGION_Volcano_3",
+  "ipos": {
+   "X": -601,
+   "Y": -214
+  }
+ },
+ {
+  "item": "Dry Sandy Beach",
+  "type": "Region",
+  "id": "REGION_Volcano_4",
+  "ipos": {
+   "X": -606,
+   "Y": -667
+  }
+ },
+ {
+  "item": "Sea Breeze Archipelago Church",
+  "type": "Region",
+  "id": "REGION_PvP_1_Church",
+  "ipos": {
+   "X": -62,
+   "Y": -534
+  }
+ },
+ {
+  "item": "Lv.40-55 Sakurajima - Southern Sandbar",
+  "type": "Region",
+  "id": "REGION_WhiteSand",
+  "ipos": {
+   "X": -721,
+   "Y": 115
+  }
+ },
+ {
+  "item": "Isle of Silence Church Ruins",
+  "type": "Region",
+  "id": "REGION_PvP_2_Church",
+  "ipos": {
+   "X": -456,
+   "Y": -13
+  }
+ },
+ {
+  "item": "Marsh Island Church Ruins",
+  "type": "Region",
+  "id": "REGION_PvP_3_Church",
+  "ipos": {
+   "X": 399,
+   "Y": -272
+  }
+ },
+ {
+  "item": "Lv.1-10 Sunlit Isle",
+  "type": "Region",
+  "id": "REGION_SmallIsland01",
+  "ipos": {
+   "X": 403,
+   "Y": -464
+  }
+ },
+ {
+  "item": "Lv.40-50 Oasis Isle",
+  "type": "Region",
+  "id": "REGION_SmallIsland02",
+  "ipos": {
+   "X": 900,
+   "Y": 202
+  }
+ },
+ {
+  "item": "Lv.50-60 Isle of the Glacial Core",
+  "type": "Region",
+  "id": "REGION_SmallIsland03",
+  "ipos": {
+   "X": 143,
+   "Y": 655
+  }
+ },
+ {
+  "item": "Lv.10-20 Frostbitten Isle",
+  "type": "Region",
+  "id": "REGION_SmallIsland04",
+  "ipos": {
+   "X": -72,
+   "Y": -973
+  }
+ },
+ {
+  "item": "Lv.30-40 Phantom Isle",
+  "type": "Region",
+  "id": "REGION_SmallIsland05",
+  "ipos": {
+   "X": -908,
+   "Y": -198
+  }
+ },
+ {
+  "item": "Lv.10-20 Isle of Decayed Treasures",
+  "type": "Region",
+  "id": "REGION_SmallIsland06",
+  "ipos": {
+   "X": 623,
+   "Y": -169
+  }
+ },
+ {
+  "item": "Lv.30-45 Isle of Eternal Summer",
+  "type": "Region",
+  "id": "REGION_SmallIsland07",
+  "ipos": {
+   "X": -424,
+   "Y": -811
+  }
+ },
+ {
+  "item": "Flamepulse Islet",
+  "type": "Region",
+  "id": "REGION_New_SmallIsland02",
+  "ipos": {
+   "X": 793,
+   "Y": 455
+  }
+ },
+ {
+  "item": "Islet of Circular Ruins",
+  "type": "Region",
+  "id": "REGION_New_SmallIsland01",
+  "ipos": {
+   "X": 907,
+   "Y": -98
+  }
+ },
+ {
+  "item": "Scouring Islet",
+  "type": "Region",
+  "id": "REGION_New_SmallIsland03",
+  "ipos": {
+   "X": 429,
+   "Y": -717
+  }
+ },
+ {
+  "item": "Bicornis Islet",
+  "type": "Region",
+  "id": "REGION_New_SmallIsland04",
+  "ipos": {
+   "X": -1170,
+   "Y": -1939
+  }
+ },
+ {
+  "item": "Glacial Memento Islet",
+  "type": "Region",
+  "id": "REGION_New_SmallIsland05",
+  "ipos": {
+   "X": -1695,
+   "Y": -949
+  }
+ },
+ {
+  "item": "Sandstone Gate Islet",
+  "type": "Region",
+  "id": "REGION_New_SmallIsland06",
+  "ipos": {
+   "X": -1273,
+   "Y": -615
+  }
+ },
+ {
+  "item": "Suncrest Islet",
+  "type": "Region",
+  "id": "REGION_New_SmallIsland07",
+  "ipos": {
+   "X": -894,
+   "Y": 122
+  }
+ },
+ {
+  "item": "Foot of the World Tree",
+  "type": "Region",
+  "id": "REGION_FootOfWorldTree",
+  "ipos": {
+   "X": -812,
+   "Y": 673
+  }
+ },
+ {
+  "item": "Lv.15-25 Crescent Moon Shore",
+  "type": "Region",
+  "id": "REGION_Forest_1",
+  "ipos": {
+   "X": -6,
+   "Y": -208
+  }
+ },
+ {
+  "item": "Lv.10-20 Bamboo Groves",
+  "type": "Region",
+  "id": "REGION_Grass_2",
+  "ipos": {
+   "X": -229,
+   "Y": -312
+  }
+ },
+ {
+  "item": "Lv.1-15 Windswept Island",
+  "type": "Region",
+  "id": "REGION_Grass_1",
+  "ipos": {
+   "X": 114,
+   "Y": -487
+  }
+ },
+ {
+  "item": "Lv.1-10 Isle of Silence",
+  "type": "Region",
+  "id": "REGION_PvP_2",
+  "ipos": {
+   "X": -487,
+   "Y": -17
+  }
+ },
+ {
+  "item": "Lv.1-10 Marsh Island",
+  "type": "Region",
+  "id": "REGION_PvP_5",
+  "ipos": {
+   "X": 349,
+   "Y": -306
+  }
+ },
+ {
+  "item": "Lv.1-10 Eastern Wild Island",
+  "type": "Region",
+  "id": "REGION_PvP_4",
+  "ipos": {
+   "X": 481,
+   "Y": -159
+  }
+ },
+ {
+  "item": "Lv.1-10 Sea Breeze Archipelago",
+  "type": "Region",
+  "id": "REGION_PvP_1",
+  "ipos": {
+   "X": -188,
+   "Y": -638
+  }
+ },
+ {
+  "item": "Lv.40-45 No. 2 Wildlife Sanctuary",
+  "type": "Region",
+  "id": "REGION_Preserve2",
+  "ipos": {
+   "X": -676,
+   "Y": -111
+  }
+ },
+ {
+  "item": "Lv.40-45 No. 3 Wildlife Sanctuary",
+  "type": "Region",
+  "id": "REGION_Preserve3",
+  "ipos": {
+   "X": 663,
+   "Y": 634
+  }
+ },
+ {
+  "item": "Lv.40-50 Desiccated Dunes",
+  "type": "Region",
+  "id": "REGION_Desert_1",
+  "ipos": {
+   "X": 471,
+   "Y": 377
+  }
+ },
+ {
+  "item": "Lv.35-50 Astral Mountains",
+  "type": "Region",
+  "id": "REGION_Frost_1",
+  "ipos": {
+   "X": -186,
+   "Y": 396
+  }
+ },
+ {
+  "item": "Farcry Marsh",
+  "type": "Region",
+  "id": "REGION_Skyisland04",
+  "ipos": {
+   "X": -446,
+   "Y": -1368
+  }
+ },
+ {
+  "item": "Enchanted Firmament",
+  "type": "Region",
+  "id": "REGION_Skyisland07",
+  "ipos": {
+   "X": -358,
+   "Y": -1511
+  }
+ },
+ {
+  "item": "Crystalline Archipelago",
+  "type": "Region",
+  "id": "REGION_Skyisland06",
+  "ipos": {
+   "X": -474,
+   "Y": -1506
+  }
+ },
+ {
+  "item": "Deep Bamboo Thicket",
+  "type": "Region",
+  "id": "REGION_Grass_9",
+  "ipos": {
+   "X": -319,
+   "Y": -115
+  }
+ },
+ {
+  "item": "Foot of the Volcano",
+  "type": "Region",
+  "id": "REGION_Volcano_2",
+  "ipos": {
+   "X": -364,
+   "Y": -377
+  }
+ },
+ {
+  "item": "Sakurajima - Mushroom Wetlands",
+  "type": "Region",
+  "id": "REGION_Mushroom",
+  "ipos": {
+   "X": -416,
+   "Y": 163
+  }
+ },
+ {
+  "item": "Lv.50-55 Dancing Sakura Shrine",
+  "type": "Region",
+  "id": "REGION_Sakura",
+  "ipos": {
+   "X": -636,
+   "Y": 253
+  }
+ },
+ {
+  "item": "Sakurajima - Northern Rock Field",
+  "type": "Region",
+  "id": "REGION_RockSand",
+  "ipos": {
+   "X": -571,
+   "Y": 332
+  }
+ },
+ {
+  "item": "Lv.1-10 Isle of Murmurs",
+  "type": "Region",
+  "id": "REGION_PvP_3",
+  "ipos": {
+   "X": -303,
+   "Y": 12
+  }
+ },
+ {
+  "item": "Lv.20-25 No. 1 Wildlife Sanctuary",
+  "type": "Region",
+  "id": "REGION_Preserve1",
+  "ipos": {
+   "X": -344,
+   "Y": 270
+  }
+ }
+]

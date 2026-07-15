@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palworld 1.0 KB</title>
+<style>
+  :root{--bg:#12141a;--panel:#1b1e27;--panel2:#232733;--text:#e8eaf0;--dim:#9aa1b2;--acc:#5eb1ff;--acc2:#ffd166;--ok:#7ee08a;--bad:#ff7a7a;--border:#2c3140}
+  *{box-sizing:border-box}
+  body{margin:0;font:14px/1.45 -apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text)}
+  header{display:flex;align-items:center;gap:16px;padding:10px 18px;background:var(--panel);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:5;flex-wrap:wrap}
+  header h1{font-size:16px;margin:0;color:var(--acc2);white-space:nowrap}
+  nav{display:flex;gap:4px;flex-wrap:wrap}
+  nav button{background:none;border:1px solid transparent;color:var(--dim);padding:6px 10px;border-radius:8px;cursor:pointer;font-size:13px}
+  nav button:hover{color:var(--text)}
+  nav button.active{background:var(--panel2);color:var(--acc);border-color:var(--border)}
+  main{max-width:1100px;margin:0 auto;padding:18px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  input[type=text],select{background:var(--panel2);border:1px solid var(--border);color:var(--text);border-radius:8px;padding:8px 10px;font-size:14px;min-width:220px}
+  input[type=text]:focus,select:focus{outline:1px solid var(--acc)}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{color:var(--dim);text-align:left;font-weight:600;padding:6px 8px;border-bottom:1px solid var(--border)}
+  td{padding:5px 8px;border-bottom:1px solid #232733}
+  tr:hover td{background:#20242f}
+  .el{display:inline-block;padding:1px 7px;border-radius:10px;font-size:11.5px;font-weight:600;margin-right:3px}
+  .el-Fire{background:#5a2b1c;color:#ffab7d}.el-Water{background:#1c3a5a;color:#8fc7ff}.el-Grass{background:#20452a;color:#93e0a2}
+  .el-Electric{background:#4d451a;color:#ffe97d}.el-Ice{background:#1c4550;color:#a5ecff}.el-Ground{background:#4a3520;color:#e6bb8a}
+  .el-Dark{background:#332047;color:#cfa5ff}.el-Dragon{background:#2c2560;color:#a8a1ff}.el-Neutral{background:#3a3d46;color:#cfd3dd}
+  .tag{display:inline-block;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:1px 8px;font-size:12px;color:var(--dim);margin:2px 3px 2px 0}
+  .big{font-size:18px;font-weight:700}
+  .dim{color:var(--dim)} .ok{color:var(--ok)} .warn{color:var(--acc2)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+  h3{margin:4px 0 8px;font-size:14px;color:var(--acc2)}
+  .clicky{cursor:pointer;color:var(--acc)} .clicky:hover{text-decoration:underline}
+  #loading{padding:40px;text-align:center;color:var(--dim)}
+  ul{margin:6px 0;padding-left:20px} li{margin:2px 0}
+  .mono{font-variant-numeric:tabular-nums}
+  .sub{font-size:12px;color:var(--dim)}
+  .indent{margin-left:16px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Palworld 1.0 KB</h1>
+  <nav id="nav"></nav>
+</header>
+<main>
+  <div id="loading">Загружаю данные…</div>
+  <div id="view" style="display:none"></div>
+</main>
+<script>
+"use strict";
+const DATA_FILES = {
+  combat:"pals_combat.json", chart:"type_chart.json", bosses:"bosses.json",
+  breeding:"breeding.json", tiers:"tier_lists.json", items:"items.json",
+  exp:"expeditions.json", skills:"active_skills.json", passives:"passives.json",
+  loc:"pal_locations.json", res:"resource_nodes.json", idx:"index.json",
+  bb:"base_building.json", regions:"regions.json"
+};
+const WORK_COLS = {Kindling:"Разжигание",Watering:"Полив",Planting:"Посадка",Generating_Electricity:"Электричество",
+  Handiwork:"Ручной труд",Gathering:"Сбор",Lumbering:"Лесозаготовка",Mining:"Добыча",Medicine:"Медицина",
+  Cooling:"Охлаждение",Transporting:"Переноска",Farming:"Ферма"};
+const D = {};       // загруженные данные
+const P = {};       // объединённые палы по имени
+let itemByName = {};
+
+async function loadAll(){
+  let csvText;
+  if (window.EMBEDDED_DATA){           // автономная сборка (scripts/build_standalone.py)
+    Object.assign(D, window.EMBEDDED_DATA);
+    csvText = window.EMBEDDED_CSV;
+  } else {
+    csvText = await (await fetch("../data/palworld_pals.csv")).text();
+    const entries = await Promise.all(Object.entries(DATA_FILES).map(async ([k,f]) =>
+      [k, await (await fetch("../data/"+f)).json()]));
+    for (const [k,v] of entries) D[k]=v;
+  }
+  // CSV → работы
+  const lines = csvText.trim().split(/\r?\n/); const head = lines[0].split(",");
+  for (const line of lines.slice(1)){
+    const c = line.split(","); const r = Object.fromEntries(head.map((h,i)=>[h,c[i]]));
+    P[r.Name] = {name:r.Name, number:r.Number, elements:[r.Element_1,r.Element_2].filter(Boolean),
+      work:Object.fromEntries(Object.keys(WORK_COLS).filter(w=>r[w]).map(w=>[w,+r[w]]))};
+  }
+  for (const c of D.combat){
+    const p = P[c.name] || (P[c.name]={name:c.name,elements:c.elements,work:{}});
+    Object.assign(p,{rarity:c.rarity,hp:c.hp,melee:c.melee_attack,shot:c.shot_attack,def:c.defense,
+      ride:c.ride,mount:c.mount_type,mv:c.movement||{},ps:c.partner_skill||{},drops:c.notable_drops||[]});
+  }
+  itemByName = Object.fromEntries(D.items.items.map(i=>[i.name,i]));
+}
+const atk = p => Math.max(p.melee||0, p.shot||0);
+const els = p => (p.elements||[]).map(e=>`<span class="el el-${e}">${e}</span>`).join("");
+const esc = s => String(s??"").replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const palLink = n => `<span class="clicky" onclick="showPal('${n.replace(/'/g,"\\'")}')">${esc(n)}${P[n]?.number?` <span class="dim">(#${P[n].number})</span>`:""}</span>`;
+const itemLink = n => itemByName[n] ? `<span class="clicky" onclick="showItem('${n.replace(/'/g,"\\'")}')">${esc(n)}</span>` : esc(n);
+
+/* ---------------- бридинг (порт scripts/query.py) ---------------- */
+let rankArr=null, specialChildren=null;
+function breedChild(a,b){
+  const br = D.breeding;
+  if(a===b) return {child:a, why:"одинаковые родители → тот же вид"};
+  for(const c of br.special_combos){
+    if((c.parent_a===a&&c.parent_b===b)||(c.parent_a===b&&c.parent_b===a))
+      return {child:c.child, why:"особая комбинация (переопределяет формулу)"};
+  }
+  const R = br.combi_ranks;
+  if(!(a in R)||!(b in R)) return {child:null, why:"нет ранга для одного из родителей"};
+  if(!rankArr){
+    specialChildren = new Set(br.special_combos.map(c=>c.child));
+    rankArr = Object.entries(R).filter(([n])=>!specialChildren.has(n))
+      .map(([n,r])=>({n,r})).sort((x,y)=>x.r-y.r||(x.n<y.n?-1:1));
+  }
+  const target = Math.floor((R[a]+R[b]+1)/2);
+  let best=null;
+  for(const c of rankArr){
+    const d=Math.abs(c.r-target);
+    if(!best||d<best.d||(d===best.d&&c.r<best.r)) best={...c,d};
+  }
+  return {child:best.n, why:`формула: floor((${R[a]}+${R[b]}+1)/2)=${target}, ближайший ранг ${best.r}`};
+}
+
+/* ---------------- вкладки ---------------- */
+const TABS = [
+  ["pal","Палы"],["workers","Рабочие"],["breed","Бридинг"],["counter","Каунтеры"],
+  ["items","Предметы"],["tiers","Тир-листы"],["exp","Экспедиции"],["res","Ресурсы"],
+  ["passives","Пассивки"],["skills","Скиллы"],["planner","Конструктор"]
+];
+let cur="pal";
+function nav(){
+  document.getElementById("nav").innerHTML = TABS.map(([k,t])=>
+    `<button class="${k===cur?'active':''}" onclick="go('${k}')">${t}</button>`).join("");
+}
+function go(tab){ cur=tab; nav(); render[tab](); }
+const V = () => document.getElementById("view");
+const datalist = (id,names)=>`<datalist id="${id}">${names.map(n=>`<option value="${esc(n)}">`).join("")}</datalist>`;
+
+const render = {};
+
+/* --- Палы --- */
+render.pal = () => {
+  V().innerHTML = `<div class="card"><div class="row">
+    <input type="text" id="palq" list="palnames" placeholder="Имя пала… (например Anubis)" autofocus>
+    </div>${datalist("palnames",Object.keys(P).sort())}</div><div id="palout"></div>`;
+  document.getElementById("palq").addEventListener("input",e=>{ if(P[e.target.value]) showPal(e.target.value); });
+};
+function showPal(name){
+  if(cur!=="pal"){ cur="pal"; nav(); render.pal(); document.getElementById("palq").value=name; }
+  const p=P[name]; if(!p) return;
+  const loc=D.loc.pals[name]||{};
+  const learn=(D.skills.learnsets[name]||[]).slice().sort((a,b)=>a.level-b.level);
+  const skillBy=Object.fromEntries(D.skills.skills.map(s=>[s.name,s]));
+  const work=Object.entries(p.work).sort((a,b)=>b[1]-a[1]).map(([w,l])=>`<span class="tag">${WORK_COLS[w]} <b>${l}</b></span>`).join("")||'<span class="dim">не работает</span>';
+  document.getElementById("palout").innerHTML = `
+  <div class="card"><div class="big">#${p.number??"?"} ${esc(name)} ${els(p)} <span class="dim">${esc(p.rarity??"")}</span></div>
+    <div class="row" style="margin:8px 0"><span class="tag mono">HP ${p.hp}</span><span class="tag mono">ATK ${p.melee}/${p.shot}</span>
+    <span class="tag mono">DEF ${p.def}</span>${p.ride?`<span class="tag">🏇 ${p.mount??""} · спринт ${p.mv.sprint??"?"}</span>`:""}</div>
+    <div>Работы: ${work}</div>
+    ${p.ps.name?`<div style="margin-top:8px"><b>${esc(p.ps.name)}</b>: <span class="dim">${esc(p.ps.effect)}</span></div>`:""}
+    ${p.drops.length?`<div style="margin-top:8px">Дропает: ${p.drops.map(itemLink).join(", ")}</div>`:""}
+  </div>
+  <div class="grid">
+    <div class="card"><h3>Где найти</h3>
+      ${loc.regions?.length?`<div>Дикие спавны${loc.day_night&&loc.day_night!=="both"?` <span class="warn">(${loc.day_night==="night"?"ночью":"днём"})</span>`:""}: <span class="dim">${loc.regions.map(esc).join("; ")}</span></div>`:""}
+      ${(loc.alpha_locations||[]).map(a=>`<div>⭐ ${esc(a)}</div>`).join("")}
+      ${loc.egg_types?.length?`<div>🥚 ${loc.egg_types.map(esc).join(", ")}</div>`:""}
+      ${(loc.other_sources||[]).map(o=>`<div class="dim">• ${esc(o)}</div>`).join("")}
+    </div>
+    <div class="card"><h3>Скиллы по уровням</h3>
+      ${learn.length?`<table>${learn.map(e=>{const s=skillBy[e.skill]||{};
+        return `<tr><td class="mono">${e.level}</td><td>${esc(e.skill)}</td><td><span class="el el-${s.element}">${s.element??""}</span></td><td class="mono">${s.power??""}</td><td class="mono dim">${s.cooldown_seconds?s.cooldown_seconds+"с":""}</td></tr>`;}).join("")}</table>`:`<span class="dim">нет данных</span>`}
+    </div>
+    <div class="card"><h3>Бридинг</h3>
+      <div>Ранг: <b class="mono">${D.breeding.combi_ranks[name]??"—"}</b></div>
+      ${D.breeding.special_combos.filter(c=>c.child===name&&c.parent_a!==c.parent_b).map(c=>`<div>⚗️ ${palLink(c.parent_a)} + ${palLink(c.parent_b)}</div>`).join("")||""}
+      <div class="sub" style="margin-top:6px">Калькулятор — во вкладке «Бридинг»</div>
+    </div>
+  </div>`;
+}
+
+/* --- Рабочие --- */
+render.workers = () => {
+  V().innerHTML = `<div class="card"><div class="row">
+    <select id="wtask">${Object.entries(WORK_COLS).map(([k,v])=>`<option value="${k}">${v}</option>`).join("")}</select>
+  </div></div><div id="wout"></div>`;
+  const draw=()=>{
+    const col=document.getElementById("wtask").value;
+    const rows=Object.values(P).filter(p=>p.work[col])
+      .sort((a,b)=>b.work[col]-a.work[col]||Object.values(b.work).reduce((s,x)=>s+x,0)-Object.values(a.work).reduce((s,x)=>s+x,0));
+    document.getElementById("wout").innerHTML=`<div class="card"><table>
+      <tr><th>Ур.</th><th>Пал</th><th>Стихии</th><th>Другие работы</th></tr>
+      ${rows.slice(0,30).map(p=>`<tr><td class="mono big">${p.work[col]}</td><td>${palLink(p.name)}</td><td>${els(p)}</td>
+        <td class="dim">${Object.entries(p.work).filter(([w])=>w!==col).sort((a,b)=>b[1]-a[1]).map(([w,l])=>`${WORK_COLS[w]} ${l}`).join(", ")}</td></tr>`).join("")}
+    </table></div>`;
+  };
+  document.getElementById("wtask").addEventListener("change",draw); draw();
+};
+
+/* --- Бридинг --- */
+render.breed = () => {
+  const names=Object.keys(P).sort();
+  V().innerHTML = `${datalist("palnames2",names)}
+  <div class="card"><h3>Что получится из пары</h3><div class="row">
+    <input type="text" id="ba" list="palnames2" placeholder="Родитель A">
+    <span>+</span><input type="text" id="bb" list="palnames2" placeholder="Родитель B">
+  </div><div id="bres" style="margin-top:10px"></div></div>
+  <div class="card"><h3>Как получить пала X</h3><div class="row">
+    <input type="text" id="bt" list="palnames2" placeholder="Целевой пал">
+    <input type="text" id="bw" list="palnames2" placeholder="(опц.) с участием…">
+  </div><div id="btres" style="margin-top:10px"></div></div>`;
+  const upd=()=>{
+    const a=document.getElementById("ba").value, b=document.getElementById("bb").value;
+    if(P[a]&&P[b]){ const r=breedChild(a,b);
+      document.getElementById("bres").innerHTML = r.child
+        ? `<div class="big">${palLink(a)} + ${palLink(b)} = <span class="ok">${palLink(r.child)}</span></div><div class="sub">${esc(r.why)}</div>`
+        : `<span class="bad">${esc(r.why)}</span>`; }
+  };
+  const updT=()=>{
+    const t=document.getElementById("bt").value, w=document.getElementById("bw").value;
+    if(!P[t]) return;
+    const combos=D.breeding.special_combos.filter(c=>c.child===t&&c.parent_a!==c.parent_b);
+    let html=combos.map(c=>`<div>⚗️ ${palLink(c.parent_a)} + ${palLink(c.parent_b)} <span class="dim">(особая комбинация)</span></div>`).join("");
+    html+=`<div>👥 ${esc(t)} + ${esc(t)} <span class="dim">(одинаковая пара всегда работает)</span></div>`;
+    const spc=new Set(D.breeding.special_combos.map(c=>c.child));
+    if(spc.has(t)&&!combos.length) html+=`<div class="dim">Особый вид: ранговой формулой не получается.</div>`;
+    else if(!spc.has(t)){
+      const R=D.breeding.combi_ranks, names=Object.keys(R);
+      const pairs=[];
+      const As = P[w] ? [w] : names;
+      outer: for(const a of As){ for(const b of names){
+        if(!P[w] && a>b) continue;
+        if(a===t||b===t) continue;
+        if(breedChild(a,b).child===t){ pairs.push([a,b]); if(pairs.length>=400) break outer; }
+      }}
+      if(pairs.length) html+=`<div style="margin-top:6px">Пары по формуле (${pairs.length>=400?"400+":pairs.length}${P[w]?`, с ${esc(w)}`:", примеры"}):</div>
+        <div>${pairs.slice(0,30).map(([a,b])=>`<span class="tag">${palLink(a)} + ${palLink(b)}</span>`).join("")}</div>`;
+    }
+    document.getElementById("btres").innerHTML=html;
+  };
+  for(const id of ["ba","bb"]) document.getElementById(id).addEventListener("input",upd);
+  for(const id of ["bt","bw"]) document.getElementById(id).addEventListener("input",updT);
+};
+
+/* --- Каунтеры --- */
+render.counter = () => {
+  const elems=D.chart.elements;
+  V().innerHTML = `<div class="card"><h3>Против стихии</h3><div class="row" id="elbtns">
+    ${elems.map(e=>`<button class="el el-${e}" style="border:none;cursor:pointer;font-size:13px;padding:5px 12px" onclick="showCounter('${e}')">${e}</button>`).join("")}
+  </div><div id="cout" style="margin-top:10px"></div></div>
+  <div class="card"><h3>Против босса</h3><div class="row">
+    <select id="bosssel"><option value="">— выбери босса —</option>
+    ${D.bosses.tower_bosses.map(b=>`<option value="t${b.order}">${b.leader} & ${b.pal} (башня, ур ${b.boss_pal_level})</option>`).join("")}
+    ${D.bosses.raid_bosses.map((b,i)=>`<option value="r${i}">${b.pal} (рейд)</option>`).join("")}
+  </select></div><div id="bout" style="margin-top:10px"></div></div>`;
+  document.getElementById("bosssel").addEventListener("change",e=>{
+    const v=e.target.value; if(!v) return;
+    const b=v[0]==="t"?D.bosses.tower_bosses.find(x=>x.order==v.slice(1)):D.bosses.raid_bosses[+v.slice(1)];
+    const picks=b.counter_elements.map(el=>{
+      const top=Object.values(P).filter(p=>p.elements.includes(el)&&p.hp).sort((a,c)=>atk(c)-atk(a)).slice(0,5);
+      return `<div>Топ ${el}: ${top.map(p=>palLink(p.name)).join(", ")}</div>`;}).join("");
+    document.getElementById("bout").innerHTML=`
+      <div class="big">${esc(b.leader?b.leader+" & ":"")}${esc(b.pal)} ${b.elements.map(e=>`<span class="el el-${e}">${e}</span>`).join("")||'<span class="dim">без стихии</span>'}</div>
+      <div style="margin:6px 0">Бить: ${b.counter_elements.map(e=>`<span class="el el-${e}">${e}</span>`).join("")||'<span class="dim">нет элементного каунтера</span>'} ${b.preliminary?'<span class="warn">(PRELIMINARY 1.0)</span>':''}</div>
+      ${picks}<div class="dim" style="margin-top:6px">${esc(b.tactics||b.notes||"")}</div>`;
+  });
+};
+function showCounter(el){
+  const node=D.chart.chart[el];
+  const counters=node.weak_to;
+  const picks=counters.map(c=>{
+    const top=Object.values(P).filter(p=>p.elements.includes(c)&&p.hp).sort((a,b)=>atk(b)-atk(a)).slice(0,6);
+    return `<div style="margin-top:4px">Топ ${c}-палов: ${top.map(p=>`${palLink(p.name)} <span class="dim mono">(${atk(p)})</span>`).join(", ")}</div>`;}).join("");
+  document.getElementById("cout").innerHTML=`
+    <div><span class="el el-${el}">${el}</span> получает повышенный урон от: ${counters.map(c=>`<span class="el el-${c}">${c}</span>`).join("")||"—"};
+    сам силён против: ${node.strong_vs.map(c=>`<span class="el el-${c}">${c}</span>`).join("")||"—"}</div>${picks}`;
+}
+
+/* --- Предметы --- */
+render.items = () => {
+  V().innerHTML = `<div class="card"><div class="row">
+    <input type="text" id="itemq" placeholder="Название предмета… (например Cake)">
+  </div><div id="isuggest" style="margin-top:8px"></div></div><div id="iout"></div>`;
+  document.getElementById("itemq").addEventListener("input",e=>{
+    const q=e.target.value.toLowerCase(); if(q.length<2){document.getElementById("isuggest").innerHTML="";return;}
+    const m=D.items.items.filter(i=>i.name.toLowerCase().includes(q)).slice(0,24);
+    const exact=m.find(i=>i.name.toLowerCase()===q);
+    if(exact) showItem(exact.name);
+    document.getElementById("isuggest").innerHTML=m.map(i=>`<span class="tag clicky" onclick="showItem('${i.name.replace(/'/g,"\\'")}')">${esc(i.name)}</span>`).join("");
+  });
+};
+function craftTree(name, qty, depth, out, raw){
+  const it=itemByName[name], r=it?.recipe;
+  if(r && depth<6){
+    out.push({depth,name,qty,station:r.station||"?"});
+    for(const [m,q] of Object.entries(r.materials)) craftTree(m,q*qty,depth+1,out,raw);
+  } else raw[name]=(raw[name]||0)+qty;
+}
+function showItem(name){
+  if(cur!=="items"){ cur="items"; nav(); render.items(); document.getElementById("itemq").value=name; }
+  const it=itemByName[name]; if(!it) return;
+  let html=`<div class="card"><div class="big">${esc(it.name)} <span class="tag">${esc(it.category)}</span>${it.tech_level?`<span class="tag">tech ${it.tech_level}</span>`:""}</div>`;
+  if(it.recipe){
+    const mats=Object.entries(it.recipe.materials).map(([m,q])=>`${itemLink(m)} ×${q}`).join(", ");
+    html+=`<div style="margin-top:6px">Крафт: <b>${esc(it.recipe.station||"станция не указана")}</b> ← ${mats}</div>`;
+    const steps=[],raw={};
+    steps.push({depth:0,name:it.name,qty:1,station:it.recipe.station||"?"});
+    for(const [m,q] of Object.entries(it.recipe.materials)) craftTree(m,q,1,steps,raw);
+    html+=`<h3 style="margin-top:10px">Разложение до сырья</h3>`;
+    html+=steps.map(s=>`<div class="mono" style="margin-left:${s.depth*16}px">${esc(s.name)} ×${s.qty} <span class="dim">@ ${esc(s.station)}</span></div>`).join("");
+    html+=`<div style="margin-top:6px"><b>Итого сырьё:</b> ${Object.entries(raw).sort().map(([m,q])=>`<span class="tag">${itemLink(m)} ×${q}</span>`).join("")}</div>`;
+  } else html+=`<div class="dim" style="margin-top:6px">Не крафтится (или рецепт неизвестен).</div>`;
+  if(it.obtained_from?.length) html+=`<h3 style="margin-top:10px">Где достать</h3><ul>${it.obtained_from.map(s=>`<li>${esc(s)}</li>`).join("")}</ul>`;
+  if(it.notes) html+=`<div class="sub">${esc(it.notes)}</div>`;
+  html+="</div>";
+  document.getElementById("iout").innerHTML=html;
+}
+
+/* --- Тир-листы --- */
+render.tiers = () => {
+  const t=D.tiers;
+  const flat=Object.keys(t).filter(k=>Array.isArray(t[k])&&t[k][0]?.name);
+  const work=Object.keys(t.best_base_workers_by_task||{});
+  const label=k=>({best_mounts_ground:"Маунты: земля",best_mounts_flying:"Маунты: полёт",best_mounts_swim:"Маунты: вода",
+    best_fighters:"Бойцы",best_for_fishing:"Рыбалка"}[k]||k);
+  V().innerHTML = `<div class="card"><div class="row"><select id="tcat">
+    ${flat.map(k=>`<option value="${k}">${label(k)}</option>`).join("")}
+    ${work.map(k=>`<option value="w:${k}">Работа: ${WORK_COLS[Object.keys(WORK_COLS).find(w=>w.toLowerCase()===k)||k]||k}</option>`).join("")}
+  </select></div></div><div id="tout"></div>`;
+  const draw=()=>{
+    const v=document.getElementById("tcat").value;
+    const list=v.startsWith("w:")?t.best_base_workers_by_task[v.slice(2)]:t[v];
+    document.getElementById("tout").innerHTML=`<div class="card"><table>
+      ${list.map((e,i)=>`<tr><td class="mono dim">${i+1}</td><td>${palLink(e.name)}</td><td>${els(P[e.name]||{})}</td><td class="dim">${esc(e.note||"")}</td></tr>`).join("")}</table></div>`;
+  };
+  document.getElementById("tcat").addEventListener("change",draw); draw();
+};
+
+/* --- Экспедиции --- */
+render.exp = () => {
+  const u=D.exp.unlock||{};
+  V().innerHTML = `<div class="card sub">Станция: <b>${esc(u.structure)}</b> (tech ${u.tech_level}) ·
+    ${Object.entries(u.materials||{}).map(([m,q])=>`${esc(m)} ×${q}`).join(", ")} · ${esc(u.additional_requirement||"")}</div>
+  <div class="card"><table><tr><th>Миссия</th><th>Сложн.</th><th>Мин</th><th>Firepower</th><th>Требование</th></tr>
+  ${D.exp.missions.map((m,i)=>{const req=m.element_requirement;
+    return `<tr class="clicky" onclick="expDetail(${i})"><td>${esc(m.name)}</td><td>${esc(m.difficulty)}</td>
+    <td class="mono">${m.duration_minutes}</td><td class="mono">${(m.required_firepower||0).toLocaleString()}</td>
+    <td>${req?`${req.pals_required}× <span class="el el-${req.element}">${req.element}</span>`:"—"}</td></tr>`;}).join("")}
+  </table></div><div id="eout"></div>`;
+};
+function expDetail(i){
+  const m=D.exp.missions[i];
+  document.getElementById("eout").innerHTML=`<div class="card"><h3>${esc(m.name)} — награды</h3>
+    <div class="sub">Открывается: ${esc(m.unlock?.boss||"?")} (${esc(m.unlock?.tower||"")})</div>
+    <table>${(m.rewards||[]).map(r=>`<tr><td>${itemLink(r.item)}</td><td class="mono">×${esc(r.quantity)}</td><td class="mono dim">${r.chance_pct}%</td></tr>`).join("")}</table></div>`;
+}
+
+/* --- Ресурсы --- */
+render.res = () => {
+  V().innerHTML = `<div class="card"><div class="row" id="resbtns">
+    ${D.res.resources.map((r,i)=>`<span class="tag clicky" onclick="resDetail(${i})">${esc(r.name)}</span>`).join("")}
+  </div></div><div id="rout"></div>`;
+};
+function resDetail(i){
+  const r=D.res.resources[i];
+  document.getElementById("rout").innerHTML=`<div class="card"><div class="big">${esc(r.name)}</div>
+    <table>${(r.best_locations||[]).map(l=>`<tr><td>${esc(l.area)}</td><td class="mono">${esc(l.coordinates||"")}</td>
+      <td class="mono">${l.node_count?"~"+l.node_count:""}</td><td class="dim">${esc(l.notes||"")}</td></tr>`).join("")}</table>
+    ${r.base_recommendation?`<div style="margin-top:8px">🏠 ${esc(r.base_recommendation)}</div>`:""}
+    ${(r.other_sources||[]).length?`<div class="dim" style="margin-top:6px">Также: ${r.other_sources.map(esc).join("; ")}</div>`:""}
+  </div>`;
+}
+
+/* --- Пассивки --- */
+render.passives = () => {
+  V().innerHTML = `<div class="card"><div class="row">
+    <input type="text" id="pq" placeholder="Поиск…">
+    <select id="pcat"><option value="">все категории</option>
+      ${[...new Set(D.passives.passives.map(p=>p.category))].map(c=>`<option>${c}</option>`).join("")}</select>
+  </div></div><div id="pout"></div>`;
+  const draw=()=>{
+    const q=document.getElementById("pq").value.toLowerCase(), c=document.getElementById("pcat").value;
+    const list=D.passives.passives.filter(p=>(!q||p.name.toLowerCase().includes(q)||(p.effects||"").toLowerCase().includes(q))&&(!c||p.category===c))
+      .sort((a,b)=>(b.tier??-9)-(a.tier??-9));
+    document.getElementById("pout").innerHTML=`<div class="card"><table><tr><th>Тир</th><th>Пассивка</th><th>Эффект</th><th>Категория</th><th>Источник</th></tr>
+      ${list.map(p=>`<tr><td class="mono ${p.tier>0?"ok":p.tier<0?"bad":""}">${p.tier??""}</td><td><b>${esc(p.name)}</b></td>
+      <td>${esc(p.effects||"")}</td><td class="dim">${esc(p.category)}</td>
+      <td class="dim">${(p.exclusive_source||[]).map(s=>P[s]?palLink(s):esc(s)).join(", ")}</td></tr>`).join("")}</table></div>`;
+  };
+  for(const id of ["pq","pcat"]) document.getElementById(id).addEventListener("input",draw); draw();
+};
+
+/* --- Скиллы --- */
+render.skills = () => {
+  V().innerHTML = `<div class="card"><div class="row">
+    <input type="text" id="sq" placeholder="Поиск скилла…">
+    <select id="sel"><option value="">все стихии</option>${D.chart.elements.map(e=>`<option>${e}</option>`).join("")}</select>
+  </div></div><div id="sout"></div>`;
+  const draw=()=>{
+    const q=document.getElementById("sq").value.toLowerCase(), el=document.getElementById("sel").value;
+    const list=D.skills.skills.filter(s=>(!q||s.name.toLowerCase().includes(q))&&(!el||s.element===el))
+      .sort((a,b)=>(b.power||0)-(a.power||0)).slice(0,60);
+    document.getElementById("sout").innerHTML=`<div class="card"><table><tr><th>Скилл</th><th>Стихия</th><th>Урон</th><th>КД</th><th></th></tr>
+      ${list.map(s=>`<tr><td><b>${esc(s.name)}</b>${s.skill_fruit_exists?' <span class="tag">🍎 fruit</span>':""}</td>
+      <td><span class="el el-${s.element}">${s.element}</span></td><td class="mono">${s.power??""}</td>
+      <td class="mono">${s.cooldown_seconds?s.cooldown_seconds+"с":""}</td>
+      <td class="dim">${(s.exclusive_to||[]).length?"эксклюзив: "+s.exclusive_to.map(n=>P[n]?palLink(n):esc(n)).join(", "):""}</td></tr>`).join("")}</table></div>`;
+  };
+  for(const id of ["sq","sel"]) document.getElementById(id).addEventListener("input",draw); draw();
+};
+
+/* --- Конструктор баз (порт scripts/base_planner.py) --- */
+const QUALITY = {baseline:1.0, passives:2.2, max:2.75};
+
+class BasePlan {
+  constructor(o){ this.o=o; this.structs=Object.fromEntries(D.bb.structures.map(s=>[s.name,s]));
+    this.regions=D.regions.regions||{}; this.buildings={}; this.crew=[]; this.notes=[]; this.assume=[]; }
+  q(){ return QUALITY[this.o.workforce]; }
+  best(cands){ const a=cands.filter(c=>this.structs[c]&&(this.structs[c].tech_level||0)<=this.o.tech); return a[a.length-1]||null; }
+  add(n,c=1){ if(n&&c>0) this.buildings[n]=(this.buildings[n]||0)+c; }
+  hire(sp,c,role){ if(c>0) this.crew.push([sp,Math.ceil(c),role]); }
+  easyGet(n){ const p=D.idx.pals[n]||{}; return (p.regions||[]).some(r=>!r.includes("World Tree")&&!r.includes("Sunreach")); }
+  hint(n){ const p=D.idx.pals[n]||{}; const regs=(p.regions||[]).filter(r=>!r.includes("World Tree"));
+    if(regs.length){ const base=regs[0].replace(/\s*\[Lv\.[^\]]*\]$/,"").trim(); const c=this.regions[regs[0]]||this.regions[base];
+      return `ловится: ${regs[0]}`+(c?` (${c[0]}, ${c[1]})`:""); }
+    if((p.alpha||[]).length) return "альфа: "+p.alpha[0].split(" - ").pop();
+    return (p.get_via||[]).slice(-1)[0]||""; }
+  hireBest(task,minLv,count,role){
+    const ranked=D.idx.inverted.work[task]||[]; if(!ranked.length) return;
+    const top=(ranked.find(([n,lv])=>lv>=minLv)||ranked[0])[0];
+    const easyRow=ranked.find(([n,lv])=>lv>=minLv&&this.easyGet(n))||ranked.find(([n])=>this.easyGet(n));
+    const easy=easyRow?easyRow[0]:top;
+    const lv=Object.fromEntries(ranked);
+    const [prim,alt]=this.o.roster==="easy"?[easy,top]:[top,easy];
+    let note=`${role} (${task} ${lv[prim]})`;
+    if(alt!==prim){ const tag=this.o.roster==="easy"?"топ":"проще"; note+=` | ${tag}: ${alt} (#${(D.idx.pals[alt]||{}).number}, ${lv[alt]})`; }
+    if(!this.easyGet(prim)){ const h=this.hint(prim); if(h) note+=` [${h}]`; }
+    this.hire(prim,count,note); }
+  supportCore(kinds){ const tags=D.idx.inverted.partner_tags;
+    for(const [kind,why] of kinds) for(const n of (tags["base_support:"+kind]||[]).slice(0,1)){
+      const h=this.hint(n); this.hire(n,1,`саппорт: ${why}`+(h?` [${h}]`:"")); } }
+  foodModule(slots){
+    const fa=Object.values(D.bb.pal_food_amount).filter(Boolean);
+    const avg=fa.reduce((a,b)=>a+b,0)/fa.length, demand=slots*avg;
+    const saladOk=this.o.tech>=((this.structs["Tomato Plantation"]||{}).tech_level||99);
+    if(saladOk){ const st=this.best(["Cooking Pot","Electric Kitchen","Large-Scale Stone Oven","Ancient Kitchen"]);
+      const pairs=Math.max(1,Math.ceil(demand/(this.o.plantYield*1.5)));
+      this.add("Tomato Plantation",pairs); this.add("Lettuce Plantation",pairs); this.add(st,1);
+      this.hireBest("Kindling",3,1,"ЕДА: повар салатов");
+      const trio=Math.ceil(pairs*2/(this.o.plantsPerWorker*this.q()));
+      this.hireBest("Planting",3,trio,"ЕДА: посадка"); this.hireBest("Watering",3,trio,"ЕДА: полив"); this.hireBest("Gathering",3,trio,"ЕДА: сбор");
+      this.notes.push(`ЕДА (self): Salad (сытость 84, SAN +11, WS +30) — ${pairs}x Tomato + ${pairs}x Lettuce, повар на ${st}`);
+    } else { const n=Math.max(2,Math.ceil(demand/this.o.plantYield));
+      this.add("Berry Plantation",n); this.add("Campfire",1);
+      this.hireBest("Kindling",2,1,"ЕДА: жарка ягод"); this.hireBest("Planting",2,1,"ЕДА: плантации"); this.hireBest("Watering",2,1,"ЕДА: полив");
+      this.notes.push(`ЕДА (self): Baked Berries (${n}x Berry Plantation; апгрейд до Salad на tech 25)`); }
+    this.assume.push(`Спрос: ${slots} палов x аппетит ${avg.toFixed(1)}; выработка плантации ${this.o.plantYield}/час`); }
+  infra(slots){
+    let beds=["Straw Pal Bed","Fluffy Pal Bed","Large Pal Bed","Pal Pod","Ancient Pal Pod"],
+        sps=["Hot Spring","High Quality Hot Spring","Ancient Hot Spring"];
+    if(!this.o.lux){ beds=beds.slice(0,2); sps=sps.slice(0,2); }
+    this.add(this.best(beds),slots);
+    const sp=this.best(sps), nsp=Math.ceil(slots/6);
+    this.add(sp,nsp); this.assume.push(`${sp} x${nsp}: ~1 на 6 палов — подстрой по факту SAN`);
+    this.add("Feed Box",Math.max(2,Math.floor(slots/20))); this.add("Palbox",1);
+    this.add(this.best(["Medieval Medicine Workbench","Medicine Workbench","Electric Medicine Workbench"]),1);
+    const cl=this.best(["Clinic","Ancient Clinic"]); if(cl) this.add(cl,1);
+    this.hireBest("Medicine",1,1,"медик"); }
+  power(heavy){
+    const gen=this.best(["Human-Powered Generator","Power Generator","Large Power Generator","Ancient Power Generator"]);
+    this.add(gen,heavy?2:1);
+    if(gen!=="Human-Powered Generator") this.hireBest("Generating_Electricity",6,heavy?2:1,"электрик");
+    if(heavy&&this.best(["Accumulator"])) this.add("Accumulator",2); }
+  breedingStaffFor(farms){
+    const o=this.o, cakes=farms*60/D.bb.rates.breeding_egg_interval_minutes;
+    const per={Flour:5*cakes,RedBerries:8*cakes,Milk:7*cakes,Egg:8*cakes,Honey:2*cakes};
+    const rr=o.ranchRate*this.q();
+    const ranch={Mozzarina:Math.ceil(per.Milk/rr),Chikipi:Math.ceil(per.Egg/rr),Beegarde:Math.ceil(per.Honey/rr)};
+    const wheat=Math.ceil(per.Flour*3/o.plantYield), berry=Math.ceil(per.RedBerries/o.plantYield);
+    const trio=3*Math.ceil((wheat+berry)/(o.plantsPerWorker*this.q()));
+    const cooks=Math.max(1,Math.ceil(cakes/(o.cookRate*this.q())));
+    const heads=2*farms+Object.values(ranch).reduce((a,b)=>a+b,0)+trio+cooks+1;
+    return {cakes,per,ranch,wheat,berry,trio,cooks,heads}; }
+  presetBreeding(){
+    const o=this.o, hatch=o.tech>=76&&this.structs["Ancient Hatchery"], farm=hatch?"Ancient Hatchery":"Breeding Farm";
+    const budget=o.slots-13-(o.food==="self"?4:0);
+    let farms=o.farms||1;
+    if(!o.farms) while(farms<40&&this.breedingStaffFor(farms+1).heads<=budget) farms++;
+    const L=this.breedingStaffFor(farms);
+    this.supportCore([["egg_speed","яйца +20~50%"],["incubation","инкубация -20~40%"],["crop_growth","рост культур +50~70%"],
+      ["crop_yield","урожай +18~35%"],["sanity_save","SAN -10~15% утечка"],["suitability:Watering","+1 Watering всем"],["suitability:Planting","+1 Planting всем"]]);
+    this.hire("Woolipop Terra",1,"саппорт: голод -15~25% + Caramel Cotton Candy");
+    this.add(farm,farms); this.hire("(пары родителей)",2*farms,`в ${farm} x${farms}`);
+    for(const [sp,n] of Object.entries(L.ranch)) this.hire(sp,n,`ранч (${({Mozzarina:"Milk",Chikipi:"Egg",Beegarde:"Honey"})[sp]})`);
+    this.add("Ranch",Math.ceil(Object.values(L.ranch).reduce((a,b)=>a+b,0)/4));
+    this.add("Wheat Plantation",L.wheat); this.add("Berry Plantation",L.berry);
+    this.add("Mill",Math.max(1,Math.ceil(L.per.Flour/60))); this.hireBest("Watering",4,1,"мельница");
+    const kit=this.best(["Cooking Pot","Electric Kitchen","Large-Scale Stone Oven","Ancient Kitchen"]);
+    this.add(kit,L.cooks); this.hireBest("Kindling",4,L.cooks,"повар тортов");
+    const tr=L.trio/3;
+    this.hireBest("Planting",3,tr,"посадка"); this.hireBest("Watering",3,tr,"полив"); this.hireBest("Gathering",3,tr,"сбор");
+    this.hire("Eidrolon",2,"транспорт (Transport 6 x скорость 1400)");
+    if(!hatch){ const inc=this.best(["Egg Incubator","Electric Egg Incubator","Large Egg Incubator"]); if(inc) this.add(inc,Math.min(farms*2,12)); }
+    if(o.food==="self") this.foodModule(o.slots); else this.notes.push("Еда привозная — вози Salad/Pizza guild chest'ом");
+    this.infra(o.slots); if(hatch||(kit&&this.structs[kit]?.power)) this.power(hatch);
+    this.notes.push(`${farm} x${farms}: ~${L.cakes.toFixed(0)} яиц/час (${(L.cakes*24).toFixed(0)}/сутки) при полном снабжении тортами`);
+    this.notes.push("В пати при сборе яиц: Broncherry Aqua (альфа-яйца 45~55%) + Grintale (лишнее яйцо 50~75%)");
+    this.assume.push(`Ранч ${o.ranchRate} дропов/час, кухня ${o.cookRate} тортов/час на повара — x качество`); }
+  presetMineCraft(){
+    const o=this.o;
+    for(const m of ["Ore Mine","Stone Pit","Coal Mine","Sulfur Mine","Paldium Mine"]){ const s=this.best([m]); if(s) this.add(s,1); }
+    this.supportCore([["suitability:Mining","+1 Mining всем"],["suitability:Handiwork","+1 Handiwork всем"],
+      ["suitability:Transporting","+1 Transport всем"],["sanity_save","SAN базы"]]);
+    this.hireBest("Mining",6,Math.max(3,Math.round(6/this.q())),"шахтёр");
+    this.add(this.best(["Primitive Furnace","Improved Furnace","Electric Furnace","Gigantic Furnace"]),2);
+    this.hireBest("Kindling",6,2,"печи");
+    for(const fam of [["Production Assembly Line","Production Assembly Line II"],["Weapon Assembly Line","Weapon Assembly Line II"],["Sphere Assembly Line","Sphere Assembly Line II"]]){
+      const s=this.best(fam); if(s) this.add(s,1); }
+    this.hireBest("Handiwork",6,Math.max(4,Math.round(10/this.q())),"сборочные линии");
+    this.hire("Ribbuny Botan",1,"оружейный верстак (+200~400%)");
+    this.hire("Anubis",2,"верстаки — пара с Sekhmet"); this.hire("Sekhmet",1,"буст Anubis +20~40%");
+    this.hire("Eidrolon",3,"транспорт руды");
+    const cool=this.best(["Cooler Box","Refrigerator"]); if(cool){ this.add(cool,1); this.hireBest("Cooling",3,1,"холодильник"); }
+    if(o.food==="self") this.foodModule(o.slots);
+    this.infra(o.slots); this.power(true);
+    this.notes.push("Placeable-шахты: по 1 каждого типа на базу — майнинг+крафт на одной базе эффективнее"); }
+  presetOil(){
+    const o=this.o, ext=this.best(["Crude Oil Extractor"]); if(ext) this.add(ext,4);
+    this.supportCore([["suitability:Transporting","+1 Transport всем"],["sanity_save","SAN базы"]]);
+    this.hire("Eidrolon",2,"транспорт нефти");
+    if(o.food==="self") this.foodModule(o.slots);
+    this.infra(o.slots); this.power(true); this.hireBest("Generating_Electricity",7,2,"электрик (экстракторы прожорливы)");
+    this.notes.push("Ставится на нефтяные точки: Sakurajima NW (-646, 270)"); }
+  presetFood(){
+    const o=this.o;
+    this.supportCore([["crop_growth","Lullu"],["crop_yield","Prunelia"],["suitability:Planting","+1 Planting"],
+      ["suitability:Watering","+1 Watering"],["suitability:Farming","+1 Farming"]]);
+    let tot=0;
+    for(const pl of ["Berry Plantation","Wheat Plantation","Tomato Plantation","Lettuce Plantation","Potato Plantation","Carrot Plantation","Onion Plantation"]){
+      const s=this.best([pl]); if(s){ this.add(s,2); tot+=2; } }
+    const trio=Math.ceil(tot/(o.plantsPerWorker*this.q()));
+    this.hireBest("Planting",3,trio,"посадка"); this.hireBest("Watering",3,trio,"полив"); this.hireBest("Gathering",3,trio,"сбор");
+    this.add(this.best(["Cooking Pot","Electric Kitchen","Large-Scale Stone Oven","Ancient Kitchen"]),2);
+    this.hireBest("Kindling",5,2,"повар"); this.hire("Eidrolon",2,"транспорт");
+    this.infra(o.slots); this.power(false); }
+  presetStarter(){
+    this.o.tech=Math.min(this.o.tech,20);
+    for(const [s,n] of [["Palbox",1],["Wooden Chest",3],["Feed Box",1],["Ranch",1],["Berry Plantation",2],["Wheat Plantation",1],
+      ["Mill",1],["Primitive Furnace",1],["Cooking Pot",1],["Human-Powered Generator",1],["Hot Spring",2],["Straw Pal Bed",15]])
+      if(this.structs[s]) this.add(s,n);
+    this.hire("Chikipi",1,"ранч: яйца"); this.hire("Mozzarina",1,"ранч: молоко");
+    this.hireBest("Kindling",2,1,"печь/готовка"); this.hireBest("Handiwork",2,2,"верстаки");
+    this.hireBest("Planting",2,1,"посадка"); this.hireBest("Watering",2,1,"полив"); this.hireBest("Transporting",2,2,"переноска"); }
+  run(){
+    ({breeding:()=>this.presetBreeding(),"mine-craft":()=>this.presetMineCraft(),oil:()=>this.presetOil(),
+      food:()=>this.presetFood(),starter:()=>this.presetStarter()})[this.o.preset]();
+    return this; }
+  html(){
+    const total=this.crew.reduce((a,[,c])=>a+c,0), o=this.o;
+    const num=s=>(D.idx.pals[s]||{}).number;
+    let h=`<div class="card"><div class="big">${o.preset} — ${total}/${o.slots} слотов` +
+      (total>o.slots?` <span class="bad">перебор на ${total-o.slots}!</span>`:` <span class="ok">свободно ${o.slots-total}</span>`)+`</div></div>`;
+    h+=`<div class="card"><h3>Палы</h3><table>`+this.crew.map(([sp,c,r])=>{
+      const link = D.idx.pals[sp] ? palLink(sp) : esc(sp);
+      return `<tr><td class="mono">${c}x</td><td>${link}</td><td class="dim">${esc(r)}</td></tr>`;}).join("")+`</table></div>`;
+    const bill={};
+    h+=`<div class="card"><h3>Здания</h3><table>`+Object.entries(this.buildings).sort().map(([b,c])=>{
+      const s=this.structs[b]||{}, mats=s.materials||{};
+      for(const [m,q] of Object.entries(mats)) bill[m]=(bill[m]||0)+q*c;
+      return `<tr><td class="mono">${c}x</td><td>${esc(b)}${s.power?" ⚡":""}</td><td class="dim">tech ${s.tech_level??"?"}</td>
+        <td class="dim">${Object.entries(mats).map(([m,q])=>`${esc(m)} x${q*c}`).join(", ")}</td></tr>`;}).join("")+`</table>
+      <h3 style="margin-top:10px">Итого материалов</h3><div>`+
+      Object.entries(bill).sort().map(([m,q])=>`<span class="tag">${itemLink(m)} x${q}</span>`).join("")+`</div></div>`;
+    if(this.notes.length) h+=`<div class="card"><h3>Заметки</h3><ul>${this.notes.map(n=>`<li>${esc(n)}</li>`).join("")}</ul></div>`;
+    if(this.assume.length) h+=`<div class="card"><h3>Допущения (подстрой в полях выше)</h3><ul class="dim">${this.assume.map(n=>`<li>${esc(n)}</li>`).join("")}</ul></div>`;
+    return h; }
+}
+
+render.planner = () => {
+  V().innerHTML = `<div class="card"><div class="row">
+    <select id="pp"><option value="breeding">Бридинг</option><option value="mine-craft">Майнинг+крафт</option>
+      <option value="oil">Нефть</option><option value="food">Еда-хаб</option><option value="starter">Стартовая</option></select>
+    <label>Слоты <input type="number" id="pslots" value="50" min="5" max="100" style="width:70px;min-width:70px"></label>
+    <label>Tech <input type="number" id="ptech" value="60" min="1" max="99" style="width:70px;min-width:70px"></label>
+    <select id="pfood"><option value="self">Еда: на месте</option><option value="shipped">Еда: привозная</option></select>
+    <select id="pwf"><option value="baseline">Дикие палы (x1.0)</option><option value="passives" selected>Бридовые (x2.2)</option><option value="max">4-пассивки (x2.75)</option></select>
+    <select id="proster"><option value="top">Ростер: топ</option><option value="easy">Ростер: легко достать</option></select>
+    <label><input type="checkbox" id="plux"> люкс-кровати</label>
+  </div><div class="row" style="margin-top:8px">
+    <label class="dim">ранч дроп/час <input type="number" id="pranch" value="12" style="width:60px;min-width:60px"></label>
+    <label class="dim">плантация ед/час <input type="number" id="pyield" value="60" style="width:60px;min-width:60px"></label>
+    <label class="dim">тортов/час на повара <input type="number" id="pcook" value="30" style="width:60px;min-width:60px"></label>
+    <label class="dim">ферм (авто если пусто) <input type="number" id="pfarms" style="width:60px;min-width:60px"></label>
+  </div></div><div id="pout"></div>`;
+  const calc=()=>{
+    const o={preset:val("pp"),slots:+val("pslots")||50,tech:+val("ptech")||60,food:val("pfood"),
+      workforce:val("pwf"),roster:val("proster"),lux:document.getElementById("plux").checked,
+      ranchRate:+val("pranch")||12,plantYield:+val("pyield")||60,cookRate:+val("pcook")||30,
+      plantsPerWorker:3,farms:+val("pfarms")||null};
+    try { document.getElementById("pout").innerHTML=new BasePlan(o).run().html(); }
+    catch(e){ document.getElementById("pout").innerHTML=`<div class="card bad">Ошибка: ${esc(e.message)}</div>`; }
+  };
+  const val=id=>document.getElementById(id).value;
+  for(const id of ["pp","pslots","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms"])
+    document.getElementById(id).addEventListener("input",calc);
+  calc();
+};
+
+loadAll().then(()=>{
+  document.getElementById("loading").style.display="none";
+  document.getElementById("view").style.display="";
+  nav(); render[cur]();
+}).catch(e=>{
+  document.getElementById("loading").innerHTML=`<span class="bad">Ошибка загрузки данных: ${esc(e.message)}</span><br>
+  Открой через локальный сервер: <code>python3 -m http.server 8842</code> из корня проекта → <code>http://localhost:8842/web/</code>`;
+});
+</script>
+</body>
+</html>

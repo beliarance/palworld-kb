@@ -1,0 +1,29 @@
+{
+  "game_version": "1.0",
+  "updated": "2026-07-14",
+  "verified": true,
+  "elements": ["Neutral", "Fire", "Water", "Electric", "Grass", "Ice", "Ground", "Dark", "Dragon"],
+  "chart": {
+    "Neutral": { "strong_vs": [], "weak_to": ["Dark"] },
+    "Fire": { "strong_vs": ["Grass", "Ice"], "weak_to": ["Water"] },
+    "Water": { "strong_vs": ["Fire"], "weak_to": ["Electric"] },
+    "Electric": { "strong_vs": ["Water"], "weak_to": ["Ground"] },
+    "Grass": { "strong_vs": ["Ground"], "weak_to": ["Fire"] },
+    "Ice": { "strong_vs": ["Dragon"], "weak_to": ["Fire"] },
+    "Ground": { "strong_vs": ["Electric"], "weak_to": ["Grass"] },
+    "Dark": { "strong_vs": ["Neutral"], "weak_to": ["Dragon"] },
+    "Dragon": { "strong_vs": ["Dark"], "weak_to": ["Ice"] }
+  },
+  "notes": [
+    "Each element deals bonus damage to the elements in strong_vs and takes bonus damage from those in weak_to.",
+    "Attacking with a super-effective element also means the attacker resists that target's attacks.",
+    "Main loop: Fire > Grass > Ground > Electric > Water > Fire. Side chain: Fire > Ice > Dragon > Dark > Neutral.",
+    "Fire double-dips: it counters both Grass and Ice. Neutral has no offensive advantage and its only weakness is Dark.",
+    "A truly typeless boss (World Tree final boss Astralym) has no exploitable weakness."
+  ],
+  "sources": [
+    { "url": "docs/boss_tower_counters.md", "what": "initial chart compiled from game8.co, nexttier.pro, thepalprofessor.com, palworld.fandom.com", "fetched": "2026-07-14" },
+    { "url": "https://www.dexerto.com/palworld/palworld-type-chart-strengths-weaknesses-2483655/", "what": "verification: full 9-element strong_vs/weak_to table matches this chart exactly", "fetched": "2026-07-14" },
+    { "url": "https://xgamingserver.com/blog/palworld-type-chart/", "what": "second verification (article dated 2026-06-08): all rows match; confirms 1.5x super-effective multiplier and Fire's double strength vs Grass and Ice", "fetched": "2026-07-14" }
+  ]
+}

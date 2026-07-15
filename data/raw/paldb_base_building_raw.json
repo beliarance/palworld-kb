@@ -1,0 +1,3026 @@
+{
+ "structures": {
+  "Palbox": {
+   "tech_id": "PALBOX",
+   "tech_level": 2,
+   "ancient_tech": false,
+   "description": "Facility for storing captured Pals. Pals inside gradually recover Health. Area around this facility becomes a base.",
+   "materials": {
+    "Paldium Fragment": 1,
+    "Wood": 8,
+    "Stone": 3
+   },
+   "stats": {
+    "Code": "PalBoxV2",
+    "TypeA": "Pal",
+    "TypeB": "Other",
+    "Hp": "20000"
+   },
+   "slug": "Palbox"
+  },
+  "Ranch": {
+   "tech_id": "MonsterFarm",
+   "tech_level": 5,
+   "ancient_tech": false,
+   "work": [
+    {
+     "type": "Farming",
+     "value": 1
+    }
+   ],
+   "description": "Farm for raising sheep and fowl-like Pals. Assign a Pal with the appropriate Partner Skill to a farm to produce items.",
+   "materials": {
+    "Wood": 30,
+    "Stone": 20,
+    "Fiber": 30
+   },
+   "stats": {
+    "Worker Max": "4",
+    "Code": "MonsterFarm",
+    "TypeA": "Pal",
+    "TypeB": "Pal_Breed",
+    "Hp": "5000",
+    "SortId": "13"
+   },
+   "slug": "Ranch"
+  },
+  "Monitoring Stand": {
+   "tech_id": "BaseCampWorkHard",
+   "tech_level": 7,
+   "ancient_tech": false,
+   "description": "Command your Pals to work on various things inside a base. You can allow or prohibit individual kinds of work.",
+   "materials": {
+    "Wood": 30,
+    "Stone": 10
+   },
+   "stats": {
+    "Code": "BaseCampWorkHard",
+    "TypeA": "Pal",
+    "TypeB": "Infra_Environment",
+    "Hp": "4000",
+    "SortId": "4"
+   },
+   "slug": "Monitoring_Stand"
+  },
+  "High Quality Monitoring Stand": {
+   "tech_id": "BaseCampWorkHard02",
+   "tech_level": 28,
+   "ancient_tech": false,
+   "description": "A refined monitoring station with improved materials and structure. In addition to being able to issue work orders, the system also lowers the SAN cost for Pals working at the base. Working conditions are slightly improved, making Pals less likely to become dissatisfied.",
+   "materials": {
+    "Ingot": 100,
+    "Cement": 30
+   },
+   "stats": {
+    "Code": "BaseCampWorkHard02",
+    "TypeA": "Pal",
+    "TypeB": "Infra_Environment",
+    "Hp": "8000",
+    "SortId": "5"
+   },
+   "slug": "High_Quality_Monitoring_Stand"
+  },
+  "Ancient Monitoring Stand": {
+   "tech_id": "BaseCampWorkHard03",
+   "tech_level": 71,
+   "ancient_tech": false,
+   "description": "A monitoring station based on ancient technology, embedded with Red Paldium. It issues commands across the entire base through a holographic interface, reducing SAN depletion in Pals. A special wavelength surrounds the base, keeping Pals calm even in harsh working environments.",
+   "materials": {
+    "Soralite Ingot": 100,
+    "Ancient Civilization Core": 5
+   },
+   "stats": {
+    "Code": "BaseCampWorkHard03",
+    "TypeA": "Pal",
+    "TypeB": "Infra_Environment",
+    "Hp": "100000",
+    "SortId": "6"
+   },
+   "slug": "Ancient_Monitoring_Stand"
+  },
+  "Egg Incubator": {
+   "tech_id": "Special_HatchingPalEgg",
+   "tech_level": 10,
+   "ancient_tech": true,
+   "description": "Used for incubating a Pal Egg. If a Pal Egg is left in it, it will automatically hatch after some time has passed.",
+   "materials": {
+    "Paldium Fragment": 10,
+    "Cloth": 5,
+    "Stone": 30,
+    "Ancient Civilization Parts": 2
+   },
+   "stats": {
+    "Worker Max": "1",
+    "Code": "HatchingPalEgg",
+    "TypeA": "Pal",
+    "TypeB": "Pal_Breed",
+    "Hp": "2000",
+    "SortId": "14"
+   },
+   "slug": "Egg_Incubator"
+  },
+  "Electric Egg Incubator": {
+   "tech_id": "Special_ElectricHatchingPalEgg",
+   "tech_level": 36,
+   "ancient_tech": true,
+   "energy_per_sec": 200,
+   "description": "Device for incubating Pal eggs. Requires electricity, but automatically keeps the inside of the incubator at appropriate temperatures.",
+   "materials": {
+    "Refined Ingot": 50,
+    "Circuit Board": 15,
+    "Ancient Civilization Parts": 5,
+    "Ancient Civilization Core": 2
+   },
+   "stats": {
+    "Worker Max": "1",
+    "Code": "ElectricHatchingPalEgg",
+    "TypeA": "Pal",
+    "TypeB": "Pal_Breed",
+    "Hp": "2000",
+    "SortId": "15"
+   },
+   "slug": "Electric_Egg_Incubator"
+  },
+  "Large Incubator": {
+   "tech_id": "MultiHatchingPalEgg",
+   "tech_level": 48,
+   "ancient_tech": false,
+   "description": "Device for incubating Pal eggs. It automatically maintains a suitable temperature and can hatch multiple eggs at once.",
+   "materials": {
+    "Pal Metal Ingot": 50,
+    "High Quality Cloth": 20,
+    "Ancient Civilization Parts": 20,
+    "Ancient Civilization Core": 4
+   },
+   "stats": {
+    "Worker Max": "1",
+    "Code": "MultiHatchingPalEgg",
+    "TypeA": "Pal",
+    "TypeB": "Pal_Breed",
+    "Hp": "2000",
+    "SortId": "16"
+   },
+   "slug": "Large_Incubator"
+  },
+  "Large-Scale Electric Egg Incubator": {
+   "tech_id": "MultiElectricHatchingPalEgg",
+   "tech_level": 58,
+   "ancient_tech": false,
+   "energy_per_sec": 800,
+   "description": "Device for incubating Pal eggs. While power supply is required, it allows multiple eggs to be incubated simultaneously at the optimal temperature.",
+   "materials": {
+    "Hexolite": 100,
+    "Circuit Board": 50,
+    "Ancient Civilization Parts": 30,
+    "Ancient Civilization Core": 20
+   },
+   "stats": {
+    "Worker Max": "1",
+    "Code": "MultiElectricHatchingPalEgg",
+    "TypeA": "Pal",
+    "TypeB": "Pal_Breed",
+    "Hp": "2000",
+    "SortId": "17"
+   },
+   "slug": "Large-Scale_Electric_Egg_Incubator"
+  },
+  "Breeding Farm": {
+   "tech_id": "BreedFarm",
+   "tech_level": 19,
+   "ancient_tech": false,
+   "real_time": "5 Mins",
+   "work": [
+    {
+     "type": "All",
+     "value": 1
+    }
+   ],
+   "description": "Assign one male and one female Pal to produce eggs. Placing Cake in the facility is required for production.",
+   "materials": {
+    "Wooden Board": 10,
+    "Stone": 20,
+    "Fiber": 50
+   },
+   "stats": {
+    "Worker Max": "2",
+    "Code": "BreedFarm",
+    "TypeA": "Pal",
+    "TypeB": "Pal_Breed",
+    "Hp": "5000",
+    "SortId": "12"
+   },
+   "slug": "Breeding_Farm"
+  },
+  "Ancient Hatchery": {
+   "tech_id": "MultiElectricHatchingPalEggWithBreed",
+   "tech_level": 76,
+   "ancient_tech": false,
+   "energy_per_sec": 1200,
+   "work": [
+    {
+     "type": "All",
+     "value": 1
+    }
+   ],
+   "description": "An advanced breeding facility of ancient civilization technology, enclosed in electronic glass. It fully automates everything from egg production to incubation at high speed, and increases the inheritance rate of rare skills. Pals are managed through holograms, it requires minimal pasture space.",
+   "materials": {
+    "Paloxite Ingot": 100,
+    "AI Core": 50,
+    "Ancient Civilization Parts": 30,
+    "Ancient Civilization Core": 20
+   },
+   "stats": {
+    "Worker Max": "2",
+    "Code": "MultiElectricHatchingPalEggWithBreed",
+    "TypeA": "Pal",
+    "TypeB": "Pal_Breed",
+    "Hp": "100000",
+    "SortId": "18"
+   },
+   "slug": "Ancient_Hatchery"
+  },
+  "Pal Labor Research Lab": {
+   "tech_id": "Lab",
+   "tech_level": 19,
+   "ancient_tech": false,
+   "description": "A facility for conducting research on the various tasks of Pals. By assigning tasks to Pals in this facility, research progresses, granting various benefits.",
+   "materials": {
+    "Ingot": 30,
+    "Paldium Fragment": 30
+   },
+   "stats": {
+    "Code": "Lab",
+    "TypeA": "Pal",
+    "TypeB": "Other",
+    "Hp": "4000",
+    "SortId": "7"
+   },
+   "slug": "Pal_Labor_Research_Lab"
+  },
+  "Pal Expedition Station": {
+   "tech_id": "Expedition",
+   "tech_level": 22,
+   "ancient_tech": false,
+   "description": "A facility that allows Pals to be sent on expeditions to places like dungeons. The dispatched Pals engage in battles and gather items, bringing back resources to the base.",
+   "materials": {
+    "Wooden Board": 10,
+    "Stone": 100,
+    "Paldium Fragment": 20,
+    "Cement": 20
+   },
+   "stats": {
+    "Code": "Expedition",
+    "TypeA": "Pal",
+    "TypeB": "Other",
+    "Hp": "4000",
+    "SortId": "8"
+   },
+   "slug": "Pal_Expedition_Station"
+  },
+  "Pal Essence Condenser": {
+   "tech_id": "Special_PalRankUp",
+   "tech_level": 14,
+   "ancient_tech": true,
+   "description": "A chamber for increasing a Pal's rank. Pals can surpass their physical limitations if given a concentrated extract taken from a Pal of the same type.",
+   "materials": {
+    "Paldium Fragment": 20,
+    "Ingot": 20,
+    "Ancient Civilization Parts": 5
+   },
+   "stats": {
+    "Code": "CharacterRankUp",
+    "TypeA": "Pal",
+    "TypeB": "Pal_Modify",
+    "Hp": "8000",
+    "SortId": "10"
+   },
+   "slug": "Pal_Essence_Condenser"
+  },
+  "Statue of Power": {
+   "tech_id": "BuildableGoddessStatue",
+   "tech_level": 9,
+   "ancient_tech": false,
+   "description": "Stone statue spoken of in legends on Palpagos Island. Offer up Lifmunk Effigy to receive strange powers.",
+   "materials": {
+    "Stone": 20,
+    "Paldium Fragment": 10
+   },
+   "stats": {
+    "Code": "BuildableGoddessStatue",
+    "TypeA": "Pal",
+    "TypeB": "Other",
+    "Hp": "2000",
+    "SortId": "9"
+   },
+   "slug": "Statue_of_Power"
+  },
+  "Campfire": {
+   "tech_id": "Product_Cooking_Grade_01",
+   "tech_level": 2,
+   "ancient_tech": false,
+   "work": [
+    {
+     "type": "Kindling",
+     "value": 1
+    }
+   ],
+   "description": "Needed for cooking food. It can only be used to grill simple ingredients. Requires a Fire Pal to light a flame.",
+   "materials": {
+    "Wood": 10
+   },
+   "stats": {
+    "Worker Max": "1",
+    "Code": "CampFire",
+    "TypeA": "Food",
+    "TypeB": "Prod_Craft",
+    "Hp": "1000"
+   },
+   "slug": "Campfire"
+  },
+  "Feed Box": {
+   "tech_id": "PalFoodBox",
+   "tech_level": 4,
+   "ancient_tech": false,
+   "description": "A box for storing Pal food. Pals can feed from it when hungry. Make sure to keep it well-stocked to keep your Pals happy.",
+   "materials": {
+    "Wood": 20
+   },
+   "stats": {
+    "Code": "PalFoodBox",
+    "TypeA": "Food",
+    "TypeB": "Food_Basic",
+    "Hp": "2000",
+    "SortId": "5"
+   },
+   "slug": "Feed_Box"
+  },
+  "Cold Food Box": {
+   "tech_id": "CoolerPalFoodBox",
+   "tech_level": 51,
+   "ancient_tech": false,
+   "work": [
+    {
+     "type": "Cooling",
+     "value": 1
+    }
+   ],
+   "description": "A feeding box that can be kept cold. Assign an Ice Pal to it and the food inside will be less likely to spoil.",
+   "materials": {
+    "Pal Metal Ingot": 20,
+    "Plasteel": 20,
+    "Cryogenic Coolant": 15
+   },
+   "stats": {
+    "Worker Max": "1",
+    "Code": "CoolerPalFoodBox",
+    "TypeA": "Food",
+    "TypeB": "Food_Basic",
+    "Hp": "2000",
+    "SortId": "6"
+   },
+   "slug": "Cold_Food_Box"
+  },
+  "Berry Plantation": {
+   "tech_id": "Product_Farm_Berries",
+   "tech_level": 5,
+   "ancient_tech": false,
+   "description": "A farm that can grow Red Berries . Harvest time is quick, but eating them doesn't provide much sustenance. Requires a few Pals to plant seeds, water, and harvest the crops.",
+   "materials": {
+    "Berry Seeds": 3,
+    "Wood": 10,
+    "Stone": 10
+   },
+   "stats": {
+    "Code": "FarmBlockV2_Berries",
+    "TypeA": "Food",
+    "TypeB": "Food_Basic",
+    "Hp": "2000",
+    "SortId": "7"
+   },
+   "slug": "Berry_Plantation"
+  },
+  "Wheat Plantation": {
+   "tech_id": "Product_Farm_wheat",
+   "tech_level": 15,
+   "ancient_tech": false,
+   "description": "A farm that can grow Wheat . It requires an average amount of time to harvest. Requires a few Pals to plant seeds, water, and harvest crops.",
+   "materials": {
+    "Wheat Seeds": 3,
+    "Wood": 15,
+    "Stone": 15
+   },
+   "stats": {
+    "Code": "FarmBlockV2_wheet",
+    "TypeA": "Food",
+    "TypeB": "Food_Basic",
+    "Hp": "2000",
+    "SortId": "8"
+   },
+   "slug": "Wheat_Plantation"
+  },
+  "Tomato Plantation": {
+   "tech_id": "Product_Farm_tomato",
+   "tech_level": 21,
+   "ancient_tech": false,
+   "description": "A farm that can grow Tomato . They take time to harvest, but increase the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops.",
+   "materials": {
+    "Tomato Seeds": 3,
+    "Wood": 70,
+    "Stone": 50,
+    "Aquatic Pal Fluids": 5
+   },
+   "stats": {
+    "Code": "FarmBlockV2_tomato",
+    "TypeA": "Food",
+    "TypeB": "Food_Basic",
+    "Hp": "2000",
+    "SortId": "9"
+   },
+   "slug": "Tomato_Plantation"
+  },
+  "Lettuce Plantation": {
+   "tech_id": "Product_Farm_Lettuce",
+   "tech_level": 25,
+   "ancient_tech": false,
+   "description": "A farm that can grow Lettuce . It takes time to harvest, but increases the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops.",
+   "materials": {
+    "Lettuce Seeds": 3,
+    "Wood": 100,
+    "Stone": 70,
+    "Aquatic Pal Fluids": 10
+   },
+   "stats": {
+    "Code": "FarmBlockV2_Lettuce",
+    "TypeA": "Food",
+    "TypeB": "Food_Basic",
+    "Hp": "2000",
+    "SortId": "10"
+   },
+   "slug": "Lettuce_Plantation"
+  },
+  "Potato Plantation": {
+   "tech_id": "Product_Farm_Potato",
+   "tech_level": 29,
+   "ancient_tech": false,
+   "description": "A farm where you can grow Potato . It takes time to harvest, but increases the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops.",
+   "materials": {
+    "Potato Seeds": 3,
+    "Wood": 30,
+    "Stone": 20,
+    "Aquatic Pal Fluids": 3
+   },
+   "stats": {
+    "Code": "FarmBlockV2_Potato",
+    "TypeA": "Food",
+    "TypeB": "Food_Basic",
+    "Hp": "2000",
+    "SortId": "11"
+   },
+   "slug": "Potato_Plantation"
+  },
+  "Carrot Plantation": {
+   "tech_id": "Product_Farm_Carrot",
+   "tech_level": 32,
+   "ancient_tech": false,
+   "description": "A farm where you can grow Carrot . It takes time to harvest, but increases the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops.",
+   "materials": {
+    "Carrot Seeds": 3,
+    "Wood": 30,
+    "Stone": 20,
+    "Aquatic Pal Fluids": 1
+   },
+   "stats": {
+    "Code": "FarmBlockV2_Carrot",
+    "TypeA": "Food",
+    "TypeB": "Food_Basic",
+    "Hp": "2000",
+    "SortId": "12"
+   },
+   "slug": "Carrot_Plantation"
+  },
+  "Onion Plantation": {
+   "tech_id": "Product_Farm_Onion",
+   "tech_level": 36,
+   "ancient_tech": false,
+   "description": "A farm where you can grow Onion . It takes time to harvest, but increases the variety of meals you can prepare. Requires a few Pals to plant seeds, water, and harvest the crops.",
+   "materials": {
+    "Onion Seeds": 3,
+    "Wood": 30,
+    "Stone": 20,
+    "Aquatic Pal Fluids": 2
+   },
+   "stats": {
+    "Code": "FarmBlockV2_Onion",
+    "TypeA": "Food",
+    "TypeB": "Food_Basic",
+    "Hp": "2000",
+    "SortId": "13"
+   },
+   "slug": "Onion_Plantation"
+  },
+  "Skillfruit Orchard": {
+   "tech_id": "Farm_SkillFruits",
+   "tech_level": 71,
+   "ancient_tech": false,
+   "description": "A farm where Skillfruits can be cultivated. By planting the original fruit in the ground, multiple fruits of the same type can be harvested.",
+   "materials": {
+    "Mythical Wood": 200,
+    "Paldium Fragment": 500,
+    "Soralite": 150
+   },
+   "stats": {
+    "Code": "Farm_SkillFruits",
+    "TypeA": "Food",
+    "TypeB": "Other",
+    "Hp": "2000",
+    "SortId": "14"
+   },
+   "slug": "Skillfruit_Orchard"
+  },
+  "Ancient Farm": {
+   "tech_id": "AncientFarmBlock",
+   "tech_level": 78,
+   "ancient_tech": false,
+   "description": "A special cultivation device based on ancient technology that harnesses the power of the World Tree to grow all kinds of plants on Palpagos Island. Smaller than a berry plantation and suitable for indoor placement, it still follows the same cultivation process as standard plots. It requires Pals with high-level Planting, Watering, and Harvesting suitability.",
+   "materials": {
+    "Paloxite Ingot": 50,
+    "World Tree Holy Water": 50,
+    "Mythical Wood": 100,
+    "Ancient Civilization Core": 10
+   },
+   "stats": {
+    "Code": "AncientFarmBlock",
+    "TypeA": "Food",
+    "TypeB": "Food_Agriculture",
+    "Hp": "100000",
+    "SortId": "15"
+   },
+   "slug": "Ancient_Farm"
+  },
+  "Cooking Pot": {
+   "tech_id": "Product_Cooking_Grade_02",
+   "tech_level": 17,
+   "ancient_tech": false,
+   "work": [
+    {
+     "type": "Kindling",
+     "value": 1
+    }
+   ],
+   "description": "Needed for cooking food. Use of a cooking pot allows for a wider variety of meal preparation. Requires a Fire Pal to light a flame.",
+   "materials": {
+    "Wooden Board": 5,
+    "Ingot": 15,
+    "Flame Organ": 3
+   },
+   "stats": {
+    "Code": "CookingStove",
+    "TypeA": "Food",
+    "TypeB": "Prod_Craft",
+    "Hp": "2000",
+    "SortId": "1"
+   },
+   "slug": "Cooking_Pot"
+  },
+  "Electric Kitchen": {
+   "tech_id": "Product_Cooking_Grade_03",
+   "tech_level": 41,
+   "ancient_tech": false,
+   "energy_per_sec": 50,
+   "work": [
+    {
+     "type": "Kindling",
+     "value": 1
+    }
+   ],
+   "description": "Needed for cooking food. It requires electricity to run, but allows a large amount of meals to be prepared rapidly. Requires a Fire Pal to light a flame.",
+   "materials": {
+    "Refined Ingot": 30,
+    "Circuit Board": 5,
+    "Charcoal": 20,
+    "Flame Organ": 5
+   },
+   "stats": {
+    "Code": "ElectricKitchen",
+    "TypeA": "Food",
+    "TypeB": "Prod_Craft",
+    "Hp": "5000",
+    "SortId": "2"
+   },
+   "slug": "Electric_Kitchen"
+  },
+  "Large-Scale Stone Oven": {
+   "tech_id": "HugeKitchen",
+   "tech_level": 49,
+   "ancient_tech": false,
+   "work": [
+    {
+     "type": "Kindling",
+     "value": 1
+    }
+   ],
+   "description": "Needed for cooking food. By becoming larger, multiple Pals can cooperate to cook together. Requires a Fire Pal to light a flame.",
+   "materials": {
+    "Cement": 200,
+    "Charcoal": 200,
+    "High Quality Wooden Board": 25,
+    "Cryogenic Coolant": 13
+   },
+   "stats": {
+    "Code": "HugeKitchen",
+    "TypeA": "Food",
+    "TypeB": "Prod_Craft",
+    "Hp": "15000",
+    "SortId": "3"
+   },
+   "slug": "Large-Scale_Stone_Oven"
+  },
+  "Ancient Kitchen": {
+   "tech_id": "AncientCookingStove",
+   "tech_level": 70,
+   "ancient_tech": false,
+   "description": "A special kitchen based on ancient technology that can create everything from existing dishes to entirely new recipes. It retains heat through fire and completes cooking with manual preparation, allowing it to prepare any kind of cuisine. It requires Pals with high-level Kindling and Handiwork suitability.",
+   "materials": {
+    "Soralite Ingot": 80,
+    "Thermal Core": 30,
+    "Cryogenic Coolant": 50,
+    "Ancient Civilization Core": 10
+   },
+   "stats": {
+    "Code": "AncientCookingStove",
+    "TypeA": "Food",
+    "TypeB": "Prod_Craft",
+    "Hp": "100000",
+    "SortId": "4"
+   },
+   "slug": "Ancient_Kitchen"
+  },
+  "Mill": {
+   "tech_id": "FlourMill",
+   "tech_level": 15,
+   "ancient_tech": false,
+   "work": [
+    {
+     "type": "Watering",
+     "value": 1
+    }
+   ],
+   "description": "Facility for milling Wheat to produce Flour . Requires Pal with the Watering trait to spin the water turbine.",
+   "materials": {
+    "Wooden Board": 10,
+    "Stone": 40,
+    "Ingot": 10
+   },
+   "stats": {
+    "Code": "FlourMill",
+    "TypeA": "Product",
+    "TypeB": "Prod_Craft",
+    "Hp": "4000",
+    "SortId": "37"
+   },
+   "slug": "Mill"
+  },
+  "Medieval Medicine Workbench": {
+   "tech_id": "Product_Medicine_Grade_01",
+   "tech_level": 12,
+   "ancient_tech": false,
+   "work": [
+    {
+     "type": "Medicine Production",
+     "value": 1
+    }
+   ],
+   "description": "A facility for making Pal medicine. It can only produce simple medicines. Leave its operation to a Pal that can make medicine.",
+   "materials": {
+    "Wood": 30,
+    "Nail": 5,
+    "Paldium Fragment": 10
+   },
+   "stats": {
+    "Code": "MedicineFacility_01",
+    "TypeA": "Product",
+    "TypeB": "Prod_Medicine",
+    "Hp": "2000",
+    "SortId": "40"
+   },
+   "slug": "Medieval_Medicine_Workbench"
+  },
+  "Electric Medicine Workbench": {
+   "tech_id": "Product_Medicine_Grade_02",
+   "tech_level": 43,
+   "ancient_tech": false,
+   "energy_per_sec": 50,
+   "work": [
+    {
+     "type": "Medicine Production",
+     "value": 1
+    }
+   ],
+   "description": "A facility for making Pal medicine. It requires electricity, but can produce high quality medicine. Leave its operation to a Pal that can make medicine.",
+   "materials": {
+    "Refined Ingot": 40,
+    "Circuit Board": 10,
+    "Carbon Fiber": 10
+   },
+   "stats": {
+    "Code": "MedicineFacility_02",
+    "TypeA": "Product",
+    "TypeB": "Prod_Medicine",
+    "Hp": "10000",
+    "SortId": "41"
+   },
+   "slug": "Electric_Medicine_Workbench"
+  },
+  "Advanced Medicine Workbench": {
+   "tech_id": "MedicineFacility_03",
+   "tech_level": 61,
+   "ancient_tech": false,
+   "energy_per_sec": 1000,
+   "work": [
+    {
+     "type": "Medicine Production",
+     "value": 1
+    }
+   ],
+   "description": "A facility for making medicine to cure Pals' illnesses. With advanced technology, it can also create unknown medicines. Assign the task to a Pal capable of pharmacy work.",
+   "materials": {
+    "Hexolite": 50,
+    "Plasteel": 50,
+    "Circuit Board": 30
+   },
+   "stats": {
+    "Worker Max": "1",
+    "Code": "MedicineFacility_03",
+    "TypeA": "Product",
+    "TypeB": "Prod_Medicine",
+    "Hp": "15000",
+    "SortId": "42"
+   },
+   "slug": "Advanced_Medicine_Workbench"
+  },
+  "Cooler Box": {
+   "tech_id": "CoolerBox",
+   "tech_level": 13,
+   "ancient_tech": false,
+   "work": [
+    {
+     "type": "Cooling",
+     "value": 1
+    }
+   ],
+   "description": "Small food vault. Assign an Ice Pal to help prevent food stored inside from spoiling.",
+   "materials": {
+    "Ingot": 10,
+    "Stone": 10,
+    "Ice Organ": 2
+   },
+   "stats": {
+    "Worker Max": "1",
+    "Code": "CoolerBox",
+    "TypeA": "Storage",
+    "TypeB": "Infra_Environment",
+    "Hp": "2000",
+    "SortId": "3"
+   },
+   "slug": "Cooler_Box"
+  },
+  "Refrigerator": {
+   "tech_id": "Refrigerator",
+   "tech_level": 38,
+   "ancient_tech": false,
+   "energy_per_sec": 50,
+   "work": [
+    {
+     "type": "Cooling",
+     "value": 1
+    }
+   ],
+   "description": "Large food vault. Assign an Ice Pal to help prevent food stored inside from spoiling.",
+   "materials": {
+    "Refined Ingot": 50,
+    "Polymer": 20,
+    "Cryogenic Coolant": 10,
+    "Circuit Board": 5
+   },
+   "stats": {
+    "Worker Max": "1",
+    "Code": "Refrigerator",
+    "TypeA": "Storage",
+    "TypeB": "Infra_Environment",
+    "Hp": "5000",
+    "SortId": "4"
+   },
+   "slug": "Refrigerator"
+  },
+  "Straw Pal Bed": {
+   "tech_id": "Infra_PalBed_Grade_01",
+   "tech_level": 3,
+   "ancient_tech": false,
+   "description": "A straw bed for Pals. Pals can rest on it when injured, or to sleep at night. It isn't soft, but it's better than nothing.",
+   "materials": {
+    "Wood": 10,
+    "Fiber": 5
+   },
+   "stats": {
+    "Code": "MedicalPalBed_02",
+    "TypeA": "Infrastructure",
+    "TypeB": "Other",
+    "Hp": "2000",
+    "SortId": "2"
+   },
+   "slug": "Straw_Pal_Bed"
+  },
+  "Fluffy Pal Bed": {
+   "tech_id": "Infra_PalBed_Grade_02",
+   "tech_level": 24,
+   "ancient_tech": false,
+   "description": "A fluffy bed that Pals can get a good rest on. Pals can rest on it when injured, or to sleep at night. Pals love sleeping on fluffy beds like this.",
+   "materials": {
+    "Cloth": 5,
+    "Wooden Board": 3,
+    "Nail": 5,
+    "Fiber": 10
+   },
+   "stats": {
+    "Code": "MedicalPalBed_03",
+    "TypeA": "Infrastructure",
+    "TypeB": "Other",
+    "Hp": "5000",
+    "SortId": "3"
+   },
+   "slug": "Fluffy_Pal_Bed"
+  },
+  "Large Pal Bed": {
+   "tech_id": "MedicalPalBed_04",
+   "tech_level": 36,
+   "ancient_tech": false,
+   "description": "A fluffy bed that Pals can get a good rest on. Pals can rest on it when injured, or to sleep at night. Even large Pals can sleep soundly on a bed like this.",
+   "materials": {
+    "High Quality Cloth": 5,
+    "Hardwood": 5,
+    "Nail": 20,
+    "Fiber": 20
+   },
+   "stats": {
+    "Code": "MedicalPalBed_04",
+    "TypeA": "Infrastructure",
+    "TypeB": "Other",
+    "Hp": "5000",
+    "SortId": "4"
+   },
+   "slug": "Large_Pal_Bed"
+  },
+  "Ancient Pal Bed": {
+   "tech_id": "Ancient_MedicalPalBed",
+   "tech_level": 73,
+   "ancient_tech": false,
+   "description": "A ulitmate Pal Bed made from ancient recovery pod with soft matress. It offers one of the highest SAN recovery rates of all Pal beds, quickly relieving fatigue. It is the same size as a Large Pal Bed, allowing large Pals to rest comfortably.",
+   "materials": {
+    "Soralite Ingot": 10,
+    "World Tree Holy Water": 2,
+    "Mythical Wood": 3
+   },
+   "stats": {
+    "Code": "Ancient_MedicalPalBed",
+    "TypeA": "Infrastructure",
+    "TypeB": "Other",
+    "Hp": "8000",
+    "SortId": "6"
+   },
+   "slug": "Ancient_Pal_Bed"
+  },
+  "Pal Pod": {
+   "tech_id": "MedicalPalBed_05",
+   "tech_level": 56,
+   "ancient_tech": false,
+   "description": "A healing pod for Pals. Used when Pals are injured or to rest at night. Thanks to technological advancements, the healing amount has increased.",
+   "materials": {
+    "Pal Metal Ingot": 10,
+    "Cryogenic Coolant": 6,
+    "Computer": 3
+   },
+   "stats": {
+    "Code": "MedicalPalBed_05",
+    "TypeA": "Infrastructure",
+    "TypeB": "Other",
+    "Hp": "5000",
+    "SortId": "5"
+   },
+   "slug": "Pal_Pod"
+  },
+  "Hot Spring": {
+   "tech_id": "Spa",
+   "tech_level": 9,
+   "ancient_tech": false,
+   "description": "Facility where Pals on base can rest. Restores SAN after a long day of hard work.",
+   "materials": {
+    "Wood": 20,
+    "Stone": 15,
+    "Paldium Fragment": 7,
+    "Aquatic Pal Fluids": 3
+   },
+   "stats": {
+    "Code": "Spa",
+    "TypeA": "Infrastructure",
+    "TypeB": "Other",
+    "Hp": "3000",
+    "SortId": "17"
+   },
+   "slug": "Hot_Spring"
+  },
+  "High Quality Hot Spring": {
+   "tech_id": "Spa2",
+   "tech_level": 31,
+   "ancient_tech": false,
+   "description": "Facility where Pals on base can rest. Now comfier and restores more SAN.",
+   "materials": {
+    "Stone": 50,
+    "Wood": 50,
+    "Cryogenic Coolant": 3,
+    "Cement": 10
+   },
+   "stats": {
+    "Code": "Spa2",
+    "TypeA": "Infrastructure",
+    "TypeB": "Other",
+    "Hp": "5000",
+    "SortId": "18"
+   },
+   "slug": "High_Quality_Hot_Spring"
+  },
+  "Ancient Hot Spring": {
+   "tech_id": "Ancient_Spa",
+   "tech_level": 76,
+   "ancient_tech": false,
+   "description": "A hot spring built with ancient technology, filled with special water infused with Paldium. It offers the highest SAN recovery of all hot springs and also restores Health. It is the same size as a standard hot spring, and can fully heal injured Pals.",
+   "materials": {
+    "Paloxite Ingot": 100,
+    "World Tree Holy Water": 10,
+    "Thermal Core": 20,
+    "Cryogenic Coolant": 20
+   },
+   "stats": {
+    "Code": "Ancient_Spa",
+    "TypeA": "Infrastructure",
+    "TypeB": "Other",
+    "Hp": "100000",
+    "SortId": "20"
+   },
+   "slug": "Ancient_Hot_Spring"
+  },
+  "Medicine Rack": {
+   "tech_id": "PalMedicineBox",
+   "tech_level": 24,
+   "ancient_tech": false,
+   "description": "A shelf for storing medicine. Sick Pals will come here to take their medicine. Be sure to keep the medicine stocked.",
+   "materials": {
+    "Ingot": 20,
+    "Wooden Board": 3,
+    "Cloth": 5
+   },
+   "stats": {
+    "Code": "PalMedicineBox",
+    "TypeA": "Infrastructure",
+    "TypeB": "Food_Basic",
+    "Hp": "2000",
+    "SortId": "23"
+   },
+   "slug": "Medicine_Rack"
+  },
+  "Clinic": {
+   "tech_id": "Clinic",
+   "tech_level": 24,
+   "ancient_tech": false,
+   "work": [
+    {
+     "type": "Medicine Production",
+     "value": 1
+    }
+   ],
+   "description": "A basic medical facility for managing the health of Pals working at the base. Assigning a Pal with Medicine Production suitability helps reduce SAN depletion and prevent illness and injury. While sanitation has its limits, it plays a crucial role in early base development.",
+   "materials": {
+    "Wooden Board": 10,
+    "Cloth": 20,
+    "Nail": 15
+   },
+   "stats": {
+    "Worker Max": "1",
+    "Code": "Clinic",
+    "TypeA": "Infrastructure",
+    "TypeB": "Infra_Medical",
+    "Hp": "4000",
+    "SortId": "21"
+   },
+   "slug": "Clinic"
+  },
+  "Ancient Clinic": {
+   "tech_id": "Ancient_Clinic",
+   "tech_level": 73,
+   "ancient_tech": false,
+   "work": [
+    {
+     "type": "Medicine Production",
+     "value": 1
+    }
+   ],
+   "description": "A top-tier medical facility that reproduces advanced ancient medical technology. It offers significantly greater protective capability than a standard clinic. By assigning a Pal with Medicine Production suitability, even bases with harsh working conditions can maintain the highest level of hygiene.",
+   "materials": {
+    "Soralite Ingot": 50,
+    "Computer": 15,
+    "World Tree Holy Water": 45,
+    "Ancient Civilization Core": 10
+   },
+   "stats": {
+    "Worker Max": "1",
+    "Code": "Ancient_Clinic",
+    "TypeA": "Infrastructure",
+    "TypeB": "Infra_Medical",
+    "Hp": "100000",
+    "SortId": "22"
+   },
+   "slug": "Ancient_Clinic"
+  },
+  "Human-Powered Generator": {
+   "tech_id": "ManualElectricGenerator",
+   "tech_level": 26,
+   "ancient_tech": false,
+   "work": [
+    {
+     "type": "All",
+     "value": 1
+    }
+   ],
+   "description": "A facility that converts rotational motion into electrical energy. The efficiency is low, and the Pals working here will experience a decrease in SAN value, but they will gain experience points.",
+   "materials": {
+    "Wooden Board": 5,
+    "Electric Organ": 5
+   },
+   "stats": {
+    "Worker Max": "1",
+    "Code": "ManualElectricGenerator",
+    "TypeA": "Infrastructure",
+    "TypeB": "Infra_GeneratePower",
+    "Hp": "10000",
+    "SortId": "7"
+   },
+   "slug": "Human-Powered_Generator"
+  },
+  "Power Generator": {
+   "tech_id": "Infra_ElectricGenerator_Grade_01",
+   "tech_level": 26,
+   "ancient_tech": false,
+   "work": [
+    {
+     "type": "Generating Electricity",
+     "value": 1
+    }
+   ],
+   "description": "A power generator fueled by Electric Pals. Electric equipment won't run without this.",
+   "materials": {
+    "Ingot": 50,
+    "Electric Organ": 20
+   },
+   "stats": {
+    "Worker Max": "1",
+    "Code": "ElectricGenerator",
+    "TypeA": "Infrastructure",
+    "TypeB": "Infra_GeneratePower",
+    "Hp": "10000",
+    "SortId": "8"
+   },
+   "slug": "Power_Generator"
+  },
+  "Large Power Generator": {
+   "tech_id": "ElectricGenerator_Large",
+   "tech_level": 50,
+   "ancient_tech": false,
+   "work": [
+    {
+     "type": "Generating Electricity",
+     "value": 1
+    }
+   ],
+   "description": "A power generator fueled by Electric Pals. Larger and with improved power generation efficiency.",
+   "materials": {
+    "Pal Metal Ingot": 200,
+    "Electric Organ": 200
+   },
+   "stats": {
+    "Worker Max": "2",
+    "Code": "ElectricGenerator_Large",
+    "TypeA": "Infrastructure",
+    "TypeB": "Infra_GeneratePower",
+    "Hp": "100000",
+    "SortId": "9"
+   },
+   "slug": "Large_Power_Generator"
+  },
+  "Ancient Power Generator": {
+   "tech_id": "AncientElectricGenerator",
+   "tech_level": 75,
+   "ancient_tech": false,
+   "work": [
+    {
+     "type": "Generating Electricity",
+     "value": 6
+    }
+   ],
+   "description": "A highly efficient power generator restored from lost ancient technology. It produces massive amounts of electricity, but is prone to overheating while in operation. It requires Pals with high-level Generating Electricity and any level of Watering suitability.",
+   "materials": {
+    "Paloxite Ingot": 100,
+    "Electric Organ": 200,
+    "Ancient Civilization Core": 10
+   },
+   "stats": {
+    "Worker Max": "2",
+    "Code": "AncientElectricGenerator",
+    "TypeA": "Infrastructure",
+    "TypeB": "Infra_GeneratePower",
+    "Hp": "100000",
+    "SortId": "10"
+   },
+   "slug": "Ancient_Power_Generator"
+  },
+  "Accumulator": {
+   "tech_id": "EnergyStorage_Electric",
+   "tech_level": 37,
+   "ancient_tech": false,
+   "description": "A facility for storing excess electricity generated by the Power Generator .",
+   "materials": {
+    "Ingot": 50,
+    "Electric Organ": 20,
+    "Cryogenic Coolant": 5,
+    "Corrosive Solvent": 5
+   },
+   "stats": {
+    "Code": "EnergyStorage_Electric",
+    "TypeA": "Infrastructure",
+    "TypeB": "Infra_GeneratePower",
+    "Hp": "10000",
+    "SortId": "11"
+   },
+   "slug": "Accumulator"
+  },
+  "Heater": {
+   "tech_id": "Heater",
+   "tech_level": 17,
+   "ancient_tech": false,
+   "work": [
+    {
+     "type": "Kindling",
+     "value": 1
+    }
+   ],
+   "description": "A device that blows warm air, raising the temperature of a base. It doesn't provide much warmth, but helps one to endure somewhat cold environments. Requires a Fire Pal to light a flame.",
+   "materials": {
+    "Ingot": 20,
+    "Charcoal": 10,
+    "Flame Organ": 5
+   },
+   "stats": {
+    "Worker Max": "1",
+    "Code": "Heater",
+    "TypeA": "Infrastructure",
+    "TypeB": "Infra_Environment",
+    "Hp": "2000",
+    "SortId": "12"
+   },
+   "slug": "Heater"
+  },
+  "Cooler": {
+   "tech_id": "Cooler",
+   "tech_level": 18,
+   "ancient_tech": false,
+   "work": [
+    {
+     "type": "Cooling",
+     "value": 1
+    }
+   ],
+   "description": "A device that blows cool air, lowering the temperature of a base. It doesn't provide much relief from the heat, but helps one to endure somewhat hot environments. Requires an Ice Pal for cooling.",
+   "materials": {
+    "Ingot": 20,
+    "Stone": 20,
+    "Ice Organ": 5
+   },
+   "stats": {
+    "Worker Max": "1",
+    "Code": "Cooler",
+    "TypeA": "Infrastructure",
+    "TypeB": "Infra_Environment",
+    "Hp": "5000",
+    "SortId": "13"
+   },
+   "slug": "Cooler"
+  },
+  "Electric Heater": {
+   "tech_id": "ElectricHeater",
+   "tech_level": 41,
+   "ancient_tech": false,
+   "energy_per_sec": 100,
+   "work": [
+    {
+     "type": "Kindling",
+     "value": 1
+    }
+   ],
+   "description": "A device that blows warm air, raising the temperature of a base. Using electricity, it can really heat things up. Requires a Fire Pal to light a flame.",
+   "materials": {
+    "Refined Ingot": 30,
+    "Circuit Board": 10,
+    "Cryogenic Coolant": 5,
+    "Flame Organ": 10
+   },
+   "stats": {
+    "Code": "ElectricHeater",
+    "TypeA": "Infrastructure",
+    "TypeB": "Infra_Environment",
+    "Hp": "2000",
+    "SortId": "14"
+   },
+   "slug": "Electric_Heater"
+  },
+  "Electric Cooler": {
+   "tech_id": "ElectricCooler",
+   "tech_level": 42,
+   "ancient_tech": false,
+   "energy_per_sec": 100,
+   "work": [
+    {
+     "type": "Cooling",
+     "value": 1
+    }
+   ],
+   "description": "A device that blows cool air, lowering the temperature of a base. Using electricity, it can really lower the temperature. Requires an Ice Pal for cooling.",
+   "materials": {
+    "Refined Ingot": 30,
+    "Circuit Board": 10,
+    "Cryogenic Coolant": 10
+   },
+   "stats": {
+    "Code": "ElectricCooler",
+    "TypeA": "Infrastructure",
+    "TypeB": "Infra_Environment",
+    "Hp": "5000",
+    "SortId": "15"
+   },
+   "slug": "Electric_Cooler"
+  },
+  "Electric Pylon": {
+   "tech_id": "TransmissionTower",
+   "tech_level": 48,
+   "ancient_tech": false,
+   "description": "Place in base to improve electricity generating speed. Placing more than one has no additional effect.",
+   "materials": {
+    "Ingot": 20,
+    "Bio Battery": 2,
+    "Circuit Board": 5
+   },
+   "stats": {
+    "Code": "TransmissionTower",
+    "TypeA": "Other",
+    "TypeB": "Infra_Environment",
+    "Hp": "5000",
+    "SortId": "7"
+   },
+   "slug": "Electric_Pylon"
+  }
+ },
+ "foods": {
+  "Red Berries": {
+   "nutrition": 15,
+   "sanity": 0.0,
+   "corruption": "600 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "A versatile ingredient that is delicious raw or cooked. They can be found anywhere on the island.",
+   "slug": "Red_Berries"
+  },
+  "Baked Berries": {
+   "nutrition": 21,
+   "sanity": 1.0,
+   "corruption": "901 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Cooking enhances their nutritional value, and surprisingly, they are quite filling.",
+   "slug": "Baked_Berries"
+  },
+  "Wheat": {
+   "nutrition": 6,
+   "sanity": 0.0,
+   "corruption": "2400 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "An ingredient that forms the base of various dishes. Wheat is a common crop in many parts of the world.",
+   "slug": "Wheat"
+  },
+  "Flour": {
+   "nutrition": 3,
+   "sanity": 0.0,
+   "corruption": "2400 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Flour made from grinding Wheat . It can be used as an ingredient in making Bread .",
+   "slug": "Flour"
+  },
+  "Bread": {
+   "nutrition": 27,
+   "sanity": 4.0,
+   "corruption": "1200 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Bread made from baked Flour . A tasty staple food.",
+   "slug": "Bread"
+  },
+  "Jam-Filled Bun": {
+   "nutrition": 51,
+   "sanity": 6.0,
+   "corruption": "3600 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Bread with jam spread on it. The sweetness of the berries complements it perfectly.",
+   "slug": "Jam-Filled_Bun"
+  },
+  "Tomato": {
+   "nutrition": 15,
+   "sanity": 0.0,
+   "corruption": "600 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "A fresh ingredient that brightens any dish. Filled with lycopene, they’re also very healthy.",
+   "slug": "Tomato"
+  },
+  "Lettuce": {
+   "nutrition": 15,
+   "sanity": 0.0,
+   "corruption": "600 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "A leafy green. When it comes to salad, this is a must. It has an exquisitely crunchy texture and refreshing taste.",
+   "slug": "Lettuce"
+  },
+  "Potato": {
+   "nutrition": 11,
+   "sanity": 0.0,
+   "corruption": "2701 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "A hardy and filling crop that grows in any terrain. Not suitable for raw consumption.",
+   "slug": "Potato"
+  },
+  "Carrot": {
+   "nutrition": 10,
+   "sanity": 0.0,
+   "corruption": "2701 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "A vibrant, nutrient-rich root vegetable. Not suitable for raw consumption.",
+   "slug": "Carrot"
+  },
+  "Onion": {
+   "nutrition": 9,
+   "sanity": 0.0,
+   "corruption": "2701 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "A cherished and easy-to-grow vegetable with a rich history. Not suitable for eating raw.",
+   "slug": "Onion"
+  },
+  "Mushroom": {
+   "nutrition": 13,
+   "sanity": 0.0,
+   "corruption": "901 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "A mushroom that can be eaten raw. They can be found anywhere on the island.",
+   "slug": "Mushroom"
+  },
+  "Baked Mushroom": {
+   "nutrition": 18,
+   "sanity": 1.0,
+   "corruption": "1800 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Cooking this mushroom enhances its nutritional value. Curiously, it's also quite filling.",
+   "slug": "Baked_Mushroom"
+  },
+  "Marinated Mushrooms": {
+   "nutrition": 60,
+   "sanity": 7.0,
+   "corruption": "1200 Seconds",
+   "work_speed": null,
+   "recovery_time": "600",
+   "description": "A dish made by marinating Mushroom s in a marinade. Eating it improves Defense by +10% for a period of time.",
+   "slug": "Marinated_Mushrooms"
+  },
+  "Mushroom Soup": {
+   "nutrition": 52,
+   "sanity": 7.0,
+   "corruption": "1200 Seconds",
+   "work_speed": null,
+   "recovery_time": "600",
+   "description": "Cream soup made of Mushroom s. Eating it allows you to stay fuller for slightly longer for a period of time.",
+   "slug": "Mushroom_Soup"
+  },
+  "Mushroom Quiche": {
+   "nutrition": 184,
+   "sanity": 23.0,
+   "corruption": "600 Seconds",
+   "work_speed": null,
+   "recovery_time": "600",
+   "description": "A dish made by baking a pastry crust filled with eggs, vegetables, mushrooms, and cream. It’s delicious even when cooled. Eating it will help you stay fuller for a while and make it harder for your SAN value to decrease for a period of time.",
+   "slug": "Mushroom_Quiche"
+  },
+  "Egg": {
+   "nutrition": 16,
+   "sanity": 0.0,
+   "corruption": "600 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Delicious when fried, but can also be used to cook various meals. Chikipi produce them.",
+   "slug": "Egg"
+  },
+  "Fried Egg": {
+   "nutrition": 23,
+   "sanity": 1.0,
+   "corruption": "1200 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "An Egg now fried and even more delicious. Great for keeping hunger away.",
+   "slug": "Fried_Egg"
+  },
+  "Omelet": {
+   "nutrition": 67,
+   "sanity": 7.0,
+   "corruption": "1200 Seconds",
+   "work_speed": null,
+   "recovery_time": "600",
+   "description": "A dish made by frying an Egg and topping it with ketchup. Eating it improves Attack by +10% for a period of time.",
+   "slug": "Omelet"
+  },
+  "Milk": {
+   "nutrition": 12,
+   "sanity": 0.0,
+   "corruption": "600 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Drink it as is, or use it in various meals. Can be milked from Mozzarina .",
+   "slug": "Milk"
+  },
+  "Hot Milk": {
+   "nutrition": 16,
+   "sanity": 1.0,
+   "corruption": "600 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Even more delicious when warmed up. Great for keeping hunger away.",
+   "slug": "Hot_Milk"
+  },
+  "Pancake": {
+   "nutrition": 42,
+   "sanity": 5.0,
+   "corruption": "1200 Seconds",
+   "work_speed": null,
+   "recovery_time": "600",
+   "description": "A dish made by mixing Flour and Milk together then baking. Eating it progressively decreases the rate at which one's sanity decreases for a period of time.",
+   "slug": "Pancake"
+  },
+  "Honey": {
+   "nutrition": 10,
+   "sanity": 3.0,
+   "corruption": null,
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Honey harvested from Beegarde . It's sweet and tasty.",
+   "slug": "Honey"
+  },
+  "Salad": {
+   "nutrition": 84,
+   "sanity": 11.0,
+   "corruption": "1200 Seconds",
+   "work_speed": "30",
+   "recovery_time": "600",
+   "description": "A Salad made by mixing Lettuce and Tomato . Eating it slightly improves work speed for a period of time.",
+   "slug": "Salad"
+  },
+  "Pizza": {
+   "nutrition": 184,
+   "sanity": 23.0,
+   "corruption": "1200 Seconds",
+   "work_speed": "30",
+   "recovery_time": "600",
+   "description": "A dish made by piling Red Berries , Tomato and cheese on Bread . Eating it slightly improves work speed and allows you to stay fuller for slightly longer for a period of time.",
+   "slug": "Pizza"
+  },
+  "Carbonara": {
+   "nutrition": 129,
+   "sanity": 16.0,
+   "corruption": "1200 Seconds",
+   "work_speed": null,
+   "recovery_time": "600",
+   "description": "A dish mixing pasta with Egg and Milk . Eating it makes it improves Defense by +20% for a period of time.",
+   "slug": "Carbonara"
+  },
+  "Cake": {
+   "nutrition": 656,
+   "sanity": 82.0,
+   "corruption": "1200 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "A dish eaten during celebrations. Put it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg.",
+   "slug": "Cake"
+  },
+  "Mushroom Cake": {
+   "nutrition": 676,
+   "sanity": 84.0,
+   "corruption": "1200 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Place it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg. The talents of the resulting Pals will grow slightly more easily.",
+   "slug": "Mushroom_Cake"
+  },
+  "Vegetable Cake": {
+   "nutrition": 696,
+   "sanity": 87.0,
+   "corruption": "1200 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Place it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg. Lay eggs twice at once.",
+   "slug": "Vegetable_Cake"
+  },
+  "Extravagant Vegetable Cake": {
+   "nutrition": 717,
+   "sanity": 90.0,
+   "corruption": "1200 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Place it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg. Mutations are more likely to occur, and talents will grow more easily.",
+   "slug": "Extravagant_Vegetable_Cake"
+  },
+  "Special Cake": {
+   "nutrition": 738,
+   "sanity": 92.0,
+   "corruption": "1200 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Place it in the chest at a Breeding Farm to make Pals lay a particularly healthy egg. More likely inherit multiple passive skills from their parents.",
+   "slug": "Special_Cake"
+  },
+  "Raw Meat": {
+   "nutrition": 18,
+   "sanity": 0.0,
+   "corruption": "600 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Pal meat. It’s so fresh that even a human could safely eat it raw.",
+   "slug": "Raw_Meat"
+  },
+  "Grilled Meat": {
+   "nutrition": 45,
+   "sanity": 3.0,
+   "corruption": "600 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Grilled meat. A full stomach leads to smiling faces.",
+   "slug": "Grilled_Meat"
+  },
+  "Stir-Fried Vegetables": {
+   "nutrition": 54,
+   "sanity": 7.0,
+   "corruption": "600 Seconds",
+   "work_speed": "10",
+   "recovery_time": "600",
+   "description": "A dish made by stir-frying Carrot and Onion . A simple and delicious way to enjoy vegetables. Eating it will slightly increase your work speed and improve your Defense by 10% for a period of time.",
+   "slug": "Stir-Fried_Vegetables"
+  },
+  "French Fries": {
+   "nutrition": 35,
+   "sanity": 10.0,
+   "corruption": "600 Seconds",
+   "work_speed": null,
+   "recovery_time": "600",
+   "description": "A dish made by deep-frying Potato . Once you start eating, you can't stop. Eating it will make it harder for your SAN value to decrease for a period of time.",
+   "slug": "French_Fries"
+  },
+  "Spring Rolls": {
+   "nutrition": 115,
+   "sanity": 14.0,
+   "corruption": "600 Seconds",
+   "work_speed": null,
+   "recovery_time": "600",
+   "description": "A dish made by wrapping vegetables and mushrooms in a thin skin and deep-frying them. The crispy texture is delightful. Eating it will make it harder for your SAN value to decrease and increase your Attack by 10% for a period of time.",
+   "slug": "Spring_Rolls"
+  },
+  "Gratin": {
+   "nutrition": 113,
+   "sanity": 14.0,
+   "corruption": "600 Seconds",
+   "work_speed": null,
+   "recovery_time": "600",
+   "description": "A dish made by coating potatoes with sauce and baking them to perfection. Best enjoyed hot and fresh. Eating it will provide lasting fullness and increase your Defense by 10% for a period of time.",
+   "slug": "Gratin"
+  },
+  "Minestrone": {
+   "nutrition": 146,
+   "sanity": 18.0,
+   "corruption": "600 Seconds",
+   "work_speed": "40",
+   "recovery_time": "600",
+   "description": "A soup simmered with a variety of vegetables. Drinking it warms you to the core. Eating it will increase your work speed for a period of time.",
+   "slug": "Minestrone"
+  },
+  "Seafood Salad": {
+   "nutrition": 95,
+   "sanity": 1.0,
+   "corruption": "1200 Seconds",
+   "work_speed": null,
+   "recovery_time": "1800",
+   "description": "A healthy salad made with Gloopie Tentacle and Lettuce . Eating it will slightly increase EXP gain for a period of time.",
+   "slug": "Seafood_Salad"
+  },
+  "Seafood Pasta": {
+   "nutrition": 193,
+   "sanity": 15.0,
+   "corruption": "1800 Seconds",
+   "work_speed": null,
+   "recovery_time": "600",
+   "description": "Fresh pasta is tossed with fragrant seafood in this exceptional dish, using Gloopie tentacles to elevate it even further. When eaten, it nullifies damage from explosions for a certain period of time.",
+   "slug": "Seafood_Pasta"
+  },
+  "Potage": {
+   "nutrition": 90,
+   "sanity": 2.0,
+   "corruption": "3600 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Potage",
+   "slug": "Potage"
+  },
+  "Corn": {
+   "nutrition": 40,
+   "sanity": 0.0,
+   "corruption": "1800 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "en Text",
+   "slug": "Corn"
+  },
+  "Corn Soup": {
+   "nutrition": 100,
+   "sanity": 0.0,
+   "corruption": "3600 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Corn Soup",
+   "slug": "Corn_Soup"
+  },
+  "Pumpkin": {
+   "nutrition": 50,
+   "sanity": 0.0,
+   "corruption": "1800 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "en Text",
+   "slug": "Pumpkin"
+  },
+  "Grape": {
+   "nutrition": 40,
+   "sanity": 0.0,
+   "corruption": "1800 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Grape",
+   "slug": "Grape"
+  },
+  "Stew": {
+   "nutrition": 100,
+   "sanity": 0.0,
+   "corruption": "3600 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Stew",
+   "slug": "Stew"
+  },
+  "Curry": {
+   "nutrition": 265,
+   "sanity": 12.0,
+   "corruption": "3600 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Curry",
+   "slug": "Curry"
+  },
+  "Hamburger": {
+   "nutrition": 316,
+   "sanity": 22.0,
+   "corruption": "3600 Seconds",
+   "work_speed": null,
+   "recovery_time": "600",
+   "description": "A dish where a hamburger, Lettuce the Tomato are contained in the Bread . When eaten, it boosts one's stomach fullness and Attack by +10% for a while.",
+   "slug": "Hamburger"
+  },
+  "Cheeseburger": {
+   "nutrition": 338,
+   "sanity": 22.0,
+   "corruption": "3600 Seconds",
+   "work_speed": null,
+   "recovery_time": "600",
+   "description": "A meal made with a Hamburger with cheese squeezed between it. Upon consumption, it increases the satiety level for a certain period as well as Defense +10%.",
+   "slug": "Cheeseburger"
+  },
+  "Sandwich": {
+   "nutrition": 100,
+   "sanity": 0.0,
+   "corruption": "3600 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Sandwich",
+   "slug": "Sandwich"
+  },
+  "BLT": {
+   "nutrition": 316,
+   "sanity": 22.0,
+   "corruption": "3600 Seconds",
+   "work_speed": null,
+   "recovery_time": "600",
+   "description": "A dish where bacon, Lettuce , Tomato are sandwiched in Bread . Consumption increases Attack by +15% for a while.",
+   "slug": "BLT"
+  },
+  "Hot Dog": {
+   "nutrition": 102,
+   "sanity": 7.0,
+   "corruption": "3600 Seconds",
+   "work_speed": null,
+   "recovery_time": "600",
+   "description": "A culinary dinner sandwiching a sausage in an Bread . Consumption leads to an improved sense of fullness for a specific period.",
+   "slug": "Hot_Dog"
+  },
+  "Mushroom Stew": {
+   "nutrition": 212,
+   "sanity": 11.0,
+   "corruption": "3600 Seconds",
+   "work_speed": "10",
+   "recovery_time": "600",
+   "description": "A stew made with Mushroom . Consumption elevates work speed and offers Attack +10% for a particular duration.",
+   "slug": "Mushroom_Stew"
+  },
+  "Grilled Fish": {
+   "nutrition": 75,
+   "sanity": 0.0,
+   "corruption": "3600 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Grilled Fish",
+   "slug": "Grilled_Fish"
+  },
+  "Seafood Soup": {
+   "nutrition": 100,
+   "sanity": 0.0,
+   "corruption": "3600 Seconds",
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "Seafood Soup",
+   "slug": "Seafood_Soup"
+  },
+  "Farmer's Special Dish": {
+   "nutrition": null,
+   "sanity": null,
+   "corruption": null,
+   "work_speed": null,
+   "recovery_time": null,
+   "description": "A home-cooked meal from a doting farmer. It gives off an absolutely mouthwatering aroma.",
+   "slug": "Farmers_Special_Dish"
+  }
+ },
+ "extra_pages": {
+  "Applied Kindling Handbook I": {
+   "description": "A rare book written about the secrets of Kindling. Allowing a Pal to read it permanently increases their Kindling affinity by +1.",
+   "stats": {
+    "Rarity": "4",
+    "Rank": "1",
+    "MaxStackCount": "9999",
+    "Code": "WorkSuitability_AddTicket_EmitFlame",
+    "IconName": "WorkSuitability_AddTicket_EmitFlame",
+    "TypeA": "Consume",
+    "TypeB": "ConsumePalWorkSuitabilityUp",
+    "SortId": "4610",
+    "bLegalInGame": "1",
+    "ItemStaticClass": "CommonConsume"
+   }
+  },
+  "Applied Handiwork Handbook I": {
+   "description": "A rare book written about the secrets of Handiwork. Allowing a Pal to read it permanently increases their Handiwork affinity by +1.",
+   "stats": {
+    "Rarity": "4",
+    "Rank": "1",
+    "MaxStackCount": "9999",
+    "Code": "WorkSuitability_AddTicket_Handcraft",
+    "IconName": "WorkSuitability_AddTicket_Handcraft",
+    "TypeA": "Consume",
+    "TypeB": "ConsumePalWorkSuitabilityUp",
+    "SortId": "4614",
+    "bLegalInGame": "1",
+    "ItemStaticClass": "CommonConsume"
+   }
+  }
+ },
+ "pals": {
+  "Aegidron": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Amione": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Anubis": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Arsox": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Astegon": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Astralym": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Azurmane": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Azurobe": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Azurobe Cryst": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Bakemi": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Bastigor": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Beakon": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Beakon Cryst": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Beegarde": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Bellanoir": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Bellanoir Libero": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Blazamut": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Blazamut Ryu": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Blazehowl": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Blazehowl Noct": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Blue Slime": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Braloha": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Bristla": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Broncherry": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Broncherry Aqua": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Bulldosu": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Bushi": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Bushi Noct": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Caprity": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Caprity Noct": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Carnibora": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Cattiva": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Cave Bat": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Cawgnito": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Celaray": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Celaray Lux": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Celesdir": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Celesdir Noct": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Chikipi": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Chillet": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Chillet Ignis": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Cinnamoth": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Clovee": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Cremis": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Croajiro": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Croajiro Noct": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Cryolinx": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Cryolinx Terra": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Daedream": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Dandilord": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Dazemu": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Dazzi": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Dazzi Noct": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Demon Eye": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Depresso": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Digtoise": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Dinossom": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Dinossom Lux": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Direhowl": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Dogen": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Dualith": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Dualith Noct": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Dumud": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Dumud Gild": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Dupin": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Dynamoff": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Eidrolon": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Eidrolon Ignis": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Eikthyrdeer": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Eikthyrdeer Terra": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Elgrove": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Elgrove Cryst": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Elizabee": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Elphidran": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Elphidran Aqua": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Enchanted Sword": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Eye of Cthulhu": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Faleris": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Faleris Aqua": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Felbat": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Fenglope": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Fenglope Lux": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Finsider": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Finsider Ignis": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Flambelle": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Flaracle": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Flopie": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Foxcicle": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Foxparks": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Foxparks Cryst": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Frostallion": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Frostallion Noct": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Frostplume": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Fuack": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Fuack Ignis": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Fuddler": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Galeclaw": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Ghangler": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Ghangler Ignis": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Gildane": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Gildra": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Gloopie": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Gloopie Primo": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Gobfin": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Gobfin Ignis": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Gorirat": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Gorirat Terra": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Green Slime": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Grintale": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Grizzbolt": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Gumoss": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Hangyu": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Hangyu Cryst": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Hartalis": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Helzephyr": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Helzephyr Lux": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Herbil": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Hoocrates": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Hoodle": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Icelyn": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Illuminant Bat": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Illuminant Slime": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Incineram": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Incineram Noct": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Jelliette": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Jellroy": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Jetragon": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Jolthog": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Jolthog Cryst": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Jormuntide": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Jormuntide Ignis": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Katress": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Katress Ignis": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Kelpsea": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Kelpsea Ignis": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Kikit": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Killamari": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Killamari Primo": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Kingpaca": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Kingpaca Cryst": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Kitsun": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Kitsun Noct": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Knocklem": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Knocklem Ignis": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Lamball": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Lapiron": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Lapure": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Leafan": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Leezpunk": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Leezpunk Ignis": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Lifmunk": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Loomen": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Loupmoon": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Loupmoon Cryst": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Lovander": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Lullu": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Lunaris": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Lyleen": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Lyleen Noct": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Majex": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Mammorest": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Mammorest Cryst": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Maraith": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Mau": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Mau Cryst": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Melpaca": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Menasting": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Menasting Terra": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Mimog": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Moldron": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Moldron Cryst": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Mossanda": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Mossanda Lux": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Mozzarina": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Muffly": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Munchill": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Mycora": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Necromus": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Needoll": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Needoll Noct": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Neptilius": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Nitemary": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Nitemary Botan": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Nitewing": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Nox": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Nyafia": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Omascul": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Ophydia": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Orserk": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Paladius": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Palumba": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Panthalus": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Pengullet": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Pengullet Lux": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Penking": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Penking Lux": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Petallia": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Petallia Ignis": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Pierdon": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Pierdon Cryst": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Polapup": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Polapup Terra": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Prixter": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Prixter Lux": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Prunelia": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Puffolt": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Pupperai": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Purple Slime": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Pyrin": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Pyrin Noct": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Quivern": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Quivern Botan": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Ragnahawk": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Rainbow Slime": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Rayhound": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Rayhound Cryst": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Red Slime": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Reindrix": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Relaxaurus": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Relaxaurus Lux": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Renjishi": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Reptyro": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Reptyro Cryst": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Ribbuny": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Ribbuny Botan": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Robinquill": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Robinquill Terra": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Rooby": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Roujay": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Rushoar": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Sekhmet": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Selyne": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Shadowbeak": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Shaolong": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Shroomer": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Shroomer Noct": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Sibelyx": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Sibelyx Primo": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Silvance": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Silvegis": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Skutlass": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Skutlass Ignis": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Slowatt": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Smokie": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Smokie Cryst": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Snock": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Snock Lux": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Snugloo": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Solenne": {
+   "food_amount": 9,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Solmora": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Solmora Lux": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Sootseer": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Souffline": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Sparkit": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Splatterina": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Starryon": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Starryon Primo": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Surfent": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Surfent Terra": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Suzaku": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Suzaku Aqua": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Swee": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Sweepa": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Tanzee": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Tanzee Ignis": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Tarantriss": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Teafant": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Tetroise": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Tetroise Primo": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Tocotoco": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Tombat": {
+   "food_amount": 2,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Tropicaw": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Turtacle": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Turtacle Terra": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Univolt": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Univolt Cryst": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Vaelet": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Valentail": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Vanwyrm": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Vanwyrm Cryst": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Venusa": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Verdash": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Vixy": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Warsect": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Warsect Terra": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Whalaska": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Whalaska Ignis": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Wispaw": {
+   "food_amount": 6,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Wistella": {
+   "food_amount": 5,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Wixen": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Wixen Noct": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Woolipop": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Woolipop Terra": {
+   "food_amount": 1,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Wumpo": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Wumpo Botan": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Xenogard": {
+   "food_amount": 7,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Xenolord": {
+   "food_amount": 8,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Xenovader": {
+   "food_amount": 4,
+   "full_stomach_decrease_rate": 1.0
+  },
+  "Yakumo": {
+   "food_amount": 3,
+   "full_stomach_decrease_rate": 1.0
+  }
+ },
+ "failures": []
+}

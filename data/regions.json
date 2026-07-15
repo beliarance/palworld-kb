@@ -1,0 +1,328 @@
+{
+ "game_version": "1.0",
+ "updated": "2026-07-15",
+ "source": "paldb region labels (data/raw/paldb_region_labels.json, собрано 2026-07-14)",
+ "note": "Координаты — позиция метки региона на карте (примерный центр), не границы.",
+ "regions": {
+  "Rayne Syndicate Oil Rig": [
+   579,
+   -423
+  ],
+  "Desolate Church": [
+   65,
+   -412
+  ],
+  "Small Settlement": [
+   75,
+   -480
+  ],
+  "Fisherman's Point": [
+   -474,
+   -750
+  ],
+  "Duneshelter": [
+   349,
+   353
+  ],
+  "Rayne Syndicate Test Drilling Rig": [
+   169,
+   -297
+  ],
+  "Ancient Ritual Site": [
+   -17,
+   -265
+  ],
+  "Mount Obsidian": [
+   -587,
+   -484
+  ],
+  "Frostbound Mountains": [
+   199,
+   57
+  ],
+  "Rayne Syndicate Platform Oil Rig": [
+   -1722,
+   -1462
+  ],
+  "Twilight Dunes": [
+   -124,
+   -100
+  ],
+  "Verdant Brook": [
+   208,
+   -13
+  ],
+  "Azure Woodland": [
+   -325,
+   -1332
+  ],
+  "The Azure Tapestry": [
+   -446,
+   -1326
+  ],
+  "Dragonmark Peak": [
+   -551,
+   -1304
+  ],
+  "Waterlily Gorge": [
+   -554,
+   -1504
+  ],
+  "Arena": [
+   633,
+   18
+  ],
+  "Scorched Ashland": [
+   -805,
+   -954
+  ],
+  "Withered Seaside": [
+   -709,
+   -1103
+  ],
+  "Emberstone Plateau": [
+   -790,
+   -1235
+  ],
+  "Loess Plains": [
+   -902,
+   -1416
+  ],
+  "Crystalized Ancient Tree": [
+   -982,
+   -1165
+  ],
+  "Scorched Hill": [
+   -1041,
+   -1139
+  ],
+  "Deserted Ash Plateau": [
+   -1300,
+   -1198
+  ],
+  "Frozen Coral Hill": [
+   -1243,
+   -1531
+  ],
+  "Feybreak Shipwreck": [
+   -1417,
+   -1450
+  ],
+  "The Oculus Gate, Tower in Sight": [
+   -1115,
+   -1355
+  ],
+  "Stone Pillar Cave": [
+   -908,
+   -1093
+  ],
+  "Hidden Passage to the Oculus Gate": [
+   -1079,
+   -1283
+  ],
+  "-": [
+   -1209,
+   -1354
+  ],
+  "Golden Hills": [
+   36,
+   -476
+  ],
+  "Autumn Rocks": [
+   98,
+   -318
+  ],
+  "Fortress Ruins": [
+   194,
+   -353
+  ],
+  "Flying Fish Coast": [
+   154,
+   -541
+  ],
+  "Gobfin's Turf": [
+   153,
+   -173
+  ],
+  "Scars of War": [
+   381,
+   -18
+  ],
+  "Foot of the Astral Mountains": [
+   -96,
+   197
+  ],
+  "Abandoned Ruins": [
+   -152,
+   295
+  ],
+  "Ruined Fortress City": [
+   -601,
+   -214
+  ],
+  "Dry Sandy Beach": [
+   -606,
+   -667
+  ],
+  "Sea Breeze Archipelago Church": [
+   -62,
+   -534
+  ],
+  "Sakurajima - Southern Sandbar": [
+   -721,
+   115
+  ],
+  "Isle of Silence Church Ruins": [
+   -456,
+   -13
+  ],
+  "Marsh Island Church Ruins": [
+   399,
+   -272
+  ],
+  "Sunlit Isle": [
+   403,
+   -464
+  ],
+  "Oasis Isle": [
+   900,
+   202
+  ],
+  "Isle of the Glacial Core": [
+   143,
+   655
+  ],
+  "Frostbitten Isle": [
+   -72,
+   -973
+  ],
+  "Phantom Isle": [
+   -908,
+   -198
+  ],
+  "Isle of Decayed Treasures": [
+   623,
+   -169
+  ],
+  "Isle of Eternal Summer": [
+   -424,
+   -811
+  ],
+  "Flamepulse Islet": [
+   793,
+   455
+  ],
+  "Islet of Circular Ruins": [
+   907,
+   -98
+  ],
+  "Scouring Islet": [
+   429,
+   -717
+  ],
+  "Bicornis Islet": [
+   -1170,
+   -1939
+  ],
+  "Glacial Memento Islet": [
+   -1695,
+   -949
+  ],
+  "Sandstone Gate Islet": [
+   -1273,
+   -615
+  ],
+  "Suncrest Islet": [
+   -894,
+   122
+  ],
+  "Foot of the World Tree": [
+   -812,
+   673
+  ],
+  "Crescent Moon Shore": [
+   -6,
+   -208
+  ],
+  "Bamboo Groves": [
+   -229,
+   -312
+  ],
+  "Windswept Island": [
+   114,
+   -487
+  ],
+  "Isle of Silence": [
+   -487,
+   -17
+  ],
+  "Marsh Island": [
+   349,
+   -306
+  ],
+  "Eastern Wild Island": [
+   481,
+   -159
+  ],
+  "Sea Breeze Archipelago": [
+   -188,
+   -638
+  ],
+  "No. 2 Wildlife Sanctuary": [
+   -676,
+   -111
+  ],
+  "No. 3 Wildlife Sanctuary": [
+   663,
+   634
+  ],
+  "Desiccated Dunes": [
+   471,
+   377
+  ],
+  "Astral Mountains": [
+   -186,
+   396
+  ],
+  "Farcry Marsh": [
+   -446,
+   -1368
+  ],
+  "Enchanted Firmament": [
+   -358,
+   -1511
+  ],
+  "Crystalline Archipelago": [
+   -474,
+   -1506
+  ],
+  "Deep Bamboo Thicket": [
+   -319,
+   -115
+  ],
+  "Foot of the Volcano": [
+   -364,
+   -377
+  ],
+  "Sakurajima - Mushroom Wetlands": [
+   -416,
+   163
+  ],
+  "Dancing Sakura Shrine": [
+   -636,
+   253
+  ],
+  "Sakurajima - Northern Rock Field": [
+   -571,
+   332
+  ],
+  "Isle of Murmurs": [
+   -303,
+   12
+  ],
+  "No. 1 Wildlife Sanctuary": [
+   -344,
+   270
+  ]
+ }
+}

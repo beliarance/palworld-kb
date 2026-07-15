@@ -1,0 +1,682 @@
+{
+ "game_version": "1.0",
+ "updated": "2026-07-14",
+ "resources": [
+  {
+   "name": "Ore",
+   "best_locations": [
+    {
+     "area": "Verdant Brook — elevated peak NE of Sealed Realm of the Guardian ('unraidable ore peak')",
+     "coordinates": "(190, -40)",
+     "node_count": 8,
+     "notes": "Cluster of ~8 Ore nodes on a summit raids cannot path to; sources also count ~6 Coal here (see Coal). Classic meta 'ore base' / 1.0-confirmed best all-round base. Coordinates cited variously as (189, -37)/(190, -41)/(192, -37) — same spot."
+    },
+    {
+     "area": "Verdant Brook — dedicated ore mine plateau",
+     "coordinates": "(270, -230)",
+     "node_count": 8,
+     "notes": "~8 Ore nodes, dedicated mining outpost (nexttier 1.0 guide). Adjacent plateau (270, -215) adds ~6 Coal for an all-in-one Refined Ingot base."
+    },
+    {
+     "area": "Behind the Desolate Church (starter island)",
+     "coordinates": "(72, -400)",
+     "node_count": 8,
+     "notes": "Early-game pure-ore spot, enemies lvl 2-10; cramped (many trees/nodes, little build room). One 1.0 guide cites this spot as (-256, -120) — coordinate conflict, see gaps. (pre-1.0 guide)"
+    },
+    {
+     "area": "West of Fort Ruins",
+     "coordinates": "(156, -396)",
+     "node_count": null,
+     "notes": "Classic early ore spot; ore + wood only. (pre-1.0 guide)"
+    },
+    {
+     "area": "Southwest of Small Settlement",
+     "coordinates": "(8, -528)",
+     "node_count": null,
+     "notes": "Huge flat open area + many ore nodes; best 'big main base with ore' compromise. (pre-1.0 guide)"
+    },
+    {
+     "area": "South of Cinnamoth Forest",
+     "coordinates": "(-77, -310)",
+     "node_count": null,
+     "notes": "Flat, spacious; ore + wood, sulfur deposits nearby. (pre-1.0 guide)"
+    }
+   ],
+   "base_recommendation": "Yes — the classic dedicated 'ore base' is still meta in 1.0. Top pick: Verdant Brook peak (190, -40) — unraidable, ore+coal together (Refined Ingots on site). Early game: SW of Small Settlement (8, -528) or behind Desolate Church. From ~Lv 20+ the placeable Ore Mining Site (and later improved mining sites) can supply a main base without a dedicated ore base, but node clusters remain faster for bulk.",
+   "other_sources": [
+    "Ore Mining Site (placeable base structure)",
+    "expeditions",
+    "mining any rocks (small chance)",
+    "dungeons"
+   ]
+  },
+  {
+   "name": "Coal",
+   "best_locations": [
+    {
+     "area": "Verdant Brook peak / Sealed Realm of the Guardian",
+     "coordinates": "(190, -41)",
+     "node_count": 8,
+     "notes": "Shockbyte counts 8 coal nodes at (190, -41) and 6 coal + 8 ore at (189, -37) — same summit cluster. Best coal+ore combo base in the game."
+    },
+    {
+     "area": "Verdant Brook east",
+     "coordinates": "(291, -19)",
+     "node_count": 6,
+     "notes": "6 coal nodes."
+    },
+    {
+     "area": "Twilight Dunes desert (west spot, near Anubis alpha arena)",
+     "coordinates": "(-158, -93)",
+     "node_count": 5,
+     "notes": "Heat protection needed. (pre-1.0 guide)"
+    },
+    {
+     "area": "Twilight Dunes desert (southeast spot, near coast)",
+     "coordinates": "(-98, -121)",
+     "node_count": 6,
+     "notes": "Heat protection needed. (pre-1.0 guide)"
+    },
+    {
+     "area": "Mount Obsidian — near Anubis Statue",
+     "coordinates": "(-570, -652)",
+     "node_count": 6,
+     "notes": "6 coal nodes clustered; volcanic biome, heat armor required. (pre-1.0 guide)"
+    },
+    {
+     "area": "North of Duneshelter (Dessicated Desert)",
+     "coordinates": "(327, 485)",
+     "node_count": 9,
+     "notes": "9 coal + 3 ore nodes — biggest pure-coal cluster; extreme heat/cold cycle. (pre-1.0 guide)"
+    }
+   ],
+   "base_recommendation": "Yes — the classic 'coal+ore base' at the Verdant Brook peak (190, -40) is the single best resource base: both Refined Ingot inputs on one unraidable summit. Alternative pure-coal outpost: north of Duneshelter (327, 485) with 9 nodes. Coal Mine placeable (Ancient Tech, ~Lv 53) automates coal at any base late game.",
+   "other_sources": [
+    "Coal Mine (placeable, Ancient Tech ~Lv 53)",
+    "Blazamut and some fire-Pal drops",
+    "expeditions",
+    "dungeon chests"
+   ]
+  },
+  {
+   "name": "Pure Quartz",
+   "best_locations": [
+    {
+     "area": "Astral Mountains — Pristine Snow Field",
+     "coordinates": "(-213, 250)",
+     "node_count": 5,
+     "notes": "Flat field, ~half a dozen dense nodes near the fast travel point; easiest quartz run. (pre-1.0 guide)"
+    },
+    {
+     "area": "Astral Mountains — below PAL Genetic Research Unit Tower Entrance",
+     "coordinates": "(-257, 391)",
+     "node_count": null,
+     "notes": "Cluster of rich veins along rocky ridges below tower entrance. (pre-1.0 guide)"
+    },
+    {
+     "area": "Astral Mountains — Land of Absolute Zero",
+     "coordinates": "(-417, 471)",
+     "node_count": 5,
+     "notes": "High-altitude cliffside patch, 4-6 deposits; aggressive high-level wildlife, max cold protection. (pre-1.0 guide)"
+    },
+    {
+     "area": "Astral Mountains — near Unthawable Lake",
+     "coordinates": "(-354, 296)",
+     "node_count": null,
+     "notes": "Quartz chunk near an ore node a few meters from the travel point. (pre-1.0 guide)"
+    }
+   ],
+   "base_recommendation": "Optional. Classic 'quartz base' = Pristine Snow Field (-213, 250): flat, nodes at the door, fast travel adjacent. But since Feybreak the placeable Pure Quartz Mine (costs 100 Pure Quartz to build) automates it at any base — hand-mine the first ~100 in the Astral Mountains, then automate. Mining Lv 3 Pals + cold-resistant gear required in the biome.",
+   "other_sources": [
+    "Pure Quartz Mine (placeable, Feybreak-era)",
+    "expeditions",
+    "dungeon chests in snow biome"
+   ]
+  },
+  {
+   "name": "Sulfur",
+   "best_locations": [
+    {
+     "area": "Mount Obsidian — next to Tower of the Brothers of the Eternal Pyre",
+     "coordinates": "(-595, -520)",
+     "node_count": 8,
+     "notes": "8 sulfur nodes along the edge of a lava pool drop-off; fast travel at the tower. (pre-1.0 guide)"
+    },
+    {
+     "area": "Mount Obsidian — volcano summit",
+     "coordinates": null,
+     "node_count": 9,
+     "notes": "Up to 9 tightly packed nodes at the caldera; fast travel point nearby. (pre-1.0 guide)"
+    },
+    {
+     "area": "Mount Obsidian — south of Midpoint fast travel",
+     "coordinates": "(-497, -513)",
+     "node_count": 6,
+     "notes": "6 sulfur + 2 ore nodes. (pre-1.0 guide)"
+    },
+    {
+     "area": "Mount Obsidian — western slopes lava field",
+     "coordinates": "(-435, -530)",
+     "node_count": 7,
+     "notes": "7 nodes clustered (+2 farther out); nexttier's 1.0 pick for a mass-Gunpowder base ('deep sulfur pools, harsh heat')."
+    },
+    {
+     "area": "North of Beach of Everlasting Summer",
+     "coordinates": "(-741, -443)",
+     "node_count": 9,
+     "notes": "7 nodes between two lava pools + 1 upper pool + 1 far side. (pre-1.0 guide)"
+    }
+   ],
+   "base_recommendation": "Yes for ammo-heavy endgame — classic 'sulfur base' on Mount Obsidian west slopes (-435, -530) or by the Eternal Pyre tower (-595, -520). Needs full heat protection; fire-immune workers (Blazamut etc.) ideal. Sulfur Mine placeable (Ancient Tech, Lv 52, 5 AT points) later automates it anywhere.",
+   "other_sources": [
+    "Sulfur Mine (placeable, Lv 52 Ancient Tech)",
+    "desert/volcano dungeon chests",
+    "expeditions"
+   ]
+  },
+  {
+   "name": "Paldium Fragment",
+   "best_locations": [
+    {
+     "area": "Northern Plateau of Beginnings",
+     "coordinates": "(233, -488)",
+     "node_count": null,
+     "notes": "Starter spot: paldium + stone + wood, temperate, low-level enemies. (pre-1.0 guide)"
+    },
+    {
+     "area": "Southern Plateau of Beginnings",
+     "coordinates": "(264, -548)",
+     "node_count": null,
+     "notes": "Larger than the northern spot; paldium + ore deposits; next to a mineable dungeon. (pre-1.0 guide)"
+    },
+    {
+     "area": "Riverbanks and coastlines everywhere",
+     "coordinates": null,
+     "node_count": null,
+     "notes": "Blue-veined rocks concentrate near water; the cliffs west of the starting beach hold 20+ deposits on a ~5-min loop, ~15-min respawn."
+    }
+   ],
+   "base_recommendation": "No dedicated base needed. Any base with a Crusher (Lv 8, needs Watering Pal) converts Stone -> Paldium Fragments indefinitely; Refrigerated Crusher (Lv 52) scales it up. Early game just mine blue rocks near rivers/coasts around the Plateau of Beginnings.",
+   "other_sources": [
+    "Crusher / Refrigerated Crusher (Stone conversion)",
+    "random drop from mining ordinary rocks",
+    "many Pal drops",
+    "merchants"
+   ]
+  },
+  {
+   "name": "Crude Oil",
+   "best_locations": [
+    {
+     "area": "Sakurajima — northwest oil field",
+     "coordinates": "(-646, 270)",
+     "node_count": null,
+     "notes": "Large flat area over an oil field — nexttier's 1.0 pick as 'the definitive Crude Oil base'; mushrooms nearby for food."
+    },
+    {
+     "area": "Sakurajima — central",
+     "coordinates": "(-552, 192)",
+     "node_count": null,
+     "notes": "Oil patches + multi-resource production. (pre-1.0 guide)"
+    },
+    {
+     "area": "Sakurajima — east",
+     "coordinates": "(-493, 109)",
+     "node_count": null,
+     "notes": "Oil + additional resources. (pre-1.0 guide)"
+    },
+    {
+     "area": "Dessicated Desert oil field (outside Sakurajima)",
+     "coordinates": "(289, 243)",
+     "node_count": 2,
+     "notes": "2 oil field spots + 7 coal nodes — oil+coal combo base. (pre-1.0 guide)"
+    },
+    {
+     "area": "Oil Rig Stronghold (Lv 55, southeast ocean, SE of Marsh Island)",
+     "coordinates": "(608, -435)",
+     "node_count": null,
+     "notes": "Raid target, not a base: ~200 Crude Oil per clear from the large yellow chest (random spot per in-game day) + thug drops; anti-air missiles — approach by water/low. nexttier cites the zone as roughly (540-580, -420 to -430)."
+    }
+   ],
+   "base_recommendation": "Yes — endgame 'oil base': claim an oil field on Sakurajima (best: -646, 270), place Oil Extractors on the patches, power with generators + Electricity Pals (Orserk fastest). Supplement with Oil Rig raids (Lv 30 starter barge near spawn; Lv 50+ Stronghold and Rayne Syndicate Platform; in 1.0 rig-controlled enemy Pals are capturable).",
+   "other_sources": [
+    "Oil Extractor on oil fields (main)",
+    "Oil Rig raids (large yellow chest ~200/day)",
+    "drops: Syndicate thugs, Sootseer, Kikit, Maraith",
+    "treasure chests"
+   ]
+  },
+  {
+   "name": "Chromite",
+   "best_locations": [
+    {
+     "area": "Feybreak Island — red zones (marked on map)",
+     "coordinates": null,
+     "node_count": null,
+     "notes": "Buried — requires Metal Detector (30 Plasteel, 100 Paldium Fragment, 30 Circuit Board, 20 Nightstar Sand @ Production Assembly Line II) or Smokie's partner skill (Dark Pal, northern Feybreak). (pre-1.0 guide)"
+    },
+    {
+     "area": "Feybreak — cave with recurring Chromite nodes",
+     "coordinates": "(-1200, -1100)",
+     "node_count": null,
+     "notes": "Most-cited reliable spawn: cave consistently spawns multiple Chromite nodes. (pre-1.0 guide)"
+    },
+    {
+     "area": "Feybreak — the four Alpha Pal arenas",
+     "coordinates": null,
+     "node_count": null,
+     "notes": "Each alpha location typically hosts multiple Chromite nodes — run them as a circuit. (pre-1.0 guide)"
+    }
+   ],
+   "base_recommendation": "No classic base — Chromite is detector-based, so it's a farming circuit, not a node camp. Base on Feybreak near the red zones only if smelting on site (Gigantic Furnace: 5 Chromite + 12 Hexolite Quartz + 20 Ore -> 1 Hexolite).",
+   "other_sources": [
+    "Metal Detector digs in red zones",
+    "Smokie partner skill (living detector)",
+    "Feybreak dungeon/alpha loot"
+   ]
+  },
+  {
+   "name": "Hexolite Quartz",
+   "best_locations": [
+    {
+     "area": "Feybreak Island — southwest cluster",
+     "coordinates": "(-1066, -1430)",
+     "node_count": null,
+     "notes": "Dense Hexolite Quartz node field; input for Hexolite (Tech Lv 56, Gigantic Furnace). (pre-1.0 guide)"
+    }
+   ],
+   "base_recommendation": "Optional Feybreak outpost near (-1066, -1430) if mass-producing Hexolite gear; otherwise haul to main base.",
+   "other_sources": [
+    "Feybreak chests"
+   ]
+  },
+  {
+   "name": "Ancient Civilization Parts",
+   "best_locations": [
+    {
+     "area": "Field Alpha boss arenas (all regions)",
+     "coordinates": null,
+     "node_count": null,
+     "notes": "Every field Alpha drops them and respawns — farm the same low-level alpha repeatedly."
+    },
+    {
+     "area": "Dungeons on the starter island (~Lv 13 dungeons)",
+     "coordinates": null,
+     "node_count": null,
+     "notes": "Dungeon bosses + rare chests; a dozen dungeons cycle near the first island — easiest early farm."
+    }
+   ],
+   "base_recommendation": "Not a base resource — farmed from bosses/dungeons/expeditions.",
+   "other_sources": [
+    "Alpha bosses (defeat or catch)",
+    "dungeon bosses",
+    "Lucky Pals",
+    "rare chests",
+    "Pal Expeditions"
+   ]
+  },
+  {
+   "name": "Ancient Civilization Relic",
+   "best_locations": [
+    {
+     "area": "World Tree region (1.0 endgame zone)",
+     "coordinates": null,
+     "node_count": null,
+     "notes": "Drops from Pals defeated inside the World Tree; also from hard-mode tower bosses, fishing and locked chests in the zone. Recycle stacks in the Ancient Relic Recycler at base for a steady supply of every World Tree material. (PRELIMINARY 1.0)"
+    },
+    {
+     "area": "Pal Expedition: The World Tree's Forbidden Area",
+     "coordinates": null,
+     "node_count": null,
+     "notes": "Expedition Station mission returns Ancient Relics passively. (PRELIMINARY 1.0)"
+    }
+   ],
+   "base_recommendation": "No base — combat/expedition loot. Build the Ancient Relic Recycler at your main base and feed it relics.",
+   "other_sources": [
+    "World Tree mob drops",
+    "hard mode tower bosses",
+    "World Tree fishing",
+    "locked chests",
+    "expeditions"
+   ]
+  },
+  {
+   "name": "Paloxite",
+   "best_locations": [
+    {
+     "area": "World Tree — center, by the giant orange crystal",
+     "coordinates": null,
+     "node_count": 2,
+     "notes": "Two clusters: one directly in front of the giant orange crystal, one slightly west. (PRELIMINARY 1.0)"
+    },
+    {
+     "area": "World Tree — near Remnant Riverside fast travel",
+     "coordinates": null,
+     "node_count": 5,
+     "notes": "5 nodes close together in a relatively safe area — best loop: fast travel, mine, deposit. (PRELIMINARY 1.0)"
+    },
+    {
+     "area": "World Tree — near Gilded City Ruins Watchtower fast travel",
+     "coordinates": null,
+     "node_count": 5,
+     "notes": "3 nodes close together + 2 more at varying heights nearby — bring a flying mount. (PRELIMINARY 1.0)"
+    }
+   ],
+   "base_recommendation": "No conventional base inside the World Tree — it's an instanced endgame zone (Lv 75+ enemies, radiation pockets requiring Gas Mask). Farm loops from fast travel points. CRITICAL: Paloxite (like other World Tree gatherables) vanishes on approach unless you apply World Tree Holy Water to yourself AND your active Pal, or run a Pal with the Dimensional Leap passive (from Large Ominous Eggs in the zone) which negates vanishing. Mine with Plasma Multicutter; smelt into Paloxite Ingots for top-tier gear/structures.",
+   "other_sources": [
+    "Ancient Relic Recycler (from Ancient Relics)",
+    "expeditions",
+    "hard tower boss rewards"
+   ]
+  },
+  {
+   "name": "Radiant Gems",
+   "best_locations": [
+    {
+     "area": "World Tree — deep biomes (scattered)",
+     "coordinates": null,
+     "node_count": null,
+     "notes": "Elemental drops gathered throughout the World Tree's biomes; radiation sub-zone needs Gas Mask. Bundle gem runs with Paloxite + Mythical Wood farming; Teafant Spring statues heal between fights. (PRELIMINARY 1.0)"
+    }
+   ],
+   "base_recommendation": "No base — exploration loop. Combine element-matched Radiant Gems into Awakening Gems, then use on a same-element Pal to unlock its Awakening stat boost (1.0 endgame progression).",
+   "other_sources": [
+    "Ancient Relic Recycler",
+    "World Tree chests"
+   ]
+  },
+  {
+   "name": "Soralite",
+   "best_locations": [
+    {
+     "area": "Sunreach (Sky Islands) — open ridge cluster",
+     "coordinates": "(583, 144)",
+     "node_count": null,
+     "notes": "Soralite nodes on an open ridge — nexttier's 1.0 base pick for the material. Appears as huge boulders ringed by small blue crystals; mine with Plasma Multicutter. (PRELIMINARY 1.0)"
+    },
+    {
+     "area": "Sunreach biome (general)",
+     "coordinates": null,
+     "node_count": null,
+     "notes": "Sunreach-exclusive; smelted into Soralite Ingots for advanced 1.0 equipment/weapons. Sunreach unlocks after beating Bjorn & Bastigor at Feybreak Tower. (PRELIMINARY 1.0)"
+    }
+   ],
+   "base_recommendation": "Worth a small Sunreach outpost at the (583, 144) ridge cluster if crafting Soralite-tier gear in bulk. (PRELIMINARY 1.0)",
+   "other_sources": [
+    "Sunreach chests"
+   ]
+  },
+  {
+   "name": "Mythical Wood",
+   "best_locations": [
+    {
+     "area": "World Tree — glowing trees throughout the zone",
+     "coordinates": null,
+     "node_count": null,
+     "notes": "Same vanish-on-approach rule as Paloxite: needs World Tree Holy Water buff or a Dimensional Leap Pal. Used with Paloxite for endgame gear like the Wing Pack. (PRELIMINARY 1.0)"
+    }
+   ],
+   "base_recommendation": "No base — farm during Paloxite/Radiant Gem loops.",
+   "other_sources": [
+    "Ancient Relic Recycler"
+   ]
+  },
+  {
+   "name": "World Tree Holy Water",
+   "best_locations": [
+    {
+     "area": "World Tree — mob drops",
+     "coordinates": null,
+     "node_count": null,
+     "notes": "Consumable that lets you collect World Tree materials for a short time; drop farming is slow — the Dimensional Leap passive (Pals from Large Ominous Eggs in the zone) is the long-term replacement. (PRELIMINARY 1.0)"
+    }
+   ],
+   "base_recommendation": "No base. Also an ingredient in Nutrient (25 Holy Water + 18 Caramel Cotton Candy + 20 Onion + 10 Cavern Mushroom).",
+   "other_sources": [
+    "World Tree mob drops"
+   ]
+  },
+  {
+   "name": "Skill Fruit",
+   "best_locations": [
+    {
+     "area": "Mount Obsidian",
+     "coordinates": "(-259, -624)",
+     "node_count": 1,
+     "notes": "Skill Fruit tree; 3 fruits per tree, respawn over time. (pre-1.0 guide)"
+    },
+    {
+     "area": "Mount Obsidian",
+     "coordinates": "(-554, -624)",
+     "node_count": 1,
+     "notes": "(pre-1.0 guide)"
+    },
+    {
+     "area": "Forgotten Island",
+     "coordinates": "(-453, -32)",
+     "node_count": 1,
+     "notes": "(pre-1.0 guide)"
+    },
+    {
+     "area": "Bamboo Groves",
+     "coordinates": "(-246, -204)",
+     "node_count": 1,
+     "notes": "(pre-1.0 guide)"
+    },
+    {
+     "area": "Bamboo Groves",
+     "coordinates": "(-187, -403)",
+     "node_count": 1,
+     "notes": "(pre-1.0 guide)"
+    },
+    {
+     "area": "Bamboo Groves",
+     "coordinates": "(-194, -518)",
+     "node_count": 1,
+     "notes": "(pre-1.0 guide)"
+    },
+    {
+     "area": "Windswept Hills",
+     "coordinates": "(-15, -482)",
+     "node_count": 1,
+     "notes": "(pre-1.0 guide)"
+    },
+    {
+     "area": "Windswept Hills",
+     "coordinates": "(205, -455)",
+     "node_count": 1,
+     "notes": "(pre-1.0 guide)"
+    },
+    {
+     "area": "Moonless Shore",
+     "coordinates": "(-39, 162)",
+     "node_count": 1,
+     "notes": "(pre-1.0 guide)"
+    },
+    {
+     "area": "Moonless Shore",
+     "coordinates": "(51, -51)",
+     "node_count": 1,
+     "notes": "(pre-1.0 guide)"
+    },
+    {
+     "area": "Verdant Brook",
+     "coordinates": "(146, -25)",
+     "node_count": 1,
+     "notes": "(pre-1.0 guide)"
+    },
+    {
+     "area": "Verdant Brook",
+     "coordinates": "(334, -40)",
+     "node_count": 1,
+     "notes": "(pre-1.0 guide)"
+    },
+    {
+     "area": "Marsh Island",
+     "coordinates": "(365, -324)",
+     "node_count": 1,
+     "notes": "(pre-1.0 guide)"
+    },
+    {
+     "area": "Dessicated Desert",
+     "coordinates": "(290, 254)",
+     "node_count": 1,
+     "notes": "(pre-1.0 guide)"
+    },
+    {
+     "area": "Dessicated Desert",
+     "coordinates": "(328, 484)",
+     "node_count": 1,
+     "notes": "(pre-1.0 guide)"
+    },
+    {
+     "area": "Astral Mountains",
+     "coordinates": "(181, 427)",
+     "node_count": 1,
+     "notes": "(pre-1.0 guide)"
+    },
+    {
+     "area": "Astral Mountains",
+     "coordinates": "(-150, 585)",
+     "node_count": 1,
+     "notes": "(pre-1.0 guide)"
+    }
+   ],
+   "base_recommendation": "No base — 17 trees on the Palpagos Islands (TheGamer list above); a Steam community map counts 28 total including Sakurajima and Feybreak trees. Higher-level zones bear better fruits. Also drop from Oil Rig small chests and Wandering Merchants.",
+   "other_sources": [
+    "Wandering Merchants",
+    "Oil Rig small chests",
+    "dungeon chests",
+    "Skillfruit Orchard (late placeable, per community guides)"
+   ]
+  },
+  {
+   "name": "Coralum Ore",
+   "best_locations": [
+    {
+     "area": "Late-game water fishing zones - salvage with Fishing Magnet / Powerful Fishing Magnet",
+     "coordinates": null,
+     "node_count": null,
+     "notes": "x1-2 per salvage at 30% - fastest method. Magnets craft x10 per batch (Fishing Magnet: 1 Ingot). Jellroy partner skill boosts salvage loot."
+    }
+   ],
+   "base_recommendation": "No mineable nodes - it's a fishing/drop resource. Farm loop: fishing spot + stack of magnets.",
+   "other_sources": [
+    "Whalaska / Whalaska Ignis / Neptilius drops (100%)",
+    "Sunreach Isle expedition (passive)",
+    "treasure chests"
+   ]
+  }
+ ],
+ "notes": [
+  "Coordinate convention: in-game map (x, y) as shown at screen bottom.",
+  "EA-era node spots are mostly unchanged in 1.0; 1.0-updated guides (nexttier, xgamingserver) confirm the Verdant Brook ore/coal peak and Mount Obsidian sulfur fields still hold. Entries verified only in EA-era guides are tagged (pre-1.0 guide).",
+  "Placeable mines change the meta late-game: Ore Mining Site (early), Coal Mine (~Lv 53), Sulfur Mine (Lv 52), Pure Quartz Mine (costs 100 Pure Quartz) — a maxed main base can self-supply everything except Crude Oil (needs oil-field patches) and World Tree materials.",
+  "World Tree gather rule (1.0): Paloxite/Mythical Wood/Radiant Gems/Ancient Relics vanish on approach unless buffed with World Tree Holy Water (self + active Pal) or accompanied by a Pal with the Dimensional Leap passive (hatch Large Ominous Eggs found in the zone).",
+  "World Tree access: complete Sunreach (unlocked by beating Bjorn & Bastigor at Feybreak Tower, then disabling six defense modules).",
+  "Oil Rigs in 1.0: three rigs (starter barge ~Lv 30 near spawn; Lv 50+ Stronghold at ~(608, -435) SE of Marsh Island; Rayne Syndicate Platform Lv 50+); 1.0 lets you capture rig-controlled enemy Pals.",
+  "2026-07-14: Coralum Ore entry added - salvage route user-verified in-game, confirmed against paldb Powerful_Fishing_Magnet loot table."
+ ],
+ "gaps": [
+  "Coordinate conflict for the 'behind Desolate Church' ore spot: (72, -400) (ScalaCube) vs (-256, -120) (drawpie/xmodhub 1.0 roundups) — not reconciled; the (72, -400) figure matches the church's actual position on the starter island.",
+  "ScalaCube lists a Sakurajima-East oil spot at (512, 171), which falls outside Sakurajima's map bounds (island is at negative X) — likely an error or a different island; kept out of the JSON locations.",
+  "No numeric coordinates published yet for World Tree Paloxite/Radiant Gem spots — sources give fast-travel-relative directions only (zone may use its own sub-map).",
+  "Exact Radiant Gem counts per Awakening Gem not published in accessible sources.",
+  "Sunreach 'Crystal Pool' base spot cited at (-540, -1361) by nexttier — coordinate plane unverified (overlaps Feybreak range); excluded pending confirmation.",
+  "Feybreak Chromite red-zone map exists on game8/wiki but those sites are bot-blocked from this machine; only the (-1200, -1100) cave and alpha arenas captured.",
+  "Skill Fruit tree list covers the 17 base-map trees only; the 28-tree list (incl. Sakurajima/Feybreak) is in a Steam Community guide image not parsed here.",
+  "Mount Obsidian summit sulfur cluster (9 nodes) — no numeric coordinates in sources."
+ ],
+ "sources": [
+  {
+   "url": "https://nexttier.pro/guide/palworld-best-base-locations",
+   "what": "1.0 base locations with coordinates and node counts (ore peak, coal plateau, sulfur, Sakurajima oil, Sunreach/World Tree spots)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://nexttier.pro/guide/palworld-oil-rigs-crude-oil",
+   "what": "1.0 oil rig locations/levels/loot, crude oil farming methods",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://nexttier.pro/guide/palworld-awakening",
+   "what": "Radiant Gems / Awakening Gems, World Tree farming rules (Holy Water, Gas Mask)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://shockbyte.com/blog/palworld-coal-locations",
+   "what": "Coal coordinates and node counts (6 clusters)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://scalacube.com/blog/palworld/best-ore-base-locations-in-palworld",
+   "what": "Six ore base locations with coordinates",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://scalacube.com/blog/palworld/best-crude-oil-base-locations-in-palworld",
+   "what": "Sakurajima oil base coordinates, oil drop sources",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://scalacube.com/blog/palworld/best-paldium-fragment-base-locations-in-palworld",
+   "what": "Paldium base coordinates (Plateau of Beginnings), Crusher automation",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://www.thegamer.com/palworld-all-skill-fruit-tree-locations/",
+   "what": "17 Skill Fruit tree coordinates (base map)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://vgtimes.com/guides/160979-palworld-10-new-resources-guide-all-materials-and-where-to-find-them.html",
+   "what": "1.0 new materials: Soralite, Paloxite, Ancient Relic, Nutrient — regions and tools",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://www.bisecthosting.com/blog/palworld-world-tree-guide-how-to-unlock-materials-what-is-inside-resources-pals",
+   "what": "World Tree materials list, Holy Water / Dimensional Leap mechanics",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://allthings.how/palworld-where-to-find-pure-quartz-in-the-astral-mountains/",
+   "what": "Pure Quartz coordinates in Astral Mountains (via search summary)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://nodecraft.com/support/games/palworld/general/best-places-to-mine-sulfur-in-palworld",
+   "what": "Sulfur coordinates: Eternal Pyre, Midpoint South, Beach of Everlasting Summer (via search summary)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://nodecraft.com/support/games/palworld/general/how-to-locate-and-mine-chromite-on-feybreak",
+   "what": "Chromite: red zones, Metal Detector recipe, cave at (-1200, -1100) (via search summary)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://www.holy.gg/en/post/palworld-chromite-locations-usage-crafting-recipes",
+   "what": "Hexolite recipe, Hexolite Quartz at (-1066, -1430), Smokie detector (via search summary)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://game8.co/games/Palworld/archives/609984",
+   "what": "Paloxite locations in World Tree: central orange crystal clusters, Remnant Riverside, Gilded City Ruins Watchtower (via search summary; site bot-blocked for direct fetch)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://xgamingserver.com/blog/palworld-ancient-civilization-parts/",
+   "what": "Ancient Civilization Parts farming: alphas, dungeons, lucky pals, expeditions (via search summary)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://xgamingserver.com/blog/palworld-1-0-new-areas/",
+   "what": "Sunreach & World Tree 1.0 region overview, Ancient Relic Recycler (via search summary)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3534553851",
+   "what": "All 28 Skill Fruit map locations (base + Sakurajima + Feybreak) — image guide, not parsed",
+   "fetched": "2026-07-14"
+  }
+ ]
+}

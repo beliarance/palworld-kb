@@ -1,0 +1,4371 @@
+{
+ "Garm": {
+  "day_points": 458,
+  "night_points": 458,
+  "regions": {
+   "Deep Bamboo Thicket": 248,
+   "Lv.1-10 Sea Breeze Archipelago": 222,
+   "Golden Hills": 152,
+   "Lv.1-10 Marsh Island": 132,
+   "Lv.10-25 Twilight Dunes": 70,
+   "Lv.10-20 Bamboo Groves": 36,
+   "Fortress Ruins": 24,
+   "Foot of the Volcano": 20,
+   "Ancient Ritual Site": 10,
+   "Lv.1-10 Isle of Murmurs": 2
+  }
+ },
+ "HawkBird": {
+  "day_points": 227,
+  "night_points": 227,
+  "regions": {
+   "Lv.1-10 Marsh Island": 132,
+   "Lv.10-20 Bamboo Groves": 72,
+   "Golden Hills": 64,
+   "Lv.1-10 Sea Breeze Archipelago": 60,
+   "Autumn Rocks": 40,
+   "Foot of the Volcano": 34,
+   "Fortress Ruins": 24,
+   "Deep Bamboo Thicket": 14,
+   "Ancient Ritual Site": 10,
+   "Lv.1-10 Isle of Murmurs": 2,
+   "Lv.10-25 Twilight Dunes": 2
+  }
+ },
+ "Deer": {
+  "day_points": 227,
+  "night_points": 227,
+  "regions": {
+   "Lv.1-10 Marsh Island": 132,
+   "Golden Hills": 70,
+   "Lv.1-10 Sea Breeze Archipelago": 60,
+   "Fortress Ruins": 54,
+   "Autumn Rocks": 44,
+   "Lv.10-20 Bamboo Groves": 36,
+   "Lv.1-15 Windswept Island": 26,
+   "Foot of the Volcano": 20,
+   "Ancient Ritual Site": 10,
+   "Lv.1-10 Isle of Murmurs": 2
+  }
+ },
+ "PinkCat": {
+  "day_points": 367,
+  "night_points": 367,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 166,
+   "Lv.1-10 Isle of Silence": 124,
+   "Lv.1-10 Isle of Murmurs": 122,
+   "Flying Fish Coast": 102,
+   "Fortress Ruins": 82,
+   "Lv.1-15 Windswept Island": 80,
+   "Golden Hills": 54,
+   "Autumn Rocks": 4
+  }
+ },
+ "ChickenPal": {
+  "day_points": 274,
+  "night_points": 274,
+  "regions": {
+   "Lv.1-10 Eastern Wild Island": 172,
+   "Flying Fish Coast": 132,
+   "Lv.1-15 Windswept Island": 90,
+   "Fortress Ruins": 82,
+   "Golden Hills": 42,
+   "Lv.10-20 Scars of War": 16,
+   "Lv.10-20 Isle of Decayed Treasures": 6,
+   "Autumn Rocks": 4,
+   "Lv.1-10 Isle of Murmurs": 2,
+   "Lv.1-10 Marsh Island": 2
+  }
+ },
+ "SheepBall": {
+  "day_points": 351,
+  "night_points": 351,
+  "regions": {
+   "Lv.1-10 Eastern Wild Island": 172,
+   "Lv.1-10 Sea Breeze Archipelago": 166,
+   "Flying Fish Coast": 122,
+   "Fortress Ruins": 82,
+   "Lv.1-15 Windswept Island": 74,
+   "Golden Hills": 56,
+   "Lv.10-20 Scars of War": 16,
+   "Lv.10-20 Isle of Decayed Treasures": 6,
+   "Autumn Rocks": 4,
+   "Lv.1-10 Isle of Murmurs": 2,
+   "Lv.1-10 Marsh Island": 2
+  }
+ },
+ "Boar": {
+  "day_points": 148,
+  "night_points": 148,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 162,
+   "Golden Hills": 54,
+   "Autumn Rocks": 40,
+   "Lv.1-15 Windswept Island": 20,
+   "Lv.1-10 Marsh Island": 18,
+   "Lv.1-10 Isle of Murmurs": 2
+  }
+ },
+ "FlowerDinosaur": {
+  "day_points": 262,
+  "night_points": 262,
+  "regions": {
+   "Lv.1-10 Eastern Wild Island": 172,
+   "Lv.1-10 Sea Breeze Archipelago": 166,
+   "Lv.1-10 Marsh Island": 50,
+   "Lv.40-50 Desiccated Dunes": 32,
+   "Flying Fish Coast": 30,
+   "Golden Hills": 16,
+   "Lv.10-20 Scars of War": 16,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 14,
+   "Lv.50-60 Isle of the Glacial Core": 10,
+   "Lv.1-15 Windswept Island": 10,
+   "Lv.10-20 Isle of Decayed Treasures": 6,
+   "Lv.1-10 Isle of Murmurs": 2
+  }
+ },
+ "BerryGoat": {
+  "day_points": 393,
+  "night_points": 393,
+  "regions": {
+   "Lv.15-25 Crescent Moon Shore": 142,
+   "Lv.1-10 Isle of Silence": 124,
+   "Lv.1-10 Isle of Murmurs": 122,
+   "Flying Fish Coast": 102,
+   "Fortress Ruins": 92,
+   "Lv.1-15 Windswept Island": 80,
+   "Golden Hills": 40,
+   "Gobfin's Turf": 36,
+   "Lv.10-25 Twilight Dunes": 28,
+   "Lv.1-10 Marsh Island": 12,
+   "Lv.30-40 Foot of the Astral Mountains": 4,
+   "Autumn Rocks": 4
+  }
+ },
+ "Kitsunebi": {
+  "day_points": 94,
+  "night_points": 94,
+  "regions": {
+   "Fortress Ruins": 82,
+   "Lv.1-15 Windswept Island": 60,
+   "Golden Hills": 40,
+   "Autumn Rocks": 4,
+   "Lv.1-10 Isle of Murmurs": 2
+  }
+ },
+ "Ganesha": {
+  "day_points": 169,
+  "night_points": 169,
+  "regions": {
+   "Lv.1-10 Isle of Silence": 136,
+   "Lv.1-10 Sea Breeze Archipelago": 114,
+   "Lv.1-10 Marsh Island": 58,
+   "Golden Hills": 14,
+   "Lv.1-10 Eastern Wild Island": 8,
+   "Flying Fish Coast": 6,
+   "Lv.1-10 Isle of Murmurs": 2
+  }
+ },
+ "Monkey": {
+  "day_points": 72,
+  "night_points": 72,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 54,
+   "Autumn Rocks": 40,
+   "Lv.1-10 Isle of Silence": 34,
+   "Golden Hills": 14,
+   "Lv.1-10 Isle of Murmurs": 2
+  }
+ },
+ "PinkRabbit": {
+  "day_points": 399,
+  "night_points": 399,
+  "regions": {
+   "Lv.1-10 Eastern Wild Island": 172,
+   "Lv.15-25 Crescent Moon Shore": 142,
+   "Lv.1-10 Isle of Silence": 124,
+   "Lv.1-10 Isle of Murmurs": 122,
+   "Deep Bamboo Thicket": 64,
+   "Lv.1-10 Marsh Island": 50,
+   "Flying Fish Coast": 30,
+   "Foot of the Volcano": 30,
+   "Lv.10-25 Twilight Dunes": 28,
+   "Lv.10-20 Scars of War": 16,
+   "Lv.1-15 Windswept Island": 10,
+   "Lv.10-20 Isle of Decayed Treasures": 6,
+   "Golden Hills": 2,
+   "Gobfin's Turf": 2
+  }
+ },
+ "KendoFrog": {
+  "day_points": 675,
+  "night_points": 675,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 216,
+   "Ancient Ritual Site": 170,
+   "Fortress Ruins": 140,
+   "Lv.1-15 Windswept Island": 134,
+   "Sakurajima - Mushroom Wetlands": 108,
+   "Golden Hills": 90,
+   "Lv.1-10 Marsh Island": 86,
+   "Lv.10-20 Bamboo Groves": 72,
+   "Lv.15-25 Crescent Moon Shore": 64,
+   "Autumn Rocks": 60,
+   "Gobfin's Turf": 54,
+   "Lv.20-30 Verdant Brook": 36,
+   "Lv.1-10 Isle of Silence": 28,
+   "Lv.10-20 Scars of War": 18,
+   "Foot of the Volcano": 18,
+   "Lv.1-10 Eastern Wild Island": 18,
+   "Deep Bamboo Thicket": 18,
+   "Lv.10-25 Twilight Dunes": 18,
+   "Lv.1-10 Isle of Murmurs": 2
+  }
+ },
+ "DreamDemon": {
+  "day_points": 0,
+  "night_points": 164,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 81,
+   "Flying Fish Coast": 66,
+   "Lv.1-15 Windswept Island": 15,
+   "Lv.1-10 Isle of Murmurs": 1,
+   "Golden Hills": 1
+  }
+ },
+ "NegativeKoala": {
+  "day_points": 0,
+  "night_points": 406,
+  "regions": {
+   "Lv.10-20 Bamboo Groves": 125,
+   "Lv.1-10 Eastern Wild Island": 86,
+   "Golden Hills": 45,
+   "Foot of the Volcano": 35,
+   "Lv.1-10 Sea Breeze Archipelago": 30,
+   "Deep Bamboo Thicket": 30,
+   "Lv.1-10 Marsh Island": 25,
+   "Lv.1-15 Windswept Island": 10,
+   "Ancient Ritual Site": 8,
+   "Lv.10-20 Scars of War": 8,
+   "Lv.10-20 Isle of Decayed Treasures": 3,
+   "Lv.1-10 Isle of Murmurs": 1
+  }
+ },
+ "NightFox": {
+  "day_points": 0,
+  "night_points": 153,
+  "regions": {
+   "Lv.1-10 Isle of Silence": 62,
+   "Lv.1-10 Isle of Murmurs": 61,
+   "Fortress Ruins": 15,
+   "Lv.1-15 Windswept Island": 13,
+   "Autumn Rocks": 2
+  }
+ },
+ "CatBat": {
+  "day_points": 0,
+  "night_points": 160,
+  "regions": {
+   "Lv.1-10 Marsh Island": 66,
+   "Golden Hills": 61,
+   "Autumn Rocks": 20,
+   "Fortress Ruins": 12,
+   "Lv.1-10 Isle of Murmurs": 1
+  }
+ },
+ "TentacleTurtle_Ground": {
+  "day_points": 777,
+  "night_points": 777,
+  "regions": {
+   "Lv.40-50 Oasis Isle": 234,
+   "Lv.10-20 Scars of War": 196,
+   "Lv.50-60 Isle of the Glacial Core": 180,
+   "Frostbound Mountains": 162,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 162,
+   "Flamepulse Islet": 144,
+   "Lv.40-50 Desiccated Dunes": 144,
+   "Lv.40-55 Sakurajima - Southern Sandbar": 122,
+   "Lv.10-20 Isle of Decayed Treasures": 56,
+   "Lv.30-45 Isle of Eternal Summer": 54,
+   "Lv.30-40 Phantom Isle": 36,
+   "Ruined Fortress City": 18,
+   "Dry Sandy Beach": 16,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 14,
+   "Lv.50-55 Dancing Sakura Shrine": 12,
+   "Lv.30-40 Mount Obsidian": 4
+  }
+ },
+ "BOSS_TentacleTurtle_Ground": {
+  "day_points": 675,
+  "night_points": 675,
+  "regions": {
+   "Lv.40-50 Oasis Isle": 234,
+   "Lv.10-20 Scars of War": 196,
+   "Lv.50-60 Isle of the Glacial Core": 180,
+   "Frostbound Mountains": 162,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 162,
+   "Flamepulse Islet": 144,
+   "Lv.40-50 Desiccated Dunes": 144,
+   "Lv.10-20 Isle of Decayed Treasures": 56,
+   "Lv.30-45 Isle of Eternal Summer": 54,
+   "Ruined Fortress City": 18
+  }
+ },
+ "StuffedShark": {
+  "day_points": 679,
+  "night_points": 679,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 250,
+   "Lv.10-20 Scars of War": 196,
+   "Frostbound Mountains": 180,
+   "Lv.50-60 Isle of the Glacial Core": 180,
+   "Lv.40-50 Oasis Isle": 180,
+   "Flamepulse Islet": 144,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 128,
+   "Lv.10-20 Isle of Decayed Treasures": 56,
+   "Ruined Fortress City": 18,
+   "Lv.30-45 Isle of Eternal Summer": 14,
+   "Lv.1-10 Sunlit Isle": 12
+  }
+ },
+ "BOSS_StuffedShark": {
+  "day_points": 666,
+  "night_points": 666,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 250,
+   "Lv.10-20 Scars of War": 196,
+   "Frostbound Mountains": 180,
+   "Lv.50-60 Isle of the Glacial Core": 180,
+   "Lv.40-50 Oasis Isle": 180,
+   "Flamepulse Islet": 144,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 128,
+   "Lv.10-20 Isle of Decayed Treasures": 56,
+   "Ruined Fortress City": 18
+  }
+ },
+ "Penguin_Electric": {
+  "day_points": 0,
+  "night_points": 657,
+  "regions": {
+   "Lv.10-20 Scars of War": 98,
+   "Lv.50-60 Isle of the Glacial Core": 90,
+   "Lv.40-50 Oasis Isle": 90,
+   "Frostbound Mountains": 81,
+   "Flamepulse Islet": 72,
+   "Lv.40-50 Desiccated Dunes": 72,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 63,
+   "Lv.10-20 Isle of Decayed Treasures": 55,
+   "Lv.30-40 Phantom Isle": 27,
+   "Ruined Fortress City": 9
+  }
+ },
+ "BOSS_Penguin_Electric": {
+  "day_points": 0,
+  "night_points": 657,
+  "regions": {
+   "Lv.10-20 Scars of War": 98,
+   "Lv.50-60 Isle of the Glacial Core": 90,
+   "Lv.40-50 Oasis Isle": 90,
+   "Frostbound Mountains": 81,
+   "Flamepulse Islet": 72,
+   "Lv.40-50 Desiccated Dunes": 72,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 63,
+   "Lv.10-20 Isle of Decayed Treasures": 55,
+   "Lv.30-40 Phantom Isle": 27,
+   "Ruined Fortress City": 9
+  }
+ },
+ "JellyfishFairy": {
+  "day_points": 873,
+  "night_points": 117,
+  "regions": {
+   "Withered Seaside": 128,
+   "Flying Fish Coast": 126,
+   "Fortress Ruins": 72,
+   "Lv.10-25 Twilight Dunes": 63,
+   "Lv.1-10 Isle of Silence": 58,
+   "Lv.50-60 Scorched Ashland": 56,
+   "Lv.1-10 Isle of Murmurs": 54,
+   "Lv.1-10 Sunlit Isle": 45,
+   "Lv.1-10 Marsh Island": 45,
+   "Golden Hills": 45,
+   "Lv.1-10 Sea Breeze Archipelago": 45,
+   "Lv.10-20 Frostbitten Isle": 41,
+   "Lv.10-20 Isle of Decayed Treasures": 36,
+   "Lv.1-10 Eastern Wild Island": 36,
+   "Sandstone Gate Islet": 28,
+   "Foot of the Volcano": 27,
+   "Autumn Rocks": 27,
+   "Lv.15-25 Crescent Moon Shore": 18,
+   "Deep Bamboo Thicket": 14,
+   "Lv.1-15 Windswept Island": 9,
+   "Lv.10-20 Scars of War": 9,
+   "Scorched Hill": 6,
+   "Deserted Ash Plateau": 2
+  }
+ },
+ "BOSS_JellyfishFairy": {
+  "day_points": 756,
+  "night_points": 0,
+  "regions": {
+   "Flying Fish Coast": 126,
+   "Fortress Ruins": 72,
+   "Lv.10-25 Twilight Dunes": 63,
+   "Lv.1-10 Isle of Silence": 58,
+   "Lv.1-10 Isle of Murmurs": 54,
+   "Lv.1-10 Sunlit Isle": 45,
+   "Lv.1-10 Marsh Island": 45,
+   "Golden Hills": 45,
+   "Lv.1-10 Sea Breeze Archipelago": 45,
+   "Lv.10-20 Isle of Decayed Treasures": 36,
+   "Lv.1-10 Eastern Wild Island": 36,
+   "Foot of the Volcano": 27,
+   "Lv.10-20 Frostbitten Isle": 27,
+   "Autumn Rocks": 27,
+   "Lv.15-25 Crescent Moon Shore": 18,
+   "Deep Bamboo Thicket": 14,
+   "Lv.1-15 Windswept Island": 9,
+   "Lv.10-20 Scars of War": 9
+  }
+ },
+ "TentacleTurtle": {
+  "day_points": 1480,
+  "night_points": 1480,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 306,
+   "Flying Fish Coast": 288,
+   "Lv.1-10 Marsh Island": 180,
+   "Golden Hills": 180,
+   "Ancient Ritual Site": 170,
+   "Lv.10-25 Twilight Dunes": 170,
+   "Fortress Ruins": 162,
+   "Lv.20-30 Verdant Brook": 140,
+   "Lv.1-10 Isle of Silence": 134,
+   "Lv.10-20 Scars of War": 126,
+   "Lv.1-15 Windswept Island": 108,
+   "Lv.1-10 Isle of Murmurs": 108,
+   "Autumn Rocks": 108,
+   "Lv.15-25 Crescent Moon Shore": 100,
+   "Lv.10-20 Isle of Decayed Treasures": 92,
+   "Lv.1-10 Sunlit Isle": 90,
+   "Lv.1-10 Eastern Wild Island": 90,
+   "Foot of the Volcano": 72,
+   "Lv.10-20 Bamboo Groves": 72,
+   "Lv.10-20 Frostbitten Isle": 54,
+   "Gobfin's Turf": 54,
+   "Deep Bamboo Thicket": 46,
+   "Lv.30-40 Phantom Isle": 36,
+   "Lv.30-40 Foot of the Astral Mountains": 24,
+   "Frostbound Mountains": 22,
+   "Dry Sandy Beach": 16,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 8,
+   "Lv.30-40 Mount Obsidian": 4
+  }
+ },
+ "BOSS_TentacleTurtle": {
+  "day_points": 1422,
+  "night_points": 1422,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 306,
+   "Flying Fish Coast": 288,
+   "Lv.1-10 Marsh Island": 180,
+   "Golden Hills": 180,
+   "Ancient Ritual Site": 170,
+   "Fortress Ruins": 162,
+   "Lv.10-25 Twilight Dunes": 144,
+   "Lv.20-30 Verdant Brook": 140,
+   "Lv.1-10 Isle of Silence": 134,
+   "Lv.10-20 Scars of War": 126,
+   "Lv.1-15 Windswept Island": 108,
+   "Lv.1-10 Isle of Murmurs": 108,
+   "Autumn Rocks": 108,
+   "Lv.15-25 Crescent Moon Shore": 100,
+   "Lv.1-10 Sunlit Isle": 90,
+   "Lv.1-10 Eastern Wild Island": 90,
+   "Foot of the Volcano": 72,
+   "Lv.10-20 Bamboo Groves": 72,
+   "Lv.10-20 Isle of Decayed Treasures": 72,
+   "Lv.10-20 Frostbitten Isle": 54,
+   "Gobfin's Turf": 54,
+   "Deep Bamboo Thicket": 46,
+   "Frostbound Mountains": 22,
+   "Lv.30-40 Foot of the Astral Mountains": 18
+  }
+ },
+ "FlyingManta": {
+  "day_points": 867,
+  "night_points": 867,
+  "regions": {
+   "Flying Fish Coast": 280,
+   "Lv.1-10 Isle of Silence": 200,
+   "Fortress Ruins": 160,
+   "Lv.1-10 Sea Breeze Archipelago": 146,
+   "Lv.10-25 Twilight Dunes": 126,
+   "Lv.1-10 Marsh Island": 124,
+   "Lv.1-10 Isle of Murmurs": 114,
+   "Golden Hills": 100,
+   "Lv.1-10 Sunlit Isle": 92,
+   "Deep Bamboo Thicket": 86,
+   "Autumn Rocks": 76,
+   "Lv.1-10 Eastern Wild Island": 72,
+   "Foot of the Volcano": 54,
+   "Lv.15-25 Crescent Moon Shore": 36,
+   "Lv.1-15 Windswept Island": 32,
+   "Lv.10-20 Isle of Decayed Treasures": 18,
+   "Lv.10-20 Scars of War": 18
+  }
+ },
+ "BOSS_FlyingManta": {
+  "day_points": 702,
+  "night_points": 702,
+  "regions": {
+   "Flying Fish Coast": 252,
+   "Fortress Ruins": 144,
+   "Lv.10-25 Twilight Dunes": 126,
+   "Lv.1-10 Isle of Silence": 116,
+   "Lv.1-10 Isle of Murmurs": 108,
+   "Lv.1-10 Sunlit Isle": 90,
+   "Lv.1-10 Marsh Island": 90,
+   "Golden Hills": 90,
+   "Lv.1-10 Sea Breeze Archipelago": 90,
+   "Lv.1-10 Eastern Wild Island": 72,
+   "Foot of the Volcano": 54,
+   "Autumn Rocks": 54,
+   "Lv.15-25 Crescent Moon Shore": 36,
+   "Deep Bamboo Thicket": 28,
+   "Lv.1-15 Windswept Island": 18,
+   "Lv.10-20 Isle of Decayed Treasures": 18,
+   "Lv.10-20 Scars of War": 18
+  }
+ },
+ "Penguin": {
+  "day_points": 1130,
+  "night_points": 1130,
+  "regions": {
+   "Flying Fish Coast": 254,
+   "Lv.1-10 Isle of Murmurs": 252,
+   "Fortress Ruins": 248,
+   "Lv.1-10 Eastern Wild Island": 244,
+   "Lv.30-40 Foot of the Astral Mountains": 202,
+   "Lv.1-10 Sea Breeze Archipelago": 174,
+   "Lv.10-25 Twilight Dunes": 140,
+   "Lv.1-10 Isle of Silence": 116,
+   "Lv.1-10 Marsh Island": 92,
+   "Lv.1-10 Sunlit Isle": 90,
+   "Golden Hills": 90,
+   "Autumn Rocks": 82,
+   "Lv.1-15 Windswept Island": 68,
+   "Foot of the Volcano": 54,
+   "Lv.15-25 Crescent Moon Shore": 36,
+   "Lv.10-20 Scars of War": 34,
+   "Deep Bamboo Thicket": 28,
+   "Lv.10-20 Isle of Decayed Treasures": 24,
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 16,
+   "Lv.10-20 Frostbitten Isle": 14,
+   "Abandoned Ruins": 2
+  }
+ },
+ "BOSS_Penguin": {
+  "day_points": 702,
+  "night_points": 702,
+  "regions": {
+   "Flying Fish Coast": 252,
+   "Fortress Ruins": 144,
+   "Lv.10-25 Twilight Dunes": 126,
+   "Lv.1-10 Isle of Silence": 116,
+   "Lv.1-10 Isle of Murmurs": 108,
+   "Lv.1-10 Sunlit Isle": 90,
+   "Lv.1-10 Marsh Island": 90,
+   "Golden Hills": 90,
+   "Lv.1-10 Sea Breeze Archipelago": 90,
+   "Lv.1-10 Eastern Wild Island": 72,
+   "Foot of the Volcano": 54,
+   "Autumn Rocks": 54,
+   "Lv.15-25 Crescent Moon Shore": 36,
+   "Deep Bamboo Thicket": 28,
+   "Lv.1-15 Windswept Island": 18,
+   "Lv.10-20 Isle of Decayed Treasures": 18,
+   "Lv.10-20 Scars of War": 18
+  }
+ },
+ "Kelpie": {
+  "day_points": 1371,
+  "night_points": 1371,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 376,
+   "Flying Fish Coast": 252,
+   "Golden Hills": 244,
+   "Fortress Ruins": 180,
+   "Ancient Ritual Site": 178,
+   "Lv.1-10 Marsh Island": 164,
+   "Lv.10-25 Twilight Dunes": 144,
+   "Lv.1-10 Isle of Silence": 134,
+   "Autumn Rocks": 130,
+   "Lv.1-15 Windswept Island": 108,
+   "Lv.1-10 Isle of Murmurs": 108,
+   "Deep Bamboo Thicket": 102,
+   "Lv.15-25 Crescent Moon Shore": 100,
+   "Lv.1-10 Sunlit Isle": 90,
+   "Lv.1-10 Eastern Wild Island": 90,
+   "Foot of the Volcano": 72,
+   "Lv.10-20 Bamboo Groves": 72,
+   "Lv.10-20 Frostbitten Isle": 54,
+   "Gobfin's Turf": 54,
+   "Lv.20-30 Verdant Brook": 36,
+   "Lv.10-20 Scars of War": 36,
+   "Lv.10-20 Isle of Decayed Treasures": 18
+  }
+ },
+ "BOSS_Kelpie": {
+  "day_points": 1242,
+  "night_points": 1242,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 306,
+   "Flying Fish Coast": 252,
+   "Golden Hills": 180,
+   "Ancient Ritual Site": 170,
+   "Fortress Ruins": 162,
+   "Lv.1-10 Marsh Island": 144,
+   "Lv.10-25 Twilight Dunes": 144,
+   "Lv.1-10 Isle of Silence": 134,
+   "Lv.1-15 Windswept Island": 108,
+   "Lv.1-10 Isle of Murmurs": 108,
+   "Autumn Rocks": 108,
+   "Lv.15-25 Crescent Moon Shore": 100,
+   "Lv.1-10 Sunlit Isle": 90,
+   "Lv.1-10 Eastern Wild Island": 90,
+   "Foot of the Volcano": 72,
+   "Lv.10-20 Bamboo Groves": 72,
+   "Lv.10-20 Frostbitten Isle": 54,
+   "Gobfin's Turf": 54,
+   "Deep Bamboo Thicket": 46,
+   "Lv.20-30 Verdant Brook": 36,
+   "Lv.10-20 Scars of War": 36,
+   "Lv.10-20 Isle of Decayed Treasures": 18
+  }
+ },
+ "JellyfishGhost": {
+  "day_points": 9,
+  "night_points": 1197,
+  "regions": {
+   "Deserted Ash Plateau": 179,
+   "Lv.50-60 Scorched Ashland": 144,
+   "Flying Fish Coast": 126,
+   "Fortress Ruins": 72,
+   "Withered Seaside": 64,
+   "Lv.10-25 Twilight Dunes": 63,
+   "Lv.1-10 Isle of Silence": 58,
+   "Lv.1-10 Isle of Murmurs": 54,
+   "Lv.30-40 Phantom Isle": 45,
+   "Lv.1-10 Sunlit Isle": 45,
+   "Lv.1-10 Marsh Island": 45,
+   "Golden Hills": 45,
+   "Lv.1-10 Sea Breeze Archipelago": 45,
+   "Lv.10-20 Isle of Decayed Treasures": 36,
+   "Lv.1-10 Eastern Wild Island": 36,
+   "Foot of the Volcano": 27,
+   "Lv.10-20 Frostbitten Isle": 27,
+   "Autumn Rocks": 27,
+   "Lv.15-25 Crescent Moon Shore": 18,
+   "Deep Bamboo Thicket": 14,
+   "Sandstone Gate Islet": 14,
+   "Lv.1-15 Windswept Island": 9,
+   "Lv.10-20 Scars of War": 9,
+   "Scorched Hill": 4
+  }
+ },
+ "BOSS_JellyfishGhost": {
+  "day_points": 0,
+  "night_points": 783,
+  "regions": {
+   "Flying Fish Coast": 126,
+   "Fortress Ruins": 72,
+   "Lv.10-25 Twilight Dunes": 63,
+   "Lv.1-10 Isle of Silence": 58,
+   "Lv.1-10 Isle of Murmurs": 54,
+   "Lv.1-10 Sunlit Isle": 45,
+   "Lv.1-10 Marsh Island": 45,
+   "Golden Hills": 45,
+   "Lv.1-10 Sea Breeze Archipelago": 45,
+   "Lv.10-20 Isle of Decayed Treasures": 36,
+   "Lv.1-10 Eastern Wild Island": 36,
+   "Foot of the Volcano": 27,
+   "Lv.30-40 Phantom Isle": 27,
+   "Lv.10-20 Frostbitten Isle": 27,
+   "Autumn Rocks": 27,
+   "Lv.15-25 Crescent Moon Shore": 18,
+   "Deep Bamboo Thicket": 14,
+   "Lv.1-15 Windswept Island": 9,
+   "Lv.10-20 Scars of War": 9
+  }
+ },
+ "CaptainPenguin": {
+  "day_points": 314,
+  "night_points": 314,
+  "regions": {
+   "Lv.30-40 Foot of the Astral Mountains": 306,
+   "Frostbound Mountains": 72,
+   "Flying Fish Coast": 60,
+   "Lv.1-10 Sunlit Isle": 36,
+   "Lv.10-20 Scars of War": 36,
+   "Lv.50-60 Isle of the Glacial Core": 36,
+   "Lv.10-25 Twilight Dunes": 32,
+   "Fortress Ruins": 18,
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 16,
+   "Lv.10-20 Frostbitten Isle": 14,
+   "Abandoned Ruins": 2
+  }
+ },
+ "BOSS_CaptainPenguin": {
+  "day_points": 180,
+  "night_points": 180,
+  "regions": {
+   "Lv.30-40 Foot of the Astral Mountains": 108,
+   "Frostbound Mountains": 72,
+   "Lv.1-10 Sunlit Isle": 36,
+   "Flying Fish Coast": 36,
+   "Lv.10-20 Scars of War": 36,
+   "Lv.50-60 Isle of the Glacial Core": 36,
+   "Lv.10-25 Twilight Dunes": 18,
+   "Fortress Ruins": 18
+  }
+ },
+ "FlyingManta_Thunder": {
+  "day_points": 328,
+  "night_points": 328,
+  "regions": {
+   "Lv.40-50 Oasis Isle": 112,
+   "Frostbound Mountains": 110,
+   "Lv.30-40 Foot of the Astral Mountains": 108,
+   "Lv.40-50 Desiccated Dunes": 68,
+   "Lv.50-60 Isle of the Glacial Core": 58,
+   "Lv.30-45 Isle of Eternal Summer": 54,
+   "Lv.10-20 Scars of War": 50,
+   "Flamepulse Islet": 26,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 24,
+   "Lv.10-25 Twilight Dunes": 18,
+   "Fortress Ruins": 18,
+   "Lv.10-20 Isle of Decayed Treasures": 8,
+   "Islet of Circular Ruins": 2
+  }
+ },
+ "BOSS_FlyingManta_Thunder": {
+  "day_points": 198,
+  "night_points": 198,
+  "regions": {
+   "Lv.30-40 Foot of the Astral Mountains": 108,
+   "Frostbound Mountains": 72,
+   "Lv.30-45 Isle of Eternal Summer": 54,
+   "Lv.40-50 Oasis Isle": 54,
+   "Lv.10-20 Scars of War": 36,
+   "Lv.50-60 Isle of the Glacial Core": 36,
+   "Lv.10-25 Twilight Dunes": 18,
+   "Fortress Ruins": 18
+  }
+ },
+ "NegativeOctopus": {
+  "day_points": 201,
+  "night_points": 361,
+  "regions": {
+   "Lv.50-60 Scorched Ashland": 214,
+   "Deserted Ash Plateau": 188,
+   "Lv.30-40 Foot of the Astral Mountains": 57,
+   "Frostbound Mountains": 36,
+   "Lv.10-25 Twilight Dunes": 22,
+   "Lv.10-20 Scars of War": 18,
+   "Lv.50-60 Isle of the Glacial Core": 18,
+   "Fortress Ruins": 9
+  }
+ },
+ "BOSS_NegativeOctopus": {
+  "day_points": 0,
+  "night_points": 144,
+  "regions": {
+   "Lv.30-40 Foot of the Astral Mountains": 54,
+   "Frostbound Mountains": 36,
+   "Lv.10-20 Scars of War": 18,
+   "Lv.50-60 Isle of the Glacial Core": 18,
+   "Lv.10-25 Twilight Dunes": 9,
+   "Fortress Ruins": 9
+  }
+ },
+ "OctopusGirl_Neutral": {
+  "day_points": 221,
+  "night_points": 221,
+  "regions": {
+   "Foot of the World Tree": 216,
+   "Waterlily Gorge": 114,
+   "Enchanted Firmament": 52,
+   "Crystalline Archipelago": 24,
+   "Azure Woodland": 18,
+   "Farcry Marsh": 18
+  }
+ },
+ "BOSS_OctopusGirl_Neutral": {
+  "day_points": 207,
+  "night_points": 207,
+  "regions": {
+   "Foot of the World Tree": 216,
+   "Waterlily Gorge": 108,
+   "Enchanted Firmament": 36,
+   "Azure Woodland": 18,
+   "Crystalline Archipelago": 18,
+   "Farcry Marsh": 18
+  }
+ },
+ "KingSunfish": {
+  "day_points": 117,
+  "night_points": 117,
+  "regions": {
+   "Waterlily Gorge": 108,
+   "Farcry Marsh": 50,
+   "Enchanted Firmament": 36,
+   "Crystalline Archipelago": 22,
+   "Azure Woodland": 18
+  }
+ },
+ "BOSS_KingSunfish": {
+  "day_points": 99,
+  "night_points": 99,
+  "regions": {
+   "Waterlily Gorge": 108,
+   "Enchanted Firmament": 36,
+   "Azure Woodland": 18,
+   "Crystalline Archipelago": 18,
+   "Farcry Marsh": 18
+  }
+ },
+ "SwordCutlassfish": {
+  "day_points": 137,
+  "night_points": 137,
+  "regions": {
+   "Waterlily Gorge": 108,
+   "Farcry Marsh": 50,
+   "Enchanted Firmament": 36,
+   "Lv.10-25 Twilight Dunes": 32,
+   "Crystalline Archipelago": 22,
+   "Azure Woodland": 18,
+   "Deep Bamboo Thicket": 4,
+   "Lv.1-10 Isle of Murmurs": 4
+  }
+ },
+ "BOSS_SwordCutlassfish": {
+  "day_points": 99,
+  "night_points": 99,
+  "regions": {
+   "Waterlily Gorge": 108,
+   "Enchanted Firmament": 36,
+   "Azure Woodland": 18,
+   "Crystalline Archipelago": 18,
+   "Farcry Marsh": 18
+  }
+ },
+ "KingSunfish_Thunder": {
+  "day_points": 259,
+  "night_points": 259,
+  "regions": {
+   "Foot of the World Tree": 320,
+   "Waterlily Gorge": 108,
+   "Enchanted Firmament": 36,
+   "Azure Woodland": 18,
+   "Crystalline Archipelago": 18,
+   "Farcry Marsh": 18
+  }
+ },
+ "BOSS_KingSunfish_Thunder": {
+  "day_points": 207,
+  "night_points": 207,
+  "regions": {
+   "Foot of the World Tree": 216,
+   "Waterlily Gorge": 108,
+   "Enchanted Firmament": 36,
+   "Azure Woodland": 18,
+   "Crystalline Archipelago": 18,
+   "Farcry Marsh": 18
+  }
+ },
+ "KendoFrog_Dark": {
+  "day_points": 645,
+  "night_points": 645,
+  "regions": {
+   "Scorched Hill": 340,
+   "Deserted Ash Plateau": 154,
+   "Lv.50-55 Dancing Sakura Shrine": 144,
+   "Hidden Passage to the Oculus Gate": 124,
+   "Sakurajima - Mushroom Wetlands": 108,
+   "Emberstone Plateau": 84,
+   "Lv.40-55 Sakurajima - Southern Sandbar": 82,
+   "Stone Pillar Cave": 74,
+   "Sakurajima - Northern Rock Field": 54,
+   "Crystalized Ancient Tree": 54,
+   "The Oculus Gate, Tower in Sight": 26,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 18,
+   "Loess Plains": 18,
+   "Lv.1-10 Isle of Silence": 8,
+   "Lv.50-60 Scorched Ashland": 2
+  }
+ },
+ "BOSS_KendoFrog_Dark": {
+  "day_points": 207,
+  "night_points": 207,
+  "regions": {
+   "Lv.50-55 Dancing Sakura Shrine": 144,
+   "Sakurajima - Mushroom Wetlands": 108,
+   "Lv.40-55 Sakurajima - Southern Sandbar": 82,
+   "Sakurajima - Northern Rock Field": 54,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 18,
+   "Lv.1-10 Isle of Silence": 8
+  }
+ },
+ "CaptainPenguin_Black": {
+  "day_points": 252,
+  "night_points": 252,
+  "regions": {
+   "Lv.50-55 Dancing Sakura Shrine": 144,
+   "Sakurajima - Mushroom Wetlands": 108,
+   "Lv.40-55 Sakurajima - Southern Sandbar": 82,
+   "Lv.30-40 Phantom Isle": 54,
+   "Sakurajima - Northern Rock Field": 54,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 36,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 18,
+   "Lv.1-10 Isle of Silence": 8
+  }
+ },
+ "BOSS_CaptainPenguin_Black": {
+  "day_points": 252,
+  "night_points": 252,
+  "regions": {
+   "Lv.50-55 Dancing Sakura Shrine": 144,
+   "Sakurajima - Mushroom Wetlands": 108,
+   "Lv.40-55 Sakurajima - Southern Sandbar": 82,
+   "Lv.30-40 Phantom Isle": 54,
+   "Sakurajima - Northern Rock Field": 54,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 36,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 18,
+   "Lv.1-10 Isle of Silence": 8
+  }
+ },
+ "GhostAnglerfish": {
+  "day_points": 82,
+  "night_points": 316,
+  "regions": {
+   "Lv.50-60 Scorched Ashland": 74,
+   "Lv.50-55 Dancing Sakura Shrine": 72,
+   "Lv.30-40 Phantom Isle": 63,
+   "Sakurajima - Mushroom Wetlands": 54,
+   "Deserted Ash Plateau": 44,
+   "Lv.40-55 Sakurajima - Southern Sandbar": 41,
+   "Sakurajima - Northern Rock Field": 27,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 17,
+   "Lv.1-10 Isle of Silence": 4,
+   "Scorched Hill": 2
+  }
+ },
+ "BOSS_GhostAnglerfish": {
+  "day_points": 0,
+  "night_points": 234,
+  "regions": {
+   "Lv.50-55 Dancing Sakura Shrine": 72,
+   "Sakurajima - Mushroom Wetlands": 54,
+   "Lv.40-55 Sakurajima - Southern Sandbar": 41,
+   "Lv.30-40 Phantom Isle": 27,
+   "Sakurajima - Northern Rock Field": 27,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 9,
+   "Lv.1-10 Isle of Silence": 4
+  }
+ },
+ "OctopusGirl": {
+  "day_points": 275,
+  "night_points": 743,
+  "regions": {
+   "Lv.50-60 Scorched Ashland": 241,
+   "Deserted Ash Plateau": 168,
+   "Withered Seaside": 128,
+   "Lv.30-40 Phantom Isle": 63,
+   "Lv.30-45 Isle of Eternal Summer": 59,
+   "Sakurajima - Mushroom Wetlands": 54,
+   "Lv.10-20 Isle of Decayed Treasures": 47,
+   "Lv.40-55 Sakurajima - Southern Sandbar": 41,
+   "Lv.50-55 Dancing Sakura Shrine": 36,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 36,
+   "Ruined Fortress City": 27,
+   "Dry Sandy Beach": 27,
+   "Sakurajima - Northern Rock Field": 27,
+   "Lv.30-40 Mount Obsidian": 27,
+   "Foot of the Volcano": 18,
+   "Lv.1-10 Sea Breeze Archipelago": 13,
+   "Lv.1-10 Isle of Silence": 4,
+   "Scorched Hill": 2
+  }
+ },
+ "BOSS_OctopusGirl": {
+  "day_points": 0,
+  "night_points": 468,
+  "regions": {
+   "Lv.30-40 Phantom Isle": 63,
+   "Lv.30-45 Isle of Eternal Summer": 59,
+   "Sakurajima - Mushroom Wetlands": 54,
+   "Lv.40-55 Sakurajima - Southern Sandbar": 41,
+   "Lv.50-55 Dancing Sakura Shrine": 36,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 36,
+   "Ruined Fortress City": 27,
+   "Lv.10-20 Isle of Decayed Treasures": 27,
+   "Dry Sandy Beach": 27,
+   "Sakurajima - Northern Rock Field": 27,
+   "Lv.30-40 Mount Obsidian": 27,
+   "Foot of the Volcano": 18,
+   "Lv.1-10 Sea Breeze Archipelago": 13,
+   "Lv.50-60 Scorched Ashland": 9,
+   "Lv.1-10 Isle of Silence": 4
+  }
+ },
+ "IceSeal": {
+  "day_points": 242,
+  "night_points": 242,
+  "regions": {
+   "Frozen Coral Hill": 140,
+   "Feybreak Shipwreck": 102,
+   "The Oculus Gate, Tower in Sight": 54,
+   "Lv.50-60 Isle of the Glacial Core": 54,
+   "Frostbound Mountains": 36,
+   "Bicornis Islet": 28,
+   "Lv.30-40 Foot of the Astral Mountains": 26,
+   "Lv.10-25 Twilight Dunes": 26,
+   "Hidden Passage to the Oculus Gate": 18
+  }
+ },
+ "BOSS_IceSeal": {
+  "day_points": 216,
+  "night_points": 216,
+  "regions": {
+   "Frozen Coral Hill": 140,
+   "Feybreak Shipwreck": 102,
+   "The Oculus Gate, Tower in Sight": 54,
+   "Lv.50-60 Isle of the Glacial Core": 54,
+   "Frostbound Mountains": 36,
+   "Bicornis Islet": 28,
+   "Hidden Passage to the Oculus Gate": 18
+  }
+ },
+ "BlueDragon_Ice": {
+  "day_points": 259,
+  "night_points": 259,
+  "regions": {
+   "Frozen Coral Hill": 140,
+   "Feybreak Shipwreck": 138,
+   "Lv.50-60 Isle of the Glacial Core": 68,
+   "The Oculus Gate, Tower in Sight": 54,
+   "Frostbound Mountains": 36,
+   "Lv.1-10 Sunlit Isle": 36,
+   "Bicornis Islet": 28,
+   "Hidden Passage to the Oculus Gate": 18
+  }
+ },
+ "BOSS_BlueDragon_Ice": {
+  "day_points": 252,
+  "night_points": 252,
+  "regions": {
+   "Frozen Coral Hill": 140,
+   "Feybreak Shipwreck": 138,
+   "The Oculus Gate, Tower in Sight": 54,
+   "Lv.50-60 Isle of the Glacial Core": 54,
+   "Frostbound Mountains": 36,
+   "Lv.1-10 Sunlit Isle": 36,
+   "Bicornis Islet": 28,
+   "Hidden Passage to the Oculus Gate": 18
+  }
+ },
+ "IceCrocodile": {
+  "day_points": 229,
+  "night_points": 229,
+  "regions": {
+   "Frozen Coral Hill": 140,
+   "Feybreak Shipwreck": 102,
+   "The Oculus Gate, Tower in Sight": 54,
+   "Lv.50-60 Isle of the Glacial Core": 54,
+   "Frostbound Mountains": 36,
+   "Bicornis Islet": 28,
+   "Hidden Passage to the Oculus Gate": 18,
+   "Lv.10-20 Frostbitten Isle": 14,
+   "Abandoned Ruins": 12
+  }
+ },
+ "BOSS_IceCrocodile": {
+  "day_points": 216,
+  "night_points": 216,
+  "regions": {
+   "Frozen Coral Hill": 140,
+   "Feybreak Shipwreck": 102,
+   "The Oculus Gate, Tower in Sight": 54,
+   "Lv.50-60 Isle of the Glacial Core": 54,
+   "Frostbound Mountains": 36,
+   "Bicornis Islet": 28,
+   "Hidden Passage to the Oculus Gate": 18
+  }
+ },
+ "BOSS_KendoFrog": {
+  "day_points": 522,
+  "night_points": 522,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 216,
+   "Ancient Ritual Site": 170,
+   "Lv.1-15 Windswept Island": 90,
+   "Golden Hills": 90,
+   "Lv.10-20 Bamboo Groves": 72,
+   "Lv.15-25 Crescent Moon Shore": 64,
+   "Autumn Rocks": 54,
+   "Lv.1-10 Marsh Island": 54,
+   "Gobfin's Turf": 54,
+   "Lv.20-30 Verdant Brook": 36,
+   "Fortress Ruins": 36,
+   "Lv.10-20 Scars of War": 18,
+   "Foot of the Volcano": 18,
+   "Lv.1-10 Eastern Wild Island": 18,
+   "Deep Bamboo Thicket": 18,
+   "Lv.10-25 Twilight Dunes": 18,
+   "Lv.1-10 Isle of Silence": 18
+  }
+ },
+ "BluePlatypus": {
+  "day_points": 578,
+  "night_points": 578,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 216,
+   "Ancient Ritual Site": 178,
+   "Golden Hills": 154,
+   "Lv.1-15 Windswept Island": 90,
+   "Lv.1-10 Marsh Island": 86,
+   "Lv.10-20 Bamboo Groves": 80,
+   "Lv.15-25 Crescent Moon Shore": 64,
+   "Autumn Rocks": 54,
+   "Gobfin's Turf": 54,
+   "Lv.20-30 Verdant Brook": 36,
+   "Fortress Ruins": 36,
+   "Lv.10-20 Scars of War": 18,
+   "Foot of the Volcano": 18,
+   "Lv.1-10 Eastern Wild Island": 18,
+   "Deep Bamboo Thicket": 18,
+   "Lv.10-25 Twilight Dunes": 18,
+   "Lv.1-10 Isle of Silence": 18
+  }
+ },
+ "BOSS_BluePlatypus": {
+  "day_points": 522,
+  "night_points": 522,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 216,
+   "Ancient Ritual Site": 170,
+   "Lv.1-15 Windswept Island": 90,
+   "Golden Hills": 90,
+   "Lv.10-20 Bamboo Groves": 72,
+   "Lv.15-25 Crescent Moon Shore": 64,
+   "Autumn Rocks": 54,
+   "Lv.1-10 Marsh Island": 54,
+   "Gobfin's Turf": 54,
+   "Lv.20-30 Verdant Brook": 36,
+   "Fortress Ruins": 36,
+   "Lv.10-20 Scars of War": 18,
+   "Foot of the Volcano": 18,
+   "Lv.1-10 Eastern Wild Island": 18,
+   "Deep Bamboo Thicket": 18,
+   "Lv.10-25 Twilight Dunes": 18,
+   "Lv.1-10 Isle of Silence": 18
+  }
+ },
+ "Serpent": {
+  "day_points": 285,
+  "night_points": 313,
+  "regions": {
+   "Lv.20-30 Verdant Brook": 104,
+   "Lv.10-20 Scars of War": 104,
+   "Frostbound Mountains": 74,
+   "Lv.40-50 Desiccated Dunes": 68,
+   "Lv.40-50 Oasis Isle": 58,
+   "Lv.1-10 Marsh Island": 38,
+   "Gobfin's Turf": 30,
+   "Flamepulse Islet": 26,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 24,
+   "Lv.50-60 Isle of the Glacial Core": 22,
+   "Lv.30-40 Foot of the Astral Mountains": 20,
+   "Lv.10-20 Isle of Decayed Treasures": 8,
+   "Lv.10-20 Bamboo Groves": 6,
+   "Lv.10-25 Twilight Dunes": 6,
+   "Golden Hills": 4,
+   "Islet of Circular Ruins": 2,
+   "Fortress Ruins": 2,
+   "Lv.1-10 Sea Breeze Archipelago": 2
+  }
+ },
+ "BOSS_Serpent": {
+  "day_points": 135,
+  "night_points": 135,
+  "regions": {
+   "Lv.20-30 Verdant Brook": 104,
+   "Lv.10-20 Scars of War": 90,
+   "Lv.1-10 Marsh Island": 36,
+   "Frostbound Mountains": 22,
+   "Lv.30-40 Foot of the Astral Mountains": 18
+  }
+ },
+ "BlueDragon": {
+  "day_points": 211,
+  "night_points": 211,
+  "regions": {
+   "Lv.20-30 Verdant Brook": 104,
+   "Lv.10-20 Scars of War": 90,
+   "Lv.10-20 Isle of Decayed Treasures": 54,
+   "Lv.1-10 Sunlit Isle": 36,
+   "Lv.1-10 Marsh Island": 36,
+   "Flying Fish Coast": 36,
+   "Lv.10-20 Bamboo Groves": 26,
+   "Frostbound Mountains": 22,
+   "Lv.30-40 Foot of the Astral Mountains": 18
+  }
+ },
+ "BOSS_BlueDragon": {
+  "day_points": 199,
+  "night_points": 199,
+  "regions": {
+   "Lv.20-30 Verdant Brook": 104,
+   "Lv.10-20 Scars of War": 90,
+   "Lv.10-20 Isle of Decayed Treasures": 54,
+   "Lv.1-10 Sunlit Isle": 36,
+   "Lv.1-10 Marsh Island": 36,
+   "Flying Fish Coast": 36,
+   "Frostbound Mountains": 22,
+   "Lv.30-40 Foot of the Astral Mountains": 18,
+   "Lv.10-20 Bamboo Groves": 2
+  }
+ },
+ "LazyCatfish_Gold": {
+  "day_points": 316,
+  "night_points": 316,
+  "regions": {
+   "Sakurajima - Northern Rock Field": 128,
+   "Lv.40-50 Desiccated Dunes": 106,
+   "Lv.30-45 Isle of Eternal Summer": 78,
+   "Dry Sandy Beach": 68,
+   "Lv.40-50 Oasis Isle": 54,
+   "Foot of the Volcano": 44,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 38,
+   "Lv.30-40 Phantom Isle": 36,
+   "Lv.50-55 Dancing Sakura Shrine": 26,
+   "Frostbound Mountains": 18,
+   "Lv.1-10 Sea Breeze Archipelago": 18,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 8,
+   "Sakurajima - Mushroom Wetlands": 6,
+   "Lv.30-40 Mount Obsidian": 4
+  }
+ },
+ "BOSS_LazyCatfish_Gold": {
+  "day_points": 135,
+  "night_points": 135,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 106,
+   "Lv.30-45 Isle of Eternal Summer": 54,
+   "Lv.40-50 Oasis Isle": 54,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 38,
+   "Frostbound Mountains": 18
+  }
+ },
+ "Serpent_Ground": {
+  "day_points": 594,
+  "night_points": 594,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 502,
+   "Deserted Ash Plateau": 190,
+   "Lv.50-60 Isle of the Glacial Core": 90,
+   "Lv.40-50 Oasis Isle": 74,
+   "Lv.50-60 Scorched Ashland": 74,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 72,
+   "Lv.30-45 Isle of Eternal Summer": 54,
+   "Frostbound Mountains": 50,
+   "Lv.10-20 Scars of War": 46,
+   "Sandstone Gate Islet": 28,
+   "Scorched Hill": 6,
+   "Flamepulse Islet": 2
+  }
+ },
+ "BOSS_Serpent_Ground": {
+  "day_points": 117,
+  "night_points": 117,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 106,
+   "Lv.30-45 Isle of Eternal Summer": 54,
+   "Lv.40-50 Oasis Isle": 54,
+   "Frostbound Mountains": 18,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 2
+  }
+ },
+ "NegativeOctopus_Neutral": {
+  "day_points": 382,
+  "night_points": 382,
+  "regions": {
+   "Lv.30-40 Phantom Isle": 126,
+   "Lv.30-45 Isle of Eternal Summer": 118,
+   "Lv.40-50 Desiccated Dunes": 68,
+   "Lv.40-50 Oasis Isle": 58,
+   "Ruined Fortress City": 54,
+   "Dry Sandy Beach": 54,
+   "Lv.30-40 Mount Obsidian": 54,
+   "Frostbound Mountains": 38,
+   "Foot of the Volcano": 36,
+   "Lv.1-10 Sea Breeze Archipelago": 26,
+   "Flamepulse Islet": 26,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 24,
+   "Lv.50-60 Isle of the Glacial Core": 22,
+   "Lv.50-60 Scorched Ashland": 18,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 18,
+   "Lv.10-20 Scars of War": 14,
+   "Lv.10-20 Isle of Decayed Treasures": 8,
+   "Islet of Circular Ruins": 2
+  }
+ },
+ "BOSS_NegativeOctopus_Neutral": {
+  "day_points": 252,
+  "night_points": 252,
+  "regions": {
+   "Lv.30-40 Phantom Isle": 126,
+   "Lv.30-45 Isle of Eternal Summer": 118,
+   "Ruined Fortress City": 54,
+   "Dry Sandy Beach": 54,
+   "Lv.30-40 Mount Obsidian": 54,
+   "Foot of the Volcano": 36,
+   "Lv.1-10 Sea Breeze Archipelago": 26,
+   "Lv.50-60 Scorched Ashland": 18,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 18
+  }
+ },
+ "Kelpie_Fire": {
+  "day_points": 790,
+  "night_points": 790,
+  "regions": {
+   "Dry Sandy Beach": 250,
+   "Lv.30-40 Phantom Isle": 180,
+   "Deserted Ash Plateau": 144,
+   "Lv.30-45 Isle of Eternal Summer": 136,
+   "Scorched Hill": 126,
+   "Ruined Fortress City": 116,
+   "Withered Seaside": 108,
+   "Lv.50-60 Scorched Ashland": 90,
+   "Stone Pillar Cave": 90,
+   "Loess Plains": 90,
+   "Crystalized Ancient Tree": 54,
+   "Lv.30-40 Mount Obsidian": 54,
+   "Foot of the Volcano": 44,
+   "Emberstone Plateau": 36,
+   "Lv.1-10 Sea Breeze Archipelago": 26,
+   "The Oculus Gate, Tower in Sight": 18,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 18
+  }
+ },
+ "BOSS_Kelpie_Fire": {
+  "day_points": 738,
+  "night_points": 738,
+  "regions": {
+   "Dry Sandy Beach": 198,
+   "Lv.30-40 Phantom Isle": 180,
+   "Deserted Ash Plateau": 144,
+   "Scorched Hill": 126,
+   "Lv.30-45 Isle of Eternal Summer": 118,
+   "Withered Seaside": 108,
+   "Ruined Fortress City": 90,
+   "Lv.50-60 Scorched Ashland": 90,
+   "Stone Pillar Cave": 90,
+   "Loess Plains": 90,
+   "Crystalized Ancient Tree": 54,
+   "Lv.30-40 Mount Obsidian": 54,
+   "Foot of the Volcano": 36,
+   "Emberstone Plateau": 36,
+   "Lv.1-10 Sea Breeze Archipelago": 26,
+   "The Oculus Gate, Tower in Sight": 18,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 18
+  }
+ },
+ "GhostAnglerfish_Fire": {
+  "day_points": 405,
+  "night_points": 405,
+  "regions": {
+   "Deserted Ash Plateau": 144,
+   "Scorched Hill": 126,
+   "Withered Seaside": 108,
+   "Stone Pillar Cave": 90,
+   "Loess Plains": 90,
+   "Lv.50-60 Scorched Ashland": 72,
+   "Crystalized Ancient Tree": 54,
+   "Feybreak Shipwreck": 36,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 36,
+   "Emberstone Plateau": 36,
+   "The Oculus Gate, Tower in Sight": 18
+  }
+ },
+ "BOSS_GhostAnglerfish_Fire": {
+  "day_points": 405,
+  "night_points": 405,
+  "regions": {
+   "Deserted Ash Plateau": 144,
+   "Scorched Hill": 126,
+   "Withered Seaside": 108,
+   "Stone Pillar Cave": 90,
+   "Loess Plains": 90,
+   "Lv.50-60 Scorched Ashland": 72,
+   "Crystalized Ancient Tree": 54,
+   "Feybreak Shipwreck": 36,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 36,
+   "Emberstone Plateau": 36,
+   "The Oculus Gate, Tower in Sight": 18
+  }
+ },
+ "StuffedShark_Fire": {
+  "day_points": 414,
+  "night_points": 414,
+  "regions": {
+   "Deserted Ash Plateau": 144,
+   "Scorched Hill": 126,
+   "Withered Seaside": 108,
+   "Stone Pillar Cave": 90,
+   "Loess Plains": 90,
+   "Lv.50-60 Scorched Ashland": 72,
+   "Lv.30-40 Phantom Isle": 54,
+   "Crystalized Ancient Tree": 54,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 36,
+   "Emberstone Plateau": 36,
+   "The Oculus Gate, Tower in Sight": 18
+  }
+ },
+ "BOSS_StuffedShark_Fire": {
+  "day_points": 414,
+  "night_points": 414,
+  "regions": {
+   "Deserted Ash Plateau": 144,
+   "Scorched Hill": 126,
+   "Withered Seaside": 108,
+   "Stone Pillar Cave": 90,
+   "Loess Plains": 90,
+   "Lv.50-60 Scorched Ashland": 72,
+   "Lv.30-40 Phantom Isle": 54,
+   "Crystalized Ancient Tree": 54,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 36,
+   "Emberstone Plateau": 36,
+   "The Oculus Gate, Tower in Sight": 18
+  }
+ },
+ "LazyCatfish": {
+  "day_points": 372,
+  "night_points": 372,
+  "regions": {
+   "Dry Sandy Beach": 212,
+   "Lv.10-25 Twilight Dunes": 170,
+   "Lv.10-20 Bamboo Groves": 114,
+   "Foot of the Volcano": 50,
+   "Ruined Fortress City": 36,
+   "Lv.30-40 Phantom Isle": 36,
+   "Gobfin's Turf": 34,
+   "Lv.30-45 Isle of Eternal Summer": 24,
+   "Lv.1-10 Sea Breeze Archipelago": 18,
+   "Lv.1-10 Marsh Island": 12,
+   "Deep Bamboo Thicket": 10,
+   "Fortress Ruins": 10,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 8,
+   "Ancient Ritual Site": 6,
+   "Lv.30-40 Mount Obsidian": 4
+  }
+ },
+ "BOSS_LazyCatfish": {
+  "day_points": 91,
+  "night_points": 91,
+  "regions": {
+   "Dry Sandy Beach": 144,
+   "Ruined Fortress City": 36,
+   "Lv.1-10 Isle of Murmurs": 2
+  }
+ },
+ "BluePlatypus_Fire": {
+  "day_points": 124,
+  "night_points": 124,
+  "regions": {
+   "Dry Sandy Beach": 144,
+   "Ruined Fortress City": 36,
+   "Lv.30-40 Phantom Isle": 36,
+   "Lv.30-40 Mount Obsidian": 32
+  }
+ },
+ "BOSS_BluePlatypus_Fire": {
+  "day_points": 90,
+  "night_points": 90,
+  "regions": {
+   "Dry Sandy Beach": 144,
+   "Ruined Fortress City": 36
+  }
+ },
+ "IceNarwhal_Fire": {
+  "day_points": 112,
+  "night_points": 112,
+  "regions": {
+   "Foot of the World Tree": 224
+  }
+ },
+ "BOSS_IceNarwhal_Fire": {
+  "day_points": 90,
+  "night_points": 90,
+  "regions": {
+   "Foot of the World Tree": 180
+  }
+ },
+ "IceNarwhal": {
+  "day_points": 187,
+  "night_points": 7,
+  "regions": {
+   "Feybreak Shipwreck": 69,
+   "Frozen Coral Hill": 52,
+   "Lv.50-60 Isle of the Glacial Core": 41,
+   "Lv.1-10 Sunlit Isle": 18,
+   "Bicornis Islet": 14
+  }
+ },
+ "BOSS_IceNarwhal": {
+  "day_points": 181,
+  "night_points": 1,
+  "regions": {
+   "Feybreak Shipwreck": 69,
+   "Frozen Coral Hill": 52,
+   "Lv.50-60 Isle of the Glacial Core": 29,
+   "Lv.1-10 Sunlit Isle": 18,
+   "Bicornis Islet": 14
+  }
+ },
+ "SwordCutlassfish_Fire": {
+  "day_points": 34,
+  "night_points": 34,
+  "regions": {
+   "Foot of the World Tree": 36,
+   "Flamepulse Islet": 32
+  }
+ },
+ "BOSS_SwordCutlassfish_Fire": {
+  "day_points": 18,
+  "night_points": 18,
+  "regions": {
+   "Foot of the World Tree": 36
+  }
+ },
+ "BOSS_Horus_Water": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Frozen Coral Hill": 2
+  }
+ },
+ "BOSS_GrimGirl": {
+  "day_points": 0,
+  "night_points": 1,
+  "regions": {
+   "The Oculus Gate, Tower in Sight": 1
+  }
+ },
+ "BOSS_HerculesBeetle_Ground": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Hidden Passage to the Oculus Gate": 2
+  }
+ },
+ "BOSS_GoldenHorse": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Loess Plains": 2
+  }
+ },
+ "GoldenHorse": {
+  "day_points": 351,
+  "night_points": 351,
+  "regions": {
+   "Loess Plains": 178,
+   "Hidden Passage to the Oculus Gate": 162,
+   "The Oculus Gate, Tower in Sight": 148,
+   "Deserted Ash Plateau": 74,
+   "Crystalized Ancient Tree": 72,
+   "Scorched Hill": 56,
+   "Emberstone Plateau": 6,
+   "Frozen Coral Hill": 4,
+   "Stone Pillar Cave": 2
+  }
+ },
+ "BOSS_MysteryMask": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.50-60 Scorched Ashland": 2
+  }
+ },
+ "MysteryMask": {
+  "day_points": 1621,
+  "night_points": 1621,
+  "regions": {
+   "Deserted Ash Plateau": 512,
+   "Lv.50-60 Scorched Ashland": 422,
+   "Scorched Hill": 414,
+   "Frozen Coral Hill": 388,
+   "The Oculus Gate, Tower in Sight": 270,
+   "Loess Plains": 236,
+   "Stone Pillar Cave": 230,
+   "Withered Seaside": 210,
+   "Emberstone Plateau": 184,
+   "Hidden Passage to the Oculus Gate": 180,
+   "Crystalized Ancient Tree": 116,
+   "Sandstone Gate Islet": 62,
+   "Feybreak Shipwreck": 16,
+   "Bicornis Islet": 2
+  }
+ },
+ "BOSS_WhiteTiger_Ground": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Deserted Ash Plateau": 2
+  }
+ },
+ "BOSS_NightBlueHorse": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Emberstone Plateau": 2
+  }
+ },
+ "NightBlueHorse": {
+  "day_points": 1,
+  "night_points": 178,
+  "regions": {
+   "Loess Plains": 109,
+   "Crystalized Ancient Tree": 31,
+   "Emberstone Plateau": 27,
+   "The Oculus Gate, Tower in Sight": 9,
+   "Hidden Passage to the Oculus Gate": 2,
+   "Withered Seaside": 1
+  }
+ },
+ "BOSS_RaijinDaughter_Water": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Sandstone Gate Islet": 2
+  }
+ },
+ "RaijinDaughter_Water": {
+  "day_points": 135,
+  "night_points": 135,
+  "regions": {
+   "Stone Pillar Cave": 106,
+   "Lv.50-60 Scorched Ashland": 58,
+   "Waterlily Gorge": 50,
+   "Sandstone Gate Islet": 30,
+   "Withered Seaside": 18,
+   "Scorched Hill": 6,
+   "Deserted Ash Plateau": 2
+  }
+ },
+ "BOSS_AmaterasuWolf_Dark": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Emberstone Plateau": 2
+  }
+ },
+ "AmaterasuWolf_Dark": {
+  "day_points": 340,
+  "night_points": 340,
+  "regions": {
+   "Scorched Hill": 284,
+   "The Oculus Gate, Tower in Sight": 104,
+   "Emberstone Plateau": 86,
+   "Deserted Ash Plateau": 80,
+   "Stone Pillar Cave": 72,
+   "Hidden Passage to the Oculus Gate": 38,
+   "Loess Plains": 6,
+   "Crystalized Ancient Tree": 4,
+   "Frozen Coral Hill": 4,
+   "Lv.50-60 Scorched Ashland": 2
+  }
+ },
+ "BOSS_BlueThunderHorse": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Frozen Coral Hill": 2
+  }
+ },
+ "BlueberryFairy": {
+  "day_points": 638,
+  "night_points": 638,
+  "regions": {
+   "Scorched Hill": 340,
+   "Loess Plains": 236,
+   "Hidden Passage to the Oculus Gate": 162,
+   "Deserted Ash Plateau": 154,
+   "The Oculus Gate, Tower in Sight": 148,
+   "Emberstone Plateau": 94,
+   "Stone Pillar Cave": 74,
+   "Crystalized Ancient Tree": 62,
+   "Frozen Coral Hill": 4,
+   "Lv.50-60 Scorched Ashland": 2
+  }
+ },
+ "BerryGoat_Dark": {
+  "day_points": 51,
+  "night_points": 51,
+  "regions": {
+   "Loess Plains": 54,
+   "Crystalized Ancient Tree": 40,
+   "Emberstone Plateau": 4,
+   "Hidden Passage to the Oculus Gate": 4
+  }
+ },
+ "HerculesBeetle_Ground": {
+  "day_points": 58,
+  "night_points": 58,
+  "regions": {
+   "Loess Plains": 54,
+   "Crystalized Ancient Tree": 54,
+   "Emberstone Plateau": 4,
+   "Hidden Passage to the Oculus Gate": 4
+  }
+ },
+ "Ronin_Dark": {
+  "day_points": 1620,
+  "night_points": 1990,
+  "regions": {
+   "Deserted Ash Plateau": 512,
+   "Lv.50-60 Scorched Ashland": 420,
+   "Scorched Hill": 414,
+   "Frozen Coral Hill": 388,
+   "The Oculus Gate, Tower in Sight": 270,
+   "Loess Plains": 236,
+   "Stone Pillar Cave": 230,
+   "Withered Seaside": 210,
+   "Emberstone Plateau": 184,
+   "Hidden Passage to the Oculus Gate": 180,
+   "Lv.50-55 Dancing Sakura Shrine": 130,
+   "Crystalized Ancient Tree": 116,
+   "Sakurajima - Northern Rock Field": 83,
+   "Lv.40-55 Sakurajima - Southern Sandbar": 80,
+   "Sakurajima - Mushroom Wetlands": 69,
+   "Sandstone Gate Islet": 62,
+   "Feybreak Shipwreck": 16,
+   "Lv.1-10 Isle of Silence": 5,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 3,
+   "Bicornis Islet": 2
+  }
+ },
+ "BlackPuppy": {
+  "day_points": 1620,
+  "night_points": 1620,
+  "regions": {
+   "Deserted Ash Plateau": 512,
+   "Lv.50-60 Scorched Ashland": 420,
+   "Scorched Hill": 414,
+   "Frozen Coral Hill": 388,
+   "The Oculus Gate, Tower in Sight": 270,
+   "Loess Plains": 236,
+   "Stone Pillar Cave": 230,
+   "Withered Seaside": 210,
+   "Emberstone Plateau": 184,
+   "Hidden Passage to the Oculus Gate": 180,
+   "Crystalized Ancient Tree": 116,
+   "Sandstone Gate Islet": 62,
+   "Feybreak Shipwreck": 16,
+   "Bicornis Islet": 2
+  }
+ },
+ "WhiteDeer": {
+  "day_points": 1613,
+  "night_points": 1613,
+  "regions": {
+   "Deserted Ash Plateau": 512,
+   "Lv.50-60 Scorched Ashland": 420,
+   "Scorched Hill": 414,
+   "Frozen Coral Hill": 388,
+   "The Oculus Gate, Tower in Sight": 270,
+   "Loess Plains": 236,
+   "Stone Pillar Cave": 230,
+   "Withered Seaside": 210,
+   "Emberstone Plateau": 184,
+   "Hidden Passage to the Oculus Gate": 180,
+   "Crystalized Ancient Tree": 102,
+   "Sandstone Gate Islet": 62,
+   "Feybreak Shipwreck": 16,
+   "Bicornis Islet": 2
+  }
+ },
+ "MimicDog": {
+  "day_points": 5312,
+  "night_points": 5312,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 830,
+   "Foot of the World Tree": 764,
+   "Deserted Ash Plateau": 512,
+   "Lv.50-60 Scorched Ashland": 420,
+   "Scorched Hill": 414,
+   "Frozen Coral Hill": 388,
+   "Lv.10-20 Bamboo Groves": 354,
+   "Lv.10-25 Twilight Dunes": 350,
+   "Lv.30-40 Foot of the Astral Mountains": 338,
+   "Deep Bamboo Thicket": 334,
+   "Ancient Ritual Site": 298,
+   "Frostbound Mountains": 276,
+   "The Oculus Gate, Tower in Sight": 270,
+   "Foot of the Volcano": 268,
+   "Gobfin's Turf": 266,
+   "Lv.50-55 Dancing Sakura Shrine": 260,
+   "Lv.15-25 Crescent Moon Shore": 252,
+   "Loess Plains": 236,
+   "Stone Pillar Cave": 230,
+   "Dry Sandy Beach": 216,
+   "Withered Seaside": 210,
+   "Enchanted Firmament": 210,
+   "Emberstone Plateau": 184,
+   "Hidden Passage to the Oculus Gate": 180,
+   "Sakurajima - Northern Rock Field": 178,
+   "Lv.30-40 Mount Obsidian": 170,
+   "Lv.40-55 Sakurajima - Southern Sandbar": 160,
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 154,
+   "Lv.50-60 Isle of the Glacial Core": 146,
+   "Lv.10-20 Scars of War": 146,
+   "Sakurajima - Mushroom Wetlands": 138,
+   "Lv.35-50 Astral Mountains": 134,
+   "Crystalized Ancient Tree": 116,
+   "Lv.20-30 Verdant Brook": 114,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 108,
+   "Abandoned Ruins": 106,
+   "Ruined Fortress City": 94,
+   "Lv.40-50 Oasis Isle": 84,
+   "Farcry Marsh": 78,
+   "Azure Woodland": 78,
+   "Lv.1-10 Sea Breeze Archipelago": 78,
+   "Autumn Rocks": 78,
+   "Lv.30-40 Phantom Isle": 78,
+   "Sandstone Gate Islet": 62,
+   "Waterlily Gorge": 50,
+   "Golden Hills": 50,
+   "Crystalline Archipelago": 36,
+   "Lv.30-45 Isle of Eternal Summer": 32,
+   "Flamepulse Islet": 28,
+   "Feybreak Shipwreck": 16,
+   "Lv.1-10 Marsh Island": 14,
+   "Lv.1-10 Isle of Silence": 10,
+   "Fortress Ruins": 10,
+   "Lv.10-20 Isle of Decayed Treasures": 8,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 6,
+   "Bicornis Islet": 2,
+   "Islet of Circular Ruins": 2
+  }
+ },
+ "BOSS_WhiteDeer": {
+  "day_points": 2,
+  "night_points": 2,
+  "regions": {
+   "Crystalized Ancient Tree": 2,
+   "Foot of the World Tree": 2
+  }
+ },
+ "ClownRabbit": {
+  "day_points": 81,
+  "night_points": 81,
+  "regions": {
+   "Foot of the World Tree": 126,
+   "Crystalized Ancient Tree": 2,
+   "Lv.40-50 Desiccated Dunes": 2,
+   "Bicornis Islet": 2,
+   "Flamepulse Islet": 2,
+   "Lv.10-20 Isle of Decayed Treasures": 2,
+   "Scouring Islet": 2,
+   "Sandstone Gate Islet": 2,
+   "Glacial Memento Islet": 2,
+   "Suncrest Islet": 2,
+   "Islet of Circular Ruins": 2,
+   "Lv.10-20 Frostbitten Isle": 2,
+   "Lv.50-60 Isle of the Glacial Core": 2,
+   "Lv.30-40 Phantom Isle": 2,
+   "Lv.35-50 Astral Mountains": 2,
+   "Lv.50-55 Dancing Sakura Shrine": 2,
+   "Waterlily Gorge": 2,
+   "Lv.10-20 Scars of War": 2,
+   "Lv.30-40 Mount Obsidian": 2
+  }
+ },
+ "RowName": {
+  "day_points": 18,
+  "night_points": 18,
+  "regions": {
+   "Crystalized Ancient Tree": 2,
+   "Lv.40-50 Desiccated Dunes": 2,
+   "Bicornis Islet": 2,
+   "Flamepulse Islet": 2,
+   "Lv.10-20 Isle of Decayed Treasures": 2,
+   "Scouring Islet": 2,
+   "Sandstone Gate Islet": 2,
+   "Glacial Memento Islet": 2,
+   "Suncrest Islet": 2,
+   "Islet of Circular Ruins": 2,
+   "Lv.10-20 Frostbitten Isle": 2,
+   "Lv.50-60 Isle of the Glacial Core": 2,
+   "Lv.30-40 Phantom Isle": 2,
+   "Lv.35-50 Astral Mountains": 2,
+   "Lv.50-55 Dancing Sakura Shrine": 2,
+   "Waterlily Gorge": 2,
+   "Lv.10-20 Scars of War": 2,
+   "Lv.30-40 Mount Obsidian": 2
+  }
+ },
+ "ThunderDog": {
+  "day_points": 235,
+  "night_points": 235,
+  "regions": {
+   "Lv.30-40 Foot of the Astral Mountains": 198,
+   "Loess Plains": 164,
+   "Crystalized Ancient Tree": 48,
+   "The Oculus Gate, Tower in Sight": 18,
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 16,
+   "Lv.10-25 Twilight Dunes": 14,
+   "Emberstone Plateau": 6,
+   "Hidden Passage to the Oculus Gate": 4,
+   "Abandoned Ruins": 2
+  }
+ },
+ "BOSS_BadCatgirl": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.50-60 Scorched Ashland": 2
+  }
+ },
+ "BadCatgirl": {
+  "day_points": 259,
+  "night_points": 259,
+  "regions": {
+   "Stone Pillar Cave": 156,
+   "Lv.50-60 Scorched Ashland": 132,
+   "Withered Seaside": 80,
+   "Scorched Hill": 66,
+   "Emberstone Plateau": 50,
+   "Sandstone Gate Islet": 34
+  }
+ },
+ "BOSS_WhiteShieldDragon": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Stone Pillar Cave": 2
+  }
+ },
+ "DarkCrow": {
+  "day_points": 264,
+  "night_points": 1463,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 399,
+   "Deep Bamboo Thicket": 186,
+   "Lv.10-20 Bamboo Groves": 177,
+   "Stone Pillar Cave": 156,
+   "Lv.50-60 Scorched Ashland": 130,
+   "Withered Seaside": 80,
+   "Scorched Hill": 66,
+   "Lv.50-60 Isle of the Glacial Core": 58,
+   "Lv.10-20 Scars of War": 58,
+   "Frostbound Mountains": 55,
+   "Lv.10-25 Twilight Dunes": 53,
+   "Emberstone Plateau": 50,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 47,
+   "Lv.40-50 Oasis Isle": 42,
+   "Foot of the Volcano": 37,
+   "Sandstone Gate Islet": 34,
+   "Lv.1-10 Sea Breeze Archipelago": 30,
+   "Golden Hills": 25,
+   "Flamepulse Islet": 14,
+   "Ancient Ritual Site": 13,
+   "Lv.50-55 Dancing Sakura Shrine": 12,
+   "Lv.10-20 Isle of Decayed Treasures": 4,
+   "Islet of Circular Ruins": 1
+  }
+ },
+ "BirdDragon": {
+  "day_points": 545,
+  "night_points": 545,
+  "regions": {
+   "Lv.50-60 Scorched Ashland": 286,
+   "Withered Seaside": 190,
+   "Deserted Ash Plateau": 168,
+   "Dry Sandy Beach": 140,
+   "Scorched Hill": 68,
+   "Lv.10-20 Bamboo Groves": 52,
+   "Emberstone Plateau": 50,
+   "Stone Pillar Cave": 50,
+   "Sandstone Gate Islet": 34,
+   "Ruined Fortress City": 26,
+   "Foot of the Volcano": 12,
+   "Deep Bamboo Thicket": 10,
+   "Lv.30-45 Isle of Eternal Summer": 4
+  }
+ },
+ "FengyunDeeper_Electric": {
+  "day_points": 258,
+  "night_points": 258,
+  "regions": {
+   "Stone Pillar Cave": 156,
+   "Lv.50-60 Scorched Ashland": 130,
+   "Withered Seaside": 80,
+   "Scorched Hill": 66,
+   "Emberstone Plateau": 50,
+   "Sandstone Gate Islet": 34
+  }
+ },
+ "GrimGirl": {
+  "day_points": 0,
+  "night_points": 769,
+  "regions": {
+   "Scorched Hill": 203,
+   "Stone Pillar Cave": 115,
+   "Hidden Passage to the Oculus Gate": 81,
+   "Deserted Ash Plateau": 77,
+   "Emberstone Plateau": 67,
+   "Lv.50-60 Scorched Ashland": 66,
+   "The Oculus Gate, Tower in Sight": 65,
+   "Withered Seaside": 40,
+   "Crystalized Ancient Tree": 27,
+   "Sandstone Gate Islet": 17,
+   "Loess Plains": 9,
+   "Frozen Coral Hill": 2
+  }
+ },
+ "BOSS_FengyunDeeper_Electric": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Stone Pillar Cave": 2
+  }
+ },
+ "HadesBird": {
+  "day_points": 511,
+  "night_points": 1109,
+  "regions": {
+   "Scorched Hill": 340,
+   "Hidden Passage to the Oculus Gate": 162,
+   "Deserted Ash Plateau": 154,
+   "Ancient Ritual Site": 136,
+   "Gobfin's Turf": 133,
+   "The Oculus Gate, Tower in Sight": 130,
+   "Lv.15-25 Crescent Moon Shore": 126,
+   "Emberstone Plateau": 84,
+   "Stone Pillar Cave": 74,
+   "Frostbound Mountains": 63,
+   "Lv.20-30 Verdant Brook": 56,
+   "Crystalized Ancient Tree": 54,
+   "Autumn Rocks": 39,
+   "Loess Plains": 18,
+   "Lv.10-25 Twilight Dunes": 17,
+   "Lv.10-20 Scars of War": 15,
+   "Lv.1-10 Marsh Island": 7,
+   "Fortress Ruins": 5,
+   "Frozen Coral Hill": 4,
+   "Lv.50-60 Scorched Ashland": 2,
+   "Lv.30-40 Foot of the Astral Mountains": 1
+  }
+ },
+ "LazyDragon_Electric": {
+  "day_points": 17,
+  "night_points": 17,
+  "regions": {
+   "Scorched Hill": 4,
+   "Hidden Passage to the Oculus Gate": 2,
+   "Stone Pillar Cave": 2,
+   "Frozen Coral Hill": 2,
+   "The Oculus Gate, Tower in Sight": 2,
+   "Lv.50-60 Scorched Ashland": 2,
+   "Lv.50-60 Isle of the Glacial Core": 2,
+   "Sakurajima - Mushroom Wetlands": 2,
+   "Lv.50-55 Dancing Sakura Shrine": 2,
+   "Lv.10-25 Twilight Dunes": 2,
+   "Lv.10-20 Bamboo Groves": 2,
+   "Lv.10-20 Scars of War": 2,
+   "Lv.20-30 Verdant Brook": 2,
+   "Frostbound Mountains": 2,
+   "Dry Sandy Beach": 2,
+   "Ruined Fortress City": 2
+  }
+ },
+ "LazyDragon": {
+  "day_points": 38,
+  "night_points": 38,
+  "regions": {
+   "Lv.10-20 Bamboo Groves": 20,
+   "Frostbound Mountains": 14,
+   "Foot of the Volcano": 10,
+   "Lv.10-25 Twilight Dunes": 6,
+   "Scorched Hill": 4,
+   "Hidden Passage to the Oculus Gate": 2,
+   "Stone Pillar Cave": 2,
+   "Frozen Coral Hill": 2,
+   "The Oculus Gate, Tower in Sight": 2,
+   "Lv.50-60 Scorched Ashland": 2,
+   "Lv.50-60 Isle of the Glacial Core": 2,
+   "Sakurajima - Mushroom Wetlands": 2,
+   "Lv.50-55 Dancing Sakura Shrine": 2,
+   "Lv.1-10 Sea Breeze Archipelago": 2,
+   "Gobfin's Turf": 2,
+   "Lv.30-40 Foot of the Astral Mountains": 2
+  }
+ },
+ "RedArmorBird": {
+  "day_points": 150,
+  "night_points": 150,
+  "regions": {
+   "Lv.30-40 Mount Obsidian": 140,
+   "Foot of the Volcano": 48,
+   "Lv.30-40 Phantom Isle": 42,
+   "Emberstone Plateau": 40,
+   "Ruined Fortress City": 28,
+   "Withered Seaside": 2
+  }
+ },
+ "Manticore": {
+  "day_points": 56,
+  "night_points": 56,
+  "regions": {
+   "Foot of the Volcano": 48,
+   "Emberstone Plateau": 40,
+   "Lv.30-40 Mount Obsidian": 22,
+   "Withered Seaside": 2
+  }
+ },
+ "Umihebi_Fire": {
+  "day_points": 21,
+  "night_points": 21,
+  "regions": {
+   "Emberstone Plateau": 40,
+   "Withered Seaside": 2
+  }
+ },
+ "Manticore_Dark": {
+  "day_points": 116,
+  "night_points": 517,
+  "regions": {
+   "Frozen Coral Hill": 192,
+   "Dry Sandy Beach": 108,
+   "Foot of the Volcano": 97,
+   "Lv.30-40 Mount Obsidian": 85,
+   "Ruined Fortress City": 47,
+   "Lv.30-40 Phantom Isle": 39,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 20,
+   "Feybreak Shipwreck": 16,
+   "Lv.30-45 Isle of Eternal Summer": 16,
+   "Lv.1-10 Sea Breeze Archipelago": 9,
+   "The Oculus Gate, Tower in Sight": 4
+  }
+ },
+ "Horus_Water": {
+  "day_points": 197,
+  "night_points": 197,
+  "regions": {
+   "Frozen Coral Hill": 242,
+   "Foot of the World Tree": 94,
+   "Enchanted Firmament": 48,
+   "Crystalline Archipelago": 10
+  }
+ },
+ "VolcanicMonster_Ice": {
+  "day_points": 133,
+  "night_points": 133,
+  "regions": {
+   "Frozen Coral Hill": 222,
+   "Lv.35-50 Astral Mountains": 42,
+   "Bicornis Islet": 2
+  }
+ },
+ "BlueThunderHorse": {
+  "day_points": 112,
+  "night_points": 112,
+  "regions": {
+   "Frozen Coral Hill": 222,
+   "Bicornis Islet": 2
+  }
+ },
+ "CandleGhost": {
+  "day_points": 10,
+  "night_points": 649,
+  "regions": {
+   "Frozen Coral Hill": 192,
+   "Lv.50-55 Dancing Sakura Shrine": 130,
+   "Sakurajima - Northern Rock Field": 83,
+   "Lv.40-55 Sakurajima - Southern Sandbar": 80,
+   "Sakurajima - Mushroom Wetlands": 69,
+   "The Oculus Gate, Tower in Sight": 61,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 23,
+   "Feybreak Shipwreck": 8,
+   "Hidden Passage to the Oculus Gate": 7,
+   "Lv.1-10 Isle of Silence": 5,
+   "Bicornis Islet": 1
+  }
+ },
+ "Werewolf_Ice": {
+  "day_points": 122,
+  "night_points": 461,
+  "regions": {
+   "Lv.30-40 Foot of the Astral Mountains": 160,
+   "The Oculus Gate, Tower in Sight": 120,
+   "Frozen Coral Hill": 110,
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 77,
+   "Lv.35-50 Astral Mountains": 67,
+   "Hidden Passage to the Oculus Gate": 14,
+   "Abandoned Ruins": 13,
+   "Lv.50-60 Isle of the Glacial Core": 9,
+   "Lv.10-25 Twilight Dunes": 7,
+   "Sakurajima - Northern Rock Field": 6
+  }
+ },
+ "MushroomDragon_Dark": {
+  "day_points": 189,
+  "night_points": 189,
+  "regions": {
+   "Frozen Coral Hill": 236,
+   "Sakurajima - Mushroom Wetlands": 108,
+   "Feybreak Shipwreck": 16,
+   "Lv.1-10 Isle of Silence": 10,
+   "The Oculus Gate, Tower in Sight": 4,
+   "Bicornis Islet": 2,
+   "Foot of the World Tree": 2
+  }
+ },
+ "CatVampire": {
+  "day_points": 121,
+  "night_points": 121,
+  "regions": {
+   "The Oculus Gate, Tower in Sight": 118,
+   "Frozen Coral Hill": 110,
+   "Hidden Passage to the Oculus Gate": 14
+  }
+ },
+ "BirdDragon_Ice": {
+  "day_points": 233,
+  "night_points": 260,
+  "regions": {
+   "Frozen Coral Hill": 142,
+   "The Oculus Gate, Tower in Sight": 122,
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 64,
+   "Lv.35-50 Astral Mountains": 38,
+   "Frostbound Mountains": 34,
+   "Abandoned Ruins": 20,
+   "Lv.10-20 Bamboo Groves": 18,
+   "Feybreak Shipwreck": 16,
+   "Hidden Passage to the Oculus Gate": 14,
+   "Sakurajima - Northern Rock Field": 8,
+   "Lv.20-30 Verdant Brook": 6,
+   "Deep Bamboo Thicket": 5,
+   "Bicornis Islet": 2,
+   "Lv.30-40 Foot of the Astral Mountains": 2,
+   "Lv.50-60 Isle of the Glacial Core": 1,
+   "Foot of the Volcano": 1
+  }
+ },
+ "GhostRabbit": {
+  "day_points": 106,
+  "night_points": 106,
+  "regions": {
+   "The Oculus Gate, Tower in Sight": 122,
+   "Frozen Coral Hill": 60,
+   "Feybreak Shipwreck": 16,
+   "Hidden Passage to the Oculus Gate": 14
+  }
+ },
+ "BOSS_Werewolf_Ice": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "The Oculus Gate, Tower in Sight": 2
+  }
+ },
+ "WhiteTiger_Ground": {
+  "day_points": 156,
+  "night_points": 156,
+  "regions": {
+   "Deserted Ash Plateau": 312
+  }
+ },
+ "NightBlueHorse_Neutral": {
+  "day_points": 63,
+  "night_points": 63,
+  "regions": {
+   "Foot of the World Tree": 126
+  }
+ },
+ "BlueSkyDragon": {
+  "day_points": 63,
+  "night_points": 63,
+  "regions": {
+   "Foot of the World Tree": 126
+  }
+ },
+ "MushroomLady": {
+  "day_points": 42,
+  "night_points": 42,
+  "regions": {
+   "Foot of the World Tree": 84
+  }
+ },
+ "LanternButler": {
+  "day_points": 42,
+  "night_points": 42,
+  "regions": {
+   "Foot of the World Tree": 84
+  }
+ },
+ "WhiteMoth_Neutral": {
+  "day_points": 82,
+  "night_points": 82,
+  "regions": {
+   "Foot of the World Tree": 164
+  }
+ },
+ "LilyQueen": {
+  "day_points": 42,
+  "night_points": 42,
+  "regions": {
+   "Foot of the World Tree": 84
+  }
+ },
+ "LilyQueen_Dark": {
+  "day_points": 42,
+  "night_points": 42,
+  "regions": {
+   "Foot of the World Tree": 84
+  }
+ },
+ "SnakeGirl": {
+  "day_points": 26,
+  "night_points": 26,
+  "regions": {
+   "Foot of the World Tree": 52
+  }
+ },
+ "DarkFlameFox": {
+  "day_points": 36,
+  "night_points": 36,
+  "regions": {
+   "Foot of the World Tree": 52,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 20
+  }
+ },
+ "FoxExorcist": {
+  "day_points": 26,
+  "night_points": 26,
+  "regions": {
+   "Foot of the World Tree": 52
+  }
+ },
+ "GhostDragon_Fire": {
+  "day_points": 26,
+  "night_points": 26,
+  "regions": {
+   "Foot of the World Tree": 52
+  }
+ },
+ "FlowerDoll_Fire": {
+  "day_points": 22,
+  "night_points": 22,
+  "regions": {
+   "Foot of the World Tree": 44
+  }
+ },
+ "GhostBlackCat": {
+  "day_points": 22,
+  "night_points": 181,
+  "regions": {
+   "Lv.1-10 Marsh Island": 66,
+   "Golden Hills": 61,
+   "Foot of the World Tree": 44,
+   "Autumn Rocks": 20,
+   "Fortress Ruins": 12
+  }
+ },
+ "WingGolem_Fire": {
+  "day_points": 58,
+  "night_points": 58,
+  "regions": {
+   "Bicornis Islet": 72,
+   "Foot of the World Tree": 44
+  }
+ },
+ "WingGolem": {
+  "day_points": 33,
+  "night_points": 33,
+  "regions": {
+   "Foot of the World Tree": 44,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 22
+  }
+ },
+ "MonochromeQueen": {
+  "day_points": 47,
+  "night_points": 47,
+  "regions": {
+   "Foot of the World Tree": 94
+  }
+ },
+ "ThiefBird": {
+  "day_points": 80,
+  "night_points": 80,
+  "regions": {
+   "Foot of the World Tree": 160
+  }
+ },
+ "Horus": {
+  "day_points": 47,
+  "night_points": 47,
+  "regions": {
+   "Foot of the World Tree": 94
+  }
+ },
+ "SnowTigerBeastman": {
+  "day_points": 69,
+  "night_points": 69,
+  "regions": {
+   "Foot of the World Tree": 138
+  }
+ },
+ "ThunderDog_Ice": {
+  "day_points": 145,
+  "night_points": 145,
+  "regions": {
+   "Foot of the World Tree": 138,
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 74,
+   "Lv.30-40 Foot of the Astral Mountains": 50,
+   "Abandoned Ruins": 18,
+   "Lv.50-60 Isle of the Glacial Core": 6,
+   "Sakurajima - Northern Rock Field": 4
+  }
+ },
+ "ThunderBird_Ice": {
+  "day_points": 69,
+  "night_points": 69,
+  "regions": {
+   "Foot of the World Tree": 138
+  }
+ },
+ "Kirin_Ice": {
+  "day_points": 69,
+  "night_points": 69,
+  "regions": {
+   "Foot of the World Tree": 138
+  }
+ },
+ "GrassMinotaur_Ice": {
+  "day_points": 69,
+  "night_points": 69,
+  "regions": {
+   "Foot of the World Tree": 138
+  }
+ },
+ "ElecSnail_Ground": {
+  "day_points": 33,
+  "night_points": 33,
+  "regions": {
+   "Foot of the World Tree": 66
+  }
+ },
+ "ThunderDragonMan": {
+  "day_points": 33,
+  "night_points": 33,
+  "regions": {
+   "Foot of the World Tree": 66
+  }
+ },
+ "MoonChild": {
+  "day_points": 40,
+  "night_points": 40,
+  "regions": {
+   "Foot of the World Tree": 80
+  }
+ },
+ "CubeTurtle_Neutral": {
+  "day_points": 40,
+  "night_points": 40,
+  "regions": {
+   "Foot of the World Tree": 80
+  }
+ },
+ "MoonQueen": {
+  "day_points": 40,
+  "night_points": 40,
+  "regions": {
+   "Foot of the World Tree": 80
+  }
+ },
+ "GrassGolem_Dark": {
+  "day_points": 3,
+  "night_points": 3,
+  "regions": {
+   "Foot of the World Tree": 6
+  }
+ },
+ "GrassGolem": {
+  "day_points": 75,
+  "night_points": 75,
+  "regions": {
+   "Foot of the World Tree": 80,
+   "Lv.30-40 Foot of the Astral Mountains": 70
+  }
+ },
+ "ElecPanda": {
+  "day_points": 40,
+  "night_points": 40,
+  "regions": {
+   "Foot of the World Tree": 80
+  }
+ },
+ "GrassPanda_Electric": {
+  "day_points": 40,
+  "night_points": 40,
+  "regions": {
+   "Foot of the World Tree": 80
+  }
+ },
+ "BOSS_WhiteDeer_Dark": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Foot of the World Tree": 2
+  }
+ },
+ "BOSS_MushroomLady": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Foot of the World Tree": 2
+  }
+ },
+ "MushroomDragon": {
+  "day_points": 60,
+  "night_points": 60,
+  "regions": {
+   "Sakurajima - Mushroom Wetlands": 108,
+   "Lv.1-10 Isle of Silence": 10,
+   "Foot of the World Tree": 2
+  }
+ },
+ "BOSS_VolcanoDragon_Ice": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Foot of the World Tree": 2
+  }
+ },
+ "BOSS_KabukiMan": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Foot of the World Tree": 2
+  }
+ },
+ "BOSS_GrassGolem": {
+  "day_points": 2,
+  "night_points": 2,
+  "regions": {
+   "Foot of the World Tree": 2,
+   "Islet of Circular Ruins": 2
+  }
+ },
+ "BOSS_DomeArmorDragon": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Foot of the World Tree": 2
+  }
+ },
+ "BOSS_Suzaku": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 2
+  }
+ },
+ "Gorilla_Ground": {
+  "day_points": 67,
+  "night_points": 67,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 114,
+   "Frostbound Mountains": 16,
+   "Lv.10-20 Scars of War": 4
+  }
+ },
+ "CuteMole": {
+  "day_points": 338,
+  "night_points": 338,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 374,
+   "Lv.10-25 Twilight Dunes": 170,
+   "Lv.10-20 Scars of War": 64,
+   "Frostbound Mountains": 40,
+   "Lv.50-60 Isle of the Glacial Core": 10,
+   "Deep Bamboo Thicket": 10,
+   "Lv.40-50 Oasis Isle": 6,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 2
+  }
+ },
+ "DarkScorpion": {
+  "day_points": 545,
+  "night_points": 545,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 726,
+   "Lv.10-20 Scars of War": 102,
+   "Lv.50-60 Isle of the Glacial Core": 94,
+   "Frostbound Mountains": 72,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 68,
+   "Lv.40-50 Oasis Isle": 26,
+   "Flamepulse Islet": 2
+  }
+ },
+ "RobinHood_Ground": {
+  "day_points": 545,
+  "night_points": 545,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 726,
+   "Lv.10-20 Scars of War": 102,
+   "Lv.50-60 Isle of the Glacial Core": 94,
+   "Frostbound Mountains": 72,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 68,
+   "Lv.40-50 Oasis Isle": 26,
+   "Flamepulse Islet": 2
+  }
+ },
+ "ColorfulBird": {
+  "day_points": 918,
+  "night_points": 918,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 794,
+   "Lv.10-25 Twilight Dunes": 170,
+   "Sakurajima - Northern Rock Field": 128,
+   "Lv.40-55 Sakurajima - Southern Sandbar": 122,
+   "Lv.50-60 Isle of the Glacial Core": 116,
+   "Lv.10-20 Scars of War": 116,
+   "Frostbound Mountains": 110,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 92,
+   "Lv.40-50 Oasis Isle": 84,
+   "Lv.50-55 Dancing Sakura Shrine": 38,
+   "Flamepulse Islet": 28,
+   "Deep Bamboo Thicket": 10,
+   "Lv.10-20 Isle of Decayed Treasures": 8,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 6,
+   "Sakurajima - Mushroom Wetlands": 6,
+   "Gobfin's Turf": 6,
+   "Islet of Circular Ruins": 2
+  }
+ },
+ "FlowerDinosaur_Electric": {
+  "day_points": 573,
+  "night_points": 573,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 758,
+   "Lv.50-60 Isle of the Glacial Core": 104,
+   "Lv.10-20 Scars of War": 102,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 82,
+   "Frostbound Mountains": 72,
+   "Lv.40-50 Oasis Isle": 26,
+   "Flamepulse Islet": 2
+  }
+ },
+ "DrillGame": {
+  "day_points": 660,
+  "night_points": 660,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 730,
+   "Lv.10-25 Twilight Dunes": 170,
+   "Lv.50-60 Isle of the Glacial Core": 112,
+   "Lv.10-20 Scars of War": 102,
+   "Frostbound Mountains": 72,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 70,
+   "Lv.40-50 Oasis Isle": 26,
+   "Scouring Islet": 26,
+   "Deep Bamboo Thicket": 10,
+   "Flamepulse Islet": 2
+  }
+ },
+ "Ronin": {
+  "day_points": 1838,
+  "night_points": 1838,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 794,
+   "Lv.30-40 Foot of the Astral Mountains": 332,
+   "Lv.50-55 Dancing Sakura Shrine": 260,
+   "Dry Sandy Beach": 216,
+   "Foot of the Volcano": 186,
+   "Sakurajima - Northern Rock Field": 178,
+   "Lv.30-40 Mount Obsidian": 170,
+   "Lv.40-55 Sakurajima - Southern Sandbar": 160,
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 154,
+   "Sakurajima - Mushroom Wetlands": 138,
+   "Lv.50-60 Isle of the Glacial Core": 134,
+   "Lv.35-50 Astral Mountains": 134,
+   "Lv.10-20 Scars of War": 116,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 114,
+   "Frostbound Mountains": 110,
+   "Abandoned Ruins": 106,
+   "Lv.40-50 Oasis Isle": 84,
+   "Lv.30-40 Phantom Isle": 78,
+   "Ruined Fortress City": 68,
+   "Lv.10-25 Twilight Dunes": 40,
+   "Lv.30-45 Isle of Eternal Summer": 32,
+   "Flamepulse Islet": 28,
+   "Lv.1-10 Sea Breeze Archipelago": 18,
+   "Lv.1-10 Isle of Silence": 10,
+   "Lv.10-20 Isle of Decayed Treasures": 8,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 6,
+   "Islet of Circular Ruins": 2
+  }
+ },
+ "PinkLizard": {
+  "day_points": 0,
+  "night_points": 768,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 399,
+   "Lv.10-25 Twilight Dunes": 85,
+   "Lv.50-60 Isle of the Glacial Core": 58,
+   "Lv.10-20 Scars of War": 58,
+   "Frostbound Mountains": 55,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 47,
+   "Lv.40-50 Oasis Isle": 42,
+   "Flamepulse Islet": 14,
+   "Deep Bamboo Thicket": 5,
+   "Lv.10-20 Isle of Decayed Treasures": 4,
+   "Islet of Circular Ruins": 1
+  }
+ },
+ "LizardMan": {
+  "day_points": 158,
+  "night_points": 836,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 399,
+   "Dry Sandy Beach": 196,
+   "Foot of the Volcano": 82,
+   "Lv.50-60 Isle of the Glacial Core": 58,
+   "Lv.10-20 Scars of War": 58,
+   "Frostbound Mountains": 55,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 47,
+   "Lv.40-50 Oasis Isle": 42,
+   "Lv.30-45 Isle of Eternal Summer": 24,
+   "Lv.1-10 Sea Breeze Archipelago": 14,
+   "Flamepulse Islet": 14,
+   "Lv.10-20 Isle of Decayed Treasures": 4,
+   "Islet of Circular Ruins": 1
+  }
+ },
+ "RaijinDaughter": {
+  "day_points": 140,
+  "night_points": 140,
+  "regions": {
+   "Lv.10-25 Twilight Dunes": 170,
+   "Lv.40-50 Desiccated Dunes": 60,
+   "Frostbound Mountains": 40,
+   "Deep Bamboo Thicket": 10
+  }
+ },
+ "Suzaku": {
+  "day_points": 13,
+  "night_points": 13,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 20,
+   "Frostbound Mountains": 4,
+   "Lv.10-20 Scars of War": 2
+  }
+ },
+ "ThunderBird": {
+  "day_points": 504,
+  "night_points": 504,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 532,
+   "Frostbound Mountains": 164,
+   "Lv.10-20 Scars of War": 98,
+   "Lv.50-60 Isle of the Glacial Core": 90,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 70,
+   "Lv.40-50 Oasis Isle": 26,
+   "Lv.20-30 Verdant Brook": 24,
+   "Flamepulse Islet": 2,
+   "Gobfin's Turf": 2
+  }
+ },
+ "FeatherOstrich": {
+  "day_points": 405,
+  "night_points": 405,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 392,
+   "Sakurajima - Northern Rock Field": 128,
+   "Lv.50-60 Isle of the Glacial Core": 90,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 68,
+   "Lv.10-20 Scars of War": 46,
+   "Frostbound Mountains": 32,
+   "Lv.50-55 Dancing Sakura Shrine": 26,
+   "Lv.40-50 Oasis Isle": 20,
+   "Sakurajima - Mushroom Wetlands": 6,
+   "Flamepulse Islet": 2
+  }
+ },
+ "CubeTurtle": {
+  "day_points": 325,
+  "night_points": 325,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 392,
+   "Lv.50-60 Isle of the Glacial Core": 90,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 68,
+   "Lv.10-20 Scars of War": 46,
+   "Frostbound Mountains": 32,
+   "Lv.40-50 Oasis Isle": 20,
+   "Flamepulse Islet": 2
+  }
+ },
+ "MummyPal": {
+  "day_points": 325,
+  "night_points": 325,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 392,
+   "Lv.50-60 Isle of the Glacial Core": 90,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 68,
+   "Lv.10-20 Scars of War": 46,
+   "Frostbound Mountains": 32,
+   "Lv.40-50 Oasis Isle": 20,
+   "Flamepulse Islet": 2
+  }
+ },
+ "Sekhmet": {
+  "day_points": 360,
+  "night_points": 360,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 392,
+   "Lv.50-60 Isle of the Glacial Core": 90,
+   "Sandstone Gate Islet": 70,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 68,
+   "Lv.10-20 Scars of War": 46,
+   "Frostbound Mountains": 32,
+   "Lv.40-50 Oasis Isle": 20,
+   "Flamepulse Islet": 2
+  }
+ },
+ "CactusDoll": {
+  "day_points": 366,
+  "night_points": 366,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 424,
+   "Lv.50-60 Isle of the Glacial Core": 100,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 82,
+   "Lv.10-20 Scars of War": 46,
+   "Frostbound Mountains": 32,
+   "Scouring Islet": 26,
+   "Lv.40-50 Oasis Isle": 20,
+   "Flamepulse Islet": 2
+  }
+ },
+ "CactusDoll_Dark": {
+  "day_points": 0,
+  "night_points": 325,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 196,
+   "Lv.50-60 Isle of the Glacial Core": 45,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 34,
+   "Lv.10-20 Scars of War": 23,
+   "Frostbound Mountains": 16,
+   "Lv.40-50 Oasis Isle": 10,
+   "Flamepulse Islet": 1
+  }
+ },
+ "TropicalOstrich": {
+  "day_points": 42,
+  "night_points": 42,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 32,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 14,
+   "Lv.30-45 Isle of Eternal Summer": 14,
+   "Lv.40-50 Oasis Isle": 14,
+   "Lv.50-60 Isle of the Glacial Core": 10
+  }
+ },
+ "Plesiosaur": {
+  "day_points": 247,
+  "night_points": 247,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 166,
+   "Lv.1-10 Isle of Silence": 124,
+   "Lv.1-10 Isle of Murmurs": 120,
+   "Lv.40-50 Desiccated Dunes": 32,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 14,
+   "Lv.40-50 Oasis Isle": 14,
+   "Golden Hills": 14,
+   "Lv.50-60 Isle of the Glacial Core": 10
+  }
+ },
+ "WindChimes": {
+  "day_points": 144,
+  "night_points": 144,
+  "regions": {
+   "Lv.10-20 Bamboo Groves": 122,
+   "Deep Bamboo Thicket": 66,
+   "Lv.10-25 Twilight Dunes": 36,
+   "Foot of the Volcano": 30,
+   "Golden Hills": 18,
+   "Ancient Ritual Site": 10,
+   "Lv.40-50 Desiccated Dunes": 4,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 2
+  }
+ },
+ "PurpleSpider": {
+  "day_points": 43,
+  "night_points": 46,
+  "regions": {
+   "Gobfin's Turf": 52,
+   "Lv.20-30 Verdant Brook": 32,
+   "Foot of the Volcano": 2,
+   "Lv.40-50 Desiccated Dunes": 2,
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 1
+  }
+ },
+ "BOSS_DarkScorpion": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 2
+  }
+ },
+ "BOSS_CubeTurtle": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.40-50 Desiccated Dunes": 2
+  }
+ },
+ "BOSS_SaintCentaur": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 2
+  }
+ },
+ "BOSS_BlackCentaur": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 2
+  }
+ },
+ "VolcanoDragon": {
+  "day_points": 101,
+  "night_points": 101,
+  "regions": {
+   "Lv.30-40 Mount Obsidian": 82,
+   "Bicornis Islet": 72,
+   "Foot of the Volcano": 48
+  }
+ },
+ "BOSS_VolcanoDragon": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Bicornis Islet": 2
+  }
+ },
+ "RockBeast": {
+  "day_points": 16,
+  "night_points": 16,
+  "regions": {
+   "Flamepulse Islet": 32
+  }
+ },
+ "KingBahamut": {
+  "day_points": 16,
+  "night_points": 16,
+  "regions": {
+   "Flamepulse Islet": 32
+  }
+ },
+ "BOSS_RockBeast": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Flamepulse Islet": 2
+  }
+ },
+ "LeafMomonga": {
+  "day_points": 208,
+  "night_points": 208,
+  "regions": {
+   "Deep Bamboo Thicket": 248,
+   "Lv.10-25 Twilight Dunes": 68,
+   "Fortress Ruins": 30,
+   "Lv.1-15 Windswept Island": 26,
+   "Lv.30-45 Isle of Eternal Summer": 14,
+   "Lv.40-50 Oasis Isle": 14,
+   "Lv.1-10 Sunlit Isle": 12,
+   "Autumn Rocks": 4
+  }
+ },
+ "BOSS_CactusDoll": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Scouring Islet": 2
+  }
+ },
+ "ScorpionMan_Electric": {
+  "day_points": 35,
+  "night_points": 35,
+  "regions": {
+   "Sandstone Gate Islet": 70
+  }
+ },
+ "Anubis": {
+  "day_points": 35,
+  "night_points": 35,
+  "regions": {
+   "Sandstone Gate Islet": 70
+  }
+ },
+ "BOSS_ScorpionMan_Electric": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Sandstone Gate Islet": 2
+  }
+ },
+ "BlackPuppy_Ice": {
+  "day_points": 8,
+  "night_points": 8,
+  "regions": {
+   "Glacial Memento Islet": 16
+  }
+ },
+ "BOSS_GrassGolem_Dark": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Glacial Memento Islet": 2
+  }
+ },
+ "IceSeal_Ground": {
+  "day_points": 26,
+  "night_points": 26,
+  "regions": {
+   "Suncrest Islet": 52
+  }
+ },
+ "SweetsSheep_Ground": {
+  "day_points": 26,
+  "night_points": 26,
+  "regions": {
+   "Suncrest Islet": 52
+  }
+ },
+ "GhostRabbit_Grass": {
+  "day_points": 13,
+  "night_points": 13,
+  "regions": {
+   "Islet of Circular Ruins": 26
+  }
+ },
+ "Hedgehog_Ice": {
+  "day_points": 70,
+  "night_points": 70,
+  "regions": {
+   "Lv.10-20 Bamboo Groves": 114,
+   "Lv.10-20 Frostbitten Isle": 14,
+   "Ancient Ritual Site": 6,
+   "Foot of the Volcano": 6
+  }
+ },
+ "IceDeer": {
+  "day_points": 64,
+  "night_points": 64,
+  "regions": {
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 74,
+   "Frostbound Mountains": 40,
+   "Abandoned Ruins": 4,
+   "Sakurajima - Northern Rock Field": 4,
+   "Lv.30-40 Foot of the Astral Mountains": 4,
+   "Lv.20-30 Verdant Brook": 2
+  }
+ },
+ "GrassMammoth_Ice": {
+  "day_points": 84,
+  "night_points": 84,
+  "regions": {
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 74,
+   "Lv.30-40 Foot of the Astral Mountains": 52,
+   "Lv.50-60 Isle of the Glacial Core": 20,
+   "Abandoned Ruins": 18,
+   "Sakurajima - Northern Rock Field": 4
+  }
+ },
+ "IceFox": {
+  "day_points": 187,
+  "night_points": 187,
+  "regions": {
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 138,
+   "Abandoned Ruins": 104,
+   "Lv.30-40 Foot of the Astral Mountains": 56,
+   "Frostbound Mountains": 40,
+   "Lv.35-50 Astral Mountains": 16,
+   "Sakurajima - Northern Rock Field": 12,
+   "Lv.50-60 Isle of the Glacial Core": 6,
+   "Lv.20-30 Verdant Brook": 2
+  }
+ },
+ "SkyDragon": {
+  "day_points": 423,
+  "night_points": 423,
+  "regions": {
+   "Enchanted Firmament": 210,
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 154,
+   "Lv.35-50 Astral Mountains": 134,
+   "Lv.30-40 Foot of the Astral Mountains": 124,
+   "Farcry Marsh": 78,
+   "Waterlily Gorge": 50,
+   "Crystalline Archipelago": 36,
+   "Abandoned Ruins": 26,
+   "Lv.50-60 Isle of the Glacial Core": 18,
+   "Sakurajima - Northern Rock Field": 12,
+   "Azure Woodland": 4
+  }
+ },
+ "WindChimes_Ice": {
+  "day_points": 0,
+  "night_points": 335,
+  "regions": {
+   "Lv.30-40 Foot of the Astral Mountains": 167,
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 77,
+   "Abandoned Ruins": 53,
+   "Lv.10-25 Twilight Dunes": 20,
+   "Lv.35-50 Astral Mountains": 8,
+   "Sakurajima - Northern Rock Field": 6,
+   "Lv.50-60 Isle of the Glacial Core": 4
+  }
+ },
+ "GhostBeast": {
+  "day_points": 0,
+  "night_points": 356,
+  "regions": {
+   "Lv.30-40 Foot of the Astral Mountains": 163,
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 77,
+   "Lv.35-50 Astral Mountains": 67,
+   "Lv.10-25 Twilight Dunes": 20,
+   "Abandoned Ruins": 13,
+   "Lv.50-60 Isle of the Glacial Core": 10,
+   "Sakurajima - Northern Rock Field": 6
+  }
+ },
+ "BOSS_KingAlpaca_Ice": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 2
+  }
+ },
+ "GrassMammoth": {
+  "day_points": 484,
+  "night_points": 484,
+  "regions": {
+   "Lv.30-40 Foot of the Astral Mountains": 204,
+   "Lv.10-20 Bamboo Groves": 162,
+   "Flying Fish Coast": 132,
+   "Golden Hills": 92,
+   "Lv.1-15 Windswept Island": 90,
+   "Fortress Ruins": 82,
+   "Lv.1-10 Sea Breeze Archipelago": 60,
+   "Deep Bamboo Thicket": 54,
+   "Foot of the Volcano": 34,
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 16,
+   "Lv.10-25 Twilight Dunes": 14,
+   "Lv.50-60 Isle of the Glacial Core": 12,
+   "Ancient Ritual Site": 10,
+   "Autumn Rocks": 4,
+   "Abandoned Ruins": 2
+  }
+ },
+ "WeaselDragon": {
+  "day_points": 117,
+  "night_points": 117,
+  "regions": {
+   "Lv.30-40 Foot of the Astral Mountains": 202,
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 16,
+   "Lv.10-25 Twilight Dunes": 14,
+   "Abandoned Ruins": 2
+  }
+ },
+ "SkyDragon_Grass": {
+  "day_points": 59,
+  "night_points": 59,
+  "regions": {
+   "Lv.50-55 Dancing Sakura Shrine": 46,
+   "Sakurajima - Northern Rock Field": 26,
+   "Sakurajima - Mushroom Wetlands": 24,
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 16,
+   "Abandoned Ruins": 2,
+   "Lv.30-40 Foot of the Astral Mountains": 2,
+   "Lv.40-55 Sakurajima - Southern Sandbar": 2
+  }
+ },
+ "Yeti": {
+  "day_points": 53,
+  "night_points": 53,
+  "regions": {
+   "Lv.35-50 Astral Mountains": 104,
+   "Lv.50-60 Isle of the Glacial Core": 2
+  }
+ },
+ "CatMage": {
+  "day_points": 45,
+  "night_points": 615,
+  "regions": {
+   "Ancient Ritual Site": 136,
+   "Lv.15-25 Crescent Moon Shore": 126,
+   "Gobfin's Turf": 105,
+   "Lv.30-40 Foot of the Astral Mountains": 71,
+   "Frostbound Mountains": 63,
+   "Lv.20-30 Verdant Brook": 56,
+   "Autumn Rocks": 39,
+   "Lv.35-50 Astral Mountains": 20,
+   "Lv.10-25 Twilight Dunes": 17,
+   "Lv.10-20 Scars of War": 15,
+   "Lv.1-10 Marsh Island": 7,
+   "Fortress Ruins": 5
+  }
+ },
+ "IceWitch": {
+  "day_points": 38,
+  "night_points": 38,
+  "regions": {
+   "Lv.35-50 Astral Mountains": 76
+  }
+ },
+ "WhiteTiger": {
+  "day_points": 39,
+  "night_points": 39,
+  "regions": {
+   "Lv.35-50 Astral Mountains": 76,
+   "Lv.50-60 Isle of the Glacial Core": 2
+  }
+ },
+ "Mutant": {
+  "day_points": 63,
+  "night_points": 63,
+  "regions": {
+   "Lv.30-40 Foot of the Astral Mountains": 70,
+   "Flying Fish Coast": 24,
+   "Lv.35-50 Astral Mountains": 20,
+   "Lv.30-45 Isle of Eternal Summer": 8,
+   "Lv.1-10 Sea Breeze Archipelago": 4
+  }
+ },
+ "Kitsunebi_Ice": {
+  "day_points": 43,
+  "night_points": 43,
+  "regions": {
+   "Abandoned Ruins": 80,
+   "Lv.30-40 Foot of the Astral Mountains": 6
+  }
+ },
+ "MopKing": {
+  "day_points": 99,
+  "night_points": 99,
+  "regions": {
+   "Abandoned Ruins": 80,
+   "Lv.10-20 Bamboo Groves": 58,
+   "Lv.10-25 Twilight Dunes": 38,
+   "Ancient Ritual Site": 10,
+   "Lv.30-40 Foot of the Astral Mountains": 6,
+   "Deep Bamboo Thicket": 6
+  }
+ },
+ "MopBaby": {
+  "day_points": 100,
+  "night_points": 100,
+  "regions": {
+   "Abandoned Ruins": 80,
+   "Lv.10-20 Bamboo Groves": 58,
+   "Lv.10-25 Twilight Dunes": 38,
+   "Ancient Ritual Site": 10,
+   "Lv.30-40 Foot of the Astral Mountains": 6,
+   "Deep Bamboo Thicket": 6,
+   "Lv.1-10 Sea Breeze Archipelago": 2
+  }
+ },
+ "WhiteMoth": {
+  "day_points": 48,
+  "night_points": 48,
+  "regions": {
+   "Lv.20-25 No. 1 Wildlife Sanctuary": 64,
+   "Lv.35-50 Astral Mountains": 16,
+   "Sakurajima - Northern Rock Field": 8,
+   "Abandoned Ruins": 6,
+   "Lv.50-60 Isle of the Glacial Core": 2
+  }
+ },
+ "Bastet_Ice": {
+  "day_points": 3,
+  "night_points": 3,
+  "regions": {
+   "Lv.30-40 Foot of the Astral Mountains": 4,
+   "Lv.50-60 Isle of the Glacial Core": 2
+  }
+ },
+ "FlameBuffalo": {
+  "day_points": 108,
+  "night_points": 108,
+  "regions": {
+   "Foot of the Volcano": 138,
+   "Gobfin's Turf": 34,
+   "Lv.1-10 Sea Breeze Archipelago": 14,
+   "Lv.1-10 Marsh Island": 12,
+   "Fortress Ruins": 10,
+   "Lv.30-40 Foot of the Astral Mountains": 4,
+   "Lv.30-40 Mount Obsidian": 4
+  }
+ },
+ "BOSS_IceHorse": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.35-50 Astral Mountains": 2
+  }
+ },
+ "BOSS_LilyQueen": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.50-55 Dancing Sakura Shrine": 2
+  }
+ },
+ "BOSS_DarkScorpion_Ground": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Sakurajima - Northern Rock Field": 2
+  }
+ },
+ "BOSS_LilyQueen_Dark": {
+  "day_points": 0,
+  "night_points": 1,
+  "regions": {
+   "Lv.50-55 Dancing Sakura Shrine": 1
+  }
+ },
+ "NaughtyCat": {
+  "day_points": 59,
+  "night_points": 629,
+  "regions": {
+   "Ancient Ritual Site": 136,
+   "Lv.15-25 Crescent Moon Shore": 126,
+   "Sakurajima - Mushroom Wetlands": 108,
+   "Gobfin's Turf": 105,
+   "Frostbound Mountains": 63,
+   "Lv.20-30 Verdant Brook": 56,
+   "Autumn Rocks": 39,
+   "Lv.10-25 Twilight Dunes": 17,
+   "Lv.10-20 Scars of War": 15,
+   "Lv.1-10 Isle of Silence": 10,
+   "Lv.1-10 Marsh Island": 7,
+   "Fortress Ruins": 5,
+   "Lv.30-40 Foot of the Astral Mountains": 1
+  }
+ },
+ "LeafPrincess": {
+  "day_points": 20,
+  "night_points": 20,
+  "regions": {
+   "Lv.50-55 Dancing Sakura Shrine": 32,
+   "Sakurajima - Northern Rock Field": 8
+  }
+ },
+ "FlowerDoll": {
+  "day_points": 106,
+  "night_points": 106,
+  "regions": {
+   "Lv.15-25 Crescent Moon Shore": 142,
+   "Lv.50-55 Dancing Sakura Shrine": 32,
+   "Lv.10-25 Twilight Dunes": 28,
+   "Sakurajima - Northern Rock Field": 8,
+   "Gobfin's Turf": 2
+  }
+ },
+ "VioletFairy": {
+  "day_points": 12,
+  "night_points": 32,
+  "regions": {
+   "Flying Fish Coast": 24,
+   "Lv.50-55 Dancing Sakura Shrine": 16,
+   "Sakurajima - Northern Rock Field": 4
+  }
+ },
+ "SifuDog": {
+  "day_points": 52,
+  "night_points": 52,
+  "regions": {
+   "Lv.50-55 Dancing Sakura Shrine": 100,
+   "Sakurajima - Northern Rock Field": 4
+  }
+ },
+ "WeaselDragon_Fire": {
+  "day_points": 52,
+  "night_points": 52,
+  "regions": {
+   "Lv.50-55 Dancing Sakura Shrine": 100,
+   "Sakurajima - Northern Rock Field": 4
+  }
+ },
+ "GuardianDog": {
+  "day_points": 52,
+  "night_points": 52,
+  "regions": {
+   "Lv.50-55 Dancing Sakura Shrine": 100,
+   "Sakurajima - Northern Rock Field": 4
+  }
+ },
+ "SumoDog": {
+  "day_points": 52,
+  "night_points": 52,
+  "regions": {
+   "Lv.50-55 Dancing Sakura Shrine": 100,
+   "Sakurajima - Northern Rock Field": 4
+  }
+ },
+ "GrassRabbitMan": {
+  "day_points": 83,
+  "night_points": 83,
+  "regions": {
+   "Lv.50-55 Dancing Sakura Shrine": 78,
+   "Lv.40-55 Sakurajima - Southern Sandbar": 38,
+   "Sakurajima - Northern Rock Field": 26,
+   "Sakurajima - Mushroom Wetlands": 24
+  }
+ },
+ "Yeti_Grass": {
+  "day_points": 83,
+  "night_points": 83,
+  "regions": {
+   "Lv.50-55 Dancing Sakura Shrine": 78,
+   "Lv.40-55 Sakurajima - Southern Sandbar": 38,
+   "Sakurajima - Northern Rock Field": 26,
+   "Sakurajima - Mushroom Wetlands": 24
+  }
+ },
+ "FairyDragon_Water": {
+  "day_points": 55,
+  "night_points": 55,
+  "regions": {
+   "Frostbound Mountains": 40,
+   "Lv.40-55 Sakurajima - Southern Sandbar": 36,
+   "Lv.50-55 Dancing Sakura Shrine": 32,
+   "Lv.20-30 Verdant Brook": 2
+  }
+ },
+ "FoxMage_Dark": {
+  "day_points": 0,
+  "night_points": 184,
+  "regions": {
+   "Lv.40-55 Sakurajima - Southern Sandbar": 79,
+   "Sakurajima - Northern Rock Field": 64,
+   "Lv.50-55 Dancing Sakura Shrine": 35,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 3,
+   "Sakurajima - Mushroom Wetlands": 3
+  }
+ },
+ "SmallArmadillo": {
+  "day_points": 70,
+  "night_points": 70,
+  "regions": {
+   "Lv.40-55 Sakurajima - Southern Sandbar": 122,
+   "Lv.50-55 Dancing Sakura Shrine": 12,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 6
+  }
+ },
+ "ScorpionMan": {
+  "day_points": 70,
+  "night_points": 70,
+  "regions": {
+   "Lv.40-55 Sakurajima - Southern Sandbar": 122,
+   "Lv.50-55 Dancing Sakura Shrine": 12,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 6
+  }
+ },
+ "HadesBird_Electric": {
+  "day_points": 80,
+  "night_points": 80,
+  "regions": {
+   "Sakurajima - Northern Rock Field": 128,
+   "Lv.50-55 Dancing Sakura Shrine": 26,
+   "Sakurajima - Mushroom Wetlands": 6
+  }
+ },
+ "PandaGirl": {
+  "day_points": 105,
+  "night_points": 105,
+  "regions": {
+   "Enchanted Firmament": 106,
+   "Gobfin's Turf": 62,
+   "Lv.20-30 Verdant Brook": 32,
+   "Lv.10-20 Scars of War": 8,
+   "Lv.1-10 Marsh Island": 2
+  }
+ },
+ "DandelionGirl": {
+  "day_points": 53,
+  "night_points": 53,
+  "regions": {
+   "Enchanted Firmament": 106
+  }
+ },
+ "HoodGhost": {
+  "day_points": 37,
+  "night_points": 115,
+  "regions": {
+   "Azure Woodland": 74,
+   "Enchanted Firmament": 53,
+   "Waterlily Gorge": 25
+  }
+ },
+ "OniGhostGirl": {
+  "day_points": 37,
+  "night_points": 115,
+  "regions": {
+   "Azure Woodland": 74,
+   "Enchanted Firmament": 53,
+   "Waterlily Gorge": 25
+  }
+ },
+ "ElecLizard": {
+  "day_points": 41,
+  "night_points": 41,
+  "regions": {
+   "Azure Woodland": 78,
+   "Enchanted Firmament": 4
+  }
+ },
+ "SleeveRabbit": {
+  "day_points": 29,
+  "night_points": 29,
+  "regions": {
+   "Enchanted Firmament": 48,
+   "Crystalline Archipelago": 10
+  }
+ },
+ "SnowPeafowl": {
+  "day_points": 100,
+  "night_points": 100,
+  "regions": {
+   "Farcry Marsh": 72,
+   "Crystalline Archipelago": 54,
+   "Enchanted Firmament": 50,
+   "Waterlily Gorge": 24
+  }
+ },
+ "ThunderFluffyBird": {
+  "day_points": 26,
+  "night_points": 26,
+  "regions": {
+   "Waterlily Gorge": 50,
+   "Enchanted Firmament": 2
+  }
+ },
+ "RockBeast_Ice": {
+  "day_points": 50,
+  "night_points": 50,
+  "regions": {
+   "Farcry Marsh": 72,
+   "Crystalline Archipelago": 26,
+   "Enchanted Firmament": 2
+  }
+ },
+ "ElecPomeranian": {
+  "day_points": 113,
+  "night_points": 113,
+  "regions": {
+   "Lv.10-20 Bamboo Groves": 114,
+   "Farcry Marsh": 72,
+   "Crystalline Archipelago": 26,
+   "Ancient Ritual Site": 6,
+   "Foot of the Volcano": 6,
+   "Enchanted Firmament": 2
+  }
+ },
+ "RedFlowerBird": {
+  "day_points": 50,
+  "night_points": 50,
+  "regions": {
+   "Farcry Marsh": 72,
+   "Crystalline Archipelago": 26,
+   "Enchanted Firmament": 2
+  }
+ },
+ "Suzaku_Water": {
+  "day_points": 50,
+  "night_points": 50,
+  "regions": {
+   "Farcry Marsh": 72,
+   "Crystalline Archipelago": 26,
+   "Enchanted Firmament": 2
+  }
+ },
+ "ClioneTwins": {
+  "day_points": 66,
+  "night_points": 66,
+  "regions": {
+   "Golden Hills": 64,
+   "Enchanted Firmament": 48,
+   "Ancient Ritual Site": 8,
+   "Waterlily Gorge": 6,
+   "Crystalline Archipelago": 6
+  }
+ },
+ "ElecSnail": {
+  "day_points": 33,
+  "night_points": 33,
+  "regions": {
+   "Enchanted Firmament": 54,
+   "Farcry Marsh": 8,
+   "Azure Woodland": 4
+  }
+ },
+ "LongCat": {
+  "day_points": 32,
+  "night_points": 32,
+  "regions": {
+   "Enchanted Firmament": 54,
+   "Farcry Marsh": 6,
+   "Azure Woodland": 4
+  }
+ },
+ "FluffyBird": {
+  "day_points": 280,
+  "night_points": 280,
+  "regions": {
+   "Ancient Ritual Site": 272,
+   "Lv.15-25 Crescent Moon Shore": 110,
+   "Autumn Rocks": 78,
+   "Gobfin's Turf": 58,
+   "Waterlily Gorge": 24,
+   "Crystalline Archipelago": 18
+  }
+ },
+ "BrownRabbit": {
+  "day_points": 37,
+  "night_points": 37,
+  "regions": {
+   "Azure Woodland": 74
+  }
+ },
+ "BOSS_FoxExorcist": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Enchanted Firmament": 2
+  }
+ },
+ "BOSS_GhostDragon": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Crystalline Archipelago": 2
+  }
+ },
+ "BOSS_JetDragon": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Dragonmark Peak": 2
+  }
+ },
+ "BOSS_ThunderFluffyBird": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Enchanted Firmament": 2
+  }
+ },
+ "BOSS_ElecLizard": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Azure Woodland": 2
+  }
+ },
+ "BOSS_LotusDragon": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Waterlily Gorge": 2
+  }
+ },
+ "BOSS_ElecSnail": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Farcry Marsh": 2
+  }
+ },
+ "LavaGirl": {
+  "day_points": 232,
+  "night_points": 232,
+  "regions": {
+   "Foot of the Volcano": 146,
+   "Lv.1-10 Eastern Wild Island": 64,
+   "Lv.1-10 Sea Breeze Archipelago": 60,
+   "Lv.30-40 Mount Obsidian": 56,
+   "Lv.30-40 Phantom Isle": 36,
+   "Lv.1-10 Isle of Silence": 34,
+   "Ruined Fortress City": 26,
+   "Lv.10-20 Scars of War": 22,
+   "Dry Sandy Beach": 20
+  }
+ },
+ "Boss_Anubis": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.10-25 Twilight Dunes": 2
+  }
+ },
+ "PlantSlime": {
+  "day_points": 113,
+  "night_points": 113,
+  "regions": {
+   "Lv.1-10 Eastern Wild Island": 64,
+   "Fortress Ruins": 52,
+   "Lv.1-10 Marsh Island": 48,
+   "Lv.1-15 Windswept Island": 34,
+   "Flying Fish Coast": 26,
+   "Lv.10-25 Twilight Dunes": 2
+  }
+ },
+ "Carbunclo": {
+  "day_points": 211,
+  "night_points": 211,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 218,
+   "Lv.1-10 Isle of Murmurs": 78,
+   "Fortress Ruins": 52,
+   "Lv.1-10 Marsh Island": 48,
+   "Lv.1-15 Windswept Island": 14,
+   "Deep Bamboo Thicket": 12
+  }
+ },
+ "CowPal": {
+  "day_points": 111,
+  "night_points": 111,
+  "regions": {
+   "Lv.1-10 Marsh Island": 132,
+   "Fortress Ruins": 76,
+   "Lv.1-15 Windswept Island": 14
+  }
+ },
+ "WizardOwl": {
+  "day_points": 0,
+  "night_points": 263,
+  "regions": {
+   "Lv.10-20 Bamboo Groves": 89,
+   "Lv.1-10 Sea Breeze Archipelago": 83,
+   "Deep Bamboo Thicket": 30,
+   "Fortress Ruins": 26,
+   "Foot of the Volcano": 18,
+   "Lv.1-15 Windswept Island": 7,
+   "Golden Hills": 7,
+   "Ancient Ritual Site": 3
+  }
+ },
+ "BOSS_GrassMammoth": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Flying Fish Coast": 2
+  }
+ },
+ "BOSS_WeaselDragon": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Fortress Ruins": 2
+  }
+ },
+ "PlantSlime_Flower": {
+  "day_points": 24,
+  "night_points": 24,
+  "regions": {
+   "Flying Fish Coast": 26,
+   "Lv.1-15 Windswept Island": 20,
+   "Lv.10-25 Twilight Dunes": 2
+  }
+ },
+ "SamuraiDog": {
+  "day_points": 23,
+  "night_points": 23,
+  "regions": {
+   "Flying Fish Coast": 26,
+   "Lv.1-15 Windswept Island": 20
+  }
+ },
+ "Werewolf": {
+  "day_points": 0,
+  "night_points": 1119,
+  "regions": {
+   "Deep Bamboo Thicket": 186,
+   "Lv.10-20 Bamboo Groves": 177,
+   "Ancient Ritual Site": 149,
+   "Gobfin's Turf": 133,
+   "Lv.15-25 Crescent Moon Shore": 126,
+   "Lv.10-25 Twilight Dunes": 70,
+   "Frostbound Mountains": 63,
+   "Lv.20-30 Verdant Brook": 56,
+   "Autumn Rocks": 39,
+   "Foot of the Volcano": 37,
+   "Lv.1-10 Sea Breeze Archipelago": 30,
+   "Golden Hills": 25,
+   "Lv.10-20 Scars of War": 15,
+   "Lv.1-10 Marsh Island": 7,
+   "Fortress Ruins": 5,
+   "Lv.30-40 Foot of the Astral Mountains": 1
+  }
+ },
+ "BOSS_FengyunDeeper": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Foot of the Volcano": 2
+  }
+ },
+ "BOSS_Kirin": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 2
+  }
+ },
+ "WoolFox": {
+  "day_points": 200,
+  "night_points": 200,
+  "regions": {
+   "Lv.1-10 Isle of Silence": 124,
+   "Lv.1-10 Isle of Murmurs": 120,
+   "Lv.1-10 Sea Breeze Archipelago": 92,
+   "Lv.1-10 Marsh Island": 48,
+   "Golden Hills": 14,
+   "Lv.10-25 Twilight Dunes": 2
+  }
+ },
+ "SakuraSaurus": {
+  "day_points": 492,
+  "night_points": 492,
+  "regions": {
+   "Ancient Ritual Site": 278,
+   "Lv.1-10 Eastern Wild Island": 172,
+   "Lv.10-20 Bamboo Groves": 114,
+   "Lv.15-25 Crescent Moon Shore": 110,
+   "Autumn Rocks": 78,
+   "Gobfin's Turf": 58,
+   "Lv.1-10 Marsh Island": 50,
+   "Lv.10-20 Scars of War": 38,
+   "Foot of the Volcano": 36,
+   "Lv.20-30 Verdant Brook": 24,
+   "Deep Bamboo Thicket": 16,
+   "Lv.10-20 Isle of Decayed Treasures": 6,
+   "Frostbound Mountains": 4
+  }
+ },
+ "Alpaca": {
+  "day_points": 270,
+  "night_points": 270,
+  "regions": {
+   "Lv.1-10 Eastern Wild Island": 172,
+   "Lv.1-10 Sea Breeze Archipelago": 166,
+   "Golden Hills": 70,
+   "Lv.1-10 Marsh Island": 50,
+   "Autumn Rocks": 40,
+   "Lv.1-15 Windswept Island": 20,
+   "Lv.10-20 Scars of War": 16,
+   "Lv.10-20 Isle of Decayed Treasures": 6
+  }
+ },
+ "FlameBambi": {
+  "day_points": 134,
+  "night_points": 134,
+  "regions": {
+   "Lv.1-10 Isle of Murmurs": 78,
+   "Lv.1-10 Sea Breeze Archipelago": 54,
+   "Lv.1-10 Marsh Island": 48,
+   "Autumn Rocks": 40,
+   "Lv.10-20 Scars of War": 22,
+   "Golden Hills": 14,
+   "Deep Bamboo Thicket": 12
+  }
+ },
+ "SweetsSheep": {
+  "day_points": 88,
+  "night_points": 88,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 60,
+   "Golden Hills": 50,
+   "Lv.10-20 Bamboo Groves": 36,
+   "Foot of the Volcano": 20,
+   "Ancient Ritual Site": 10
+  }
+ },
+ "SharkKid": {
+  "day_points": 66,
+  "night_points": 66,
+  "regions": {
+   "Gobfin's Turf": 56,
+   "Deep Bamboo Thicket": 48,
+   "Foot of the Volcano": 28
+  }
+ },
+ "Monkey_Fire": {
+  "day_points": 27,
+  "night_points": 27,
+  "regions": {
+   "Autumn Rocks": 40,
+   "Golden Hills": 14
+  }
+ },
+ "CuteFox": {
+  "day_points": 67,
+  "night_points": 67,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 74,
+   "Fortress Ruins": 30,
+   "Lv.1-15 Windswept Island": 26,
+   "Autumn Rocks": 4
+  }
+ },
+ "CloverFairy": {
+  "day_points": 60,
+  "night_points": 60,
+  "regions": {
+   "Lv.1-15 Windswept Island": 46,
+   "Golden Hills": 40,
+   "Fortress Ruins": 30,
+   "Autumn Rocks": 4
+  }
+ },
+ "BOSS_ThunderBird": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Frostbound Mountains": 2
+  }
+ },
+ "Gorilla": {
+  "day_points": 67,
+  "night_points": 67,
+  "regions": {
+   "Frostbound Mountains": 108,
+   "Lv.20-30 Verdant Brook": 24,
+   "Gobfin's Turf": 2
+  }
+ },
+ "FlowerRabbit": {
+  "day_points": 86,
+  "night_points": 86,
+  "regions": {
+   "Lv.15-25 Crescent Moon Shore": 142,
+   "Lv.10-25 Twilight Dunes": 28,
+   "Gobfin's Turf": 2
+  }
+ },
+ "PinkRabbit_Grass": {
+  "day_points": 172,
+  "night_points": 172,
+  "regions": {
+   "Lv.15-25 Crescent Moon Shore": 142,
+   "Lv.10-20 Bamboo Groves": 114,
+   "Foot of the Volcano": 36,
+   "Lv.10-25 Twilight Dunes": 28,
+   "Deep Bamboo Thicket": 16,
+   "Ancient Ritual Site": 6,
+   "Gobfin's Turf": 2
+  }
+ },
+ "GrassPanda": {
+  "day_points": 52,
+  "night_points": 52,
+  "regions": {
+   "Gobfin's Turf": 62,
+   "Lv.20-30 Verdant Brook": 32,
+   "Lv.10-20 Scars of War": 8,
+   "Lv.1-10 Marsh Island": 2
+  }
+ },
+ "RobinHood": {
+  "day_points": 52,
+  "night_points": 52,
+  "regions": {
+   "Gobfin's Turf": 62,
+   "Lv.20-30 Verdant Brook": 32,
+   "Lv.10-20 Scars of War": 8,
+   "Lv.1-10 Marsh Island": 2
+  }
+ },
+ "GrassMinotaur": {
+  "day_points": 75,
+  "night_points": 75,
+  "regions": {
+   "Lv.10-20 Bamboo Groves": 114,
+   "Flying Fish Coast": 24,
+   "Ancient Ritual Site": 6,
+   "Foot of the Volcano": 6
+  }
+ },
+ "BOSS_NaughtyCat": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.1-10 Marsh Island": 2
+  }
+ },
+ "BOSS_KingAlpaca": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Golden Hills": 2
+  }
+ },
+ "BOSS_SakuraSaurus": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 2
+  }
+ },
+ "FoxMage": {
+  "day_points": 54,
+  "night_points": 54,
+  "regions": {
+   "Ruined Fortress City": 66,
+   "Lv.10-20 Scars of War": 22,
+   "Foot of the Volcano": 8,
+   "Lv.30-45 Isle of Eternal Summer": 8,
+   "Lv.1-10 Sea Breeze Archipelago": 4
+  }
+ },
+ "BOSS_Umihebi": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.10-20 Scars of War": 2
+  }
+ },
+ "CuteButterfly": {
+  "day_points": 271,
+  "night_points": 271,
+  "regions": {
+   "Ancient Ritual Site": 284,
+   "Lv.15-25 Crescent Moon Shore": 116,
+   "Autumn Rocks": 84,
+   "Gobfin's Turf": 58
+  }
+ },
+ "Eagle": {
+  "day_points": 429,
+  "night_points": 429,
+  "regions": {
+   "Ancient Ritual Site": 286,
+   "Deep Bamboo Thicket": 248,
+   "Lv.15-25 Crescent Moon Shore": 112,
+   "Autumn Rocks": 84,
+   "Lv.10-25 Twilight Dunes": 68,
+   "Gobfin's Turf": 60
+  }
+ },
+ "LittleBriarRose": {
+  "day_points": 259,
+  "night_points": 259,
+  "regions": {
+   "Ancient Ritual Site": 272,
+   "Lv.15-25 Crescent Moon Shore": 110,
+   "Autumn Rocks": 78,
+   "Gobfin's Turf": 58
+  }
+ },
+ "FairyDragon": {
+  "day_points": 271,
+  "night_points": 271,
+  "regions": {
+   "Ancient Ritual Site": 272,
+   "Lv.15-25 Crescent Moon Shore": 110,
+   "Autumn Rocks": 78,
+   "Gobfin's Turf": 58,
+   "Flying Fish Coast": 24
+  }
+ },
+ "BOSS_FairyDragon": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Autumn Rocks": 2
+  }
+ },
+ "SakuraSaurus_Water": {
+  "day_points": 7,
+  "night_points": 7,
+  "regions": {
+   "Lv.20-30 Verdant Brook": 10,
+   "Lv.10-20 Scars of War": 4
+  }
+ },
+ "BOSS_HawkBird": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Deep Bamboo Thicket": 2
+  }
+ },
+ "Kirin": {
+  "day_points": 54,
+  "night_points": 54,
+  "regions": {
+   "Lv.10-20 Bamboo Groves": 64,
+   "Deep Bamboo Thicket": 44
+  }
+ },
+ "BOSS_PurpleSpider": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Foot of the Volcano": 2
+  }
+ },
+ "BOSS_PlantSlime": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 2
+  }
+ },
+ "BOSS_MopKing": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.1-10 Sea Breeze Archipelago": 2
+  }
+ },
+ "BOSS_GrassPanda_Electric": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.1-10 Eastern Wild Island": 2
+  }
+ },
+ "BOSS_Yeti_Grass": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.10-20 Scars of War": 2
+  }
+ },
+ "SoldierBee": {
+  "day_points": 43,
+  "night_points": 43,
+  "regions": {
+   "Gobfin's Turf": 52,
+   "Lv.20-30 Verdant Brook": 34
+  }
+ },
+ "QueenBee": {
+  "day_points": 42,
+  "night_points": 42,
+  "regions": {
+   "Gobfin's Turf": 52,
+   "Lv.20-30 Verdant Brook": 32
+  }
+ },
+ "HerculesBeetle": {
+  "day_points": 10,
+  "night_points": 10,
+  "regions": {
+   "Lv.20-30 Verdant Brook": 14,
+   "Gobfin's Turf": 6
+  }
+ },
+ "BOSS_QueenBee": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.20-30 Verdant Brook": 2
+  }
+ },
+ "ElecCat": {
+  "day_points": 45,
+  "night_points": 45,
+  "regions": {
+   "Golden Hills": 90
+  }
+ },
+ "SmallYeti": {
+  "day_points": 21,
+  "night_points": 21,
+  "regions": {
+   "Frostbound Mountains": 40,
+   "Lv.20-30 Verdant Brook": 2
+  }
+ },
+ "AmaterasuWolf": {
+  "day_points": 10,
+  "night_points": 31,
+  "regions": {
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 20,
+   "Frostbound Mountains": 20,
+   "Lv.20-30 Verdant Brook": 1
+  }
+ },
+ "Hedgehog": {
+  "day_points": 24,
+  "night_points": 24,
+  "regions": {
+   "Lv.1-15 Windswept Island": 28,
+   "Golden Hills": 20
+  }
+ },
+ "FireKirin": {
+  "day_points": 93,
+  "night_points": 93,
+  "regions": {
+   "Lv.30-40 Mount Obsidian": 104,
+   "Foot of the Volcano": 56,
+   "Ruined Fortress City": 26
+  }
+ },
+ "VolcanicMonster": {
+  "day_points": 22,
+  "night_points": 22,
+  "regions": {
+   "Ruined Fortress City": 26,
+   "Lv.30-40 Mount Obsidian": 10,
+   "Foot of the Volcano": 8
+  }
+ },
+ "FireKirin_Dark": {
+  "day_points": 10,
+  "night_points": 411,
+  "regions": {
+   "Dry Sandy Beach": 108,
+   "Foot of the Volcano": 97,
+   "Lv.30-40 Mount Obsidian": 85,
+   "Ruined Fortress City": 47,
+   "Lv.30-40 Phantom Isle": 39,
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 20,
+   "Lv.30-45 Isle of Eternal Summer": 16,
+   "Lv.1-10 Sea Breeze Archipelago": 9
+  }
+ },
+ "Baphomet": {
+  "day_points": 105,
+  "night_points": 105,
+  "regions": {
+   "Lv.30-40 Mount Obsidian": 92,
+   "Foot of the Volcano": 48,
+   "Lv.30-40 Phantom Isle": 42,
+   "Ruined Fortress City": 28
+  }
+ },
+ "BOSS_WingGolem": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Ruined Fortress City": 2
+  }
+ },
+ "LizardMan_Fire": {
+  "day_points": 50,
+  "night_points": 50,
+  "regions": {
+   "Foot of the Volcano": 56,
+   "Lv.30-40 Mount Obsidian": 24,
+   "Dry Sandy Beach": 20
+  }
+ },
+ "BOSS_VolcanicMonster": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.30-40 Mount Obsidian": 2
+  }
+ },
+ "SharkKid_Fire": {
+  "day_points": 74,
+  "night_points": 74,
+  "regions": {
+   "Lv.30-40 Phantom Isle": 78,
+   "Lv.30-40 Mount Obsidian": 42,
+   "Ruined Fortress City": 28
+  }
+ },
+ "BOSS_KingBahamut": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Ruined Fortress City": 2
+  }
+ },
+ "Baphomet_Dark": {
+  "day_points": 10,
+  "night_points": 10,
+  "regions": {
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 20
+  }
+ },
+ "BOSS_BlackMetalDragon": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.40-45 No. 2 Wildlife Sanctuary": 2
+  }
+ },
+ "Deer_Ground": {
+  "day_points": 12,
+  "night_points": 12,
+  "regions": {
+   "Flying Fish Coast": 24
+  }
+ },
+ "BOSS_ElecPanda": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Flying Fish Coast": 2
+  }
+ },
+ "BOSS_IceHorse_Dark": {
+  "day_points": 1,
+  "night_points": 1,
+  "regions": {
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 2
+  }
+ },
+ "VenusFlytrap": {
+  "day_points": 11,
+  "night_points": 11,
+  "regions": {
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 22
+  }
+ },
+ "FengyunDeeper": {
+  "day_points": 11,
+  "night_points": 11,
+  "regions": {
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 22
+  }
+ },
+ "DarkScorpion_Ground": {
+  "day_points": 11,
+  "night_points": 11,
+  "regions": {
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 22
+  }
+ },
+ "BlackGriffon": {
+  "day_points": 11,
+  "night_points": 11,
+  "regions": {
+   "Lv.40-45 No. 3 Wildlife Sanctuary": 22
+  }
+ }
+}

@@ -1,0 +1,9562 @@
+[
+{
+"slug": "Gold_Coin",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "Money",
+"legal": "1"
+},
+{
+"slug": "Charcoal",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialIngot",
+"legal": "1"
+},
+{
+"slug": "Cloth",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialProccessing",
+"legal": "1"
+},
+{
+"slug": "High_Quality_Cloth",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialProccessing",
+"legal": "1"
+},
+{
+"slug": "Coal",
+"type": "",
+"rarity": "",
+"typeA": "",
+"typeB": "",
+"legal": ""
+},
+{
+"slug": "Ingot",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialIngot",
+"legal": "1"
+},
+{
+"slug": "Ore",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialOre",
+"legal": "1"
+},
+{
+"slug": "Fiber",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialWood",
+"legal": "1"
+},
+{
+"slug": "Gunpowder",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialProccessing",
+"legal": ""
+},
+{
+"slug": "Beautiful_Flower",
+"type": "",
+"rarity": "",
+"typeA": "",
+"typeB": "",
+"legal": ""
+},
+{
+"slug": "Refined_Ingot",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialIngot",
+"legal": "1"
+},
+{
+"slug": "Leather",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Wooden_Board",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialProccessing",
+"legal": "1"
+},
+{
+"slug": "High_Quality_Wooden_Board",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialProccessing",
+"legal": "1"
+},
+{
+"slug": "Nail",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialProccessing",
+"legal": "1"
+},
+{
+"slug": "Circuit_Board",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialProccessing",
+"legal": "1"
+},
+{
+"slug": "Pal_Metal_Ingot",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialIngot",
+"legal": "1"
+},
+{
+"slug": "Stone",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialStone",
+"legal": "1"
+},
+{
+"slug": "Berry_Seeds",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Tomato_Seeds",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Wheat_Seeds",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Wood",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialWood",
+"legal": "1"
+},
+{
+"slug": "Hardwood",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialWood",
+"legal": "1"
+},
+{
+"slug": "Mythical_Wood",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialWood",
+"legal": "1"
+},
+{
+"slug": "Wool",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Crude_Oil",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialOre",
+"legal": "1"
+},
+{
+"slug": "Plasteel",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialIngot",
+"legal": "1"
+},
+{
+"slug": "Computer",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialProccessing",
+"legal": "1"
+},
+{
+"slug": "AI_Core",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialProccessing",
+"legal": "1"
+},
+{
+"slug": "Cryogenic_Coolant",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialProccessing",
+"legal": "1"
+},
+{
+"slug": "Bio_Battery",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialProccessing",
+"legal": "1"
+},
+{
+"slug": "Thermal_Core",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialProccessing",
+"legal": "1"
+},
+{
+"slug": "Corrosive_Solvent",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialProccessing",
+"legal": "1"
+},
+{
+"slug": "Ruby",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialJewelry",
+"legal": "1"
+},
+{
+"slug": "Sapphire",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialJewelry",
+"legal": "1"
+},
+{
+"slug": "Emerald",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialJewelry",
+"legal": "1"
+},
+{
+"slug": "Diamond",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialJewelry",
+"legal": "1"
+},
+{
+"slug": "Common_Egg",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Large_Common_Egg",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Huge_Common_Egg",
+"type": "Material",
+"rarity": "Legendary",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Scorching_Egg",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Large_Scorching_Egg",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Huge_Scorching_Egg",
+"type": "Material",
+"rarity": "Legendary",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Damp_Egg",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Large_Damp_Egg",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Huge_Damp_Egg",
+"type": "Material",
+"rarity": "Legendary",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Verdant_Egg",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Large_Verdant_Egg",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Huge_Verdant_Egg",
+"type": "Material",
+"rarity": "Legendary",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Electric_Egg",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Large_Electric_Egg",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Huge_Electric_Egg",
+"type": "Material",
+"rarity": "Legendary",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Frozen_Egg",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Large_Frozen_Egg",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Huge_Frozen_Egg",
+"type": "Material",
+"rarity": "Legendary",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Rocky_Egg",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Large_Rocky_Egg",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Huge_Rocky_Egg",
+"type": "Material",
+"rarity": "Legendary",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Dark_Egg",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Large_Dark_Egg",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Huge_Dark_Egg",
+"type": "Material",
+"rarity": "Legendary",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Dragon_Egg",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Large_Dragon_Egg",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Huge_Dragon_Egg",
+"type": "Material",
+"rarity": "Legendary",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Ancient_Civilization_Parts",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Small_Pal_Soul",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Medium_Pal_Soul",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Large_Pal_Soul",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Sulfur",
+"type": "",
+"rarity": "",
+"typeA": "",
+"typeB": "",
+"legal": ""
+},
+{
+"slug": "Pure_Quartz",
+"type": "",
+"rarity": "",
+"typeA": "",
+"typeB": "",
+"legal": ""
+},
+{
+"slug": "High_Quality_Pal_Oil",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Polymer",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialProccessing",
+"legal": "1"
+},
+{
+"slug": "Electric_Organ",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Venom_Gland",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Flame_Organ",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Ice_Organ",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Bone",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Cement",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialProccessing",
+"legal": "1"
+},
+{
+"slug": "Carbon_Fiber",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialProccessing",
+"legal": "1"
+},
+{
+"slug": "Horn",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Aquatic_Pal_Fluids",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Tocotoco_Feather",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Gumoss_Leaf",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Penking_Plume",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Katress_Hair",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Precious_Dragon_Stone",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Precious_Plume",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Precious_Entrails",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Precious_Claw",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Precious_Pelt",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Ancient_Civilization_Core",
+"type": "Material",
+"rarity": "Legendary",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Life_Lotus_%28S%29",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Stamina_Lotus_%28S%29",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Power_Lotus_%28S%29",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Speed_Lotus_%28S%29",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Carrying_Lotus_%28S%29",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Ribbuny_Ribbon",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Swee_Hair",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Killamari_Tentacle",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Dazzi_Cloud",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Leezpunk_Crest",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Life_Lotus_%28L%29",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Stamina_Lotus_%28L%29",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Power_Lotus_%28L%29",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Speed_Lotus_%28L%29",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Carrying_Lotus_%28L%29",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Meteorite_Fragment",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialStone",
+"legal": "1"
+},
+{
+"slug": "Dog_Coin",
+"type": "",
+"rarity": "",
+"typeA": "",
+"typeB": "",
+"legal": ""
+},
+{
+"slug": "Giant_Pal_Soul",
+"type": "Material",
+"rarity": "Legendary",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Potato_Seeds",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Carrot_Seeds",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Onion_Seeds",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Predator_Core",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialJewelry",
+"legal": "1"
+},
+{
+"slug": "Successful_Bounty_Token",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialJewelry",
+"legal": "1"
+},
+{
+"slug": "Ancient_Pal_Manuscript",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Chromite",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialOre",
+"legal": "1"
+},
+{
+"slug": "Hexolite",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialIngot",
+"legal": "1"
+},
+{
+"slug": "Nightstar_Sand",
+"type": "",
+"rarity": "",
+"typeA": "",
+"typeB": "",
+"legal": ""
+},
+{
+"slug": "Dark_Fragment",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Hexolite_Quartz",
+"type": "",
+"rarity": "",
+"typeA": "",
+"typeB": "",
+"legal": ""
+},
+{
+"slug": "Battle_Ticket",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialJewelry",
+"legal": "1"
+},
+{
+"slug": "Hallowed_Bar",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialIngot",
+"legal": "1"
+},
+{
+"slug": "Coralum_Ore",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialOre",
+"legal": "1"
+},
+{
+"slug": "Coralum_Ingot",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialIngot",
+"legal": "1"
+},
+{
+"slug": "Paldium_Fragment",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialOre",
+"legal": "1"
+},
+{
+"slug": "Lettuce_Seeds",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Ominous_Egg",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Large_Ominous_Egg",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Huge_Ominous_Egg",
+"type": "Material",
+"rarity": "Legendary",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Water_Radiant_Gem",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Electric_Radiant_Gem",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Ground_Radiant_Gem",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Grass_Radiant_Gem",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Fire_Radiant_Gem",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Ice_Radiant_Gem",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Dragon_Radiant_Gem",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Dark_Radiant_Gem",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Neutral_Radiant_Gem",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Soralite",
+"type": "",
+"rarity": "",
+"typeA": "",
+"typeB": "",
+"legal": ""
+},
+{
+"slug": "Paloxite",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialOre",
+"legal": "1"
+},
+{
+"slug": "Decayed_Ancient_Relic",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Dormant_Ancient_Relic",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Gorgeous_Ancient_Relic",
+"type": "Material",
+"rarity": "Rare",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Glowing_Ancient_Relic",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Glistening_Ancient_Relic",
+"type": "Material",
+"rarity": "Legendary",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Soralite_Ingot",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialIngot",
+"legal": "1"
+},
+{
+"slug": "Paloxite_Ingot",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialIngot",
+"legal": "1"
+},
+{
+"slug": "Huge_Mutated_Egg",
+"type": "Material",
+"rarity": "Legendary",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Toxin_Filtering_Membrane",
+"type": "Material",
+"rarity": "",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Explosion-Resistant_Fiber",
+"type": "Material",
+"rarity": "",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Ancient_Bark",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialWood",
+"legal": "1"
+},
+{
+"slug": "Ancient_Lava",
+"type": "",
+"rarity": "",
+"typeA": "",
+"typeB": "",
+"legal": ""
+},
+{
+"slug": "Ancient_Bone",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialOre",
+"legal": "1"
+},
+{
+"slug": "Mutated_Egg",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": ""
+},
+{
+"slug": "Large_Mutated_Egg",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialPalEgg",
+"legal": "1"
+},
+{
+"slug": "Animal_Skin",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": ""
+},
+{
+"slug": "Scales",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": ""
+},
+{
+"slug": "Claw",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": ""
+},
+{
+"slug": "Fang",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": ""
+},
+{
+"slug": "Flint",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialStone",
+"legal": ""
+},
+{
+"slug": "Mythical_Wooden_Board",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialProccessing",
+"legal": ""
+},
+{
+"slug": "Paldium_Chunk",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialStone",
+"legal": ""
+},
+{
+"slug": "Dung",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialJewelry",
+"legal": ""
+},
+{
+"slug": "Huge_Dung",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialJewelry",
+"legal": ""
+},
+{
+"slug": "Sand",
+"type": "Material",
+"rarity": "Uncommon",
+"typeA": "Material",
+"typeB": "MaterialOre",
+"legal": ""
+},
+{
+"slug": "Silicon",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialProccessing",
+"legal": ""
+},
+{
+"slug": "Scrapped_Tissue_Sample",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialMonster",
+"legal": "1"
+},
+{
+"slug": "Luminite_Bar",
+"type": "Material",
+"rarity": "Common",
+"typeA": "Material",
+"typeB": "MaterialIngot",
+"legal": ""
+},
+{
+"slug": "Champions_Emblem",
+"type": "Material",
+"rarity": "Epic",
+"typeA": "Material",
+"typeB": "MaterialJewelry",
+"legal": "1"
+},
+{
+"slug": "Red_Berries",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodVegetable",
+"legal": "1"
+},
+{
+"slug": "Baked_Berries",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": "1"
+},
+{
+"slug": "Bread",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": "1"
+},
+{
+"slug": "Tomato",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodVegetable",
+"legal": "1"
+},
+{
+"slug": "Wheat",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodVegetable",
+"legal": "1"
+},
+{
+"slug": "Flour",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodVegetable",
+"legal": "1"
+},
+{
+"slug": "Lettuce",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodVegetable",
+"legal": "1"
+},
+{
+"slug": "Egg",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodMeat",
+"legal": "1"
+},
+{
+"slug": "Milk",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodMeat",
+"legal": "1"
+},
+{
+"slug": "Hot_Milk",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Jam-Filled_Bun",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": "1"
+},
+{
+"slug": "Salad",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": "1"
+},
+{
+"slug": "Omelet",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Pancake",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": "1"
+},
+{
+"slug": "Marinated_Mushrooms",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": "1"
+},
+{
+"slug": "Mushroom_Soup",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": "1"
+},
+{
+"slug": "Carbonara",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Pizza",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Cake",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": "1"
+},
+{
+"slug": "Fried_Egg",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Mushroom",
+"type": "",
+"rarity": "",
+"typeA": "",
+"typeB": "",
+"legal": ""
+},
+{
+"slug": "Baked_Mushroom",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": "1"
+},
+{
+"slug": "Honey",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodVegetable",
+"legal": "1"
+},
+{
+"slug": "Cotton_Candy",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodVegetable",
+"legal": "1"
+},
+{
+"slug": "Chikipi_Poultry",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodMeat",
+"legal": "1"
+},
+{
+"slug": "Lamball_Mutton",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodMeat",
+"legal": "1"
+},
+{
+"slug": "Raw_Kelpsea",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodFish",
+"legal": "1"
+},
+{
+"slug": "Galeclaw_Poultry",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodMeat",
+"legal": "1"
+},
+{
+"slug": "Rushoar_Pork",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodMeat",
+"legal": "1"
+},
+{
+"slug": "Raw_Dumud",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodFish",
+"legal": "1"
+},
+{
+"slug": "Eikthyrdeer_Venison",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodMeat",
+"legal": "1"
+},
+{
+"slug": "Reindrix_Venison",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodMeat",
+"legal": "1"
+},
+{
+"slug": "Caprity_Meat",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodMeat",
+"legal": "1"
+},
+{
+"slug": "Mozzarina_Meat",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodMeat",
+"legal": "1"
+},
+{
+"slug": "Broncherry_Meat",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodMeat",
+"legal": "1"
+},
+{
+"slug": "Mammorest_Meat",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodMeat",
+"legal": "1"
+},
+{
+"slug": "Grilled_Chikipi",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Lamball_Kebab",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Grilled_Kelpsea",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishFish",
+"legal": "1"
+},
+{
+"slug": "Grilled_Galeclaw",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Roast_Rushoar",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Broiled_Dumud",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishFish",
+"legal": "1"
+},
+{
+"slug": "Roast_Eikthyrdeer",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Roast_Reindrix",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Herb_Roasted_Caprity",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Mozzarina_Steak",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Broncherry_Rib_Roast",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Mammorest_Steak",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Chikipi_Saut%C3%A9",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Herb_Roasted_Lamball",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Grilled_Lamball",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Stewed_Galeclaw",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Rushoar_Bacon_n_Eggs",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Reindrix_Stew",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Fried_Chikipi",
+"type": "Ingredient",
+"rarity": "Rare",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Rushoar_Hot_Dog",
+"type": "Ingredient",
+"rarity": "Rare",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Eikthyrdeer_Loco_Moco",
+"type": "Ingredient",
+"rarity": "Rare",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Eikthyrdeer_Stew",
+"type": "Ingredient",
+"rarity": "Rare",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Mozzarina_Hamburger",
+"type": "Ingredient",
+"rarity": "Rare",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Mozzarina_Cheeseburger",
+"type": "Ingredient",
+"rarity": "Rare",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Fried_Kelpsea",
+"type": "Ingredient",
+"rarity": "Rare",
+"typeA": "Food",
+"typeB": "FoodDishFish",
+"legal": "1"
+},
+{
+"slug": "Dumud_Chowder",
+"type": "Ingredient",
+"rarity": "Rare",
+"typeA": "Food",
+"typeB": "FoodDishFish",
+"legal": "1"
+},
+{
+"slug": "Cavern_Mushroom",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodVegetable",
+"legal": "1"
+},
+{
+"slug": "Mysterious_Mushroom",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodVegetable",
+"legal": "1"
+},
+{
+"slug": "Potato",
+"type": "",
+"rarity": "",
+"typeA": "",
+"typeB": "",
+"legal": ""
+},
+{
+"slug": "Carrot",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodVegetable",
+"legal": "1"
+},
+{
+"slug": "Onion",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodVegetable",
+"legal": "1"
+},
+{
+"slug": "Rushoar_Gyoza",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Stir-Fried_Vegetables",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": "1"
+},
+{
+"slug": "French_Fries",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": "1"
+},
+{
+"slug": "Broncherry_Fried_Noodles",
+"type": "Ingredient",
+"rarity": "Rare",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Spring_Rolls",
+"type": "Ingredient",
+"rarity": "Rare",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Gratin",
+"type": "Ingredient",
+"rarity": "Rare",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": "1"
+},
+{
+"slug": "Minestrone",
+"type": "Ingredient",
+"rarity": "Rare",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": "1"
+},
+{
+"slug": "Mammorest_Curry",
+"type": "Ingredient",
+"rarity": "Epic",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Galeclaw_Nikujaga",
+"type": "Ingredient",
+"rarity": "Epic",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": "1"
+},
+{
+"slug": "Mushroom_Quiche",
+"type": "Ingredient",
+"rarity": "Epic",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": "1"
+},
+{
+"slug": "Gloopie_Tentacle",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodMeat",
+"legal": "1"
+},
+{
+"slug": "Jelliette_Bell_Flesh",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodMeat",
+"legal": "1"
+},
+{
+"slug": "Jellroy_Bell_Flesh",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodMeat",
+"legal": "1"
+},
+{
+"slug": "Munchill_Meat",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodMeat",
+"legal": "1"
+},
+{
+"slug": "Fried_Gloopie_Balls",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodDishFish",
+"legal": "1"
+},
+{
+"slug": "Jelliettes_Jiggly_Jelly",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodDishFish",
+"legal": "1"
+},
+{
+"slug": "Jellroys_Jolly_Jelly",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodDishFish",
+"legal": "1"
+},
+{
+"slug": "Munchill_Steak",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodDishFish",
+"legal": "1"
+},
+{
+"slug": "Seafood_Salad",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodDishFish",
+"legal": "1"
+},
+{
+"slug": "Caramel_Cotton_Candy",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodVegetable",
+"legal": "1"
+},
+{
+"slug": "Skutlass_Sashimi",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodMeat",
+"legal": "1"
+},
+{
+"slug": "Salt-Grilled_Skutlass",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodDishFish",
+"legal": "1"
+},
+{
+"slug": "Seafood_Pasta",
+"type": "Ingredient",
+"rarity": "Rare",
+"typeA": "Food",
+"typeB": "FoodDishFish",
+"legal": "1"
+},
+{
+"slug": "Mushroom_Cake",
+"type": "Ingredient",
+"rarity": "Uncommon",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": "1"
+},
+{
+"slug": "Vegetable_Cake",
+"type": "Ingredient",
+"rarity": "Rare",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": "1"
+},
+{
+"slug": "Extravagant_Vegetable_Cake",
+"type": "Ingredient",
+"rarity": "Epic",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": "1"
+},
+{
+"slug": "Special_Cake",
+"type": "Ingredient",
+"rarity": "Legendary",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": "1"
+},
+{
+"slug": "Grilled_Meat",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": ""
+},
+{
+"slug": "Raw_Meat",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodMeat",
+"legal": ""
+},
+{
+"slug": "Corn",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodVegetable",
+"legal": ""
+},
+{
+"slug": "Pumpkin",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodVegetable",
+"legal": ""
+},
+{
+"slug": "Grape",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodVegetable",
+"legal": ""
+},
+{
+"slug": "Hop",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodVegetable",
+"legal": ""
+},
+{
+"slug": "Potage",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": ""
+},
+{
+"slug": "Stir-Fried_Veggies",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": ""
+},
+{
+"slug": "Hot_Dog",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": ""
+},
+{
+"slug": "Curry",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": ""
+},
+{
+"slug": "BLT",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": ""
+},
+{
+"slug": "Cheeseburger",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": ""
+},
+{
+"slug": "Bolognese_Sauce",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": ""
+},
+{
+"slug": "Mushroom_Stew",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": ""
+},
+{
+"slug": "Sandwich",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": ""
+},
+{
+"slug": "Corn_Soup",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodVegetable",
+"legal": ""
+},
+{
+"slug": "Stew",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishVegetable",
+"legal": ""
+},
+{
+"slug": "Hamburger",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishMeat",
+"legal": ""
+},
+{
+"slug": "Grilled_Fish",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishFish",
+"legal": ""
+},
+{
+"slug": "Seafood_Soup",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodDishFish",
+"legal": ""
+},
+{
+"slug": "Beer",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodProcessed",
+"legal": ""
+},
+{
+"slug": "Wine",
+"type": "Ingredient",
+"rarity": "Common",
+"typeA": "Food",
+"typeB": "FoodProcessed",
+"legal": ""
+},
+{
+"slug": "Low_Grade_Medical_Supplies",
+"type": "Consumable",
+"rarity": "Common",
+"typeA": "Consume",
+"typeB": "Medicine",
+"legal": "1"
+},
+{
+"slug": "Medical_Supplies",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "Medicine",
+"legal": "1"
+},
+{
+"slug": "High_Grade_Medical_Supplies",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "Medicine",
+"legal": "1"
+},
+{
+"slug": "Mind_Control_Meds",
+"type": "Consumable",
+"rarity": "Common",
+"typeA": "Consume",
+"typeB": "Medicine",
+"legal": ""
+},
+{
+"slug": "Suspicious_Juice",
+"type": "Consumable",
+"rarity": "Common",
+"typeA": "Consume",
+"typeB": "Drug",
+"legal": "1"
+},
+{
+"slug": "Strange_Juice",
+"type": "Consumable",
+"rarity": "Common",
+"typeA": "Consume",
+"typeB": "Drug",
+"legal": "1"
+},
+{
+"slug": "Memory_Wiping_Medicine",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "Drug",
+"legal": "1"
+},
+{
+"slug": "Advanced_Technical_Manual",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeTechnologyBook",
+"legal": "1"
+},
+{
+"slug": "Innovative_Technical_Manual",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeTechnologyBook",
+"legal": "1"
+},
+{
+"slug": "Futuristic_Technical_Manual",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeTechnologyBook",
+"legal": "1"
+},
+{
+"slug": "Ancient_Technical_Manual",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumeAncientTechnologyBook",
+"legal": "1"
+},
+{
+"slug": "Skill_Fruit%3A_Power_Shot",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Skill_Fruit%3A_Power_Bomb",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Skill_Fruit%3A_Pal_Blast",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Skill_Fruit%3A_Air_Cannon",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Skill_Fruit%3A_Implode",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Grass_Skill_Fruit%3A_Wind_Cutter",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Grass_Skill_Fruit%3A_Grass_Tornado",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Grass_Skill_Fruit%3A_Solar_Blast",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Grass_Skill_Fruit%3A_Seed_Machine_Gun",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Grass_Skill_Fruit%3A_Spine_Vine",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Grass_Skill_Fruit%3A_Seed_Mine",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Water_Skill_Fruit%3A_Aqua_Gun",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Water_Skill_Fruit%3A_Aqua_Burst",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Water_Skill_Fruit%3A_Hydro_Laser",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Water_Skill_Fruit%3A_Hydro_Jet",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Water_Skill_Fruit%3A_Bubble_Blast",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Water_Skill_Fruit%3A_Acid_Rain",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Fire_Skill_Fruit%3A_Ignis_Blast",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Fire_Skill_Fruit%3A_Ignis_Breath",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Fire_Skill_Fruit%3A_Fire_Ball",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Fire_Skill_Fruit%3A_Flare_Arrow",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Fire_Skill_Fruit%3A_Spirit_Fire",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Fire_Skill_Fruit%3A_Ignis_Rage",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Fire_Skill_Fruit%3A_Flare_Storm",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Electric_Skill_Fruit%3A_Shockwave",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Electric_Skill_Fruit%3A_Lightning_Bolt",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Electric_Skill_Fruit%3A_Lightning_Streak",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Electric_Skill_Fruit%3A_Plasma_Funnel",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Electric_Skill_Fruit%3A_Spark_Blast",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Electric_Skill_Fruit%3A_Lock-on_Laser",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Electric_Skill_Fruit%3A_Electric_Ball",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Electric_Skill_Fruit%3A_Tri-Lightning",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Electric_Skill_Fruit%3A_Lightning_Strike",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Ground_Skill_Fruit%3A_Stone_Cannon",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Ground_Skill_Fruit%3A_Sand_Tornado",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Ground_Skill_Fruit%3A_Rock_Lance",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Ground_Skill_Fruit%3A_Bog_Blast",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Ground_Skill_Fruit%3A_Stone_Blast",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Ice_Skill_Fruit%3A_Ice_Missile",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Ice_Skill_Fruit%3A_Iceberg",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Ice_Skill_Fruit%3A_Blizzard_Spike",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Ice_Skill_Fruit%3A_Icicle_Cutter",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Ice_Skill_Fruit%3A_Crystal_Breath",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dark_Skill_Fruit%3A_Shadow_Burst",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dark_Skill_Fruit%3A_Nightmare_Ball",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dark_Skill_Fruit%3A_Psycho_Gravity",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": ""
+},
+{
+"slug": "Dark_Skill_Fruit%3A_Poison_Blast",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dark_Skill_Fruit%3A_Spirit_Flame",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dark_Skill_Fruit%3A_Dark_Laser",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dragon_Skill_Fruit%3A_Dragon_Breath",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dragon_Skill_Fruit%3A_Dragon_Cannon",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dragon_Skill_Fruit%3A_Dragon_Burst",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dragon_Skill_Fruit%3A_Dragon_Meteor",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Copper_Key",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": "1"
+},
+{
+"slug": "Silver_Key",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": "1"
+},
+{
+"slug": "Gold_Key",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": "1"
+},
+{
+"slug": "Bellanoirs_Slab",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": "1"
+},
+{
+"slug": "Bellanoir_Liberos_Slab",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": "1"
+},
+{
+"slug": "Low_Quality_Recovery_Meds",
+"type": "Consumable",
+"rarity": "Common",
+"typeA": "Consume",
+"typeB": "Drug",
+"legal": "1"
+},
+{
+"slug": "Recovery_Meds",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "Drug",
+"legal": "1"
+},
+{
+"slug": "High_Quality_Recovery_Meds",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "Drug",
+"legal": "1"
+},
+{
+"slug": "Vital_Remedy",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeGainStatusPoints",
+"legal": "1"
+},
+{
+"slug": "Stamina_Remedy",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeGainStatusPoints",
+"legal": "1"
+},
+{
+"slug": "Might_Remedy",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeGainStatusPoints",
+"legal": "1"
+},
+{
+"slug": "Speed_Remedy",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeGainStatusPoints",
+"legal": "1"
+},
+{
+"slug": "Burden_Remedy",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeGainStatusPoints",
+"legal": "1"
+},
+{
+"slug": "Vital_Elixir",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumeGainStatusPoints",
+"legal": "1"
+},
+{
+"slug": "Stamina_Elixir",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumeGainStatusPoints",
+"legal": "1"
+},
+{
+"slug": "Might_Elixir",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumeGainStatusPoints",
+"legal": "1"
+},
+{
+"slug": "Speed_Elixir",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumeGainStatusPoints",
+"legal": "1"
+},
+{
+"slug": "Burden_Elixir",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumeGainStatusPoints",
+"legal": "1"
+},
+{
+"slug": "Training_Manual_%28S%29",
+"type": "Consumable",
+"rarity": "Common",
+"typeA": "Consume",
+"typeB": "ConsumePalGainExp",
+"legal": "1"
+},
+{
+"slug": "Training_Manual_%28M%29",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumePalGainExp",
+"legal": "1"
+},
+{
+"slug": "Training_Manual_%28L%29",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumePalGainExp",
+"legal": "1"
+},
+{
+"slug": "Training_Manual_%28XL%29",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumePalGainExp",
+"legal": "1"
+},
+{
+"slug": "Training_Crystal",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePalLevelUp",
+"legal": "1"
+},
+{
+"slug": "Life_Fruit",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePalTalentUp",
+"legal": "1"
+},
+{
+"slug": "Power_Fruit",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePalTalentUp",
+"legal": "1"
+},
+{
+"slug": "Stout_Fruit",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePalTalentUp",
+"legal": "1"
+},
+{
+"slug": "Homeward_Thundercloud",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ReturnToBaseCamp",
+"legal": "1"
+},
+{
+"slug": "Ripe_Starfruit",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePalRankUp",
+"legal": "1"
+},
+{
+"slug": "Bellanoir_Libero_%28Ultra%29_Slab",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": "1"
+},
+{
+"slug": "Blazamut_Ryu_Slab",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": "1"
+},
+{
+"slug": "Blazamut_Ryu_%28Ultra%29_Slab",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": "1"
+},
+{
+"slug": "Skill_Fruit%3A_Air_Blade",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Grass_Skill_Fruit%3A_Circle_Vine",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Grass_Skill_Fruit%3A_Multicutter",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Water_Skill_Fruit%3A_Splash",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Water_Skill_Fruit%3A_Curtain_Splash",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Fire_Skill_Fruit%3A_Flame_Wall",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Fire_Skill_Fruit%3A_Volcanic_Rain",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Electric_Skill_Fruit%3A_TriSpark",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Electric_Skill_Fruit%3A_Thunder_Rain",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Electric_Skill_Fruit%3A_Thunderstorm",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Ground_Skill_Fruit%3A_Rockburst",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Ground_Skill_Fruit%3A_Sand_Twister",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Ice_Skill_Fruit%3A_Icicle_Line",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Ice_Skill_Fruit%3A_Diamond_Rain",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dark_Skill_Fruit%3A_Dark_Cannon",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dark_Skill_Fruit%3A_Dark_Arrow",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dark_Skill_Fruit%3A_Umbral_Surge",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dark_Skill_Fruit%3A_Apocalypse",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dragon_Skill_Fruit%3A_Beam_Slicer",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dragon_Skill_Fruit%3A_Comet",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dragon_Skill_Fruit%3A_Blast_Cannon",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Mysterious_Mushroom_Juice",
+"type": "Consumable",
+"rarity": "Common",
+"typeA": "Consume",
+"typeB": "Drug",
+"legal": "1"
+},
+{
+"slug": "Skill_Fruit%3A_Holy_Burst",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Fire_Skill_Fruit%3A_Flame_Funnel",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Xenolord_Slab",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": "1"
+},
+{
+"slug": "Revival_Potion",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumePalRevive",
+"legal": "1"
+},
+{
+"slug": "Xenolord_%28Ultra%29_Slab",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": "1"
+},
+{
+"slug": "Advanced_Recovery_Meds",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "Drug",
+"legal": "1"
+},
+{
+"slug": "Applied_Kindling_Handbook_I",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePalWorkSuitabilityUp",
+"legal": "1"
+},
+{
+"slug": "Applied_Watering_Handbook_I",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePalWorkSuitabilityUp",
+"legal": "1"
+},
+{
+"slug": "Applied_Planting_Handbook_I",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePalWorkSuitabilityUp",
+"legal": "1"
+},
+{
+"slug": "Applied_Generating_Electricity_Handbook_I",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePalWorkSuitabilityUp",
+"legal": "1"
+},
+{
+"slug": "Applied_Handiwork_Handbook_I",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePalWorkSuitabilityUp",
+"legal": "1"
+},
+{
+"slug": "Applied_Gathering_Handbook_I",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePalWorkSuitabilityUp",
+"legal": "1"
+},
+{
+"slug": "Applied_Lumbering_Handbook_I",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePalWorkSuitabilityUp",
+"legal": "1"
+},
+{
+"slug": "Applied_Mining_Handbook_I",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePalWorkSuitabilityUp",
+"legal": "1"
+},
+{
+"slug": "Applied_Medicine_Production_Handbook_I",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePalWorkSuitabilityUp",
+"legal": "1"
+},
+{
+"slug": "Applied_Cooling_Handbook_I",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePalWorkSuitabilityUp",
+"legal": "1"
+},
+{
+"slug": "Applied_Transporting_Handbook_I",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePalWorkSuitabilityUp",
+"legal": "1"
+},
+{
+"slug": "Applied_Ranching_Handbook_I",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePalWorkSuitabilityUp",
+"legal": "1"
+},
+{
+"slug": "Celestial_Sigil",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": "1"
+},
+{
+"slug": "Powerful_Fishing_Magnet",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": "1"
+},
+{
+"slug": "Ice_Skill_Fruit%3A_Freeze_Wall",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Grass_Skill_Fruit%3A_Reflect_Leaf",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Water_Skill_Fruit%3A_Torrential_Blast",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Water_Skill_Fruit%3A_Hydro_Slicer",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Pal_Reverser",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": "1"
+},
+{
+"slug": "Ground_Skill_Fruit%3A_Rocky_Impact",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Electric_Skill_Fruit%3A_Thunder_Spear",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dark_Skill_Fruit%3A_Dark_Shot",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Treasure_Map",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumeTreasureMap",
+"legal": "1"
+},
+{
+"slug": "Dark_Skill_Fruit%3A_Dark_Whisp",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dragon_Skill_Fruit%3A_Charge_Cannon",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Ice_Skill_Fruit%3A_Icicle_Bullet",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Thunder_Skill_Fruit%3A_All_Range_Thunder",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Simple_Bait",
+"type": "Consumable",
+"rarity": "Common",
+"typeA": "Consume",
+"typeB": "ConsumeFishingBait",
+"legal": "1"
+},
+{
+"slug": "High_Quality_Bait",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeFishingBait",
+"legal": "1"
+},
+{
+"slug": "Deluxe_Bait",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeFishingBait",
+"legal": "1"
+},
+{
+"slug": "Alluring_Bait",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeFishingBait",
+"legal": "1"
+},
+{
+"slug": "Kinship_Peach",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumePalGainFriendshipPoint",
+"legal": "1"
+},
+{
+"slug": "Water_Skill_Fruit%3A_Aqua_Surge",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Grass_Skill_Fruit%3A_Crosswind",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Ice_Skill_Fruit%3A_Absolute_Frost",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Nutrient_Tonic",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "Drug",
+"legal": "1"
+},
+{
+"slug": "Celestial_Sigil_%5BMaster%5D",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": "1"
+},
+{
+"slug": "Little_Kinship_Peach",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumePalGainFriendshipPoint",
+"legal": "1"
+},
+{
+"slug": "Hartalis_Slab",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": "1"
+},
+{
+"slug": "Hartalis_%28Ultra%29_Slab",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": "1"
+},
+{
+"slug": "Water_Awakening_Crystal",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumePalAwakening",
+"legal": "1"
+},
+{
+"slug": "Electric_Awakening_Crystal",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumePalAwakening",
+"legal": "1"
+},
+{
+"slug": "Ground_Awakening_Crystal",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumePalAwakening",
+"legal": "1"
+},
+{
+"slug": "Grass_Awakening_Crystal",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumePalAwakening",
+"legal": "1"
+},
+{
+"slug": "Fire_Awakening_Crystal",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumePalAwakening",
+"legal": "1"
+},
+{
+"slug": "Ice_Awakening_Crystal",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumePalAwakening",
+"legal": "1"
+},
+{
+"slug": "Dragon_Awakening_Crystal",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumePalAwakening",
+"legal": "1"
+},
+{
+"slug": "Dark_Awakening_Crystal",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumePalAwakening",
+"legal": "1"
+},
+{
+"slug": "Neutral_Awakening_Crystal",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumePalAwakening",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_Double-Edged_Holy_Sword",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_Sacred_Flesh",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_Demonic_Grasp",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_World_Trees_Bounty",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_Hermit",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_Dimensional_Leap",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_God_of_Destruction",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_Remarkable_Craftsmanship",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_Diamond_Body",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_Demon_God",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_Mastery_of_Fasting",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_Heart_of_the_Immovable_King",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_Swift",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_Eternal_Engine",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_Vampiric",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_King_of_the_Waves",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "World_Tree_Holy_Water",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeWorldTreeHolyWater",
+"legal": "1"
+},
+{
+"slug": "Wing_Cell",
+"type": "Consumable",
+"rarity": "Common",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": "1"
+},
+{
+"slug": "Grass_Skill_Fruit%3A_Wind_Blast",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Dark_Skill_Fruit%3A_Poison_Shower",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Water_Skill_Fruit%3A_Geyser_Gush",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeWazaMachine",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_Babysitter",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_Idiosyncratic",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_Immortality",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_Heavily_Armored",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Disposable_Implant%3A_Skymarcher",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Building_Repair_Kit",
+"type": "Consumable",
+"rarity": "Common",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": "1"
+},
+{
+"slug": "Summoning_Altar",
+"type": "Pal",
+"rarity": "",
+"typeA": "Pal",
+"typeB": "Infra_Environment",
+"legal": ""
+},
+{
+"slug": "Fishing_Magnet",
+"type": "Consumable",
+"rarity": "Uncommon",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": ""
+},
+{
+"slug": "Life_Crystal",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeGainStatusPoints",
+"legal": ""
+},
+{
+"slug": "Beginner_Bait",
+"type": "Consumable",
+"rarity": "Common",
+"typeA": "Consume",
+"typeB": "ConsumeFishingBait",
+"legal": ""
+},
+{
+"slug": "Sweet_Bait",
+"type": "Consumable",
+"rarity": "Common",
+"typeA": "Consume",
+"typeB": "ConsumeFishingBait",
+"legal": ""
+},
+{
+"slug": "Lucky_Bait",
+"type": "Consumable",
+"rarity": "Common",
+"typeA": "Consume",
+"typeB": "ConsumeFishingBait",
+"legal": ""
+},
+{
+"slug": "Quick_Bait",
+"type": "Consumable",
+"rarity": "Common",
+"typeA": "Consume",
+"typeB": "ConsumeFishingBait",
+"legal": ""
+},
+{
+"slug": "Risky_Bait",
+"type": "Consumable",
+"rarity": "Epic",
+"typeA": "Consume",
+"typeB": "ConsumeFishingBait",
+"legal": ""
+},
+{
+"slug": "Farmers_Special_Dish",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": ""
+},
+{
+"slug": "Zoes_Tattered_Memento",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": ""
+},
+{
+"slug": "Breeders_Precious_Pal",
+"type": "Consumable",
+"rarity": "Rare",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": ""
+},
+{
+"slug": "Zoes_Halloween_Costume",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumeOther",
+"legal": ""
+},
+{
+"slug": "Disposable_Implant%3A_Lucky",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": ""
+},
+{
+"slug": "Disposable_Implant%3A_Legend",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": ""
+},
+{
+"slug": "Disposable_Implant%3A_Siren_of_the_Void",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": ""
+},
+{
+"slug": "Disposable_Implant%3A_Eternal_Flame",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": ""
+},
+{
+"slug": "Disposable_Implant%3A_Invader",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": ""
+},
+{
+"slug": "Disposable_Implant%3A_Lunker",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": ""
+},
+{
+"slug": "Disposable_Implant%3A_Savior",
+"type": "Consumable",
+"rarity": "Legendary",
+"typeA": "Consume",
+"typeB": "ConsumePassiveSkillChange",
+"legal": ""
+},
+{
+"slug": "Assault_Rifle",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponAssaultRifle",
+"legal": "1"
+},
+{
+"slug": "Stone_Axe",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Metal_Axe",
+"type": "Weapon",
+"rarity": "Uncommon",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Refined_Metal_Axe",
+"type": "Weapon",
+"rarity": "Rare",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Metal_Detector",
+"type": "Weapon",
+"rarity": "Epic",
+"typeA": "Weapon",
+"typeB": "WeaponMetalDetector",
+"legal": "1"
+},
+{
+"slug": "Wooden_Club",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Bat",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Meat_Cleaver",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Stun_Baton",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Crossbow",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponCrossbow",
+"legal": "1"
+},
+{
+"slug": "Double-Barreled_Shotgun",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponShotgun",
+"legal": "1"
+},
+{
+"slug": "Handgun",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponHandgun",
+"legal": "1"
+},
+{
+"slug": "Homing_Sphere_Launcher",
+"type": "Weapon",
+"rarity": "Rare",
+"typeA": "Weapon",
+"typeB": "WeaponRocketLauncher",
+"legal": "1"
+},
+{
+"slug": "Laser_Rifle",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponAssaultRifle",
+"legal": "1"
+},
+{
+"slug": "Rocket_Launcher",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponRocketLauncher",
+"legal": "1"
+},
+{
+"slug": "Stone_Pickaxe",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Metal_Pickaxe",
+"type": "Weapon",
+"rarity": "Uncommon",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Refined_Metal_Pickaxe",
+"type": "Weapon",
+"rarity": "Rare",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Pump-Action_Shotgun",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponShotgun",
+"legal": "1"
+},
+{
+"slug": "Single-Shot_Rifle",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponAssaultRifle",
+"legal": "1"
+},
+{
+"slug": "Scatter_Sphere_Launcher",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponRocketLauncher",
+"legal": "1"
+},
+{
+"slug": "Single-Shot_Sphere_Launcher",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponRocketLauncher",
+"legal": "1"
+},
+{
+"slug": "Sword",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Frag_Grenade",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponThrowObject",
+"legal": "1"
+},
+{
+"slug": "Incendiary_Grenade",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponThrowObject",
+"legal": "1"
+},
+{
+"slug": "Shock_Grenade",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponThrowObject",
+"legal": "1"
+},
+{
+"slug": "Ice_Grenade",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponThrowObject",
+"legal": "1"
+},
+{
+"slug": "Old_Bow",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponBow",
+"legal": "1"
+},
+{
+"slug": "Poison_Bow",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponBow",
+"legal": ""
+},
+{
+"slug": "Fire_Bow",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponBow",
+"legal": ""
+},
+{
+"slug": "Poison_Arrow_Crossbow",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponCrossbow",
+"legal": ""
+},
+{
+"slug": "Fire_Arrow_Crossbow",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponCrossbow",
+"legal": ""
+},
+{
+"slug": "Three_Shot_Bow",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponBow",
+"legal": "1"
+},
+{
+"slug": "Hand-Held_Torch",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Makeshift_Handgun",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponHandgun",
+"legal": "1"
+},
+{
+"slug": "Stone_Spear",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Metal_Spear",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Refined_Metal_Spear",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Elizabees_Staff",
+"type": "Weapon",
+"rarity": "Uncommon",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Beegardes_Spear",
+"type": "Weapon",
+"rarity": "Uncommon",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": ""
+},
+{
+"slug": "Lilys_Spear",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Grappling_Gun",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponGrapplingGun",
+"legal": "1"
+},
+{
+"slug": "Mega_Grappling_Gun",
+"type": "Weapon",
+"rarity": "Uncommon",
+"typeA": "Weapon",
+"typeB": "WeaponGrapplingGun",
+"legal": "1"
+},
+{
+"slug": "Giga_Grappling_Gun",
+"type": "Weapon",
+"rarity": "Rare",
+"typeA": "Weapon",
+"typeB": "WeaponGrapplingGun",
+"legal": "1"
+},
+{
+"slug": "Hyper_Grappling_Gun",
+"type": "Weapon",
+"rarity": "Epic",
+"typeA": "Weapon",
+"typeB": "WeaponGrapplingGun",
+"legal": "1"
+},
+{
+"slug": "Musket",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponAssaultRifle",
+"legal": "1"
+},
+{
+"slug": "Gatling_Gun",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponGatlingGun",
+"legal": "1"
+},
+{
+"slug": "Flamethrower",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponFlameThrower",
+"legal": "1"
+},
+{
+"slug": "Grenade_Launcher",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponRocketLauncher",
+"legal": "1"
+},
+{
+"slug": "Guided_Missile_Launcher",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponRocketLauncher",
+"legal": "1"
+},
+{
+"slug": "Multi_Guided_Missile_Launcher",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponRocketLauncher",
+"legal": "1"
+},
+{
+"slug": "Laser_Gatling_Gun",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponGatlingGun",
+"legal": "1"
+},
+{
+"slug": "Meteor_Launcher",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponRocketLauncher",
+"legal": "1"
+},
+{
+"slug": "Dark_Grenade",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponThrowObject",
+"legal": "1"
+},
+{
+"slug": "Dragon_Grenade",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponThrowObject",
+"legal": "1"
+},
+{
+"slug": "Ground_Grenade",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponThrowObject",
+"legal": "1"
+},
+{
+"slug": "Grass_Grenade",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponThrowObject",
+"legal": "1"
+},
+{
+"slug": "Water_Grenade",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponThrowObject",
+"legal": "1"
+},
+{
+"slug": "Katana",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Beam_Sword",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Semi-Auto_Shotgun",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponShotgun",
+"legal": "1"
+},
+{
+"slug": "Plasma_Cannon",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponRocketLauncher",
+"legal": "1"
+},
+{
+"slug": "Old_Revolver",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponHandgun",
+"legal": "1"
+},
+{
+"slug": "Pal_Metal_Pickaxe",
+"type": "Weapon",
+"rarity": "Epic",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Pal_Metal_Axe",
+"type": "Weapon",
+"rarity": "Epic",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Makeshift_Assault_Rifle",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponAssaultRifle",
+"legal": "1"
+},
+{
+"slug": "Semi-Auto_Rifle",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponAssaultRifle",
+"legal": "1"
+},
+{
+"slug": "Makeshift_SMG",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponAssaultRifle",
+"legal": "1"
+},
+{
+"slug": "SMG",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponAssaultRifle",
+"legal": "1"
+},
+{
+"slug": "Makeshift_Shotgun",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponShotgun",
+"legal": "1"
+},
+{
+"slug": "Compound_Bow",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponBow",
+"legal": "1"
+},
+{
+"slug": "Advanced_Bow",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponBow",
+"legal": "1"
+},
+{
+"slug": "Meowmere",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Charge_Rifle",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponAssaultRifle",
+"legal": "1"
+},
+{
+"slug": "Overheat_Rifle",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponAssaultRifle",
+"legal": "1"
+},
+{
+"slug": "Energy_Shotgun",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponShotgun",
+"legal": "1"
+},
+{
+"slug": "Boost_Gun",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponHandgun",
+"legal": "1"
+},
+{
+"slug": "Megaboost_Gun",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponHandgun",
+"legal": "1"
+},
+{
+"slug": "Pal_Recovery_Grenade",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponThrowObject",
+"legal": "1"
+},
+{
+"slug": "Terra_Blade",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Terraprisma",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Vortex_Beater",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponAssaultRifle",
+"legal": "1"
+},
+{
+"slug": "Nightglow",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Excalibur",
+"type": "Weapon",
+"rarity": "Uncommon",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Legendary_Meowmere",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Beginner_Fishing_Rod_%28Chillet%29",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponFishingRod",
+"legal": "1"
+},
+{
+"slug": "Beginner_Fishing_Rod_%28Gumoss%29",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponFishingRod",
+"legal": "1"
+},
+{
+"slug": "Intermediate_Fishing_Rod_%28Cattiva%29",
+"type": "Weapon",
+"rarity": "Uncommon",
+"typeA": "Weapon",
+"typeB": "WeaponFishingRod",
+"legal": "1"
+},
+{
+"slug": "Intermediate_Fishing_Rod_%28Croajiro%29",
+"type": "Weapon",
+"rarity": "Rare",
+"typeA": "Weapon",
+"typeB": "WeaponFishingRod",
+"legal": "1"
+},
+{
+"slug": "Advanced_Fishing_Rod_%28Pengullet%29",
+"type": "Weapon",
+"rarity": "Epic",
+"typeA": "Weapon",
+"typeB": "WeaponFishingRod",
+"legal": "1"
+},
+{
+"slug": "Advanced_Fishing_Rod_%28Depresso%29",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponFishingRod",
+"legal": "1"
+},
+{
+"slug": "Ultra_Grappling_Gun",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponGrapplingGun",
+"legal": "1"
+},
+{
+"slug": "Marksman_Revolver",
+"type": "Weapon",
+"rarity": "Epic",
+"typeA": "Weapon",
+"typeB": "WeaponHandgun",
+"legal": ""
+},
+{
+"slug": "Core_Eject_Shotgun",
+"type": "Weapon",
+"rarity": "Epic",
+"typeA": "Weapon",
+"typeB": "WeaponShotgun",
+"legal": ""
+},
+{
+"slug": "Plasma_Multicutter",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Mechanical_Bow",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponBow",
+"legal": "1"
+},
+{
+"slug": "Combat_SMG",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponAssaultRifle",
+"legal": "1"
+},
+{
+"slug": "Prototype_Shotgun",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponShotgun",
+"legal": "1"
+},
+{
+"slug": "Heavy_Assault_Rifle",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponAssaultRifle",
+"legal": "1"
+},
+{
+"slug": "Tactical_Grenade_Launcher",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponRocketLauncher",
+"legal": "1"
+},
+{
+"slug": "Laser_Sword",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Beam_Scatter",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponShotgun",
+"legal": "1"
+},
+{
+"slug": "Drone_Launcher",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Plasma_Rifle",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponAssaultRifle",
+"legal": "1"
+},
+{
+"slug": "Beam_Launcher",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponRocketLauncher",
+"legal": "1"
+},
+{
+"slug": "Primitive_Sword",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Metal_Bat",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Enhanced_Lilys_Spear",
+"type": "Weapon",
+"rarity": "Legendary",
+"typeA": "Weapon",
+"typeB": "WeaponMelee",
+"legal": "1"
+},
+{
+"slug": "Five_Shot_Bow",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponBow",
+"legal": ""
+},
+{
+"slug": "Ballistic_Shield",
+"type": "Weapon",
+"rarity": "Common",
+"typeA": "Weapon",
+"typeB": "WeaponHandgun",
+"legal": ""
+},
+{
+"slug": "Cloth_Outfit",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Metal_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Metal_Helm",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Pelt_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Feathered_Hair_Band",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Refined_Metal_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Refined_Metal_Helm",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Pal_Metal_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Pal_Metal_Helm",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Common_Shield",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "Shield",
+"legal": "1"
+},
+{
+"slug": "Mega_Shield",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "Shield",
+"legal": "1"
+},
+{
+"slug": "Giga_Shield",
+"type": "Armor",
+"rarity": "Uncommon",
+"typeA": "Armor",
+"typeB": "Shield",
+"legal": "1"
+},
+{
+"slug": "Hyper_Shield",
+"type": "Armor",
+"rarity": "Rare",
+"typeA": "Armor",
+"typeB": "Shield",
+"legal": "1"
+},
+{
+"slug": "Monarchs_Crown",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Golden_Crown",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Long-Eared_Headband",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Witch_Hat",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Soft_Hat",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Helmet",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Silk_Hat",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Tricorne",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Explorer_Cap",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Graduation_Cap",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Farming_Hat",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Bowler_Hat",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Tocotoco_Cap",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Grinning_Tocotoco_Cap",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Gumoss_Cap",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Penking_Cap",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Katress_Cap",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Tropical_Outfit",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Tundra_Outfit",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Heat_Resistant_Pelt_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Cold_Resistant_Pelt_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Heat_Resistant_Metal_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Cold_Resistant_Metal_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Heat_Resistant_Refined_Metal_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Cold_Resistant_Refined_Metal_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Heat_Resistant_Pal_Metal_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Cold_Resistant_Pal_Metal_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Lyleen_Accessory",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Sibelyx_Hat",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Leezpunk_Hood",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Killamari_Cap",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Cawgnito_Hat",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Ribbuny_Headband",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Lamball_Helm",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Dumud_Helm",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Swee_Cap",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Dazzi_Hat",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Cattiva_Hat",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Plasteel_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Plasteel_Helmet",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Ultra_Shield",
+"type": "Armor",
+"rarity": "Epic",
+"typeA": "Armor",
+"typeB": "Shield",
+"legal": "1"
+},
+{
+"slug": "Witchs_Crown",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Zoe_Hat",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Axel_Hat",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Lily_Hat",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Victor_Hat",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Marcus_Hat",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Horns_of_Supremacy",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Heat_Resistant_Plasteel_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Cold_Resistant_Plasteel_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Lightweight_Plasteel_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Saya_Hat",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Hexolite_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Xenolords_head",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Heat_Resistant_Hexolite_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Cold_Resistant_Hexolite_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Lightweight_Hexolite_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Hexolite_Helmet",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Bjorn_Hat",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Advanced_Shield",
+"type": "Armor",
+"rarity": "Epic",
+"typeA": "Armor",
+"typeB": "Shield",
+"legal": "1"
+},
+{
+"slug": "Hallowed_Mask",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Hallowed_Headgear",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Hallowed_Plate_Mail",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Hallowed_Helmet",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Eye_of_Cthulhu_Mask",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Hallowed_Hood",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Moon_Lord_Mask",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Depresso_Helmet",
+"type": "Armor",
+"rarity": "Epic",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Depresso_Armor",
+"type": "Armor",
+"rarity": "Epic",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "V1_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "V2_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Crown_of_Salvation",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Ancient_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Heat-Resistant_Ancient_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Cold-Resistant_Ancient_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Lightweight_Ancient_Armor",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorBody",
+"legal": "1"
+},
+{
+"slug": "Ancient_Helm",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Auri_Hat",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Herbil_Headband",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Jelliette_Hat",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Turtacle_Cap",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Zenara_Hat",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Kingpaca_Headband",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Gloopie_Hat",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Croajiro_Cap",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Chikipi_Cap",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Dandilord_Hat",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Shroomer_Hat",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Ghangler_Accessory",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Icelyn_Hat",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Splatterina_Hat",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Tarantriss_Hat",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": "1"
+},
+{
+"slug": "Ancient_Shield",
+"type": "Armor",
+"rarity": "Legendary",
+"typeA": "Armor",
+"typeB": "Shield",
+"legal": "1"
+},
+{
+"slug": "Lightz_Helmet",
+"type": "Armor",
+"rarity": "Common",
+"typeA": "Armor",
+"typeB": "ArmorHead",
+"legal": ""
+},
+{
+"slug": "Corrosive_Mist_Mask",
+"type": "Accessory",
+"rarity": "Legendary",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Life_Pendant",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Defense_Pendant",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Pendant_of_Diligence",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Heat_Resistant_Undershirt",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Thermal_Undershirt",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Ring_of_Neutral_Resistance",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Ring_of_Fire_Resistance",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Ring_of_Water_Resistance",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Ring_of_Electric_Resistance",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Ring_of_Grass_Resistance",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Ring_of_Ground_Resistance",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Ring_of_Dark_Resistance",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Ring_of_Dragon_Resistance",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Ring_of_Mercy",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Ability_Glasses",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Multiclimate_Undershirt",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Ring_of_Freight",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Anti-Gravity_Belt",
+"type": "Accessory",
+"rarity": "Uncommon",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Double_Jump_Boots",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Triple_Jump_Boots",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Air_Dash_Boots",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Double_Air_Dash_Boots",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Triple_Air_Dash_Boots",
+"type": "Accessory",
+"rarity": "Legendary",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Neutral_Support_Whistle",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Fire_Support_Whistle",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Water_Support_Whistle",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Electric_Support_Whistle",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Grass_Support_Whistle",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Ice_Support_Whistle",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Ground_Support_Whistle",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Dark_Support_Whistle",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Dragon_Support_Whistle",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Attack_Support_Whistle",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Defense_Support_Whistle",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Growth_Acceleration_Bell",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Attack_Pendant",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Ring_of_Ice_Resistance",
+"type": "Accessory",
+"rarity": "Rare",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Dogen_Emblem",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Silvegis_Emblem",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Wandering_Merchant_Charm",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Vanguard_Charm",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Explosion-Resistant_Undershirt",
+"type": "Accessory",
+"rarity": "Legendary",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Warsect_Terras_Belt",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Islanders_Tool_Belt",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Celestial_Emperors_Baton",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Flame_Emperors_Baton",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Lord_of_the_Seas_Baton",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Lord_of_Lightnings_Baton",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Spirit_Emperors_Baton",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Ice_Emperors_Baton",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Earth_Emperors_Baton",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Lord_of_the_Underworlds_Baton",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Divine_Dragons_Baton",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Pal_Tamers_Glasses",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Air_Walker_Mk_I",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Air_Walker_Mk_II",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Air_Walker_Mk_III",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Air_Walker_EX",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Hartaliss_Talisman",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Blazamuts_Talisman",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Neptiliuss_Talisman",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Orserks_Talisman",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Lyleens_Talisman",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Frostallions_Talisman",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Anubiss_Talisman",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Lyleen_Nocts_Talisman",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Reptyro_Charm",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Wumpo_Charm",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Blazehowl_Ring",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Faleris_Aqua_Ring",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Fenglope_Lux_Ring",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Menasting_Terra_Ring",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Vaelet_Ring",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Katress_Ring",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Elphidran_Ring",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Cryolinx_Ring",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Faleris_Ring",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Ring_of_Trust",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Phantom_Ring",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Jetragons_Talisman",
+"type": "Accessory",
+"rarity": "Epic",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": "1"
+},
+{
+"slug": "Night_Vision_Goggles",
+"type": "Accessory",
+"rarity": "Common",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Quadruple_Jump_Boots",
+"type": "Accessory",
+"rarity": "Legendary",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Quadruple_Air_Dash_Boots",
+"type": "Accessory",
+"rarity": "Legendary",
+"typeA": "Accessory",
+"typeB": "Accessory",
+"legal": ""
+},
+{
+"slug": "Arrow",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Poison_Arrow",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Fire_Arrow",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Rocket_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Energy_Cartridge",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Decal_Ink",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Handgun_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Rifle_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Shotgun_Shell",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Coarse_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Assault_Rifle_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Flamethrower_Fuel",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Missile_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Grenade_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Gatling_Gun_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Meteorite_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Plasma_Cartridge",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Laser_Gatling_Cartridge",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Reinforced_Arrow",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Advanced_Arrow",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Charge_Rifle_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Overheat_Rifle_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Energy_Shotgun_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Boost_Gun_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Beam_Scatter_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Plasma_Rifle_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Beam_Launcher_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Mechanical_Bow_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Combat_SMG_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Prototype_Shotgun_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Heavy_Assault_Rifle_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Tactical_Grenade_Launcher_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": "1"
+},
+{
+"slug": "Machine_Gun_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": ""
+},
+{
+"slug": "Magnum_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": ""
+},
+{
+"slug": "Sunreach_Rapid-Fire_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": ""
+},
+{
+"slug": "Sunreach_Single-Shot_Ammo",
+"type": "Ammo",
+"rarity": "Common",
+"typeA": "Ammo",
+"typeB": "ConsumeBullet",
+"legal": ""
+},
+{
+"slug": "Pal_Sphere",
+"type": "Sphere",
+"rarity": "",
+"typeA": "SpecialWeapon",
+"typeB": "SPWeaponCaptureBall",
+"legal": ""
+},
+{
+"slug": "Mega_Sphere",
+"type": "Sphere",
+"rarity": "Common",
+"typeA": "SpecialWeapon",
+"typeB": "SPWeaponCaptureBall",
+"legal": "1"
+},
+{
+"slug": "Giga_Sphere",
+"type": "Sphere",
+"rarity": "Uncommon",
+"typeA": "SpecialWeapon",
+"typeB": "SPWeaponCaptureBall",
+"legal": "1"
+},
+{
+"slug": "Hyper_Sphere",
+"type": "Sphere",
+"rarity": "Uncommon",
+"typeA": "SpecialWeapon",
+"typeB": "SPWeaponCaptureBall",
+"legal": "1"
+},
+{
+"slug": "Ultra_Sphere",
+"type": "Sphere",
+"rarity": "Rare",
+"typeA": "SpecialWeapon",
+"typeB": "SPWeaponCaptureBall",
+"legal": "1"
+},
+{
+"slug": "Legendary_Sphere",
+"type": "Sphere",
+"rarity": "Rare",
+"typeA": "SpecialWeapon",
+"typeB": "SPWeaponCaptureBall",
+"legal": "1"
+},
+{
+"slug": "Ultimate_Sphere",
+"type": "Sphere",
+"rarity": "Epic",
+"typeA": "SpecialWeapon",
+"typeB": "SPWeaponCaptureBall",
+"legal": "1"
+},
+{
+"slug": "Exotic_Sphere",
+"type": "Sphere",
+"rarity": "Epic",
+"typeA": "SpecialWeapon",
+"typeB": "SPWeaponCaptureBall",
+"legal": "1"
+},
+{
+"slug": "Sol_Sphere",
+"type": "Sphere",
+"rarity": "Epic",
+"typeA": "SpecialWeapon",
+"typeB": "SPWeaponCaptureBall",
+"legal": "1"
+},
+{
+"slug": "Ancient_Sphere",
+"type": "Sphere",
+"rarity": "Legendary",
+"typeA": "SpecialWeapon",
+"typeB": "SPWeaponCaptureBall",
+"legal": "1"
+},
+{
+"slug": "Radar_Sphere",
+"type": "Sphere",
+"rarity": "Uncommon",
+"typeA": "SpecialWeapon",
+"typeB": "SPWeaponCaptureBall",
+"legal": ""
+},
+{
+"slug": "Heavy_Weight_Module",
+"type": "Sphere Module",
+"rarity": "Uncommon",
+"typeA": "CaptureItemModifier",
+"typeB": "CaptureItemModifier",
+"legal": "1"
+},
+{
+"slug": "Curve_Module",
+"type": "Sphere Module",
+"rarity": "Uncommon",
+"typeA": "CaptureItemModifier",
+"typeB": "CaptureItemModifier",
+"legal": "1"
+},
+{
+"slug": "Sniper_Module",
+"type": "Sphere Module",
+"rarity": "Rare",
+"typeA": "CaptureItemModifier",
+"typeB": "CaptureItemModifier",
+"legal": "1"
+},
+{
+"slug": "Slider_Module",
+"type": "Sphere Module",
+"rarity": "Rare",
+"typeA": "CaptureItemModifier",
+"typeB": "CaptureItemModifier",
+"legal": "1"
+},
+{
+"slug": "Sniper_Module_II",
+"type": "Sphere Module",
+"rarity": "Epic",
+"typeA": "CaptureItemModifier",
+"typeB": "CaptureItemModifier",
+"legal": "1"
+},
+{
+"slug": "Homing_Module",
+"type": "Sphere Module",
+"rarity": "Legendary",
+"typeA": "CaptureItemModifier",
+"typeB": "CaptureItemModifier",
+"legal": "1"
+},
+{
+"slug": "Lifmunk_Effigy",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Lifmunks_Submachine_Gun",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Direhowls_Saddled_Harness",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Jormuntide_Ignis_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Eikthyrdeer_Terra_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Jolthog_Crysts_Gloves",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Dinossom_Lux_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Mammorest_Cryst_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Relaxaurus_Luxs_Missile_Launcher",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Pyrin_Noct_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Broncherry_Aqua_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Elphidran_Aqua_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Blazehowl_Noct_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Suzaku_Aqua_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Surfent_Terra_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Reptyro_Cryst_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Frostallion_Noct_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Mossanda_Luxs_Grenade_Launcher",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Wumpo_Botan_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Kingpaca_Cryst_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Vanwyrm_Cryst_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Hangyu_Crysts_Glove",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Jormuntide_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Eikthyrdeer_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Jolthogs_Gloves",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Foxparks_Harness",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Rushoar_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Tanzees_Assault_Rifle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Pengullet_Rocket_Launcher",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Melpaca_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Dinossom_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Mammorest_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Univolt_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Grizzbolts_Minigun",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Relaxaurus_Missile_Launcher",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Pyrin_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Broncherry_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Arsox_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Azurobe_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Elphidran_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Fenglope_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Tocotocos_Gloves",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Galeclaws_Gloves",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Killamaris_Gloves",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Celarays_Gloves",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Maraith_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Flopies_Necklace",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Blazehowl_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Suzaku_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Surfent_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Dazzis_Necklace",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Reptyro_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Kitsun_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Daedreams_Necklace",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Frostallion_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Faleris_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Blazamut_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Reindrix_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Shadowbeak_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Yakumo_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Astegon_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Quivern_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Rayhound_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Mossandas_Grenade_Launcher",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Wumpo_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Nitewing_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Jetragons_Missile_Launcher",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Helzephyr_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Kingpaca_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Paladius_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Beakon_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Ragnahawk_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Necromus_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Sweepa_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Gildane_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Nyafias_Shotgun",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Grintale_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Dazemu_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Digtoises_Headband",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": ""
+},
+{
+"slug": "Vanwyrm_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Chillet_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Hangyus_Gloves",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Hip_Lantern",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_Lamp",
+"legal": "1"
+},
+{
+"slug": "Small_Feed_Bag",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_UnlockPlayerFuture",
+"legal": "1"
+},
+{
+"slug": "Average_Feed_Bag",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_UnlockPlayerFuture",
+"legal": "1"
+},
+{
+"slug": "Large_Feed_Bag",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_UnlockPlayerFuture",
+"legal": "1"
+},
+{
+"slug": "Huge_Feed_Bag",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_UnlockPlayerFuture",
+"legal": "1"
+},
+{
+"slug": "Giant_Feed_Bag",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_UnlockPlayerFuture",
+"legal": "1"
+},
+{
+"slug": "Blazamut_Ryu_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Helzephyr_Lux_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Quivern_Botan_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Chillet_Ignis_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Mysterious_Accessory_Box",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_UnlockPlayerFuture",
+"legal": "1"
+},
+{
+"slug": "Mystic_Accessory_Box",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_UnlockPlayerFuture",
+"legal": "1"
+},
+{
+"slug": "Shroomer_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Shroomer_Noct_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Selyne_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Xenogard_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Small_Pouch",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_AdditionalInventory",
+"legal": "1"
+},
+{
+"slug": "Medium_Pouch",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_AdditionalInventory",
+"legal": "1"
+},
+{
+"slug": "Large_Pouch",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_AdditionalInventory",
+"legal": "1"
+},
+{
+"slug": "Giant_Pouch",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_AdditionalInventory",
+"legal": "1"
+},
+{
+"slug": "Chillet_Bounty_Token",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Sweepa_Bounty_Token",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Gumoss_Bounty_Token",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Dumud_Bounty_Token",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Penking_Bounty_Token",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Azurobe_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Grintale_Bounty_Token",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Nitewing_Bounty_Token",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Quivern_Bounty_Token",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Felbat_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Kingpaca_Bounty_Token",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Broncherry_Bounty_Token",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Katress_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Bushi_Bounty_Token",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Fenglope_Bounty_Token",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Petallia_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Beakon_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Warsect_Bounty_Token",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Broncherry_Aqua_Bounty_Token",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Elphidran_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Relaxaurus_Bounty_Token",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Univolt_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Elizabee_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Mossanda_Lux_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Lunaris_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Verdash_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Wumpo_Botan_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Mammorest_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Vaelet_Bounty_Token",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Sibelyx_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Menasting_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Suzaku_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Jormuntide_Bounty_Token",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Ice_Kingpaca_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Dinossom_Lux_Bounty_Token",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Anubis_Bounty_Token",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Astegon_Bounty_Token",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Blazamut_Bounty_Token",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Lyleen_Noct_Bounty_Token",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Menasting_Terra_Bounty_Token",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Knocklem_Bounty_Token",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Splatterina_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Azurmane_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Kitsun_Noct_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Fenglope_Lux_Bounty_Token",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Celesdir_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Silvegis_Bounty_Token",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Faleris_Aqua_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Jetragon_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Frostallion_Bounty_Token",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Twin_Knights_Bounty_Token",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Xenolord_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Starryon_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Silvegis_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Celesdir_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Tarantriss_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Azurmane_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Bastigors_Hammer",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Kitsun_Noct_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Fenglope_Lux_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Faleris_Aqua_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Smokies_Harness",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Foxparks_Crysts_Harness",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Dazzi_Nocts_Necklace",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Smokie_Bounty_Token",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": "1"
+},
+{
+"slug": "Nitemary_Bounty_Token",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": "1"
+},
+{
+"slug": "Starryon_Bounty_Token",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": "1"
+},
+{
+"slug": "Prunelia_Bounty_Token",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": "1"
+},
+{
+"slug": "Nyafia_Bounty_Token",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": "1"
+},
+{
+"slug": "Gildane_Bounty_Token",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": "1"
+},
+{
+"slug": "Omascul_Bounty_Token",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": "1"
+},
+{
+"slug": "Tarantris_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": "1"
+},
+{
+"slug": "Frostallion_Noct_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": "1"
+},
+{
+"slug": "Foxparks_Cryst_Bounty_Token",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": "1"
+},
+{
+"slug": "Dazzi_Noct_Bounty_Token",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": "1"
+},
+{
+"slug": "Cryolinx_Terra_Bounty_Token",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": "1"
+},
+{
+"slug": "Caprity_Noct_Bounty_Token",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": "1"
+},
+{
+"slug": "Loupmoon_Cryst_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": "1"
+},
+{
+"slug": "Ribbuny_Botan_Bounty_Token",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": "1"
+},
+{
+"slug": "Warsect_Terra_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Serenity",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Infinite_Stamina",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Runner",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Burly_Body",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Artisan",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Musclehead",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Enhanced_Hip_Lantern",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_Lamp",
+"legal": "1"
+},
+{
+"slug": "Whalaska_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Ghangler_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Herbils_Harness",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Polapup_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Braloha_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Palumba_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Neptilius_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Killamari_Primos_Gloves",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Pengullet_Luxs_Rocket_Launcher",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Celaray_Luxs_Gloves",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Azurobe_Cryst_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Ghangler_Ignis_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Whalaska_Ignis_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Whalaska_Bounty_Token",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Whalaska_Ignis_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Neptilius_Bounty_Token",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Dualith_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Dualith_Noct_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Solmora_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Solmora_Lux_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Vanguard",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Stronghold_Strategist",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Motivational_Leader",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Noble",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Ace_Swimmer",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Tanzee_Igniss_Assault_Rifle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Hartalis_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Starryon_Primo_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Aquatic_Construction_Kit",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_UnlockPlayerFuture",
+"legal": "1"
+},
+{
+"slug": "Modified_Pals_Contaminated_Core",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Extra_Weapon_Holster",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_UnlockPlayerFuture",
+"legal": "1"
+},
+{
+"slug": "Lamball_Effigy",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Pengullet_Effigy",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Munchill_Effigy",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Rooby_Effigy",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Herbil_Effigy",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Tanzee_Effigy",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Depresso_Effigy",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Cattiva_Effigy",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Lunaris_Effigy",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Relaxaurus_Effigy",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Yakumo_Effigy",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Eidrolon_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Eidrolon_Ignis_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Dynamoff_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Beakon_Cryst_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Celesdir_Noct_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Key_Sphere_of_Envy",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Key_Sphere_of_Pride",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Key_Sphere_of_Greed",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Key_Sphere_of_Sloth",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Key_Sphere_of_Gluttony",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Key_Sphere_of_Lust",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Key_Sphere_of_Wrath",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Key_Sphere_of_Original_Sin",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Mimog_Effigy",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": ""
+},
+{
+"slug": "Tetroise_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Tetroise_Primo_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Moldron_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Moldron_Cryst_Saddle",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Univolt_Cryst_Saddle",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Rayhound_Cryst_Saddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Aegidron_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Bulldosu_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Polapup_Terra_Saddle",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Roujay_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Shaolong_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Ophydia_Saddle",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": "1"
+},
+{
+"slug": "Pyrin_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Tetroise_Bounty_Token",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Reptyro_Bounty_Token",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Renjishi_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Moldron_Cryst_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Dualith_Bounty_Token",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Shroomly_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Celesdir_Noct_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Kuprok_Cryst_Bounty_Token",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Ophydia_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Flaracle_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Dynamoff_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Slowatt_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Snock_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Eidrolon_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Lyleen_Bounty_Token",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Grizzbolt_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Dualith_Noct_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Blazehowl_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Arsox_Bounty_Token",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Foxicle_Bounty_Token",
+"type": "Key Items",
+"rarity": "Common",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Wixen_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Tetroise_Primo_Bounty_Token",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Wistella_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Prixter_Lux_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Kuprok_Bounty_Token",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Moldron_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Needoll_Bounty_Token",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Aegidron_Bounty_Token",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_BossReward",
+"legal": ""
+},
+{
+"slug": "Implant%3A_Wellness_Watcher",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Healing_Coach",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Reload_Master",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Dragostrophes_Shotgun",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": ""
+},
+{
+"slug": "Boltmane_Saddle",
+"type": "Key Items",
+"rarity": "",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": ""
+},
+{
+"slug": "Implant%3A_Mercy_Hit",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Insomnia",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Philanthropist",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Impatient",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Fit_as_a_Fiddle",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Eternal_Engine",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Nimble",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Swift",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Dainty_Eater",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Diet_Lover",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Mastery_of_Fasting",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Positive_Thinker",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Workaholic",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Heart_of_the_Immovable_King",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Brave",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Ferocious",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Demon_God",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Hard_Skin",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Diamond_Body",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Serious",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Remarkable_Craftsmanship",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Mine_Foreman",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Logging_Foreman",
+"type": "Key Items",
+"rarity": "Rare",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Fine_Furs",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Sleek_Stroke",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Implant%3A_Work_Slave",
+"type": "Key Items",
+"rarity": "Uncommon",
+"typeA": "Essential",
+"typeB": "Essential_PassiveSkillChange",
+"legal": "1"
+},
+{
+"slug": "Smokie_Crysts_Harness",
+"type": "Key Items",
+"rarity": "Epic",
+"typeA": "Essential",
+"typeB": "Essential_PalGear",
+"legal": ""
+},
+{
+"slug": "Marine_Echobone",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": "1"
+},
+{
+"slug": "Silent_Echobone",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": "1"
+},
+{
+"slug": "Seafoam_Echobone",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": "1"
+},
+{
+"slug": "Tidewind_Echobone",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential",
+"legal": "1"
+},
+{
+"slug": "Echoing_Flute",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Essential_UnlockPlayerFuture",
+"legal": ""
+},
+{
+"slug": "Faded_Schematic",
+"type": "Key Items",
+"rarity": "Legendary",
+"typeA": "Essential",
+"typeB": "Blueprint",
+"legal": ""
+},
+{
+"slug": "Normal_Parachute",
+"type": "Glider",
+"rarity": "Common",
+"typeA": "Glider",
+"typeB": "Glider",
+"legal": "1"
+},
+{
+"slug": "Mega_Glider",
+"type": "Glider",
+"rarity": "Common",
+"typeA": "Glider",
+"typeB": "Glider",
+"legal": "1"
+},
+{
+"slug": "Giga_Glider",
+"type": "Glider",
+"rarity": "Uncommon",
+"typeA": "Glider",
+"typeB": "Glider",
+"legal": "1"
+},
+{
+"slug": "Hyper_Glider",
+"type": "Glider",
+"rarity": "Epic",
+"typeA": "Glider",
+"typeB": "Glider",
+"legal": "1"
+},
+{
+"slug": "Wing_Pack",
+"type": "Glider",
+"rarity": "Legendary",
+"typeA": "Glider",
+"typeB": "Glider",
+"legal": "1"
+},
+{
+"slug": "Bellanoir_Libero_%28Ultra%29_Slab_Fragment",
+"type": "Schematic",
+"rarity": "Rare",
+"typeA": "Blueprint",
+"typeB": "Blueprint",
+"legal": "1"
+},
+{
+"slug": "Hartalis_%28Ultra%29_Slab_Fragment",
+"type": "Schematic",
+"rarity": "Rare",
+"typeA": "Blueprint",
+"typeB": "Blueprint",
+"legal": "1"
+},
+{
+"slug": "Blazamut_Ryu_Slab_Fragment",
+"type": "Schematic",
+"rarity": "Uncommon",
+"typeA": "Blueprint",
+"typeB": "Blueprint",
+"legal": "1"
+},
+{
+"slug": "Hartalis_Slab_Fragment",
+"type": "Schematic",
+"rarity": "Uncommon",
+"typeA": "Blueprint",
+"typeB": "Blueprint",
+"legal": "1"
+},
+{
+"slug": "Xenolord_%28Ultra%29_Slab_Fragment",
+"type": "Schematic",
+"rarity": "Rare",
+"typeA": "Blueprint",
+"typeB": "Blueprint",
+"legal": "1"
+},
+{
+"slug": "Xenolord_Slab_Fragment",
+"type": "Schematic",
+"rarity": "Uncommon",
+"typeA": "Blueprint",
+"typeB": "Blueprint",
+"legal": "1"
+},
+{
+"slug": "Bellanoir_Liberos_Slab_Fragment",
+"type": "Schematic",
+"rarity": "Uncommon",
+"typeA": "Blueprint",
+"typeB": "Blueprint",
+"legal": "1"
+},
+{
+"slug": "Blazamut_Ryu_%28Ultra%29_Slab_Fragment",
+"type": "Schematic",
+"rarity": "Rare",
+"typeA": "Blueprint",
+"typeB": "Blueprint",
+"legal": "1"
+},
+{
+"slug": "Bellanoirs_Slab_Fragment",
+"type": "Schematic",
+"rarity": "Common",
+"typeA": "Blueprint",
+"typeB": "Blueprint",
+"legal": "1"
+}
+]

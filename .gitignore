@@ -1,0 +1,13 @@
+# не относящееся к базе знаний (файлы другого мини-проекта)
+Darktide_*
+build_cheatsheet.js
+node_modules/
+package.json
+package-lock.json
+pg-1.jpg
+*.tmp
+PROMPT_FOR_CLAUDE_CODE.md
+
+# системное
+.DS_Store
+.claude/settings.local.json
