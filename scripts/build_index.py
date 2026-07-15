@@ -125,6 +125,7 @@ def main():
             "partner_tags": tags, "ranch_produce": produce, "base_support": base_support or None,
             "drops": c.get("notable_drops") or [],
             "combi_rank": br["combi_ranks"].get(name),
+            "nocturnal": c.get("nocturnal"),
             "tier_hits": tier_hits.get(name, []),
             "regions": l.get("regions") or [],
             "alpha": l.get("alpha_locations") or [],

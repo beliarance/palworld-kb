@@ -336,19 +336,20 @@ class Planner:
         if a.tech >= 45:
             producers = [("Flambelle", "Flame Organ (Computer, Carbon Fiber, Bio Battery)"),
                          ("Sparkit", "Electric Organ (Computer, AI Core, Bio Battery)"),
-                         ("Depresso", "Venom Gland (AI Core, Corrosive Solvent, Thermal Core)"),
-                         ("Dumud", "High Quality Pal Oil (Polymer, Circuit Board)"),
+                         ("Depresso", "Venom Gland 🌙 ночной, работает 24/7 (AI Core, Solvent, Thermal Core)"),
+                         ("Dumud Gild", "High Quality Pal Oil — Farming 4, x4 к скорости Dumud (Polymer, Circuit Board)"),
                          ("Kelpsea", "Aquatic Pal Fluids (Cement, Cryogenic Coolant)"),
-                         ("Foxcicle", "Ice Organ (Cryogenic Coolant)")]
+                         ("Foxcicle", "Ice Organ — Farming 3 (Cryogenic Coolant)")]
         else:
             producers = [("Surfent", "Leather (броня)"), ("Cremis", "Wool (Cloth)"),
-                         ("Sootseer", "Bone (Cement)"), ("Kelpsea", "Aquatic Pal Fluids (Cement)"),
-                         ("Foxcicle", "Ice Organ (Coolant)")]
+                         ("Sootseer", "Bone 🌙 ночной, Farming 2 (Cement)"),
+                         ("Kelpsea", "Aquatic Pal Fluids (Cement)"), ("Foxcicle", "Ice Organ — Farming 3 (Coolant)")]
         for sp, why in producers:
             self.hire(sp, 1, f"крафт-ранч: {why}")
         self.add("Ranch", -(-len(producers) // 4))
         self.notes.append("Крафт-ранч: пал-материалы для компонентов на месте; масштабируй +1 пала на узкое место "
-                          "(обычно Flame/Electric Organ под Computer)")
+                          "(обычно Flame/Electric Organ под Computer). 🌙 = ночной, работает без сна; "
+                          "ДОПУЩЕНИЕ: скорость ранча ~ уровню Farming")
         self.hire("Ribbuny Botan", 1, "оружейный верстак (+200~400% на нём)")
         self.hire("Anubis", 2, "верстаки (Handiwork 6) — пара с Sekhmet")
         self.hire("Sekhmet", 1, "буст Anubis +20~40% и себе +30~60% на верстаках")

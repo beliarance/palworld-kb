@@ -33,6 +33,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 30,
+   "nocturnal": false,
    "tier_hits": [
     "work_mining#1"
    ],
@@ -77,6 +78,7 @@
     "Aquatic Pal Fluids"
    ],
    "combi_rank": 2520,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Golden Hills",
@@ -127,6 +129,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 480,
+   "nocturnal": false,
    "tier_hits": [
     "fighters#12",
     "work_handiwork#6",
@@ -170,6 +173,7 @@
     "Flame Organ"
    ],
    "combi_rank": 2320,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the Volcano",
@@ -226,6 +230,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 490,
+   "nocturnal": true,
    "tier_hits": [
     "work_mining#4"
    ],
@@ -260,6 +265,7 @@
     "High Quality Pal Oil"
    ],
    "combi_rank": 10,
+   "nocturnal": false,
    "tier_hits": [
     "fighters#5"
    ],
@@ -299,6 +305,7 @@
     "Glowing Ancient Relic"
    ],
    "combi_rank": 420,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_ground#6",
     "work_generating_electricity#6"
@@ -351,6 +358,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 1830,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_swim#7"
    ],
@@ -407,6 +415,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 1220,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Frozen Coral Hill",
@@ -452,6 +461,7 @@
     "Small Pal Soul"
    ],
    "combi_rank": 1540,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Azure Woodland",
@@ -498,6 +508,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 50,
+   "nocturnal": false,
    "tier_hits": [
     "work_lumbering#5",
     "work_cooling#1"
@@ -546,6 +557,7 @@
     "Glowing Ancient Relic"
    ],
    "combi_rank": 1690,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -602,6 +614,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 580,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the World Tree",
@@ -646,6 +659,7 @@
     "Honey"
    ],
    "combi_rank": 2350,
+   "nocturnal": false,
    "tier_hits": [
     "work_farming#6"
    ],
@@ -690,6 +704,7 @@
     "Dark Fragment"
    ],
    "combi_rank": 620,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [],
    "alpha": [],
@@ -728,6 +743,7 @@
     "High Quality Recovery Meds"
    ],
    "combi_rank": 130,
+   "nocturnal": true,
    "tier_hits": [
     "fighters#9",
     "work_medicine#3"
@@ -775,6 +791,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 410,
+   "nocturnal": false,
    "tier_hits": [
     "work_mining#3"
    ],
@@ -825,6 +842,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 100,
+   "nocturnal": false,
    "tier_hits": [
     "fighters#11",
     "work_kindling#5"
@@ -872,6 +890,7 @@
     "Glowing Ancient Relic"
    ],
    "combi_rank": 1360,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the Volcano",
@@ -924,6 +943,7 @@
     "Glowing Ancient Relic"
    ],
    "combi_rank": 1270,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Frozen Coral Hill",
@@ -971,6 +991,7 @@
     "Hallowed Bar"
    ],
    "combi_rank": 3100,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sealed Realm of Terraria - Terraria dungeon island SE of Fisherman's Point, near Isle of Eternal Summer"
@@ -1015,6 +1036,7 @@
     "Decayed Ancient Relic"
    ],
    "combi_rank": 1030,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sea Breeze Archipelago",
@@ -1065,6 +1087,7 @@
     "Beautiful Flower"
    ],
    "combi_rank": 2690,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Ancient Ritual Site",
@@ -1116,6 +1139,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 1380,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Ancient Ritual Site",
@@ -1169,6 +1193,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 1080,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Verdant Brook",
@@ -1215,6 +1240,7 @@
     "Fiber"
    ],
    "combi_rank": 1190,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Dancing Sakura Shrine",
@@ -1257,6 +1283,7 @@
     "Ingot"
    ],
    "combi_rank": 1560,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -1310,6 +1337,7 @@
     "Medium Pal Soul"
    ],
    "combi_rank": 840,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Deserted Ash Plateau",
@@ -1362,6 +1390,7 @@
     "Horn"
    ],
    "combi_rank": 2610,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Crescent Moon Shore",
@@ -1416,6 +1445,7 @@
     "Venom Gland"
    ],
    "combi_rank": 1940,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Loess Plains",
@@ -1472,6 +1502,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 1700,
+   "nocturnal": false,
    "tier_hits": [
     "work_planting#6"
    ],
@@ -1513,6 +1544,7 @@
     "Red Berries"
    ],
    "combi_rank": 2760,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sea Breeze Archipelago",
@@ -1558,6 +1590,7 @@
     "Hallowed Bar"
    ],
    "combi_rank": 3100,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sealed Realm of Terraria - Terraria dungeon island SE of Fisherman's Point, near Isle of Eternal Summer"
@@ -1598,6 +1631,7 @@
     "Small Pal Soul"
    ],
    "combi_rank": 2370,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -1648,6 +1682,7 @@
     "Aquatic Pal Fluids"
    ],
    "combi_rank": 2740,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Flying Fish Coast",
@@ -1697,6 +1732,7 @@
     "Aquatic Pal Fluids"
    ],
    "combi_rank": 2380,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Oasis Isle",
@@ -1749,6 +1785,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 570,
+   "nocturnal": false,
    "tier_hits": [
     "work_lumbering#3"
    ],
@@ -1805,6 +1842,7 @@
     "Decayed Ancient Relic"
    ],
    "combi_rank": 270,
+   "nocturnal": true,
    "tier_hits": [
     "work_lumbering#1"
    ],
@@ -1849,6 +1887,7 @@
     "Chikipi Poultry"
    ],
    "combi_rank": 3080,
+   "nocturnal": false,
    "tier_hits": [
     "work_farming#8"
    ],
@@ -1906,6 +1945,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 2330,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the Astral Mountains",
@@ -1961,6 +2001,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 1950,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Dancing Sakura Shrine",
@@ -2012,6 +2053,7 @@
     "Tomato Seeds"
    ],
    "combi_rank": 2620,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Ancient Ritual Site",
@@ -2060,6 +2102,7 @@
     "Berry Seeds"
    ],
    "combi_rank": 2970,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Windswept Island",
@@ -2108,6 +2151,7 @@
     "Wool"
    ],
    "combi_rank": 2890,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Isle of Silence",
@@ -2155,6 +2199,7 @@
     "Cloth"
    ],
    "combi_rank": 2600,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sea Breeze Archipelago",
@@ -2209,6 +2254,7 @@
     "Venom Gland"
    ],
    "combi_rank": 1860,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Scorched Hill",
@@ -2258,6 +2304,7 @@
     "Ice Organ"
    ],
    "combi_rank": 1040,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Astral Mountains"
@@ -2301,6 +2348,7 @@
     "Ore"
    ],
    "combi_rank": 470,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Deserted Ash Plateau"
@@ -2345,6 +2393,7 @@
     "Small Pal Soul"
    ],
    "combi_rank": 2910,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Sea Breeze Archipelago",
@@ -2400,6 +2449,7 @@
     "Decayed Ancient Relic"
    ],
    "combi_rank": 60,
+   "nocturnal": true,
    "tier_hits": [
     "work_planting#1"
    ],
@@ -2438,6 +2488,7 @@
     "Bone"
    ],
    "combi_rank": 2210,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_ground#7"
    ],
@@ -2487,6 +2538,7 @@
     "Dazzi Cloud"
    ],
    "combi_rank": 2400,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Twilight Dunes",
@@ -2538,6 +2590,7 @@
     "Dark Fragment"
    ],
    "combi_rank": 1910,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Stone Pillar Cave",
@@ -2587,6 +2640,7 @@
     "Hallowed Bar"
    ],
    "combi_rank": 3100,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Sealed Realm of Terraria - Terraria dungeon island SE of Fisherman's Point, near Isle of Eternal Summer"
@@ -2627,6 +2681,7 @@
     "Venom Gland"
    ],
    "combi_rank": 3000,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Bamboo Groves",
@@ -2675,6 +2730,7 @@
     "High Quality Pal Oil"
    ],
    "combi_rank": 1550,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -2723,6 +2779,7 @@
     "Lettuce Seeds"
    ],
    "combi_rank": 2100,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Eastern Wild Island",
@@ -2771,6 +2828,7 @@
     "Carrot Seeds"
    ],
    "combi_rank": 1890,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -2820,6 +2878,7 @@
     "Gold Coin"
    ],
    "combi_rank": 2680,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_ground#10"
    ],
@@ -2872,6 +2931,7 @@
     "Bone"
    ],
    "combi_rank": 1460,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Dancing Sakura Shrine",
@@ -2923,6 +2983,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 510,
+   "nocturnal": false,
    "tier_hits": [
     "work_mining#6",
     "work_transporting#4"
@@ -2978,6 +3039,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 250,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Foot of the World Tree",
@@ -3023,6 +3085,7 @@
     "High Quality Pal Oil"
    ],
    "combi_rank": 2290,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Dry Sandy Beach",
@@ -3083,6 +3146,7 @@
     "Gold Coin"
    ],
    "combi_rank": 1620,
+   "nocturnal": false,
    "tier_hits": [
     "work_farming#2"
    ],
@@ -3136,6 +3200,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 520,
+   "nocturnal": false,
    "tier_hits": [
     "work_kindling#4"
    ],
@@ -3179,6 +3244,7 @@
     "Electric Organ"
    ],
    "combi_rank": 1400,
+   "nocturnal": false,
    "tier_hits": [
     "work_generating_electricity#3"
    ],
@@ -3229,6 +3295,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 300,
+   "nocturnal": true,
    "tier_hits": [
     "mounts_flying#5",
     "work_transporting#3"
@@ -3277,6 +3344,7 @@
     "Decayed Ancient Relic"
    ],
    "combi_rank": 140,
+   "nocturnal": false,
    "tier_hits": [
     "work_kindling#6"
    ],
@@ -3318,6 +3386,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 2710,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Marsh Island",
@@ -3372,6 +3441,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 2580,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Flying Fish Coast",
@@ -3419,6 +3489,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 2020,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Bamboo Groves",
@@ -3468,6 +3539,7 @@
     "Decayed Ancient Relic"
    ],
    "combi_rank": 440,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the World Tree",
@@ -3507,6 +3579,7 @@
     "Elizabee's Staff"
    ],
    "combi_rank": 1790,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Gobfin's Turf",
@@ -3555,6 +3628,7 @@
     "Glowing Ancient Relic"
    ],
    "combi_rank": 2280,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Ancient Ritual Site",
@@ -3610,6 +3684,7 @@
     "Glowing Ancient Relic"
    ],
    "combi_rank": 1640,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Frostbound Mountains",
@@ -3652,6 +3727,7 @@
     "Hallowed Bar"
    ],
    "combi_rank": 3100,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sealed Realm of Terraria - Terraria dungeon island SE of Fisherman's Point, near Isle of Eternal Summer"
@@ -3685,6 +3761,7 @@
     "Hallowed Bar"
    ],
    "combi_rank": 3100,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Sealed Realm of Terraria - Terraria dungeon island SE of Fisherman's Point, near Isle of Eternal Summer"
@@ -3728,6 +3805,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 500,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_flying#9"
    ],
@@ -3775,6 +3853,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 450,
+   "nocturnal": false,
    "tier_hits": [
     "work_watering#5",
     "work_transporting#6"
@@ -3824,6 +3903,7 @@
     "Small Pal Soul"
    ],
    "combi_rank": 1570,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "The Oculus Gate, Tower in Sight",
@@ -3872,6 +3952,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 1960,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_ground#4"
    ],
@@ -3921,6 +4002,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 900,
+   "nocturnal": false,
    "tier_hits": [
     "work_generating_electricity#5"
    ],
@@ -3974,6 +4056,7 @@
     "Aquatic Pal Fluids"
    ],
    "combi_rank": 2450,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -4023,6 +4106,7 @@
     "Flame Organ"
    ],
    "combi_rank": 2240,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Deserted Ash Plateau",
@@ -4072,6 +4156,7 @@
     "High Quality Pal Oil"
    ],
    "combi_rank": 2700,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the Volcano",
@@ -4127,6 +4212,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 390,
+   "nocturnal": false,
    "tier_hits": [
     "work_kindling#3"
    ],
@@ -4175,6 +4261,7 @@
     "Lettuce Seeds"
    ],
    "combi_rank": 2660,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Crescent Moon Shore",
@@ -4221,6 +4308,7 @@
     "Ice Organ"
    ],
    "combi_rank": 1970,
+   "nocturnal": false,
    "tier_hits": [
     "work_farming#5"
    ],
@@ -4267,6 +4355,7 @@
     "Flame Organ"
    ],
    "combi_rank": 2990,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Fortress Ruins",
@@ -4311,6 +4400,7 @@
     "Ice Organ"
    ],
    "combi_rank": 2500,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Abandoned Ruins",
@@ -4360,6 +4450,7 @@
     "Diamond"
    ],
    "combi_rank": 150,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_flying#6",
     "fighters#2",
@@ -4404,6 +4495,7 @@
     "Large Pal Soul"
    ],
    "combi_rank": 110,
+   "nocturnal": true,
    "tier_hits": [
     "work_gathering#4"
    ],
@@ -4443,6 +4535,7 @@
     "Ice Organ"
    ],
    "combi_rank": 860,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Farcry Marsh",
@@ -4489,6 +4582,7 @@
     "Aquatic Pal Fluids"
    ],
    "combi_rank": 2980,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sea Breeze Archipelago",
@@ -4541,6 +4635,7 @@
     "Flame Organ"
    ],
    "combi_rank": 2300,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Dry Sandy Beach",
@@ -4584,6 +4679,7 @@
     "Leather"
    ],
    "combi_rank": 2790,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -4636,6 +4732,7 @@
     "Leather"
    ],
    "combi_rank": 2570,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Ancient Ritual Site",
@@ -4687,6 +4784,7 @@
     "Venom Gland"
    ],
    "combi_rank": 880,
+   "nocturnal": true,
    "tier_hits": [
     "mounts_swim#4",
     "for_fishing#2"
@@ -4742,6 +4840,7 @@
     "Flame Organ"
    ],
    "combi_rank": 720,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Deserted Ash Plateau",
@@ -4785,6 +4884,7 @@
     "Leather"
    ],
    "combi_rank": 730,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Loess Plains",
@@ -4835,6 +4935,7 @@
     "Leather"
    ],
    "combi_rank": 1170,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -4884,6 +4985,7 @@
     "Gloopie Tentacle"
    ],
    "combi_rank": 2530,
+   "nocturnal": true,
    "tier_hits": [
     "for_fishing#3"
    ],
@@ -4938,6 +5040,7 @@
     "Gloopie Tentacle"
    ],
    "combi_rank": 1630,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the World Tree",
@@ -4985,6 +5088,7 @@
     "Aquatic Pal Fluids"
    ],
    "combi_rank": 2550,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Gobfin's Turf",
@@ -5032,6 +5136,7 @@
     "Flame Organ"
    ],
    "combi_rank": 2430,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Phantom Isle",
@@ -5083,6 +5188,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 2140,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Frostbound Mountains",
@@ -5133,6 +5239,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 1880,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -5177,6 +5284,7 @@
     "Hallowed Bar"
    ],
    "combi_rank": 3100,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sealed Realm of Terraria - Terraria dungeon island SE of Fisherman's Point, near Isle of Eternal Summer"
@@ -5212,6 +5320,7 @@
     "High Quality Pal Oil"
    ],
    "combi_rank": 2120,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Ancient Ritual Site",
@@ -5267,6 +5376,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 1020,
+   "nocturnal": false,
    "tier_hits": [
     "work_generating_electricity#4",
     "work_transporting#5"
@@ -5309,6 +5419,7 @@
     "Gumoss Leaf"
    ],
    "combi_rank": 2950,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Eastern Wild Island",
@@ -5356,6 +5467,7 @@
     "Wheat Seeds"
    ],
    "combi_rank": 2780,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Bamboo Groves",
@@ -5407,6 +5519,7 @@
     "Ice Organ"
    ],
    "combi_rank": 2510,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the Astral Mountains",
@@ -5456,6 +5569,7 @@
     "Large Pal Soul"
    ],
    "combi_rank": 90,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_ground#1",
     "work_gathering#3",
@@ -5504,6 +5618,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 1130,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Scorched Hill",
@@ -5558,6 +5673,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 960,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Sakurajima - Northern Rock Field",
@@ -5604,6 +5720,7 @@
     "Wheat Seeds"
    ],
    "combi_rank": 2630,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Deep Bamboo Thicket",
@@ -5649,6 +5766,7 @@
     "Advanced Technical Manual"
    ],
    "combi_rank": 2940,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Bamboo Groves",
@@ -5695,6 +5813,7 @@
     "Horn"
    ],
    "combi_rank": 1770,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Azure Woodland",
@@ -5739,6 +5858,7 @@
     "Ice Organ"
    ],
    "combi_rank": 1260,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Astral Mountains"
@@ -5776,6 +5896,7 @@
     "Hallowed Bar"
    ],
    "combi_rank": 3100,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sealed Realm of Terraria - Terraria dungeon island SE of Fisherman's Point, near Isle of Eternal Summer"
@@ -5809,6 +5930,7 @@
     "Hallowed Bar"
    ],
    "combi_rank": 3100,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sealed Realm of Terraria - Terraria dungeon island SE of Fisherman's Point, near Isle of Eternal Summer"
@@ -5847,6 +5969,7 @@
     "Leather"
    ],
    "combi_rank": 1470,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Mount Obsidian",
@@ -5895,6 +6018,7 @@
     "Leather"
    ],
    "combi_rank": 1310,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "No. 2 Wildlife Sanctuary"
@@ -5939,6 +6063,7 @@
     "Jelliette Bell Flesh"
    ],
    "combi_rank": 2650,
+   "nocturnal": false,
    "tier_hits": [
     "for_fishing#4"
    ],
@@ -5996,6 +6121,7 @@
     "Jellroy Bell Flesh"
    ],
    "combi_rank": 2590,
+   "nocturnal": true,
    "tier_hits": [
     "for_fishing#5"
    ],
@@ -6047,6 +6173,7 @@
     "Large Pal Soul"
    ],
    "combi_rank": 70,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_flying#1",
     "fighters#1",
@@ -6088,6 +6215,7 @@
     "Electric Organ"
    ],
    "combi_rank": 3030,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Windswept Island",
@@ -6128,6 +6256,7 @@
     "Ice Organ"
    ],
    "combi_rank": 2850,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Bamboo Groves",
@@ -6177,6 +6306,7 @@
     "Glowing Ancient Relic"
    ],
    "combi_rank": 590,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_swim#3",
     "work_watering#3"
@@ -6226,6 +6356,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 170,
+   "nocturnal": false,
    "tier_hits": [
     "fighters#10",
     "work_kindling#2"
@@ -6274,6 +6405,7 @@
     "Advanced Technical Manual"
    ],
    "combi_rank": 2040,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Ancient Ritual Site",
@@ -6328,6 +6460,7 @@
     "Advanced Technical Manual"
    ],
    "combi_rank": 1800,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [],
    "alpha": [
@@ -6374,6 +6507,7 @@
     "Aquatic Pal Fluids"
    ],
    "combi_rank": 2810,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sea Breeze Archipelago",
@@ -6426,6 +6560,7 @@
     "Flame Organ"
    ],
    "combi_rank": 2470,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Dry Sandy Beach",
@@ -6474,6 +6609,7 @@
     "Crude Oil"
    ],
    "combi_rank": 2310,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sakurajima - Southern Sandbar",
@@ -6521,6 +6657,7 @@
     "Aquatic Pal Fluids"
    ],
    "combi_rank": 2770,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Scorched Ashland",
@@ -6572,6 +6709,7 @@
     "Killamari Tentacle"
    ],
    "combi_rank": 2540,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Phantom Isle",
@@ -6620,6 +6758,7 @@
     "Glowing Ancient Relic"
    ],
    "combi_rank": 2220,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "The World Tree [Lv. 80]"
@@ -6657,6 +6796,7 @@
     "Ice Organ"
    ],
    "combi_rank": 1530,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [],
    "alpha": [
@@ -6700,6 +6840,7 @@
     "Leather"
    ],
    "combi_rank": 1670,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "No. 2 Wildlife Sanctuary",
@@ -6744,6 +6885,7 @@
     "Dark Fragment"
    ],
    "combi_rank": 800,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Scorched Hill",
@@ -6797,6 +6939,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 260,
+   "nocturnal": false,
    "tier_hits": [
     "work_mining#2",
     "work_transporting#1"
@@ -6849,6 +6992,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 210,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Bicornis Islet",
@@ -6891,6 +7035,7 @@
     "Lamball Mutton"
    ],
    "combi_rank": 3050,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Eastern Wild Island",
@@ -6939,6 +7084,7 @@
     "Leather"
    ],
    "combi_rank": 1680,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Azure Woodland",
@@ -6978,6 +7124,7 @@
     "Leather"
    ],
    "combi_rank": 810,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Enchanted Firmament",
@@ -7019,6 +7166,7 @@
     "Leather"
    ],
    "combi_rank": 1410,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Enchanted Firmament",
@@ -7064,6 +7212,7 @@
     "Leezpunk Crest"
    ],
    "combi_rank": 2670,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -7117,6 +7266,7 @@
     "Leezpunk Crest"
    ],
    "combi_rank": 2640,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the Volcano",
@@ -7168,6 +7318,7 @@
     "Low Grade Medical Supplies"
    ],
    "combi_rank": 3020,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sea Breeze Archipelago",
@@ -7223,6 +7374,7 @@
     "Decayed Ancient Relic"
    ],
    "combi_rank": 890,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Foot of the World Tree",
@@ -7257,6 +7409,7 @@
     "Bone"
    ],
    "combi_rank": 2110,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Deep Bamboo Thicket",
@@ -7304,6 +7457,7 @@
     "Bone"
    ],
    "combi_rank": 1290,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the Astral Mountains",
@@ -7359,6 +7513,7 @@
     "Memory Wiping Medicine"
    ],
    "combi_rank": 2090,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -7411,6 +7566,7 @@
     "Red Berries"
    ],
    "combi_rank": 1990,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Dancing Sakura Shrine",
@@ -7456,6 +7612,7 @@
     "Paldium Fragment"
    ],
    "combi_rank": 2010,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the Astral Mountains",
@@ -7512,6 +7669,7 @@
     "Decayed Ancient Relic"
    ],
    "combi_rank": 240,
+   "nocturnal": false,
    "tier_hits": [
     "work_planting#3",
     "work_gathering#6"
@@ -7561,6 +7719,7 @@
     "Decayed Ancient Relic"
    ],
    "combi_rank": 220,
+   "nocturnal": true,
    "tier_hits": [
     "work_medicine#2"
    ],
@@ -7614,6 +7773,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 1010,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Foot of the World Tree",
@@ -7659,6 +7819,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 1340,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the Astral Mountains",
@@ -7713,6 +7874,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 1070,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "No. 1 Wildlife Sanctuary",
@@ -7760,6 +7922,7 @@
     "Crude Oil"
    ],
    "combi_rank": 1710,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Foot of the Astral Mountains",
@@ -7814,6 +7977,7 @@
     "Leather"
    ],
    "combi_rank": 3040,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [],
    "alpha": [
@@ -7859,6 +8023,7 @@
     "Sapphire"
    ],
    "combi_rank": 2750,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the Astral Mountains",
@@ -7904,6 +8069,7 @@
     "Leather"
    ],
    "combi_rank": 2720,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Eastern Wild Island",
@@ -7953,6 +8119,7 @@
     "Venom Gland"
    ],
    "combi_rank": 1120,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -8001,6 +8168,7 @@
     "Sapphire"
    ],
    "combi_rank": 640,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "No. 3 Wildlife Sanctuary"
@@ -8045,6 +8213,7 @@
     "Training Manual (XL)"
    ],
    "combi_rank": 1740,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -8106,6 +8275,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 750,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Mount Obsidian",
@@ -8152,6 +8322,7 @@
     "Leather"
    ],
    "combi_rank": 380,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [],
    "alpha": [
@@ -8196,6 +8367,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 2060,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Gobfin's Turf",
@@ -8247,6 +8419,7 @@
     "Decayed Ancient Relic"
    ],
    "combi_rank": 1440,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the World Tree",
@@ -8292,6 +8465,7 @@
     "Milk"
    ],
    "combi_rank": 2800,
+   "nocturnal": false,
    "tier_hits": [
     "work_farming#7"
    ],
@@ -8339,6 +8513,7 @@
     "Ice Organ"
    ],
    "combi_rank": 2480,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Ancient Ritual Site",
@@ -8390,6 +8565,7 @@
     "Ice Organ"
    ],
    "combi_rank": 2130,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Frozen Coral Hill",
@@ -8448,6 +8624,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 760,
+   "nocturnal": false,
    "tier_hits": [
     "work_planting#5",
     "work_medicine#6"
@@ -8492,6 +8669,7 @@
     "Large Pal Soul"
    ],
    "combi_rank": 190,
+   "nocturnal": true,
    "tier_hits": [
     "mounts_ground#2",
     "fighters#3"
@@ -8533,6 +8711,7 @@
     "Fiber"
    ],
    "combi_rank": 2420,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -8579,6 +8758,7 @@
     "Venom Gland"
    ],
    "combi_rank": 1580,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -8622,6 +8802,7 @@
     "Large Pal Soul"
    ],
    "combi_rank": 160,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_swim#1",
     "fighters#7",
@@ -8663,6 +8844,7 @@
     "Small Pal Soul"
    ],
    "combi_rank": 1230,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "The Oculus Gate, Tower in Sight",
@@ -8715,6 +8897,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 1320,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Islet of Circular Ruins"
@@ -8748,6 +8931,7 @@
     "Leather"
    ],
    "combi_rank": 2560,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_flying#11"
    ],
@@ -8796,6 +8980,7 @@
     "Small Pal Soul"
    ],
    "combi_rank": 2920,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Isle of Silence",
@@ -8843,6 +9028,7 @@
     "Leather"
    ],
    "combi_rank": 1250,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Stone Pillar Cave",
@@ -8892,6 +9078,7 @@
     "Dark Fragment"
    ],
    "combi_rank": 1140,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Deserted Ash Plateau",
@@ -8949,6 +9136,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 230,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_ground#5",
     "mounts_swim#2",
@@ -8997,6 +9185,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 120,
+   "nocturnal": false,
    "tier_hits": [
     "work_generating_electricity#1"
    ],
@@ -9039,6 +9228,7 @@
     "Large Pal Soul"
    ],
    "combi_rank": 180,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_ground#3",
     "fighters#4",
@@ -9083,6 +9273,7 @@
     "Carrot Seeds"
    ],
    "combi_rank": 1240,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -9128,6 +9319,7 @@
     "Giant Pal Soul"
    ],
    "combi_rank": 20,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_flying#3",
     "fighters#6"
@@ -9172,6 +9364,7 @@
     "Aquatic Pal Fluids"
    ],
    "combi_rank": 2960,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Flying Fish Coast",
@@ -9226,6 +9419,7 @@
     "Aquatic Pal Fluids"
    ],
    "combi_rank": 2490,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Scars of War",
@@ -9275,6 +9469,7 @@
     "Penking Plume"
    ],
    "combi_rank": 2070,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the Astral Mountains",
@@ -9327,6 +9522,7 @@
     "Penking Plume"
    ],
    "combi_rank": 1850,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Dancing Sakura Shrine",
@@ -9376,6 +9572,7 @@
     "Potato Seeds"
    ],
    "combi_rank": 1720,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Crescent Moon Shore",
@@ -9421,6 +9618,7 @@
    "base_support": null,
    "drops": [],
    "combi_rank": 820,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the World Tree",
@@ -9457,6 +9655,7 @@
     "Sulfur"
    ],
    "combi_rank": 1110,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Flamepulse Islet"
@@ -9500,6 +9699,7 @@
     "Decayed Ancient Relic"
    ],
    "combi_rank": 460,
+   "nocturnal": false,
    "tier_hits": [
     "work_cooling#5"
    ],
@@ -9544,6 +9744,7 @@
     "Ice Organ"
    ],
    "combi_rank": 1660,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Frozen Coral Hill",
@@ -9598,6 +9799,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 1100,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Suncrest Islet"
@@ -9636,6 +9838,7 @@
     "Venom Gland"
    ],
    "combi_rank": 1510,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Sakurajima - Southern Sandbar",
@@ -9682,6 +9885,7 @@
     "Electric Organ"
    ],
    "combi_rank": 850,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sandstone Gate Islet"
@@ -9727,6 +9931,7 @@
     "Carrot Seeds"
    ],
    "combi_rank": 1390,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Scorched Hill",
@@ -9780,6 +9985,7 @@
     "Electric Organ"
    ],
    "combi_rank": 2360,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Bamboo Groves",
@@ -9827,6 +10033,7 @@
     "Bone"
    ],
    "combi_rank": 2930,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Flying Fish Coast",
@@ -9864,6 +10071,7 @@
     "Hallowed Bar"
    ],
    "combi_rank": 3100,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Sealed Realm of Terraria - Terraria dungeon island SE of Fisherman's Point, near Isle of Eternal Summer"
@@ -9906,6 +10114,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 1980,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_ground#9"
    ],
@@ -9962,6 +10171,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 1870,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Dry Sandy Beach",
@@ -10017,6 +10227,7 @@
     "Glowing Ancient Relic"
    ],
    "combi_rank": 1210,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Enchanted Firmament",
@@ -10074,6 +10285,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 1300,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Dancing Sakura Shrine",
@@ -10125,6 +10337,7 @@
     "Glowing Ancient Relic"
    ],
    "combi_rank": 1050,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_flying#10"
    ],
@@ -10172,6 +10385,7 @@
     "Hallowed Bar"
    ],
    "combi_rank": 3100,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sealed Realm of Terraria - Terraria dungeon island SE of Fisherman's Point, near Isle of Eternal Summer"
@@ -10205,6 +10419,7 @@
     "Electric Organ"
    ],
    "combi_rank": 1920,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the Astral Mountains",
@@ -10256,6 +10471,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 1600,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the World Tree",
@@ -10295,6 +10511,7 @@
     "Hallowed Bar"
    ],
    "combi_rank": 3100,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sealed Realm of Terraria - Terraria dungeon island SE of Fisherman's Point, near Isle of Eternal Summer"
@@ -10334,6 +10551,7 @@
     "Decayed Ancient Relic"
    ],
    "combi_rank": 1930,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "No. 1 Wildlife Sanctuary",
@@ -10385,6 +10603,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 1090,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Bamboo Groves",
@@ -10435,6 +10654,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 770,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Scorched Hill",
@@ -10489,6 +10709,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 290,
+   "nocturnal": false,
    "tier_hits": [
     "work_kindling#1",
     "work_handiwork#7"
@@ -10529,6 +10750,7 @@
     "Flame Organ"
    ],
    "combi_rank": 1060,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Ruined Fortress City",
@@ -10574,6 +10796,7 @@
     "Ice Organ"
    ],
    "combi_rank": 600,
+   "nocturnal": false,
    "tier_hits": [
     "work_cooling#6"
    ],
@@ -10626,6 +10849,7 @@
     "Berry Seeds"
    ],
    "combi_rank": 2860,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Eastern Wild Island",
@@ -10681,6 +10905,7 @@
     "Carrot"
    ],
    "combi_rank": 2460,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Crescent Moon Shore",
@@ -10734,6 +10959,7 @@
     "Arrow"
    ],
    "combi_rank": 2260,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Gobfin's Turf",
@@ -10783,6 +11009,7 @@
     "Arrow"
    ],
    "combi_rank": 2050,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -10837,6 +11064,7 @@
     "Leather"
    ],
    "combi_rank": 2870,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Isle of Murmurs",
@@ -10890,6 +11118,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 530,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Foot of the World Tree",
@@ -10927,6 +11156,7 @@
     "Bone"
    ],
    "combi_rank": 2880,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sea Breeze Archipelago",
@@ -10983,6 +11213,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 870,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -11035,6 +11266,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 360,
+   "nocturnal": true,
    "tier_hits": [
     "mounts_flying#7",
     "work_handiwork#2",
@@ -11081,6 +11313,7 @@
     "Decayed Ancient Relic"
    ],
    "combi_rank": 550,
+   "nocturnal": true,
    "tier_hits": [
     "mounts_flying#8"
    ],
@@ -11128,6 +11361,7 @@
     "Decayed Ancient Relic"
    ],
    "combi_rank": 40,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_flying#4",
     "work_watering#1"
@@ -11179,6 +11413,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 1520,
+   "nocturnal": false,
    "tier_hits": [
     "work_farming#4"
    ],
@@ -11232,6 +11467,7 @@
     "Mysterious Mushroom"
    ],
    "combi_rank": 1450,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Frozen Coral Hill",
@@ -11283,6 +11519,7 @@
     "Ice Organ"
    ],
    "combi_rank": 1810,
+   "nocturnal": false,
    "tier_hits": [
     "work_farming#3"
    ],
@@ -11340,6 +11577,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 650,
+   "nocturnal": false,
    "tier_hits": [
     "work_farming#1"
    ],
@@ -11388,6 +11626,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 80,
+   "nocturnal": false,
    "tier_hits": [
     "work_planting#4",
     "work_medicine#1"
@@ -11434,6 +11673,7 @@
     "Glowing Ancient Relic"
    ],
    "combi_rank": 560,
+   "nocturnal": false,
    "tier_hits": [
     "work_lumbering#4"
    ],
@@ -11478,6 +11718,7 @@
     "Aquatic Pal Fluids"
    ],
    "combi_rank": 1420,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Waterlily Gorge",
@@ -11530,6 +11771,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 1590,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the World Tree",
@@ -11569,6 +11811,7 @@
     "Electric Organ"
    ],
    "combi_rank": 1750,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Azure Woodland",
@@ -11608,6 +11851,7 @@
     "Chromite"
    ],
    "combi_rank": 1760,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Deserted Ash Plateau",
@@ -11668,6 +11912,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 1610,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Glacial Memento Islet"
@@ -11704,6 +11949,7 @@
     "Aquatic Pal Fluids"
    ],
    "combi_rank": 1780,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Enchanted Firmament",
@@ -11754,6 +12000,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 1500,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the World Tree",
@@ -11796,6 +12043,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 2390,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Frostbound Mountains"
@@ -11842,6 +12090,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 280,
+   "nocturnal": true,
    "tier_hits": [
     "work_handiwork#1"
    ],
@@ -11879,6 +12128,7 @@
     "Aquatic Pal Fluids"
    ],
    "combi_rank": 1370,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_swim#5",
     "for_fishing#6"
@@ -11932,6 +12182,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 1000,
+   "nocturnal": false,
    "tier_hits": [
     "work_generating_electricity#2"
    ],
@@ -11988,6 +12239,7 @@
     "Crude Oil"
    ],
    "combi_rank": 980,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Frozen Coral Hill",
@@ -12036,6 +12288,7 @@
     "Wheat Seeds"
    ],
    "combi_rank": 2000,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Enchanted Firmament",
@@ -12082,6 +12335,7 @@
     "Electric Organ"
    ],
    "combi_rank": 3010,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Golden Hills"
@@ -12125,6 +12379,7 @@
     "Glowing Ancient Relic"
    ],
    "combi_rank": 780,
+   "nocturnal": true,
    "tier_hits": [
     "work_handiwork#5"
    ],
@@ -12181,6 +12436,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 1150,
+   "nocturnal": true,
    "tier_hits": [
     "mounts_ground#8"
    ],
@@ -12234,6 +12490,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 430,
+   "nocturnal": false,
    "tier_hits": [
     "work_gathering#2"
    ],
@@ -12275,6 +12532,7 @@
     "Aquatic Pal Fluids"
    ],
    "combi_rank": 2440,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_swim#6"
    ],
@@ -12326,6 +12584,7 @@
     "Ore"
    ],
    "combi_rank": 1840,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -12377,6 +12636,7 @@
     "Glowing Ancient Relic"
    ],
    "combi_rank": 1200,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -12424,6 +12684,7 @@
     "Glowing Ancient Relic"
    ],
    "combi_rank": 740,
+   "nocturnal": false,
    "tier_hits": [
     "work_watering#4"
    ],
@@ -12465,6 +12726,7 @@
     "Swee Hair"
    ],
    "combi_rank": 2840,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Abandoned Ruins",
@@ -12512,6 +12774,7 @@
     "Wool"
    ],
    "combi_rank": 2150,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Abandoned Ruins",
@@ -12561,6 +12824,7 @@
     "Mushroom"
    ],
    "combi_rank": 2900,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sea Breeze Archipelago",
@@ -12608,6 +12872,7 @@
     "Flame Organ"
    ],
    "combi_rank": 2830,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Autumn Rocks",
@@ -12649,6 +12914,7 @@
     "Venom Gland"
    ],
    "combi_rank": 1730,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Gobfin's Turf",
@@ -12695,6 +12961,7 @@
     "Aquatic Pal Fluids"
    ],
    "combi_rank": 3070,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Isle of Silence",
@@ -12749,6 +13016,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 790,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -12798,6 +13066,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 200,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Foot of the World Tree",
@@ -12838,6 +13107,7 @@
     "Tocotoco Feather"
    ],
    "combi_rank": 2730,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Desiccated Dunes",
@@ -12891,6 +13161,7 @@
     "Small Pal Soul"
    ],
    "combi_rank": 2340,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Marsh Island",
@@ -12937,6 +13208,7 @@
     "Fiber"
    ],
    "combi_rank": 1350,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Farcry Marsh",
@@ -12981,6 +13253,7 @@
     "Bone"
    ],
    "combi_rank": 2410,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sea Breeze Archipelago",
@@ -13032,6 +13305,7 @@
     "Bone"
    ],
    "combi_rank": 1330,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Oasis Isle",
@@ -13084,6 +13358,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 2270,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Bamboo Groves",
@@ -13136,6 +13411,7 @@
     "Decayed Ancient Relic"
    ],
    "combi_rank": 540,
+   "nocturnal": false,
    "tier_hits": [
     "work_cooling#4"
    ],
@@ -13184,6 +13460,7 @@
     "Onion Seeds"
    ],
    "combi_rank": 1480,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Flying Fish Coast",
@@ -13225,6 +13502,7 @@
     "Leather"
    ],
    "combi_rank": 1900,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Enchanted Firmament",
@@ -13272,6 +13550,7 @@
     "Gold Coin"
    ],
    "combi_rank": 1650,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Scorched Ashland",
@@ -13324,6 +13603,7 @@
     "Sapphire"
    ],
    "combi_rank": 1430,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Frozen Coral Hill",
@@ -13379,6 +13659,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 970,
+   "nocturnal": true,
    "tier_hits": [
     "work_handiwork#4",
     "work_gathering#5"
@@ -13421,6 +13702,7 @@
     "Bone"
    ],
    "combi_rank": 1160,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Dancing Sakura Shrine",
@@ -13469,6 +13751,7 @@
     "Bone"
    ],
    "combi_rank": 3060,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sea Breeze Archipelago",
@@ -13521,6 +13804,7 @@
     "Glowing Ancient Relic"
    ],
    "combi_rank": 1280,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Verdant Brook",
@@ -13562,6 +13846,7 @@
     "Honey"
    ],
    "combi_rank": 630,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Loess Plains",
@@ -13617,6 +13902,7 @@
     "Decayed Ancient Relic"
    ],
    "combi_rank": 710,
+   "nocturnal": false,
    "tier_hits": [
     "mounts_swim#8",
     "for_fishing#1"
@@ -13673,6 +13959,7 @@
     "Fire Radiant Gem"
    ],
    "combi_rank": 370,
+   "nocturnal": false,
    "tier_hits": [
     "work_cooling#3"
    ],
@@ -13725,6 +14012,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 2250,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Marsh Island",
@@ -13773,6 +14061,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 1180,
+   "nocturnal": true,
    "tier_hits": [
     "work_handiwork#3",
     "work_medicine#4"
@@ -13817,6 +14106,7 @@
     "Advanced Technical Manual"
    ],
    "combi_rank": 2080,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Ruined Fortress City",
@@ -13867,6 +14157,7 @@
     "Advanced Technical Manual"
    ],
    "combi_rank": 1490,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [
     "Sakurajima - Southern Sandbar",
@@ -13919,6 +14210,7 @@
     "High Quality Pal Oil"
    ],
    "combi_rank": 2820,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Sea Breeze Archipelago",
@@ -13971,6 +14263,7 @@
     "Wool"
    ],
    "combi_rank": 2030,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Suncrest Islet"
@@ -14016,6 +14309,7 @@
     "Gorgeous Ancient Relic"
    ],
    "combi_rank": 830,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Astral Mountains",
@@ -14068,6 +14362,7 @@
     "Dormant Ancient Relic"
    ],
    "combi_rank": 610,
+   "nocturnal": false,
    "tier_hits": [
     "work_transporting#2"
    ],
@@ -14117,6 +14412,7 @@
     "High Quality Pal Oil"
    ],
    "combi_rank": 990,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [],
    "alpha": [],
@@ -14155,6 +14451,7 @@
     "Meteorite Fragment"
    ],
    "combi_rank": 400,
+   "nocturnal": true,
    "tier_hits": [
     "mounts_flying#2",
     "fighters#8"
@@ -14195,6 +14492,7 @@
     "Meteorite Fragment"
    ],
    "combi_rank": 1820,
+   "nocturnal": true,
    "tier_hits": [],
    "regions": [],
    "alpha": [],
@@ -14232,6 +14530,7 @@
     "Leather"
    ],
    "combi_rank": 2230,
+   "nocturnal": false,
    "tier_hits": [],
    "regions": [
     "Dancing Sakura Shrine",
