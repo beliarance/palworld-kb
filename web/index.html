@@ -56,7 +56,7 @@ const DATA_FILES = {
   breeding:"breeding.json", tiers:"tier_lists.json", items:"items.json",
   exp:"expeditions.json", skills:"active_skills.json", passives:"passives.json",
   loc:"pal_locations.json", res:"resource_nodes.json", idx:"index.json",
-  bb:"base_building.json", regions:"regions.json"
+  bb:"base_building.json", regions:"regions.json", icons:"icons.json"
 };
 const WORK_COLS = {Kindling:"Разжигание",Watering:"Полив",Planting:"Посадка",Generating_Electricity:"Электричество",
   Handiwork:"Ручной труд",Gathering:"Сбор",Lumbering:"Лесозаготовка",Mining:"Добыча",Medicine:"Медицина",
@@ -93,6 +93,9 @@ async function loadAll(){
 const atk = p => Math.max(p.melee||0, p.shot||0);
 const els = p => (p.elements||[]).map(e=>`<span class="el el-${e}">${e}</span>`).join("");
 const esc = s => String(s??"").replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const palIcon = n => (D.icons?.pals?.[n]) ? `<img src="${D.icons.pals[n]}" loading="lazy" style="width:22px;height:22px;vertical-align:-5px;border-radius:50%;margin-right:2px">` : "";
+const structIcon = n => (D.icons?.structures?.[n]) ? `<img src="${D.icons.structures[n]}" loading="lazy" style="width:26px;height:26px;vertical-align:-7px;margin-right:4px">` : "";
+const itemIcon = n => (D.icons?.items?.[n]) ? `<img src="${D.icons.items[n]}" loading="lazy" style="width:20px;height:20px;vertical-align:-4px;margin-right:2px">` : "";
 const palLink = n => `<span class="clicky" onclick="showPal('${n.replace(/'/g,"\\'")}')">${esc(n)}${P[n]?.number?` <span class="dim">(#${P[n].number})</span>`:""}</span>`;
 const itemLink = n => itemByName[n] ? `<span class="clicky" onclick="showItem('${n.replace(/'/g,"\\'")}')">${esc(n)}</span>` : esc(n);
 
@@ -158,7 +161,7 @@ function showPal(name){
   const skillBy=Object.fromEntries(D.skills.skills.map(s=>[s.name,s]));
   const work=Object.entries(p.work).sort((a,b)=>b[1]-a[1]).map(([w,l])=>`<span class="tag">${WORK_COLS[w]} <b>${l}</b></span>`).join("")||'<span class="dim">не работает</span>';
   document.getElementById("palout").innerHTML = `
-  <div class="card"><div class="big">#${p.number??"?"} ${esc(name)} ${els(p)} <span class="dim">${esc(p.rarity??"")}</span></div>
+  <div class="card"><div class="big">${palIcon(name)}#${p.number??"?"} ${esc(name)} ${els(p)} <span class="dim">${esc(p.rarity??"")}</span></div>
     <div class="row" style="margin:8px 0"><span class="tag mono">HP ${p.hp}</span><span class="tag mono">ATK ${p.melee}/${p.shot}</span>
     <span class="tag mono">DEF ${p.def}</span>${p.ride?`<span class="tag">🏇 ${p.mount??""} · спринт ${p.mv.sprint??"?"}</span>`:""}</div>
     <div>Работы: ${work}</div>
@@ -304,7 +307,7 @@ function craftTree(name, qty, depth, out, raw){
 function showItem(name){
   if(cur!=="items"){ cur="items"; nav(); render.items(); document.getElementById("itemq").value=name; }
   const it=itemByName[name]; if(!it) return;
-  let html=`<div class="card"><div class="big">${esc(it.name)} <span class="tag">${esc(it.category)}</span>${it.tech_level?`<span class="tag">tech ${it.tech_level}</span>`:""}</div>`;
+  let html=`<div class="card"><div class="big">${itemIcon(it.name)}${esc(it.name)} <span class="tag">${esc(it.category)}</span>${it.tech_level?`<span class="tag">tech ${it.tech_level}</span>`:""}</div>`;
   if(it.recipe){
     const mats=Object.entries(it.recipe.materials).map(([m,q])=>`${itemLink(m)} ×${q}`).join(", ");
     html+=`<div style="margin-top:6px">Крафт: <b>${esc(it.recipe.station||"станция не указана")}</b> ← ${mats}</div>`;
@@ -515,16 +518,16 @@ class BasePlan {
   presetMineCraft(){
     const o=this.o;
     const sites=[];
-    for(const fam of [["Stone Pit"],["Logging Site"],["Logging Site II"],["Ore Mining Site","Ore Mining Site II"],
-        ["Coal Mine"],["Sulfur Mine"],["Pure Quartz Quarry"],["Hexolite Quartz Mine"],["Soralite Quarry"]]){
-      const s=this.best(fam); if(s){ this.add(s,1); sites.push(s); } }
+    for(const m of ["Stone Pit","Logging Site","Logging Site II","Ore Mining Site","Ore Mining Site II",
+        "Coal Mine","Sulfur Mine","Pure Quartz Quarry","Hexolite Quartz Mine","Soralite Quarry"]){
+      if(this.best([m])){ this.add(m,1); sites.push(m); } }
     this.notes.push(`Добыча (${sites.length} станций, по 1 на базу): ${sites.join(", ")}`);
     this.supportCore([["suitability:Mining","+1 Mining всем"],["suitability:Handiwork","+1 Handiwork всем"],
       ["suitability:Transporting","+1 Transport всем"],["sanity_save","SAN базы"]]);
     const structsW=Object.fromEntries(D.bb.structures.map(x=>[x.name,x]));
-    const mSites=sites.filter(x=>(structsW[x].workers||"")==="Mining"), hSites=sites.filter(x=>!mSites.includes(x));
-    if(hSites.length) this.hireBest("Handiwork",5,Math.max(1,Math.round(hSites.length*0.8/this.q())),`добыча (Handiwork): ${hSites.join("/")}`);
+    const mSites=sites.filter(x=>(structsW[x].workers||"")==="Mining"), lSites=sites.filter(x=>(structsW[x].workers||"")==="Lumbering");
     if(mSites.length) this.hireBest("Mining",6,Math.max(1,Math.round(mSites.length*0.8/this.q())),`добыча (Mining): ${mSites.join("/")}`);
+    if(lSites.length) this.hireBest("Lumbering",5,Math.max(1,Math.round(lSites.length*0.8/this.q())),`лесопилки: ${lSites.join("/")}`);
     this.add(this.best(["Primitive Furnace","Improved Furnace","Electric Furnace","Gigantic Furnace","Ancient Furnace"]),2);
     this.hireBest("Kindling",6,2,"печи");
     for(const fam of [["Production Assembly Line","Production Assembly Line II","Advanced Workshop"],
@@ -694,7 +697,7 @@ function drawBase(){
     const fam=familyOf(b.name).filter(n=>structs[n]);
     let card=`<div class="card" style="margin-bottom:8px">
       <div class="row" style="justify-content:space-between">
-        <div><span class="clicky big" style="font-size:15px" onclick="openB=openB===${i}?null:${i};openC=null;drawBase()">${esc(b.name)}</span>
+        <div>${structIcon(b.name)}<span class="clicky big" style="font-size:15px" onclick="openB=openB===${i}?null:${i};openC=null;drawBase()">${esc(b.name)}</span>
           <span class="dim">tech ${s.tech_level??"?"}${s.power?" ⚡"+(s.energy_per_sec?s.energy_per_sec+"/с":""):""}</span></div>
         <div><span class="tag clicky" onclick="BASE.buildings[${i}].count++;drawBase()">+</span>
           <b class="mono"> x${b.count} </b>
@@ -706,10 +709,10 @@ function drawBase(){
     if(tasks.length){
       const sugg=tasks.map(t=>{const top=topWorkers(t,2,false,req?req.min_level:1);
         return top.map(([nm,lv])=>{
-          const hired=BASE.crew.filter(c=>c.sp===nm&&c.task===t).reduce((a,c)=>a+c.count,0);
-          return `${palLink(nm)} <span class="dim mono">${t.replace("_"," ")} ${lv}</span>
+          const hired=BASE.crew.filter(c=>c.sp===nm&&c.task===t&&c.for===b.name).reduce((a,c)=>a+c.count,0);
+          return `${palIcon(nm)}${palLink(nm)} <span class="dim mono">${t.replace("_"," ")} ${lv}</span>
           <span class="tag clicky" onclick="builderHire('${nm.replace(/'/g,"\\'")}','${t}','${esc(b.name)}')">нанять</span>`+
-          (hired?` <b class="ok mono">x${hired}</b> <span class="tag clicky" onclick="builderFire('${nm.replace(/'/g,"\\'")}','${t}')">убрать</span>`:"");
+          (hired?` <b class="ok mono">x${hired}</b> <span class="tag clicky" onclick="builderFire('${nm.replace(/'/g,"\\'")}','${t}','${esc(b.name)}')">убрать</span>`:"");
         }).join(" · ");}).join("<br>");
       card+=`<div style="margin-top:4px">Палы: ${sugg}</div>`;
     }
@@ -725,7 +728,7 @@ function drawBase(){
   // палы
   let ch=BASE.crew.map((c,i)=>{
     let card=`<div class="card" style="margin-bottom:8px"><div class="row" style="justify-content:space-between">
-      <div><span class="clicky" style="font-weight:700" onclick="openC=openC===${i}?null:${i};openB=null;drawBase()">${esc(c.sp)}${num(c.sp)?` <span class="dim">(#${num(c.sp)})</span>`:""}</span>
+      <div>${palIcon(c.sp)}<span class="clicky" style="font-weight:700" onclick="openC=openC===${i}?null:${i};openB=null;drawBase()">${esc(c.sp)}${num(c.sp)?` <span class="dim">(#${num(c.sp)})</span>`:""}</span>
         <span class="dim"> — ${esc(c.role||"")}</span></div>
       <div><span class="tag clicky" onclick="BASE.crew[${i}].count++;drawBase()">+</span>
         <b class="mono"> x${c.count} </b>
@@ -772,6 +775,11 @@ function drawBase(){
       <div id="picker"></div>
       ${ch||'<div class="dim">пусто</div>'}</div>
   </div>
+  <div class="card"><h3>Итого палов (по видам)</h3>
+    ${(()=>{const agg={};for(const c of BASE.crew)agg[c.sp]=(agg[c.sp]||0)+c.count;
+      return Object.entries(agg).sort((a,b)=>b[1]-a[1]).map(([sp,n])=>
+        `<span class="tag">${palIcon(sp)}${palLink(sp)} <b class="mono">x${n}</b></span>`).join("")||'<span class="dim">—</span>';})()}
+  </div>
   <div class="card"><h3>Итого материалов</h3>
     ${Object.entries(bill).sort().map(([m,q])=>`<span class="tag">${itemLink(m)} x${q}</span>`).join("")||'<span class="dim">—</span>'}</div>
   ${BASE.notes?.length?`<div class="card"><h3>Заметки пресета</h3><ul>${BASE.notes.map(n=>`<li>${esc(n)}</li>`).join("")}</ul></div>`:""}
@@ -785,12 +793,12 @@ function builderAddBuilding(){
     drawBase(); }
 }
 function builderHire(sp,task,forB){
-  const ex=BASE.crew.find(c=>c.sp===sp&&c.task===task);
-  if(ex) ex.count++; else BASE.crew.push({sp,count:1,role:`для: ${forB}`,task});
+  const ex=BASE.crew.find(c=>c.sp===sp&&c.task===task&&c.for===forB);
+  if(ex) ex.count++; else BASE.crew.push({sp,count:1,role:`для: ${forB}`,task,for:forB});
   drawBase();
 }
-function builderFire(sp,task){
-  const i=BASE.crew.findIndex(c=>c.sp===sp&&c.task===task);
+function builderFire(sp,task,forB){
+  const i=BASE.crew.findIndex(c=>c.sp===sp&&c.task===task&&c.for===forB);
   if(i>=0){ if(--BASE.crew[i].count<1) BASE.crew.splice(i,1); drawBase(); }
 }
 function builderShowPicker(){

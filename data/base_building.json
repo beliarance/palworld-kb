@@ -871,7 +871,7 @@
     "Paldium Fragment": 10
    },
    "ancient_tech": false,
-   "workers": "Handiwork (workload cycles)",
+   "workers": "Mining",
    "capacity": null,
    "power": false,
    "function": "Placeable production site: Stone x1 per workload cycle. SAN -0.15/target while working."
@@ -886,7 +886,7 @@
     "Ancient Civilization Parts": 5
    },
    "ancient_tech": false,
-   "workers": "Handiwork (workload cycles)",
+   "workers": "Mining",
    "capacity": null,
    "power": false,
    "function": "Placeable production site: Ore x1 per workload cycle. SAN -0.15/target while working."
@@ -900,7 +900,7 @@
     "Paldium Fragment": 10
    },
    "ancient_tech": false,
-   "workers": "Handiwork (workload cycles)",
+   "workers": "Lumbering",
    "capacity": null,
    "power": false,
    "function": "Placeable production site: Wood x1 per workload cycle. SAN -0.15/target while working."
@@ -914,7 +914,7 @@
    },
    "energy_per_sec": 2000,
    "ancient_tech": false,
-   "workers": "Handiwork (workload cycles)",
+   "workers": "Mining",
    "capacity": null,
    "power": true,
    "function": "Placeable production site: Crude Oil x1 per workload cycle. SAN -0.15/target while working."
@@ -1343,9 +1343,9 @@
     "Paldium Fragment": 30,
     "Ancient Civilization Parts": 10
    },
-   "function": "Produces Pure Quartz x1 per workload cycle. (document.getElementById(\"consent-box\").style.display = window[\"__tcfapi\"]",
+   "function": "Produces Pure Quartz x1 per workload cycle.",
    "ancient_tech": false,
-   "workers": "Handiwork (workload)",
+   "workers": "Mining",
    "capacity": null,
    "power": false
   },
@@ -1388,7 +1388,7 @@
    },
    "function": "Produces Ore x1 per workload cycle. is hard work that requires physical endurance.",
    "ancient_tech": false,
-   "workers": "Handiwork (workload)",
+   "workers": "Mining",
    "capacity": null,
    "power": false
   },
@@ -1403,7 +1403,7 @@
    },
    "function": "Produces Hardwood x1 per workload cycle. Cutting wood is hard work that requires much physical endurance.",
    "ancient_tech": false,
-   "workers": "Handiwork (workload)",
+   "workers": "Lumbering",
    "capacity": null,
    "power": false
   },
@@ -1419,7 +1419,7 @@
    "function": "Produces Crude Oil x1 per workload cycle. It requires a far greater supply of electricity than the",
    "energy_per_sec": 3000,
    "ancient_tech": false,
-   "workers": "Handiwork (workload)",
+   "workers": "Mining",
    "capacity": null,
    "power": true
   },
@@ -1429,9 +1429,9 @@
     "Wood": 15,
     "Stone": 5
    },
-   "function": "(document.getElementById(\"consent-box\").style.display = window[\"__tcfapi\"]",
+   "function": "production site",
    "ancient_tech": false,
-   "workers": "Handiwork (workload)",
+   "workers": "Lumbering",
    "capacity": null,
    "power": false
   },
@@ -1442,7 +1442,7 @@
     "Wood": 10,
     "Stone": 10
    },
-   "function": "(document.getElementById(\"consent-box\").style.display = window[\"__tcfapi\"]",
+   "function": "production site",
    "ancient_tech": false,
    "workers": null,
    "capacity": null,
@@ -1812,7 +1812,7 @@
     "Thermal Core": 5,
     "Cryogenic Coolant": 5
    },
-   "function": "(document.getElementById(\"consent-box\").style.display = window[\"__tcfapi\"]",
+   "function": "production site",
    "energy_per_sec": 500,
    "ancient_tech": true,
    "workers": null,
@@ -2818,7 +2818,8 @@
   "2026-07-15: добавлены placeable-добывающие станции (Stone Pit, Ore Mining Site tech 24, Logging Site, Crude Oil Extractor) — изначальный сбор их пропустил. Placeable-шахт для Coal/Sulfur/Quartz/Paldium в 1.0 НЕТ (paldb: у этих ресурсов нет производящей постройки) — только точки на карте.",
   "2026-07-15: добавлены 22 крафт-станции (печи, верстаки, сборочные линии) со страниц paldb — изначальный сбор покрывал только Pal/Food категории.",
   "2026-07-15: function-описания дозаполнены у станций, добавленных 07-15; worker_req распарсен из описаний локально.",
-  "2026-07-15: +40 функциональных зданий со Structures-индекса paldb (все шахты Lumbering/Mining категории, сундуки, пруды, алтарь, ресайклеры). Прежняя заметка 'шахт для Coal/Sulfur/Quartz нет' была ошибкой поиска по слагам — опровергнута."
+  "2026-07-15: +40 функциональных зданий со Structures-индекса paldb (все шахты Lumbering/Mining категории, сундуки, пруды, алтарь, ресайклеры). Прежняя заметка 'шахт для Coal/Sulfur/Quartz нет' была ошибкой поиска по слагам — опровергнута.",
+  "2026-07-15: работники добывающих станций назначены по типу продукта (руда/уголь/кварц/нефть = Mining, лес = Lumbering) — подтверждено игроком; ранний парс ошибочно брал Handiwork из workload-таблицы ПОСТРОЙКИ здания."
  ],
  "gaps": [
   "Per-crop plantation yield_per_harvest and absolute growth-cycle seconds are undocumented in fetched sources (yield scales with gatherer DropNumRate; see plantation_cycles).",

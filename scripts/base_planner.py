@@ -293,15 +293,15 @@ class Planner:
         # самообеспечение сырьём: placeable-станции добычи (по 1 на базу)
         sites = []
         # ВНИМАНИЕ: "Mine"/"Electric Mine"/"Ice Mine" — ловушки (Defenses), не добыча!
-        MINE_FAMILIES = [["Stone Pit"], ["Logging Site"], ["Logging Site II"],
-                         ["Ore Mining Site", "Ore Mining Site II"],
-                         ["Coal Mine"], ["Sulfur Mine"], ["Pure Quartz Quarry"],
-                         ["Hexolite Quartz Mine"], ["Soralite Quarry"]]
-        for fam in MINE_FAMILIES:
-            s = self.best(fam)
-            if s:
-                self.add(s, 1)
-                sites.append(s)
+        # в игре можно поставить по 1 КАЖДОГО типа — добавляем все доступные по tech
+        ALL_SITES = ["Stone Pit", "Logging Site", "Logging Site II",
+                     "Ore Mining Site", "Ore Mining Site II",
+                     "Coal Mine", "Sulfur Mine", "Pure Quartz Quarry",
+                     "Hexolite Quartz Mine", "Soralite Quarry"]
+        for m in ALL_SITES:
+            if self.best([m]):
+                self.add(m, 1)
+                sites.append(m)
         self.notes.append(f"Добыча ({len(sites)} станций, по 1 на базу): {', '.join(sites)}. "
                           "Работают Handiwork-циклами (paldb: workload)")
         self.support_core([("suitability:Mining", "+1 Mining всем (Tetroise)"),
