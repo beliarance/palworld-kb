@@ -9,7 +9,8 @@
   --slots N            рабочих слотов на базе (по умолчанию 50)
   --tech N             доступный уровень технологий (по умолчанию 60) — здания выбираются по нему
   --food self|shipped  кормовой модуль на месте / еда привозная (по умолчанию self)
-  --workforce baseline|passives|max   качество рабочих: дикие ×1.0 / бридовые ×2.2 / 4-пассивки ×2.75
+  --workforce baseline|passives|max   Work Speed рабочих: 70 (дикие) / 154 (+пассивки) / 192 (макс-стек);
+                                      база WS 70 растёт от пассивок (Artisan/Serious) и еды
   --farms N            (breeding) фиксировать число брид-ферм вместо авто
   --raw                смету материалов развернуть до сырья (по items.json)
 
@@ -596,7 +597,8 @@ class Planner:
     def report(self):
         a = self.args
         total_pals = sum(c for _, c, _ in self.pals)
-        print(f"═══ База: {a.preset}  |  слоты {a.slots}  |  tech {a.tech}  |  еда: {a.food}  |  рабочие: {a.workforce} (x{self.q()}) ═══\n")
+        print(f"═══ База: {a.preset}  |  слоты {a.slots}  |  tech {a.tech}  |  еда: {a.food}  |  "
+              f"Work Speed {round(70 * self.q())} ({a.workforce}) ═══\n")
         print("ПАЛЫ".ljust(60) + f"[{total_pals}/{a.slots} слотов]")
         num = lambda s: (self.idx["pals"].get(s) or {}).get("number")
         for sp, c, role in self.pals:
