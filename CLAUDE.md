@@ -95,7 +95,9 @@ resource <name>               лучшие места фарма ресурса 
 
 **Конструктор баз** — `python3 scripts/base_planner.py <preset> [опции]`:
 пресеты `breeding | mine-craft | oil | food | starter`; опции `--slots N --tech N
---food self|shipped --workforce baseline|passives|max --roster top|easy --farms N --raw --lux`.
+--food self|shipped --workforce baseline|passives|max --roster top|easy --farms N --raw --lux
+--metal ingot|refined|pal-metal|coralum|soralite|paloxite` (задаёт тир вместо --tech)
+`--extra "Statue of Power:1,..."` (необязательные здания в смету).
 `--roster top` — лучшие палы с альтернативой «проще достать»; `--roster easy` — наоборот.
 У труднодоступных палов в выводе подсказка [где ловить] из pal_locations.
 Выдаёт состав палов, здания со сметой материалов, заметки и явные допущения

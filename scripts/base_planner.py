@@ -32,6 +32,16 @@ CRAFT_SPEED = [50, 80, 140, 240, 400, 680, 1100, 1900, 3200, 5400]
 FIELD_SPEED = [50, 70, 100, 140, 190, 260, 370, 510, 720, 1000]
 QUALITY = {"baseline": 1.0, "passives": 2.2, "max": 2.75}
 
+# доступный металл -> потолок tech (по печам: следующая печь минус 1)
+METALS = {
+    "ingot": 33,        # Primitive Furnace (10) ... до Improved (34)
+    "refined": 43,      # Improved Furnace (34) ... до Electric (44)
+    "pal-metal": 57,    # Electric Furnace (44) ... до Gigantic (58)
+    "coralum": 65,      # Gigantic Furnace (58) ... до Ancient (66)
+    "soralite": 73,     # Ancient Furnace (66), Soralite Ingot tech 66
+    "paloxite": 99,     # Paloxite Ingot tech 74+, весь Ancient-тир
+}
+
 
 def load(name):
     with open(DATA / name) as f:
@@ -280,24 +290,30 @@ class Planner:
 
     def preset_mine_craft(self):
         a = self.args
-        for m in ["Ore Mine", "Stone Pit", "Coal Mine", "Sulfur Mine", "Paldium Mine"]:
+        # самообеспечение сырьём: placeable-станции добычи (по 1 на базу)
+        sites = []
+        for m in ["Stone Pit", "Ore Mining Site", "Logging Site"]:
             s = self.best([m])
             if s:
-                self.add(s, 1)  # лимит 1 на базу
+                self.add(s, 1)
+                sites.append(s)
+        if "Ore Mining Site" not in sites:
+            self.notes.append("Ore Mining Site требует tech 24 — до этого ставь базу прямо на рудные точки (см. resource coal/ore)")
+        self.notes.append("Добывающие станции работают Handiwork-циклами (paldb: workload). "
+                          "Placeable-шахт для Coal/Sulfur/Quartz нет в 1.0 — под них база на точках + Mining-палы")
         self.support_core([("suitability:Mining", "+1 Mining всем (Tetroise)"),
                            ("suitability:Handiwork", "+1 Handiwork всем (Ribbuny)"),
                            ("suitability:Transporting", "+1 Transport всем (Wumpo)"),
                            ("sanity_save", "SAN базы (Shroomer Noct)")])
-        self.hire_best("Mining", 6, max(3, round(6 / self.q())), "шахтёр")
-        furn = self.best(["Primitive Furnace", "Improved Furnace", "Electric Furnace", "Gigantic Furnace"])
+        n_site_hands = max(2, round(len(sites) * 2 / self.q()))
+        self.hire_best("Handiwork", 5, n_site_hands, f"добыча: {'/'.join(sites) or 'рудные точки'}")
+        self.hire_best("Mining", 6, max(2, round(4 / self.q())), "шахтёр (рудные точки на базе + Ore Mining Site)")
+        furn = self.best(["Primitive Furnace", "Improved Furnace", "Electric Furnace", "Gigantic Furnace", "Ancient Furnace"])
         self.add(furn, 2)
         self.hire_best("Kindling", 6, 2, "печи")
-        for line in ["Production Assembly Line", "Production Assembly Line II",
-                     "Weapon Assembly Line", "Weapon Assembly Line II", "Sphere Assembly Line", "Sphere Assembly Line II"]:
-            s = self.best([line])
-        for fam in [["Production Assembly Line", "Production Assembly Line II"],
-                    ["Weapon Assembly Line", "Weapon Assembly Line II"],
-                    ["Sphere Assembly Line", "Sphere Assembly Line II"]]:
+        for fam in [["Production Assembly Line", "Production Assembly Line II", "Advanced Workshop"],
+                    ["Weapon Workbench", "Weapon Assembly Line", "Weapon Assembly Line II", "Advanced Weapon Assembly Line"],
+                    ["Sphere Workbench", "Sphere Assembly Line", "Sphere Assembly Line II", "Advanced Sphere Assembly Line"]]:
             s = self.best(fam)
             if s:
                 self.add(s, 1)
@@ -435,14 +451,31 @@ def main():
     ap.add_argument("--lux", action="store_true", help="топовые кровати/источники (дорогой Ancient-тир)")
     ap.add_argument("--roster", choices=["top", "easy"], default="top",
                     help="top: лучшие палы (+альтернатива попроще); easy: лучшие из легко ловимых (+топ в скобках)")
+    ap.add_argument("--metal", choices=list(METALS),
+                    help="доступный металл вместо --tech: ingot|refined|pal-metal|coralum|soralite|paloxite")
+    ap.add_argument("--extra", default="",
+                    help="доп. здания: 'Statue of Power:1,Pal Essence Condenser:1'")
     ap.add_argument("--ranch-rate", type=float, default=12, help="дропов/час на ранч-пала (ДОПУЩЕНИЕ)")
     ap.add_argument("--plant-yield", type=float, default=60, help="единиц урожая/час с плантации (ДОПУЩЕНИЕ)")
     ap.add_argument("--cook-rate", type=float, default=30, help="тортов/час на повара (ДОПУЩЕНИЕ)")
     ap.add_argument("--plants-per-worker", type=float, default=3, help="плантаций на 1 троицу рабочих при baseline")
     args = ap.parse_args()
+    if args.metal:
+        args.tech = METALS[args.metal]
     pl = Planner(args)
     {"breeding": pl.preset_breeding, "mine-craft": pl.preset_mine_craft,
      "oil": pl.preset_oil, "food": pl.preset_food, "starter": pl.preset_starter}[args.preset]()
+    if args.metal:
+        pl.notes.append(f"Тир зданий по металлу '{args.metal}' -> tech <= {args.tech}")
+    for chunk in filter(None, args.extra.split(",")):
+        name, _, qty = chunk.partition(":")
+        name = name.strip()
+        hit = next((s for s in pl.structs if s.lower() == name.lower()), None)
+        if hit:
+            pl.add(hit, int(qty or 1))
+            pl.notes.append(f"Доп. здание по запросу: {hit} x{qty or 1}")
+        else:
+            pl.notes.append(f"!! Доп. здание '{name}' не найдено в base_building.json")
     pl.report()
 
 

@@ -833,6 +833,397 @@
    "capacity": null,
    "power": false,
    "function": "A special cultivation device based on ancient technology that harnesses the power of the World Tree to grow all kinds of plants on Palpagos Island. Smaller than a berry plantation and suitable for indoor placement, it still follows the same cultivation process as standard plots. It requires Pals with high-level Planting, Watering, and Harvesting suitability."
+  },
+  {
+   "name": "Stone Pit",
+   "tech_level": 7,
+   "materials": {
+    "Stone": 50,
+    "Wood": 20,
+    "Paldium Fragment": 10
+   },
+   "ancient_tech": false,
+   "workers": "Handiwork (workload cycles)",
+   "capacity": null,
+   "power": false,
+   "function": "Placeable production site: Stone x1 per workload cycle. SAN -0.15/target while working."
+  },
+  {
+   "name": "Ore Mining Site",
+   "tech_level": 24,
+   "materials": {
+    "Stone": 50,
+    "Ingot": 25,
+    "Paldium Fragment": 20,
+    "Ancient Civilization Parts": 5
+   },
+   "ancient_tech": false,
+   "workers": "Handiwork (workload cycles)",
+   "capacity": null,
+   "power": false,
+   "function": "Placeable production site: Ore x1 per workload cycle. SAN -0.15/target while working."
+  },
+  {
+   "name": "Logging Site",
+   "tech_level": 7,
+   "materials": {
+    "Wood": 50,
+    "Stone": 20,
+    "Paldium Fragment": 10
+   },
+   "ancient_tech": false,
+   "workers": "Handiwork (workload cycles)",
+   "capacity": null,
+   "power": false,
+   "function": "Placeable production site: Wood x1 per workload cycle. SAN -0.15/target while working."
+  },
+  {
+   "name": "Crude Oil Extractor",
+   "tech_level": 50,
+   "materials": {
+    "Pal Metal Ingot": 250,
+    "Circuit Board": 50
+   },
+   "energy_per_sec": 2000,
+   "ancient_tech": false,
+   "workers": "Handiwork (workload cycles)",
+   "capacity": null,
+   "power": true,
+   "function": "Placeable production site: Crude Oil x1 per workload cycle. SAN -0.15/target while working."
+  },
+  {
+   "name": "Advanced Sphere Assembly Line",
+   "tech_level": 58,
+   "ancient_tech": false,
+   "materials": {
+    "Hexolite": 50,
+    "Plasteel": 50,
+    "Computer": 10,
+    "Bio Battery": 10
+   },
+   "workers": "Handiwork",
+   "capacity": null,
+   "power": true,
+   "function": "sphere",
+   "energy_per_sec": 1000
+  },
+  {
+   "name": "Advanced Weapon Assembly Line",
+   "tech_level": 63,
+   "ancient_tech": false,
+   "materials": {
+    "Coralum Ingot": 50,
+    "Thermal Core": 10,
+    "Corrosive Solvent": 30
+   },
+   "workers": "Handiwork",
+   "capacity": null,
+   "power": true,
+   "function": "weapon",
+   "energy_per_sec": 1000
+  },
+  {
+   "name": "Advanced Workshop",
+   "tech_level": 62,
+   "ancient_tech": false,
+   "materials": {
+    "Coralum Ingot": 50,
+    "Hexolite": 50,
+    "Computer": 30,
+    "Bio Battery": 20
+   },
+   "workers": "Handiwork",
+   "capacity": null,
+   "power": true,
+   "function": "ammo, material, weapon",
+   "energy_per_sec": 1000
+  },
+  {
+   "name": "Ancient Furnace",
+   "tech_level": 66,
+   "ancient_tech": false,
+   "materials": {
+    "Coralum Ingot": 100,
+    "Thermal Core": 20,
+    "Computer": 30,
+    "Ancient Civilization Core": 10
+   },
+   "workers": "Kindling",
+   "capacity": null,
+   "power": true,
+   "function": "material",
+   "energy_per_sec": 3000
+  },
+  {
+   "name": "Ancient Workbench",
+   "tech_level": 67,
+   "ancient_tech": false,
+   "materials": {
+    "Soralite Ingot": 50,
+    "AI Core": 5,
+    "Bio Battery": 20
+   },
+   "workers": "Handiwork",
+   "capacity": null,
+   "power": true,
+   "function": "accessory, ammo, armor, consumable, other, sphere, technology, weapon",
+   "energy_per_sec": 2000
+  },
+  {
+   "name": "Crusher",
+   "tech_level": 8,
+   "ancient_tech": false,
+   "materials": {
+    "Wood": 50,
+    "Stone": 20,
+    "Paldium Fragment": 10
+   },
+   "workers": "Watering",
+   "capacity": null,
+   "power": false,
+   "function": "material"
+  },
+  {
+   "name": "Electric Furnace",
+   "tech_level": 44,
+   "ancient_tech": false,
+   "materials": {
+    "Refined Ingot": 50,
+    "Bio Battery": 4,
+    "Polymer": 20,
+    "Cryogenic Coolant": 10
+   },
+   "workers": "Kindling",
+   "capacity": null,
+   "power": true,
+   "function": "material",
+   "energy_per_sec": 500
+  },
+  {
+   "name": "Gigantic Furnace",
+   "tech_level": 58,
+   "ancient_tech": false,
+   "materials": {
+    "Plasteel": 150,
+    "Polymer": 100,
+    "Flame Organ": 200,
+    "Computer": 12
+   },
+   "workers": "Kindling",
+   "capacity": null,
+   "power": true,
+   "function": "material",
+   "energy_per_sec": 1500
+  },
+  {
+   "name": "Gold Coin Assembly Line",
+   "tech_level": 73,
+   "ancient_tech": false,
+   "materials": {
+    "Soralite Ingot": 100,
+    "Ancient Civilization Parts": 20,
+    "AI Core": 10,
+    "Ancient Civilization Core": 5
+   },
+   "workers": "Handiwork",
+   "capacity": null,
+   "power": true,
+   "function": "material",
+   "energy_per_sec": 200
+  },
+  {
+   "name": "High Quality Workbench",
+   "tech_level": 11,
+   "ancient_tech": false,
+   "materials": {
+    "Ingot": 8,
+    "Wood": 20,
+    "Nail": 10
+   },
+   "workers": "Handiwork",
+   "capacity": null,
+   "power": false,
+   "function": "accessory, ammo, armor, consumable, key_item, material, technology, weapon"
+  },
+  {
+   "name": "Improved Furnace",
+   "tech_level": 34,
+   "ancient_tech": false,
+   "materials": {
+    "Stone": 100,
+    "Cement": 30,
+    "Flame Organ": 15,
+    "Cryogenic Coolant": 5
+   },
+   "workers": "Kindling",
+   "capacity": null,
+   "power": false,
+   "function": "material"
+  },
+  {
+   "name": "Pal Gear Workbench",
+   "tech_level": 6,
+   "ancient_tech": false,
+   "materials": {
+    "Paldium Fragment": 10,
+    "Wood": 30,
+    "Cloth": 2
+   },
+   "workers": "Handiwork",
+   "capacity": null,
+   "power": false,
+   "function": "key_item"
+  },
+  {
+   "name": "Primitive Furnace",
+   "tech_level": 10,
+   "ancient_tech": false,
+   "materials": {
+    "Wood": 20,
+    "Stone": 40,
+    "Flame Organ": 3
+   },
+   "workers": "Kindling",
+   "capacity": null,
+   "power": false,
+   "function": "material"
+  },
+  {
+   "name": "Primitive Workbench",
+   "tech_level": 1,
+   "ancient_tech": false,
+   "materials": {
+    "Wood": 2
+   },
+   "workers": "Handiwork",
+   "capacity": null,
+   "power": false,
+   "function": "ammo, armor, consumable, key_item, material, sphere, technology, weapon"
+  },
+  {
+   "name": "Production Assembly Line",
+   "tech_level": 29,
+   "ancient_tech": false,
+   "materials": {
+    "Ingot": 100,
+    "Wooden Board": 5,
+    "Nail": 20,
+    "Cement": 10
+   },
+   "workers": "Handiwork",
+   "capacity": null,
+   "power": true,
+   "function": "accessory, ammo, armor, key_item, material, technology, weapon",
+   "energy_per_sec": 200
+  },
+  {
+   "name": "Production Assembly Line II",
+   "tech_level": 42,
+   "ancient_tech": false,
+   "materials": {
+    "Refined Ingot": 100,
+    "Circuit Board": 10,
+    "Cement": 30,
+    "Corrosive Solvent": 5
+   },
+   "workers": "Handiwork",
+   "capacity": null,
+   "power": true,
+   "function": "ammo, armor, consumable, key_item, material, technology, weapon",
+   "energy_per_sec": 400
+  },
+  {
+   "name": "Sphere Assembly Line",
+   "tech_level": 27,
+   "ancient_tech": false,
+   "materials": {
+    "Paldium Fragment": 30,
+    "Wooden Board": 5,
+    "Ingot": 100,
+    "Nail": 20
+   },
+   "workers": "Handiwork",
+   "capacity": null,
+   "power": true,
+   "function": "sphere",
+   "energy_per_sec": 200
+  },
+  {
+   "name": "Sphere Assembly Line II",
+   "tech_level": 35,
+   "ancient_tech": false,
+   "materials": {
+    "Refined Ingot": 100,
+    "Circuit Board": 10,
+    "Nail": 30,
+    "Paldium Fragment": 50
+   },
+   "workers": "Handiwork",
+   "capacity": null,
+   "power": true,
+   "function": "sphere",
+   "energy_per_sec": 400
+  },
+  {
+   "name": "Sphere Workbench",
+   "tech_level": 14,
+   "ancient_tech": false,
+   "materials": {
+    "Paldium Fragment": 10,
+    "Wood": 30,
+    "Nail": 10,
+    "Ingot": 20
+   },
+   "workers": "Handiwork",
+   "capacity": null,
+   "power": false,
+   "function": "other, sphere"
+  },
+  {
+   "name": "Weapon Assembly Line",
+   "tech_level": 32,
+   "ancient_tech": false,
+   "materials": {
+    "Ingot": 100,
+    "Wooden Board": 20,
+    "Nail": 20,
+    "High Quality Pal Oil": 10
+   },
+   "workers": "Handiwork",
+   "capacity": null,
+   "power": true,
+   "function": "weapon",
+   "energy_per_sec": 200
+  },
+  {
+   "name": "Weapon Assembly Line II",
+   "tech_level": 47,
+   "ancient_tech": false,
+   "materials": {
+    "Refined Ingot": 100,
+    "Circuit Board": 10,
+    "Corrosive Solvent": 5,
+    "Bio Battery": 5
+   },
+   "workers": "Handiwork",
+   "capacity": null,
+   "power": true,
+   "function": "weapon",
+   "energy_per_sec": 400
+  },
+  {
+   "name": "Weapon Workbench",
+   "tech_level": 20,
+   "ancient_tech": false,
+   "materials": {
+    "Ingot": 15,
+    "Wooden Board": 10,
+    "Nail": 10
+   },
+   "workers": "Handiwork",
+   "capacity": null,
+   "power": false,
+   "function": "weapon"
   }
  ],
  "foods": [
@@ -1802,7 +2193,9 @@
   "High Quality (tech 28) and Ancient (tech 71) Monitoring Stands reduce SAN drain of working pals; Clinic/Ancient Clinic (Medicine Production worker) reduce SAN depletion and prevent illness.",
   "Hot Spring SAN restore rate 0.5 (base tier); High Quality restores more; Ancient Hot Spring restores the most SAN and also heals HP.",
   "DISCREPANCY: expeditions.json lists Pal Expedition Station at tech 15 (Wood 20, Stone 20, Paldium Fragment 5); paldb 1.0 page shows tech 22 (Wooden Board 10, Stone 100, Paldium Fragment 20). This file follows paldb.",
-  "In 1.0 there is no plain 'Pal Bed': tiers are Straw Pal Bed (3) -> Fluffy Pal Bed (24) -> Large Pal Bed (36) -> Pal Pod (56) -> Ancient Pal Bed (73)."
+  "In 1.0 there is no plain 'Pal Bed': tiers are Straw Pal Bed (3) -> Fluffy Pal Bed (24) -> Large Pal Bed (36) -> Pal Pod (56) -> Ancient Pal Bed (73).",
+  "2026-07-15: добавлены placeable-добывающие станции (Stone Pit, Ore Mining Site tech 24, Logging Site, Crude Oil Extractor) — изначальный сбор их пропустил. Placeable-шахт для Coal/Sulfur/Quartz/Paldium в 1.0 НЕТ (paldb: у этих ресурсов нет производящей постройки) — только точки на карте.",
+  "2026-07-15: добавлены 22 крафт-станции (печи, верстаки, сборочные линии) со страниц paldb — изначальный сбор покрывал только Pal/Food категории."
  ],
  "gaps": [
   "Per-crop plantation yield_per_harvest and absolute growth-cycle seconds are undocumented in fetched sources (yield scales with gatherer DropNumRate; see plantation_cycles).",

@@ -71,9 +71,9 @@ async function loadAll(){
     Object.assign(D, window.EMBEDDED_DATA);
     csvText = window.EMBEDDED_CSV;
   } else {
-    csvText = await (await fetch("../data/palworld_pals.csv")).text();
+    csvText = await (await fetch("../data/palworld_pals.csv", {cache:"no-store"})).text();
     const entries = await Promise.all(Object.entries(DATA_FILES).map(async ([k,f]) =>
-      [k, await (await fetch("../data/"+f)).json()]));
+      [k, await (await fetch("../data/"+f, {cache:"no-store"})).json()]));
     for (const [k,v] of entries) D[k]=v;
   }
   // CSV → работы
@@ -411,6 +411,7 @@ render.skills = () => {
 
 /* --- Конструктор баз (порт scripts/base_planner.py) --- */
 const QUALITY = {baseline:1.0, passives:2.2, max:2.75};
+const METALS = {"ingot":33,"refined":43,"pal-metal":57,"coralum":65,"soralite":73,"paloxite":99};
 
 class BasePlan {
   constructor(o){ this.o=o; this.structs=Object.fromEntries(D.bb.structures.map(s=>[s.name,s]));
@@ -508,13 +509,19 @@ class BasePlan {
     this.assume.push(`Ранч ${o.ranchRate} дропов/час, кухня ${o.cookRate} тортов/час на повара — x качество`); }
   presetMineCraft(){
     const o=this.o;
-    for(const m of ["Ore Mine","Stone Pit","Coal Mine","Sulfur Mine","Paldium Mine"]){ const s=this.best([m]); if(s) this.add(s,1); }
+    const sites=[];
+    for(const m of ["Stone Pit","Ore Mining Site","Logging Site"]){ const s=this.best([m]); if(s){ this.add(s,1); sites.push(s); } }
+    if(!sites.includes("Ore Mining Site")) this.notes.push("Ore Mining Site требует tech 24 — до этого ставь базу на рудные точки");
+    this.notes.push("Добывающие станции работают Handiwork-циклами. Placeable-шахт для Coal/Sulfur/Quartz в 1.0 нет — под них база на точках + Mining-палы");
     this.supportCore([["suitability:Mining","+1 Mining всем"],["suitability:Handiwork","+1 Handiwork всем"],
       ["suitability:Transporting","+1 Transport всем"],["sanity_save","SAN базы"]]);
-    this.hireBest("Mining",6,Math.max(3,Math.round(6/this.q())),"шахтёр");
-    this.add(this.best(["Primitive Furnace","Improved Furnace","Electric Furnace","Gigantic Furnace"]),2);
+    this.hireBest("Handiwork",5,Math.max(2,Math.round(sites.length*2/this.q())),`добыча: ${sites.join("/")||"рудные точки"}`);
+    this.hireBest("Mining",6,Math.max(2,Math.round(4/this.q())),"шахтёр (рудные точки + Ore Mining Site)");
+    this.add(this.best(["Primitive Furnace","Improved Furnace","Electric Furnace","Gigantic Furnace","Ancient Furnace"]),2);
     this.hireBest("Kindling",6,2,"печи");
-    for(const fam of [["Production Assembly Line","Production Assembly Line II"],["Weapon Assembly Line","Weapon Assembly Line II"],["Sphere Assembly Line","Sphere Assembly Line II"]]){
+    for(const fam of [["Production Assembly Line","Production Assembly Line II","Advanced Workshop"],
+        ["Weapon Workbench","Weapon Assembly Line","Weapon Assembly Line II","Advanced Weapon Assembly Line"],
+        ["Sphere Workbench","Sphere Assembly Line","Sphere Assembly Line II","Advanced Sphere Assembly Line"]]){
       const s=this.best(fam); if(s) this.add(s,1); }
     this.hireBest("Handiwork",6,Math.max(4,Math.round(10/this.q())),"сборочные линии");
     this.hire("Ribbuny Botan",1,"оружейный верстак (+200~400%)");
@@ -581,6 +588,15 @@ render.planner = () => {
     <select id="pp"><option value="breeding">Бридинг</option><option value="mine-craft">Майнинг+крафт</option>
       <option value="oil">Нефть</option><option value="food">Еда-хаб</option><option value="starter">Стартовая</option></select>
     <label>Слоты <input type="number" id="pslots" value="50" min="5" max="100" style="width:70px;min-width:70px"></label>
+    <select id="pmetal" title="доступный металл задаёт тир зданий">
+      <option value="">Металл: вручную (tech)</option>
+      <option value="ingot">Металл: Ingot (tech ≤33)</option>
+      <option value="refined">Металл: Refined (≤43)</option>
+      <option value="pal-metal">Металл: Pal Metal (≤57)</option>
+      <option value="coralum">Металл: Coralum (≤65)</option>
+      <option value="soralite">Металл: Soralite (≤73)</option>
+      <option value="paloxite">Металл: Paloxite (все)</option>
+    </select>
     <label>Tech <input type="number" id="ptech" value="60" min="1" max="99" style="width:70px;min-width:70px"></label>
     <select id="pfood"><option value="self">Еда: на месте</option><option value="shipped">Еда: привозная</option></select>
     <select id="pwf"><option value="baseline">Дикие палы (x1.0)</option><option value="passives" selected>Бридовые (x2.2)</option><option value="max">4-пассивки (x2.75)</option></select>
@@ -591,20 +607,43 @@ render.planner = () => {
     <label class="dim">плантация ед/час <input type="number" id="pyield" value="60" style="width:60px;min-width:60px"></label>
     <label class="dim">тортов/час на повара <input type="number" id="pcook" value="30" style="width:60px;min-width:60px"></label>
     <label class="dim">ферм (авто если пусто) <input type="number" id="pfarms" style="width:60px;min-width:60px"></label>
-  </div></div><div id="pout"></div>`;
+  </div><div class="row" style="margin-top:8px">
+    <input type="text" id="pextra" list="structlist" placeholder="Доп. здание (необязательное)…" style="min-width:260px">
+    <input type="number" id="pextraqty" value="1" min="1" style="width:60px;min-width:60px">
+    <button class="tag clicky" style="cursor:pointer" onclick="plannerAddExtra()">+ добавить</button>
+    <span id="pextras"></span>
+  </div>
+  <datalist id="structlist">${D.bb.structures.map(s=>`<option value="${esc(s.name)}">`).join("")}</datalist>
+  </div><div id="pout"></div>`;
   const calc=()=>{
+    const metal=val("pmetal");
+    if(metal) document.getElementById("ptech").value=METALS[metal];
     const o={preset:val("pp"),slots:+val("pslots")||50,tech:+val("ptech")||60,food:val("pfood"),
       workforce:val("pwf"),roster:val("proster"),lux:document.getElementById("plux").checked,
       ranchRate:+val("pranch")||12,plantYield:+val("pyield")||60,cookRate:+val("pcook")||30,
       plantsPerWorker:3,farms:+val("pfarms")||null};
-    try { document.getElementById("pout").innerHTML=new BasePlan(o).run().html(); }
+    try {
+      const plan=new BasePlan(o).run();
+      for(const [name,qty] of plannerExtras){ plan.add(name,qty); plan.notes.push(`Доп. здание: ${name} x${qty}`); }
+      document.getElementById("pout").innerHTML=plan.html();
+    }
     catch(e){ document.getElementById("pout").innerHTML=`<div class="card bad">Ошибка: ${esc(e.message)}</div>`; }
+    document.getElementById("pextras").innerHTML=plannerExtras.map(([n,q],i)=>
+      `<span class="tag">${esc(n)} x${q} <span class="clicky" onclick="plannerDelExtra(${i})">✕</span></span>`).join("");
   };
+  window._plannerCalc=calc;
   const val=id=>document.getElementById(id).value;
-  for(const id of ["pp","pslots","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms"])
+  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms"])
     document.getElementById(id).addEventListener("input",calc);
   calc();
 };
+let plannerExtras=[];
+function plannerAddExtra(){
+  const n=document.getElementById("pextra").value.trim(), q=+document.getElementById("pextraqty").value||1;
+  const hit=D.bb.structures.find(s=>s.name.toLowerCase()===n.toLowerCase());
+  if(hit){ plannerExtras.push([hit.name,q]); document.getElementById("pextra").value=""; window._plannerCalc(); }
+}
+function plannerDelExtra(i){ plannerExtras.splice(i,1); window._plannerCalc(); }
 
 loadAll().then(()=>{
   document.getElementById("loading").style.display="none";

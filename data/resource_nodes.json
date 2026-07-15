@@ -90,9 +90,8 @@
      "notes": "9 coal + 3 ore nodes — biggest pure-coal cluster; extreme heat/cold cycle. (pre-1.0 guide)"
     }
    ],
-   "base_recommendation": "Yes — the classic 'coal+ore base' at the Verdant Brook peak (190, -40) is the single best resource base: both Refined Ingot inputs on one unraidable summit. Alternative pure-coal outpost: north of Duneshelter (327, 485) with 9 nodes. Coal Mine placeable (Ancient Tech, ~Lv 53) automates coal at any base late game.",
+   "base_recommendation": "Yes — the classic 'coal+ore base' at the Verdant Brook peak (190, -40) is the single best resource base: both Refined Ingot inputs on one unraidable summit. Alternative pure-coal outpost: north of Duneshelter (327, 485) with 9 nodes. NOTE: placeable Coal Mine does NOT exist in 1.0 (nexttier claim contradicted by paldb 2026-07-15) - coal comes from map nodes/drops/expeditions only.",
    "other_sources": [
-    "Coal Mine (placeable, Ancient Tech ~Lv 53)",
     "Blazamut and some fire-Pal drops",
     "expeditions",
     "dungeon chests"
