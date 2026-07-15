@@ -539,6 +539,15 @@ class BasePlan {
       this.notes.push(`${ext}: без палов, только ⚡${this.structs[ext].energy_per_sec}/с`+
         (ext.includes("High-Pressure")?"; в любой точке":"; нужна нефтяная точка")); }
     this.hireBest("Handiwork",6,Math.max(4,Math.round(10/this.q())),"сборочные линии");
+    const producers = o.tech>=45
+      ? [["Flambelle","Flame Organ (Computer, Carbon Fiber, Bio Battery)"],["Sparkit","Electric Organ (Computer, AI Core)"],
+         ["Depresso","Venom Gland (AI Core, Corrosive Solvent, Thermal Core)"],["Dumud","High Quality Pal Oil (Polymer, Circuit Board)"],
+         ["Kelpsea","Aquatic Pal Fluids (Cement, Coolant)"],["Foxcicle","Ice Organ (Cryogenic Coolant)"]]
+      : [["Surfent","Leather (броня)"],["Cremis","Wool (Cloth)"],["Sootseer","Bone (Cement)"],
+         ["Kelpsea","Aquatic Pal Fluids (Cement)"],["Foxcicle","Ice Organ (Coolant)"]];
+    for(const [sp,why] of producers) this.hire(sp,1,`крафт-ранч: ${why}`);
+    this.add("Ranch",Math.ceil(producers.length/4));
+    this.notes.push("Крафт-ранч: пал-материалы для компонентов на месте; узкое место обычно Flame/Electric Organ под Computer — масштабируй их");
     this.hire("Ribbuny Botan",1,"оружейный верстак (+200~400%)");
     this.hire("Anubis",2,"верстаки — пара с Sekhmet"); this.hire("Sekhmet",1,"буст Anubis +20~40%");
     this.hire("Eidrolon",3,"транспорт руды");

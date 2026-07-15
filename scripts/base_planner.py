@@ -332,6 +332,23 @@ class Planner:
                 self.add(s, 1)
         n_hands = max(4, round(10 / self.q()))
         self.hire_best("Handiwork", 6, n_hands, "сборочные линии/верстаки")
+        # крафт-ранч: пал-материалы для компонентов (Computer/AI Core/Cement/Coolant)
+        if a.tech >= 45:
+            producers = [("Flambelle", "Flame Organ (Computer, Carbon Fiber, Bio Battery)"),
+                         ("Sparkit", "Electric Organ (Computer, AI Core, Bio Battery)"),
+                         ("Depresso", "Venom Gland (AI Core, Corrosive Solvent, Thermal Core)"),
+                         ("Dumud", "High Quality Pal Oil (Polymer, Circuit Board)"),
+                         ("Kelpsea", "Aquatic Pal Fluids (Cement, Cryogenic Coolant)"),
+                         ("Foxcicle", "Ice Organ (Cryogenic Coolant)")]
+        else:
+            producers = [("Surfent", "Leather (броня)"), ("Cremis", "Wool (Cloth)"),
+                         ("Sootseer", "Bone (Cement)"), ("Kelpsea", "Aquatic Pal Fluids (Cement)"),
+                         ("Foxcicle", "Ice Organ (Coolant)")]
+        for sp, why in producers:
+            self.hire(sp, 1, f"крафт-ранч: {why}")
+        self.add("Ranch", -(-len(producers) // 4))
+        self.notes.append("Крафт-ранч: пал-материалы для компонентов на месте; масштабируй +1 пала на узкое место "
+                          "(обычно Flame/Electric Organ под Computer)")
         self.hire("Ribbuny Botan", 1, "оружейный верстак (+200~400% на нём)")
         self.hire("Anubis", 2, "верстаки (Handiwork 6) — пара с Sekhmet")
         self.hire("Sekhmet", 1, "буст Anubis +20~40% и себе +30~60% на верстаках")
