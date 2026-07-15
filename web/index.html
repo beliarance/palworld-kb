@@ -511,15 +511,16 @@ class BasePlan {
     if(gen!=="Human-Powered Generator") this.hireBest("Generating_Electricity",6,heavy?2:1,"электрик");
     if(heavy&&this.best(["Accumulator"])) this.add("Accumulator",2); }
   breedingStaffFor(farms){
-    const o=this.o, cakes=farms*60/D.bb.rates.breeding_egg_interval_minutes;
+    const o=this.o, cakes=farms*60/(o.eggInterval||D.bb.rates.breeding_egg_interval_minutes)*(o.eggBoost||1.35);
     const per={Flour:5*cakes,RedBerries:8*cakes,Milk:7*cakes,Egg:8*cakes,Honey:2*cakes};
     const rr=o.ranchRate*this.q();
     const ranch={Mozzarina:Math.ceil(per.Milk/rr),Chikipi:Math.ceil(per.Egg/rr),Beegarde:Math.ceil(per.Honey/rr)};
     const wheat=Math.ceil(per.Flour*3/o.plantYield), berry=Math.ceil(per.RedBerries/o.plantYield);
     const trio=3*Math.ceil((wheat+berry)/(o.plantsPerWorker*this.q()));
     const cooks=Math.max(1,Math.ceil(cakes/(o.cookRate*this.q())));
-    const heads=2*farms+Object.values(ranch).reduce((a,b)=>a+b,0)+trio+cooks+1;
-    return {cakes,per,ranch,wheat,berry,trio,cooks,heads}; }
+    const mills=Math.max(1,Math.ceil(per.Flour/60));
+    const heads=2*farms+Object.values(ranch).reduce((a,b)=>a+b,0)+trio+cooks+mills;
+    return {cakes,per,ranch,wheat,berry,trio,cooks,mills,heads}; }
   presetBreeding(){
     const o=this.o, hatch=o.tech>=76&&this.structs["Ancient Hatchery"], farm=hatch?"Ancient Hatchery":"Breeding Farm";
     const budget=o.slots-13-(o.food==="self"?4:0);
@@ -533,7 +534,7 @@ class BasePlan {
     for(const [sp,n] of Object.entries(L.ranch)) this.hire(sp,n,`ранч (${({Mozzarina:"Milk",Chikipi:"Egg",Beegarde:"Honey"})[sp]})`);
     this.add("Ranch",Math.ceil(Object.values(L.ranch).reduce((a,b)=>a+b,0)/4));
     this.add("Wheat Plantation",L.wheat); this.add("Berry Plantation",L.berry);
-    this.add("Mill",Math.max(1,Math.ceil(L.per.Flour/60))); this.hireBest("Watering",4,1,"мельница");
+    this.add("Mill",L.mills); this.hireBest("Watering",4,L.mills,"мельница");
     const kit=this.best(["Cooking Pot","Electric Kitchen","Large-Scale Stone Oven","Ancient Kitchen"]);
     this.add(kit,L.cooks); this.hireBest("Kindling",4,L.cooks,"повар тортов");
     const tr=L.trio/3;
@@ -542,7 +543,8 @@ class BasePlan {
     if(!hatch){ const inc=this.best(["Egg Incubator","Electric Egg Incubator","Large Egg Incubator"]); if(inc) this.add(inc,Math.min(farms*2,12)); }
     if(o.food==="self") this.foodModule(o.slots); else this.notes.push("Еда привозная — вози Salad/Pizza guild chest'ом");
     this.infra(o.slots); if(hatch||(kit&&this.structs[kit]?.power)) this.power(hatch);
-    this.notes.push(`${farm} x${farms}: ~${L.cakes.toFixed(0)} яиц/час (${(L.cakes*24).toFixed(0)}/сутки) при полном снабжении тортами`);
+    this.notes.push(`${farm} x${farms}: ~${L.cakes.toFixed(0)} яиц/час (${(L.cakes*24).toFixed(0)}/сутки) с учётом Braloha x${o.eggBoost||1.35}`);
+    if(hatch) this.notes.push("⚠ Ancient Hatchery: скорость кладки принята как у фермы (5 мин/яйцо); гайды говорят '~10 сек/цикл' (PRELIMINARY) — замерь и впиши в «яйцо, мин»");
     this.notes.push("В пати при сборе яиц: Broncherry Aqua (альфа-яйца 45~55%) + Grintale (лишнее яйцо 50~75%)");
     this.assume.push(`Ранч ${o.ranchRate} дропов/час, кухня ${o.cookRate} тортов/час на повара — x качество`); }
   presetMineCraft(){
@@ -729,7 +731,8 @@ function builderOpts(){
   return {preset:val("pp"),slots:+val("pslots")||50,tech:+val("ptech")||60,food:val("pfood"),
     workforce:val("pwf"),roster:val("proster"),lux:document.getElementById("plux").checked,
     ranchRate:+val("pranch")||12,plantYield:+val("pyield")||60,cookRate:+val("pcook")||30,
-    plantsPerWorker:3,farms:+val("pfarms")||null,dish:val("pdish")||"Salad",dishRate:+val("pdishrate")||30};
+    plantsPerWorker:3,farms:+val("pfarms")||null,dish:val("pdish")||"Salad",dishRate:+val("pdishrate")||30,
+    eggInterval:+val("peggint")||5,eggBoost:+val("peggboost")||1.35};
 }
 
 render.planner = () => {
@@ -755,11 +758,13 @@ render.planner = () => {
     <label class="dim">плантация ед/час <input type="number" id="pyield" value="60" style="width:60px;min-width:60px"></label>
     <label class="dim">тортов/час <input type="number" id="pcook" value="30" style="width:60px;min-width:60px"></label>
     <label class="dim">ферм <input type="number" id="pfarms" style="width:60px;min-width:60px"></label>
+    <label class="dim">яйцо, мин <input type="number" id="peggint" value="5" step="0.1" style="width:60px;min-width:60px"></label>
+    <label class="dim">буст яиц x <input type="number" id="peggboost" value="1.35" step="0.05" style="width:60px;min-width:60px"></label>
     <select id="pdish"></select>
     <label class="dim">блюд/час <input type="number" id="pdishrate" value="30" style="width:60px;min-width:60px"></label>
   </div></div>
   <div id="bout"></div>`;
-  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate"]){
+  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","peggboost"]){
     document.getElementById(id).addEventListener("input",()=>{
       if(!baseDirty && BASE.buildings.length) seedFromPreset();
       else if(baseDirty){ const el=document.getElementById("rebuild-hint"); if(el) el.style.display=""; }

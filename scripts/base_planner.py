@@ -233,7 +233,9 @@ class Planner:
     def breeding_staff_for(self, farms):
         """Подсчёт голов тортовой линии на `farms` ферм (без найма). Возвращает словарь."""
         a = self.args
-        cakes_h = farms * 60 / self.bb["rates"]["breeding_egg_interval_minutes"]
+        interval = a.egg_interval or self.bb["rates"]["breeding_egg_interval_minutes"]
+        # Braloha (+20~50% скорость яиц) есть в саппортах — торты нужны чаще
+        cakes_h = farms * 60 / interval * a.egg_boost
         need = {"Flour": 5, "Red Berries": 8, "Milk": 7, "Egg": 8, "Honey": 2}
         per_h = {k: v * cakes_h for k, v in need.items()}
         rr = a.ranch_rate * self.q()   # пассивки ускоряют и ранч-палов
@@ -243,8 +245,9 @@ class Planner:
         berry = math.ceil(per_h["Red Berries"] / a.plant_yield)
         trio = 3 * math.ceil((wheat + berry) / (a.plants_per_worker * self.q()))
         cooks = max(1, math.ceil(cakes_h / (a.cook_rate * self.q())))
-        heads = 2 * farms + sum(ranch.values()) + trio + cooks + 1  # +мельник; родители в фермах тоже слоты
-        return {"cakes_h": cakes_h, "per_h": per_h, "ranch": ranch,
+        mills = max(1, math.ceil(per_h["Flour"] / 60))
+        heads = 2 * farms + sum(ranch.values()) + trio + cooks + mills  # родители в фермах тоже слоты
+        return {"cakes_h": cakes_h, "per_h": per_h, "ranch": ranch, "mills": mills,
                 "wheat": wheat, "berry": berry, "trio": trio, "cooks": cooks, "heads": heads}
 
     def preset_breeding(self):
@@ -277,8 +280,8 @@ class Planner:
         self.add("Ranch", math.ceil(sum(line["ranch"].values()) / 4))
         self.add("Wheat Plantation", line["wheat"])
         self.add("Berry Plantation", line["berry"])
-        self.add("Mill", max(1, math.ceil(line["per_h"]["Flour"] / 60)))
-        self.hire_best("Watering", 4, 1, "мельница")
+        self.add("Mill", line["mills"])
+        self.hire_best("Watering", 4, line["mills"], "мельница")
         kitchen = self.best(["Cooking Pot", "Electric Kitchen", "Large-Scale Stone Oven", "Ancient Kitchen"])
         self.add(kitchen, line["cooks"])
         self.hire_best("Kindling", 4, line["cooks"], "повар тортов")
@@ -299,14 +302,21 @@ class Planner:
             self.power(heavy=hatchery)
 
         self.notes.append(f"{farm_name} x{farms}: ~{line['cakes_h']:.0f} яиц/час = {line['cakes_h']*24:.0f}/сутки "
-                          f"при полном снабжении тортами" + (" (авто-инкубация, 10 слотов яиц)" if hatchery else ""))
+                          f"при полном снабжении тортами (с учётом Braloha x{a.egg_boost})"
+                          + (" (авто-инкубация, 10 слотов яиц)" if hatchery else ""))
+        if hatchery:
+            self.notes.append("⚠ Ancient Hatchery: скорость производства яиц принята как у обычной фермы "
+                              f"({a.egg_interval or 5} мин/яйцо). Гайды говорят про '~10 сек/цикл' (PRELIMINARY) — "
+                              "если это про кладку, а не инкубацию, спрос на торты кратно выше. "
+                              "Замерь в игре и задай --egg-interval")
         self.notes.append("Vegetable Cake удваивает яйца за цикл; Special Cake — для стакания пассивок")
         m = self.breeding_staff_for(farms + 1)["heads"] - line["heads"]
         self.notes.append(f"Масштабирование: +1 ферма = +12 яиц/час, но +{m} голов персонала — "
                           f"на этой базе потолок {farms} ферм; больше = вторая брид-база")
         self.notes.append("В пати при сборе яиц: Broncherry Aqua (45~55% альфа-яйца) + Grintale (50~75% лишнее яйцо)")
         self.assumptions.append(f"Ранч: {a.ranch_rate} дропов/час на пала (--ranch-rate) x качество; "
-                                f"кухня: {a.cook_rate} тортов/час на повара (--cook-rate)")
+                                f"кухня: {a.cook_rate} тортов/час на повара (--cook-rate); "
+                                f"яйцо {a.egg_interval or 5} мин x буст Braloha {a.egg_boost} (--egg-interval/--egg-boost)")
 
     def preset_mine_craft(self):
         a = self.args
@@ -567,6 +577,10 @@ def main():
                     help="доп. здания: 'Statue of Power:1,Pal Essence Condenser:1'")
     ap.add_argument("--dish", help="(food) целевое блюдо, например 'Pizza' или 'Cake'")
     ap.add_argument("--dish-rate", type=float, default=30, help="(food) блюд/час")
+    ap.add_argument("--egg-interval", type=float, default=None,
+                    help="(breeding) минут на яйцо (по умолчанию 5 из данных; для хатчери замерь в игре)")
+    ap.add_argument("--egg-boost", type=float, default=1.35,
+                    help="(breeding) множитель скорости яиц от Braloha +20~50%% (середина 1.35)")
     ap.add_argument("--ranch-rate", type=float, default=12, help="дропов/час на ранч-пала (ДОПУЩЕНИЕ)")
     ap.add_argument("--plant-yield", type=float, default=60, help="единиц урожая/час с плантации (ДОПУЩЕНИЕ)")
     ap.add_argument("--cook-rate", type=float, default=30, help="тортов/час на повара (ДОПУЩЕНИЕ)")
