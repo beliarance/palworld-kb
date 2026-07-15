@@ -270,19 +270,13 @@ class Planner:
                 "ranch_prod": ranch_prod, "plants_n": plants_n, "PLANTS": PLANTS,
                 "imports": imports, "trio": trio, "cooks": cooks, "mills": mills, "heads": heads}
 
-    def preset_breeding(self):
+    def _breeding_build(self, farms):
+        """Полностью строит брид-базу на `farms` ферм. Возвращает суммарное число палов.
+        Вызывается решателем несколько раз — каждый раз с чистого листа."""
         a = self.args
+        self.buildings, self.pals, self.notes, self.assumptions = {}, [], [], []
         hatchery = a.tech >= 76 and "Ancient Hatchery" in self.structs
         farm_name = "Ancient Hatchery" if hatchery else "Breeding Farm"
-        overhead = 8 + 1 + 2 + 2  # саппорт 8 + медик + транспорт 2 + электрики/прочее
-        food_slots = 4 if a.food == "self" else 0
-        budget = a.slots - overhead - food_slots
-        # решатель: максимум ферм, чья линия влезает в бюджет слотов
-        farms = a.farms
-        if not farms:
-            farms = 1
-            while farms < 40 and self.breeding_staff_for(farms + 1)["heads"] <= budget:
-                farms += 1
         line = self.breeding_staff_for(farms)
 
         support_kinds = [("egg_speed", "яйца +20~50%"), ("base_defense", "ПВО базы от рейдов")]
@@ -340,6 +334,25 @@ class Planner:
         if hatchery or (kitchen and self.structs.get(kitchen, {}).get("power")):
             self.power(heavy=hatchery)
 
+        self._breed_summary = (farm_name, hatchery, line)
+        return sum(c for _, c, _ in self.pals)
+
+    def preset_breeding(self):
+        a = self.args
+        # решатель: максимум ферм, чей ПОЛНЫЙ план (с транспортом/едой/саппортом) влезает в слоты
+        if a.farms:
+            self._breeding_build(a.farms)
+            farms = a.farms
+        else:
+            farms = 1
+            self._breeding_build(1)
+            while farms < 40:
+                if self._breeding_build(farms + 1) <= a.slots:
+                    farms += 1
+                else:
+                    self._breeding_build(farms)  # откат к последнему влезающему
+                    break
+        farm_name, hatchery, line = self._breed_summary
         self.notes.append(f"{farm_name} x{farms}: ~{line['eggs_h']:.0f} яиц/час = {line['eggs_h']*24:.0f}/сутки, тортов {line['cakes_h']:.0f}/час "
                           f"при полном снабжении тортами (x буст {a.egg_boost} (1.0 = торты лимитируют, Braloha без простоев))"
                           + (" (авто-инкубация, 10 слотов яиц)" if hatchery else ""))
@@ -348,10 +361,12 @@ class Planner:
                               f"({a.egg_interval or 5} мин/яйцо). Гайды говорят про '~10 сек/цикл' (PRELIMINARY) — "
                               "если это про кладку, а не инкубацию, спрос на торты кратно выше. "
                               "Замерь в игре и задай --egg-interval")
-        self.notes.append("Vegetable Cake удваивает яйца за цикл; Special Cake — для стакания пассивок")
-        m = self.breeding_staff_for(farms + 1)["heads"] - line["heads"]
-        self.notes.append(f"Масштабирование: +1 ферма = +12 яиц/час, но +{m} голов персонала — "
-                          f"на этой базе потолок {farms} ферм; больше = вторая брид-база")
+        if a.cake == "Vegetable Cake":
+            self.notes.append("Vegetable Cake: 2 яйца за цикл")
+        elif a.cake == "Special Cake":
+            self.notes.append("Special Cake — для стакания пассивок у потомства")
+        self.notes.append(f"Потолок {farms} ферм для {a.slots} слотов при этих настройках "
+                          f"(еда {a.food}, рабочие {a.workforce}); больше = вторая брид-база или --food shipped")
         self.notes.append("В пати при сборе яиц: Broncherry Aqua (45~55% альфа-яйца) + Grintale (50~75% лишнее яйцо)")
         self.assumptions.append(f"Ранч: {a.ranch_rate} дропов/час на пала (--ranch-rate) x качество; "
                                 f"кухня: {a.cook_rate} тортов/час на повара (--cook-rate); "
