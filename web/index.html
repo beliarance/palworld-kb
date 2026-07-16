@@ -135,11 +135,36 @@ function nav(){
   document.getElementById("nav").innerHTML = TABS.map(([k,t])=>
     `<button class="${k===cur?'active':''}" onclick="go('${k}')">${t}</button>`).join("");
 }
-function go(tab, push=true){ cur=tab; nav(); render[tab]();
+/* Состояние полей каждой вкладки: переживает переключение вкладок и «назад» в браузере.
+   Планер исключён — у него своя персистентность (localStorage, PSTORE). */
+const TABSTATE=(()=>{ try{ return JSON.parse(sessionStorage.getItem("palkb_tabstate")||"{}"); }catch(e){ return {}; } })();
+function saveTabField(e){
+  const t=e.target; if(!t.id||cur==="planner") return;
+  (TABSTATE[cur]=TABSTATE[cur]||{})[t.id]=t.type==="checkbox"?t.checked:t.value;
+  try{ sessionStorage.setItem("palkb_tabstate", JSON.stringify(TABSTATE)); }catch(err){}
+}
+function restoreTabState(tab){
+  if(tab==="planner") return;
+  const st=TABSTATE[tab]; if(!st) return;
+  for(const [id,v] of Object.entries(st)){           // сначала все значения,
+    const el=document.getElementById(id); if(!el) continue;
+    if(el.type==="checkbox") el.checked=!!v; else el.value=v;
+  }
+  for(const id of Object.keys(st)){                  // потом события — draw читает всё разом
+    const el=document.getElementById(id); if(!el) continue;
+    if(el.type!=="checkbox") el.dispatchEvent(new Event("input",{bubbles:true}));
+    el.dispatchEvent(new Event("change",{bubbles:true})); // селекты/таблицы часто слушают change
+  }
+}
+function go(tab, push=true){ cur=tab; nav(); render[tab](); restoreTabState(tab);
   if(push){ try{ history.pushState({tab}, "", "#"+tab); }catch(e){} } }
 window.addEventListener("popstate", e=>{
-  const t=(e.state&&e.state.tab)||location.hash.slice(1)||"pal";
-  if(render[t]){ cur=t; nav(); render[t](); }
+  const st=e.state||{};
+  const t=st.tab||location.hash.slice(1)||"pal";
+  if(!render[t]) return;
+  cur=t; nav(); render[t](); restoreTabState(t);
+  if(st.pal) showPal(st.pal,false);
+  else if(st.item) showItem(st.item,false);
 });
 const V = () => document.getElementById("view");
 const datalist = (id,names)=>`<datalist id="${id}">${names.map(n=>`<option value="${esc(n)}">`).join("")}</datalist>`;
@@ -151,11 +176,16 @@ render.pal = () => {
   V().innerHTML = `<div class="card"><div class="row">
     <input type="text" id="palq" list="palnames" placeholder="Имя пала… (например Anubis)" autofocus>
     </div>${datalist("palnames",Object.keys(P).sort())}</div><div id="palout"></div>`;
-  document.getElementById("palq").addEventListener("input",e=>{ if(P[e.target.value]) showPal(e.target.value); });
+  document.getElementById("palq").addEventListener("input",e=>{ if(P[e.target.value]) showPal(e.target.value,false); });
 };
-function showPal(name){
-  if(cur!=="pal"){ go("pal"); document.getElementById("palq").value=name; }
+function showPal(name, push=true){
   const p=P[name]; if(!p) return;
+  if(cur!=="pal"){ cur="pal"; nav(); render.pal(); }
+  const q=document.getElementById("palq"); if(q&&q.value!==name) q.value=name;
+  saveTabField({target:q});
+  if(push){ try{ const st=history.state||{};
+    if(!(st.tab==="pal"&&st.pal===name)) history.pushState({tab:"pal",pal:name},"","#pal");
+  }catch(e){} }
   const loc=D.loc.pals[name]||{};
   const learn=(D.skills.learnsets[name]||[]).slice().sort((a,b)=>a.level-b.level);
   const skillBy=Object.fromEntries(D.skills.skills.map(s=>[s.name,s]));
@@ -293,7 +323,7 @@ render.items = () => {
     const q=e.target.value.toLowerCase(); if(q.length<2){document.getElementById("isuggest").innerHTML="";return;}
     const m=D.items.items.filter(i=>i.name.toLowerCase().includes(q)).slice(0,24);
     const exact=m.find(i=>i.name.toLowerCase()===q);
-    if(exact) showItem(exact.name);
+    if(exact) showItem(exact.name,false);
     document.getElementById("isuggest").innerHTML=m.map(i=>`<span class="tag clicky" onclick="showItem('${i.name.replace(/'/g,"\\'")}')">${esc(i.name)}</span>`).join("");
   });
 };
@@ -304,9 +334,14 @@ function craftTree(name, qty, depth, out, raw){
     for(const [m,q] of Object.entries(r.materials)) craftTree(m,q*qty,depth+1,out,raw);
   } else raw[name]=(raw[name]||0)+qty;
 }
-function showItem(name){
-  if(cur!=="items"){ go("items"); document.getElementById("itemq").value=name; }
+function showItem(name, push=true){
   const it=itemByName[name]; if(!it) return;
+  if(cur!=="items"){ cur="items"; nav(); render.items(); }
+  const q=document.getElementById("itemq"); if(q&&q.value!==name) q.value=name;
+  saveTabField({target:q});
+  if(push){ try{ const st=history.state||{};
+    if(!(st.tab==="items"&&st.item===name)) history.pushState({tab:"items",item:name},"","#items");
+  }catch(e){} }
   let html=`<div class="card"><div class="big">${itemIcon(it.name)}${esc(it.name)} <span class="tag">${esc(it.category)}</span>${it.tech_level?`<span class="tag">tech ${it.tech_level}</span>`:""}</div>`;
   if(it.recipe){
     const mats=Object.entries(it.recipe.materials).map(([m,q])=>`${itemLink(m)} ×${q}`).join(", ");
@@ -1357,10 +1392,15 @@ function builderShowPicker(){
 loadAll().then(()=>{
   document.getElementById("loading").style.display="none";
   document.getElementById("view").style.display="";
-  const h=location.hash.slice(1);
+  document.getElementById("view").addEventListener("input",saveTabField);
+  document.getElementById("view").addEventListener("change",saveTabField);
+  const st=history.state||{};
+  const h=st.tab||location.hash.slice(1);
   if(render[h]) cur=h;
-  nav(); render[cur]();
-  try{ history.replaceState({tab:cur}, "", "#"+cur); }catch(e){}
+  nav(); render[cur](); restoreTabState(cur);
+  if(st.pal&&cur==="pal") showPal(st.pal,false);
+  else if(st.item&&cur==="items") showItem(st.item,false);
+  try{ history.replaceState({...st,tab:cur}, "", "#"+cur); }catch(e){}
 }).catch(e=>{
   document.getElementById("loading").innerHTML=`<span class="bad">Ошибка загрузки данных: ${esc(e.message)}</span><br>
   Открой через локальный сервер: <code>python3 -m http.server 8842</code> из корня проекта → <code>http://localhost:8842/web/</code>`;
