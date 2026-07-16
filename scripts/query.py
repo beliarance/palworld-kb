@@ -749,11 +749,21 @@ def cmd_party(db, args):
                     return n
         return None
 
+    def fighter_rank(p):
+        """Ранг из консенсусного тир-листа (fighters#N); формула урона множит только Attack."""
+        for h in (P.get(p["name"], {}).get("tier_hits") or []):
+            if h.startswith("fighters#"):
+                return int(h[9:])
+        return 999
+
+    def fighter_key(p):
+        return (fighter_rank(p), -attack(p), -(p["hp"] + p["defense"]))
+
     def top_fighter(element=None, exclude=()):
         pool = [p for p in db.values() if p.get("hp") and p["name"] not in used and p["name"] not in exclude]
         if element:
             pool = [p for p in pool if element in p["elements"]]
-        pool.sort(key=lambda p: -(attack(p) * 2 + p["hp"] + p["defense"]))
+        pool.sort(key=fighter_key)
         return pool[0]["name"] if pool else None
 
     def add(n, role):
@@ -768,10 +778,10 @@ def cmd_party(db, args):
                     and p["name"] != "Astralym"]  # сам босс — Not catchable
             if mount:
                 pool = [p for p in pool if p.get("mount_type") == mount]
-            pool.sort(key=lambda p: -(attack(p) * 2 + p["hp"] + p["defense"]))
+            pool.sort(key=fighter_key)
             return pool
         f1 = (fpool("flying") if args.sea else fpool())[0]["name"]
-        add(f1, "⚔ боец-флаер: топ статов + пережить цунами верхом" if args.sea else "⚔ боец (топ по статам)")
+        add(f1, "⚔ боец-флаер: топ тир-листа + пережить цунами верхом" if args.sea else "⚔ боец (топ тир-листа бойцов)")
         fighter_skills[f1] = best_skills(f1, None)
         f2 = (fpool("swim") or fpool())[0]["name"] if args.sea else fpool()[0]["name"]
         add(f2, "⚔ 2-й боец + плавающий маунт (морская арена) — свап" if args.sea else "⚔ 2-й боец (свап)")
@@ -779,7 +789,7 @@ def cmd_party(db, args):
         pick("стак с пуль: +ATK/DEF активному палу (до x30)", "bullet_stack", "cd_support")
         pick("бафф игрока: +Attack", "player_atk_unique", "player_atk")
         pick("выживание: хил/реген (бой долгий)", "survival")
-        notes.append("Стихийного каунтера НЕТ — решают голые статы: Awakening, 4★, пассивки (Legend/Musclehead), уровень")
+        notes.append("Стихийного каунтера НЕТ — бойцы по консенсусу тир-листов 1.0; решают Awakening, 4★, пассивки (Legend/Musclehead), уровень")
         if args.sea:
             notes.append("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами (player-reported)")
     elif goal == "combat":
@@ -799,7 +809,7 @@ def cmd_party(db, args):
             pool = [p for p in db.values() if p.get("hp") and p["name"] not in used and fe in p["elements"]]
             if mount:
                 pool = [p for p in pool if p.get("mount_type") in mount]
-            pool.sort(key=lambda p: -(attack(p) * 2 + p["hp"] + p["defense"]))
+            pool.sort(key=fighter_key)
             return pool
         f1p = (fe_pool(("flying", "swim")) or fe_pool())[0] if args.sea else fe_pool()[0]
         f1 = f1p["name"]

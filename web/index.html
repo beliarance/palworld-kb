@@ -305,7 +305,7 @@ render.counter = () => {
       <div class="sub" style="margin-bottom:6px">2 бойца (свапаешь, если первый падает) + 3 ауры; скиллы с ×2 — то, к чему босс слаб</div>`
       +(()=>{const C=buildCombatParty(fe, enemy, true, sea); return partyCardsHTML(C.picks, C.notes, enemy)+accessoryCardHTML(accessoriesFor("combat", fe, enemy));})();
     } else {
-      party=`<h3 style="margin-top:12px">Боевая пати под босса (каунтера нет — топ по статам)</h3>
+      party=`<h3 style="margin-top:12px">Боевая пати под босса (каунтера нет — топ бойцов)</h3>
       <div class="sub" style="margin-bottom:6px">${esc(b.arena||"")}</div>`
       +(()=>{const C=buildRawParty([b.pal], sea); return partyCardsHTML(C.picks, C.notes, null)
         +accessoryCardHTML([{n:"Dogen Emblem",why:"тебе и палу: +атака",eff:(itemByName["Dogen Emblem"]||{}).effect||""},
@@ -538,7 +538,7 @@ function partyBuilder(){
   B.add=(n,role,alts=[])=>{ if(n){ B.used.add(n); B.picks.push({n,role,alts}); } };
   B.topFighter=el=>{
     const pool=Object.values(P).filter(p=>p.hp&&!B.used.has(p.name)&&(!el||p.elements.includes(el)))
-      .sort((a,b)=>(atk(b)*2+b.hp+b.def)-(atk(a)*2+a.hp+a.def));
+      .sort(fighterCmp);
     return pool.length?pool[0].name:null;
   };
   return B;
@@ -546,8 +546,7 @@ function partyBuilder(){
 /* боевая пати: боец стихии fe против врага enemy (общая для вкладок Пати и Каунтеры) */
 function buildCombatParty(fe, enemy, two, sea){
   const chart=D.chart.chart, B=partyBuilder();
-  const score=p=>atk(p)*2+p.hp+p.def;
-  const fePool=()=>Object.values(P).filter(p=>p.hp&&!B.used.has(p.name)&&p.elements.includes(fe)).sort((a,b)=>score(b)-score(a));
+  const fePool=()=>Object.values(P).filter(p=>p.hp&&!B.used.has(p.name)&&p.elements.includes(fe)).sort(fighterCmp);
   let f1p=sea?fePool().find(p=>p.mount==="flying"||p.mount==="swim"):null;
   if(!f1p) f1p=fePool()[0];
   const f1=f1p&&f1p.name;
@@ -621,18 +620,22 @@ function accessoryCardHTML(accs){
      <div class="sub">${esc(a.eff.replace(/\n/g," "))}</div>
      <div class="sub">📥 ${esc(accObtain(it))}</div></div>`;}).join("")}</div>`;
 }
+/* бойцов ранжируем консенсусом тир-листов (fighters#N из tier_lists), затем атакой:
+   формула урона игры множит только Attack — bulk атакеру DPS не даёт */
+const fighterRank=p=>{const h=(D.idx.pals[p.name]||{}).tier_hits||[];
+  const m=h.find(x=>x.startsWith("fighters#")); return m?+m.slice(9):999;};
+const fighterCmp=(a,b)=>fighterRank(a)-fighterRank(b)||atk(b)-atk(a)||(b.hp+b.def)-(a.hp+a.def);
 /* raw-пати: босс без стихийного каунтера — топ по статам, наименее уязвимая обвязка.
    exclude: сам босс (Not catchable); sea: морская арена (swim обязателен, flyer от цунами) */
 function buildRawParty(exclude, sea){
   const B=partyBuilder();
   (exclude||[]).forEach(n=>B.used.add(n));
-  const score=p=>atk(p)*2+p.hp+p.def;
-  const pool=()=>Object.values(P).filter(p=>p.hp&&!B.used.has(p.name)).sort((a,b)=>score(b)-score(a));
+  const pool=()=>Object.values(P).filter(p=>p.hp&&!B.used.has(p.name)).sort(fighterCmp);
   let f1;
   if(sea){ f1=pool().find(p=>p.mount==="flying"); }
   if(!f1) f1=pool()[0];
   const alts1=pool().filter(p=>p.mount==="flying"&&p.name!==f1.name).slice(0,3).map(p=>p.name);
-  B.add(f1.name, sea?"⚔ боец-флаер: топ статов + пережить цунами верхом":"⚔ боец (топ по статам)", alts1);
+  B.add(f1.name, sea?"⚔ боец-флаер: топ тир-листа + пережить цунами верхом":"⚔ боец (топ тир-листа бойцов)", alts1);
   B.picks[0].fighter=true;
   let f2;
   if(sea){ f2=pool().find(p=>p.mount==="swim"); }
@@ -643,7 +646,7 @@ function buildRawParty(exclude, sea){
   B.pick("стак с пуль: +ATK/DEF активному палу (до x30)","bullet_stack","cd_support");
   B.pick("бафф игрока: +Attack","player_atk_unique","player_atk");
   B.pick("выживание: хил/реген (бой долгий)","survival");
-  B.notes.push("Стихийного каунтера НЕТ — решают голые статы: Awakening, 4★, пассивки (Legend/Musclehead), уровень");
+  B.notes.push("Стихийного каунтера НЕТ — бойцы по консенсусу тир-листов 1.0; решают Awakening, 4★, пассивки (Legend/Musclehead), уровень");
   if(sea) B.notes.push("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами <span class='dim'>(player-reported)</span>");
   if(B.picks.some(p=>p.n==="Orserk")) B.notes.push("Orserk (#187): стаки дают ПУЛИ — Drone Launcher (tech 77) набивает их сам, в руках Mechanical Bow (tech 67) <span class='dim'>(мета-гайды июля 2026, PRELIMINARY)</span>");
   if(B.picks.some(p=>p.n==="Solenne")) B.notes.push("Solenne: +30~80% атаки игрока ТОЛЬКО если все 5 палов разных видов");

@@ -279,3 +279,16 @@
 - Panthalus призывается предметом Echoing Flute (key_item, крафт: Marine/Silent/
   Seafoam/Tidewind Echobone x1 на Primitive Workbench) по основному квесту;
   призыв переносит на водную арену. bosses.json + pal_locations.json обновлены.
+
+## 2026-07-16 — Panthalus НЕ атакер: best_fighters переписан по консенсусу редакций
+- Веб-ресёрч (агент): Panthalus (#203) отсутствует во ВСЕХ редакторских списках лучших
+  бойцов 1.0 (oslink, nexttier, gamerant, neonlightsmedia, game8) — его роль в гайдах:
+  летающий маунт + уникальная ПВО базы (партнёрка, 1 на базу). S-tier дают только
+  формульные сайты (palworld.gg сетка без обоснований; palmods-индекс 65% offense +
+  35% bulk), где его аномальный bulk (HP 180/DEF 200) раздувает скор при ATK 120.
+  Формула урона игры (palworldcompanion.com): урон множит ТОЛЬКО Attack.
+- tier_lists.json best_fighters: переупорядочен по частоте в редакторских списках
+  (Jetragon, Necromus, Xenolord, Frostallion/Noct, Shadowbeak, Bellanoir Libero,
+  Blazamut Ryu, Jormuntide Ignis, Neptilius, ...); Panthalus исключён.
+- Подбор бойцов в пати (веб+CLI): сначала ранг тир-листа, затем Attack
+  (вместо старой формулы 2*ATK+HP+DEF, которая переоценивала танков).

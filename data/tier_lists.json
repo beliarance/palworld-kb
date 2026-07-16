@@ -1,186 +1,613 @@
 {
-  "game_version": "1.0",
-  "updated": "2026-07-14",
-  "best_mounts_ground": [
-    { "name": "Hartalis", "note": "Fastest ground mount in 1.0 with a triple jump for scaling terrain; unlocked via raid-boss summon." },
-    { "name": "Necromus", "note": "Legendary; among the highest sprint speeds plus a dash skill — the classic endgame ground king." },
-    { "name": "Paladius", "note": "Legendary counterpart to Necromus; dash plus high triple-jump, tankier ride." },
-    { "name": "Fenglope", "note": "Best speed-to-effort ratio: double jump, low-gravity float, easy mid-game capture." },
-    { "name": "Ophydia", "note": "S-tier ground mount on palworld.gg that doubles as a top-tier swimmer — best amphibious option." },
-    { "name": "Azurmane", "note": "New 1.0 Electric steed; S-tier ground speed on palworld.gg." },
-    { "name": "Dazemu", "note": "Fast mid-game runner; S-tier on palworld.gg ground list." },
-    { "name": "Starryon", "note": "S-tier 1.0 ground mount (Primo variant equally rated)." },
-    { "name": "Pyrin", "note": "Accessible fire mount with S-tier ground rating; great mid-game pick." },
-    { "name": "Direhowl", "note": "Earliest saddle in the game yet still one of the faster ground mounts — best early option." }
-  ],
-  "best_mounts_flying": [
-    { "name": "Jetragon", "note": "Fastest Pal in the game (~3300 ride sprint) — more than double the next flyer; low stamina, best for short hops." },
-    { "name": "Xenolord", "note": "~2700 sprint with a far bigger stamina pool than Jetragon — the long-haul flyer (palworld.gg rates its handling lower)." },
-    { "name": "Panthalus", "note": "New 1.0 legendary; S-tier flying mount on palworld.gg." },
-    { "name": "Shaolong", "note": "S-tier 1.0 flyer on palworld.gg; also the best Watering worker." },
-    { "name": "Eidrolon", "note": "S-tier flyer on palworld.gg (Ignis variant equally rated)." },
-    { "name": "Frostallion", "note": "~1800 sprint; best legendary flyer that is also a top combat pal (Noct variant same speed, Dark attacks)." },
-    { "name": "Selyne", "note": "A-tier flyer on palworld.gg that doubles as an elite Handiwork/Medicine base worker." },
-    { "name": "Shadowbeak", "note": "~1600 sprint; best combat flier outside the legendaries." },
-    { "name": "Faleris", "note": "~1400 sprint; best pre-endgame progression flyer (Aqua variant similar)." },
-    { "name": "Ragnahawk", "note": "~1300 sprint; solid mid-game fire flyer." },
-    { "name": "Nitewing", "note": "First flying mount most players get; fine until Faleris." }
-  ],
-  "best_mounts_swim": [
-    { "name": "Neptilius", "note": "Best swimmer in 1.0: highest sprint speed and largest stamina pool, plus a huge water leap; level ~60 Alpha." },
-    { "name": "Ophydia", "note": "Second-fastest swimmer; highest tech unlock, inflicts Soak, also an S-tier ground mount." },
-    { "name": "Jormuntide", "note": "Long-standing water speed king; near-top speed with damage-synergy partner skill." },
-    { "name": "Ghangler", "note": "Underrated early-ish swim mount with big stamina; fishing bite-speed partner skill (Ignis variant similar)." },
-    { "name": "Solmora", "note": "Fast swimmer and fishing specialist for landing high-stat catches." },
-    { "name": "Surfent", "note": "Earliest swim saddle (low tech level); good speed for its unlock point." },
-    { "name": "Azurobe", "note": "Best early-mid water mount; adds Water damage to your attacks while riding (Cryst variant gives Ice)." },
-    { "name": "Whalaska", "note": "Slower cruiser but boosts the fishing catch gauge — pick if you fish a lot (Ignis variant similar)." }
-  ],
-  "best_fighters": [
-    { "name": "Jetragon", "note": "Legendary Dragon: huge Shot Attack, homing-missile partner skill, and unmatched mobility." },
-    { "name": "Frostallion", "note": "Legendary Ice: exceptional Attack and survivability — the standard answer to Dragons (Frostallion Noct is the equally rated Dark version)." },
-    { "name": "Necromus", "note": "Legendary Dark with one of the highest Attack stats; counters the many Neutral mobs and doubles as a top ground mount." },
-    { "name": "Paladius", "note": "Legendary with outstanding survivability; balanced offense/defense anchor." },
-    { "name": "Astralym", "note": "1.0 World Tree legendary; S-tier on palworld.gg's 1.0 combat list." },
-    { "name": "Panthalus", "note": "New 1.0 legendary, S-tier combat rating on palworld.gg." },
-    { "name": "Neptilius", "note": "Highest Attack among Water pals with strong burst damage; S-tier on both palworld.gg and oslink 1.0 lists." },
-    { "name": "Xenolord", "note": "Raid legendary: overwhelming offense with strong defenses." },
-    { "name": "Bellanoir Libero", "note": "Raid-boss Dark nuker with powerful exclusive skills (base Bellanoir also S-tier on palworld.gg)." },
-    { "name": "Jormuntide Ignis", "note": "Best non-legendary: exceptional Attack and devastating exclusive skills; top Dragon pick." },
-    { "name": "Blazamut Ryu", "note": "Dragon/Fire with incredible offensive stats; tops the non-legendary field alongside Jormuntide Ignis." },
-    { "name": "Anubis", "note": "Strongest pal you can realistically get early via breeding; elite in combat and at base work." }
-  ],
-  "best_for_fishing": [
-    { "name": "Whalaska", "note": "Catch meter starts partly filled and fills faster while fishing (Whalaska Ignis has the improved version)." },
-    { "name": "Ghangler", "note": "Pals/fish bite faster while Ghangler is active; also a good swim mount (Ignis variant triggers for Fire/Water)." },
-    { "name": "Gloopie", "note": "Slows gauge drain when the bar is off the fish; at 4-star condense it trivializes even Master fishing spots." },
-    { "name": "Jelliette", "note": "More items gained through fishing — the loot-quantity pick." },
-    { "name": "Jellroy", "note": "More and better loot from salvage actions while fishing." },
-    { "name": "Solmora", "note": "Fishing-specialist swim mount geared toward catching high-stat pals." }
-  ],
-  "best_base_workers_by_task": {
-    "kindling": [
-      { "name": "Renjishi", "note": "Kindling Lv 8 — highest wild kindling in 1.0; also Handiwork 6 and Transporting 5." },
-      { "name": "Jormuntide Ignis", "note": "Kindling Lv 7 pure specialist; never wanders to other jobs." },
-      { "name": "Flaracle", "note": "Kindling Lv 7 with Handiwork 6 — great dual-role furnace pal." },
-      { "name": "Dupin", "note": "Kindling Lv 7 plus Handiwork 5 and Medicine 4." },
-      { "name": "Blazamut Ryu", "note": "Kindling Lv 6 and Mining 7 — furnace-and-ore combo." },
-      { "name": "Eidrolon Ignis", "note": "Kindling Lv 6 with Transporting 6 — feeds its own furnaces." }
-    ],
-    "watering": [
-      { "name": "Shaolong", "note": "Watering Lv 8 — the 1.0 watering king; adds Gathering 5." },
-      { "name": "Neptilius", "note": "Watering Lv 7 on a legendary chassis." },
-      { "name": "Jormuntide", "note": "Watering Lv 7 pure specialist, easy late-game catch." },
-      { "name": "Suzaku Aqua", "note": "Watering Lv 6." },
-      { "name": "Faleris Aqua", "note": "Watering Lv 6 plus Transporting 5 — waters crops and hauls them." },
-      { "name": "Ophydia", "note": "Watering Lv 5 with Planting 7 — one-pal plantation." }
-    ],
-    "planting": [
-      { "name": "Dandilord", "note": "Planting Lv 8 — best in 1.0; also Handiwork 6, Medicine 6, Gathering 5." },
-      { "name": "Ophydia", "note": "Planting Lv 7 with Watering 5 — covers two farm jobs." },
-      { "name": "Lyleen", "note": "Planting Lv 7 plus Gathering 6 and Handiwork 5." },
-      { "name": "Silvance", "note": "Planting Lv 6 on the best Medicine pal (8)." },
-      { "name": "Mycora", "note": "Planting Lv 6 with Medicine 6." },
-      { "name": "Carnibora", "note": "Planting Lv 6 with Handiwork/Gathering 4." }
-    ],
-    "generating_electricity": [
-      { "name": "Orserk", "note": "Electricity Lv 8 — clear best generator in 1.0; also Transporting 4." },
-      { "name": "Solmora Lux", "note": "Electricity Lv 6 plus Watering 4." },
-      { "name": "Dynamoff", "note": "Electricity Lv 6 with Gathering/Transporting 3." },
-      { "name": "Grizzbolt", "note": "Electricity Lv 5 with Handiwork 4 and Transporting 5 — classic all-rounder." },
-      { "name": "Fenglope Lux", "note": "Electricity Lv 5." },
-      { "name": "Azurmane", "note": "Electricity Lv 5 and doubles as an S-tier ground mount." }
-    ],
-    "handiwork": [
-      { "name": "Solenne", "note": "Handiwork Lv 8 — best pure crafter in 1.0; Gathering 4." },
-      { "name": "Selyne", "note": "Handiwork Lv 7 with Medicine 6 and Transporting 3 — strongest multi-role crafter." },
-      { "name": "Wistella", "note": "Handiwork Lv 6 with Medicine 6." },
-      { "name": "Venusa", "note": "Handiwork Lv 6 with Gathering 6 and Medicine 5." },
-      { "name": "Splatterina", "note": "Handiwork Lv 6 with Medicine 5." },
-      { "name": "Anubis", "note": "Handiwork Lv 6 plus Mining 6 — breedable far earlier than the Lv-7+ options." },
-      { "name": "Renjishi", "note": "Handiwork Lv 6 on the best Kindling pal." }
-    ],
-    "gathering": [
-      { "name": "Jetragon", "note": "Gathering Lv 8 — surprisingly the best gatherer in 1.0." },
-      { "name": "Starryon Primo", "note": "Gathering Lv 7 (base Starryon is Lv 5)." },
-      { "name": "Hartalis", "note": "Gathering Lv 7 plus Lumbering 7." },
-      { "name": "Frostallion Noct", "note": "Gathering Lv 7 on a legendary." },
-      { "name": "Venusa", "note": "Gathering Lv 6 with Handiwork 6." },
-      { "name": "Lyleen", "note": "Gathering Lv 6 with Planting 7 (Lyleen Noct also Gathering 6)." }
-    ],
-    "lumbering": [
-      { "name": "Celesdir Noct", "note": "Lumbering Lv 8 — best logger in 1.0 (base Celesdir is Lv 7)." },
-      { "name": "Hartalis", "note": "Lumbering Lv 7 plus Gathering 7." },
-      { "name": "Celesdir", "note": "Lumbering Lv 7, easier to obtain than the Noct form." },
-      { "name": "Silvegis", "note": "Lumbering Lv 6." },
-      { "name": "Bastigor", "note": "Lumbering Lv 6 on the best Cooling pal (8)." },
-      { "name": "Paladius", "note": "Lumbering Lv 6 (Necromus matches it) — legendary side job." }
-    ],
-    "mining": [
-      { "name": "Aegidron", "note": "Mining Lv 8 — the 1.0 mining king." },
-      { "name": "Knocklem", "note": "Mining Lv 7 with Transporting 7 — mines and hauls (Ignis variant identical plus Kindling 5)." },
-      { "name": "Blazamut", "note": "Mining Lv 7 with Kindling 6 — classic ore-and-furnace pal (Ryu variant same)." },
-      { "name": "Astegon", "note": "Mining Lv 7 with Handiwork 3." },
-      { "name": "Anubis", "note": "Mining Lv 6 plus Handiwork 6; breedable mid-game." },
-      { "name": "Dualith", "note": "Mining Lv 6 with Transporting 6 (Noct variant identical)." }
-    ],
-    "medicine": [
-      { "name": "Silvance", "note": "Medicine Lv 8 — best pharmacist in 1.0; also Planting 6 and Handiwork 6." },
-      { "name": "Lyleen Noct", "note": "Medicine Lv 7 with Gathering 6 and Handiwork 5." },
-      { "name": "Bellanoir Libero", "note": "Medicine Lv 7 with Handiwork 6." },
-      { "name": "Wistella", "note": "Medicine Lv 6 with Handiwork 6." },
-      { "name": "Selyne", "note": "Medicine Lv 6 on the second-best Handiwork pal." },
-      { "name": "Mycora", "note": "Medicine Lv 6 with Planting 6." }
-    ],
-    "cooling": [
-      { "name": "Bastigor", "note": "Cooling Lv 8 — best cooler in 1.0; also Mining 5 and Lumbering 6." },
-      { "name": "Frostallion", "note": "Cooling Lv 7 legendary specialist." },
-      { "name": "Whalaska Ignis", "note": "Cooling Lv 6 (base Whalaska also 6)." },
-      { "name": "Univolt Cryst", "note": "Cooling Lv 6." },
-      { "name": "Pierdon Cryst", "note": "Cooling Lv 6 with Mining 5." },
-      { "name": "Reptyro Cryst", "note": "Cooling Lv 5 with Mining 5 — classic fridge-plus-quarry pal." }
-    ],
-    "transporting": [
-      { "name": "Knocklem", "note": "Transporting Lv 7 with Mining 7 — best hauler in 1.0 (Ignis variant identical)." },
-      { "name": "Wumpo Botan", "note": "Transporting Lv 6 with Planting/Handiwork 3 (base Wumpo also 6, with Cooling 5)." },
-      { "name": "Eidrolon", "note": "Transporting Lv 6 (Ignis variant adds Kindling 6)." },
-      { "name": "Dualith", "note": "Transporting Lv 6 with Mining 6 (Noct variant identical)." },
-      { "name": "Grizzbolt", "note": "Transporting Lv 5 with Electricity 5 and Handiwork 4." },
-      { "name": "Faleris Aqua", "note": "Transporting Lv 5 on the second-best Watering pal." }
-    ],
-    "farming": [
-      { "name": "Sibelyx Primo", "note": "Farming Lv 4 — highest ranch level in 1.0 wild data." },
-      { "name": "Dumud Gild", "note": "Farming Lv 4 — new 1.0 gilded variant, top-level rancher." },
-      { "name": "Sibelyx", "note": "Farming Lv 3; produces High Quality Cloth." },
-      { "name": "Shroomer", "note": "Farming Lv 3." },
-      { "name": "Foxcicle", "note": "Farming Lv 3." },
-      { "name": "Beegarde", "note": "Farming Lv 3; honey producer for cake/breeding pipelines." },
-      { "name": "Mozzarina", "note": "Farming Lv 2; milk for cakes." },
-      { "name": "Chikipi", "note": "Farming Lv 1; eggs — kept for cake ingredients despite the low level." }
-    ]
+ "game_version": "1.0",
+ "updated": "2026-07-14",
+ "best_mounts_ground": [
+  {
+   "name": "Hartalis",
+   "note": "Fastest ground mount in 1.0 with a triple jump for scaling terrain; unlocked via raid-boss summon."
   },
-  "notes": [
-    "All placements are from sources updated for the 1.0 release (July 2026); no pre-1.0-only list was used for rankings.",
-    "Work levels in notes are wild base values from data/palworld_pals.csv (1.0 scale, wild max 8); sources state suitability can be pushed to 10 via breeding and Pal condensing.",
-    "Every base-worker pick was cross-checked against the CSV work columns; palworld.gg's displayed levels matched the CSV everywhere checked (Renjishi Kindling 8, Shaolong Watering 8, Orserk Electricity 8, Solenne Handiwork 8, Aegidron Mining 8, Silvance Medicine 8, Bastigor Cooling 8, Jetragon Gathering 8, Knocklem Transporting 7).",
-    "pindrop.gg's tier list was fetched but SKIPPED: it still uses pre-1.0 roster/names (e.g. 'Dragostrophe' and 'Ice Kingpaca', which are not in the 1.0 pal list) and covers only 172 pals.",
-    "game8.co pages (best mounts 440495, best base pals 440432, combat 440279) and mobalytics.gg were bot-blocked (AWS WAF / Cloudflare challenge) and could not be read; rankings lean on palworld.gg plus the other sources below instead.",
-    "Normalized source typos to CSV canonical names: 'Paldius' -> Paladius, 'Neptilus' -> Neptilius (thebiglead.com).",
-    "Swimming speed figures differ between sources (nexttier vs palworldzone); the palworldzone 1.0 tier ordering was used, with Ophydia vs Jormuntide order per its tier placement.",
-    "Farming = ranch production; it caps at Lv 4 in 1.0 wild data, and the produced item matters more than the level (e.g. Beegarde honey, Mozzarina milk, Chikipi eggs for cakes).",
-    "Fishing is a 1.0/0.6+ feature; the fishing list is based on partner-skill effects, not a formal tier list."
+  {
+   "name": "Necromus",
+   "note": "Legendary; among the highest sprint speeds plus a dash skill — the classic endgame ground king."
+  },
+  {
+   "name": "Paladius",
+   "note": "Legendary counterpart to Necromus; dash plus high triple-jump, tankier ride."
+  },
+  {
+   "name": "Fenglope",
+   "note": "Best speed-to-effort ratio: double jump, low-gravity float, easy mid-game capture."
+  },
+  {
+   "name": "Ophydia",
+   "note": "S-tier ground mount on palworld.gg that doubles as a top-tier swimmer — best amphibious option."
+  },
+  {
+   "name": "Azurmane",
+   "note": "New 1.0 Electric steed; S-tier ground speed on palworld.gg."
+  },
+  {
+   "name": "Dazemu",
+   "note": "Fast mid-game runner; S-tier on palworld.gg ground list."
+  },
+  {
+   "name": "Starryon",
+   "note": "S-tier 1.0 ground mount (Primo variant equally rated)."
+  },
+  {
+   "name": "Pyrin",
+   "note": "Accessible fire mount with S-tier ground rating; great mid-game pick."
+  },
+  {
+   "name": "Direhowl",
+   "note": "Earliest saddle in the game yet still one of the faster ground mounts — best early option."
+  }
+ ],
+ "best_mounts_flying": [
+  {
+   "name": "Jetragon",
+   "note": "Fastest Pal in the game (~3300 ride sprint) — more than double the next flyer; low stamina, best for short hops."
+  },
+  {
+   "name": "Xenolord",
+   "note": "~2700 sprint with a far bigger stamina pool than Jetragon — the long-haul flyer (palworld.gg rates its handling lower)."
+  },
+  {
+   "name": "Panthalus",
+   "note": "New 1.0 legendary; S-tier flying mount on palworld.gg."
+  },
+  {
+   "name": "Shaolong",
+   "note": "S-tier 1.0 flyer on palworld.gg; also the best Watering worker."
+  },
+  {
+   "name": "Eidrolon",
+   "note": "S-tier flyer on palworld.gg (Ignis variant equally rated)."
+  },
+  {
+   "name": "Frostallion",
+   "note": "~1800 sprint; best legendary flyer that is also a top combat pal (Noct variant same speed, Dark attacks)."
+  },
+  {
+   "name": "Selyne",
+   "note": "A-tier flyer on palworld.gg that doubles as an elite Handiwork/Medicine base worker."
+  },
+  {
+   "name": "Shadowbeak",
+   "note": "~1600 sprint; best combat flier outside the legendaries."
+  },
+  {
+   "name": "Faleris",
+   "note": "~1400 sprint; best pre-endgame progression flyer (Aqua variant similar)."
+  },
+  {
+   "name": "Ragnahawk",
+   "note": "~1300 sprint; solid mid-game fire flyer."
+  },
+  {
+   "name": "Nitewing",
+   "note": "First flying mount most players get; fine until Faleris."
+  }
+ ],
+ "best_mounts_swim": [
+  {
+   "name": "Neptilius",
+   "note": "Best swimmer in 1.0: highest sprint speed and largest stamina pool, plus a huge water leap; level ~60 Alpha."
+  },
+  {
+   "name": "Ophydia",
+   "note": "Second-fastest swimmer; highest tech unlock, inflicts Soak, also an S-tier ground mount."
+  },
+  {
+   "name": "Jormuntide",
+   "note": "Long-standing water speed king; near-top speed with damage-synergy partner skill."
+  },
+  {
+   "name": "Ghangler",
+   "note": "Underrated early-ish swim mount with big stamina; fishing bite-speed partner skill (Ignis variant similar)."
+  },
+  {
+   "name": "Solmora",
+   "note": "Fast swimmer and fishing specialist for landing high-stat catches."
+  },
+  {
+   "name": "Surfent",
+   "note": "Earliest swim saddle (low tech level); good speed for its unlock point."
+  },
+  {
+   "name": "Azurobe",
+   "note": "Best early-mid water mount; adds Water damage to your attacks while riding (Cryst variant gives Ice)."
+  },
+  {
+   "name": "Whalaska",
+   "note": "Slower cruiser but boosts the fishing catch gauge — pick if you fish a lot (Ignis variant similar)."
+  }
+ ],
+ "best_fighters": [
+  {
+   "name": "Jetragon",
+   "note": "«Эндгейм-стандарт»: топ-атака 140 + непревзойдённая мобильность; S во всех редакторских списках 1.0."
+  },
+  {
+   "name": "Necromus",
+   "note": "ATK 145 — одна из высших; S у nexttier/gamerant/neonlights; топ наземный маунт."
+  },
+  {
+   "name": "Xenolord",
+   "note": "Рейд-легендарка: подавляющая атака при крепкой защите; S повсеместно."
+  },
+  {
+   "name": "Frostallion",
+   "note": "ATK 140, стандартный ответ драконам; Frostallion Noct — равноценная Dark-версия."
+  },
+  {
+   "name": "Frostallion Noct",
+   "note": "Dark-версия: маунт со сменой атак игрока на Dark +10~40% и Blind."
+  },
+  {
+   "name": "Shadowbeak",
+   "note": "S+ у gamerant, S у nexttier/neonlights."
+  },
+  {
+   "name": "Bellanoir Libero",
+   "note": "S+ у gamerant, S у neonlights; рейд-эксклюзив."
+  },
+  {
+   "name": "Blazamut Ryu",
+   "note": "ATK 150 (топ среди не-легендарок) + аура Dragon weak-point +25~40%."
+  },
+  {
+   "name": "Jormuntide Ignis",
+   "note": "ATK 150; S у oslink/nexttier."
+  },
+  {
+   "name": "Neptilius",
+   "note": "Лучшая атака среди Water (145) с бурстом; S у oslink; самый быстрый пловец."
+  },
+  {
+   "name": "Astralym",
+   "note": "1.0 World Tree легендарка (200/200/200) — статы вне категорий; финальный босс, ловля после квеста."
+  },
+  {
+   "name": "Anubis",
+   "note": "ATK 130; S у neonlights; активируемый бафф игрока Ground +30~50%."
+  },
+  {
+   "name": "Orserk",
+   "note": "S у oslink/neonlights; чаще ценится за пулевой стак-бафф активному палу."
+  },
+  {
+   "name": "Hartalis",
+   "note": "S у oslink; топ-1 наземный маунт."
+  },
+  {
+   "name": "Paladius",
+   "note": "Танк-анкор: выдающаяся живучесть, сбалансированная атака."
+  }
+ ],
+ "best_for_fishing": [
+  {
+   "name": "Whalaska",
+   "note": "Catch meter starts partly filled and fills faster while fishing (Whalaska Ignis has the improved version)."
+  },
+  {
+   "name": "Ghangler",
+   "note": "Pals/fish bite faster while Ghangler is active; also a good swim mount (Ignis variant triggers for Fire/Water)."
+  },
+  {
+   "name": "Gloopie",
+   "note": "Slows gauge drain when the bar is off the fish; at 4-star condense it trivializes even Master fishing spots."
+  },
+  {
+   "name": "Jelliette",
+   "note": "More items gained through fishing — the loot-quantity pick."
+  },
+  {
+   "name": "Jellroy",
+   "note": "More and better loot from salvage actions while fishing."
+  },
+  {
+   "name": "Solmora",
+   "note": "Fishing-specialist swim mount geared toward catching high-stat pals."
+  }
+ ],
+ "best_base_workers_by_task": {
+  "kindling": [
+   {
+    "name": "Renjishi",
+    "note": "Kindling Lv 8 — highest wild kindling in 1.0; also Handiwork 6 and Transporting 5."
+   },
+   {
+    "name": "Jormuntide Ignis",
+    "note": "Kindling Lv 7 pure specialist; never wanders to other jobs."
+   },
+   {
+    "name": "Flaracle",
+    "note": "Kindling Lv 7 with Handiwork 6 — great dual-role furnace pal."
+   },
+   {
+    "name": "Dupin",
+    "note": "Kindling Lv 7 plus Handiwork 5 and Medicine 4."
+   },
+   {
+    "name": "Blazamut Ryu",
+    "note": "Kindling Lv 6 and Mining 7 — furnace-and-ore combo."
+   },
+   {
+    "name": "Eidrolon Ignis",
+    "note": "Kindling Lv 6 with Transporting 6 — feeds its own furnaces."
+   }
   ],
-  "sources": [
-    { "url": "https://palworld.gg/tier-list/combat", "what": "1.0 combat tier list (S-D tiers) — basis for best_fighters ordering", "fetched": "2026-07-14" },
-    { "url": "https://palworld.gg/tier-list/flying-mounts", "what": "1.0 flying mount tiers (Jetragon/Panthalus/Shaolong/Eidrolon S-tier)", "fetched": "2026-07-14" },
-    { "url": "https://palworld.gg/tier-list/ground-mounts", "what": "1.0 ground mount tiers (Necromus/Paladius/Ophydia/Azurmane/Dazemu/Starryon/Pyrin/Fenglope S-tier)", "fetched": "2026-07-14" },
-    { "url": "https://palworld.gg/tier-list/base-work", "what": "1.0 worker tier list with per-pal work levels — cross-check for base workers", "fetched": "2026-07-14" },
-    { "url": "https://nexttier.pro/guide/palworld-best-mounts", "what": "1.0 mount speeds and rankings for flying/ground/swim (Jetragon ~3300, Xenolord ~2700, Hartalis top ground)", "fetched": "2026-07-14" },
-    { "url": "https://www.thebiglead.com/palworld-fastest-mounts/", "what": "1.0 fastest mounts corroboration (Hartalis ground, Neptilius swim, Jetragon/Xenolord air)", "fetched": "2026-07-14" },
-    { "url": "https://palworldzone.com/palworld-swimming-pal-mounts-tier-list/", "what": "1.0 swimming mount tier list with speeds/stamina/saddle levels — basis for best_mounts_swim", "fetched": "2026-07-14" },
-    { "url": "https://www.oslink.io/blog/guide/palworld-combat-pal-tier-list.html", "what": "1.0 (July 2026) combat S/A tiers with per-pal justifications (Jormuntide Ignis, Neptilius, Blazamut Ryu notes)", "fetched": "2026-07-14" },
-    { "url": "https://www.4netplayers.com/en/blog/palworld/palworld-fishing-guide-rods-bait-spots-loot/", "what": "1.0 fishing guide — fishing partner skills for Whalaska, Ghangler, Jellroy, Jelliette", "fetched": "2026-07-14" },
-    { "url": "https://mobalytics.gg/news/guides/palworld-best-pals-1-0", "what": "Gloopie fishing-gauge note (via search summary; page itself bot-blocked)", "fetched": "2026-07-14" },
-    { "url": "/Users/ivanzhilinskiy/Projects/Pal/data/palworld_pals.csv", "what": "canonical pal names and 1.0 work-suitability levels (299 pals)", "fetched": "2026-07-14" }
+  "watering": [
+   {
+    "name": "Shaolong",
+    "note": "Watering Lv 8 — the 1.0 watering king; adds Gathering 5."
+   },
+   {
+    "name": "Neptilius",
+    "note": "Watering Lv 7 on a legendary chassis."
+   },
+   {
+    "name": "Jormuntide",
+    "note": "Watering Lv 7 pure specialist, easy late-game catch."
+   },
+   {
+    "name": "Suzaku Aqua",
+    "note": "Watering Lv 6."
+   },
+   {
+    "name": "Faleris Aqua",
+    "note": "Watering Lv 6 plus Transporting 5 — waters crops and hauls them."
+   },
+   {
+    "name": "Ophydia",
+    "note": "Watering Lv 5 with Planting 7 — one-pal plantation."
+   }
+  ],
+  "planting": [
+   {
+    "name": "Dandilord",
+    "note": "Planting Lv 8 — best in 1.0; also Handiwork 6, Medicine 6, Gathering 5."
+   },
+   {
+    "name": "Ophydia",
+    "note": "Planting Lv 7 with Watering 5 — covers two farm jobs."
+   },
+   {
+    "name": "Lyleen",
+    "note": "Planting Lv 7 plus Gathering 6 and Handiwork 5."
+   },
+   {
+    "name": "Silvance",
+    "note": "Planting Lv 6 on the best Medicine pal (8)."
+   },
+   {
+    "name": "Mycora",
+    "note": "Planting Lv 6 with Medicine 6."
+   },
+   {
+    "name": "Carnibora",
+    "note": "Planting Lv 6 with Handiwork/Gathering 4."
+   }
+  ],
+  "generating_electricity": [
+   {
+    "name": "Orserk",
+    "note": "Electricity Lv 8 — clear best generator in 1.0; also Transporting 4."
+   },
+   {
+    "name": "Solmora Lux",
+    "note": "Electricity Lv 6 plus Watering 4."
+   },
+   {
+    "name": "Dynamoff",
+    "note": "Electricity Lv 6 with Gathering/Transporting 3."
+   },
+   {
+    "name": "Grizzbolt",
+    "note": "Electricity Lv 5 with Handiwork 4 and Transporting 5 — classic all-rounder."
+   },
+   {
+    "name": "Fenglope Lux",
+    "note": "Electricity Lv 5."
+   },
+   {
+    "name": "Azurmane",
+    "note": "Electricity Lv 5 and doubles as an S-tier ground mount."
+   }
+  ],
+  "handiwork": [
+   {
+    "name": "Solenne",
+    "note": "Handiwork Lv 8 — best pure crafter in 1.0; Gathering 4."
+   },
+   {
+    "name": "Selyne",
+    "note": "Handiwork Lv 7 with Medicine 6 and Transporting 3 — strongest multi-role crafter."
+   },
+   {
+    "name": "Wistella",
+    "note": "Handiwork Lv 6 with Medicine 6."
+   },
+   {
+    "name": "Venusa",
+    "note": "Handiwork Lv 6 with Gathering 6 and Medicine 5."
+   },
+   {
+    "name": "Splatterina",
+    "note": "Handiwork Lv 6 with Medicine 5."
+   },
+   {
+    "name": "Anubis",
+    "note": "Handiwork Lv 6 plus Mining 6 — breedable far earlier than the Lv-7+ options."
+   },
+   {
+    "name": "Renjishi",
+    "note": "Handiwork Lv 6 on the best Kindling pal."
+   }
+  ],
+  "gathering": [
+   {
+    "name": "Jetragon",
+    "note": "Gathering Lv 8 — surprisingly the best gatherer in 1.0."
+   },
+   {
+    "name": "Starryon Primo",
+    "note": "Gathering Lv 7 (base Starryon is Lv 5)."
+   },
+   {
+    "name": "Hartalis",
+    "note": "Gathering Lv 7 plus Lumbering 7."
+   },
+   {
+    "name": "Frostallion Noct",
+    "note": "Gathering Lv 7 on a legendary."
+   },
+   {
+    "name": "Venusa",
+    "note": "Gathering Lv 6 with Handiwork 6."
+   },
+   {
+    "name": "Lyleen",
+    "note": "Gathering Lv 6 with Planting 7 (Lyleen Noct also Gathering 6)."
+   }
+  ],
+  "lumbering": [
+   {
+    "name": "Celesdir Noct",
+    "note": "Lumbering Lv 8 — best logger in 1.0 (base Celesdir is Lv 7)."
+   },
+   {
+    "name": "Hartalis",
+    "note": "Lumbering Lv 7 plus Gathering 7."
+   },
+   {
+    "name": "Celesdir",
+    "note": "Lumbering Lv 7, easier to obtain than the Noct form."
+   },
+   {
+    "name": "Silvegis",
+    "note": "Lumbering Lv 6."
+   },
+   {
+    "name": "Bastigor",
+    "note": "Lumbering Lv 6 on the best Cooling pal (8)."
+   },
+   {
+    "name": "Paladius",
+    "note": "Lumbering Lv 6 (Necromus matches it) — legendary side job."
+   }
+  ],
+  "mining": [
+   {
+    "name": "Aegidron",
+    "note": "Mining Lv 8 — the 1.0 mining king."
+   },
+   {
+    "name": "Knocklem",
+    "note": "Mining Lv 7 with Transporting 7 — mines and hauls (Ignis variant identical plus Kindling 5)."
+   },
+   {
+    "name": "Blazamut",
+    "note": "Mining Lv 7 with Kindling 6 — classic ore-and-furnace pal (Ryu variant same)."
+   },
+   {
+    "name": "Astegon",
+    "note": "Mining Lv 7 with Handiwork 3."
+   },
+   {
+    "name": "Anubis",
+    "note": "Mining Lv 6 plus Handiwork 6; breedable mid-game."
+   },
+   {
+    "name": "Dualith",
+    "note": "Mining Lv 6 with Transporting 6 (Noct variant identical)."
+   }
+  ],
+  "medicine": [
+   {
+    "name": "Silvance",
+    "note": "Medicine Lv 8 — best pharmacist in 1.0; also Planting 6 and Handiwork 6."
+   },
+   {
+    "name": "Lyleen Noct",
+    "note": "Medicine Lv 7 with Gathering 6 and Handiwork 5."
+   },
+   {
+    "name": "Bellanoir Libero",
+    "note": "Medicine Lv 7 with Handiwork 6."
+   },
+   {
+    "name": "Wistella",
+    "note": "Medicine Lv 6 with Handiwork 6."
+   },
+   {
+    "name": "Selyne",
+    "note": "Medicine Lv 6 on the second-best Handiwork pal."
+   },
+   {
+    "name": "Mycora",
+    "note": "Medicine Lv 6 with Planting 6."
+   }
+  ],
+  "cooling": [
+   {
+    "name": "Bastigor",
+    "note": "Cooling Lv 8 — best cooler in 1.0; also Mining 5 and Lumbering 6."
+   },
+   {
+    "name": "Frostallion",
+    "note": "Cooling Lv 7 legendary specialist."
+   },
+   {
+    "name": "Whalaska Ignis",
+    "note": "Cooling Lv 6 (base Whalaska also 6)."
+   },
+   {
+    "name": "Univolt Cryst",
+    "note": "Cooling Lv 6."
+   },
+   {
+    "name": "Pierdon Cryst",
+    "note": "Cooling Lv 6 with Mining 5."
+   },
+   {
+    "name": "Reptyro Cryst",
+    "note": "Cooling Lv 5 with Mining 5 — classic fridge-plus-quarry pal."
+   }
+  ],
+  "transporting": [
+   {
+    "name": "Knocklem",
+    "note": "Transporting Lv 7 with Mining 7 — best hauler in 1.0 (Ignis variant identical)."
+   },
+   {
+    "name": "Wumpo Botan",
+    "note": "Transporting Lv 6 with Planting/Handiwork 3 (base Wumpo also 6, with Cooling 5)."
+   },
+   {
+    "name": "Eidrolon",
+    "note": "Transporting Lv 6 (Ignis variant adds Kindling 6)."
+   },
+   {
+    "name": "Dualith",
+    "note": "Transporting Lv 6 with Mining 6 (Noct variant identical)."
+   },
+   {
+    "name": "Grizzbolt",
+    "note": "Transporting Lv 5 with Electricity 5 and Handiwork 4."
+   },
+   {
+    "name": "Faleris Aqua",
+    "note": "Transporting Lv 5 on the second-best Watering pal."
+   }
+  ],
+  "farming": [
+   {
+    "name": "Sibelyx Primo",
+    "note": "Farming Lv 4 — highest ranch level in 1.0 wild data."
+   },
+   {
+    "name": "Dumud Gild",
+    "note": "Farming Lv 4 — new 1.0 gilded variant, top-level rancher."
+   },
+   {
+    "name": "Sibelyx",
+    "note": "Farming Lv 3; produces High Quality Cloth."
+   },
+   {
+    "name": "Shroomer",
+    "note": "Farming Lv 3."
+   },
+   {
+    "name": "Foxcicle",
+    "note": "Farming Lv 3."
+   },
+   {
+    "name": "Beegarde",
+    "note": "Farming Lv 3; honey producer for cake/breeding pipelines."
+   },
+   {
+    "name": "Mozzarina",
+    "note": "Farming Lv 2; milk for cakes."
+   },
+   {
+    "name": "Chikipi",
+    "note": "Farming Lv 1; eggs — kept for cake ingredients despite the low level."
+   }
   ]
+ },
+ "notes": [
+  "All placements are from sources updated for the 1.0 release (July 2026); no pre-1.0-only list was used for rankings.",
+  "Work levels in notes are wild base values from data/palworld_pals.csv (1.0 scale, wild max 8); sources state suitability can be pushed to 10 via breeding and Pal condensing.",
+  "Every base-worker pick was cross-checked against the CSV work columns; palworld.gg's displayed levels matched the CSV everywhere checked (Renjishi Kindling 8, Shaolong Watering 8, Orserk Electricity 8, Solenne Handiwork 8, Aegidron Mining 8, Silvance Medicine 8, Bastigor Cooling 8, Jetragon Gathering 8, Knocklem Transporting 7).",
+  "pindrop.gg's tier list was fetched but SKIPPED: it still uses pre-1.0 roster/names (e.g. 'Dragostrophe' and 'Ice Kingpaca', which are not in the 1.0 pal list) and covers only 172 pals.",
+  "game8.co pages (best mounts 440495, best base pals 440432, combat 440279) and mobalytics.gg were bot-blocked (AWS WAF / Cloudflare challenge) and could not be read; rankings lean on palworld.gg plus the other sources below instead.",
+  "Normalized source typos to CSV canonical names: 'Paldius' -> Paladius, 'Neptilus' -> Neptilius (thebiglead.com).",
+  "Swimming speed figures differ between sources (nexttier vs palworldzone); the palworldzone 1.0 tier ordering was used, with Ophydia vs Jormuntide order per its tier placement.",
+  "Farming = ranch production; it caps at Lv 4 in 1.0 wild data, and the produced item matters more than the level (e.g. Beegarde honey, Mozzarina milk, Chikipi eggs for cakes).",
+  "Fishing is a 1.0/0.6+ feature; the fishing list is based on partner-skill effects, not a formal tier list."
+ ],
+ "sources": [
+  {
+   "url": "https://palworld.gg/tier-list/combat",
+   "what": "1.0 combat tier list (S-D tiers) — basis for best_fighters ordering",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://palworld.gg/tier-list/flying-mounts",
+   "what": "1.0 flying mount tiers (Jetragon/Panthalus/Shaolong/Eidrolon S-tier)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://palworld.gg/tier-list/ground-mounts",
+   "what": "1.0 ground mount tiers (Necromus/Paladius/Ophydia/Azurmane/Dazemu/Starryon/Pyrin/Fenglope S-tier)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://palworld.gg/tier-list/base-work",
+   "what": "1.0 worker tier list with per-pal work levels — cross-check for base workers",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://nexttier.pro/guide/palworld-best-mounts",
+   "what": "1.0 mount speeds and rankings for flying/ground/swim (Jetragon ~3300, Xenolord ~2700, Hartalis top ground)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://www.thebiglead.com/palworld-fastest-mounts/",
+   "what": "1.0 fastest mounts corroboration (Hartalis ground, Neptilius swim, Jetragon/Xenolord air)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://palworldzone.com/palworld-swimming-pal-mounts-tier-list/",
+   "what": "1.0 swimming mount tier list with speeds/stamina/saddle levels — basis for best_mounts_swim",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://www.oslink.io/blog/guide/palworld-combat-pal-tier-list.html",
+   "what": "1.0 (July 2026) combat S/A tiers with per-pal justifications (Jormuntide Ignis, Neptilius, Blazamut Ryu notes)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://www.4netplayers.com/en/blog/palworld/palworld-fishing-guide-rods-bait-spots-loot/",
+   "what": "1.0 fishing guide — fishing partner skills for Whalaska, Ghangler, Jellroy, Jelliette",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "https://mobalytics.gg/news/guides/palworld-best-pals-1-0",
+   "what": "Gloopie fishing-gauge note (via search summary; page itself bot-blocked)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "/Users/ivanzhilinskiy/Projects/Pal/data/palworld_pals.csv",
+   "what": "canonical pal names and 1.0 work-suitability levels (299 pals)",
+   "fetched": "2026-07-14"
+  },
+  {
+   "url": "oslink.io / nexttier.pro / gamerant.com / neonlightsmedia.com / game8.co (1.0 combat tier lists)",
+   "what": "best_fighters переупорядочен по консенсусу редакторских списков 1.0; Panthalus исключён (0 упоминаний как атакер: гайды в один голос — летающий маунт + ПВО базы; формула урона игры множит только Attack, его 120 — низ класса при аномальном bulk 180/200)",
+   "fetched": "2026-07-16"
+  }
+ ]
 }

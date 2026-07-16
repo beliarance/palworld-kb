@@ -297,7 +297,7 @@
    "nocturnal": false,
    "size": "XL",
    "tier_hits": [
-    "fighters#5"
+    "fighters#11"
    ],
    "regions": [],
    "alpha": [],
@@ -824,7 +824,7 @@
    "nocturnal": true,
    "size": "M",
    "tier_hits": [
-    "fighters#9",
+    "fighters#7",
     "work_medicine#3"
    ],
    "regions": [],
@@ -933,7 +933,7 @@
    "nocturnal": false,
    "size": "XL",
    "tier_hits": [
-    "fighters#11",
+    "fighters#8",
     "work_kindling#5"
    ],
    "regions": [],
@@ -4894,7 +4894,7 @@
    "size": "L",
    "tier_hits": [
     "mounts_flying#6",
-    "fighters#2",
+    "fighters#4",
     "work_cooling#2"
    ],
    "regions": [],
@@ -4944,6 +4944,7 @@
    "nocturnal": true,
    "size": "L",
    "tier_hits": [
+    "fighters#5",
     "work_gathering#4"
    ],
    "regions": [],
@@ -6127,6 +6128,7 @@
    "size": "L",
    "tier_hits": [
     "mounts_ground#1",
+    "fighters#14",
     "work_gathering#3",
     "work_lumbering#2"
    ],
@@ -6991,7 +6993,7 @@
    "nocturnal": false,
    "size": "XL",
    "tier_hits": [
-    "fighters#10",
+    "fighters#9",
     "work_kindling#2"
    ],
    "regions": [
@@ -9536,7 +9538,7 @@
    "size": "L",
    "tier_hits": [
     "mounts_ground#2",
-    "fighters#3"
+    "fighters#2"
    ],
    "regions": [],
    "alpha": [
@@ -9681,7 +9683,7 @@
    "size": "XL",
    "tier_hits": [
     "mounts_swim#1",
-    "fighters#7",
+    "fighters#10",
     "work_watering#2"
    ],
    "regions": [],
@@ -10101,6 +10103,7 @@
    "nocturnal": false,
    "size": "L",
    "tier_hits": [
+    "fighters#13",
     "work_generating_electricity#1"
    ],
    "regions": [
@@ -10149,7 +10152,7 @@
    "size": "L",
    "tier_hits": [
     "mounts_ground#3",
-    "fighters#4",
+    "fighters#15",
     "work_lumbering#6"
    ],
    "regions": [],
@@ -10247,8 +10250,7 @@
    "nocturnal": false,
    "size": "XL",
    "tier_hits": [
-    "mounts_flying#3",
-    "fighters#6"
+    "mounts_flying#3"
    ],
    "regions": [],
    "alpha": [
@@ -12444,7 +12446,8 @@
    "nocturnal": true,
    "size": "L",
    "tier_hits": [
-    "mounts_flying#8"
+    "mounts_flying#8",
+    "fighters#6"
    ],
    "regions": [
     "No. 3 Wildlife Sanctuary",
@@ -15897,7 +15900,7 @@
    "size": "L",
    "tier_hits": [
     "mounts_flying#2",
-    "fighters#8"
+    "fighters#3"
    ],
    "regions": [],
    "alpha": [],
