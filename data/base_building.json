@@ -3106,6 +3106,46 @@
     "DefaultPalWorldSettings.ini",
     "steamcommunity форумы (анекдоты о темпе поедания)"
    ]
+  },
+  "research_lab": {
+   "facility": "Pal Labor Research Lab (tech 19); эффекты ПОСТОЯННЫЕ и account-wide (на ВСЕ базы). Доп. лаборатории только ускоряют ресёрч, бонусы не стакают. 168 проектов, 48 семейств.",
+   "work_speed_per_suitability": {
+    "most": "+45% (6 тиров)",
+    "Cooling": "+40% (5 тиров)",
+    "no_research": [
+     "Gathering",
+     "Transporting",
+     "Farming"
+    ]
+   },
+   "plantation": {
+    "crop_growth": "+35%",
+    "harvest_yield": "+50%"
+   },
+   "egg_hatching": "+60%",
+   "crude_oil_extraction": "+90%",
+   "power_storage": "+70%",
+   "power_consumption": "-20%",
+   "item_decay": "-30%",
+   "extra_craft_chance": "+15% (Cooking/Ingot/Ore/Sphere/Ammo)",
+   "material_cost": {
+    "Armor/Pal Gear/Weapon": "-15%",
+    "Medicine": "-20%"
+   },
+   "expedition": {
+    "reward": "+35%",
+    "time": "-35%"
+   },
+   "base_pals_combat": {
+    "attack": "+28%",
+    "defense": "+26%"
+   },
+   "sources": [
+    "paldb.cc/en/Pal_Labor_Research_Laboratory (v1.0.0)",
+    "palworld.wiki.gg",
+    "game8"
+   ],
+   "note": "Прежняя запись «+5/10%» была фрагментом одного дерева; истинные стак-максимумы выше. Стакинг с уровнями навыка и баффом еды в источниках не описан (gap)."
   }
  },
  "notes": [
@@ -3129,7 +3169,8 @@
   "2026-07-15: Ancient Workbench крафтит и материалы (подтверждено items.json: Polymer/Computer/AI Core имеют его альтернативой) — Production-линия на 67+ не нужна. Дозаполнены worker_req у станций, чьи описания были затёрты при раннем сборе.",
   "2026-07-15: worker_slots=3 у placeable добывающих станций (Pit/Mining Site/Quarry/Coal/Sulfur/Logging) — сообщено игроком; до 3 палов на станцию стакают скорость добычи. paldb это поле не публикует.",
   "2026-07-15: worker_slots — подтверждённые значения (шахты/лесопилки 3, Ranch 4, плантации 4, Synthesizer 1, экстракторы нефти 0-без палов, брид-фермы 2-пара). paldb число мест НЕ публикует — у остальных зданий worker_slots=null, планировщик считает как 1 (одноместные верстаки/печи). gap.",
-  "2026-07-16: веб-исследование скорости голода — абсолютный темп нигде не документирован (gap подтверждён); калибровка кормовой модели по гайду dungeonpath (2 Berry+1 Wheat→~17 палов). Детали в rates.hunger_research."
+  "2026-07-16: веб-исследование скорости голода — абсолютный темп нигде не документирован (gap подтверждён); калибровка кормовой модели по гайду dungeonpath (2 Berry+1 Wheat→~17 палов). Детали в rates.hunger_research.",
+  "2026-07-16: полный каталог ресёрча Pal Labor Research Lab (168 проектов) в rates.research_lab; макс work speed +45% (Cooling +40%), урожай +50%, инкубация +60%, нефть +90% и т.д., account-wide."
  ],
  "gaps": [
   "Per-crop plantation yield_per_harvest and absolute growth-cycle seconds are undocumented in fetched sources (yield scales with gatherer DropNumRate; see plantation_cycles).",

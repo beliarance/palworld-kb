@@ -156,6 +156,17 @@
 - Расхождение: paldb 1.0 даёт Pal Expedition Station tech 22 (Wooden Board 10, Stone 100,
   Paldium 20) против tech 15 в `expeditions.json` — требует перепроверки expeditions.json.
 
+## Pal Labor Research Lab — каталог ресёрча (2026-07-16)
+
+- **paldb.cc/en/Pal_Labor_Research_Laboratory** (v1.0.0) — все 168 проектов, 48 семейств;
+  подтверждено wiki.gg + game8: эффекты постоянные и **account-wide** (на все базы).
+- Максимумы: Work Speed +45% на работу (Cooling +40%; у Gathering/Transporting/Farming
+  ресёрча нет), урожай плантаций +50%, рост +35%, инкубация +60%, нефть +90%, склад энергии
+  +70%, расход −20%, порча −30%, экспедиции +35%/−35%. Полный список — в
+  `data/base_building.json` → `rates.research_lab`. Скрипт: `scripts/collectors/scrape_research_lab.py`.
+- Планировщик: тумблер «макс ресёрч» / `--research` → WS ×1.45 и урожай ×1.5 (меньше рабочих/грядок).
+  Оговорка: у Gathering/Transport/Farming буста нет — для ранча реальный эффект меньше (в заметке).
+
 ## Точечные правки по игровому опыту
 
 - **2026-07-14, Coralum Ore через сальвадж-магниты** — сообщено пользователем из игры,

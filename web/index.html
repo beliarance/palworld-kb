@@ -446,8 +446,10 @@ class BasePlan {
   foodWs(){ const b=this.o.foodBuff??30;
     if(b<=0) return 0;
     return this.o.tech>=((this.structs["Tomato Plantation"]||{}).tech_level||25)?b:0; }
-  q(){ const star=this.o.stars?1.55:1.0;  // 4★: +1 ур. работы ≈ ×1.55 (крафт 1.68/поле 1.41)
-    return (70*QUALITY[this.o.workforce]+this.foodWs())/70*star; }
+  q(){ const star=this.o.stars?1.55:1.0, research=this.o.research?1.45:1.0;
+    // 4★ ≈ ×1.55; ресёрч (Pal Labor Research Lab макс) Work Speed +45%
+    return (70*QUALITY[this.o.workforce]+this.foodWs())/70*star*research; }
+  plantYieldEff(){ return (this.o.plantYield||55)*(this.o.research?1.5:1.0); }  // Harvest Yield +50%
   best(cands){ const a=cands.filter(c=>this.structs[c]&&(this.structs[c].tech_level||0)<=this.o.tech); return a[a.length-1]||null; }
   add(n,c=1){ if(n&&c>0) this.buildings[n]=(this.buildings[n]||0)+c; }
   hire(sp,c,role,task){ if(c>0) this.crew.push([sp,Math.ceil(c),role,task||null]); }
@@ -496,7 +498,7 @@ class BasePlan {
     return this.crew.reduce((a,c)=>a+c[1]*(fa[c[0]]||5),0); }
   foodModule(slots, shareCrew){
     // спрос = Σ FoodAmount реального ростера (крупные едят больше); скорости голода в данных нет
-    const perPlot=this.o.foodPerPlot||55;
+    const perPlot=(this.o.foodPerPlot||55)*(this.o.research?1.5:1.0);
     let appetite=this.rosterAppetite();
     appetite+=Math.max(0,slots-this.crew.reduce((a,c)=>a+c[1],0))*4.6;
     const plots=Math.max(2,Math.ceil(appetite/perPlot));
@@ -564,7 +566,7 @@ class BasePlan {
     const ranch={};
     for(const [prod,perH] of Object.entries(acc.ranch)) ranch[ranchMap[prod][0]]=Math.ceil(perH/rr);
     const plantsN={}; let totPl=0;
-    for(const [crop,perH] of Object.entries(acc.plants)){ plantsN[crop]=Math.ceil(perH/o.plantYield); totPl+=plantsN[crop]; }
+    for(const [crop,perH] of Object.entries(acc.plants)){ plantsN[crop]=Math.ceil(perH/this.plantYieldEff()); totPl+=plantsN[crop]; }
     const trio=3*Math.ceil(totPl/(o.plantsPerWorker*this.q()));
     const ops=cakes+Object.values(acc.crafts).reduce((a,b)=>a+b,0)-(acc.crafts.Flour||0);
     const cooks=Math.max(1,Math.ceil(ops/(o.cookRate*this.q())));
@@ -706,7 +708,7 @@ class BasePlan {
     for(const [m,q] of Object.entries(it.recipe.materials)) expand(m,q*rate);
     const plantsN={};
     for(const [crop,perH] of Object.entries(plants)){
-      if(this.best([PLANTS[crop]])||(o.tech>=78&&this.structs["Ancient Farm"])) plantsN[crop]=Math.ceil(perH/o.plantYield);
+      if(this.best([PLANTS[crop]])||(o.tech>=78&&this.structs["Ancient Farm"])) plantsN[crop]=Math.ceil(perH/this.plantYieldEff());
       else imports[crop]=(imports[crop]||0)+perH; }
     const totalPl=this.addPlantations(plantsN, PLANTS);
     if(totalPl){
@@ -817,7 +819,7 @@ function builderOpts(){
   if(metal) document.getElementById("ptech").value=METALS[metal];
   return {preset:val("pp"),slots:+val("pslots")||50,tech:+val("ptech")||60,food:val("pfood"),
     workforce:val("pwf"),roster:val("proster"),lux:document.getElementById("plux").checked,
-    stars:document.getElementById("pstars").checked,
+    stars:document.getElementById("pstars").checked,research:document.getElementById("presearch").checked,
     ranchRate:+val("pranch")||12,plantYield:+val("pyield")||60,cookRate:+val("pcook")||30,
     plantsPerWorker:3,farms:+val("pfarms")||null,dish:val("pdish")||"Salad",dishRate:+val("pdishrate")||30,
     eggInterval:+val("peggint")||5,eggBoost:+val("peggboost")||1.35,
@@ -848,6 +850,7 @@ render.planner = () => {
       <option value="max">WS 192 — макс (Remarkable Craftsmanship-стек)</option></select>
     <select id="proster"><option value="top">Ростер: топ</option><option value="easy">Ростер: легко достать</option></select>
     <label title="конденсер 4★: +1 ур. работы ≈ ×1.55; цена 116 дублей/пал"><input type="checkbox" id="pstars"> 4★ рабочие</label>
+    <label title="макс ресёрч Pal Labor Research Lab (account-wide): Work Speed +45%, урожай +50%, инкубация +60%, нефть +90%"><input type="checkbox" id="presearch"> макс ресёрч</label>
     <label><input type="checkbox" id="plux"> люкс</label>
   </div>
   <div class="row fld fld-breeding" style="margin-top:8px">
@@ -883,7 +886,7 @@ render.planner = () => {
   };
   document.getElementById("pp").addEventListener("input",updateVis);
   window._updateVis=updateVis;
-  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","peggboost","pincub","pcake","ppers","pspoil","pfpp","pfbuff","pstars","pafy"]){
+  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","peggboost","pincub","pcake","ppers","pspoil","pfpp","pfbuff","pstars","pafy","presearch"]){
     document.getElementById(id).addEventListener("input",()=>{
       if(!baseDirty && BASE.buildings.length) seedFromPreset();
       else if(baseDirty){ const el=document.getElementById("rebuild-hint"); if(el) el.style.display=""; }
@@ -1031,7 +1034,7 @@ function drawBase(){
   <div class="card"><div class="big">${crewTotal}/${slots} слотов
     ${crewTotal>slots?`<span class="bad">перебор на ${crewTotal-slots}</span>`:`<span class="ok">свободно ${slots-crewTotal}</span>`}
     ${(()=>{const o=builderOpts();const p=new BasePlan(o);const fw=p.foodWs();
-      const bits=[o.workforce]; if(fw) bits.push("еда +"+fw); if(o.stars) bits.push("4★ ×1.55");
+      const bits=[o.workforce]; if(fw) bits.push("еда +"+fw); if(o.stars) bits.push("4★ ×1.55"); if(o.research) bits.push("ресёрч ×1.45");
       return `<span class="tag" title="база 70 × пассивки + еда × звёзды">WS ${Math.floor(70*p.q())} (${bits.join(", ")})</span>`;})()}
     ${power?`<span class="tag">⚡ ${power.toLocaleString()}/с</span>`:""}</div></div>
   <div class="grid" style="grid-template-columns:1fr 1fr;align-items:start">

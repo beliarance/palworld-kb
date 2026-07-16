@@ -89,11 +89,17 @@ class Planner:
         return 0
 
     def q(self):
-        """Эффективный множитель работы = (база 70 × пассивки + бонус еды)/70 × буст звёзд.
-        Звёзды (конденсер) поднимают уровень работы: 4★ = +1 ур. всем работам.
-        Прыжок ур.8→9 ≈ ×1.68 (крафт) / ×1.41 (поле); берём среднее ×1.55."""
+        """Эффективный множитель работы = (база 70 × пассивки + бонус еды)/70 × звёзды × ресёрч.
+        Звёзды (конденсер): 4★ = +1 ур. работы (ур.8→9 ≈ ×1.68 крафт/×1.41 поле, среднее ×1.55).
+        Ресёрч (Pal Labor Research Lab, макс): Work Speed +45% на большинстве работ (×1.45).
+        Оговорка: у Gathering/Transporting/Farming ресёрча нет — для ранча/сбора реальный буст меньше."""
         star = 1.55 if self.args.stars else 1.0
-        return (70 * QUALITY[self.args.workforce] + self.food_ws()) / 70 * star
+        research = 1.45 if self.args.research else 1.0
+        return (70 * QUALITY[self.args.workforce] + self.food_ws()) / 70 * star * research
+
+    def plant_yield_eff(self):
+        """Выработка грядки с учётом ресёрча (Harvest Yield +50% на максе)."""
+        return self.args.plant_yield * (1.5 if self.args.research else 1.0)
 
     # ---------- общие модули ----------
     def infra(self, slots):
@@ -252,7 +258,8 @@ class Planner:
         appetite = self.roster_appetite()
         # добивка на ещё не нанятых (транспорт/тройка/повар) ~ средний аппетит
         appetite += max(0, roster_slots - sum(c for _, c, _ in self.pals)) * 4.6
-        plots = max(2, math.ceil(appetite / self.args.food_per_plot))
+        per_plot = self.args.food_per_plot * (1.5 if self.args.research else 1.0)
+        plots = max(2, math.ceil(appetite / per_plot))
         salad_ok = self.args.tech >= (self.structs.get("Tomato Plantation", {}).get("tech_level") or 99)
         food_plants = {}
         if salad_ok:
@@ -326,7 +333,7 @@ class Planner:
             expand(m, q * cakes_h)
         rr = a.ranch_rate * self.q()
         ranch = {ranch_map[p][0]: math.ceil(v / rr) for p, v in ranch_prod.items()}
-        plants_n = {c: math.ceil(v / a.plant_yield) for c, v in plants.items()}
+        plants_n = {c: math.ceil(v / self.plant_yield_eff()) for c, v in plants.items()}
         trio = 3 * math.ceil(sum(plants_n.values()) / (a.plants_per_worker * self.q())) if plants_n else 0
         ops = cakes_h + sum(crafts.values()) - crafts.get("Flour", 0)
         cooks = max(1, math.ceil(ops / (a.cook_rate * self.q())))
@@ -580,7 +587,7 @@ class Planner:
         plants_n = {}
         for crop, per_h in need_plants.items():
             if self.best([PLANTS[crop]]) or (a.tech >= 78 and "Ancient Farm" in self.structs):
-                plants_n[crop] = math.ceil(per_h / a.plant_yield)
+                plants_n[crop] = math.ceil(per_h / self.plant_yield_eff())
             else:
                 imports[crop] = imports.get(crop, 0) + per_h
         total_pl = self.add_plantations(plants_n, PLANTS)
@@ -640,7 +647,9 @@ class Planner:
             parts.append(f"еда +{fw:.0f}")
         if a.stars:
             parts.append("4★ ×1.55")
-        ws_txt = f"Work Speed {round(70 * self.q())} ({', '.join(parts)})"
+        if a.research:
+            parts.append("ресёрч ×1.45")
+        ws_txt = f"Work Speed {int(70 * self.q())} ({', '.join(parts)})"
         print(f"═══ База: {a.preset}  |  слоты {a.slots}  |  tech {a.tech}  |  еда: {a.food}  |  {ws_txt} ═══\n")
         if a.stars:
             self.notes.append("Рабочие 4★: +1 ур. работы (≈×1.55). Цена: 116 дублей вида на каждого пала — "
@@ -714,6 +723,8 @@ def main():
                     help="(breeding) минут на яйцо (по умолчанию 5 из данных; для хатчери замерь в игре)")
     ap.add_argument("--no-spoilage", dest="spoilage", action="store_false",
                     help="настройка мира «еда не портится»: без холодильника и Cooling-пала, хватит Feed Box")
+    ap.add_argument("--research", action="store_true",
+                    help="макс ресёрч Pal Labor Research Lab (account-wide): Work Speed +45%, урожай +50% — меньше рабочих/грядок")
     ap.add_argument("--stars", action="store_true",
                     help="рабочие сконденсированы до 4★ (+1 ур. работы ≈ ×1.55 скорости; цена — 116 дублей на пала)")
     ap.add_argument("--ancient-farm-yield", type=float, default=1,
