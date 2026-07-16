@@ -522,9 +522,10 @@ function metaSkillsCardHTML(fe, enemy){
   else   picks=byLarge.slice(0,4);                              // бестиповый → топ по большому хитбоксу
   for(const f of flats){ if(picks.length>=5) break; if(!picks.includes(f)) picks.push(f); }
   if(!picks.length) return "";
+  const ratio=s=>(s.multi_hit&&s.dps_large&&s.dps_small)?`×${(s.dps_large/s.dps_small).toFixed(1)} по большому телу`:"";
   const row=s=>`<div style="margin-top:6px"><b>${esc(s.skill)}</b> <span class="el el-${s.element}">${s.element}</span>
     <span class="mono">${s.dps_large!=null?s.dps_large+" DPS/большой":""}${s.dps_small!=null?" · "+s.dps_small+" DPS/мелкий":""}</span>
-    ${fe&&s.element===fe?'<span class="tag">×2 к слабости</span>':""}${s.multi_hit?'<span class="tag">мульти-хит</span>':""} <span class="dim">${acq[s.acquire]||s.acquire}${s.pal?" — "+esc(s.pal):""}</span>
+    ${fe&&s.element===fe?'<span class="tag">×2 к слабости</span>':""}${s.multi_hit?`<span class="tag">мульти-хит ${ratio(s)}</span>`:""} <span class="dim">${acq[s.acquire]||s.acquire}${s.pal?" — "+esc(s.pal):""}</span>
     <div class="sub">${esc(s.note||"")}</div></div>`;
   return `<div class="card"><div class="big">🎯 Мета-скиллы под босса ${fe?`(каунтер ${fe})`:"(бестиповый)"}</div>
     <div class="sub">Замеренный сообществом DPS. По большому телу босса мульти-хит скиллы бьют многократно — это важнее номинального урона. Учи бойцу через Skill Fruit/бридинг.</div>

@@ -23,7 +23,8 @@
   {"skill": "Radiant Barrage", "element": "Neutral", "dps_large": 32, "dps_small": 32, "multi_hit": false, "acquire": "breeding", "note": "Ровный нейтральный all-rounder."}
  ],
  "guidance": [
-  "Большой хитбокс (башенные/рейд-боссы): приоритет МУЛЬТИ-ХИТ скиллам — Twin Spears, Thunder Rail, Circle Vine, Apocalypse.",
+  "Мульти-хит = один каст бьёт по БОЛЬШОМУ телу босса несколько раз (dps_large ≫ dps_small). Множитель хитбокса = dps_large/dps_small: Twin Spears ×5.6, Thunder Rail ×3.0, Circle Vine ×2.9, Apocalypse ×2.5. Почти все башенные/рейд-боссы — большой хитбокс, поэтому мульти-хит тут решает.",
+  "ВАЖНО: определить мульти-хит по ОПИСАНИЮ скилла нельзя — оно врёт. Comet Barrage («drops meteorites one after another») и Beam Comet («innumerable beams») звучат как мульти-хит, но по замерам ровные (метеоры/лучи бьют по РАЗНЫМ точкам, а не по одному телу). Поэтому флаг multi_hit проставлен только по замеренному dps_large/dps_small, не по тексту.",
   "Хитбокс варьируется/мелкий: ровные скиллы — Comet Barrage, Blast Cannon, Blizzard Spike 4★, Radiant Barrage.",
   "Ближний бой даёт топовый DPS (Volcanic Rain 126, Poison Shower 96), но требует близкого контакта — рискованно на боссах с AoE.",
   "Стихийная слабость босса умножает урон каунтер-стихии — комбинируй мета-скилл каунтер-стихии со слабостью."

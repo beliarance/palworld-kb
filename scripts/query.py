@@ -757,7 +757,12 @@ def cmd_party(db, args):
         for s in picks:
             dps = "/".join(filter(None, [f"{s['dps_large']} большой" if s.get("dps_large") is not None else "",
                                           f"{s['dps_small']} мелкий" if s.get("dps_small") is not None else ""]))
-            tag = (" ×2-слабость" if fe and s["element"] == fe else "") + (" [мульти-хит]" if s.get("multi_hit") else "")
+            mh = ""
+            if s.get("multi_hit"):
+                mh = " [мульти-хит]"
+                if s.get("dps_large") and s.get("dps_small"):
+                    mh += f" ×{s['dps_large'] / s['dps_small']:.1f} по большому телу"
+            tag = (" ×2-слабость" if fe and s["element"] == fe else "") + mh
             out.append(f"{s['skill']} [{s['element']}] {dps} DPS{tag} — {acq.get(s['acquire'], s['acquire'])}"
                        + (f" ({s['pal']})" if s.get("pal") else ""))
         return out
@@ -963,6 +968,9 @@ def cmd_party(db, args):
             print(f"  🎯 Мета-скиллы под босса ({hb}) — замеренный DPS, учи фруктом/бридингом:")
             for line in ms:
                 print(f"    {line}")
+            meta = _load_json("skill_dps_meta.json") or {}
+            for g in (meta.get("guidance") or [])[:2]:
+                print(f"    · {g}")
     accs = _party_accessories(goal, locals().get("fe"), locals().get("enemy"))
     if accs:
         print("  🎗 Аксессуары:")
