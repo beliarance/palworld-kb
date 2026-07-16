@@ -715,14 +715,15 @@ def cmd_party(db, args):
         return e[:maxlen] + ("…" if len(e) > maxlen else "")
 
     def best_skills(name, enemy, n_top=3):
-        """Топ скиллов пала по ДПМ = power x 60/кд (x2 если враг слаб к стихии).
-        Голый power обманчив: 700-нюк с кд 30с ≈ 450-скилл с кд 20с по ДПМ."""
+        """Топ скиллов из ленсета пала по ДПМ = power x 60/max(кд,5), x2 к стихии слабости.
+        baseline CD 5 (метод thepalprofessor) душит спам-скиллы с мелким кд.
+        ОЦЕНКА ПО ОДИНОЧНОЙ ЦЕЛИ — по большому боссу решает мульти-хит (см. мета-блок)."""
         sk = _load_json("active_skills.json") or {}
         by = {s["name"]: s for s in sk.get("skills", [])}
         bonus = tc.get(enemy, {}).get("weak_to", []) if enemy else []
 
         def dpm(s, mult):
-            return round(mult * s["power"] * 60 / (s.get("cooldown_seconds") or 60))
+            return round(mult * s["power"] * 60 / max(s.get("cooldown_seconds") or 60, 5))
 
         rows = []
         for e in sk.get("learnsets", {}).get(name, []):
@@ -732,23 +733,34 @@ def cmd_party(db, args):
             mult = 2 if s["element"] in bonus else 1
             rows.append((dpm(s, mult), mult, e["level"], s))
         rows.sort(key=lambda r: -r[0])
-        # против босса берём тяжёлые скиллы (power>=300 — мало теряется на защите), ранжируем по ДПМ;
-        # добираем слабыми, если у низкоуровневого пала мощных ещё нет
-        heavy = [r for r in rows if r[3]["power"] >= 300]
-        top = (heavy if len(heavy) >= n_top else heavy + [r for r in rows if r[3]["power"] < 300])[:n_top]
-        lines = [f"{s['name']} [{s['element']}] {s['power']}/{s['cooldown_seconds']}с"
-                 + (" ×2" if mult > 1 else "") + f" = {d} DPM (Lv{lv})"
-                 for d, mult, lv, s in top]
-        learned = {e["skill"] for e in sk.get("learnsets", {}).get(name, [])}
-        fruits = sorted(((dpm(s, 2 if s["element"] in bonus else 1), s)
-                         for s in sk.get("skills", [])
-                         if s.get("skill_fruit_exists") and (s.get("power") or 0) >= 300 and s.get("cooldown_seconds")
-                         and (s["element"] in bonus if bonus else True) and s["name"] not in learned),
-                        key=lambda x: -x[0])[:2]
-        if fruits:
-            lines.append("🍎 фруктом: " + ", ".join(
-                f"{s['name']} [{s['element']}] {s['power']}/{s['cooldown_seconds']}с = {d} DPM" for d, s in fruits))
-        return lines
+        return [f"{s['name']} [{s['element']}] {s['power']}/{s['cooldown_seconds']}с"
+                + (" ×2" if mult > 1 else "") + f" = {d} DPM (Lv{lv})"
+                for d, mult, lv, s in rows[:n_top]]
+
+    def meta_skills(fe, n_top=4):
+        """Мета-скиллы под босса из skill_dps_meta.json (замеренный сообществом DPS).
+        fe = стихия каунтера (если слабость есть), иначе None → универсальный топ."""
+        meta = _load_json("skill_dps_meta.json") or {}
+        acq = {"exclusive": "эксклюзив", "breeding": "бридинг", "fruit": "Skill Fruit",
+               "melee": "ближний бой", "learn": "по уровню"}
+        pool = sorted(meta.get("skills", []), key=lambda s: -(s.get("dps_large") or 0))
+        picks = [s for s in pool if s["element"] == fe][:3] if fe else pool[:4]
+        # ровные all-rounder'ы (учатся любому палу, любой хитбокс) — безопасный филл
+        flats = [s for s in pool if not s.get("multi_hit") and (s.get("dps_small") or 0) >= 30
+                 and s.get("acquire") in ("fruit", "breeding")]
+        for f in flats:
+            if len(picks) >= 5:
+                break
+            if f not in picks:
+                picks.append(f)
+        out = []
+        for s in picks:
+            dps = "/".join(filter(None, [f"{s['dps_large']} большой" if s.get("dps_large") is not None else "",
+                                          f"{s['dps_small']} мелкий" if s.get("dps_small") is not None else ""]))
+            tag = (" ×2-слабость" if fe and s["element"] == fe else "") + (" [мульти-хит]" if s.get("multi_hit") else "")
+            out.append(f"{s['skill']} [{s['element']}] {dps} DPS{tag} — {acq.get(s['acquire'], s['acquire'])}"
+                       + (f" ({s['pal']})" if s.get("pal") else ""))
+        return out
 
     def pick(role, *tags):
         for t in tags:
@@ -802,8 +814,7 @@ def cmd_party(db, args):
         notes.append("Стихийного каунтера НЕТ — бойцы по консенсусу тир-листов 1.0; решают Awakening, 4★, пассивки (Legend/Musclehead), уровень")
         if args.sea:
             notes.append("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами (player-reported)")
-        notes.append("Скиллы по ДПМ (урон × 60/кулдаун); каунтера нет → без ×2, берём тяжёлые (power≥300). "
-                     "Время каста в данных отсутствует — учтён только кулдаун")
+        notes.append("⚡ скиллы у бойцов — оценка по одиночной цели. По большому боссу решает мульти-хит → см. блок 🎯 Мета-скиллы")
     elif goal == "combat":
         fe = args.element and args.element.capitalize()
         enemy = args.vs and args.vs.capitalize()
@@ -851,8 +862,6 @@ def cmd_party(db, args):
             pick(f"аура: резист от {enemy} (стихия врага)", f"resist:{enemy}", f"elem_team_def:{fe}", "survival")
         if args.sea:
             notes.append("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами (player-reported)")
-        notes.append("Скиллы по ДПМ (урон × 60/кулдаун); каунтера нет → без ×2, берём тяжёлые (power≥300). "
-                     "Время каста в данных отсутствует — учтён только кулдаун")
         notes.append(f"Пати против {enemy}-врагов ({fe} бьёт {', '.join(tc[fe]['strong_vs']) or '—'}); "
                      f"сам {fe} каунтерится {', '.join(tc[fe]['weak_to']) or '—'}")
         if any("Orserk" == n for n, _, _ in picks):
@@ -862,8 +871,7 @@ def cmd_party(db, args):
         if any("Solenne" == n for n, _, _ in picks):
             notes.append("Solenne: +30~80% атаки игрока ТОЛЬКО если все 5 палов разных видов — не бери дублей")
         notes.append("Глайдер-пал не нужен: в 1.0 есть Wing Pack (слот глайдера) и Air Dash Boots — слот пати не трать")
-        notes.append("Скиллы по ДПМ (урон × 60/кулдаун), ×2 к стихии слабости, берём тяжёлые (power≥300). "
-                     "Время каста/анимации в данных paldb отсутствует — учтён только кулдаун")
+        notes.append("⚡ скиллы у бойцов — оценка по одиночной цели. По большому боссу решает мульти-хит → см. блок 🎯 Мета-скиллы")
     elif goal == "openworld":
         pick("маунт + бафф атак игрока", "attack_type:Electric:mount", "attack_type:Fire:mount", "attack_type:Ice:mount")
         pick("сферы самонаводятся + вес +300~600", "capture_homing")
@@ -947,6 +955,14 @@ def cmd_party(db, args):
         print(f"      {e}")
         for line in fighter_skills.get(n, []):
             print(f"      ⚡ {line}")
+    if goal == "combat":
+        meta_fe = locals().get("fe") if not args.raw else None
+        ms = meta_skills(meta_fe)
+        if ms:
+            hb = f"каунтер {meta_fe}" if meta_fe else "бестиповый босс"
+            print(f"  🎯 Мета-скиллы под босса ({hb}) — замеренный DPS, учи фруктом/бридингом:")
+            for line in ms:
+                print(f"    {line}")
     accs = _party_accessories(goal, locals().get("fe"), locals().get("enemy"))
     if accs:
         print("  🎗 Аксессуары:")

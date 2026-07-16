@@ -57,7 +57,8 @@ const DATA_FILES = {
   breeding:"breeding.json", tiers:"tier_lists.json", items:"items.json",
   exp:"expeditions.json", skills:"active_skills.json", passives:"passives.json",
   loc:"pal_locations.json", res:"resource_nodes.json", idx:"index.json",
-  bb:"base_building.json", regions:"regions.json", icons:"icons.json"
+  bb:"base_building.json", regions:"regions.json", icons:"icons.json",
+  skillmeta:"skill_dps_meta.json"
 };
 const WORK_COLS = {Kindling:"Разжигание",Watering:"Полив",Planting:"Посадка",Generating_Electricity:"Электричество",
   Handiwork:"Ручной труд",Gathering:"Сбор",Lumbering:"Лесозаготовка",Mining:"Добыча",Medicine:"Медицина",
@@ -304,11 +305,11 @@ render.counter = () => {
     if(fe&&enemy){
       party=`<h3 style="margin-top:12px">Боевая пати под босса</h3>
       <div class="sub" style="margin-bottom:6px">2 бойца (свапаешь, если первый падает) + 3 ауры; скиллы с ×2 — то, к чему босс слаб</div>`
-      +(()=>{const C=buildCombatParty(fe, enemy, true, sea); return partyCardsHTML(C.picks, C.notes, enemy)+accessoryCardHTML(accessoriesFor("combat", fe, enemy));})();
+      +(()=>{const C=buildCombatParty(fe, enemy, true, sea); return partyCardsHTML(C.picks, C.notes, enemy)+metaSkillsCardHTML(fe, enemy)+accessoryCardHTML(accessoriesFor("combat", fe, enemy));})();
     } else {
       party=`<h3 style="margin-top:12px">Боевая пати под босса (каунтера нет — топ бойцов)</h3>
       <div class="sub" style="margin-bottom:6px">${esc(b.arena||"")}</div>`
-      +(()=>{const C=buildRawParty([b.pal], sea); return partyCardsHTML(C.picks, C.notes, null, true)
+      +(()=>{const C=buildRawParty([b.pal], sea); return partyCardsHTML(C.picks, C.notes, null, true)+metaSkillsCardHTML(null, null)
         +accessoryCardHTML([{n:"Dogen Emblem",why:"тебе и палу: +атака",eff:(itemByName["Dogen Emblem"]||{}).effect||""},
                             {n:"Warsect Terra's Belt",why:"тебе: +защита и +HP (пережить фазы)",eff:(itemByName["Warsect Terra's Belt"]||{}).effect||""},
                             {n:"Life Pendant",why:"тебе: +HP",eff:(itemByName["Life Pendant"]||{}).effect||""}]);})();
@@ -327,7 +328,7 @@ function showCounter(el){
     return `<div style="margin-top:4px">Топ ${c}-палов: ${top.map(p=>`${palLink(p.name)} <span class="dim mono">(${atk(p)})</span>`).join(", ")}</div>`;}).join("");
   const party=counters.length?`<h3 style="margin-top:12px">Боевая пати против ${el}</h3>
     <div class="sub" style="margin-bottom:6px">1 боец + 4 ауры (в бою дерётся один выпущенный пал); скиллы с ×2 — каунтер-стихии</div>`
-    +(()=>{const C=buildCombatParty(counters[0], el, false); return partyCardsHTML(C.picks, C.notes, el)+accessoryCardHTML(accessoriesFor("combat", counters[0], el));})():"";
+    +(()=>{const C=buildCombatParty(counters[0], el, false); return partyCardsHTML(C.picks, C.notes, el)+metaSkillsCardHTML(counters[0], el)+accessoryCardHTML(accessoriesFor("combat", counters[0], el));})():"";
   document.getElementById("cout").innerHTML=`
     <div><span class="el el-${el}">${el}</span> получает повышенный урон от: ${counters.map(c=>`<span class="el el-${c}">${c}</span>`).join("")||"—"};
     сам силён против: ${node.strong_vs.map(c=>`<span class="el el-${c}">${c}</span>`).join("")||"—"}</div>${picks}${party}`;
@@ -494,21 +495,41 @@ render.party = () => {
     document.getElementById(id).addEventListener(id==="ptwo"?"change":"input",()=>{ updVis(); drawParty(); });
   updVis(); drawParty();
 };
-/* подбор скиллов: топ скиллов пала против врага (x2 если враг слаб к стихии скилла) */
-/* ранжируем по ДПМ: power x 60/кд (x2 если враг слаб к стихии). Голый power обманчив —
-   700-нюк с кд 30с и 450 с кд 20с дают почти одинаковый ДПМ */
-const skillDPM=(s,mult)=>Math.round((mult||1)*s.power*60/(s.cooldown_seconds||60));
+/* ДПМ пала из его ленсета = power x 60/max(кулдаун,5), x2 к стихии слабости.
+   baseline CD 5 (методология thepalprofessor) не даёт спам-скиллам с мелким кд раздуть ДПМ.
+   ВНИМАНИЕ: это оценка по ОДИНОЧНОЙ цели; по большому боссу решает мульти-хит —
+   см. metaSkillsCardHTML (замеренный DPS сообщества, skill_dps_meta.json) */
+const skillDPM=(s,mult)=>Math.round((mult||1)*s.power*60/Math.max(s.cooldown_seconds||60,5));
 function bestSkillsFor(name, enemy, n=3){
   const learn=D.skills.learnsets[name]||[];
   const by=Object.fromEntries(D.skills.skills.map(s=>[s.name,s]));
   const bonus=enemy?(D.chart.chart[enemy]||{}).weak_to||[]:[];
-  const rows=learn.map(e=>({lv:e.level,s:by[e.skill]})).filter(r=>r.s&&r.s.power&&r.s.cooldown_seconds)
+  return learn.map(e=>({lv:e.level,s:by[e.skill]})).filter(r=>r.s&&r.s.power&&r.s.cooldown_seconds)
     .map(r=>({...r,mult:bonus.includes(r.s.element)?2:1,dpm:skillDPM(r.s,bonus.includes(r.s.element)?2:1)}))
-    .sort((a,b)=>b.dpm-a.dpm);
-  // против босса берём тяжёлые скиллы (power>=300, там мало теряется на защите), ранжируем по ДПМ;
-  // добираем слабыми, если у низкоуровневого пала мощных скиллов ещё нет
-  const heavy=rows.filter(r=>r.s.power>=300);
-  return (heavy.length>=n?heavy:heavy.concat(rows.filter(r=>r.s.power<300))).slice(0,n);
+    .sort((a,b)=>b.dpm-a.dpm).slice(0,n);
+}
+/* мета-скиллы под босса: замеренный сообществом DPS (skill_dps_meta.json).
+   fe = стихия каунтера (если есть слабость), иначе null → показываем универсальный топ */
+function metaSkillsCardHTML(fe, enemy){
+  const meta=D.skillmeta; if(!meta||!meta.skills) return "";
+  const learned=Object.keys(D.skills.learnsets);
+  const acq={exclusive:"эксклюзив",breeding:"бридинг",fruit:"Skill Fruit",melee:"ближний бой",learn:"по уровню"};
+  const byLarge=[...meta.skills].sort((a,b)=>(b.dps_large||0)-(a.dps_large||0));
+  // ровные all-rounder'ы (учатся любому палу, работают на любом хитбоксе) — безопасный филл
+  const flats=byLarge.filter(s=>!s.multi_hit&&(s.dps_small||0)>=30&&["fruit","breeding"].includes(s.acquire));
+  let picks;
+  if(fe) picks=byLarge.filter(s=>s.element===fe).slice(0,3);   // каунтер-стихия (x2 сверху)
+  else   picks=byLarge.slice(0,4);                              // бестиповый → топ по большому хитбоксу
+  for(const f of flats){ if(picks.length>=5) break; if(!picks.includes(f)) picks.push(f); }
+  if(!picks.length) return "";
+  const row=s=>`<div style="margin-top:6px"><b>${esc(s.skill)}</b> <span class="el el-${s.element}">${s.element}</span>
+    <span class="mono">${s.dps_large!=null?s.dps_large+" DPS/большой":""}${s.dps_small!=null?" · "+s.dps_small+" DPS/мелкий":""}</span>
+    ${fe&&s.element===fe?'<span class="tag">×2 к слабости</span>':""}${s.multi_hit?'<span class="tag">мульти-хит</span>':""} <span class="dim">${acq[s.acquire]||s.acquire}${s.pal?" — "+esc(s.pal):""}</span>
+    <div class="sub">${esc(s.note||"")}</div></div>`;
+  return `<div class="card"><div class="big">🎯 Мета-скиллы под босса ${fe?`(каунтер ${fe})`:"(бестиповый)"}</div>
+    <div class="sub">Замеренный сообществом DPS. По большому телу босса мульти-хит скиллы бьют многократно — это важнее номинального урона. Учи бойцу через Skill Fruit/бридинг.</div>
+    ${picks.map(row).join("")}
+    <div class="sub" style="margin-top:8px">💡 ${(meta.guidance||[]).slice(0,2).map(esc).join(" · ")} <span class="dim">(гайды 1.0, PRELIMINARY)</span></div></div>`;
 }
 function fruitSkillsFor(name, enemy, n=2){
   const learned=new Set((D.skills.learnsets[name]||[]).map(e=>e.skill));
@@ -523,7 +544,7 @@ function skillChipsHTML(name, enemy, isFighter){
   const best=bestSkillsFor(name, enemy);
   if(!best.length) return "";
   const chip=r=>`<span class="tag" title="${esc(r.s.description||"")}">${esc(r.s.name)} <span class="el el-${r.s.element}">${r.s.element}</span> <span class="mono">${r.s.power}/${r.s.cooldown_seconds}с</span>${r.mult>1?" ×2":""} <b class="mono">${r.dpm} DPM</b> <span class="dim">Lv${r.lv}</span></span>`;
-  let html=`<div style="margin-top:6px">⚡ скиллы (по ДПМ): ${best.map(chip).join(" ")}</div>`;
+  let html=`<div style="margin-top:6px">⚡ скиллы (ДПМ по одиночной цели): ${best.map(chip).join(" ")}</div>`;
   if(isFighter){
     const fr=fruitSkillsFor(name, enemy);
     if(fr.length) html+=`<div class="sub" style="margin-top:4px">🍎 дать фруктом: ${fr.map(x=>`${esc(x.name)} <span class="el el-${x.element}">${x.element}</span> <span class="mono">${x.power}/${x.cooldown_seconds}с · ${x._dpm} DPM</span>`).join(" · ")}</div>`;
@@ -573,7 +594,7 @@ function buildCombatParty(fe, enemy, two, sea){
     B.picks[B.picks.length-1].fighter=true;
   } else B.pick(`аура: резист от ${enemy} (стихия врага)`,`resist:${enemy}`,`elem_team_def:${fe}`,"survival");
   if(sea) B.notes.push("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами <span class='dim'>(player-reported)</span>");
-  B.notes.push("Скиллы отранжированы по ДПМ (урон × 60/кулдаун), ×2 к стихии слабости; берём тяжёлые (power≥300). <span class='dim'>Время каста/анимации в данных paldb отсутствует — учтён только кулдаун</span>");
+  B.notes.push("⚡ скиллы у карточек — оценка по ОДИНОЧНОЙ цели (урон × 60/кулдаун). По большому боссу решает мульти-хит → смотри блок «🎯 Мета-скиллы» ниже (замеренный DPS)");
   B.notes.push(`Пати против <b>${enemy}</b>-врагов (${fe} бьёт ${(chart[fe].strong_vs||[]).join(", ")||"—"}); сам ${fe} каунтерится ${(chart[fe].weak_to||[]).join(", ")||"—"}`);
   if(B.picks.some(p=>p.n==="Orserk")) B.notes.push("Orserk (#187): стаки дают ПУЛИ — стреляй очередями; Drone Launcher (tech 77, 9 дронов, без патронов) набивает стаки сам, в руках держи Mechanical Bow (tech 67) под сингл-таргет <span class='dim'>(мета-гайды июля 2026, PRELIMINARY)</span>");
   if(B.picks.some(p=>p.n==="Solenne")) B.notes.push("Solenne: +30~80% атаки игрока ТОЛЬКО если все 5 палов разных видов — не бери дублей");
@@ -657,10 +678,9 @@ function buildRawParty(exclude, sea){
   B.pick("выживание: хил/реген (бой долгий)","survival");
   B.notes.push("Стихийного каунтера НЕТ — бойцы по консенсусу тир-листов 1.0; решают Awakening, 4★, пассивки (Legend/Musclehead), уровень");
   if(sea) B.notes.push("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами <span class='dim'>(player-reported)</span>");
-  B.notes.push("Скиллы отранжированы по ДПМ (урон × 60/кулдаун), ×2 к стихии слабости; берём тяжёлые (power≥300). <span class='dim'>Время каста/анимации в данных paldb отсутствует — учтён только кулдаун</span>");
   if(B.picks.some(p=>p.n==="Orserk")) B.notes.push("Orserk (#187): стаки дают ПУЛИ — Drone Launcher (tech 77) набивает их сам, в руках Mechanical Bow (tech 67) <span class='dim'>(мета-гайды июля 2026, PRELIMINARY)</span>");
   if(B.picks.some(p=>p.n==="Solenne")) B.notes.push("Solenne: +30~80% атаки игрока ТОЛЬКО если все 5 палов разных видов");
-  B.notes.push("Скиллы отранжированы по ДПМ (урон × 60/кулдаун); каунтера нет → без ×2, берём тяжёлые (power≥300). <span class='dim'>Время каста в данных отсутствует — учтён только кулдаун</span>");
+  B.notes.push("⚡ скиллы у карточек — оценка по одиночной цели. По большому боссу решает мульти-хит → смотри блок «🎯 Мета-скиллы» ниже (замеренный DPS)");
   return B;
 }
 /* общий рендер карточек пати; enemy задаёт скиллы (бойцам — подробно, остальным — топ-3) */
@@ -688,7 +708,7 @@ function drawParty(){
     if(!fe) fe=chart[enemy].weak_to[0];
     if(!enemy) enemy=(chart[fe].strong_vs||[])[0]||"";
     const C=buildCombatParty(fe, enemy, document.getElementById("ptwo").checked);
-    out.innerHTML=partyCardsHTML(C.picks, C.notes, enemy)+accessoryCardHTML(accessoriesFor("combat", fe, enemy));
+    out.innerHTML=partyCardsHTML(C.picks, C.notes, enemy)+metaSkillsCardHTML(fe, enemy)+accessoryCardHTML(accessoriesFor("combat", fe, enemy));
     return;
   } else if(goal==="openworld"){
     B.pick("маунт + бафф атак игрока","attack_type:Electric:mount","attack_type:Fire:mount","attack_type:Ice:mount");

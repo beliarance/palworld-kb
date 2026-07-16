@@ -1,0 +1,37 @@
+{
+ "note": "Замеренный сообществом DPS активных скиллов против боссов (Palworld 1.0). Реальный DPS зависит от МУЛЬТИ-ХИТА и размера хитбокса: мульти-хит скиллы бьют по большому телу босса несколько раз за активацию → dps_large >> dps_small. Голая формула power/cooldown этого не отражает — поэтому таблица замеров важнее производного ДПМ. thepalprofessor уточняет методологию: для скиллов с кулдауном меньше времени 3 атак берётся baseline CD 5 (аппроксимация анимации/каста).",
+ "acquisition": {
+  "exclusive": "эксклюзив пала (ловить/бридить самого пала)",
+  "breeding": "только бридингом (breeding-only скилл)",
+  "fruit": "Skill Fruit — можно выучить любому палу",
+  "melee": "ближний бой (нативный/учится по уровню), нужен близкий контакт"
+ },
+ "skills": [
+  {"skill": "Twin Spears", "element": "Dark", "dps_large": 128, "dps_small": 23, "multi_hit": true, "acquire": "exclusive", "pal": "Necromus", "note": "Топ по большому боссу; на мелких целях слаб — чисто босс/рейд-инструмент. Skill Fruit нет."},
+  {"skill": "Volcanic Rain", "element": "Fire", "dps_large": 126, "dps_small": 126, "multi_hit": false, "acquire": "melee", "note": "Огромный DPS обоих размеров, но ближний бой — нужен близкий контакт."},
+  {"skill": "Poison Shower", "element": "Dark", "dps_large": 96, "dps_small": 96, "multi_hit": false, "acquire": "melee", "note": "Ближний бой, стабильный DPS по любой цели."},
+  {"skill": "Lightning Streak", "element": "Electric", "dps_large": 67, "dps_small": 42, "multi_hit": false, "acquire": "fruit", "note": "Дальнобойный, надёжен по обоим размерам — безопасный выбор."},
+  {"skill": "Thunder Rail", "element": "Electric", "dps_large": 60, "dps_small": 20, "multi_hit": true, "acquire": "breeding", "note": "Мульти-хит: много контактов по большому телу."},
+  {"skill": "Blizzard Spike 4★", "element": "Ice", "dps_large": 56, "dps_small": 56, "multi_hit": false, "acquire": "fruit", "note": "Ровный DPS по обоим размерам (версия 4★)."},
+  {"skill": "Circle Vine", "element": "Grass", "dps_large": 56, "dps_small": 19, "multi_hit": true, "acquire": "fruit", "note": "Мульти-хит, сильно проседает на мелких."},
+  {"skill": "Magma Laser", "element": "Fire", "dps_large": 55, "dps_small": null, "multi_hit": false, "acquire": "learn", "note": "Дальнобойный Fire-нюк."},
+  {"skill": "Apocalypse", "element": "Dark", "dps_large": 50, "dps_small": 20, "multi_hit": true, "acquire": "fruit", "note": "Мульти-хит по большому телу."},
+  {"skill": "Blast Cannon", "element": "Dragon", "dps_large": 44, "dps_small": 30, "multi_hit": false, "acquire": "fruit", "note": "Ровный сингл-таргет, надёжен на любом хитбоксе."},
+  {"skill": "Hydro Slicer", "element": "Water", "dps_large": 42, "dps_small": 31, "multi_hit": false, "acquire": "fruit", "note": "Дальнобойный Water, стабилен по обоим размерам."},
+  {"skill": "Lightning Strike", "element": "Electric", "dps_large": null, "dps_small": 38, "multi_hit": false, "acquire": "melee", "note": "Ближний Electric."},
+  {"skill": "Comet Barrage", "element": "Dragon", "dps_large": 34, "dps_small": 34, "multi_hit": false, "acquire": "breeding", "note": "Самый универсальный: 34 DPS на ЛЮБОМ хитбоксе — безопасный филл под башенных боссов разных стихий."},
+  {"skill": "Radiant Barrage", "element": "Neutral", "dps_large": 32, "dps_small": 32, "multi_hit": false, "acquire": "breeding", "note": "Ровный нейтральный all-rounder."}
+ ],
+ "guidance": [
+  "Большой хитбокс (башенные/рейд-боссы): приоритет МУЛЬТИ-ХИТ скиллам — Twin Spears, Thunder Rail, Circle Vine, Apocalypse.",
+  "Хитбокс варьируется/мелкий: ровные скиллы — Comet Barrage, Blast Cannon, Blizzard Spike 4★, Radiant Barrage.",
+  "Ближний бой даёт топовый DPS (Volcanic Rain 126, Poison Shower 96), но требует близкого контакта — рискованно на боссах с AoE.",
+  "Стихийная слабость босса умножает урон каунтер-стихии — комбинируй мета-скилл каунтер-стихии со слабостью."
+ ],
+ "preliminary": true,
+ "sources": [
+  {"url": "https://allthings.how/palworld-1-0-best-attacks-by-dps-fruits-breeding-and-exclusives/", "what": "замеренный DPS по большому/мелкому хитбоксу, мульти-хит механика", "fetched": "2026-07-16"},
+  {"url": "https://thepalprofessor.com/best-active-skills/", "what": "DPS = power/cooldown с baseline CD 5; таблицы по хитбоксам; boss-рекомендации", "fetched": "2026-07-16"},
+  {"url": "https://game8.co/games/Palworld/archives/445018", "what": "Best Active Skills tier list (JS-рендер, не спарсился — кросс-чек по названиям)", "fetched": "2026-07-16"}
+ ]
+}
