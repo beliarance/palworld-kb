@@ -862,8 +862,6 @@ render.planner = () => {
   <div class="row fld fld-breeding" style="margin-top:8px">
     <select id="pcake" title="какой торт производить"><option>Cake</option><option>Mushroom Cake</option><option>Vegetable Cake</option><option>Extravagant Vegetable Cake</option><option>Special Cake</option></select>
     <label class="dim" title="сколько брид-ферм / Ancient Hatchery ставить. Пусто = подобрать максимум под слоты">брид-ферм (пусто=авто) <input type="number" id="pfarms" style="width:60px;min-width:60px"></label>
-    <label class="dim" title="минут на одно яйцо. Обычная ферма = 5 мин; для Ancient Hatchery замерь в игре">мин/яйцо <input type="number" id="peggint" value="5" step="0.1" style="width:60px;min-width:60px"></label>
-    <label class="dim" title="запас тортовой линии под ускорение от Braloha (яйца +20~50%). 1.0 = тортов ровно под скорость, Braloha лишь убирает простои; 1.35+ = кормить полный буст">запас тортов ×(Braloha) <input type="number" id="peggboost" value="1.0" step="0.05" style="width:60px;min-width:60px"></label>
     <label class="dim" title="настройка мира «скорость инкубации»: 1 = обычная, 0 = мгновенное вылупление (тогда инкубаторы и Dynamoff не нужны)">инкубация (мир) <input type="number" id="pincub" value="1" step="0.5" min="0" style="width:60px;min-width:60px"></label>
   </div>
   <div class="row fld fld-mine-craft" style="margin-top:8px">
@@ -884,6 +882,8 @@ render.planner = () => {
     <label class="dim" title="аппетит-единиц (Σ FoodAmount) на грядку; скорости голода в данных нет">аппетита/грядку <input type="number" id="pfpp" value="55" style="width:70px;min-width:70px"></label>
     <label class="dim" title="бонус Work Speed от кормёжки buff-едой: Salad +30, Minestrone +40, 0 = без">WS от еды <input type="number" id="pfbuff" value="30" style="width:60px;min-width:60px"></label>
     <label class="dim" title="во сколько раз Ancient Farm производительнее обычной грядки (paldb: 1 = как обычная)">Ancient Farm × <input type="number" id="pafy" value="1" step="0.5" style="width:60px;min-width:60px"></label>
+    <label class="dim" title="как часто брид-ферма делает яйцо. 5 мин — из данных paldb, менять НЕ нужно; только если замеришь, что Ancient Hatchery кладёт быстрее">яйцо раз в, мин <input type="number" id="peggint" value="5" step="0.1" style="width:60px;min-width:60px"></label>
+    <label class="dim" title="перепроизводство тортов под ускорение Braloha (+20~50% к скорости яиц). 1.0 = тортов впритык (обычно достаточно); 1.35 = запас, чтобы буст Braloha не простаивал">запас тортов × <input type="number" id="peggboost" value="1.0" step="0.05" style="width:60px;min-width:60px"></label>
   </div></details></div>
   <div id="bout"></div>`;
   const updateVis=()=>{
