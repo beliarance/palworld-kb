@@ -715,29 +715,39 @@ def cmd_party(db, args):
         return e[:maxlen] + ("…" if len(e) > maxlen else "")
 
     def best_skills(name, enemy, n_top=3):
-        """Топ скиллов пала против врага: x2 если враг слаб к стихии скилла."""
+        """Топ скиллов пала по ДПМ = power x 60/кд (x2 если враг слаб к стихии).
+        Голый power обманчив: 700-нюк с кд 30с ≈ 450-скилл с кд 20с по ДПМ."""
         sk = _load_json("active_skills.json") or {}
         by = {s["name"]: s for s in sk.get("skills", [])}
         bonus = tc.get(enemy, {}).get("weak_to", []) if enemy else []
+
+        def dpm(s, mult):
+            return round(mult * s["power"] * 60 / (s.get("cooldown_seconds") or 60))
+
         rows = []
         for e in sk.get("learnsets", {}).get(name, []):
             s = by.get(e["skill"])
-            if not s or not s.get("power"):
+            if not s or not s.get("power") or not s.get("cooldown_seconds"):
                 continue
             mult = 2 if s["element"] in bonus else 1
-            rows.append((mult * s["power"], e["level"], s))
+            rows.append((dpm(s, mult), mult, e["level"], s))
         rows.sort(key=lambda r: -r[0])
-        lines = [f"{s['name']} [{s['element']}] {s['power']}"
-                 + (f"/{s['cooldown_seconds']}с" if s.get("cooldown_seconds") else "")
-                 + (" ×2" if s["element"] in bonus else "") + f" (Lv{lv})"
-                 for _, lv, s in rows[:n_top]]
+        # против босса берём тяжёлые скиллы (power>=300 — мало теряется на защите), ранжируем по ДПМ;
+        # добираем слабыми, если у низкоуровневого пала мощных ещё нет
+        heavy = [r for r in rows if r[3]["power"] >= 300]
+        top = (heavy if len(heavy) >= n_top else heavy + [r for r in rows if r[3]["power"] < 300])[:n_top]
+        lines = [f"{s['name']} [{s['element']}] {s['power']}/{s['cooldown_seconds']}с"
+                 + (" ×2" if mult > 1 else "") + f" = {d} DPM (Lv{lv})"
+                 for d, mult, lv, s in top]
         learned = {e["skill"] for e in sk.get("learnsets", {}).get(name, [])}
-        fruits = sorted((s for s in sk.get("skills", [])
-                         if s.get("skill_fruit_exists") and s.get("power")
-                         and s["element"] in bonus and s["name"] not in learned),
-                        key=lambda s: -s["power"])[:2]
+        fruits = sorted(((dpm(s, 2 if s["element"] in bonus else 1), s)
+                         for s in sk.get("skills", [])
+                         if s.get("skill_fruit_exists") and (s.get("power") or 0) >= 300 and s.get("cooldown_seconds")
+                         and (s["element"] in bonus if bonus else True) and s["name"] not in learned),
+                        key=lambda x: -x[0])[:2]
         if fruits:
-            lines.append("🍎 фруктом: " + ", ".join(f"{s['name']} [{s['element']}] {s['power']} ×2" for s in fruits))
+            lines.append("🍎 фруктом: " + ", ".join(
+                f"{s['name']} [{s['element']}] {s['power']}/{s['cooldown_seconds']}с = {d} DPM" for d, s in fruits))
         return lines
 
     def pick(role, *tags):
@@ -792,6 +802,8 @@ def cmd_party(db, args):
         notes.append("Стихийного каунтера НЕТ — бойцы по консенсусу тир-листов 1.0; решают Awakening, 4★, пассивки (Legend/Musclehead), уровень")
         if args.sea:
             notes.append("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами (player-reported)")
+        notes.append("Скиллы по ДПМ (урон × 60/кулдаун); каунтера нет → без ×2, берём тяжёлые (power≥300). "
+                     "Время каста в данных отсутствует — учтён только кулдаун")
     elif goal == "combat":
         fe = args.element and args.element.capitalize()
         enemy = args.vs and args.vs.capitalize()
@@ -839,6 +851,8 @@ def cmd_party(db, args):
             pick(f"аура: резист от {enemy} (стихия врага)", f"resist:{enemy}", f"elem_team_def:{fe}", "survival")
         if args.sea:
             notes.append("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами (player-reported)")
+        notes.append("Скиллы по ДПМ (урон × 60/кулдаун); каунтера нет → без ×2, берём тяжёлые (power≥300). "
+                     "Время каста в данных отсутствует — учтён только кулдаун")
         notes.append(f"Пати против {enemy}-врагов ({fe} бьёт {', '.join(tc[fe]['strong_vs']) or '—'}); "
                      f"сам {fe} каунтерится {', '.join(tc[fe]['weak_to']) or '—'}")
         if any("Orserk" == n for n, _, _ in picks):
@@ -848,6 +862,8 @@ def cmd_party(db, args):
         if any("Solenne" == n for n, _, _ in picks):
             notes.append("Solenne: +30~80% атаки игрока ТОЛЬКО если все 5 палов разных видов — не бери дублей")
         notes.append("Глайдер-пал не нужен: в 1.0 есть Wing Pack (слот глайдера) и Air Dash Boots — слот пати не трать")
+        notes.append("Скиллы по ДПМ (урон × 60/кулдаун), ×2 к стихии слабости, берём тяжёлые (power≥300). "
+                     "Время каста/анимации в данных paldb отсутствует — учтён только кулдаун")
     elif goal == "openworld":
         pick("маунт + бафф атак игрока", "attack_type:Electric:mount", "attack_type:Fire:mount", "attack_type:Ice:mount")
         pick("сферы самонаводятся + вес +300~600", "capture_homing")

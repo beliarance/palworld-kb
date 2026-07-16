@@ -307,7 +307,7 @@ render.counter = () => {
     } else {
       party=`<h3 style="margin-top:12px">Боевая пати под босса (каунтера нет — топ бойцов)</h3>
       <div class="sub" style="margin-bottom:6px">${esc(b.arena||"")}</div>`
-      +(()=>{const C=buildRawParty([b.pal], sea); return partyCardsHTML(C.picks, C.notes, null)
+      +(()=>{const C=buildRawParty([b.pal], sea); return partyCardsHTML(C.picks, C.notes, null, true)
         +accessoryCardHTML([{n:"Dogen Emblem",why:"тебе и палу: +атака",eff:(itemByName["Dogen Emblem"]||{}).effect||""},
                             {n:"Warsect Terra's Belt",why:"тебе: +защита и +HP (пережить фазы)",eff:(itemByName["Warsect Terra's Belt"]||{}).effect||""},
                             {n:"Life Pendant",why:"тебе: +HP",eff:(itemByName["Life Pendant"]||{}).effect||""}]);})();
@@ -494,31 +494,38 @@ render.party = () => {
   updVis(); drawParty();
 };
 /* подбор скиллов: топ скиллов пала против врага (x2 если враг слаб к стихии скилла) */
+/* ранжируем по ДПМ: power x 60/кд (x2 если враг слаб к стихии). Голый power обманчив —
+   700-нюк с кд 30с и 450 с кд 20с дают почти одинаковый ДПМ */
+const skillDPM=(s,mult)=>Math.round((mult||1)*s.power*60/(s.cooldown_seconds||60));
 function bestSkillsFor(name, enemy, n=3){
   const learn=D.skills.learnsets[name]||[];
   const by=Object.fromEntries(D.skills.skills.map(s=>[s.name,s]));
   const bonus=enemy?(D.chart.chart[enemy]||{}).weak_to||[]:[];
-  const rows=learn.map(e=>({lv:e.level,s:by[e.skill]})).filter(r=>r.s&&r.s.power)
-    .map(r=>({...r,score:(bonus.includes(r.s.element)?2:1)*r.s.power}))
-    .sort((a,b)=>b.score-a.score);
-  return rows.slice(0,n);
+  const rows=learn.map(e=>({lv:e.level,s:by[e.skill]})).filter(r=>r.s&&r.s.power&&r.s.cooldown_seconds)
+    .map(r=>({...r,mult:bonus.includes(r.s.element)?2:1,dpm:skillDPM(r.s,bonus.includes(r.s.element)?2:1)}))
+    .sort((a,b)=>b.dpm-a.dpm);
+  // против босса берём тяжёлые скиллы (power>=300, там мало теряется на защите), ранжируем по ДПМ;
+  // добираем слабыми, если у низкоуровневого пала мощных скиллов ещё нет
+  const heavy=rows.filter(r=>r.s.power>=300);
+  return (heavy.length>=n?heavy:heavy.concat(rows.filter(r=>r.s.power<300))).slice(0,n);
 }
 function fruitSkillsFor(name, enemy, n=2){
   const learned=new Set((D.skills.learnsets[name]||[]).map(e=>e.skill));
   const bonus=enemy?(D.chart.chart[enemy]||{}).weak_to||[]:[];
   return D.skills.skills
-    .filter(s=>s.skill_fruit_exists&&s.power&&bonus.includes(s.element)&&!learned.has(s.name))
-    .sort((a,b)=>b.power-a.power).slice(0,n);
+    .filter(s=>s.skill_fruit_exists&&s.power>=300&&s.cooldown_seconds&&!learned.has(s.name)
+      &&(bonus.length?bonus.includes(s.element):true))
+    .map(s=>({...s,_dpm:skillDPM(s,bonus.includes(s.element)?2:1)}))
+    .sort((a,b)=>b._dpm-a._dpm).slice(0,n);
 }
 function skillChipsHTML(name, enemy, isFighter){
   const best=bestSkillsFor(name, enemy);
   if(!best.length) return "";
-  const bonus=enemy?(D.chart.chart[enemy]||{}).weak_to||[]:[];
-  const chip=r=>`<span class="tag" title="${esc(r.s.description||"")}">${esc(r.s.name)} <span class="el el-${r.s.element}">${r.s.element}</span> <span class="mono">${r.s.power}${r.s.cooldown_seconds?"/"+r.s.cooldown_seconds+"с":""}</span>${bonus.includes(r.s.element)?" ×2":""} <span class="dim">Lv${r.lv}</span></span>`;
-  let html=`<div style="margin-top:6px">⚡ скиллы: ${best.map(chip).join(" ")}</div>`;
+  const chip=r=>`<span class="tag" title="${esc(r.s.description||"")}">${esc(r.s.name)} <span class="el el-${r.s.element}">${r.s.element}</span> <span class="mono">${r.s.power}/${r.s.cooldown_seconds}с</span>${r.mult>1?" ×2":""} <b class="mono">${r.dpm} DPM</b> <span class="dim">Lv${r.lv}</span></span>`;
+  let html=`<div style="margin-top:6px">⚡ скиллы (по ДПМ): ${best.map(chip).join(" ")}</div>`;
   if(isFighter){
     const fr=fruitSkillsFor(name, enemy);
-    if(fr.length) html+=`<div class="sub" style="margin-top:4px">🍎 дать фруктом: ${fr.map(s=>`${esc(s.name)} <span class="el el-${s.element}">${s.element}</span> <span class="mono">${s.power}</span> ×2`).join(" · ")}</div>`;
+    if(fr.length) html+=`<div class="sub" style="margin-top:4px">🍎 дать фруктом: ${fr.map(x=>`${esc(x.name)} <span class="el el-${x.element}">${x.element}</span> <span class="mono">${x.power}/${x.cooldown_seconds}с · ${x._dpm} DPM</span>`).join(" · ")}</div>`;
   }
   return html;
 }
@@ -565,6 +572,7 @@ function buildCombatParty(fe, enemy, two, sea){
     B.picks[B.picks.length-1].fighter=true;
   } else B.pick(`аура: резист от ${enemy} (стихия врага)`,`resist:${enemy}`,`elem_team_def:${fe}`,"survival");
   if(sea) B.notes.push("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами <span class='dim'>(player-reported)</span>");
+  B.notes.push("Скиллы отранжированы по ДПМ (урон × 60/кулдаун), ×2 к стихии слабости; берём тяжёлые (power≥300). <span class='dim'>Время каста/анимации в данных paldb отсутствует — учтён только кулдаун</span>");
   B.notes.push(`Пати против <b>${enemy}</b>-врагов (${fe} бьёт ${(chart[fe].strong_vs||[]).join(", ")||"—"}); сам ${fe} каунтерится ${(chart[fe].weak_to||[]).join(", ")||"—"}`);
   if(B.picks.some(p=>p.n==="Orserk")) B.notes.push("Orserk (#187): стаки дают ПУЛИ — стреляй очередями; Drone Launcher (tech 77, 9 дронов, без патронов) набивает стаки сам, в руках держи Mechanical Bow (tech 67) под сингл-таргет <span class='dim'>(мета-гайды июля 2026, PRELIMINARY)</span>");
   if(B.picks.some(p=>p.n==="Solenne")) B.notes.push("Solenne: +30~80% атаки игрока ТОЛЬКО если все 5 палов разных видов — не бери дублей");
@@ -648,17 +656,20 @@ function buildRawParty(exclude, sea){
   B.pick("выживание: хил/реген (бой долгий)","survival");
   B.notes.push("Стихийного каунтера НЕТ — бойцы по консенсусу тир-листов 1.0; решают Awakening, 4★, пассивки (Legend/Musclehead), уровень");
   if(sea) B.notes.push("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами <span class='dim'>(player-reported)</span>");
+  B.notes.push("Скиллы отранжированы по ДПМ (урон × 60/кулдаун), ×2 к стихии слабости; берём тяжёлые (power≥300). <span class='dim'>Время каста/анимации в данных paldb отсутствует — учтён только кулдаун</span>");
   if(B.picks.some(p=>p.n==="Orserk")) B.notes.push("Orserk (#187): стаки дают ПУЛИ — Drone Launcher (tech 77) набивает их сам, в руках Mechanical Bow (tech 67) <span class='dim'>(мета-гайды июля 2026, PRELIMINARY)</span>");
   if(B.picks.some(p=>p.n==="Solenne")) B.notes.push("Solenne: +30~80% атаки игрока ТОЛЬКО если все 5 палов разных видов");
+  B.notes.push("Скиллы отранжированы по ДПМ (урон × 60/кулдаун); каунтера нет → без ×2, берём тяжёлые (power≥300). <span class='dim'>Время каста в данных отсутствует — учтён только кулдаун</span>");
   return B;
 }
 /* общий рендер карточек пати; enemy задаёт скиллы (бойцам — подробно, остальным — топ-3) */
-function partyCardsHTML(picks, notes, enemy){
+function partyCardsHTML(picks, notes, enemy, showSkills){
+  if(showSkills===undefined) showSkills=!!enemy;
   const effOf=n=>(D.idx.pals[n]||{}).partner_effect||((P[n]||{}).ps||{}).effect||"";
   return picks.slice(0,5).map(({n,role,alts,fighter})=>`
     <div class="card"><div class="big">${palIcon(n)}${palLink(n)} <span class="dim">— ${role}</span></div>
       <div class="dim" style="margin-top:4px">${esc(effOf(n))}</div>
-      ${enemy?skillChipsHTML(n,enemy,!!fighter):""}
+      ${showSkills?skillChipsHTML(n,enemy,!!fighter):""}
       ${alts&&alts.length?`<div class="sub" style="margin-top:6px">замены: ${alts.map(a=>palLink(a)).join(" · ")}</div>`:""}
     </div>`).join("")
     + (notes.length?`<div class="card">${notes.map(t=>`<div>💡 ${t}</div>`).join("")}</div>`:"");
