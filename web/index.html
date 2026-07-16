@@ -589,11 +589,19 @@ function accessoriesFor(goal, fe, enemy){
   }
   return out;
 }
+function accObtain(it){
+  if(it.schematic_sources) return "🧾 схема падает: "+it.schematic_sources.join("; ")+(it.recipe?` → крафт @ ${it.recipe.station}`:"");
+  if(it.tech_level) return `крафт: тех-дерево tech ${it.tech_level} @ ${(it.recipe||{}).station||"?"}`;
+  if(it.recipe) return `крафт @ ${it.recipe.station} (разблокировка на paldb не указана)`;
+  return "источник на paldb не указан";
+}
 function accessoryCardHTML(accs){
   if(!accs.length) return "";
-  return `<div class="card"><div class="big">🎗 Аксессуары</div>${accs.map(a=>
-    `<div style="margin-top:6px">${itemLink(a.n)} <span class="dim">— ${a.why}</span>
-     <div class="sub">${esc(a.eff.replace(/\n/g," "))}</div></div>`).join("")}</div>`;
+  return `<div class="card"><div class="big">🎗 Аксессуары</div>${accs.map(a=>{
+    const it=itemByName[a.n]||{};
+    return `<div style="margin-top:6px">${itemLink(a.n)} <span class="dim">— ${a.why}</span>
+     <div class="sub">${esc(a.eff.replace(/\n/g," "))}</div>
+     <div class="sub">📥 ${esc(accObtain(it))}</div></div>`;}).join("")}</div>`;
 }
 /* общий рендер карточек пати; enemy задаёт скиллы (бойцам — подробно, остальным — топ-3) */
 function partyCardsHTML(picks, notes, enemy){

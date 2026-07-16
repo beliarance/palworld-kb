@@ -652,9 +652,19 @@ def _party_accessories(goal, fe=None, enemy=None):
 
     out = []
 
+    def obtain(it):
+        if it.get("schematic_sources"):
+            return ("🧾 схема падает: " + "; ".join(it["schematic_sources"])
+                    + (f" → крафт @ {it['recipe']['station']}" if it.get("recipe") else ""))
+        if it.get("tech_level"):
+            return f"крафт: тех-дерево tech {it['tech_level']} @ {(it.get('recipe') or {}).get('station', '?')}"
+        if it.get("recipe"):
+            return f"крафт @ {it['recipe']['station']} (разблокировка на paldb не указана)"
+        return "источник на paldb не указан"
+
     def push(it, why):
-        if it and not any(n == it["name"] for n, _ in out):
-            out.append((it["name"], why))
+        if it and not any(n == it["name"] for n, _, _ in out):
+            out.append((it["name"], why, obtain(it)))
 
     if goal == "combat" and fe:
         push(find(rf"Pal Attack Up.*{fe} Damage Enhancement|{fe} Damage Enhancement.*Pal Attack Up"),
@@ -875,8 +885,9 @@ def cmd_party(db, args):
     accs = _party_accessories(goal, locals().get("fe"), locals().get("enemy"))
     if accs:
         print("  🎗 Аксессуары:")
-        for name, why in accs:
+        for name, why, src in accs:
             print(f"    {name:<28} — {why}")
+            print(f"        📥 {src}")
     for note in notes:
         print(f"  ! {note}")
 

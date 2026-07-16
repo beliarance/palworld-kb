@@ -13420,7 +13420,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises Health. Health Up Lv. 3"
+   "effect": "An accessory that raises Health. Health Up Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands 106,-232"
+   ]
   },
   {
    "name": "Defense Pendant",
@@ -13437,7 +13443,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises Defense. Defense Up Lv. 3"
+   "effect": "An accessory that raises Defense. Defense Up Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands -372,-335"
+   ]
   },
   {
    "name": "Pendant of Diligence",
@@ -13454,7 +13466,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises Work Speed. Speedy Worker Lv. 3"
+   "effect": "An accessory that raises Work Speed. Speedy Worker Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands -72,-489"
+   ]
   },
   {
    "name": "Heat Resistant Undershirt",
@@ -13488,7 +13506,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises Cold Resistance. Cold Resistance Lv. 3"
+   "effect": "An accessory that raises Cold Resistance. Cold Resistance Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands -271,91"
+   ]
   },
   {
    "name": "Ring of Neutral Resistance",
@@ -13505,7 +13529,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "Accessory that lowers Neutral damage. Neutral Damage Reduction Lv. 3"
+   "effect": "Accessory that lowers Neutral damage. Neutral Damage Reduction Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands -216,-279"
+   ]
   },
   {
    "name": "Ring of Fire Resistance",
@@ -13522,7 +13552,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that reduces incoming Fire damage. Fire Damage Reduction Lv. 3"
+   "effect": "An accessory that reduces incoming Fire damage. Fire Damage Reduction Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands -612,-429"
+   ]
   },
   {
    "name": "Ring of Water Resistance",
@@ -13539,7 +13575,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that reduces incoming Water damage. Water Damage Reduction Lv. 3"
+   "effect": "An accessory that reduces incoming Water damage. Water Damage Reduction Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands -495,-44"
+   ]
   },
   {
    "name": "Ring of Electric Resistance",
@@ -13556,7 +13598,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that reduces incoming Electric damage. Electric Damage Reduction Lv. 3"
+   "effect": "An accessory that reduces incoming Electric damage. Electric Damage Reduction Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands -251,-75"
+   ]
   },
   {
    "name": "Ring of Grass Resistance",
@@ -13573,7 +13621,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that reduces incoming Grass damage. Grass Damage Reduction Lv. 3"
+   "effect": "An accessory that reduces incoming Grass damage. Grass Damage Reduction Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands 302,-335"
+   ]
   },
   {
    "name": "Ring of Ground Resistance",
@@ -13590,7 +13644,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that reduces incoming Ground damage. Earth Damage Reduction Lv. 3"
+   "effect": "An accessory that reduces incoming Ground damage. Earth Damage Reduction Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands 513,101"
+   ]
   },
   {
    "name": "Ring of Dark Resistance",
@@ -13607,7 +13667,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that reduces incoming Dark damage. Dark Damage Reduction Lv. 3"
+   "effect": "An accessory that reduces incoming Dark damage. Dark Damage Reduction Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands 19,-157"
+   ]
   },
   {
    "name": "Ring of Dragon Resistance",
@@ -13624,7 +13690,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that reduces incoming Dragon damage. Dragon Damage Reduction Lv. 3"
+   "effect": "An accessory that reduces incoming Dragon damage. Dragon Damage Reduction Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands 524,-208"
+   ]
   },
   {
    "name": "Ring of Mercy",
@@ -13674,7 +13746,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises Heat and Cold Resistance. Heat Resistance Lv. 3 / Cold Resistance Lv. 3"
+   "effect": "An accessory that raises Heat and Cold Resistance. Heat Resistance Lv. 3 / Cold Resistance Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands 605,304"
+   ]
   },
   {
    "name": "Ring of Freight",
@@ -13691,7 +13769,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises carrying capacity.\r\nMax Carrying Capacity Lv. 3"
+   "effect": "An accessory that raises carrying capacity.\r\nMax Carrying Capacity Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands 50,30"
+   ]
   },
   {
    "name": "Anti-Gravity Belt",
@@ -13806,7 +13890,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Neutral damage of the Pal fighting alongside you. Pal Neutral Damage Enhancement Lv. 3"
+   "effect": "An accessory that raises the Neutral damage of the Pal fighting alongside you. Pal Neutral Damage Enhancement Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands -167,-449"
+   ]
   },
   {
    "name": "Fire Support Whistle",
@@ -13823,7 +13913,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Fire damage of the Pal fighting alongside you. Pal Fire Damage Enhancement Lv. 3"
+   "effect": "An accessory that raises the Fire damage of the Pal fighting alongside you. Pal Fire Damage Enhancement Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands -441,-558"
+   ]
   },
   {
    "name": "Water Support Whistle",
@@ -13840,7 +13936,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Water damage of the Pal fighting alongside you. Pal Water Damage Enhancement Lv. 3"
+   "effect": "An accessory that raises the Water damage of the Pal fighting alongside you. Pal Water Damage Enhancement Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands -311,-312"
+   ]
   },
   {
    "name": "Electric Support Whistle",
@@ -13857,7 +13959,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Electric damage of the Pal fighting alongside you. Pal Electric Damage Enhancement Lv. 3"
+   "effect": "An accessory that raises the Electric damage of the Pal fighting alongside you. Pal Electric Damage Enhancement Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands -161,-719"
+   ]
   },
   {
    "name": "Grass Support Whistle",
@@ -13874,7 +13982,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Grass damage of the Pal fighting alongside you. Pal Grass Damage Enhancement Lv. 3"
+   "effect": "An accessory that raises the Grass damage of the Pal fighting alongside you. Pal Grass Damage Enhancement Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands 186,-139"
+   ]
   },
   {
    "name": "Ice Support Whistle",
@@ -13891,7 +14005,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Ice damage of the Pal fighting alongside you. Pal Ice Damage Enhancement Lv. 3"
+   "effect": "An accessory that raises the Ice damage of the Pal fighting alongside you. Pal Ice Damage Enhancement Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands 146,166"
+   ]
   },
   {
    "name": "Ground Support Whistle",
@@ -13908,7 +14028,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Ground damage of the Pal fighting alongside you. Pal Ground Damage Enhancement Lv. 3"
+   "effect": "An accessory that raises the Ground damage of the Pal fighting alongside you. Pal Ground Damage Enhancement Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands 567,146"
+   ]
   },
   {
    "name": "Dark Support Whistle",
@@ -13925,7 +14051,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Dark damage of the Pal fighting alongside you. Pal Dark Damage Enhancement Lv. 3"
+   "effect": "An accessory that raises the Dark damage of the Pal fighting alongside you. Pal Dark Damage Enhancement Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands -90,-244"
+   ]
   },
   {
    "name": "Dragon Support Whistle",
@@ -13942,7 +14074,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Dragon damage of the Pal fighting alongside you. Pal Dragon Damage Enhancement Lv. 3"
+   "effect": "An accessory that raises the Dragon damage of the Pal fighting alongside you. Pal Dragon Damage Enhancement Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands 369,8"
+   ]
   },
   {
    "name": "Attack Support Whistle",
@@ -13959,7 +14097,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Attack of the Pal fighting alongside you. Pal Attack Up Lv. 3"
+   "effect": "An accessory that raises the Attack of the Pal fighting alongside you. Pal Attack Up Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands -502,-508"
+   ]
   },
   {
    "name": "Defense Support Whistle",
@@ -13976,7 +14120,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Defense of the Pal fighting alongside you. Pal Defense Up Lv. 3"
+   "effect": "An accessory that raises the Defense of the Pal fighting alongside you. Pal Defense Up Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands 307,491"
+   ]
   },
   {
    "name": "Growth Acceleration Bell",
@@ -13993,7 +14143,13 @@
    },
    "obtained_from": [],
    "notes": "An accessory that raises Pal EXP (Pal EXP Up Lv. 3; exact % not listed on paldb). Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises Pal EXP. Pal EXP Up Lv. 3"
+   "effect": "An accessory that raises Pal EXP. Pal EXP Up Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands -26,-92"
+   ]
   },
   {
    "name": "Attack Pendant",
@@ -14010,7 +14166,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises Attack. Attack Up Lv. 3"
+   "effect": "An accessory that raises Attack. Attack Up Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands 427,338"
+   ]
   },
   {
    "name": "Ring of Ice Resistance",
@@ -14027,7 +14189,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line, Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that reduces incoming Ice damage. Ice Damage Reduction Lv. 3"
+   "effect": "An accessory that reduces incoming Ice damage. Ice Damage Reduction Lv. 3",
+   "schematic_sources": [
+    "Lv55 Oilrig Greater Chest (1.183%)",
+    "Feybreak_Treasure (3.448%)",
+    "Feybreak Dungeon (0.191%)",
+    "Ancient Ruin — Palpagos Islands 239,114"
+   ]
   },
   {
    "name": "Dogen Emblem",
@@ -14044,7 +14212,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that greatly raises your Attack, and that of the Pal fighting alongside you. Attack Up Lv. 4 Pal Attack Up Lv. 4"
+   "effect": "An accessory that greatly raises your Attack, and that of the Pal fighting alongside you. Attack Up Lv. 4 Pal Attack Up Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -300,-1505"
+   ]
   },
   {
    "name": "Silvegis Emblem",
@@ -14061,7 +14235,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that greatly raises your Defense, and that of the Pal fighting alongside you. Defense Up Lv. 4 Pal Defense Up Lv. 4"
+   "effect": "An accessory that greatly raises your Defense, and that of the Pal fighting alongside you. Defense Up Lv. 4 Pal Defense Up Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -1036,-1146"
+   ]
   },
   {
    "name": "Wandering Merchant Charm",
@@ -14079,7 +14259,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that greatly raises Heat and Cold Resistance. It also significantly increases carrying capacity. Heat Resistance Lv. 3 / Cold Resistance Lv. 3 Max Carrying Capacity Lv. 4"
+   "effect": "An accessory that greatly raises Heat and Cold Resistance. It also significantly increases carrying capacity. Heat Resistance Lv. 3 / Cold Resistance Lv. 3 Max Carrying Capacity Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -784,-1222"
+   ]
   },
   {
    "name": "Vanguard Charm",
@@ -14097,7 +14283,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that greatly raises Heat and Cold Resistance. It also significantly increases Health. Heat Resistance Lv. 3 / Cold Resistance Lv. 3 Health Up Lv. 4"
+   "effect": "An accessory that greatly raises Heat and Cold Resistance. It also significantly increases Health. Heat Resistance Lv. 3 / Cold Resistance Lv. 3 Health Up Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -815,-850"
+   ]
   },
   {
    "name": "Explosion-Resistant Undershirt",
@@ -14128,7 +14320,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that greatly raises Defense and Health. Defense Up Lv. 4 Health Up Lv. 4"
+   "effect": "An accessory that greatly raises Defense and Health. Defense Up Lv. 4 Health Up Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -665,30"
+   ]
   },
   {
    "name": "Islander's Tool Belt",
@@ -14145,7 +14343,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that greatly raises carrying capacity. It also significantly increases work speed. Max Carrying Capacity Lv. 4 Speedy Worker Lv. 4"
+   "effect": "An accessory that greatly raises carrying capacity. It also significantly increases work speed. Max Carrying Capacity Lv. 4 Speedy Worker Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -161,343"
+   ]
   },
   {
    "name": "Celestial Emperor's Baton",
@@ -14162,7 +14366,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Attack of the Pal fighting alongside you.\r\nIt also significantly increases their Neutral damage. Pal Attack Up Lv. 4 Pal Neutral Damage Enhancement Lv. 4"
+   "effect": "An accessory that raises the Attack of the Pal fighting alongside you.\r\nIt also significantly increases their Neutral damage. Pal Attack Up Lv. 4 Pal Neutral Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -433,384"
+   ]
   },
   {
    "name": "Flame Emperor's Baton",
@@ -14179,7 +14389,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Attack of the Pal fighting alongside you.\r\nIt also significantly increases their  Fire damage. Pal Attack Up Lv. 4 Pal Fire Damage Enhancement Lv. 4"
+   "effect": "An accessory that raises the Attack of the Pal fighting alongside you.\r\nIt also significantly increases their  Fire damage. Pal Attack Up Lv. 4 Pal Fire Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -1314,-1082"
+   ]
   },
   {
    "name": "Lord of the Sea's Baton",
@@ -14196,7 +14412,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Attack of the Pal fighting alongside you.\r\nIt also significantly increases their Water damage. Pal Attack Up Lv. 4 Pal Water Damage Enhancement Lv. 4"
+   "effect": "An accessory that raises the Attack of the Pal fighting alongside you.\r\nIt also significantly increases their Water damage. Pal Attack Up Lv. 4 Pal Water Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -643,-1088"
+   ]
   },
   {
    "name": "Lord of Lightning's Baton",
@@ -14213,7 +14435,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Attack of the Pal fighting alongside you.\r\nIt also significantly increases their Electric damage. Pal Attack Up Lv. 4 Pal Electric Damage Enhancement Lv. 4"
+   "effect": "An accessory that raises the Attack of the Pal fighting alongside you.\r\nIt also significantly increases their Electric damage. Pal Attack Up Lv. 4 Pal Electric Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -1316,-992"
+   ]
   },
   {
    "name": "Spirit Emperor's Baton",
@@ -14230,7 +14458,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Attack of the Pal fighting alongside you.\r\nIt also significantly increases their Grass damage. Pal Attack Up Lv. 4 Pal Grass Damage Enhancement Lv. 4"
+   "effect": "An accessory that raises the Attack of the Pal fighting alongside you.\r\nIt also significantly increases their Grass damage. Pal Attack Up Lv. 4 Pal Grass Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -986,-1320"
+   ]
   },
   {
    "name": "Ice Emperor's Baton",
@@ -14247,7 +14481,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Attack of the Pal fighting alongside you.\r\nIt also significantly increases their Ice damage. Pal Attack Up Lv. 4 Pal Ice Damage Enhancement Lv. 4"
+   "effect": "An accessory that raises the Attack of the Pal fighting alongside you.\r\nIt also significantly increases their Ice damage. Pal Attack Up Lv. 4 Pal Ice Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -960,-1034"
+   ]
   },
   {
    "name": "Earth Emperor's Baton",
@@ -14264,7 +14504,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Attack of the Pal fighting alongside you.\r\nIt also significantly increases their Ground damage. Pal Attack Up Lv. 4 Pal Ground Damage Enhancement Lv. 4"
+   "effect": "An accessory that raises the Attack of the Pal fighting alongside you.\r\nIt also significantly increases their Ground damage. Pal Attack Up Lv. 4 Pal Ground Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands 175,334"
+   ]
   },
   {
    "name": "Lord of the Underworld's Baton",
@@ -14281,7 +14527,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Attack of the Pal fighting alongside you.\r\nIt also significantly increases their Dark damage. Pal Attack Up Lv. 4 Pal Dark Damage Enhancement Lv. 4"
+   "effect": "An accessory that raises the Attack of the Pal fighting alongside you.\r\nIt also significantly increases their Dark damage. Pal Attack Up Lv. 4 Pal Dark Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -920,-1127"
+   ]
   },
   {
    "name": "Divine Dragon's Baton",
@@ -14298,7 +14550,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Attack of the Pal fighting alongside you.\r\nIt also significantly increases their Dragon damage. Pal Attack Up Lv. 4 Pal Dragon Damage Enhancement Lv. 4"
+   "effect": "An accessory that raises the Attack of the Pal fighting alongside you.\r\nIt also significantly increases their Dragon damage. Pal Attack Up Lv. 4 Pal Dragon Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -1307,-1497"
+   ]
   },
   {
    "name": "Pal Tamer's Glasses",
@@ -14315,7 +14573,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "Eyewear for Pal Tamers. \r\nThe wearer's attacks will not reduce the target's Health below 1. \r\nReveals hidden Pal potentials. Mercy Hit"
+   "effect": "Eyewear for Pal Tamers. \r\nThe wearer's attacks will not reduce the target's Health below 1. \r\nReveals hidden Pal potentials. Mercy Hit",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands 8,121"
+   ]
   },
   {
    "name": "Air Walker Mk I",
@@ -14333,7 +14597,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that allows the player to jump in mid-air when equipped.\r\nAlso grants a mid-air dash. Jump Count Increase +1 Aerial Dash +1"
+   "effect": "An accessory that allows the player to jump in mid-air when equipped.\r\nAlso grants a mid-air dash. Jump Count Increase +1 Aerial Dash +1",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -432,489"
+   ]
   },
   {
    "name": "Air Walker Mk II",
@@ -14351,7 +14621,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that allows the player to jump in mid-air when equipped.\r\nAlso grants a double mid-air dash. Jump Count Increase +1 Aerial Dash +2"
+   "effect": "An accessory that allows the player to jump in mid-air when equipped.\r\nAlso grants a double mid-air dash. Jump Count Increase +1 Aerial Dash +2",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -687,289"
+   ]
   },
   {
    "name": "Air Walker Mk III",
@@ -14369,7 +14645,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that allows the player to perform double jumps in mid-air when equipped.\r\nAlso grants a mid-air dash. Jump Count Increase +2 Aerial Dash +1"
+   "effect": "An accessory that allows the player to perform double jumps in mid-air when equipped.\r\nAlso grants a mid-air dash. Jump Count Increase +2 Aerial Dash +1",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -1201,-1524"
+   ]
   },
   {
    "name": "Air Walker EX",
@@ -14387,7 +14669,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that allows the player to perform double jumps in mid-air when equipped.\r\nAlso grants a double mid-air dash. Jump Count Increase +2 Aerial Dash +2"
+   "effect": "An accessory that allows the player to perform double jumps in mid-air when equipped.\r\nAlso grants a double mid-air dash. Jump Count Increase +2 Aerial Dash +2",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -299,-1365"
+   ]
   },
   {
    "name": "Hartalis's Talisman",
@@ -14404,7 +14692,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Defense of the Pal fighting alongside you.\r\nIt also significantly increases their Neutral damage. Pal Defense Up Lv. 4 Pal Neutral Damage Enhancement Lv. 4"
+   "effect": "An accessory that raises the Defense of the Pal fighting alongside you.\r\nIt also significantly increases their Neutral damage. Pal Defense Up Lv. 4 Pal Neutral Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -1237,-1179"
+   ]
   },
   {
    "name": "Blazamut's Talisman",
@@ -14421,7 +14715,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Defense of the Pal fighting alongside you.\r\nIt also significantly increases their  Fire damage. Pal Defense Up Lv. 4 Pal Fire Damage Enhancement Lv. 4"
+   "effect": "An accessory that raises the Defense of the Pal fighting alongside you.\r\nIt also significantly increases their  Fire damage. Pal Defense Up Lv. 4 Pal Fire Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -1209,-1325"
+   ]
   },
   {
    "name": "Neptilius's Talisman",
@@ -14438,7 +14738,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Defense of the Pal fighting alongside you.\r\nIt also significantly increases their Water damage. Pal Defense Up Lv. 4 Pal Water Damage Enhancement Lv. 4"
+   "effect": "An accessory that raises the Defense of the Pal fighting alongside you.\r\nIt also significantly increases their Water damage. Pal Defense Up Lv. 4 Pal Water Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -170,495"
+   ]
   },
   {
    "name": "Orserk's Talisman",
@@ -14455,7 +14761,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Defense of the Pal fighting alongside you.\r\nIt also significantly increases their Electric damage. Pal Defense Up Lv. 4 Pal Electric Damage Enhancement Lv. 4"
+   "effect": "An accessory that raises the Defense of the Pal fighting alongside you.\r\nIt also significantly increases their Electric damage. Pal Defense Up Lv. 4 Pal Electric Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -1274,-1307"
+   ]
   },
   {
    "name": "Lyleen's Talisman",
@@ -14472,7 +14784,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Defense of the Pal fighting alongside you.\r\nIt also significantly increases their Grass damage. Pal Defense Up Lv. 4 Pal Grass Damage Enhancement Lv. 4"
+   "effect": "An accessory that raises the Defense of the Pal fighting alongside you.\r\nIt also significantly increases their Grass damage. Pal Defense Up Lv. 4 Pal Grass Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -492,214"
+   ]
   },
   {
    "name": "Frostallion's Talisman",
@@ -14489,7 +14807,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Defense of the Pal fighting alongside you.\r\nIt also significantly increases their Ice damage. Pal Defense Up Lv. 4 Pal Ice Damage Enhancement Lv. 4"
+   "effect": "An accessory that raises the Defense of the Pal fighting alongside you.\r\nIt also significantly increases their Ice damage. Pal Defense Up Lv. 4 Pal Ice Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -100,177"
+   ]
   },
   {
    "name": "Anubis's Talisman",
@@ -14506,7 +14830,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Defense of the Pal fighting alongside you.\r\nIt also significantly increases their Ground damage. Pal Defense Up Lv. 4 Pal Ground Damage Enhancement Lv. 4"
+   "effect": "An accessory that raises the Defense of the Pal fighting alongside you.\r\nIt also significantly increases their Ground damage. Pal Defense Up Lv. 4 Pal Ground Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -983,-839"
+   ]
   },
   {
    "name": "Lyleen Noct's Talisman",
@@ -14523,7 +14853,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Defense of the Pal fighting alongside you.\r\nIt also significantly increases their Dark damage. Pal Defense Up Lv. 4 Pal Dark Damage Enhancement Lv. 4"
+   "effect": "An accessory that raises the Defense of the Pal fighting alongside you.\r\nIt also significantly increases their Dark damage. Pal Defense Up Lv. 4 Pal Dark Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -298,342"
+   ]
   },
   {
    "name": "Reptyro Charm",
@@ -14541,7 +14877,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory with incredible resistance to heat. \r\nGreatly reduces incoming Fire damage. Heat Resistance Lv. 3 Fire Damage Reduction Lv. 4"
+   "effect": "An accessory with incredible resistance to heat. \r\nGreatly reduces incoming Fire damage. Heat Resistance Lv. 3 Fire Damage Reduction Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands 386,202"
+   ]
   },
   {
    "name": "Wumpo Charm",
@@ -14559,7 +14901,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory with incredible resistance to cold. \r\nGreatly reduces incoming Ice damage. Cold Resistance Lv. 3 Ice Damage Reduction Lv. 4"
+   "effect": "An accessory with incredible resistance to cold. \r\nGreatly reduces incoming Ice damage. Cold Resistance Lv. 3 Ice Damage Reduction Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -229,470"
+   ]
   },
   {
    "name": "Blazehowl Ring",
@@ -14576,7 +14924,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that greatly reduces incoming Grass damage of the Pal fighting alongside you.\r\nIt also significantly increases the Fire damage of the Pal fighting alongside you. Grass Damage Reduction Lv. 4 Pal Fire Damage Enhancement Lv. 4"
+   "effect": "An accessory that greatly reduces incoming Grass damage of the Pal fighting alongside you.\r\nIt also significantly increases the Fire damage of the Pal fighting alongside you. Grass Damage Reduction Lv. 4 Pal Fire Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands 757,424"
+   ]
   },
   {
    "name": "Faleris Aqua Ring",
@@ -14593,7 +14947,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that greatly reduces incoming Fire damage of the Pal fighting alongside you.\r\nIt also significantly increases the Water damage of the Pal fighting alongside you. Fire Damage Reduction Lv. 4 Pal Water Damage Enhancement Lv. 4"
+   "effect": "An accessory that greatly reduces incoming Fire damage of the Pal fighting alongside you.\r\nIt also significantly increases the Water damage of the Pal fighting alongside you. Fire Damage Reduction Lv. 4 Pal Water Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands 406,-726"
+   ]
   },
   {
    "name": "Fenglope Lux Ring",
@@ -14610,7 +14970,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that greatly reduces incoming Water damage of the Pal fighting alongside you.\r\nIt also significantly increases the Electric damage of the Pal fighting alongside you. Water Damage Reduction Lv. 4 Pal Electric Damage Enhancement Lv. 4"
+   "effect": "An accessory that greatly reduces incoming Water damage of the Pal fighting alongside you.\r\nIt also significantly increases the Electric damage of the Pal fighting alongside you. Water Damage Reduction Lv. 4 Pal Electric Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -1279,-575"
+   ]
   },
   {
    "name": "Menasting Terra Ring",
@@ -14627,7 +14993,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that greatly reduces incoming Electric damage of the Pal fighting alongside you.\r\nIt also significantly increases the Ground damage of the Pal fighting alongside you. Electric Damage Reduction Lv. 4 Pal Ground Damage Enhancement Lv. 4"
+   "effect": "An accessory that greatly reduces incoming Electric damage of the Pal fighting alongside you.\r\nIt also significantly increases the Ground damage of the Pal fighting alongside you. Electric Damage Reduction Lv. 4 Pal Ground Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -897,125"
+   ]
   },
   {
    "name": "Vaelet Ring",
@@ -14644,7 +15016,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that greatly reduces incoming Ground damage of the Pal fighting alongside you.\r\nIt also significantly increases the Grass damage of the Pal fighting alongside you. Ground Damage Reduction Lv. 4 Pal Grass Damage Enhancement Lv. 4"
+   "effect": "An accessory that greatly reduces incoming Ground damage of the Pal fighting alongside you.\r\nIt also significantly increases the Grass damage of the Pal fighting alongside you. Ground Damage Reduction Lv. 4 Pal Grass Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands 859,-94"
+   ]
   },
   {
    "name": "Katress Ring",
@@ -14661,7 +15039,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that greatly reduces incoming Neutral damage of the Pal fighting alongside you.\r\nIt also significantly increases the Dark damage of the Pal fighting alongside you. Neutral Damage Reduction Lv. 4 Pal Dark Damage Enhancement Lv. 4"
+   "effect": "An accessory that greatly reduces incoming Neutral damage of the Pal fighting alongside you.\r\nIt also significantly increases the Dark damage of the Pal fighting alongside you. Neutral Damage Reduction Lv. 4 Pal Dark Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -1730,-990"
+   ]
   },
   {
    "name": "Elphidran Ring",
@@ -14678,7 +15062,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that greatly reduces incoming Dark damage of the Pal fighting alongside you.\r\nIt also significantly increases the Dragon damage of the Pal fighting alongside you. Dark Damage Reduction Lv. 4 Pal Dragon Damage Enhancement Lv. 4"
+   "effect": "An accessory that greatly reduces incoming Dark damage of the Pal fighting alongside you.\r\nIt also significantly increases the Dragon damage of the Pal fighting alongside you. Dark Damage Reduction Lv. 4 Pal Dragon Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -752,-995"
+   ]
   },
   {
    "name": "Cryolinx Ring",
@@ -14695,7 +15085,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that greatly reduces incoming Dragon damage of the Pal fighting alongside you.\r\nIt also significantly increases the Ice damage of the Pal fighting alongside you. Dragon Damage Reduction Lv. 4 Pal Ice Damage Enhancement Lv. 4"
+   "effect": "An accessory that greatly reduces incoming Dragon damage of the Pal fighting alongside you.\r\nIt also significantly increases the Ice damage of the Pal fighting alongside you. Dragon Damage Reduction Lv. 4 Pal Ice Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -124,595"
+   ]
   },
   {
    "name": "Faleris Ring",
@@ -14712,7 +15108,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that greatly reduces incoming Ice damage of the Pal fighting alongside you.\r\nIt also significantly increases the Fire damage of the Pal fighting alongside you. Ice Damage Reduction Lv. 4 Pal Fire Damage Enhancement Lv. 4"
+   "effect": "An accessory that greatly reduces incoming Ice damage of the Pal fighting alongside you.\r\nIt also significantly increases the Fire damage of the Pal fighting alongside you. Ice Damage Reduction Lv. 4 Pal Fire Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -1219,-1930"
+   ]
   },
   {
    "name": "Ring of Trust",
@@ -14729,7 +15131,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "Equipping this makes it easier to increase your Trust with your Pals. Party Pals Bond Boost"
+   "effect": "Equipping this makes it easier to increase your Trust with your Pals. Party Pals Bond Boost",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -513,-207"
+   ]
   },
   {
    "name": "Phantom Ring",
@@ -14746,7 +15154,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that extends the invincibility period of rolls and sidesteps. Extended Dodge Immunity"
+   "effect": "An accessory that extends the invincibility period of rolls and sidesteps. Extended Dodge Immunity",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands 108,472"
+   ]
   },
   {
    "name": "Jetragon's Talisman",
@@ -14763,7 +15177,13 @@
    },
    "obtained_from": [],
    "notes": "Also craftable at: Production Assembly Line II, Advanced Workshop, Ancient Workbench",
-   "effect": "An accessory that raises the Defense of the Pal fighting alongside you.\r\nIt also significantly increases their Dragon damage. Pal Defense Up Lv. 4 Pal Dragon Damage Enhancement Lv. 4"
+   "effect": "An accessory that raises the Defense of the Pal fighting alongside you.\r\nIt also significantly increases their Dragon damage. Pal Defense Up Lv. 4 Pal Dragon Damage Enhancement Lv. 4",
+   "schematic_sources": [
+    "SkyIsland_Treasure (2.381%)",
+    "SkyIsland02 (0.191%)",
+    "Lv60 Oilrig Greater Chest (0.98%)",
+    "Ancient Ruin — Palpagos Islands -1186,-829"
+   ]
   },
   {
    "name": "Night Vision Goggles",

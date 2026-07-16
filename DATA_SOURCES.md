@@ -254,3 +254,15 @@
   источники и даты в docs/boss_tower_counters.md. Всё PRELIMINARY (6 дней после релиза).
 - build_index.py: новые party-теги elem_team_atk/def:{стихия} (ауры на все 9 стихий),
   bullet_stack (Orserk), cd_support (Lapure), revive (Gildra). Боевой скелет пати обновлён.
+
+## 2026-07-16 — Источники добычи аксессуаров (схемы с шансами и координатами)
+- Источник: paldb.cc — страницы схем "<Name> Schematic" (Treasure Box таблицы).
+  Сборщик расширен: scripts/collectors/fetch_accessory_effects.py теперь пишет
+  schematic_sources[] (сундук/данж + шанс; фикс-точки Ancient Ruin с координатами)
+  и drop_sources[] (прямых дропов не нашлось — 0).
+- Итог: 70/84 аксессуаров крафтятся ПО СХЕМАМ (у предметов tech_level=null):
+  Rare-схемы — Lv55 Oilrig Greater Chest (~1.2%) / Feybreak Treasure (~3.4%) /
+  Feybreak Dungeon (~0.2%) / фикс. Ancient Ruin; Epic (талисманы/батоны/эмблемы,
+  кольца палов) — SkyIsland Treasure (~2.4%) / SkyIsland02 (~0.2%) / Lv60 Oilrig
+  Greater Chest (~1%) / фикс. Ancient Ruin. 11 старых — тех-дерево (tech_level).
+  Night Vision Goggles и Quadruple-боты: источник на paldb не указан (gap).
