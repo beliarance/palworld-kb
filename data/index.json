@@ -24,6 +24,9 @@
     "player_attack",
     "mount_combat"
    ],
+   "party_roles": [
+    "resist:Explosive"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -73,6 +76,7 @@
    "partner_skill": "Magical Twin Powers",
    "partner_effect": "While at a base, increases the Watering Work Suitability Level for all other Base Pals by +1. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "suitability",
@@ -126,6 +130,9 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [
+    "attack_type:Ground:active"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -177,6 +184,9 @@
    "partner_skill": "Warm Body",
    "partner_effect": "Can be ridden. While in party, the player gains Cold Resistance +2. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [
+    "climate_cold"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -233,6 +243,7 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -275,6 +286,7 @@
    "partner_skill": "",
    "partner_effect": "This Pal's abilities are still being investigated.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -314,6 +326,7 @@
    "partner_skill": "Plasma Dash",
    "partner_effect": "Can be ridden. Grants Air Dash, to move at even higher speeds.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -369,6 +382,9 @@
    "partner_tags": [
     "player_attack",
     "mount_combat"
+   ],
+   "party_roles": [
+    "attack_type:Water:mount"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -430,6 +446,9 @@
     "player_attack",
     "mount_combat"
    ],
+   "party_roles": [
+    "attack_type:Ice:mount"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -482,6 +501,7 @@
    "partner_skill": "Grinning Death",
    "partner_effect": "While in party, attacking enemies afflicted with Poison reduces their Attack by 40~80%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -529,6 +549,7 @@
    "partner_skill": "Blizzard Crash",
    "partner_effect": "Can be ridden. While mounted, delivers crushing blows with a hammer forged from Ice.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -580,6 +601,9 @@
    "partner_tags": [
     "player_attack",
     "mount_combat"
+   ],
+   "party_roles": [
+    "attack_type:Electric:mount"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -641,6 +665,10 @@
     "player_attack",
     "mount_combat"
    ],
+   "party_roles": [
+    "attack_type:Ice:mount",
+    "stack_speed:Ice"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -692,6 +720,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Honey"
    ],
@@ -742,6 +771,7 @@
    "partner_skill": "Nightmare Iris",
    "partner_effect": "When activated, attacks targeted enemy with Nightmare Ray. When this Pal uses Nightmare Ray, it has a x1.1~2.5 damage multiplier.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -783,6 +813,7 @@
    "partner_skill": "Nightmare Stare",
    "partner_effect": "When activated, attacks targeted enemy with Nightmare Bloom. When this Pal uses Nightmare Bloom, it has a x1.1~2.5 damage multiplier.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -830,6 +861,7 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -884,6 +916,9 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [
+    "weak_point:Dragon"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -934,6 +969,9 @@
    "partner_effect": "Can be ridden. While in party, Grass Pals drop 40~80% more items when defeated. (Does not stack)",
    "partner_tags": [
     "drops_boost"
+   ],
+   "party_roles": [
+    "loot:Grass"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -991,6 +1029,9 @@
    "partner_tags": [
     "drops_boost"
    ],
+   "party_roles": [
+    "loot:Neutral"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -1047,6 +1088,7 @@
    "partner_skill": "Slime Body",
    "partner_effect": "Can be ridden. Can jump high into the air while mounted.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -1087,6 +1129,7 @@
    "partner_skill": "Balmy Weather",
    "partner_effect": "Can be ridden. While in your base, increases the egg production speed of Pals assigned to Breeding Farm by 20~50%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "egg_speed",
@@ -1148,6 +1191,7 @@
    "partner_skill": "Princess Gaze",
    "partner_effect": "While in party, increases Attack of Grass Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -1199,6 +1243,7 @@
    "partner_tags": [
     "egg_alpha_chance"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -1256,6 +1301,7 @@
    "partner_tags": [
     "egg_alpha_chance"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -1310,6 +1356,9 @@
     "player_attack",
     "mount_combat"
    ],
+   "party_roles": [
+    "resist:Electric"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -1356,6 +1405,7 @@
    "partner_skill": "Brandish Blade",
    "partner_effect": "When activated, attacks targeted enemy with Iaigiri. When this Pal uses Iaigiri, it has a x1.1~2.5 damage multiplier.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -1412,6 +1462,7 @@
    "partner_skill": "Void Blade",
    "partner_effect": "When activated, attacks targeted enemy with Iaigiri. When this Pal uses Iaigiri, it has a x1.1~2.5 damage multiplier. While in party, increases the player's melee weapon damage by 30~65% but only when",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -1466,6 +1517,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Red Berries"
    ],
@@ -1523,6 +1575,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Venom Gland"
    ],
@@ -1583,6 +1636,7 @@
    "partner_skill": "Entangling Tongue",
    "partner_effect": "While in party, when the player performs a dodge roll or dodge step, Carnibora creates a whirlwind that deals damage to enemies it touches ( Grass / Power: 40~80). (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -1633,6 +1687,9 @@
    "partner_skill": "Cat Helper",
    "partner_effect": "While in party, Cattiva helps carry supplies, increasing the player's max carrying capacity by 100~200. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [
+    "weight"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -1682,6 +1739,7 @@
    "partner_skill": "Bat Backup",
    "partner_effect": "While in party, appears near the player. Automatically picks up nearby items.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -1722,6 +1780,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Bone"
    ],
@@ -1780,6 +1839,7 @@
    "partner_skill": "Zephyr Glider",
    "partner_effect": "While in party, modifies the performance of the equipped glider. Prevents fall damage and extends the duration of high-speed gliding.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -1833,6 +1893,7 @@
    "partner_skill": "Jolt Glider",
    "partner_effect": "While in party, modifies the performance of the equipped glider. Prevents fall damage and extends the duration of high-speed gliding.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -1883,6 +1944,10 @@
    "partner_tags": [
     "player_attack",
     "mount_combat"
+   ],
+   "party_roles": [
+    "stack_atk:Neutral",
+    "survival"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -1944,6 +2009,7 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -1994,6 +2060,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Egg"
    ],
@@ -2052,6 +2119,9 @@
    "partner_tags": [
     "player_attack",
     "mount_combat"
+   ],
+   "party_roles": [
+    "attack_type:Dragon:mount"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -2112,6 +2182,9 @@
     "player_attack",
     "mount_combat"
    ],
+   "party_roles": [
+    "attack_type:Fire:mount"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -2166,6 +2239,7 @@
    "partner_skill": "Mysterious Scales",
    "partner_effect": "When activated, attacks the targeted enemy with Poison Fog. While at a base, increases the Farming Work Suitability Level for all other Base Pals by +1. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "suitability",
@@ -2220,6 +2294,7 @@
    "partner_skill": "Happy Clover",
    "partner_effect": "While at a base, increases the Gathering Work Suitability Level for all other Base Pals by +1. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "suitability",
@@ -2274,6 +2349,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Wool"
    ],
@@ -2326,6 +2402,7 @@
    "partner_skill": "Leap Stance",
    "partner_effect": "When activated, Croajiro Noct channels its loyalty and puffs up its abdomen to store energy. Climbing on top will propel the player high into the air. While airborne before landing, the player's Attac",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -2383,6 +2460,7 @@
    "partner_skill": "Shadow Stance",
    "partner_effect": "When activated, Croajiro Noct channels its loyalty and puffs up its abdomen to store energy. Climbing on top will propel the player high into the air. While in party, improves player's and Pals' Dark",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -2438,6 +2516,9 @@
    "partner_tags": [
     "drops_boost"
    ],
+   "party_roles": [
+    "loot:Dragon"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -2485,6 +2566,9 @@
    "partner_skill": "Explosive Strength",
    "partner_effect": "While in party, when attacking enemy weak point, increases the power of the next weak point attack by 30~60%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [
+    "weak_point:any"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -2532,6 +2616,7 @@
    "partner_skill": "Dream Chaser",
    "partner_effect": "While in party, appears near the player. Attacks hostile enemies with Dark magic bullets. These bullets will not reduce the target's Health below 1.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -2587,6 +2672,7 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -2634,6 +2720,9 @@
    "partner_skill": "Sand Sprint",
    "partner_effect": "Can be ridden. Movement Speed is increased by 50~100% while mounted on sand.",
    "partner_tags": [],
+   "party_roles": [
+    "terrain:sand"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -2686,6 +2775,7 @@
    "partner_skill": "Lady of Lightning",
    "partner_effect": "While in party, appears near the player. Attacks hostile enemies with Electric bolts. These bolts will not reduce the target's Health below 1.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -2740,6 +2830,7 @@
    "partner_skill": "Lady of Dark Lightning",
    "partner_effect": "While in party, appears near the player. Attacks hostile enemies with Dark bolts. These bolts will not reduce the target's Health below 1.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -2795,6 +2886,7 @@
    "partner_skill": "Demonic Sight",
    "partner_effect": "While in party, increases Attack of Dark Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -2837,6 +2929,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Venom Gland"
    ],
@@ -2890,6 +2983,7 @@
    "partner_skill": "Drill Crusher",
    "partner_effect": "When activated, enters the Shell Spin state. Follows the player while spinning, increasing ore mining efficiency by 800~2000%.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -2942,6 +3036,7 @@
    "partner_skill": "Fragrant Dragon",
    "partner_effect": "Can be ridden. While in party, increase Defense of Dragon Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -2994,6 +3089,7 @@
    "partner_skill": "Thunder Dragon",
    "partner_effect": "Can be ridden. While in party, increases Defense of Electric Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -3046,6 +3142,7 @@
    "partner_skill": "Direhowl Rider",
    "partner_effect": "Can be ridden. Moves slightly faster than most mounts.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -3104,6 +3201,7 @@
    "partner_skill": "Homeward Prayer",
    "partner_effect": "When activated, teleports to the nearest base. Cannot be used inside dungeons or similar areas.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -3154,6 +3252,7 @@
    "partner_skill": "Forest Laser",
    "partner_effect": "Can be ridden. When activated, Dualith fires a powerful Grass laser from its right hand.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -3213,6 +3312,7 @@
    "partner_skill": "Corruption Laser",
    "partner_effect": "Can be ridden. When activated, Dualith Noct fires a powerful Dark laser from its right hand.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -3264,6 +3364,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "High Quality Pal Oil"
    ],
@@ -3327,6 +3428,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "High Quality Pal Oil"
    ],
@@ -3383,6 +3485,7 @@
    "partner_skill": "Trick-Loving Fluffle",
    "partner_effect": "While in party, when the player's Health falls below 50%, Dupin generates an explosion around the player ( Fire / Power: 100~200 / Burn buildup: 777). Additionally, while the player's Health is below",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -3432,6 +3535,7 @@
    "partner_skill": "Electro-Massage Incubation",
    "partner_effect": "Can be ridden as a flying mount. While at a base, shortens the time it takes to incubate eggs by 20~40%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "incubation",
@@ -3483,6 +3587,10 @@
    "partner_effect": "Can be ridden as a flying mount. This Pal's Attack and Movement Speed increase by 2~6% for each other Dragonor Dark Pal in your party.",
    "partner_tags": [
     "mount_combat"
+   ],
+   "party_roles": [
+    "stack_atk:Dragon",
+    "stack_atk:Dark"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -3536,6 +3644,7 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -3581,6 +3690,7 @@
    "partner_skill": "Guardian of the Forest",
    "partner_effect": "Can be ridden. Can perform a double jump while mounted and increases lumbering efficiency by 220~500%.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -3635,6 +3745,7 @@
    "partner_skill": "Guardian of the Golden Forest",
    "partner_effect": "Can be ridden. Can perform a double jump while mounted. While at a base, increases the Lumbering Work Suitability Level for all other Base Pals by +1 (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "suitability",
@@ -3690,6 +3801,9 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [
+    "attack_type:Grass:active"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -3743,6 +3857,7 @@
    "partner_skill": "Father Winter's Threat",
    "partner_effect": "While in party, grants the player the ability to Freeze enemies afflicted with Soak in one strike.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -3790,6 +3905,7 @@
    "partner_skill": "Queen Bee Command",
    "partner_effect": "This Pal's Attack increases by 12~24% for each Beegarde in party.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -3837,6 +3953,9 @@
    "partner_effect": "Can be ridden as a flying mount. While flying, Movement Speed is increased. While in party, Dark Pals drop 40~80% more items when defeated. (Does not stack)",
    "partner_tags": [
     "drops_boost"
+   ],
+   "party_roles": [
+    "loot:Dark"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -3897,6 +4016,9 @@
     "player_attack",
     "mount_combat"
    ],
+   "party_roles": [
+    "resist:Fire"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -3948,6 +4070,9 @@
    "partner_tags": [
     "drops_boost"
    ],
+   "party_roles": [
+    "loot:Dark"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -3985,6 +4110,7 @@
    "partner_skill": "Mad Eye Lunge",
    "partner_effect": "When activated, Eye of Cthulhu charges and attacks targeted enemy.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -4026,6 +4152,9 @@
    "partner_effect": "Can be ridden as a flying mount. While in party, Ice Pals drop 40~80% more items when defeated. (Does not stack)",
    "partner_tags": [
     "drops_boost"
+   ],
+   "party_roles": [
+    "loot:Ice"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -4077,6 +4206,9 @@
    "partner_effect": "Can be ridden as a flying mount. While in party, Fire Pals drop 40~80% more items when defeated. (Does not stack)",
    "partner_tags": [
     "drops_boost"
+   ],
+   "party_roles": [
+    "loot:Fire"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -4135,6 +4267,7 @@
    "partner_skill": "Life Steal",
    "partner_effect": "While fighting together, grants the player and Felbat a life steal effect that restores 5~9% of damage dealt as Health.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -4183,6 +4316,7 @@
    "partner_skill": "Wind and Clouds",
    "partner_effect": "Can be ridden. Can double jump while mounted.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -4235,6 +4369,9 @@
    "partner_effect": "Can be ridden. Can double jump while mounted. While in party, Water Pals drop 40~80% more items when defeated. (Does not stack)",
    "partner_tags": [
     "drops_boost"
+   ],
+   "party_roles": [
+    "loot:Water"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -4296,6 +4433,9 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [
+    "attack_type:Water:active"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -4349,6 +4489,9 @@
    "partner_skill": "Ember Chamber",
    "partner_effect": "While in party, Finsider Ignis helps carry supplies, reducing the weight of weapons in your inventory by 60~100%. Also improves player's and Pals' Fire damage to enemy weak points by 25~40%. (Does not",
    "partner_tags": [],
+   "party_roles": [
+    "weak_point:Fire"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -4400,6 +4543,9 @@
    "partner_tags": [
     "player_attack",
     "base_work"
+   ],
+   "party_roles": [
+    "survival"
    ],
    "ranch_produce": [
     "Flame Organ"
@@ -4458,6 +4604,7 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -4514,6 +4661,7 @@
    "partner_skill": "Helper Bunny",
    "partner_effect": "While in party, appears near the player. Automatically picks up nearby items.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -4562,6 +4710,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Ice Organ"
    ],
@@ -4614,6 +4763,7 @@
    "partner_skill": "Huggy Fire",
    "partner_effect": "When activated, equips to the player and transforms into a flamethrower.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -4662,6 +4812,7 @@
    "partner_skill": "Huggy Frost",
    "partner_effect": "When activated, equips to the player and attacks using frigid air.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -4715,6 +4866,9 @@
     "player_attack",
     "mount_combat"
    ],
+   "party_roles": [
+    "attack_type:Ice:mount"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -4763,6 +4917,9 @@
     "player_attack",
     "mount_combat"
    ],
+   "party_roles": [
+    "attack_type:Dark:mount"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -4807,6 +4964,7 @@
    "partner_skill": "Peacock Pounce",
    "partner_effect": "While in party, Frostplume's icy aura sharpens focus, increasing the player's reload speeds by 20~50%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -4856,6 +5014,7 @@
    "partner_skill": "Surfing Slam",
    "partner_effect": "When activated, Fuack body surfs towards an enemy and slams into them.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -4911,6 +5070,7 @@
    "partner_skill": "Fire Tackle",
    "partner_effect": "When activated, Fuack Ignis fire surfs towards an enemy and slams into them.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -4960,6 +5120,7 @@
    "partner_skill": "Mining Assistance",
    "partner_effect": "While in party, improves player mining efficiency by 30~60% and reduces Stone weight by 80~100%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -5015,6 +5176,7 @@
    "partner_skill": "Galeclaw Glider",
    "partner_effect": "While in party, modifies the performance of the equipped glider. Enables high-speed gliding and allows shooting with the right hand.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -5070,6 +5232,10 @@
    "partner_skill": "Master of Darkness",
    "partner_effect": "Can be ridden to travel on water. This Pal’s Movement Speed increases by 5~25% for each other Dark or Water Pal in your party. (Excluding Ghangler)",
    "partner_tags": [],
+   "party_roles": [
+    "stack_speed:Dark",
+    "stack_speed:Water"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -5129,6 +5295,10 @@
    "partner_skill": "Abyssal Celebrity Chef",
    "partner_effect": "Can be ridden to travel on water. This Pal’s Movement Speed increases by 5~25% for each other Fire or Water Pal in your party. (Excluding Ghangler Ignis)",
    "partner_tags": [],
+   "party_roles": [
+    "stack_speed:Fire",
+    "stack_speed:Water"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -5176,6 +5346,9 @@
    "partner_tags": [
     "player_attack",
     "mount_combat"
+   ],
+   "party_roles": [
+    "attack_type:Ground:mount"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -5230,6 +5403,7 @@
    "partner_skill": "Resurrection",
    "partner_effect": "While fighting together, when Gildra is incapacitated, it revives with its Hunger reduced to 0.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -5282,6 +5456,9 @@
    "partner_tags": [
     "fishing",
     "capture"
+   ],
+   "party_roles": [
+    "fishing_gauge"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -5341,6 +5518,7 @@
    "partner_skill": "Cephalo-Princess",
    "partner_effect": "While in party, increases Defense of Water Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -5393,6 +5571,9 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [
+    "player_atk"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -5444,6 +5625,9 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [
+    "player_atk"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -5494,6 +5678,7 @@
    "partner_skill": "Full-Power Gorilla Mode",
    "partner_effect": "When activated, unleashes a primal fury that increases Gorirat's Attack by 75~300% for a limited time.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -5548,6 +5733,7 @@
    "partner_skill": "Full-Power Gorilla Pound",
    "partner_effect": "While in party, increases the player's climbing speed by 50~100%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -5601,6 +5787,7 @@
    "partner_skill": "Slime Body",
    "partner_effect": "Can be ridden. Can jump high into the air while mounted.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -5640,6 +5827,7 @@
    "partner_tags": [
     "egg_extra_pickup"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -5694,6 +5882,7 @@
    "partner_skill": "Yellow Tank",
    "partner_effect": "Can be ridden. Can rapidly fire a minigun while mounted.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -5744,6 +5933,9 @@
    "partner_skill": "Logging Assistance",
    "partner_effect": "While in party, improves logging efficiency by 30~50% and reduces weight of all types of wood by 40~60%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [
+    "weight_cargo"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -5795,6 +5987,7 @@
    "partner_skill": "Flying Trapeze",
    "partner_effect": "",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -5850,6 +6043,7 @@
    "partner_skill": "Winter Trapeze",
    "partner_effect": "",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -5902,6 +6096,7 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -5950,6 +6145,9 @@
    "partner_tags": [
     "player_attack",
     "mount_combat"
+   ],
+   "party_roles": [
+    "attack_type:Dark:mount"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -6009,6 +6207,9 @@
     "player_attack",
     "mount_combat"
    ],
+   "party_roles": [
+    "attack_type:Electric:mount"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -6063,6 +6264,7 @@
    "partner_skill": "Herbil Pulse",
    "partner_effect": "While in party, Herbil uses its healing powers to restore 30~60% of the player's Max Health when incapacitated.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -6112,6 +6314,7 @@
    "partner_skill": "Dark Knowledge",
    "partner_effect": "While in party, increases Attack of Dark Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -6162,6 +6365,7 @@
    "partner_skill": "Void-Dweller",
    "partner_effect": "While in party, increases the player's damage dealt to enemies that are not in combat by 50~100%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -6211,6 +6415,9 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [
+    "attack_type:Ice:active"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -6252,6 +6459,7 @@
    "partner_skill": "Bat Backup",
    "partner_effect": "While in party, appears near the player. Automatically picks up nearby items.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -6289,6 +6497,7 @@
    "partner_skill": "Slime Body",
    "partner_effect": "Can be ridden. Can jump high into the air while mounted.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -6330,6 +6539,7 @@
    "partner_skill": "Flameclaw Hunter",
    "partner_effect": "When activated, attacks the targeted enemy with Hellfire Claw. When this Pal uses Hellfire Claw, it has a x1.1~2.5 damage multiplier.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -6382,6 +6592,7 @@
    "partner_skill": "Darkclaw Hunter",
    "partner_effect": "When activated, attacks the targeted enemy with Nightmare Claw. When this Pal uses Nightmare Claw, it has a x1.1~2.5 damage multiplier.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -6426,6 +6637,9 @@
    "partner_effect": "While in party, increases items obtained from fishing by 55~95%. While Jelliette and Jellroy are in your base, Jelliette's watering speed increases by 50~120%. (Does not stack)",
    "partner_tags": [
     "fishing"
+   ],
+   "party_roles": [
+    "fishing_loot"
    ],
    "ranch_produce": [],
    "base_support": {
@@ -6488,6 +6702,7 @@
    "partner_skill": "Jellroy Drop",
    "partner_effect": "While in party, increases items obtained from salvaging by 55~95%. While Jelliette and Jellroy are in your base, Jellroy's watering speed increases by 50~120%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "pair_watering",
@@ -6544,6 +6759,7 @@
    "partner_skill": "Aerial Missile",
    "partner_effect": "Can be ridden as a flying mount. Can rapidly fire a missile launcher while mounted.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -6592,6 +6808,7 @@
    "partner_skill": "Jolt Bomb",
    "partner_effect": "When activated, equips Jolthog to the player to be thrown at an enemy, causing an Electric explosion upon impact.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -6636,6 +6853,7 @@
    "partner_skill": "Cold Bomb",
    "partner_effect": "When activated, equips Jolthog Cryst to the player to be thrown at an enemy, causing an Ice explosion upon impact.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -6684,6 +6902,7 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -6737,6 +6956,7 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -6792,6 +7012,10 @@
     "capture",
     "drops_boost"
    ],
+   "party_roles": [
+    "capture_save",
+    "loot:Neutral"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -6846,6 +7070,7 @@
    "partner_skill": "Blazing Black Magic",
    "partner_effect": "While at a base, increases the Kindling Work Suitability Level for all other Base Pals by +1. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "suitability",
@@ -6899,6 +7124,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Aquatic Pal Fluids"
    ],
@@ -6955,6 +7181,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Flame Organ"
    ],
@@ -7008,6 +7235,7 @@
    "partner_skill": "Sandball Soccer",
    "partner_effect": "While in party, increases Defense of Ground Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7059,6 +7287,7 @@
    "partner_skill": "Fried Squid",
    "partner_effect": "While in party, modifies the performance of the equipped glider. Enables gentle floating while gliding for an extended time.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7115,6 +7344,7 @@
    "partner_skill": "Fried Killamari",
    "partner_effect": "While in party, modifies the performance of the equipped glider. Enables gentle floating while gliding for an extended time.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7163,6 +7393,7 @@
    "partner_skill": "King of Muscles",
    "partner_effect": "Can be ridden. This Pal's Defense and Movement Speed increase by 5~14% for each Melpaca in party.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7208,6 +7439,7 @@
    "partner_skill": "Coldhearted King",
    "partner_effect": "Can be ridden. This Pal's Defense and Movement Speed increase by 5~14% for each Melpaca in party.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7255,6 +7487,9 @@
     "player_attack",
     "mount_combat"
    ],
+   "party_roles": [
+    "resist:Ice"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7301,6 +7536,9 @@
    "partner_tags": [
     "player_attack",
     "mount_combat"
+   ],
+   "party_roles": [
+    "resist:Dark"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -7356,6 +7594,7 @@
    "partner_skill": "Steel Guardian Mode",
    "partner_effect": "When activated, a steel resolve increases Knocklem's Attack by 50~200% and Defense by 50~200% for a limited time.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7412,6 +7651,7 @@
    "partner_skill": "Iron Guardian Mode",
    "partner_effect": "When activated, a steel resolve increases Knocklem Ignis's Attack by 60~210% and Defense by 60~210% for a limited time.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7460,6 +7700,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Wool"
    ],
@@ -7515,6 +7756,9 @@
    "partner_skill": "Friend of Earth",
    "partner_effect": "While in party, increases the player's Defense by 50~65% while sprinting. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [
+    "survival"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7558,6 +7802,7 @@
    "partner_skill": "Long-Sleeved Hurray",
    "partner_effect": "While in party, reduces the Partner Skill cooldowns for other party Pals by 10~50%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7603,6 +7848,9 @@
    "partner_skill": "Selfless Discipline",
    "partner_effect": "This Pal's Attack and Defense increase by 2~6% for each other Grass Pal in your party.",
    "partner_tags": [],
+   "party_roles": [
+    "stack_atk:Grass"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7650,6 +7898,9 @@
    "partner_skill": "Too Cool to be Seen",
    "partner_effect": "When activated, Leezpunk and the player become invisible, making them undetectable to enemies for {ActiveSkillOverWriteEffectTime} seconds.",
    "partner_tags": [],
+   "party_roles": [
+    "stealth"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7707,6 +7958,9 @@
    "partner_skill": "Too Cool to be Seen",
    "partner_effect": "When activated, Leezpunk Ignis and the player become invisible, making them undetectable to enemies for {ActiveSkillOverWriteEffectTime} seconds.",
    "partner_tags": [],
+   "party_roles": [
+    "stealth"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7763,6 +8017,7 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7818,6 +8073,7 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7861,6 +8117,7 @@
    "partner_skill": "Dark Gleam Strike",
    "partner_effect": "When activated, attacks targeted enemy with Jumping Claw. When this Pal uses Jumping Claw, it has a x1.1~2.5 damage multiplier. While in party, increases the player's melee weapon attack speed by 15~3",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7912,6 +8169,7 @@
    "partner_skill": "Frozen Gleam Strike",
    "partner_effect": "When activated, attacks targeted enemy with Snow Claw. When this Pal uses Snow Claw, it has a x1.1~2.5 damage multiplier. While in party, increases the player's melee weapon attack speed by 15~30%. (D",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7967,6 +8225,7 @@
    "partner_skill": "Heart Drain",
    "partner_effect": "While fighting together, grants the player and Lovander a life steal effect that restores 5~9% of damage dealt as Health.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -8023,6 +8282,7 @@
    "partner_skill": "Floral Boost",
    "partner_effect": "While at a base, Lullu fills farms with good spirits, increasing the growth rate of the crops by 50~70%.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "crop_growth",
@@ -8075,6 +8335,10 @@
    "partner_effect": "While in party, spheres home in on Pals, and carrying capacity increases by 300~600. (Does not stack)",
    "partner_tags": [
     "capture"
+   ],
+   "party_roles": [
+    "weight",
+    "capture_homing"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -8131,6 +8395,7 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -8184,6 +8449,7 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -8241,6 +8507,7 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -8290,6 +8557,7 @@
    "partner_skill": "Gaia Crusher",
    "partner_effect": "Can be ridden. While mounted, increases logging efficiency by 220~500% and mining efficiency by 500~2000%.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -8348,6 +8616,7 @@
    "partner_skill": "Ice Crusher",
    "partner_effect": "Can be ridden. While mounted, increases logging efficiency by 220~500% and mining efficiency by 500~2000%.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -8402,6 +8671,7 @@
    "partner_skill": "Messenger of Death",
    "partner_effect": "Can be ridden. While in party, all Party Pals' Active Skill cooldowns are reduced by 30~60% whenever you defeat an enemy. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -8459,6 +8729,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Gold Coin"
    ],
@@ -8508,6 +8779,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Ice Organ"
    ],
@@ -8557,6 +8829,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Wool"
    ],
@@ -8612,6 +8885,10 @@
    "partner_tags": [
     "drops_boost"
    ],
+   "party_roles": [
+    "survival",
+    "loot:Electric"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -8664,6 +8941,10 @@
    "partner_tags": [
     "drops_boost"
    ],
+   "party_roles": [
+    "survival",
+    "loot:Electric"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -8711,6 +8992,9 @@
    "partner_skill": "Master of Unlocking",
    "partner_effect": "While fighting together, Mimog can open treasure chests without using a key.",
    "partner_tags": [],
+   "party_roles": [
+    "treasure_open"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -8773,6 +9057,10 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [
+    "stack_atk:Fire",
+    "stack_atk:Ground"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -8827,6 +9115,9 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [
+    "weak_point:Ice"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -8871,6 +9162,7 @@
    "partner_skill": "Grenadier Panda",
    "partner_effect": "Can be ridden. Can rapidly fire a grenade launcher while mounted.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -8926,6 +9218,7 @@
    "partner_skill": "Grenadier Panda",
    "partner_effect": "Can be ridden. Can rapidly fire a grenade launcher while mounted.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -8977,6 +9270,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Milk"
    ],
@@ -9031,6 +9325,9 @@
    "partner_tags": [
     "capture"
    ],
+   "party_roles": [
+    "capture_status:Freeze"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -9084,6 +9381,9 @@
    "partner_skill": "Icy Maw",
    "partner_effect": "While in party, reduces the weight of ingredient and food by 30~60%. When paired with another Ice Pal, their Rot Speed also reduces by -80~-30%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [
+    "weight_cargo"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -9139,6 +9439,7 @@
    "partner_skill": "Charming Spore",
    "partner_effect": "While at a base, increases the Medicine Production Work Suitability Level for all other Base Pals by +1. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "suitability",
@@ -9194,6 +9495,7 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -9241,6 +9543,7 @@
    "partner_skill": "Hug Me Please",
    "partner_effect": "While in party, increases player's and Pals' damage to enemies afflicted with Ivy-Covered by 50~65%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -9290,6 +9593,7 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -9335,6 +9639,7 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -9383,6 +9688,7 @@
    "partner_skill": "Soul Collector",
    "partner_effect": "While fighting together, Pals drop +100~200% more Pal Souls when defeated. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -9434,6 +9740,7 @@
    "partner_skill": "Soul Binder",
    "partner_effect": "While in party, increases Defense of Grass Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -9476,6 +9783,7 @@
    "partner_skill": "Travel Companion",
    "partner_effect": "Can be ridden as a flying mount.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -9527,6 +9835,7 @@
    "partner_skill": "Kuudere",
    "partner_effect": "When activated, detects the location of nearby Pal Effigies.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -9579,6 +9888,7 @@
    "partner_skill": "Shot-Nyan Mode",
    "partner_effect": "When activated, Nyafia will fire a shotgun at nearby enemies for a limited time. While in party, increases the player's shotgun damage by 10~35%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -9632,6 +9942,7 @@
    "partner_skill": "Masquerade Dance",
    "partner_effect": "While in party, increases Party Pals' EXP gained by 40~80%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -9688,6 +9999,7 @@
     "player_attack",
     "mount_combat"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -9740,6 +10052,7 @@
    "partner_skill": "Ferocious Thunder Dragon",
    "partner_effect": "While in party, hitting an enemy with a bullet increases the Attack and Defense of the Pal fighting alongside you by 1~5% for 5 seconds. This effect stacks up to 30 times. (Does not stack.)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -9789,6 +10102,7 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -9837,6 +10151,7 @@
    "partner_skill": "Samba Step",
    "partner_effect": "Can be ridden. Movement Speed is increased by 155~240% while mounted on grass.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -9884,6 +10199,7 @@
    "partner_skill": "Resonant Guardian",
    "partner_effect": "Can be ridden as a flying mount. Only 1 can be summoned to a base. While at a base, it constantly patrols the skies and bombards intruders from high above.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "base_defense",
@@ -9935,6 +10251,7 @@
    "partner_skill": "Pengullet Launcher",
    "partner_effect": "When activated, the player equips a Rocket Launcher to fire Pengullet as ammunition. Pengullet explodes on impact and is incapacitated.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -9993,6 +10310,7 @@
    "partner_skill": "Pengullet Lux Launcher",
    "partner_effect": "When activated, the player equips Pengullet Lux to fire Rocket Launcher as ammunition. Pengullet Lux explodes on impact and is incapacitated.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -10045,6 +10363,9 @@
    "partner_effect": "While in party, Fire Pals drop 40~80% more items when defeated. (Does not stack)",
    "partner_tags": [
     "drops_boost"
+   ],
+   "party_roles": [
+    "loot:Fire"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -10102,6 +10423,9 @@
    "partner_skill": "Unyielding Storm Commander",
    "partner_effect": "While in party, improves player's and Pals' Water damage to enemy weak points by 25~40%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [
+    "weak_point:Water"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -10151,6 +10475,9 @@
    "partner_skill": "Blessing of the Flower Spirit",
    "partner_effect": "When activated, soothing blossoms restore the player's Health by 75~85%. While at a base, increases the Planting Work Suitability Level for all other Base Pals by +1. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [
+    "survival"
+   ],
    "ranch_produce": [],
    "base_support": {
     "type": "suitability",
@@ -10207,6 +10534,10 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [
+    "resist:Grass",
+    "survival"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [],
@@ -10243,6 +10574,7 @@
    "partner_skill": "Power Stone",
    "partner_effect": "While in party, increases player's and Pals' damage to enemies afflicted with Muddy by 50~65%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -10286,6 +10618,9 @@
    "partner_effect": "While in party, player and party Pals take 15~30% less Dragon damage. (Does not stack)",
    "partner_tags": [
     "player_attack"
+   ],
+   "party_roles": [
+    "resist:Dragon"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -10340,6 +10675,7 @@
    "partner_skill": "Rider of the Snowy Mountain",
    "partner_effect": "Can be ridden. Movement Speed is increased by 80~160% while mounted on snow. Can also slide quickly down slopes.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -10393,6 +10729,7 @@
    "partner_skill": "Snowy Mountain Slider",
    "partner_effect": "Can be ridden. Movement Speed is increased by 80~160% while mounted on snow. Can also slide quickly down slopes. While it starts out slow, the top speed it can hit while sliding is no joke.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -10440,6 +10777,7 @@
    "partner_skill": "Phantom Venom",
    "partner_effect": "While in party, increases player's and Pals' damage to enemies afflicted with Poison by 50~65%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -10490,6 +10828,9 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [
+    "attack_type:Electric:active"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -10534,6 +10875,7 @@
    "partner_skill": "Prayer for Abundant Harvest",
    "partner_effect": "While at a base, Prunelia's prayers bless the crops, increasing their harvest by 18~35%.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "crop_yield",
@@ -10592,6 +10934,7 @@
    "partner_skill": "Crackle Booster",
    "partner_effect": "While at a base, increases the Generating Electricity Work Suitability Level for all other Base Pals by +1. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "suitability",
@@ -10647,6 +10990,7 @@
    "partner_skill": "Best Boy",
    "partner_effect": "While in party, increases the player's melee weapon damage by 10~35%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -10688,6 +11032,7 @@
    "partner_skill": "Slime Body",
    "partner_effect": "Can be ridden. Can jump high into the air while mounted.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -10728,6 +11073,9 @@
    "partner_tags": [
     "player_attack",
     "mount_combat"
+   ],
+   "party_roles": [
+    "attack_type:Fire:mount"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -10789,6 +11137,9 @@
     "player_attack",
     "mount_combat"
    ],
+   "party_roles": [
+    "attack_type:Dark:mount"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -10848,6 +11199,7 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -10909,6 +11261,9 @@
     "player_attack",
     "mount_combat"
    ],
+   "party_roles": [
+    "attack_type:Grass:mount"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -10963,6 +11318,9 @@
    "partner_tags": [
     "player_attack",
     "mount_combat"
+   ],
+   "party_roles": [
+    "attack_type:Fire:mount"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -11020,6 +11378,7 @@
    "partner_skill": "Slime Body",
    "partner_effect": "Can be ridden. Can jump high into the air while mounted.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -11057,6 +11416,9 @@
    "partner_skill": "Lightning Shepherd",
    "partner_effect": "Can be ridden. Can perform a double jump while mounted. This Pal’s Movement Speed increases by 5~25% for each other Electric Pal in your party. (Excluding Rayhound)",
    "partner_tags": [],
+   "party_roles": [
+    "stack_speed:Electric"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -11107,6 +11469,7 @@
    "partner_skill": "Snow Shepherd",
    "partner_effect": "Can be ridden. Can perform a double jump while mounted. While in party, increases Defense of Ice Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -11155,6 +11518,7 @@
    "partner_skill": "Slime Body",
    "partner_effect": "Can be ridden. Can jump high into the air while mounted.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -11193,6 +11557,9 @@
    "partner_skill": "Cool Body",
    "partner_effect": "Can be ridden. While in party, the player gains Heat Resistance +2. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [
+    "climate_heat"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -11248,6 +11615,7 @@
    "partner_skill": "Hungry Missile",
    "partner_effect": "Can be ridden. Can rapidly fire a missile launcher while mounted.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -11302,6 +11670,7 @@
    "partner_skill": "Missile Party",
    "partner_effect": "Can be ridden. Can rapidly fire a missile launcher while mounted.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -11360,6 +11729,7 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -11409,6 +11779,9 @@
    "partner_skill": "Ore-Loving Beast",
    "partner_effect": "Can be ridden. While in party, reduces weight of all types of ore by 30~60%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [
+    "weight_cargo"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -11458,6 +11831,9 @@
    "partner_skill": "Ice-Loving Beast",
    "partner_effect": "Can be ridden. While in party, reduces weight of all types of ore by 35~65%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [
+    "weight_cargo"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -11507,6 +11883,7 @@
    "partner_skill": "Happy-Go-Lucky Bunny",
    "partner_effect": "While in party, increases Attack of Neutral Pals by 15~30%. (Does not stack) While at a base, increases the Handiwork Work Suitability Level for all other Base Pals by +1. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "suitability",
@@ -11567,6 +11944,9 @@
    "partner_skill": "Ground 'n' Pound",
    "partner_effect": "While in party, improves player's and Pals' Grass damage to enemy weak points by 25~40%. (Does not stack) Increases efficiency by 200~400% when working at a Weapon Workbench, Weapon Assembly Line, or",
    "partner_tags": [],
+   "party_roles": [
+    "weak_point:Grass"
+   ],
    "ranch_produce": [],
    "base_support": {
     "type": "station_efficiency",
@@ -11629,6 +12009,7 @@
    "partner_skill": "Grounded Archer",
    "partner_effect": "While in party, increases the player's bow damage by 10~35%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -11682,6 +12063,7 @@
    "partner_skill": "Master Archer",
    "partner_effect": "While in party, increases the player's bow charge speed by 15~30%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -11738,6 +12120,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Flame Organ"
    ],
@@ -11793,6 +12176,7 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -11837,6 +12221,7 @@
    "partner_skill": "Hard Head",
    "partner_effect": "Can be ridden. While mounted, increases efficiency of destroying Stone by 500~2000%.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -11891,6 +12276,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "pair_anubis",
@@ -11950,6 +12336,7 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -12000,6 +12387,7 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -12050,6 +12438,9 @@
    "partner_effect": "Can be ridden as a flying mount. This Pal's Attack increases by 4~8% for each other Dragon Pal in your party.",
    "partner_tags": [
     "mount_combat"
+   ],
+   "party_roles": [
+    "stack_atk:Dragon"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -12103,6 +12494,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Mushroom",
     "Cavern Mushroom"
@@ -12164,6 +12556,7 @@
    "partner_skill": "Roiling Spores",
    "partner_effect": "Can be ridden. While at a base, its mysterious spores slow the rate at which the SAN value of allies at the base decreases by 10~15%.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "sanity_save",
@@ -12220,6 +12613,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "High Quality Cloth"
    ],
@@ -12277,6 +12671,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "High Quality Cloth"
    ],
@@ -12331,6 +12726,7 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -12380,6 +12776,9 @@
    "partner_effect": "Can be ridden. While in party, reduces shield regeneration delay by 30~60% and reduces damage taken by your shield by 65~80%. (Does not stack)",
    "partner_tags": [
     "mount_combat"
+   ],
+   "party_roles": [
+    "survival"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -12433,6 +12832,7 @@
    "partner_skill": "Fish Fillet",
    "partner_effect": "When activated, Skutlass becomes the player's katana (Attack: 2600~3900). If it does not revert to its normal form quickly, Skutlass will become incapacitated. It will also become incapacitated if Iai",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -12485,6 +12885,7 @@
    "partner_skill": "Seared Fish Fillet",
    "partner_effect": "When activated, Skutlass Ignis becomes the player's katana (Attack: 2900~4200). If it does not revert to its normal form quickly, Skutlass Ignis will become incapacitated. It will also become incapaci",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -12532,6 +12933,7 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -12576,6 +12978,7 @@
    "partner_skill": "Dig, Smokie! Dig!",
    "partner_effect": "When activated, uses its sharp sense of smell to detect nearby Chromite. While fighting together, Chromite acquisition increases by +100~200%.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -12631,6 +13034,7 @@
    "partner_skill": "Cryo Instincts",
    "partner_effect": "While at a base, increases the Cooling Work Suitability Level for all other Base Pals by +1. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "suitability",
@@ -12679,6 +13083,7 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -12729,6 +13134,9 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [
+    "resist:Water"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -12775,6 +13183,7 @@
    "partner_skill": "Invisible Eye",
    "partner_effect": "While in party, reduces the chance of being detected by enemies. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -12825,6 +13234,9 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [
+    "player_atk_unique"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -12870,6 +13282,9 @@
    "partner_skill": "Charming Fish",
    "partner_effect": "Can be ridden to travel on water. While in party, makes it easier to fish up talented Pals. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [
+    "fishing_talent"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -12922,6 +13337,10 @@
    "partner_tags": [
     "player_attack",
     "mount_combat"
+   ],
+   "party_roles": [
+    "attack_type:Electric:mount",
+    "fishing_talent"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -12984,6 +13403,9 @@
     "player_attack",
     "base_work"
    ],
+   "party_roles": [
+    "resist:Neutral"
+   ],
    "ranch_produce": [
     "Bone"
    ],
@@ -13040,6 +13462,9 @@
    "partner_tags": [
     "capture"
    ],
+   "party_roles": [
+    "capture_status:Ivy-Covered"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -13088,6 +13513,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Electric Organ"
    ],
@@ -13132,6 +13558,7 @@
    "partner_skill": "Blade of Uncontrolled Passion",
    "partner_effect": "While in party, the amount of items obtained from using the Meat Cleaver increases by 100~200%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -13192,6 +13619,7 @@
    "partner_skill": "Night Dancer",
    "partner_effect": "Can be ridden. Boosts jumping ability while mounted. This Pal's movement speed increases by +50~100% at night.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -13249,6 +13677,9 @@
    "partner_skill": "Light Dancer",
    "partner_effect": "Can be ridden. Boosts Jump Power while mounted. This Pal’s Movement Speed increases by 5~25% for each other Neutral Pal in your party. (Excluding Starryon Primo)",
    "partner_tags": [],
+   "party_roles": [
+    "stack_speed:Neutral"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -13297,6 +13728,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Leather"
    ],
@@ -13353,6 +13785,7 @@
     "player_attack",
     "mount_combat"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -13404,6 +13837,9 @@
    "partner_skill": "Wings of Flame",
    "partner_effect": "Can be ridden as a flying mount. This Pal’s Movement Speed increases by 5~25% for each other Fire Pal in your party. (Excluding Suzaku)",
    "partner_tags": [],
+   "party_roles": [
+    "stack_speed:Fire"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -13455,6 +13891,9 @@
    "partner_skill": "Wings of Water",
    "partner_effect": "Can be ridden as a flying mount. This Pal’s Movement Speed increases by 5~25% for each other Water Pal in your party. (Excluding Suzaku Aqua)",
    "partner_tags": [],
+   "party_roles": [
+    "stack_speed:Water"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -13504,6 +13943,7 @@
    "partner_skill": "Fluffy",
    "partner_effect": "While in party, increases Attack and Defense of Sweepa.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -13556,6 +13996,7 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -13609,6 +14050,7 @@
    "partner_skill": "Cheery Rifle",
    "partner_effect": "When activated, Tanzee will mercilessly fire an assault rifle at nearby enemies for a limited time.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -13659,6 +14101,7 @@
    "partner_skill": "Chipper Chimp Gunfire",
    "partner_effect": "When activated, Tanzee Ignis will mercilessly fire a Fire assault rifle at nearby enemies for a limited time.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -13704,6 +14147,7 @@
    "partner_skill": "Tarantriss’ Web",
    "partner_effect": "Can be ridden. Can double jump while mounted. Additionally, can shoot spider web to grapple and move at high speed.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -13755,6 +14199,9 @@
    "partner_skill": "Soothing Shower",
    "partner_effect": "While in party, restores 20~40% of the player's Health when Health falls below 30%. (Does not stack) (120-second cooldown after activation)",
    "partner_tags": [],
+   "party_roles": [
+    "survival"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -13804,6 +14251,7 @@
    "partner_skill": "Masonry Archelon",
    "partner_effect": "Can be ridden While at a base, increases the Mining Work Suitability Level for all other Base Pals by +1. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "suitability",
@@ -13861,6 +14309,7 @@
    "partner_skill": "Stone-Chaser Archelon",
    "partner_effect": "Can be ridden. While in party, increases the durability of all weapons and armor by 80~100%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -13909,6 +14358,7 @@
    "partner_skill": "Eggbomb Launcher",
    "partner_effect": "When activated, equips to the player and transforms into an egg launcher.",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -13966,6 +14416,9 @@
    "partner_skill": "Ultrasonic Sensor",
    "partner_effect": "When activated, uses ultrasonic waves to detect nearby dungeons, treasure chests, and scrap.",
    "partner_tags": [],
+   "party_roles": [
+    "detect"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -14016,6 +14469,7 @@
    "partner_skill": "Flower Dance",
    "partner_effect": "While in party, extends the invincibility period during dodge rolls and dodge steps by 15~30%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -14064,6 +14518,7 @@
    "partner_skill": "Spikey Carrier",
    "partner_effect": "While in party, reduces Ore weight by 80~100%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -14119,6 +14574,10 @@
    "partner_skill": "Shiny Hauler",
    "partner_effect": "While in party, reduces weight of Sulfur and Coal by 80~100%. Also improves player's and Pals' Ground damage to enemy weak points by 80~100%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [
+    "weak_point:Ground",
+    "weight_cargo"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -14170,6 +14629,9 @@
    "partner_effect": "Can be ridden. While in party, improves player's and Pals' Electric damage to weak points by 25~40%. (Does not stack)",
    "partner_tags": [
     "mount_combat"
+   ],
+   "party_roles": [
+    "weak_point:Electric"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -14227,6 +14689,9 @@
     "player_attack",
     "mount_combat"
    ],
+   "party_roles": [
+    "attack_type:Ice:mount"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -14280,6 +14745,9 @@
     "drops_boost",
     "base_work"
    ],
+   "party_roles": [
+    "loot:Ground"
+   ],
    "ranch_produce": [
     "various seeds"
    ],
@@ -14329,6 +14797,7 @@
    "partner_skill": "Big Stretch",
    "partner_effect": "While in party, reduces the effects of gravity on the player, making them more floaty while jumping and falling. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -14377,6 +14846,9 @@
    "partner_effect": "Can be ridden as a flying mount. While in party, increases damage player deals to enemy weak points by 20~40%. (Does not stack)",
    "partner_tags": [
     "mount_combat"
+   ],
+   "party_roles": [
+    "weak_point:any"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -14434,6 +14906,9 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [
+    "weak_point:any"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -14490,6 +14965,7 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -14540,6 +15016,7 @@
    "partner_skill": "Grassland Gymnast",
    "partner_effect": "While in party, grants 1 additional jump and 1 additional mid-air dash. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -14590,6 +15067,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "items from the ground"
    ],
@@ -14644,6 +15122,7 @@
    "partner_skill": "Cast-Iron Shell",
    "partner_effect": "While in your party, generates a barrier around the player after 5 melee hits are landed within 5~9 seconds. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -14694,6 +15173,7 @@
    "partner_skill": "Fullmetal Shell",
    "partner_effect": "While in your party, generates a barrier around the player after 5 melee hits are landed within 5~9 seconds. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -14747,6 +15227,9 @@
    "partner_tags": [
     "fishing",
     "capture"
+   ],
+   "party_roles": [
+    "fishing_gauge"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -14808,6 +15291,9 @@
     "fishing",
     "capture"
    ],
+   "party_roles": [
+    "fishing_gauge"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -14864,6 +15350,9 @@
    "partner_tags": [
     "capture"
    ],
+   "party_roles": [
+    "capture_back"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -14916,6 +15405,7 @@
    "partner_skill": "Hidden Dark Energy",
    "partner_effect": "While in party, increases Defense of Dark Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -14967,6 +15457,9 @@
    "partner_effect": "When activated, Wixen changes the player's attack type to Fire and increases Attack by 30~50%.",
    "partner_tags": [
     "player_attack"
+   ],
+   "party_roles": [
+    "attack_type:Fire:active"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -15022,6 +15515,9 @@
    "partner_tags": [
     "player_attack"
    ],
+   "party_roles": [
+    "attack_type:Dark:active"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -15073,6 +15569,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Cotton Candy"
    ],
@@ -15129,6 +15626,7 @@
    "partner_tags": [
     "base_work"
    ],
+   "party_roles": [],
    "ranch_produce": [
     "Caramel Cotton Candy"
    ],
@@ -15175,6 +15673,7 @@
    "partner_skill": "Guardian of the Snowy Mountain",
    "partner_effect": "Can be ridden. While at a base, increases the Transporting Work Suitability Level for all other Base Pals by +1. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": {
     "type": "suitability",
@@ -15235,6 +15734,9 @@
     "player_attack",
     "mount_combat"
    ],
+   "party_roles": [
+    "resist:Ground"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -15292,6 +15794,7 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -15335,6 +15838,7 @@
    "partner_tags": [
     "mount_combat"
    ],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -15379,6 +15883,7 @@
    "partner_skill": "Unknown Invader",
    "partner_effect": "While in party, increases the damage of the last bullet fired from a full-auto weapon by 100~160%. (Does not stack)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -15420,6 +15925,7 @@
    "partner_skill": "Birds of a Feather",
    "partner_effect": "Can be ridden. While fighting together, 15~30% increased chance of encountering pals with the same Passive Skill as this Pal. (Excludes certain Passive Skills)",
    "partner_tags": [],
+   "party_roles": [],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -19925,8 +20431,34 @@
     "Xenogard",
     "Xenolord"
    ],
+   "party:resist:Explosive": [
+    "Aegidron"
+   ],
    "base_support:suitability:Watering": [
     "Amione"
+   ],
+   "party:attack_type:Ground:active": [
+    "Anubis"
+   ],
+   "party:climate_cold": [
+    "Arsox"
+   ],
+   "party:attack_type:Water:mount": [
+    "Azurobe"
+   ],
+   "party:attack_type:Ice:mount": [
+    "Frostallion",
+    "Beakon Cryst",
+    "Azurobe Cryst",
+    "Univolt Cryst"
+   ],
+   "party:attack_type:Electric:mount": [
+    "Beakon",
+    "Helzephyr Lux",
+    "Solmora Lux"
+   ],
+   "party:stack_speed:Ice": [
+    "Beakon Cryst"
    ],
    "base_work": [
     "Beegarde",
@@ -19960,6 +20492,9 @@
     "Woolipop",
     "Woolipop Terra"
    ],
+   "party:weak_point:Dragon": [
+    "Blazamut Ryu"
+   ],
    "drops_boost": [
     "Blazehowl",
     "Blazehowl Noct",
@@ -19975,12 +20510,48 @@
     "Penking",
     "Vaelet"
    ],
+   "party:loot:Grass": [
+    "Blazehowl"
+   ],
+   "party:loot:Neutral": [
+    "Blazehowl Noct",
+    "Katress"
+   ],
    "base_support:egg_speed": [
     "Braloha"
    ],
    "egg_alpha_chance": [
-    "Broncherry",
-    "Broncherry Aqua"
+    "Broncherry Aqua",
+    "Broncherry"
+   ],
+   "party:resist:Electric": [
+    "Bulldosu"
+   ],
+   "party:weight": [
+    "Lunaris",
+    "Cattiva"
+   ],
+   "party:stack_atk:Neutral": [
+    "Celesdir"
+   ],
+   "party:survival": [
+    "Petallia Ignis",
+    "Petallia",
+    "Menasting",
+    "Menasting Terra",
+    "Silvegis",
+    "Lapiron",
+    "Teafant",
+    "Celesdir",
+    "Flambelle"
+   ],
+   "party:attack_type:Dragon:mount": [
+    "Chillet"
+   ],
+   "party:attack_type:Fire:mount": [
+    "Chillet Ignis",
+    "Pyrin",
+    "Ragnahawk"
    ],
    "base_support:suitability:Farming": [
     "Cinnamoth"
@@ -19988,11 +20559,75 @@
    "base_support:suitability:Gathering": [
     "Clovee"
    ],
+   "party:loot:Dragon": [
+    "Cryolinx"
+   ],
+   "party:weak_point:any": [
+    "Cryolinx Terra",
+    "Vanwyrm Cryst",
+    "Vanwyrm"
+   ],
+   "party:terrain:sand": [
+    "Dazemu"
+   ],
    "base_support:incubation": [
     "Dynamoff"
    ],
+   "party:stack_atk:Dragon": [
+    "Shaolong",
+    "Eidrolon"
+   ],
+   "party:stack_atk:Dark": [
+    "Eidrolon"
+   ],
    "base_support:suitability:Lumbering": [
     "Eikthyrdeer Terra"
+   ],
+   "party:attack_type:Grass:active": [
+    "Elgrove"
+   ],
+   "party:loot:Dark": [
+    "Elphidran",
+    "Enchanted Sword"
+   ],
+   "party:resist:Fire": [
+    "Elphidran Aqua"
+   ],
+   "party:loot:Ice": [
+    "Faleris"
+   ],
+   "party:loot:Fire": [
+    "Faleris Aqua",
+    "Penking"
+   ],
+   "party:loot:Water": [
+    "Fenglope Lux"
+   ],
+   "party:attack_type:Water:active": [
+    "Finsider"
+   ],
+   "party:weak_point:Fire": [
+    "Finsider Ignis"
+   ],
+   "party:attack_type:Dark:mount": [
+    "Frostallion Noct",
+    "Helzephyr",
+    "Pyrin Noct"
+   ],
+   "party:stack_speed:Dark": [
+    "Ghangler"
+   ],
+   "party:stack_speed:Water": [
+    "Ghangler",
+    "Ghangler Ignis",
+    "Suzaku Aqua"
+   ],
+   "party:stack_speed:Fire": [
+    "Ghangler Ignis",
+    "Suzaku"
+   ],
+   "party:attack_type:Ground:mount": [
+    "Gildane"
    ],
    "fishing": [
     "Gloopie",
@@ -20010,18 +20645,78 @@
     "Whalaska Ignis",
     "Wispaw"
    ],
+   "party:fishing_gauge": [
+    "Gloopie",
+    "Whalaska Ignis",
+    "Whalaska"
+   ],
+   "party:player_atk": [
+    "Gobfin",
+    "Gobfin Ignis"
+   ],
    "egg_extra_pickup": [
     "Grintale"
+   ],
+   "party:weight_cargo": [
+    "Turtacle Terra",
+    "Reptyro Cryst",
+    "Gumoss",
+    "Munchill",
+    "Reptyro"
+   ],
+   "party:attack_type:Ice:active": [
+    "Icelyn"
+   ],
+   "party:fishing_loot": [
+    "Jelliette"
    ],
    "base_support:pair_watering": [
     "Jelliette",
     "Jellroy"
    ],
+   "party:capture_save": [
+    "Katress"
+   ],
    "base_support:suitability:Kindling": [
     "Katress Ignis"
    ],
+   "party:resist:Ice": [
+    "Kitsun"
+   ],
+   "party:resist:Dark": [
+    "Kitsun Noct"
+   ],
+   "party:stack_atk:Grass": [
+    "Leafan"
+   ],
+   "party:stealth": [
+    "Leezpunk",
+    "Leezpunk Ignis"
+   ],
    "base_support:crop_growth": [
     "Lullu"
+   ],
+   "party:capture_homing": [
+    "Lunaris"
+   ],
+   "party:loot:Electric": [
+    "Menasting",
+    "Menasting Terra"
+   ],
+   "party:treasure_open": [
+    "Mimog"
+   ],
+   "party:stack_atk:Fire": [
+    "Moldron"
+   ],
+   "party:stack_atk:Ground": [
+    "Moldron"
+   ],
+   "party:weak_point:Ice": [
+    "Moldron Cryst"
+   ],
+   "party:capture_status:Freeze": [
+    "Muffly"
    ],
    "base_support:suitability:Medicine Production": [
     "Mycora"
@@ -20029,8 +20724,20 @@
    "base_support:base_defense": [
     "Panthalus"
    ],
+   "party:weak_point:Water": [
+    "Penking Lux"
+   ],
    "base_support:suitability:Planting": [
     "Petallia"
+   ],
+   "party:resist:Grass": [
+    "Petallia Ignis"
+   ],
+   "party:resist:Dragon": [
+    "Pierdon Cryst"
+   ],
+   "party:attack_type:Electric:active": [
+    "Prixter Lux"
    ],
    "base_support:crop_yield": [
     "Prunelia"
@@ -20038,8 +20745,20 @@
    "base_support:suitability:Generating Electricity": [
     "Puffolt"
    ],
+   "party:attack_type:Grass:mount": [
+    "Quivern Botan"
+   ],
+   "party:stack_speed:Electric": [
+    "Rayhound"
+   ],
+   "party:climate_heat": [
+    "Reindrix"
+   ],
    "base_support:suitability:Handiwork": [
     "Ribbuny"
+   ],
+   "party:weak_point:Grass": [
+    "Ribbuny Botan"
    ],
    "base_support:station_efficiency": [
     "Ribbuny Botan"
@@ -20053,8 +20772,48 @@
    "base_support:suitability:Cooling": [
     "Smokie Cryst"
    ],
+   "party:resist:Water": [
+    "Snock Lux"
+   ],
+   "party:player_atk_unique": [
+    "Solenne"
+   ],
+   "party:fishing_talent": [
+    "Solmora Lux",
+    "Solmora"
+   ],
+   "party:resist:Neutral": [
+    "Sootseer"
+   ],
+   "party:capture_status:Ivy-Covered": [
+    "Souffline"
+   ],
+   "party:stack_speed:Neutral": [
+    "Starryon Primo"
+   ],
    "base_support:suitability:Mining": [
     "Tetroise"
+   ],
+   "party:detect": [
+    "Tombat"
+   ],
+   "party:weak_point:Ground": [
+    "Turtacle Terra"
+   ],
+   "party:weak_point:Electric": [
+    "Univolt"
+   ],
+   "party:loot:Ground": [
+    "Vaelet"
+   ],
+   "party:capture_back": [
+    "Wispaw"
+   ],
+   "party:attack_type:Fire:active": [
+    "Wixen"
+   ],
+   "party:attack_type:Dark:active": [
+    "Wixen Noct"
    ],
    "base_support:hunger_save": [
     "Woolipop",
@@ -20062,6 +20821,9 @@
    ],
    "base_support:suitability:Transporting": [
     "Wumpo"
+   ],
+   "party:resist:Ground": [
+    "Wumpo Botan"
    ]
   }
  }

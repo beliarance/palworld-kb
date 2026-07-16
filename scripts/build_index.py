@@ -114,6 +114,70 @@ def main():
         if re.search(r"chance of receiving one extra", eff) and "Egg" in eff:
             tags.append("egg_extra_pickup")
 
+        # партийные роли для пати-креатора (ауры "While in party" и активируемые баффы)
+        ELEMS = r"Neutral|Fire|Water|Grass|Electric|Ice|Ground|Dark|Dragon"
+        party = []
+        m = re.search(rf"attack type to ({ELEMS})", eff)
+        if m:  # смена стихии атак игрока (+Attack); mount = попутно транспорт, active = по кнопке
+            kind = "mount" if re.search(r"[Ww]hile mounted", eff) else "active"
+            party.append(f"attack_type:{m.group(1)}:{kind}")
+        m = re.search(rf"({ELEMS}) damage to (?:enemy )?weak points", eff)
+        if m:
+            party.append(f"weak_point:{m.group(1)}")
+        elif re.search(r"weak point", eff, re.I):
+            party.append("weak_point:any")
+        for sent in re.split(r"(?<=[.!])\s+", eff):
+            m = re.search(rf"for each (?:other )?((?:{ELEMS})(?:\s*or\s*|or)?(?:{ELEMS})?) Pal in (?:your )?party", sent)
+            if m:  # стак-аура: бустится за каждого пала стихии X в пати ("Dragonor Dark" — склейка в источнике)
+                kind = "atk" if "Attack" in sent else "speed"
+                for el in re.split(r"\s*or\s*|or(?=[A-Z])", m.group(1)):
+                    if el:
+                        party.append(f"stack_{kind}:{el.strip()}")
+        if re.search(r"increases the player'?s Attack by \d+~\d+%", eff):
+            party.append("player_atk_unique" if "different species" in eff else "player_atk")
+        m = re.search(rf"take \d+~\d+% less ({ELEMS}) damage", eff)
+        if m:  # аура резиста пати от стихии врага (часто + иммун к её статусу)
+            party.append(f"resist:{m.group(1)}")
+        elif re.search(r"less damage from explosive", eff):
+            party.append("resist:Explosive")
+        if re.search(r"restores? .*player'?s Health|recovers Health of the player"
+                     r"|player'?s Defense increases|increases the player'?s Defense|reduces shield", eff, re.I):
+            party.append("survival")
+        if re.search(r"carrying capacity increases|max carrying capacity", eff, re.I):
+            party.append("weight")   # универсальная грузоподъёмность
+        elif re.search(r"reduces (?:the )?weight of", eff, re.I):
+            party.append("weight_cargo")  # вес конкретного груза (руда/уголь/еда/оружие)
+        if re.search(r"open treasure chests without", eff):
+            party.append("treasure_open")
+        if re.search(r"detect nearby dungeons", eff):
+            party.append("detect")
+        if re.search(r"become invisible|undetectable to enemies", eff):
+            party.append("stealth")
+        if re.search(r"while mounted on sand", eff, re.I):
+            party.append("terrain:sand")
+        if re.search(r"gains Cold Resistance", eff):
+            party.append("climate_cold")
+        if re.search(r"gains Heat Resistance", eff):
+            party.append("climate_heat")
+        if re.search(r"items obtained from fishing", eff):
+            party.append("fishing_loot")
+        if re.search(r"fish up talented Pals", eff):
+            party.append("fishing_talent")
+        if re.search(r"capture gauge|bars (?:are not )?overlap", eff):
+            party.append("fishing_gauge")
+        if re.search(r"prevent Pal Sphere consumption", eff):
+            party.append("capture_save")
+        if re.search(r"spheres home in", eff):
+            party.append("capture_homing")
+        m = re.search(r"capture rate of Pals afflicted with (\w[\w-]*)", eff)
+        if m:
+            party.append(f"capture_status:{m.group(1)}")
+        if re.search(r"capture rate when awarded a back bonus", eff):
+            party.append("capture_back")
+        m = re.search(rf"({ELEMS}) Pals drop \d+~\d+% more items", eff)
+        if m:
+            party.append(f"loot:{m.group(1)}")
+
         l = loc.get(name, {})
         entry = {
             "number": base["number"], "elements": base["elements"], "work": base["work"],
@@ -123,7 +187,8 @@ def main():
             "mount": c.get("mount_type"), "sprint": (c.get("movement") or {}).get("sprint"),
             "walk": (c.get("movement") or {}).get("walk"), "run": (c.get("movement") or {}).get("run"),
             "partner_skill": ps_name, "partner_effect": eff,
-            "partner_tags": tags, "ranch_produce": produce, "base_support": base_support or None,
+            "partner_tags": tags, "party_roles": party, "ranch_produce": produce,
+            "base_support": base_support or None,
             "drops": c.get("notable_drops") or [],
             "combi_rank": br["combi_ranks"].get(name),
             "nocturnal": c.get("nocturnal"), "size": c.get("size"),
@@ -140,6 +205,8 @@ def main():
             ranch_inv.setdefault(p, []).append(name)
         for t in tags:
             tags_inv.setdefault(t, []).append(name)
+        for t in party:
+            tags_inv.setdefault("party:" + t, []).append(name)
         if base_support:
             key = base_support["type"] + (f":{base_support['task']}" if base_support.get("task") else "")
             tags_inv.setdefault("base_support:" + key, []).append(name)
@@ -147,6 +214,13 @@ def main():
     # ранч-продюсеры сортируем по уровню Farming
     for item, names in ranch_inv.items():
         names.sort(key=lambda n: -(index[n]["work"].get("Farming") or 0))
+    # партийные и яичные теги — по силе эффекта (верх диапазона X~Y%), сильные первыми
+    def eff_power(n):
+        pcts = re.findall(r"\d+~(\d+)%?", index[n]["partner_effect"] or "")
+        return -max((int(x) for x in pcts), default=0)
+    for tag, names in tags_inv.items():
+        if tag.startswith("party:") or tag.startswith("egg_"):
+            names.sort(key=eff_power)
     work_inv = {}
     for w in WORK_COLS:
         ranked = sorted(((n, e["work"][w]) for n, e in index.items() if e["work"].get(w)),

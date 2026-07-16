@@ -634,6 +634,150 @@ def cmd_team(db, args):
         print(f"  {label_name(db, name):<28} — {reason}")
 
 
+PARTY_GOALS = ["combat", "openworld", "catch", "fishing", "loot", "eggs", "explore"]
+
+
+def cmd_party(db, args):
+    """Пати из 5 под цель: активен 1 выпущенный пал, остальные дают ауры 'While in party'
+    (ключевые не стакаются) — поэтому дефолт: 1 боец + 4 ауры."""
+    idx = _load_json("index.json")
+    tc_raw = _load_json("type_chart.json")
+    if not idx or not tc_raw:
+        sys.exit("нужны data/index.json и data/type_chart.json")
+    tc = tc_raw["chart"]
+    inv = idx["inverted"]["partner_tags"]
+    P = idx["pals"]
+    goal = args.goal.lower()
+    picks, used, notes = [], set(), []
+
+    def eff(n, maxlen=120):
+        e = P[n].get("partner_effect") or ""
+        return e[:maxlen] + ("…" if len(e) > maxlen else "")
+
+    def pick(role, *tags):
+        for t in tags:
+            for n in inv.get("party:" + t, []) + inv.get(t, []):
+                if n not in used:
+                    used.add(n)
+                    picks.append((n, role, eff(n)))
+                    return n
+        return None
+
+    def top_fighter(element=None, exclude=()):
+        pool = [p for p in db.values() if p.get("hp") and p["name"] not in used and p["name"] not in exclude]
+        if element:
+            pool = [p for p in pool if element in p["elements"]]
+        pool.sort(key=lambda p: -(attack(p) * 2 + p["hp"] + p["defense"]))
+        return pool[0]["name"] if pool else None
+
+    def add(n, role):
+        if n:
+            used.add(n)
+            picks.append((n, role, eff(n)))
+
+    if goal == "combat":
+        fe = args.element and args.element.capitalize()
+        enemy = args.vs and args.vs.capitalize()
+        if enemy and enemy not in tc:
+            sys.exit(f"стихии {enemy} нет. Есть: {', '.join(tc)}")
+        if not fe and enemy:
+            fe = tc[enemy]["weak_to"][0]
+        if not fe:
+            sys.exit("укажи --element (стихия твоего бойца) или --vs (стихия врага)")
+        if fe not in tc:
+            sys.exit(f"стихии {fe} нет. Есть: {', '.join(tc)}")
+        if not enemy:
+            enemy = (tc[fe]["strong_vs"] or [None])[0]
+        add(top_fighter(fe), f"⚔ боец {fe} (выпускаешь его)")
+        pick("аура: урон по слабым точкам", f"weak_point:{fe}", "weak_point:any")
+        pick(f"бафф игрока: атаки становятся {fe}", f"attack_type:{fe}:active", f"attack_type:{fe}:mount")
+        pick("бафф игрока: +Attack", "player_atk_unique", "player_atk")
+        if args.two_fighters:
+            n = pick("2-й боец: гибрид (сам дерётся + стак-аура)", f"stack_atk:{fe}")
+            if not n:
+                add(top_fighter(fe), "2-й боец (запасной)")
+        else:
+            pick(f"аура: резист от {enemy} (стихия врага)", f"resist:{enemy}", "survival")
+        notes.append(f"Пати против {enemy}-врагов ({fe} бьёт {', '.join(tc[fe]['strong_vs']) or '—'}); "
+                     f"сам {fe} каунтерится {', '.join(tc[fe]['weak_to']) or '—'}")
+        if any("Solenne" == n for n, _, _ in picks):
+            notes.append("Solenne: +30~80% атаки игрока ТОЛЬКО если все 5 палов разных видов — не бери дублей")
+    elif goal == "openworld":
+        pick("маунт + бафф атак игрока", "attack_type:Electric:mount", "attack_type:Fire:mount", "attack_type:Ice:mount")
+        pick("сферы самонаводятся + вес +300~600", "capture_homing")
+        pick("10~50% шанс не потратить сферу", "capture_save")
+        pick("детект данжей/сундуков/скрапа", "detect")
+        pick("бафф игрока: +Attack", "player_atk_unique", "player_atk", "survival")
+        notes.append("Повседневка: транспорт, ловля встречных палов, сундуки, бой. Solenne любит разношёрстную пати")
+    elif goal == "catch":
+        pick("сферы самонаводятся + вес", "capture_homing")
+        pick("шанс не потратить сферу", "capture_save")
+        pick("капча выше при броске в спину", "capture_back")
+        st = pick("капча выше на статусных целях", "capture_status:Freeze", "capture_status:Ivy-Covered")
+        if st and "Freeze" in (P[st].get("partner_effect") or ""):
+            add(top_fighter("Ice"), "боец-статусник: морозит цель (Freeze)")
+        elif st:
+            add(top_fighter("Grass"), "боец-статусник: Ivy-Covered")
+        notes.append("Порядок: статусник вешает Freeze/Ivy → капча-бонус Muffly/Souffline срабатывает")
+    elif goal == "fishing":
+        n = pick("бафф шкалы миниигры", "fishing_gauge")
+        n2 = pick("бафф шкалы миниигры", "fishing_gauge")
+        for nn in (n, n2):
+            if nn and "more slowly" in (P[nn].get("partner_effect") or ""):
+                picks[[x[0] for x in picks].index(nn)] = (nn, "шкала миниигры медленнее падает", eff(nn))
+            elif nn:
+                picks[[x[0] for x in picks].index(nn)] = (nn, "старт шкалы выше + быстрее растёт", eff(nn))
+        pick("+55~95% предметов с рыбалки", "fishing_loot")
+        pick("чаще талантливые палы + водный маунт", "fishing_talent")
+        pick("вес улова (грузоподъёмность)", "weight")
+        notes.append("Места фарма рыбы/Coralum — query.py resource <название>")
+    elif goal == "loot":
+        enemy = (args.vs or "Neutral").capitalize()
+        add(top_fighter(tc.get(enemy, {}).get("weak_to", [None])[0]), f"боец-каунтер против {enemy}")
+        pick(f"+40~80% дропа с {enemy}-врагов", f"loot:{enemy}")
+        pick("вес +300~600 + сферы", "capture_homing", "weight")
+        pick("вес груза (руда/уголь/еда — смотри замены)", "weight_cargo", "weight")
+        pick("бафф игрока: +Attack", "player_atk_unique", "player_atk")
+        notes.append(f"--vs {enemy}: фармим {enemy}-палов; лут-ауры есть под каждую стихию (loot:*)")
+    elif goal == "eggs":
+        pick("45~55% шанс альфа-яйца при подборе", "egg_alpha_chance")
+        pick("50~75% шанс второго яйца", "egg_extra_pickup")
+        m = [p for p in db.values() if p.get("mount_type") == "flying" and p["name"] not in used]
+        m.sort(key=lambda p: -((p.get("movement") or {}).get("sprint") or 0))
+        if m:
+            add(m[0]["name"], "летающий маунт: облёт точек яиц")
+        pick("вес", "weight")
+        pick("страховка: хил/защита", "survival")
+        notes.append("Ауры яиц работают при ПОДБОРЕ яйца — держи обоих в пати весь маршрут")
+    elif goal == "explore":
+        biome = (args.biome or "").lower()
+        if biome == "cold":
+            pick("+2 Cold Resistance", "climate_cold")
+        elif biome in ("heat", "desert"):
+            pick("+2 Heat Resistance", "climate_heat")
+        if biome in ("heat", "desert"):
+            pick("+50~100% скорость по песку (маунт)", "terrain:sand")
+        pick("детект данжей/сундуков/скрапа", "detect")
+        pick("открывает сундуки без ключей", "treasure_open")
+        pick("инвиз для игрока и пала", "stealth")
+        m = [p for p in db.values() if p.get("mount_type") == "flying" and p["name"] not in used]
+        m.sort(key=lambda p: -((p.get("movement") or {}).get("sprint") or 0))
+        while len(picks) < 5 and m:
+            add(m.pop(0)["name"], "летающий маунт")
+        notes.append("--biome cold|heat: слот климата (Arsox/Reindrix) вместо пятого")
+    else:
+        sys.exit(f"Неизвестная цель '{goal}'. Цели: {', '.join(PARTY_GOALS)}")
+
+    title = {"combat": "боя", "openworld": "опенворлда", "catch": "ловли палов", "fishing": "рыбалки",
+             "loot": "лут-рана", "eggs": "сбора яиц", "explore": "исследования"}[goal]
+    print(f"Пати для {title} (активен 1 пал, остальные — ауры из пати):")
+    for n, role, e in picks[:5]:
+        print(f"  {label_name(db, n):<28} — {role}")
+        print(f"      {e}")
+    for note in notes:
+        print(f"  ! {note}")
+
+
 def cmd_tiers(db, args):
     tiers = _load_json("tier_lists.json")
     if not tiers:
@@ -674,6 +818,11 @@ def main(argv=None):
     p = sub.add_parser("resource"); p.add_argument("name")
     p = sub.add_parser("expeditions"); p.add_argument("name", nargs="?")
     p = sub.add_parser("produce"); p.add_argument("item")
+    p = sub.add_parser("party"); p.add_argument("goal", help=f"цель: {', '.join(PARTY_GOALS)}")
+    p.add_argument("--element", help="(combat) стихия твоего бойца")
+    p.add_argument("--vs", help="(combat/loot) стихия врага")
+    p.add_argument("--two-fighters", action="store_true", help="(combat) 2 бойца + 3 ауры вместо 1+4")
+    p.add_argument("--biome", help="(explore) cold | heat | desert")
 
     args = ap.parse_args(argv)
     db = load_db()
@@ -684,7 +833,7 @@ def main(argv=None):
         "item": cmd_item, "craft": cmd_craft, "drops": cmd_drops,
         "skills": cmd_skills, "skill": cmd_skill, "passive": cmd_passive,
         "where": cmd_where, "resource": cmd_resource, "expeditions": cmd_expeditions,
-        "produce": cmd_produce,
+        "produce": cmd_produce, "party": cmd_party,
     }[args.cmd](db, args)
 
 

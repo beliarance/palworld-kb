@@ -128,7 +128,7 @@ function breedChild(a,b){
 const TABS = [
   ["pal","Палы"],["workers","Рабочие"],["breed","Бридинг"],["counter","Каунтеры"],
   ["items","Предметы"],["tiers","Тир-листы"],["exp","Экспедиции"],["res","Ресурсы"],
-  ["passives","Пассивки"],["skills","Скиллы"],["planner","Конструктор"]
+  ["passives","Пассивки"],["skills","Скиллы"],["party","Пати"],["planner","Конструктор"]
 ];
 let cur="pal";
 function nav(){
@@ -416,6 +416,125 @@ render.skills = () => {
   };
   for(const id of ["sq","sel"]) document.getElementById(id).addEventListener("input",draw); draw();
 };
+
+/* --- Пати-креатор (порт scripts/query.py cmd_party) --- */
+const PARTY_ELEMS = ["Neutral","Fire","Water","Grass","Electric","Ice","Ground","Dark","Dragon"];
+render.party = () => {
+  V().innerHTML = `<div class="card">
+    <div class="row">
+      <select id="pgoal">
+        <option value="combat">⚔️ Бой</option><option value="openworld">🌍 Опенворлд</option>
+        <option value="catch">🕸 Ловля палов</option><option value="fishing">🎣 Рыбалка</option>
+        <option value="loot">🎒 Лут-ран</option><option value="eggs">🥚 Сбор яиц</option>
+        <option value="explore">🗺 Исследование</option></select>
+      <span class="pf pf-combat"><select id="pfel" title="стихия твоего активного бойца — остальные 4 слота бустят её"><option value="">стихия бойца: авто</option>${PARTY_ELEMS.map(e=>`<option>${e}</option>`).join("")}</select></span>
+      <span class="pf pf-combat pf-loot"><select id="pven" title="стихия врага: боец подберётся каунтером, резист-аура — от неё"><option value="">враг: авто</option>${PARTY_ELEMS.map(e=>`<option>${e}</option>`).join("")}</select></span>
+      <span class="pf pf-combat"><label title="слот резиста уходит под второго бойца (гибрид со стак-аурой, если есть)"><input type="checkbox" id="ptwo"> 2 бойца</label></span>
+      <span class="pf pf-explore"><select id="pbiome"><option value="">биом: обычный</option><option value="cold">холод</option><option value="heat">жара / пустыня</option></select></span>
+    </div>
+    <div class="sub" style="margin-top:6px">В бою дерётся 1 выпущенный пал + ты; остальные дают ауры «While in party» (не стакаются) — поэтому дефолт 1 боец + 4 ауры.</div>
+    </div><div id="partyout"></div>`;
+  const updVis=()=>{ const g=document.getElementById("pgoal").value;
+    document.querySelectorAll(".pf").forEach(el=>{ el.style.display=el.classList.contains("pf-"+g)?"":"none"; }); };
+  for(const id of ["pgoal","pfel","pven","ptwo","pbiome"])
+    document.getElementById(id).addEventListener(id==="ptwo"?"change":"input",()=>{ updVis(); drawParty(); });
+  updVis(); drawParty();
+};
+function drawParty(){
+  const out=document.getElementById("partyout"); if(!out) return;
+  const inv=D.idx.inverted.partner_tags, chart=D.chart.chart, IP=D.idx.pals;
+  const goal=document.getElementById("pgoal").value;
+  const picks=[], used=new Set(), notes=[];
+  const effOf=n=>(IP[n]||{}).partner_effect||"";
+  const pick=(role,...tags)=>{
+    let first=null; const alts=[];
+    for(const t of tags) for(const n of (inv["party:"+t]||[]).concat(inv[t]||[])){
+      if(used.has(n)) continue;
+      if(!first) first=n; else if(!alts.includes(n)&&alts.length<3&&n!==first) alts.push(n);
+    }
+    if(first){ used.add(first); picks.push({n:first,role,alts}); }
+    return first;
+  };
+  const topFighter=el=>{
+    const pool=Object.values(P).filter(p=>p.hp&&!used.has(p.name)&&(!el||p.elements.includes(el)))
+      .sort((a,b)=>(atk(b)*2+b.hp+b.def)-(atk(a)*2+a.hp+a.def));
+    return pool.length?pool[0].name:null;
+  };
+  const add=(n,role,alts=[])=>{ if(n){ used.add(n); picks.push({n,role,alts}); } };
+  if(goal==="combat"){
+    let fe=document.getElementById("pfel").value, enemy=document.getElementById("pven").value;
+    if(!fe&&!enemy){ out.innerHTML=`<div class="card dim">Выбери стихию бойца или стихию врага — соберу пати под неё.</div>`; return; }
+    if(!fe) fe=chart[enemy].weak_to[0];
+    if(!enemy) enemy=(chart[fe].strong_vs||[])[0]||"";
+    const f1=topFighter(fe);
+    add(f1,`⚔ боец ${fe} (выпускаешь его)`,
+      Object.values(P).filter(p=>p.hp&&p.elements.includes(fe)&&p.name!==f1)
+        .sort((a,b)=>(atk(b)*2+b.hp+b.def)-(atk(a)*2+a.hp+a.def)).slice(0,3).map(p=>p.name));
+    pick("аура: урон по слабым точкам",`weak_point:${fe}`,"weak_point:any");
+    pick(`бафф игрока: атаки становятся ${fe}`,`attack_type:${fe}:active`,`attack_type:${fe}:mount`);
+    pick("бафф игрока: +Attack","player_atk_unique","player_atk");
+    if(document.getElementById("ptwo").checked){
+      const n=pick("2-й боец: гибрид (сам дерётся + стак-аура)",`stack_atk:${fe}`);
+      if(!n) add(topFighter(fe),"2-й боец (запасной)");
+    } else pick(`аура: резист от ${enemy} (стихия врага)`,`resist:${enemy}`,"survival");
+    notes.push(`Пати против <b>${enemy}</b>-врагов (${fe} бьёт ${(chart[fe].strong_vs||[]).join(", ")||"—"}); сам ${fe} каунтерится ${(chart[fe].weak_to||[]).join(", ")||"—"}`);
+    if(picks.some(p=>p.n==="Solenne")) notes.push("Solenne: +30~80% атаки игрока ТОЛЬКО если все 5 палов разных видов — не бери дублей");
+  } else if(goal==="openworld"){
+    pick("маунт + бафф атак игрока","attack_type:Electric:mount","attack_type:Fire:mount","attack_type:Ice:mount");
+    pick("сферы самонаводятся + вес +300~600","capture_homing");
+    pick("10~50% шанс не потратить сферу","capture_save");
+    pick("детект данжей/сундуков/скрапа","detect");
+    pick("бафф игрока: +Attack","player_atk_unique","player_atk","survival");
+    notes.push("Повседневка: транспорт, ловля встречных палов, сундуки, бой. Solenne любит разношёрстную пати");
+  } else if(goal==="catch"){
+    pick("сферы самонаводятся + вес","capture_homing");
+    pick("шанс не потратить сферу","capture_save");
+    pick("капча выше при броске в спину","capture_back");
+    const st=pick("капча выше на статусных целях","capture_status:Freeze","capture_status:Ivy-Covered");
+    if(st&&effOf(st).includes("Freeze")) add(topFighter("Ice"),"боец-статусник: морозит цель (Freeze)");
+    else if(st) add(topFighter("Grass"),"боец-статусник: Ivy-Covered");
+    notes.push("Порядок: статусник вешает Freeze/Ivy → капча-бонус Muffly/Souffline срабатывает");
+  } else if(goal==="fishing"){
+    const g1=pick("бафф шкалы миниигры","fishing_gauge"), g2=pick("бафф шкалы миниигры","fishing_gauge");
+    for(const nn of [g1,g2]) if(nn){ const i=picks.findIndex(p=>p.n===nn);
+      picks[i].role=effOf(nn).includes("more slowly")?"шкала миниигры медленнее падает":"старт шкалы выше + быстрее растёт"; }
+    pick("+55~95% предметов с рыбалки","fishing_loot");
+    pick("чаще талантливые палы + водный маунт","fishing_talent");
+    pick("вес улова (грузоподъёмность)","weight");
+    notes.push("Места фарма рыбы/Coralum — вкладка «Ресурсы»");
+  } else if(goal==="loot"){
+    const enemy=document.getElementById("pven").value||"Neutral";
+    add(topFighter((chart[enemy].weak_to||[])[0]),`боец-каунтер против ${enemy}`);
+    pick(`+40~80% дропа с ${enemy}-врагов`,`loot:${enemy}`);
+    pick("вес +300~600 + сферы","capture_homing","weight");
+    pick("вес груза (руда/уголь/еда — смотри замены)","weight_cargo","weight");
+    pick("бафф игрока: +Attack","player_atk_unique","player_atk");
+    notes.push(`Фармим <b>${enemy}</b>-палов (селект «враг» меняет цель); лут-ауры есть под каждую стихию`);
+  } else if(goal==="eggs"){
+    pick("45~55% шанс альфа-яйца при подборе","egg_alpha_chance");
+    pick("50~75% шанс второго яйца","egg_extra_pickup");
+    const m=Object.values(P).filter(p=>p.mount==="flying"&&!used.has(p.name)).sort((a,b)=>(b.mv.sprint||0)-(a.mv.sprint||0));
+    if(m.length) add(m[0].name,"летающий маунт: облёт точек яиц",m.slice(1,4).map(p=>p.name));
+    pick("вес","weight");
+    pick("страховка: хил/защита","survival");
+    notes.push("Ауры яиц работают при ПОДБОРЕ яйца — держи обоих в пати весь маршрут");
+  } else if(goal==="explore"){
+    const biome=document.getElementById("pbiome").value;
+    if(biome==="cold") pick("+2 Cold Resistance","climate_cold");
+    if(biome==="heat"){ pick("+2 Heat Resistance","climate_heat"); pick("+50~100% скорость по песку (маунт)","terrain:sand"); }
+    pick("детект данжей/сундуков/скрапа","detect");
+    pick("открывает сундуки без ключей","treasure_open");
+    pick("инвиз для игрока и пала","stealth");
+    const m=Object.values(P).filter(p=>p.mount==="flying"&&!used.has(p.name)).sort((a,b)=>(b.mv.sprint||0)-(a.mv.sprint||0));
+    while(picks.length<5&&m.length) add(m.shift().name,"летающий маунт");
+  }
+  out.innerHTML = picks.slice(0,5).map(({n,role,alts})=>`
+    <div class="card"><div class="big">${palIcon(n)}${palLink(n)} <span class="dim">— ${role}</span></div>
+      <div class="dim" style="margin-top:4px">${esc(effOf(n)||((P[n]||{}).ps||{}).effect||"")}</div>
+      ${alts&&alts.length?`<div class="sub" style="margin-top:6px">замены: ${alts.map(a=>palLink(a)).join(" · ")}</div>`:""}
+    </div>`).join("")
+    + (notes.length?`<div class="card">${notes.map(t=>`<div>💡 ${t}</div>`).join("")}</div>`:"");
+}
 
 /* --- Конструктор баз (порт scripts/base_planner.py) --- */
 const QUALITY = {baseline:1.0, passives:2.2, max:2.75};
