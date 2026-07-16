@@ -585,7 +585,8 @@ class BasePlan {
     const o=this.o, hatch=o.tech>=76&&this.structs["Ancient Hatchery"], farm=hatch?"Ancient Hatchery":"Breeding Farm";
     this.buildings={}; this.crew=[]; this.notes=[]; this.assume=[];
     const L=this.breedingStaffFor(farms);
-    const sup=[["egg_speed","яйца +20~50%"],["base_defense","ПВО базы от рейдов"]];
+    const sup=[["base_defense","ПВО базы от рейдов"]];
+    if(o.braloha!==false) sup.unshift(["egg_speed","яйца +20~50%"]);
     if(o.incubation>0) sup.push(["incubation","инкубация -20~40%"]);
     else this.notes.push("Инкубация мгновенная (мир = 0): инкубаторы и Dynamoff не нужны");
     this.supportCore(sup.concat([["crop_growth","рост культур +50~70%"],
@@ -826,7 +827,8 @@ function builderOpts(){
     stars:document.getElementById("pstars").checked,research:document.getElementById("presearch").checked,
     ranchRate:+val("pranch")||12,plantYield:+val("pyield")||60,cookRate:+val("pcook")||30,
     plantsPerWorker:3,farms:+val("pfarms")||null,dish:val("pdish")||"Salad",dishRate:+val("pdishrate")||30,
-    eggInterval:+val("peggint")||5,eggBoost:+val("peggboost")||1.35,
+    eggInterval:+val("peggint")||5,braloha:document.getElementById("pbraloha").checked,
+    eggBoost:document.getElementById("pbraloha").checked?1.35:1.0,
     incubation:val("pincub")===""?1:+val("pincub"),cake:val("pcake")||"Cake",
     perStation:+val("ppers")||1,spoilage:document.getElementById("pspoil").checked,
     foodPerPlot:+val("pfpp")||55,foodBuff:val("pfbuff")===""?30:+val("pfbuff"),
@@ -860,6 +862,7 @@ render.planner = () => {
   </div>
   <div class="row fld fld-breeding" style="margin-top:8px">
     <select id="pcake" title="какой торт производить"><option>Cake</option><option>Mushroom Cake</option><option>Vegetable Cake</option><option>Extravagant Vegetable Cake</option><option>Special Cake</option></select>
+    <label title="Braloha (#110): аура +20~50% к скорости яиц на брид-ферме; тортовая линия сразу считается под её буст"><input type="checkbox" id="pbraloha" checked> Braloha (яйца +20~50%)</label>
     <label class="dim" title="сколько брид-ферм / Ancient Hatchery ставить. Пусто = подобрать максимум под слоты">брид-ферм (пусто=авто) <input type="number" id="pfarms" style="width:60px;min-width:60px"></label>
     <label class="dim" title="настройка мира «скорость инкубации»: 1 = обычная, 0 = мгновенное вылупление (тогда инкубаторы и Dynamoff не нужны)">инкубация (мир) <input type="number" id="pincub" value="1" step="0.5" min="0" style="width:60px;min-width:60px"></label>
   </div>
@@ -882,7 +885,6 @@ render.planner = () => {
     <label class="dim" title="бонус Work Speed от кормёжки buff-едой: Salad +30, Minestrone +40, 0 = без">WS от еды <input type="number" id="pfbuff" value="30" style="width:60px;min-width:60px"></label>
     <label class="dim" title="во сколько раз Ancient Farm производительнее обычной грядки (paldb: 1 = как обычная)">Ancient Farm × <input type="number" id="pafy" value="1" step="0.5" style="width:60px;min-width:60px"></label>
     <label class="dim" title="как часто брид-ферма делает яйцо. 5 мин — из данных paldb, менять НЕ нужно; только если замеришь, что Ancient Hatchery кладёт быстрее">яйцо раз в, мин <input type="number" id="peggint" value="5" step="0.1" style="width:60px;min-width:60px"></label>
-    <label class="dim" title="перепроизводство тортов под ускорение Braloha (+20~50% к скорости яиц). 1.0 = тортов впритык (обычно достаточно); 1.35 = запас, чтобы буст Braloha не простаивал">запас тортов × <input type="number" id="peggboost" value="1.0" step="0.05" style="width:60px;min-width:60px"></label>
   </div></details></div>
   <div id="bout"></div>`;
   const updateVis=()=>{
@@ -891,7 +893,7 @@ render.planner = () => {
   };
   document.getElementById("pp").addEventListener("input",updateVis);
   window._updateVis=updateVis;
-  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","peggboost","pincub","pcake","ppers","pspoil","pfpp","pfbuff","pstars","pafy","presearch"]){
+  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","pincub","pcake","ppers","pspoil","pfpp","pfbuff","pstars","pafy","presearch"]){
     document.getElementById(id).addEventListener("input",()=>{
       if(!baseDirty && BASE.buildings.length) seedFromPreset();
       else if(baseDirty){ const el=document.getElementById("rebuild-hint"); if(el) el.style.display=""; }
@@ -904,6 +906,17 @@ render.planner = () => {
     ["base_buff","combat","breeding","meal"].map(cat=>
       `<optgroup label="${cats[cat]}">`+D.bb.foods.filter(f=>f.category===cat&&itemByName[f.name]?.recipe)
         .map(f=>`<option value="${esc(f.name)}">${esc(f.name)} — сыт.${f.nutrition}${f.buffs?", "+f.buffs.join("/"):""}</option>`).join("")+"</optgroup>").join("");
+  document.getElementById("pbraloha").addEventListener("change",()=>{
+    const on=document.getElementById("pbraloha").checked;
+    if(!baseDirty && BASE.buildings.length){ seedFromPreset(); }
+    else {
+      const has=BASE.crew.some(c=>c.sp==="Braloha");
+      if(on&&!has) BASE.crew.push({sp:"Braloha",count:1,role:"саппорт: яйца +20~50%",task:null});
+      if(!on) BASE.crew=BASE.crew.filter(c=>c.sp!=="Braloha");
+      baseDirty=true; drawBase();
+    }
+    savePlannerState();
+  });
   restorePlannerState();
   updateVis();
   drawDishChips();
@@ -913,7 +926,7 @@ render.planner = () => {
 /* --- персист настроек и базы (localStorage) --- */
 const PSTORE="palkb_planner_v1";
 const PFIELDS=["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pstars","presearch",
-  "pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","peggboost","pincub","pcake",
+  "pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","pbraloha","pincub","pcake",
   "ppers","pspoil","pfpp","pfbuff","pafy"];
 function savePlannerState(){
   try{
@@ -953,6 +966,9 @@ function drawDishChips(){
 function drawBase(){
   const out=document.getElementById("bout"); if(!out) return;
   if(typeof savePlannerState==="function") setTimeout(savePlannerState,0);
+  const pbSync=document.getElementById("pbraloha");
+  if(pbSync&&BASE.crew.length&&document.getElementById("pp").value==="breeding")
+    pbSync.checked=BASE.crew.some(c=>c.sp==="Braloha");
   const slots=+document.getElementById("pslots").value||50;
   const crewTotal=BASE.crew.reduce((a,c)=>a+c.count,0);
   const structs=Object.fromEntries(D.bb.structures.map(s=>[s.name,s]));

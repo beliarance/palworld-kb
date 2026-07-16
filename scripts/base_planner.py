@@ -356,7 +356,9 @@ class Planner:
         farm_name = "Ancient Hatchery" if hatchery else "Breeding Farm"
         line = self.breeding_staff_for(farms)
 
-        support_kinds = [("egg_speed", "яйца +20~50%"), ("base_defense", "ПВО базы от рейдов")]
+        support_kinds = [("base_defense", "ПВО базы от рейдов")]
+        if a.braloha:
+            support_kinds.insert(0, ("egg_speed", "яйца +20~50%"))
         if a.incubation > 0:
             support_kinds.append(("incubation", "инкубация -20~40%"))
         else:
@@ -429,7 +431,8 @@ class Planner:
                     break
         farm_name, hatchery, line = self._breed_summary
         self.notes.append(f"{farm_name} x{farms}: ~{line['eggs_h']:.0f} яиц/час = {line['eggs_h']*24:.0f}/сутки, тортов {line['cakes_h']:.0f}/час "
-                          f"при полном снабжении тортами (x буст {a.egg_boost} (1.0 = торты лимитируют, Braloha без простоев))"
+                          + (f"— линия рассчитана под буст Braloha x{a.egg_boost}" if a.braloha
+                             else f"— без Braloha (x{a.egg_boost}), яйца на базовой скорости")
                           + (" (авто-инкубация, 10 слотов яиц)" if hatchery else ""))
         if hatchery:
             self.notes.append("⚠ Ancient Hatchery: скорость производства яиц принята как у обычной фермы "
@@ -445,7 +448,8 @@ class Planner:
         self.notes.append("В пати при сборе яиц: Broncherry Aqua (45~55% альфа-яйца) + Grintale (50~75% лишнее яйцо)")
         self.assumptions.append(f"Ранч: {a.ranch_rate} дропов/час на пала (--ranch-rate) x качество; "
                                 f"кухня: {a.cook_rate} тортов/час на повара (--cook-rate); "
-                                f"яйцо {a.egg_interval or 5} мин x буст Braloha {a.egg_boost} (--egg-interval/--egg-boost)")
+                                f"яйцо {a.egg_interval or 5} мин x буст {a.egg_boost} "
+                                f"({'Braloha в составе' if a.braloha else 'без Braloha, --no-braloha'}; --egg-interval/--egg-boost)")
 
     def preset_mine_craft(self):
         a = self.args
@@ -753,14 +757,18 @@ def main():
                     help="(breeding) какой торт производить (Vegetable = 2 яйца за цикл)")
     ap.add_argument("--incubation", type=float, default=1,
                     help="(breeding) множитель скорости инкубации из настроек МИРА: 0 = мгновенно (без инкубаторов и Dynamoff)")
-    ap.add_argument("--egg-boost", type=float, default=1.0,
-                    help="(breeding) 1.0 = тортовая линия под базовую скорость (Braloha лишь убирает простои); "
-                         "1.35-1.5 = линия под реализованный буст Braloha (яйца +20~50%%)")
+    ap.add_argument("--no-braloha", dest="braloha", action="store_false",
+                    help="(breeding) без Braloha: убрать её из состава и считать яйца без буста +20~50%%")
+    ap.add_argument("--egg-boost", type=float, default=None,
+                    help="(breeding) переопределить множитель тортовой линии вручную "
+                         "(по умолчанию 1.35 с Braloha, 1.0 без неё)")
     ap.add_argument("--ranch-rate", type=float, default=12, help="дропов/час на ранч-пала (ДОПУЩЕНИЕ)")
     ap.add_argument("--plant-yield", type=float, default=60, help="единиц урожая/час с плантации (ДОПУЩЕНИЕ)")
     ap.add_argument("--cook-rate", type=float, default=30, help="тортов/час на повара (ДОПУЩЕНИЕ)")
     ap.add_argument("--plants-per-worker", type=float, default=3, help="плантаций на 1 троицу рабочих при baseline")
     args = ap.parse_args()
+    if args.egg_boost is None:
+        args.egg_boost = 1.35 if args.braloha else 1.0
     if args.metal:
         args.tech = METALS[args.metal]
     pl = Planner(args)
