@@ -1191,7 +1191,9 @@
    "partner_skill": "Princess Gaze",
    "partner_effect": "While in party, increases Attack of Grass Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_atk:Grass"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -2349,7 +2351,9 @@
    "partner_tags": [
     "base_work"
    ],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_atk:Neutral"
+   ],
    "ranch_produce": [
     "Wool"
    ],
@@ -2886,7 +2890,9 @@
    "partner_skill": "Demonic Sight",
    "partner_effect": "While in party, increases Attack of Dark Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_atk:Dark"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -3036,7 +3042,9 @@
    "partner_skill": "Fragrant Dragon",
    "partner_effect": "Can be ridden. While in party, increase Defense of Dragon Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_def:Dragon"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -3089,7 +3097,9 @@
    "partner_skill": "Thunder Dragon",
    "partner_effect": "Can be ridden. While in party, increases Defense of Electric Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_def:Electric"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -3364,7 +3374,9 @@
    "partner_tags": [
     "base_work"
    ],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_atk:Ground"
+   ],
    "ranch_produce": [
     "High Quality Pal Oil"
    ],
@@ -4710,7 +4722,9 @@
    "partner_tags": [
     "base_work"
    ],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_atk:Ice"
+   ],
    "ranch_produce": [
     "Ice Organ"
    ],
@@ -5403,7 +5417,9 @@
    "partner_skill": "Resurrection",
    "partner_effect": "While fighting together, when Gildra is incapacitated, it revives with its Hunger reduced to 0.",
    "partner_tags": [],
-   "party_roles": [],
+   "party_roles": [
+    "revive"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -5518,7 +5534,9 @@
    "partner_skill": "Cephalo-Princess",
    "partner_effect": "While in party, increases Defense of Water Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_def:Water"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -6314,7 +6332,9 @@
    "partner_skill": "Dark Knowledge",
    "partner_effect": "While in party, increases Attack of Dark Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_atk:Dark"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7124,7 +7144,9 @@
    "partner_tags": [
     "base_work"
    ],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_atk:Water"
+   ],
    "ranch_produce": [
     "Aquatic Pal Fluids"
    ],
@@ -7181,7 +7203,9 @@
    "partner_tags": [
     "base_work"
    ],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_atk:Fire"
+   ],
    "ranch_produce": [
     "Flame Organ"
    ],
@@ -7235,7 +7259,9 @@
    "partner_skill": "Sandball Soccer",
    "partner_effect": "While in party, increases Defense of Ground Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_def:Ground"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -7802,7 +7828,9 @@
    "partner_skill": "Long-Sleeved Hurray",
    "partner_effect": "While in party, reduces the Partner Skill cooldowns for other party Pals by 10~50%. (Does not stack)",
    "partner_tags": [],
-   "party_roles": [],
+   "party_roles": [
+    "cd_support"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -9740,7 +9768,9 @@
    "partner_skill": "Soul Binder",
    "partner_effect": "While in party, increases Defense of Grass Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_def:Grass"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -10054,7 +10084,9 @@
    "partner_skill": "Ferocious Thunder Dragon",
    "partner_effect": "While in party, hitting an enemy with a bullet increases the Attack and Defense of the Pal fighting alongside you by 1~5% for 5 seconds. This effect stacks up to 30 times. (Does not stack.)",
    "partner_tags": [],
-   "party_roles": [],
+   "party_roles": [
+    "bullet_stack"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -11201,7 +11233,9 @@
    "partner_tags": [
     "mount_combat"
    ],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_atk:Dragon"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -11471,7 +11505,9 @@
    "partner_skill": "Snow Shepherd",
    "partner_effect": "Can be ridden. Can perform a double jump while mounted. While in party, increases Defense of Ice Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_def:Ice"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -11885,7 +11921,9 @@
    "partner_skill": "Happy-Go-Lucky Bunny",
    "partner_effect": "While in party, increases Attack of Neutral Pals by 15~30%. (Does not stack) While at a base, increases the Handiwork Work Suitability Level for all other Base Pals by +1. (Does not stack)",
    "partner_tags": [],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_atk:Neutral"
+   ],
    "ranch_produce": [],
    "base_support": {
     "type": "suitability",
@@ -12122,7 +12160,9 @@
    "partner_tags": [
     "base_work"
    ],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_def:Fire"
+   ],
    "ranch_produce": [
     "Flame Organ"
    ],
@@ -12673,7 +12713,9 @@
    "partner_tags": [
     "base_work"
    ],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_def:Neutral"
+   ],
    "ranch_produce": [
     "High Quality Cloth"
    ],
@@ -13515,7 +13557,9 @@
    "partner_tags": [
     "base_work"
    ],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_atk:Electric"
+   ],
    "ranch_produce": [
     "Electric Organ"
    ],
@@ -15407,7 +15451,9 @@
    "partner_skill": "Hidden Dark Energy",
    "partner_effect": "While in party, increases Defense of Dark Pals by 15~30%. (Does not stack)",
    "partner_tags": [],
-   "party_roles": [],
+   "party_roles": [
+    "elem_team_def:Dark"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -20522,6 +20568,9 @@
    "base_support:egg_speed": [
     "Braloha"
    ],
+   "party:elem_team_atk:Grass": [
+    "Bristla"
+   ],
    "egg_alpha_chance": [
     "Broncherry Aqua",
     "Broncherry"
@@ -20561,6 +20610,10 @@
    "base_support:suitability:Gathering": [
     "Clovee"
    ],
+   "party:elem_team_atk:Neutral": [
+    "Cremis",
+    "Ribbuny"
+   ],
    "party:loot:Dragon": [
     "Cryolinx"
    ],
@@ -20571,6 +20624,19 @@
    ],
    "party:terrain:sand": [
     "Dazemu"
+   ],
+   "party:elem_team_atk:Dark": [
+    "Demon Eye",
+    "Hoocrates"
+   ],
+   "party:elem_team_def:Dragon": [
+    "Dinossom"
+   ],
+   "party:elem_team_def:Electric": [
+    "Dinossom Lux"
+   ],
+   "party:elem_team_atk:Ground": [
+    "Dumud"
    ],
    "base_support:incubation": [
     "Dynamoff"
@@ -20611,6 +20677,9 @@
    "party:weak_point:Fire": [
     "Finsider Ignis"
    ],
+   "party:elem_team_atk:Ice": [
+    "Foxcicle"
+   ],
    "party:attack_type:Dark:mount": [
     "Frostallion Noct",
     "Helzephyr",
@@ -20630,6 +20699,9 @@
    ],
    "party:attack_type:Ground:mount": [
     "Gildane"
+   ],
+   "party:revive": [
+    "Gildra"
    ],
    "fishing": [
     "Gloopie",
@@ -20651,6 +20723,9 @@
     "Gloopie",
     "Whalaska Ignis",
     "Whalaska"
+   ],
+   "party:elem_team_def:Water": [
+    "Gloopie Primo"
    ],
    "party:player_atk": [
     "Gobfin",
@@ -20682,11 +20757,23 @@
    "base_support:suitability:Kindling": [
     "Katress Ignis"
    ],
+   "party:elem_team_atk:Water": [
+    "Kelpsea"
+   ],
+   "party:elem_team_atk:Fire": [
+    "Kelpsea Ignis"
+   ],
+   "party:elem_team_def:Ground": [
+    "Kikit"
+   ],
    "party:resist:Ice": [
     "Kitsun"
    ],
    "party:resist:Dark": [
     "Kitsun Noct"
+   ],
+   "party:cd_support": [
+    "Lapure"
    ],
    "party:stack_atk:Grass": [
     "Leafan"
@@ -20723,8 +20810,14 @@
    "base_support:suitability:Medicine Production": [
     "Mycora"
    ],
+   "party:elem_team_def:Grass": [
+    "Nitemary Botan"
+   ],
    "party:exp_boost": [
     "Omascul"
+   ],
+   "party:bullet_stack": [
+    "Orserk"
    ],
    "base_support:base_defense": [
     "Panthalus"
@@ -20750,11 +20843,17 @@
    "base_support:suitability:Generating Electricity": [
     "Puffolt"
    ],
+   "party:elem_team_atk:Dragon": [
+    "Quivern"
+   ],
    "party:attack_type:Grass:mount": [
     "Quivern Botan"
    ],
    "party:stack_speed:Electric": [
     "Rayhound"
+   ],
+   "party:elem_team_def:Ice": [
+    "Rayhound Cryst"
    ],
    "party:climate_heat": [
     "Reindrix"
@@ -20768,11 +20867,17 @@
    "base_support:station_efficiency": [
     "Ribbuny Botan"
    ],
+   "party:elem_team_def:Fire": [
+    "Rooby"
+   ],
    "base_support:pair_anubis": [
     "Sekhmet"
    ],
    "base_support:sanity_save": [
     "Shroomer Noct"
+   ],
+   "party:elem_team_def:Neutral": [
+    "Sibelyx Primo"
    ],
    "base_support:suitability:Cooling": [
     "Smokie Cryst"
@@ -20792,6 +20897,9 @@
    ],
    "party:capture_status:Ivy-Covered": [
     "Souffline"
+   ],
+   "party:elem_team_atk:Electric": [
+    "Sparkit"
    ],
    "party:stack_speed:Neutral": [
     "Starryon Primo"
@@ -20813,6 +20921,9 @@
    ],
    "party:capture_back": [
     "Wispaw"
+   ],
+   "party:elem_team_def:Dark": [
+    "Wistella"
    ],
    "party:attack_type:Fire:active": [
     "Wixen"

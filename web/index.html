@@ -299,8 +299,8 @@ render.counter = () => {
       return `<div>Топ ${el}: ${top.map(p=>palLink(p.name)).join(", ")}</div>`;}).join("");
     const fe=b.counter_elements[0], enemy=b.elements[0]||((D.chart.chart[fe]||{}).strong_vs||[])[0];
     const party=fe&&enemy?`<h3 style="margin-top:12px">Боевая пати под босса</h3>
-      <div class="sub" style="margin-bottom:6px">1 боец + 4 ауры; скиллы с ×2 — то, к чему босс слаб</div>`
-      +(()=>{const C=buildCombatParty(fe, enemy, false); return partyCardsHTML(C.picks, C.notes, enemy);})():"";
+      <div class="sub" style="margin-bottom:6px">2 бойца (свапаешь, если первый падает) + 3 ауры; скиллы с ×2 — то, к чему босс слаб</div>`
+      +(()=>{const C=buildCombatParty(fe, enemy, true); return partyCardsHTML(C.picks, C.notes, enemy)+accessoryCardHTML(accessoriesFor("combat", fe, enemy));})():"";
     document.getElementById("bout").innerHTML=`
       <div class="big">${esc(b.leader?b.leader+" & ":"")}${esc(b.pal)} ${b.elements.map(e=>`<span class="el el-${e}">${e}</span>`).join("")||'<span class="dim">без стихии</span>'}</div>
       <div style="margin:6px 0">Бить: ${b.counter_elements.map(e=>`<span class="el el-${e}">${e}</span>`).join("")||'<span class="dim">нет элементного каунтера</span>'} ${b.preliminary?'<span class="warn">(PRELIMINARY 1.0)</span>':''}</div>
@@ -315,7 +315,7 @@ function showCounter(el){
     return `<div style="margin-top:4px">Топ ${c}-палов: ${top.map(p=>`${palLink(p.name)} <span class="dim mono">(${atk(p)})</span>`).join(", ")}</div>`;}).join("");
   const party=counters.length?`<h3 style="margin-top:12px">Боевая пати против ${el}</h3>
     <div class="sub" style="margin-bottom:6px">1 боец + 4 ауры (в бою дерётся один выпущенный пал); скиллы с ×2 — каунтер-стихии</div>`
-    +(()=>{const C=buildCombatParty(counters[0], el, false); return partyCardsHTML(C.picks, C.notes, el);})():"";
+    +(()=>{const C=buildCombatParty(counters[0], el, false); return partyCardsHTML(C.picks, C.notes, el)+accessoryCardHTML(accessoriesFor("combat", counters[0], el));})():"";
   document.getElementById("cout").innerHTML=`
     <div><span class="el el-${el}">${el}</span> получает повышенный урон от: ${counters.map(c=>`<span class="el el-${c}">${c}</span>`).join("")||"—"};
     сам силён против: ${node.strong_vs.map(c=>`<span class="el el-${c}">${c}</span>`).join("")||"—"}</div>${picks}${party}`;
@@ -540,17 +540,60 @@ function buildCombatParty(fe, enemy, two){
     Object.values(P).filter(p=>p.hp&&p.elements.includes(fe)&&p.name!==f1)
       .sort((a,b)=>(atk(b)*2+b.hp+b.def)-(atk(a)*2+a.hp+a.def)).slice(0,3).map(p=>p.name));
   B.picks[0].fighter=true;
-  B.pick("аура: урон по слабым точкам",`weak_point:${fe}`,"weak_point:any");
-  B.pick(`бафф игрока: атаки становятся ${fe}`,`attack_type:${fe}:active`,`attack_type:${fe}:mount`);
-  B.pick("бафф игрока: +Attack","player_atk_unique","player_atk");
+  B.pick(`аура: +15~30% атаки ${fe}-палам`,`elem_team_atk:${fe}`,`weak_point:${fe}`,"weak_point:any");
+  B.pick("стак с пуль: +ATK/DEF активному палу (до x30)","bullet_stack","cd_support");
+  B.pick(`бафф игрока: атаки становятся ${fe}`,`attack_type:${fe}:active`,"player_atk_unique",`attack_type:${fe}:mount`,"player_atk");
   if(two){
     const n=B.pick("2-й боец: гибрид (сам дерётся + стак-аура)",`stack_atk:${fe}`);
     if(!n) B.add(B.topFighter(fe),"2-й боец (запасной)");
     B.picks[B.picks.length-1].fighter=true;
-  } else B.pick(`аура: резист от ${enemy} (стихия врага)`,`resist:${enemy}`,"survival");
+  } else B.pick(`аура: резист от ${enemy} (стихия врага)`,`resist:${enemy}`,`elem_team_def:${fe}`,"survival");
   B.notes.push(`Пати против <b>${enemy}</b>-врагов (${fe} бьёт ${(chart[fe].strong_vs||[]).join(", ")||"—"}); сам ${fe} каунтерится ${(chart[fe].weak_to||[]).join(", ")||"—"}`);
+  if(B.picks.some(p=>p.n==="Orserk")) B.notes.push("Orserk (#187): стаки дают ПУЛИ — стреляй очередями; Drone Launcher (tech 77, 9 дронов, без патронов) набивает стаки сам, в руках держи Mechanical Bow (tech 67) под сингл-таргет <span class='dim'>(мета-гайды июля 2026, PRELIMINARY)</span>");
   if(B.picks.some(p=>p.n==="Solenne")) B.notes.push("Solenne: +30~80% атаки игрока ТОЛЬКО если все 5 палов разных видов — не бери дублей");
+  B.notes.push("Глайдер-пал не нужен: в 1.0 есть Wing Pack (слот глайдера) и Air Dash Boots — слот пати не трать <span class='dim'>(гайды 1.0)</span>");
   return B;
+}
+/* подбор аксессуаров по эффектам items.json (goal + стихия бойца/врага) */
+function accessoriesFor(goal, fe, enemy){
+  const acc=D.items.items.filter(i=>i.category==="accessory"&&i.effect);
+  const find=re=>acc.find(i=>re.test(i.effect));
+  const out=[];
+  const push=(it,why)=>{ if(it&&!out.some(o=>o.n===it.name)) out.push({n:it.name,why,eff:it.effect}); };
+  if(goal==="combat"){
+    push(find(new RegExp(`Pal Attack Up.*${fe} Damage Enhancement|${fe} Damage Enhancement.*Pal Attack Up`,"s")),
+      `бойцу: +атака и +${fe}-урон (батон)`);
+    push(find(new RegExp(`Pal Defense Up.*${fe} Damage Enhancement|${fe} Damage Enhancement.*Pal Defense Up`,"s")),
+      `бойцу: +защита и +${fe}-урон (талисман)`);
+    if(enemy) push(find(new RegExp(`reduces incoming ${enemy} damage of the Pal`)),
+      `бойцу: резист от ${enemy} (кольцо)`);
+    push(find(/raises your Attack, and that of the Pal/), "тебе и палу: +атака (эмблема)");
+    if(enemy) push(acc.find(i=>i.name===`Ring of ${enemy} Resistance`), `тебе: резист от ${enemy}`);
+  } else if(goal==="catch"){
+    push(find(/Reveals hidden Pal potentials.*Mercy Hit|Mercy Hit.*Reveals/s)||find(/Mercy Hit/),
+      "не убьёшь цель: урон не опускает HP ниже 1 (Mercy Hit)");
+    push(acc.find(i=>i.name==="Ring of Trust"), "быстрее растёт доверие палов");
+  } else if(goal==="loot"||goal==="eggs"||goal==="fishing"){
+    push(find(/Max Carrying Capacity Lv\. 4.*work speed|work speed.*Max Carrying/s)||find(/Max Carrying Capacity/),
+      "вес: грузоподъёмность");
+    push(find(/Heat and Cold Resistance.*carrying capacity/s), "вес + климат (для дальних ранов)");
+  } else if(goal==="explore"){
+    push(find(/quadruple dashes|triple dashes/)||find(/dash in mid-air/), "мобильность: воздушные дэши");
+    push(acc.find(i=>i.name==="Night Vision Goggles"), "ночное зрение");
+    push(find(/Heat and Cold Resistance.*Health/s), "климат + HP");
+  } else if(goal==="xp"){
+    push(find(/raises Pal EXP/), "+EXP палам");
+  } else if(goal==="openworld"){
+    push(find(/Heat and Cold Resistance.*carrying capacity/s), "климат + вес");
+    push(find(/extends the invincibility period/), "длиннее i-frames доджа");
+  }
+  return out;
+}
+function accessoryCardHTML(accs){
+  if(!accs.length) return "";
+  return `<div class="card"><div class="big">🎗 Аксессуары</div>${accs.map(a=>
+    `<div style="margin-top:6px">${itemLink(a.n)} <span class="dim">— ${a.why}</span>
+     <div class="sub">${esc(a.eff.replace(/\n/g," "))}</div></div>`).join("")}</div>`;
 }
 /* общий рендер карточек пати; enemy задаёт скиллы (бойцам — подробно, остальным — топ-3) */
 function partyCardsHTML(picks, notes, enemy){
@@ -576,7 +619,7 @@ function drawParty(){
     if(!fe) fe=chart[enemy].weak_to[0];
     if(!enemy) enemy=(chart[fe].strong_vs||[])[0]||"";
     const C=buildCombatParty(fe, enemy, document.getElementById("ptwo").checked);
-    out.innerHTML=partyCardsHTML(C.picks, C.notes, enemy);
+    out.innerHTML=partyCardsHTML(C.picks, C.notes, enemy)+accessoryCardHTML(accessoriesFor("combat", fe, enemy));
     return;
   } else if(goal==="openworld"){
     B.pick("маунт + бафф атак игрока","attack_type:Electric:mount","attack_type:Fire:mount","attack_type:Ice:mount");
@@ -636,7 +679,7 @@ function drawParty(){
     const m=Object.values(P).filter(p=>p.mount==="flying"&&!B.used.has(p.name)).sort((a,b)=>(b.mv.sprint||0)-(a.mv.sprint||0));
     while(B.picks.length<5&&m.length) B.add(m.shift().name,"летающий маунт");
   }
-  out.innerHTML=partyCardsHTML(B.picks, B.notes, enemyForSkills);
+  out.innerHTML=partyCardsHTML(B.picks, B.notes, enemyForSkills)+accessoryCardHTML(accessoriesFor(goal, null, enemyForSkills));
 }
 
 /* --- Конструктор баз (порт scripts/base_planner.py) --- */

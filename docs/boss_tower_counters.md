@@ -206,3 +206,36 @@ Roster (~6 bosses / ~11 encounters counting Ultra & Master variants):
 - **Boss levels differ by source:** game8/thepalprofessor list the *ridden Pal's* level (Lyleen 25, Orserk 40, Faleris 45, Bastigor 58); nexttier lists cleaner *progression tiers* (20/30/40/60). Table §2 shows both.
 - **Final boss name** appears as both **"Zanara"** and **"Zenara"** across sources; same boss (with Astralym).
 - **HP tables (§4)** are pre-1.0; 1.0's 5-min timer came with an HP rebalance, so exact 1.0 tower HP values are not yet fully re-documented.
+
+## 1.0 Boss weapons & party meta (PRELIMINARY 1.0, guides of Jul 10-16 2026)
+
+**Weapons.** Tower timer cut to 5 min in 1.0 → burst single-target DPS matters.
+- **Drone Launcher** (tech 77, Ancient Workbench): deploys up to 9 autonomous drones, NO ammo,
+  keeps dealing damage while you use another weapon. Drone hits count as bullet hits →
+  passively stacks Orserk (#187) to max. Cannot be combined with Terraprisma (summons don't stack).
+- **Mechanical Bow** (tech 67): best per-shot single-target damage, cheap ammo — the meta hand weapon.
+- **Beam Launcher** (tech 80): AoE burst (overheats); **Plasma Rifle** (tech 78) chains between
+  enemies — for raids/crowds, wasted on a lone boss. 5 weapon slots in 1.0.
+- Legendary schematics: new-gen weapons (Drone/Beam/Plasma/Beam Scatter) drop from tower RAID
+  bosses (~10%); Terraria collab weapons from Moon Lord raid (Master, ~25%); older guns from
+  oil-rig chests; Drafting Table merges 5 schematics → 1 of next rarity.
+
+**Party composition.** "Identical Partner Skills no longer stack" (1.0 patch notes) killed the
+EA 4x-Gobfin meta; ~25 pals keep explicitly stackable rows (incl. Gobfin/Gobfin Ignis player-ATK —
+medium confidence). Passive skills (Vanguard / Stronghold Strategist) still stack across all
+5 party pals. Three recognized archetypes:
+1. Player-carry: 0-1 fighters + Solenne (#182) rainbow (+30~80% player ATK if all 5 different).
+2. Pal-carry (PalMods "Dragon Team" template): 1 fighter + elem ATK aura (Quivern) + elem DEF aura
+   (Dinossom) + weak-point aura (Blazamut Ryu) + Orserk bullet-stack.
+3. Elemental brute force: 3-5 counter-element attackers, swap as they drop (final boss is typeless).
+Swapping: no numeric cooldown found; used to replace fallen pals, recall-dodge big hits, and
+rotate skill cooldowns. Party-pal 25% DR / 40% CDR figures are EA-era, unverified in 1.0.
+
+**Mobility.** Glider-pal party slot is obsolete: 1.0 Wing Pack occupies the glider equipment slot
+(free flight, full 5-pal combat team), dash rework + Air Dash Boots / Air Walker accessories.
+
+Sources: palmods.gg (partner-skill rework decode + dragon-team, 2026-07-15), nexttier.pro
+(1.0 patch notes + tower/final-boss guides, 2026-07-10..16), allthings.how (endgame weapons
+2026-07-13, Orserk arena build 2026-07-14, legendary schematics 2026-07-15), palworldzone.com
+(new weapons, 2026-07-10), Steam guide "121 Legendary Schematics (1.0)", paldb.cc v1.0.0.
+Reddit unreachable (blocked); Steam forums have no indexed post-1.0 comp threads yet.

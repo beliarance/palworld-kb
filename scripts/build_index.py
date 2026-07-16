@@ -137,6 +137,18 @@ def main():
             party.append("player_atk_unique" if "different species" in eff else "player_atk")
         if re.search(r"EXP gained", eff, re.I):
             party.append("exp_boost")
+        m = re.search(rf"increases? Attack of ({ELEMS}) Pals", eff)
+        if m:  # командная аура: +ATK палам стихии X (Quivern и серия)
+            party.append(f"elem_team_atk:{m.group(1)}")
+        m = re.search(rf"increases? Defense of ({ELEMS}) Pals", eff)
+        if m:
+            party.append(f"elem_team_def:{m.group(1)}")
+        if re.search(r"hitting an enemy with a bullet increases", eff):
+            party.append("bullet_stack")   # Orserk: стак +ATK/DEF активному палу с каждой пули
+        if re.search(r"reduces the Partner Skill cooldowns", eff):
+            party.append("cd_support")     # Lapure: -КД партнёрок пати
+        if re.search(r"revives with its Hunger", eff):
+            party.append("revive")         # Gildra: самовоскрешение
         m = re.search(rf"take \d+~\d+% less ({ELEMS}) damage", eff)
         if m:  # аура резиста пати от стихии врага (часто + иммун к её статусу)
             party.append(f"resist:{m.group(1)}")

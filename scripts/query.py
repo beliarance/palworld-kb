@@ -18,6 +18,7 @@
 import argparse
 import csv
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -637,6 +638,54 @@ def cmd_team(db, args):
 PARTY_GOALS = ["combat", "openworld", "catch", "fishing", "loot", "eggs", "explore", "xp"]
 
 
+def _party_accessories(goal, fe=None, enemy=None):
+    """Аксессуары под цель пати — data-driven по items.json (поле effect)."""
+    data = _load_json("items.json") or {"items": []}
+    acc = [i for i in data["items"] if i.get("category") == "accessory" and i.get("effect")]
+
+    def find(pattern):
+        rx = re.compile(pattern, re.S)
+        return next((i for i in acc if rx.search(i["effect"])), None)
+
+    def by_name(name):
+        return next((i for i in acc if i["name"] == name), None)
+
+    out = []
+
+    def push(it, why):
+        if it and not any(n == it["name"] for n, _ in out):
+            out.append((it["name"], why))
+
+    if goal == "combat" and fe:
+        push(find(rf"Pal Attack Up.*{fe} Damage Enhancement|{fe} Damage Enhancement.*Pal Attack Up"),
+             f"бойцу: +атака и +{fe}-урон (батон)")
+        push(find(rf"Pal Defense Up.*{fe} Damage Enhancement|{fe} Damage Enhancement.*Pal Defense Up"),
+             f"бойцу: +защита и +{fe}-урон (талисман)")
+        if enemy:
+            push(find(rf"reduces incoming {enemy} damage of the Pal"), f"бойцу: резист от {enemy} (кольцо)")
+        push(find(r"raises your Attack, and that of the Pal"), "тебе и палу: +атака (эмблема)")
+        if enemy:
+            push(by_name(f"Ring of {enemy} Resistance"), f"тебе: резист от {enemy}")
+    elif goal == "catch":
+        push(find(r"Reveals hidden Pal potentials") or find(r"Mercy Hit"),
+             "не убьёшь цель: урон не опускает HP ниже 1 (Mercy Hit)")
+        push(by_name("Ring of Trust"), "быстрее растёт доверие палов")
+    elif goal in ("loot", "eggs", "fishing"):
+        push(find(r"Max Carrying Capacity Lv\. 4.*work speed|work speed.*Max Carrying") or find(r"Max Carrying Capacity"),
+             "вес: грузоподъёмность")
+        push(find(r"Heat and Cold Resistance.*carrying capacity"), "вес + климат (для дальних ранов)")
+    elif goal == "explore":
+        push(find(r"quadruple dashes|triple dashes") or find(r"dash in mid-air"), "мобильность: воздушные дэши")
+        push(by_name("Night Vision Goggles"), "ночное зрение")
+        push(find(r"Heat and Cold Resistance.*Health"), "климат + HP")
+    elif goal == "xp":
+        push(find(r"raises Pal EXP"), "+EXP палам")
+    elif goal == "openworld":
+        push(find(r"Heat and Cold Resistance.*carrying capacity"), "климат + вес")
+        push(find(r"extends the invincibility period"), "длиннее i-frames доджа")
+    return out
+
+
 def cmd_party(db, args):
     """Пати из 5 под цель: активен 1 выпущенный пал, остальные дают ауры 'While in party'
     (ключевые не стакаются) — поэтому дефолт: 1 боец + 4 ауры."""
@@ -718,9 +767,10 @@ def cmd_party(db, args):
         f1 = top_fighter(fe)
         add(f1, f"⚔ боец {fe} (выпускаешь его)")
         fighter_skills[f1] = best_skills(f1, enemy)
-        pick("аура: урон по слабым точкам", f"weak_point:{fe}", "weak_point:any")
-        pick(f"бафф игрока: атаки становятся {fe}", f"attack_type:{fe}:active", f"attack_type:{fe}:mount")
-        pick("бафф игрока: +Attack", "player_atk_unique", "player_atk")
+        pick(f"аура: +15~30% атаки {fe}-палам", f"elem_team_atk:{fe}", f"weak_point:{fe}", "weak_point:any")
+        pick("стак с пуль: +ATK/DEF активному палу (до x30)", "bullet_stack", "cd_support")
+        pick(f"бафф игрока: атаки становятся {fe}", f"attack_type:{fe}:active", "player_atk_unique",
+             f"attack_type:{fe}:mount", "player_atk")
         if args.two_fighters:
             n = pick("2-й боец: гибрид (сам дерётся + стак-аура)", f"stack_atk:{fe}")
             if not n:
@@ -729,11 +779,16 @@ def cmd_party(db, args):
             if n:
                 fighter_skills[n] = best_skills(n, enemy)
         else:
-            pick(f"аура: резист от {enemy} (стихия врага)", f"resist:{enemy}", "survival")
+            pick(f"аура: резист от {enemy} (стихия врага)", f"resist:{enemy}", f"elem_team_def:{fe}", "survival")
         notes.append(f"Пати против {enemy}-врагов ({fe} бьёт {', '.join(tc[fe]['strong_vs']) or '—'}); "
                      f"сам {fe} каунтерится {', '.join(tc[fe]['weak_to']) or '—'}")
+        if any("Orserk" == n for n, _, _ in picks):
+            notes.append("Orserk (#187): стаки дают ПУЛИ — стреляй очередями; Drone Launcher (tech 77, 9 дронов, "
+                         "без патронов) набивает стаки сам, в руках — Mechanical Bow (tech 67) сингл-таргет "
+                         "(мета-гайды июля 2026, PRELIMINARY)")
         if any("Solenne" == n for n, _, _ in picks):
             notes.append("Solenne: +30~80% атаки игрока ТОЛЬКО если все 5 палов разных видов — не бери дублей")
+        notes.append("Глайдер-пал не нужен: в 1.0 есть Wing Pack (слот глайдера) и Air Dash Boots — слот пати не трать")
     elif goal == "openworld":
         pick("маунт + бафф атак игрока", "attack_type:Electric:mount", "attack_type:Fire:mount", "attack_type:Ice:mount")
         pick("сферы самонаводятся + вес +300~600", "capture_homing")
@@ -817,6 +872,11 @@ def cmd_party(db, args):
         print(f"      {e}")
         for line in fighter_skills.get(n, []):
             print(f"      ⚡ {line}")
+    accs = _party_accessories(goal, locals().get("fe"), locals().get("enemy"))
+    if accs:
+        print("  🎗 Аксессуары:")
+        for name, why in accs:
+            print(f"    {name:<28} — {why}")
     for note in notes:
         print(f"  ! {note}")
 

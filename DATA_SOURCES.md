@@ -242,3 +242,15 @@
   → дописано в notes предмета в items.json. Точный процент на странице не указан (gap).
 - Партнёрка Omascul (#150) «Party Pals' EXP gained +40~80%» уже была в pals_combat.json —
   размечена тегом party:exp_boost в build_index.py (цель `party xp`).
+
+## 2026-07-16 — Эффекты аксессуаров (все 84) + оружейная/пати-мета 1.0
+- Источник: paldb.cc (og:description каждой страницы аксессуара), сборщик
+  `scripts/collectors/fetch_accessory_effects.py` → поле `effect` в items.json (84/84).
+  Проценты за "Lv. 3/4" пассивок на страницах не публикуются (gap).
+- Веб-ресёрч (агенты, 2026-07-16): оружейная мета боссов 1.0 (Drone Launcher + Mechanical Bow,
+  схемы с рейд-башен/Moon Lord/oil rig, Drafting Table) и мета состава пати (стакание аур
+  убрано в 1.0, исключения ~25 палов incl. Gobfin; архетипы 1+4 / игрок-кэрри / 3-5 бойцов;
+  Wing Pack вместо глайдер-пала; Lapure -КД партнёрок; Gildra самовоскрешение) —
+  источники и даты в docs/boss_tower_counters.md. Всё PRELIMINARY (6 дней после релиза).
+- build_index.py: новые party-теги elem_team_atk/def:{стихия} (ауры на все 9 стихий),
+  bullet_stack (Orserk), cd_support (Lapure), revive (Gildra). Боевой скелет пати обновлён.
