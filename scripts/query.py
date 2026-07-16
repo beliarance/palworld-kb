@@ -638,7 +638,7 @@ def cmd_team(db, args):
 PARTY_GOALS = ["combat", "openworld", "catch", "fishing", "loot", "eggs", "explore", "xp"]
 
 
-def _party_accessories(goal, fe=None, enemy=None):
+def _party_accessories(goal, fe=None, enemy=None, weightless=False):
     """Аксессуары под цель пати — data-driven по items.json (поле effect)."""
     data = _load_json("items.json") or {"items": []}
     acc = [i for i in data["items"] if i.get("category") == "accessory" and i.get("effect")]
@@ -681,9 +681,12 @@ def _party_accessories(goal, fe=None, enemy=None):
              "не убьёшь цель: урон не опускает HP ниже 1 (Mercy Hit)")
         push(by_name("Ring of Trust"), "быстрее растёт доверие палов")
     elif goal in ("loot", "eggs", "fishing"):
-        push(find(r"Max Carrying Capacity Lv\. 4.*work speed|work speed.*Max Carrying") or find(r"Max Carrying Capacity"),
-             "вес: грузоподъёмность")
-        push(find(r"Heat and Cold Resistance.*carrying capacity"), "вес + климат (для дальних ранов)")
+        if not weightless:
+            push(find(r"Max Carrying Capacity Lv\. 4.*work speed|work speed.*Max Carrying") or find(r"Max Carrying Capacity"),
+                 "вес: грузоподъёмность")
+            push(find(r"Heat and Cold Resistance.*carrying capacity"), "вес + климат (для дальних ранов)")
+        if goal == "loot":
+            push(find(r"raises your Attack, and that of the Pal"), "тебе и палу: +атака (эмблема)")
     elif goal == "explore":
         push(find(r"quadruple dashes|triple dashes") or find(r"dash in mid-air"), "мобильность: воздушные дэши")
         push(by_name("Night Vision Goggles"), "ночное зрение")
@@ -797,6 +800,25 @@ def cmd_party(db, args):
         if n:
             used.add(n)
             picks.append((n, role, eff(n)))
+
+    def pick_weight(role, *tags):
+        """Слот грузоподъёмности: пропускается при настройке мира «без веса»."""
+        if getattr(args, "weightless", False):
+            return None
+        return pick(role, *tags)
+
+    def backfill(target):
+        """Добить пати до target полезными аурами (после снятых весовых слотов), без дубля ролей."""
+        chosen = {n for n, _, _ in picks}
+        for role, *tags in [("выживание: хил/сустейн", "survival"),
+                            ("бафф игрока: +Attack", "player_atk_unique", "player_atk"),
+                            ("стак с пуль: +ATK/DEF активному палу (Orserk)", "bullet_stack", "cd_support")]:
+            if len(picks) >= target:
+                break
+            tag_pals = {p for t in tags for p in (inv.get("party:" + t, []) + inv.get(t, []))}
+            if chosen & tag_pals:  # роль уже покрыта кем-то из пати — пропуск
+                continue
+            pick(role, *tags)
 
     if goal == "combat" and args.raw:
         # босс без стихийного каунтера (Zanara & Astralym): топ по статам
@@ -912,14 +934,14 @@ def cmd_party(db, args):
                 picks[[x[0] for x in picks].index(nn)] = (nn, "старт шкалы выше + быстрее растёт", eff(nn))
         pick("+55~95% предметов с рыбалки", "fishing_loot")
         pick("чаще талантливые палы + водный маунт", "fishing_talent")
-        pick("вес улова (грузоподъёмность)", "weight")
+        pick_weight("вес улова (грузоподъёмность)", "weight")
         notes.append("Места фарма рыбы/Coralum — query.py resource <название>")
     elif goal == "loot":
         enemy = (args.vs or "Neutral").capitalize()
         add(top_fighter(tc.get(enemy, {}).get("weak_to", [None])[0]), f"боец-каунтер против {enemy}")
         pick(f"+40~80% дропа с {enemy}-врагов", f"loot:{enemy}")
-        pick("вес +300~600 + сферы", "capture_homing", "weight")
-        pick("вес груза (руда/уголь/еда — смотри замены)", "weight_cargo", "weight")
+        pick_weight("вес +300~600 + сферы", "capture_homing", "weight")
+        pick_weight("вес груза (руда/уголь/еда — смотри замены)", "weight_cargo", "weight")
         pick("бафф игрока: +Attack", "player_atk_unique", "player_atk")
         notes.append(f"--vs {enemy}: фармим {enemy}-палов; лут-ауры есть под каждую стихию (loot:*)")
     elif goal == "eggs":
@@ -929,7 +951,7 @@ def cmd_party(db, args):
         m.sort(key=lambda p: -((p.get("movement") or {}).get("sprint") or 0))
         if m:
             add(m[0]["name"], "летающий маунт: облёт точек яиц")
-        pick("вес", "weight")
+        pick_weight("вес", "weight")
         pick("страховка: хил/защита", "survival")
         notes.append("Ауры яиц работают при ПОДБОРЕ яйца — держи обоих в пати весь маршрут")
     elif goal == "xp":
@@ -960,6 +982,10 @@ def cmd_party(db, args):
     else:
         sys.exit(f"Неизвестная цель '{goal}'. Цели: {', '.join(PARTY_GOALS)}")
 
+    if getattr(args, "weightless", False) and goal in ("loot", "fishing", "eggs"):
+        backfill(5)
+        notes.append("Настройка мира «без веса»: слоты грузоподъёмности убраны, заменены на сустейн/атаку")
+
     title = {"combat": "боя", "openworld": "опенворлда", "catch": "ловли палов", "fishing": "рыбалки",
              "loot": "лут-рана", "eggs": "сбора яиц", "explore": "исследования", "xp": "прокачки палов"}[goal]
     print(f"Пати для {title} (активен 1 пал, остальные — ауры из пати):")
@@ -979,7 +1005,7 @@ def cmd_party(db, args):
             meta = _load_json("skill_dps_meta.json") or {}
             for g in (meta.get("guidance") or [])[:2]:
                 print(f"    · {g}")
-    accs = _party_accessories(goal, locals().get("fe"), locals().get("enemy"))
+    accs = _party_accessories(goal, locals().get("fe"), locals().get("enemy"), getattr(args, "weightless", False))
     if accs:
         print("  🎗 Аксессуары:")
         for name, why, src in accs:
@@ -1036,6 +1062,7 @@ def main(argv=None):
     p.add_argument("--raw", action="store_true", help="(combat) босс без стихийного каунтера: топ по статам")
     p.add_argument("--sea", action="store_true", help="(combat --raw) морская арена: swim обязателен, флаер от цунами")
     p.add_argument("--biome", help="(explore) cold | heat | desert")
+    p.add_argument("--weightless", action="store_true", help="настройка мира «без веса»: убрать весовые ауры")
 
     args = ap.parse_args(argv)
     db = load_db()

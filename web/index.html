@@ -485,13 +485,14 @@ render.party = () => {
       <span class="pf pf-combat pf-loot"><select id="pven" title="стихия врага: боец подберётся каунтером, резист-аура — от неё"><option value="">враг: авто</option>${PARTY_ELEMS.map(e=>`<option>${e}</option>`).join("")}</select></span>
       <span class="pf pf-combat"><label title="слот резиста уходит под второго бойца (гибрид со стак-аурой, если есть)"><input type="checkbox" id="ptwo"> 2 бойца</label></span>
       <span class="pf pf-explore"><select id="pbiome"><option value="">биом: обычный</option><option value="cold">холод</option><option value="heat">жара / пустыня</option></select></span>
+      <label title="настройка мира: если вес отключён, ауры грузоподъёмности бесполезны — уберу их (лут/рыбалка/яйца)"><input type="checkbox" id="pweightless"> ⚖️ без веса (настройка мира)</label>
     </div>
     <div class="sub" style="margin-top:6px">В бою дерётся 1 выпущенный пал + ты; остальные дают ауры «While in party» (не стакаются) — поэтому дефолт 1 боец + 4 ауры.</div>
     </div><div id="partyout"></div>`;
   const updVis=()=>{ const g=document.getElementById("pgoal").value;
     document.querySelectorAll(".pf").forEach(el=>{ el.style.display=el.classList.contains("pf-"+g)?"":"none"; }); };
-  for(const id of ["pgoal","pfel","pven","ptwo","pbiome"])
-    document.getElementById(id).addEventListener(id==="ptwo"?"change":"input",()=>{ updVis(); drawParty(); });
+  for(const id of ["pgoal","pfel","pven","ptwo","pbiome","pweightless"])
+    document.getElementById(id).addEventListener(id==="ptwo"||id==="pweightless"?"change":"input",()=>{ updVis(); drawParty(); });
   updVis(); drawParty();
 };
 /* ДПМ пала из его ленсета = power x 60/max(кулдаун,5), x2 к стихии слабости.
@@ -565,6 +566,18 @@ function partyBuilder(){
     return first;
   };
   B.add=(n,role,alts=[])=>{ if(n){ B.used.add(n); B.picks.push({n,role,alts}); } };
+  B.weightless=false;
+  B.pickWeight=(role,...tags)=>B.weightless?null:B.pick(role,...tags);  // слот веса: пропуск при «без веса»
+  B.backfill=(target)=>{  // добить пати полезными аурами (после снятых весовых слотов), без дубля ролей
+    for(const [role,...tags] of [["выживание: хил/сустейн","survival"],
+        ["бафф игрока: +Attack","player_atk_unique","player_atk"],
+        ["стак с пуль: +ATK/DEF активному палу (Orserk)","bullet_stack","cd_support"]]){
+      if(B.picks.length>=target) break;
+      const tagPals=new Set(tags.flatMap(t=>(inv["party:"+t]||[]).concat(inv[t]||[])));
+      if(B.picks.some(p=>tagPals.has(p.n))) continue;  // роль уже покрыта — пропуск
+      B.pick(role,...tags);
+    }
+  };
   B.topFighter=el=>{
     const pool=Object.values(P).filter(p=>p.hp&&!B.used.has(p.name)&&(!el||p.elements.includes(el)))
       .sort(fighterCmp);
@@ -606,7 +619,7 @@ function buildCombatParty(fe, enemy, two, sea){
   return B;
 }
 /* подбор аксессуаров по эффектам items.json (goal + стихия бойца/врага) */
-function accessoriesFor(goal, fe, enemy){
+function accessoriesFor(goal, fe, enemy, weightless){
   const acc=D.items.items.filter(i=>i.category==="accessory"&&i.effect);
   const find=re=>acc.find(i=>re.test(i.effect));
   const out=[];
@@ -625,9 +638,12 @@ function accessoriesFor(goal, fe, enemy){
       "не убьёшь цель: урон не опускает HP ниже 1 (Mercy Hit)");
     push(acc.find(i=>i.name==="Ring of Trust"), "быстрее растёт доверие палов");
   } else if(goal==="loot"||goal==="eggs"||goal==="fishing"){
-    push(find(/Max Carrying Capacity Lv\. 4.*work speed|work speed.*Max Carrying/s)||find(/Max Carrying Capacity/),
-      "вес: грузоподъёмность");
-    push(find(/Heat and Cold Resistance.*carrying capacity/s), "вес + климат (для дальних ранов)");
+    if(!weightless){
+      push(find(/Max Carrying Capacity Lv\. 4.*work speed|work speed.*Max Carrying/s)||find(/Max Carrying Capacity/),
+        "вес: грузоподъёмность");
+      push(find(/Heat and Cold Resistance.*carrying capacity/s), "вес + климат (для дальних ранов)");
+    }
+    if(goal==="loot") push(find(/raises your Attack, and that of the Pal/), "тебе и палу: +атака (эмблема)");
   } else if(goal==="explore"){
     push(find(/quadruple dashes|triple dashes/)||find(/dash in mid-air/), "мобильность: воздушные дэши");
     push(acc.find(i=>i.name==="Night Vision Goggles"), "ночное зрение");
@@ -703,7 +719,8 @@ function drawParty(){
   const out=document.getElementById("partyout"); if(!out) return;
   const chart=D.chart.chart;
   const goal=document.getElementById("pgoal").value;
-  const B=partyBuilder();
+  const weightless=document.getElementById("pweightless")?.checked;
+  const B=partyBuilder(); B.weightless=weightless;
   const effOf=n=>(D.idx.pals[n]||{}).partner_effect||"";
   let enemyForSkills=null;
   if(goal==="combat"){
@@ -735,15 +752,15 @@ function drawParty(){
       B.picks[i].role=effOf(nn).includes("more slowly")?"шкала миниигры медленнее падает":"старт шкалы выше + быстрее растёт"; }
     B.pick("+55~95% предметов с рыбалки","fishing_loot");
     B.pick("чаще талантливые палы + водный маунт","fishing_talent");
-    B.pick("вес улова (грузоподъёмность)","weight");
+    B.pickWeight("вес улова (грузоподъёмность)","weight");
     B.notes.push("Места фарма рыбы/Coralum — вкладка «Ресурсы»");
   } else if(goal==="loot"){
     const enemy=document.getElementById("pven").value||"Neutral";
     B.add(B.topFighter((chart[enemy].weak_to||[])[0]),`боец-каунтер против ${enemy}`);
     B.picks[0].fighter=true; enemyForSkills=enemy;
     B.pick(`+40~80% дропа с ${enemy}-врагов`,`loot:${enemy}`);
-    B.pick("вес +300~600 + сферы","capture_homing","weight");
-    B.pick("вес груза (руда/уголь/еда — смотри замены)","weight_cargo","weight");
+    B.pickWeight("вес +300~600 + сферы","capture_homing","weight");
+    B.pickWeight("вес груза (руда/уголь/еда — смотри замены)","weight_cargo","weight");
     B.pick("бафф игрока: +Attack","player_atk_unique","player_atk");
     B.notes.push(`Фармим <b>${enemy}</b>-палов (селект «враг» меняет цель); лут-ауры есть под каждую стихию`);
   } else if(goal==="eggs"){
@@ -751,7 +768,7 @@ function drawParty(){
     B.pick("50~75% шанс второго яйца","egg_extra_pickup");
     const m=Object.values(P).filter(p=>p.mount==="flying"&&!B.used.has(p.name)).sort((a,b)=>(b.mv.sprint||0)-(a.mv.sprint||0));
     if(m.length) B.add(m[0].name,"летающий маунт: облёт точек яиц",m.slice(1,4).map(p=>p.name));
-    B.pick("вес","weight");
+    B.pickWeight("вес","weight");
     B.pick("страховка: хил/защита","survival");
     B.notes.push("Ауры яиц работают при ПОДБОРЕ яйца — держи обоих в пати весь маршрут");
   } else if(goal==="xp"){
@@ -772,7 +789,11 @@ function drawParty(){
     const m=Object.values(P).filter(p=>p.mount==="flying"&&!B.used.has(p.name)).sort((a,b)=>(b.mv.sprint||0)-(a.mv.sprint||0));
     while(B.picks.length<5&&m.length) B.add(m.shift().name,"летающий маунт");
   }
-  out.innerHTML=partyCardsHTML(B.picks, B.notes, enemyForSkills)+accessoryCardHTML(accessoriesFor(goal, null, enemyForSkills));
+  if(weightless&&["loot","fishing","eggs"].includes(goal)){
+    B.backfill(5);
+    B.notes.push("Настройка мира «без веса»: слоты грузоподъёмности убраны, заменены на сустейн/атаку");
+  }
+  out.innerHTML=partyCardsHTML(B.picks, B.notes, enemyForSkills)+accessoryCardHTML(accessoriesFor(goal, null, enemyForSkills, weightless));
 }
 
 /* --- Конструктор баз (порт scripts/base_planner.py) --- */
