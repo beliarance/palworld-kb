@@ -235,3 +235,10 @@
 
 При каждом обновлении данных добавлять сюда (или в `sources[]` внутри JSON): URL источника,
 что именно взято, дату получения. Не выдумывать значения: нет данных → null + запись в `gaps`.
+
+## 2026-07-16 — Growth Acceleration Bell (эффект)
+- Источник: https://paldb.cc/en/Growth_Acceleration_Bell
+- Взято: описание эффекта аксессуара «An accessory that raises Pal EXP. Pal EXP Up Lv. 3»
+  → дописано в notes предмета в items.json. Точный процент на странице не указан (gap).
+- Партнёрка Omascul (#150) «Party Pals' EXP gained +40~80%» уже была в pals_combat.json —
+  размечена тегом party:exp_boost в build_index.py (цель `party xp`).

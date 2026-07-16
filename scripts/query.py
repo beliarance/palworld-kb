@@ -634,7 +634,7 @@ def cmd_team(db, args):
         print(f"  {label_name(db, name):<28} — {reason}")
 
 
-PARTY_GOALS = ["combat", "openworld", "catch", "fishing", "loot", "eggs", "explore"]
+PARTY_GOALS = ["combat", "openworld", "catch", "fishing", "loot", "eggs", "explore", "xp"]
 
 
 def cmd_party(db, args):
@@ -749,6 +749,15 @@ def cmd_party(db, args):
         pick("вес", "weight")
         pick("страховка: хил/защита", "survival")
         notes.append("Ауры яиц работают при ПОДБОРЕ яйца — держи обоих в пати весь маршрут")
+    elif goal == "xp":
+        pick("аура: +40~80% EXP всем палам пати", "exp_boost")
+        add(top_fighter(), "боец-убийца: фармит килы, пока качаемые сидят в пати")
+        pick("бафф игрока: +Attack (ты выносишь толпы быстрее)", "player_atk_unique", "player_atk")
+        notes.append("Остальные 2 слота — КАЧАЕМЫЕ палы: экспа с каждого кила капает всем в пати")
+        notes.append("Аксессуар игрока: Growth Acceleration Bell (Pal EXP Up Lv.3) — "
+                     "Ingot x25 + Paldium Fragment x30 + Mysterious Mushroom x10 + Ancient Civ. Parts x3 "
+                     "(High Quality Workbench); точный % на paldb не указан")
+        notes.append("Ещё быстрее: Applied Technique Handbook (+уровень работ) и Statue of Power — это не EXP, но качает силу")
     elif goal == "explore":
         biome = (args.biome or "").lower()
         if biome == "cold":
@@ -769,7 +778,7 @@ def cmd_party(db, args):
         sys.exit(f"Неизвестная цель '{goal}'. Цели: {', '.join(PARTY_GOALS)}")
 
     title = {"combat": "боя", "openworld": "опенворлда", "catch": "ловли палов", "fishing": "рыбалки",
-             "loot": "лут-рана", "eggs": "сбора яиц", "explore": "исследования"}[goal]
+             "loot": "лут-рана", "eggs": "сбора яиц", "explore": "исследования", "xp": "прокачки палов"}[goal]
     print(f"Пати для {title} (активен 1 пал, остальные — ауры из пати):")
     for n, role, e in picks[:5]:
         print(f"  {label_name(db, n):<28} — {role}")

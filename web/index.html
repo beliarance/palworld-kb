@@ -426,7 +426,7 @@ render.party = () => {
         <option value="combat">⚔️ Бой</option><option value="openworld">🌍 Опенворлд</option>
         <option value="catch">🕸 Ловля палов</option><option value="fishing">🎣 Рыбалка</option>
         <option value="loot">🎒 Лут-ран</option><option value="eggs">🥚 Сбор яиц</option>
-        <option value="explore">🗺 Исследование</option></select>
+        <option value="explore">🗺 Исследование</option><option value="xp">📈 Прокачка палов</option></select>
       <span class="pf pf-combat"><select id="pfel" title="стихия твоего активного бойца — остальные 4 слота бустят её"><option value="">стихия бойца: авто</option>${PARTY_ELEMS.map(e=>`<option>${e}</option>`).join("")}</select></span>
       <span class="pf pf-combat pf-loot"><select id="pven" title="стихия врага: боец подберётся каунтером, резист-аура — от неё"><option value="">враг: авто</option>${PARTY_ELEMS.map(e=>`<option>${e}</option>`).join("")}</select></span>
       <span class="pf pf-combat"><label title="слот резиста уходит под второго бойца (гибрид со стак-аурой, если есть)"><input type="checkbox" id="ptwo"> 2 бойца</label></span>
@@ -518,6 +518,13 @@ function drawParty(){
     pick("вес","weight");
     pick("страховка: хил/защита","survival");
     notes.push("Ауры яиц работают при ПОДБОРЕ яйца — держи обоих в пати весь маршрут");
+  } else if(goal==="xp"){
+    pick("аура: +40~80% EXP всем палам пати","exp_boost");
+    add(topFighter(),"боец-убийца: фармит килы, пока качаемые сидят в пати");
+    pick("бафф игрока: +Attack (ты выносишь толпы быстрее)","player_atk_unique","player_atk");
+    notes.push("Остальные 2 слота — <b>качаемые палы</b>: экспа с каждого кила капает всем в пати");
+    notes.push(`Аксессуар игрока: ${itemLink("Growth Acceleration Bell")} (Pal EXP Up Lv.3) — Ingot x25 + Paldium Fragment x30 + Mysterious Mushroom x10 + Ancient Civ. Parts x3 (High Quality Workbench); точный % на paldb не указан`);
+    notes.push("Ещё быстрее: Applied Technique Handbook (+уровень работ) и Statue of Power — это не EXP, но качает силу");
   } else if(goal==="explore"){
     const biome=document.getElementById("pbiome").value;
     if(biome==="cold") pick("+2 Cold Resistance","climate_cold");

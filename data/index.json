@@ -9942,7 +9942,9 @@
    "partner_skill": "Masquerade Dance",
    "partner_effect": "While in party, increases Party Pals' EXP gained by 40~80%. (Does not stack)",
    "partner_tags": [],
-   "party_roles": [],
+   "party_roles": [
+    "exp_boost"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -20720,6 +20722,9 @@
    ],
    "base_support:suitability:Medicine Production": [
     "Mycora"
+   ],
+   "party:exp_boost": [
+    "Omascul"
    ],
    "base_support:base_defense": [
     "Panthalus"

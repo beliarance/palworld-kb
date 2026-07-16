@@ -82,7 +82,7 @@ team <task>                   команда из 5 (fishing, combat, mining, lu
 produce <item>                кто производит предмет (ранч/дропы/крафт) — через index.json
 party <goal>                  пати из 5 под цель: combat (--element стихия бойца ИЛИ --vs враг;
                               --two-fighters = 2 бойца+3 ауры), openworld, catch, fishing,
-                              loot (--vs стихия жертв), eggs, explore (--biome cold|heat).
+                              loot (--vs стихия жертв), eggs, explore (--biome cold|heat), xp (прокачка: Omascul +40~80% EXP пати + Growth Acceleration Bell).
                               Механика: дерётся 1 выпущенный пал, остальные — ауры
                               "While in party" (не стакаются) → дефолт 1 боец + 4 ауры
 tiers <category>              тир-лист из tier_lists.json

@@ -135,6 +135,8 @@ def main():
                         party.append(f"stack_{kind}:{el.strip()}")
         if re.search(r"increases the player'?s Attack by \d+~\d+%", eff):
             party.append("player_atk_unique" if "different species" in eff else "player_atk")
+        if re.search(r"EXP gained", eff, re.I):
+            party.append("exp_boost")
         m = re.search(rf"take \d+~\d+% less ({ELEMS}) damage", eff)
         if m:  # аура резиста пати от стихии врага (часто + иммун к её статусу)
             party.append(f"resist:{m.group(1)}")
