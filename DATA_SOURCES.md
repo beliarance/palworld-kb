@@ -329,3 +329,15 @@
 - Зафиксировано в guidance skill_dps_meta.json: определить мульти-хит по ОПИСАНИЮ нельзя
   (Comet Barrage/Beam Comet звучат как мульти-хит, но по замерам ровные — снаряды бьют по
   разным точкам). Флаг multi_hit ставится только по замеренному dps_large≫dps_small.
+
+## 2026-07-16 — QA пати-пресетов: фиксы Neutral-бойца и метки слота атаки
+- Прогон всех 22 пресетов (combat×9 стихий + varvs/raw/sea/two-fighters, fishing, catch,
+  loot, eggs, openworld, explore cold/heat, xp): 5 слотов везде (xp — 3), без дублей палов.
+- Баг: у Neutral-бойца пустой strong_vs → в выводе печаталось «резист от None» и
+  «Пати против None-врагов». Фикс (веб+CLI): при пустом враге слот резиста → «живучесть
+  (без стихийного бонуса)», заметка «универсальный боец; каунтерится <weak_to>».
+- Баг: слот «атаки становятся <стихия>» доставался Solenne (player_atk) у стихий без
+  attack_type-пала (Neutral) — неверная метка. Фикс: сначала pick attack_type с этой меткой,
+  иначе отдельный pick player_atk с меткой «+Attack».
+- Не баг: 11 палов с пустым Number — это Terraria-коллаб (слаймы, Demon Eye, Eye of Cthulhu,
+  Cave Bat, Enchanted Sword, Illuminant*) — у коллаб-палов нет палдекс-номера, показываем без «#».

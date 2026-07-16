@@ -832,7 +832,7 @@ def cmd_party(db, args):
         if fe not in tc:
             sys.exit(f"стихии {fe} нет. Есть: {', '.join(tc)}")
         if not enemy:
-            enemy = (tc[fe]["strong_vs"] or [None])[0]
+            enemy = (tc[fe]["strong_vs"] or [None])[0]  # None у Neutral (нет strong_vs)
         def fe_pool(mount=None):
             pool = [p for p in db.values() if p.get("hp") and p["name"] not in used and fe in p["elements"]]
             if mount:
@@ -847,8 +847,9 @@ def cmd_party(db, args):
         fighter_skills[f1] = best_skills(f1, enemy)
         pick(f"аура: +15~30% атаки {fe}-палам", f"elem_team_atk:{fe}", f"weak_point:{fe}", "weak_point:any")
         pick("стак с пуль: +ATK/DEF активному палу (до x30)", "bullet_stack", "cd_support")
-        pick(f"бафф игрока: атаки становятся {fe}", f"attack_type:{fe}:active", "player_atk_unique",
-             f"attack_type:{fe}:mount", "player_atk")
+        # усиление твоей атаки: смена стихии (метка верна) ИЛИ, если такого пала нет, просто +Attack
+        if not pick(f"бафф игрока: атаки становятся {fe}", f"attack_type:{fe}:active", f"attack_type:{fe}:mount"):
+            pick("бафф игрока: +Attack", "player_atk_unique", "player_atk")
         if args.two_fighters:
             n = None
             if args.sea:
@@ -864,11 +865,18 @@ def cmd_party(db, args):
             if n:
                 fighter_skills[n] = best_skills(n, enemy)
         else:
-            pick(f"аура: резист от {enemy} (стихия врага)", f"resist:{enemy}", f"elem_team_def:{fe}", "survival")
+            if enemy:
+                pick(f"аура: резист от {enemy} (стихия врага)", f"resist:{enemy}", f"elem_team_def:{fe}", "survival")
+            else:  # Neutral-боец: конкретного врага нет — даём живучесть
+                pick(f"аура: живучесть ({fe} без стихийного бонуса)", f"elem_team_def:{fe}", "survival")
         if args.sea:
             notes.append("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами (player-reported)")
-        notes.append(f"Пати против {enemy}-врагов ({fe} бьёт {', '.join(tc[fe]['strong_vs']) or '—'}); "
-                     f"сам {fe} каунтерится {', '.join(tc[fe]['weak_to']) or '—'}")
+        if enemy:
+            notes.append(f"Пати против {enemy}-врагов ({fe} бьёт {', '.join(tc[fe]['strong_vs']) or '—'}); "
+                         f"сам {fe} каунтерится {', '.join(tc[fe]['weak_to']) or '—'}")
+        else:
+            notes.append(f"{fe} не даёт стихийного бонуса урона (нет strong_vs) — универсальный боец; "
+                         f"сам каунтерится {', '.join(tc[fe]['weak_to']) or '—'}")
         if any("Orserk" == n for n, _, _ in picks):
             notes.append("Orserk (#187): стаки дают ПУЛИ — стреляй очередями; Drone Launcher (tech 77, 9 дронов, "
                          "без патронов) набивает стаки сам, в руках — Mechanical Bow (tech 67) сингл-таргет "

@@ -585,7 +585,9 @@ function buildCombatParty(fe, enemy, two, sea){
   B.picks[0].fighter=true;
   B.pick(`аура: +15~30% атаки ${fe}-палам`,`elem_team_atk:${fe}`,`weak_point:${fe}`,"weak_point:any");
   B.pick("стак с пуль: +ATK/DEF активному палу (до x30)","bullet_stack","cd_support");
-  B.pick(`бафф игрока: атаки становятся ${fe}`,`attack_type:${fe}:active`,"player_atk_unique",`attack_type:${fe}:mount`,"player_atk");
+  // усиление твоей атаки: смена стихии (метка верна) ИЛИ, если такого пала нет, просто +Attack
+  if(!B.pick(`бафф игрока: атаки становятся ${fe}`,`attack_type:${fe}:active`,`attack_type:${fe}:mount`))
+    B.pick("бафф игрока: +Attack","player_atk_unique","player_atk");
   if(two){
     let n=null;
     if(sea){ const c=fePool().find(p=>p.mount==="swim")||fePool().find(p=>p.mount==="flying");
@@ -593,10 +595,12 @@ function buildCombatParty(fe, enemy, two, sea){
     if(!n) n=B.pick("2-й боец: гибрид (сам дерётся + стак-аура)",`stack_atk:${fe}`);
     if(!n) B.add(B.topFighter(fe),"2-й боец (запасной)");
     B.picks[B.picks.length-1].fighter=true;
-  } else B.pick(`аура: резист от ${enemy} (стихия врага)`,`resist:${enemy}`,`elem_team_def:${fe}`,"survival");
+  } else if(enemy) B.pick(`аура: резист от ${enemy} (стихия врага)`,`resist:${enemy}`,`elem_team_def:${fe}`,"survival");
+  else B.pick(`аура: живучесть (${fe} без стихийного бонуса)`,`elem_team_def:${fe}`,"survival");
   if(sea) B.notes.push("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами <span class='dim'>(player-reported)</span>");
   B.notes.push("⚡ скиллы у карточек — оценка по ОДИНОЧНОЙ цели (урон × 60/кулдаун). По большому боссу решает мульти-хит → смотри блок «🎯 Мета-скиллы» ниже (замеренный DPS)");
-  B.notes.push(`Пати против <b>${enemy}</b>-врагов (${fe} бьёт ${(chart[fe].strong_vs||[]).join(", ")||"—"}); сам ${fe} каунтерится ${(chart[fe].weak_to||[]).join(", ")||"—"}`);
+  if(enemy) B.notes.push(`Пати против <b>${enemy}</b>-врагов (${fe} бьёт ${(chart[fe].strong_vs||[]).join(", ")||"—"}); сам ${fe} каунтерится ${(chart[fe].weak_to||[]).join(", ")||"—"}`);
+  else B.notes.push(`${fe} не даёт стихийного бонуса урона (нет strong_vs) — универсальный боец; сам каунтерится ${(chart[fe].weak_to||[]).join(", ")||"—"}`);
   if(B.picks.some(p=>p.n==="Orserk")) B.notes.push("Orserk (#187): стаки дают ПУЛИ — стреляй очередями; Drone Launcher (tech 77, 9 дронов, без патронов) набивает стаки сам, в руках держи Mechanical Bow (tech 67) под сингл-таргет <span class='dim'>(мета-гайды июля 2026, PRELIMINARY)</span>");
   if(B.picks.some(p=>p.n==="Solenne")) B.notes.push("Solenne: +30~80% атаки игрока ТОЛЬКО если все 5 палов разных видов — не бери дублей");
   B.notes.push("Глайдер-пал не нужен: в 1.0 есть Wing Pack (слот глайдера) и Air Dash Boots — слот пати не трать <span class='dim'>(гайды 1.0)</span>");
