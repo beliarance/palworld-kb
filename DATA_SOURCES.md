@@ -274,3 +274,8 @@
   arena: открытое море — swim обязателен, flyer от цунами; player-reported 2026-07-16).
   У Zanara & Astralym поле arena удалено.
 - pal_locations.json: локация альфы Panthalus уточнена (был gap «location not listed»).
+
+## 2026-07-16 — Panthalus: призыв Echoing Flute (уточнение player-report)
+- Panthalus призывается предметом Echoing Flute (key_item, крафт: Marine/Silent/
+  Seafoam/Tidewind Echobone x1 на Primitive Workbench) по основному квесту;
+  призыв переносит на водную арену. bosses.json + pal_locations.json обновлены.
