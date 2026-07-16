@@ -649,10 +649,37 @@ def cmd_party(db, args):
     P = idx["pals"]
     goal = args.goal.lower()
     picks, used, notes = [], set(), []
+    fighter_skills = {}  # имя пала -> строки с лучшими скиллами против врага
 
     def eff(n, maxlen=120):
         e = P[n].get("partner_effect") or ""
         return e[:maxlen] + ("…" if len(e) > maxlen else "")
+
+    def best_skills(name, enemy, n_top=3):
+        """Топ скиллов пала против врага: x2 если враг слаб к стихии скилла."""
+        sk = _load_json("active_skills.json") or {}
+        by = {s["name"]: s for s in sk.get("skills", [])}
+        bonus = tc.get(enemy, {}).get("weak_to", []) if enemy else []
+        rows = []
+        for e in sk.get("learnsets", {}).get(name, []):
+            s = by.get(e["skill"])
+            if not s or not s.get("power"):
+                continue
+            mult = 2 if s["element"] in bonus else 1
+            rows.append((mult * s["power"], e["level"], s))
+        rows.sort(key=lambda r: -r[0])
+        lines = [f"{s['name']} [{s['element']}] {s['power']}"
+                 + (f"/{s['cooldown_seconds']}с" if s.get("cooldown_seconds") else "")
+                 + (" ×2" if s["element"] in bonus else "") + f" (Lv{lv})"
+                 for _, lv, s in rows[:n_top]]
+        learned = {e["skill"] for e in sk.get("learnsets", {}).get(name, [])}
+        fruits = sorted((s for s in sk.get("skills", [])
+                         if s.get("skill_fruit_exists") and s.get("power")
+                         and s["element"] in bonus and s["name"] not in learned),
+                        key=lambda s: -s["power"])[:2]
+        if fruits:
+            lines.append("🍎 фруктом: " + ", ".join(f"{s['name']} [{s['element']}] {s['power']} ×2" for s in fruits))
+        return lines
 
     def pick(role, *tags):
         for t in tags:
@@ -688,14 +715,19 @@ def cmd_party(db, args):
             sys.exit(f"стихии {fe} нет. Есть: {', '.join(tc)}")
         if not enemy:
             enemy = (tc[fe]["strong_vs"] or [None])[0]
-        add(top_fighter(fe), f"⚔ боец {fe} (выпускаешь его)")
+        f1 = top_fighter(fe)
+        add(f1, f"⚔ боец {fe} (выпускаешь его)")
+        fighter_skills[f1] = best_skills(f1, enemy)
         pick("аура: урон по слабым точкам", f"weak_point:{fe}", "weak_point:any")
         pick(f"бафф игрока: атаки становятся {fe}", f"attack_type:{fe}:active", f"attack_type:{fe}:mount")
         pick("бафф игрока: +Attack", "player_atk_unique", "player_atk")
         if args.two_fighters:
             n = pick("2-й боец: гибрид (сам дерётся + стак-аура)", f"stack_atk:{fe}")
             if not n:
-                add(top_fighter(fe), "2-й боец (запасной)")
+                n = top_fighter(fe)
+                add(n, "2-й боец (запасной)")
+            if n:
+                fighter_skills[n] = best_skills(n, enemy)
         else:
             pick(f"аура: резист от {enemy} (стихия врага)", f"resist:{enemy}", "survival")
         notes.append(f"Пати против {enemy}-врагов ({fe} бьёт {', '.join(tc[fe]['strong_vs']) or '—'}); "
@@ -783,6 +815,8 @@ def cmd_party(db, args):
     for n, role, e in picks[:5]:
         print(f"  {label_name(db, n):<28} — {role}")
         print(f"      {e}")
+        for line in fighter_skills.get(n, []):
+            print(f"      ⚡ {line}")
     for note in notes:
         print(f"  ! {note}")
 
