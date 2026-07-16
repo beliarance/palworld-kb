@@ -341,3 +341,9 @@
   иначе отдельный pick player_atk с меткой «+Attack».
 - Не баг: 11 палов с пустым Number — это Terraria-коллаб (слаймы, Demon Eye, Eye of Cthulhu,
   Cave Bat, Enchanted Sword, Illuminant*) — у коллаб-палов нет палдекс-номера, показываем без «#».
+
+## 2026-07-16 — При равном эффекте ауры обычный пал раньше коллаб-пала
+- build_index.py: сортировка party:*/egg_* тегов получила тай-брейк — при равной силе
+  эффекта пал БЕЗ палдекс-номера (Terraria-коллаб) уходит ниже номерного. Затронуты:
+  party:elem_team_atk:Dark (Hoocrates #19 вместо Demon Eye), party:loot:Dark (Elphidran
+  #63 вместо Enchanted Sword). Коллаб-пал теперь в «заменах», не в основном пике.

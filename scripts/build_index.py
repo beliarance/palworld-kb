@@ -228,13 +228,17 @@ def main():
     # ранч-продюсеры сортируем по уровню Farming
     for item, names in ranch_inv.items():
         names.sort(key=lambda n: -(index[n]["work"].get("Farming") or 0))
-    # партийные и яичные теги — по силе эффекта (верх диапазона X~Y%), сильные первыми
-    def eff_power(n):
+    # партийные и яичные теги — по силе эффекта (верх диапазона X~Y%), сильные первыми;
+    # при равном эффекте обычный (номерной) пал идёт раньше коллаб-пала без палдекс-номера
+    # (Terraria-коллаб: слаймы/Demon Eye/…) — тот уходит в «замены»
+    def sort_key(n):
         pcts = re.findall(r"\d+~(\d+)%?", index[n]["partner_effect"] or "")
-        return -max((int(x) for x in pcts), default=0)
+        power = -max((int(x) for x in pcts), default=0)
+        is_collab = 0 if index[n].get("number") else 1
+        return (power, is_collab)
     for tag, names in tags_inv.items():
         if tag.startswith("party:") or tag.startswith("egg_"):
-            names.sort(key=eff_power)
+            names.sort(key=sort_key)
     work_inv = {}
     for w in WORK_COLS:
         ranked = sorted(((n, e["work"][w]) for n, e in index.items() if e["work"].get(w)),
