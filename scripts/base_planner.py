@@ -186,10 +186,14 @@ class Planner:
         """Ставит плантации; на tech 78+ Ancient Farm заменяет все раздельные (растит любые культуры)."""
         total = sum(plants_n.values())
         if self.args.tech >= 78 and "Ancient Farm" in self.structs and total:
-            n_af = max(1, math.ceil(total / self.args.ancient_farm_yield))
-            self.add("Ancient Farm", n_af)
-            note = (f"Ancient Farm x{n_af}: растит ВСЕ культуры в одном компактном здании "
-                    "(вместо раздельных плантаций), 4 места, Watering+Planting+Gathering 6+")
+            # древние фермы вместо плантаций, по-культурно: Ancient Farm (Tomato) x2 и т.д.
+            n_af = 0
+            for crop, n in plants_n.items():
+                k = max(1, math.ceil(n / self.args.ancient_farm_yield))
+                self.add(f"Ancient Farm ({crop})", k)
+                n_af += k
+            note = (f"Ancient Farm x{n_af} (по культурам) вместо раздельных плантаций: компактнее, "
+                    "4 места, Watering+Planting+Gathering 6+")
             if self.args.ancient_farm_yield == 1:
                 note += ". Выработка в данных НЕ указана (paldb «same cultivation process» = всё так же " \
                         "надо поливать/сажать/собирать, про скорость молчит). Принято ×1 осторожно — " \
@@ -197,6 +201,7 @@ class Planner:
             else:
                 note += f". Принято ×{self.args.ancient_farm_yield} к выработке грядки"
             self.notes.append(note)
+            return total
         else:
             for crop, n in plants_n.items():
                 pl = self.best([PLANTS[crop]])
@@ -264,16 +269,15 @@ class Planner:
         food_plants = {}
         if salad_ok:
             pairs = max(1, -(-plots // 2))  # ceil: не недокармливаем
-            self.add("Tomato Plantation", pairs)
-            self.add("Lettuce Plantation", pairs)
             food_plants = {"Tomato": pairs, "Lettuce": pairs}
+            self.add_plantations(food_plants, {"Tomato": "Tomato Plantation", "Lettuce": "Lettuce Plantation"})
             station = self.best(["Cooking Pot", "Electric Kitchen", "Large-Scale Stone Oven", "Ancient Kitchen"])
             self.add(station, 1)
             self.hire_best("Kindling", 3, 1, "ЕДА: повар салатов")
             self.notes.append(f"ЕДА (self): Salad — {pairs}x Tomato + {pairs}x Lettuce, повар на {station}")
         else:
-            self.add("Berry Plantation", plots)
             food_plants = {"Red Berries": plots}
+            self.add_plantations(food_plants, {"Red Berries": "Berry Plantation"})
             self.add("Campfire", 1)
             self.hire_best("Kindling", 2, 1, "ЕДА: жарка ягод")
             self.notes.append(f"ЕДА (self): Baked Berries — {plots}x Berry Plantation (апгрейд до Salad на tech 25)")
@@ -451,29 +455,35 @@ class Planner:
         # в игре можно поставить по 1 КАЖДОГО типа — добавляем все доступные по tech
         # семьи с одинаковым продуктом — только лучшая (Ore I/II дают одно и то же);
         # Logging I (Wood) и II (Hardwood) — разные продукты, обе
-        SITE_FAMS = [["Stone Pit"], ["Logging Site"], ["Logging Site II"],
-                     ["Ore Mining Site", "Ore Mining Site II"],
-                     ["Coal Mine"], ["Sulfur Mine"], ["Pure Quartz Quarry"],
-                     ["Hexolite Quartz Mine"], ["Soralite Quarry"]]
-        for fam in SITE_FAMS:
-            m = self.best(fam)
-            if m:
-                self.add(m, 1)
-                sites.append(m)
-        if self.best(["Ore Mining Site", "Ore Mining Site II"]) == "Ore Mining Site II":
-            self.notes.append("Ore Mining Site I даёт ту же руду — можно доставить для второго потока, если есть слоты")
-        if a.tech >= 78 and "Ancient Material Synthesizer" in self.structs:
+        synthesizer = a.tech >= 78 and "Ancient Material Synthesizer" in self.structs
+        if synthesizer:
+            # синтезайзер производит ЛЮБОЙ материал (дерево/руды) — заменяет ВСЕ шахты.
+            # Один продукт за раз: переключай, что нужно; лимит 1 на базу
             self.add("Ancient Material Synthesizer", 1)
-            self.hire_best("Mining", 6, 1, "Ancient Material Synthesizer (производит ВСЕ виды дерева и руды, 1 пал)")
-            self.notes.append("Ancient Material Synthesizer (tech 78): все виды дерева/руды с одного здания — "
-                              "потенциально заменяет отдельные шахты (что именно покрывает — проверь в игре)")
+            self.hire_best("Mining", 6, 1, "Ancient Material Synthesizer (любой материал, 1 пал)")
+            self.notes.append("Ancient Material Synthesizer (tech 78) заменяет ВСЕ шахты/лесопилки: "
+                              "производит любой вид дерева/руды, но ОДИН выбранный за раз — переключай продукт. "
+                              "Нужен параллельный поток нескольких руд — доставь конкретные шахты через «+ здание»")
+        else:
+            SITE_FAMS = [["Stone Pit"], ["Logging Site"], ["Logging Site II"],
+                         ["Ore Mining Site", "Ore Mining Site II"],
+                         ["Coal Mine"], ["Sulfur Mine"], ["Pure Quartz Quarry"],
+                         ["Hexolite Quartz Mine"], ["Soralite Quarry"]]
+            for fam in SITE_FAMS:
+                m = self.best(fam)
+                if m:
+                    self.add(m, 1)
+                    sites.append(m)
+            if self.best(["Ore Mining Site", "Ore Mining Site II"]) == "Ore Mining Site II":
+                self.notes.append("Ore Mining Site I даёт ту же руду — можно доставить для второго потока, если есть слоты")
         ext = self.best(["Crude Oil Extractor", "High-Pressure Crude Oil Extractor"])
         if ext:
             self.add(ext, 1)
             self.notes.append(f"{ext}: работает БЕЗ палов, только электричество "
                               f"({self.structs[ext].get('energy_per_sec')}/с)"
                               + ("; ставится в любой точке" if "High-Pressure" in ext else "; нужна нефтяная точка"))
-        self.notes.append(f"Добыча ({len(sites)} станций, по 1 на базу): {', '.join(sites)}")
+        if sites:
+            self.notes.append(f"Добыча ({len(sites)} станций, по 1 на базу): {', '.join(sites)}")
         self.support_core([("suitability:Mining", "+1 Mining всем (Tetroise)"),
                            ("base_defense", "ПВО базы от рейдов (Panthalus)"),
                            ("suitability:Handiwork", "+1 Handiwork всем (Ribbuny)"),
@@ -489,8 +499,9 @@ class Planner:
                 self.hire_best(task, min_lv, n, f"{label}: {site} ({n}/{slots} мест)")
         staff(mining_sites, "Mining", 6, "добыча")
         staff(lumber_sites, "Lumbering", 5, "лесопилка")
-        self.notes.append(f"Добыча: {self.args.per_station} пал(ов) на станцию (--per-station, у шахт до 3 мест — "
-                          "больше палов = быстрее добыча на станции). 1 = все станции работают, но не на макс. скорости")
+        if sites:
+            self.notes.append(f"Добыча: {self.args.per_station} пал(ов) на станцию (--per-station, у шахт до 3 мест — "
+                              "больше палов = быстрее добыча на станции). 1 = все станции работают, но не на макс. скорости")
         furn = self.best(["Primitive Furnace", "Improved Furnace", "Electric Furnace", "Gigantic Furnace", "Ancient Furnace"])
         self.add(furn, 2)
         self.hire_best("Kindling", 6, 2, "печи")
@@ -666,7 +677,8 @@ class Planner:
         print("\nЗДАНИЯ И СМЕТА")
         bill = {}
         for b, c in sorted(self.buildings.items()):
-            s = self.structs.get(b, {})
+            # «Ancient Farm (Tomato)» — материалы/tech берём у базового здания
+            s = self.structs.get(b) or self.structs.get(b.split(" (")[0], {})
             mats = s.get("materials") or {}
             for m, q_ in mats.items():
                 bill[m] = bill.get(m, 0) + q_ * c

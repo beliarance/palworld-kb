@@ -95,7 +95,7 @@ const atk = p => Math.max(p.melee||0, p.shot||0);
 const els = p => (p.elements||[]).map(e=>`<span class="el el-${e}">${e}</span>`).join("");
 const esc = s => String(s??"").replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const palIcon = n => (D.icons?.pals?.[n]) ? `<img src="${D.icons.pals[n]}" loading="lazy" style="width:22px;height:22px;vertical-align:-5px;border-radius:50%;margin-right:2px">` : "";
-const structIcon = n => (D.icons?.structures?.[n]) ? `<img src="${D.icons.structures[n]}" loading="lazy" style="width:26px;height:26px;vertical-align:-7px;margin-right:4px">` : "";
+const structIcon = n => { const k=(D.icons?.structures?.[n])?n:n.split(" (")[0]; const u=D.icons?.structures?.[k]; return u?`<img src="${u}" loading="lazy" style="width:26px;height:26px;vertical-align:-7px;margin-right:4px">`:""; };
 const itemIcon = n => (D.icons?.items?.[n]) ? `<img src="${D.icons.items[n]}" loading="lazy" style="width:20px;height:20px;vertical-align:-4px;margin-right:2px">` : "";
 const palLink = n => `<span class="clicky" onclick="showPal('${n.replace(/'/g,"\\'")}')">${esc(n)}${P[n]?.number?` <span class="dim">(#${P[n].number})</span>`:""}</span>`;
 const itemLink = n => itemByName[n] ? `<span class="clicky" onclick="showItem('${n.replace(/'/g,"\\'")}')">${esc(n)}</span>` : esc(n);
@@ -463,10 +463,10 @@ class BasePlan {
   addPlantations(plantsN, PL){
     const total=Object.values(plantsN).reduce((a,b)=>a+b,0);
     if(this.o.tech>=78&&this.structs["Ancient Farm"]&&total){
-      const afy=this.o.ancientFarmYield||1, nAf=Math.max(1,Math.ceil(total/afy));
-      this.add("Ancient Farm",nAf);
-      this.notes.push(`Ancient Farm x${nAf}: растит ВСЕ культуры в одном компактном здании, 4 места, Watering+Planting+Gathering 6+`+
-        (afy===1?". Выработка в данных НЕ указана (paldb «same cultivation process» = так же надо поливать/сажать/собирать, про скорость молчит). ×1 осторожно — если по игре быстрее, подними «Ancient Farm ×»":` (×${afy} к выработке)`));
+      const afy=this.o.ancientFarmYield||1; let nAf=0;
+      for(const [crop,n] of Object.entries(plantsN)){ const k=Math.max(1,Math.ceil(n/afy)); this.add(`Ancient Farm (${crop})`,k); nAf+=k; }
+      this.notes.push(`Ancient Farm x${nAf} (по культурам) вместо раздельных плантаций: компактнее, 4 места, Watering+Planting+Gathering 6+`+
+        (afy===1?". Выработка в данных НЕ указана (×1 осторожно — если по игре быстрее, подними «Ancient Farm ×»)":` (×${afy} к выработке)`));
     } else for(const [crop,n] of Object.entries(plantsN)){ const pl=this.best([PL[crop]]); if(pl) this.add(pl,n); }
     return total;
   }
@@ -507,10 +507,11 @@ class BasePlan {
     let n=0;
     if(saladOk){ const st=this.best(["Cooking Pot","Electric Kitchen","Large-Scale Stone Oven","Ancient Kitchen"]);
       const pairs=Math.max(1,Math.ceil(plots/2));
-      this.add("Tomato Plantation",pairs); this.add("Lettuce Plantation",pairs); this.add(st,1); n=pairs*2;
+      this.addPlantations({Tomato:pairs,Lettuce:pairs},{Tomato:"Tomato Plantation",Lettuce:"Lettuce Plantation"});
+      this.add(st,1); n=pairs*2;
       this.hireBest("Kindling",3,1,"ЕДА: повар салатов");
       this.notes.push(`ЕДА (self): Salad — ${pairs}x Tomato + ${pairs}x Lettuce, повар на ${st}`);
-    } else { this.add("Berry Plantation",plots); this.add("Campfire",1); n=plots;
+    } else { this.addPlantations({"Red Berries":plots},{"Red Berries":"Berry Plantation"}); this.add("Campfire",1); n=plots;
       this.hireBest("Kindling",2,1,"ЕДА: жарка ягод");
       this.notes.push(`ЕДА (self): Baked Berries — ${plots}x Berry Plantation (апгрейд до Salad на tech 25)`); }
     if(!shareCrew){ const crew=Math.max(1,Math.ceil(n/(this.o.plantsPerWorker*this.q())));
@@ -630,15 +631,18 @@ class BasePlan {
   presetMineCraft(){
     const o=this.o;
     const sites=[];
-    for(const fam of [["Stone Pit"],["Logging Site"],["Logging Site II"],["Ore Mining Site","Ore Mining Site II"],
-        ["Coal Mine"],["Sulfur Mine"],["Pure Quartz Quarry"],["Hexolite Quartz Mine"],["Soralite Quarry"]]){
-      const m=this.best(fam); if(m){ this.add(m,1); sites.push(m); } }
-    if(this.best(["Ore Mining Site","Ore Mining Site II"])==="Ore Mining Site II")
-      this.notes.push("Ore Mining Site I даёт ту же руду — можно доставить для второго потока");
     if(o.tech>=78&&this.structs["Ancient Material Synthesizer"]){
+      // синтезайзер заменяет ВСЕ шахты: любой материал, но один выбранный за раз
       this.add("Ancient Material Synthesizer",1);
-      this.hireBest("Mining",6,1,"Ancient Material Synthesizer (ВСЕ виды дерева и руды, 1 пал)");
-      this.notes.push("Ancient Material Synthesizer (78): все виды дерева/руды с одного здания — что именно покрывает, проверь в игре"); }
+      this.hireBest("Mining",6,1,"Ancient Material Synthesizer (любой материал, 1 пал)");
+      this.notes.push("Ancient Material Synthesizer (78) заменяет ВСЕ шахты/лесопилки: любой вид дерева/руды, но ОДИН за раз — переключай продукт. Параллельный поток нужен — доставь шахты через «+ здание»");
+    } else {
+      for(const fam of [["Stone Pit"],["Logging Site"],["Logging Site II"],["Ore Mining Site","Ore Mining Site II"],
+          ["Coal Mine"],["Sulfur Mine"],["Pure Quartz Quarry"],["Hexolite Quartz Mine"],["Soralite Quarry"]]){
+        const m=this.best(fam); if(m){ this.add(m,1); sites.push(m); } }
+      if(this.best(["Ore Mining Site","Ore Mining Site II"])==="Ore Mining Site II")
+        this.notes.push("Ore Mining Site I даёт ту же руду — можно доставить для второго потока");
+    }
     this.notes.push(`Добыча (${sites.length} станций, по 1 на базу): ${sites.join(", ")}`);
     this.supportCore([["suitability:Mining","+1 Mining всем"],["base_defense","ПВО базы от рейдов"],["suitability:Handiwork","+1 Handiwork всем"],
       ["suitability:Transporting","+1 Transport всем"],["sanity_save","SAN базы"]]);
@@ -649,7 +653,7 @@ class BasePlan {
       const slots=structsW[site].worker_slots||1, n=Math.max(1,Math.min(perSt,slots));
       this.hireBest(task,minLv,n,`${label}: ${site} (${n}/${slots} мест)`); } };
     staff(mSites,"Mining",6,"добыча"); staff(lSites,"Lumbering",5,"лесопилка");
-    this.notes.push(`Добыча: ${perSt} пал(ов) на станцию (у шахт до 3 мест — больше палов = быстрее добыча). 1 = все станции работают, но не на макс. скорости`);
+    if(sites.length) this.notes.push(`Добыча: ${perSt} пал(ов) на станцию (у шахт до 3 мест — больше палов = быстрее добыча). 1 = все станции работают, но не на макс. скорости`);
     this.add(this.best(["Primitive Furnace","Improved Furnace","Electric Furnace","Gigantic Furnace","Ancient Furnace"]),2);
     this.hireBest("Kindling",6,2,"печи");
     if(o.tech>=67&&this.structs["Ancient Workbench"]){
@@ -926,7 +930,7 @@ function drawBase(){
 
   // здания
   let bh=BASE.buildings.map((b,i)=>{
-    const s=structs[b.name]||{};
+    const s=structs[b.name]||structs[b.name.split(" (")[0]]||{};
     const tasks=structTasks(s);
     const req=s.worker_req;
     const fam=familyOf(b.name).filter(n=>structs[n]);
@@ -1027,7 +1031,7 @@ function drawBase(){
 
   // смета
   const bill={};
-  for(const b of BASE.buildings){ const s=structs[b.name]||{};
+  for(const b of BASE.buildings){ const s=structs[b.name]||structs[b.name.split(" (")[0]]||{};
     for(const [m,q] of Object.entries(s.materials||{})) bill[m]=(bill[m]||0)+q*b.count; }
   const power=BASE.buildings.reduce((a,b)=>a+((structs[b.name]||{}).energy_per_sec||0)*b.count,0);
 
