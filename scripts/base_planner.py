@@ -185,8 +185,9 @@ class Planner:
             note = (f"Ancient Farm x{n_af}: растит ВСЕ культуры в одном компактном здании "
                     "(вместо раздельных плантаций), 4 места, Watering+Planting+Gathering 6+")
             if self.args.ancient_farm_yield == 1:
-                note += ". paldb: «same cultivation process» — скорость как у обычной грядки, " \
-                        "выигрыш в компактности; если по игре быстрее — задай --ancient-farm-yield N"
+                note += ". Выработка в данных НЕ указана (paldb «same cultivation process» = всё так же " \
+                        "надо поливать/сажать/собирать, про скорость молчит). Принято ×1 осторожно — " \
+                        "если по игре быстрее, задай --ancient-farm-yield N (тогда ферм и рабочих меньше)"
             else:
                 note += f". Принято ×{self.args.ancient_farm_yield} к выработке грядки"
             self.notes.append(note)

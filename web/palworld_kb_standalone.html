@@ -464,7 +464,7 @@ class BasePlan {
       const afy=this.o.ancientFarmYield||1, nAf=Math.max(1,Math.ceil(total/afy));
       this.add("Ancient Farm",nAf);
       this.notes.push(`Ancient Farm x${nAf}: растит ВСЕ культуры в одном компактном здании, 4 места, Watering+Planting+Gathering 6+`+
-        (afy===1?". paldb: «same cultivation process» — скорость как у обычной грядки; если по игре быстрее — подними «Ancient Farm ×»":` (×${afy} к выработке)`));
+        (afy===1?". Выработка в данных НЕ указана (paldb «same cultivation process» = так же надо поливать/сажать/собирать, про скорость молчит). ×1 осторожно — если по игре быстрее, подними «Ancient Farm ×»":` (×${afy} к выработке)`));
     } else for(const [crop,n] of Object.entries(plantsN)){ const pl=this.best([PL[crop]]); if(pl) this.add(pl,n); }
     return total;
   }
@@ -853,10 +853,10 @@ render.planner = () => {
   </div>
   <div class="row fld fld-breeding" style="margin-top:8px">
     <select id="pcake" title="какой торт производить"><option>Cake</option><option>Mushroom Cake</option><option>Vegetable Cake</option><option>Extravagant Vegetable Cake</option><option>Special Cake</option></select>
-    <label class="dim">ферм <input type="number" id="pfarms" style="width:60px;min-width:60px"></label>
-    <label class="dim">яйцо, мин <input type="number" id="peggint" value="5" step="0.1" style="width:60px;min-width:60px"></label>
-    <label class="dim" title="1.0 = торты лимитируют (Braloha без простоев); 1.35+ = линия под буст">буст яиц x <input type="number" id="peggboost" value="1.0" step="0.05" style="width:60px;min-width:60px"></label>
-    <label class="dim" title="настройка мира: 0 = мгновенная инкубация">инкубация (мир) <input type="number" id="pincub" value="1" step="0.5" min="0" style="width:60px;min-width:60px"></label>
+    <label class="dim" title="сколько брид-ферм / Ancient Hatchery ставить. Пусто = подобрать максимум под слоты">брид-ферм (пусто=авто) <input type="number" id="pfarms" style="width:60px;min-width:60px"></label>
+    <label class="dim" title="минут на одно яйцо. Обычная ферма = 5 мин; для Ancient Hatchery замерь в игре">мин/яйцо <input type="number" id="peggint" value="5" step="0.1" style="width:60px;min-width:60px"></label>
+    <label class="dim" title="запас тортовой линии под ускорение от Braloha (яйца +20~50%). 1.0 = тортов ровно под скорость, Braloha лишь убирает простои; 1.35+ = кормить полный буст">запас тортов ×(Braloha) <input type="number" id="peggboost" value="1.0" step="0.05" style="width:60px;min-width:60px"></label>
+    <label class="dim" title="настройка мира «скорость инкубации»: 1 = обычная, 0 = мгновенное вылупление (тогда инкубаторы и Dynamoff не нужны)">инкубация (мир) <input type="number" id="pincub" value="1" step="0.5" min="0" style="width:60px;min-width:60px"></label>
   </div>
   <div class="row fld fld-mine-craft" style="margin-top:8px">
     <label class="dim" title="у шахт до 3 мест; больше палов на станцию = быстрее добыча">палов на станцию <input type="number" id="ppers" value="1" min="1" max="3" style="width:60px;min-width:60px"></label>
