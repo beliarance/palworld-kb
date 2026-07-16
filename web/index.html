@@ -839,6 +839,7 @@ render.planner = () => {
     <button class="tag clicky" style="cursor:pointer;font-size:13px" onclick="seedFromPreset()">⚙ применить пресет</button>
     <span id="rebuild-hint" class="warn" style="display:none">параметры изменены — «применить пресет» перестроит (ручные правки сбросятся)</span>
     <button class="tag clicky" style="cursor:pointer;font-size:13px" onclick="BASE={buildings:[],crew:[]};openB=openC=null;drawBase()">🗑 очистить всё</button>
+    <button class="tag clicky" style="cursor:pointer;font-size:13px" title="сбросить сохранённые настройки и базу к дефолтам" onclick="resetPlannerState()">↺ сброс настроек</button>
     <label>Слоты <input type="number" id="pslots" value="50" min="5" max="100" style="width:70px;min-width:70px"></label>
     <select id="pmetal">
       <option value="">Металл: вручную (tech)</option>
@@ -894,6 +895,7 @@ render.planner = () => {
     document.getElementById(id).addEventListener("input",()=>{
       if(!baseDirty && BASE.buildings.length) seedFromPreset();
       else if(baseDirty){ const el=document.getElementById("rebuild-hint"); if(el) el.style.display=""; }
+      savePlannerState();
     });
   }
   const dishSel=document.getElementById("pdish");
@@ -902,10 +904,39 @@ render.planner = () => {
     ["base_buff","combat","breeding","meal"].map(cat=>
       `<optgroup label="${cats[cat]}">`+D.bb.foods.filter(f=>f.category===cat&&itemByName[f.name]?.recipe)
         .map(f=>`<option value="${esc(f.name)}">${esc(f.name)} — сыт.${f.nutrition}${f.buffs?", "+f.buffs.join("/"):""}</option>`).join("")+"</optgroup>").join("");
+  restorePlannerState();
   updateVis();
   drawDishChips();
   drawBase();
 };
+
+/* --- персист настроек и базы (localStorage) --- */
+const PSTORE="palkb_planner_v1";
+const PFIELDS=["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pstars","presearch",
+  "pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","peggboost","pincub","pcake",
+  "ppers","pspoil","pfpp","pfbuff","pafy"];
+function savePlannerState(){
+  try{
+    const fields={};
+    for(const id of PFIELDS){ const el=document.getElementById(id); if(!el) continue;
+      fields[id]=el.type==="checkbox"?el.checked:el.value; }
+    localStorage.setItem(PSTORE, JSON.stringify({fields, dishes:plannerDishes,
+      base:BASE, dirty:baseDirty, collapsed:[...collapsedGroups]}));
+  }catch(e){}
+}
+function restorePlannerState(){
+  try{
+    const raw=localStorage.getItem(PSTORE); if(!raw) return;
+    const s=JSON.parse(raw);
+    for(const [id,v] of Object.entries(s.fields||{})){ const el=document.getElementById(id); if(!el) continue;
+      if(el.type==="checkbox") el.checked=!!v; else el.value=v; }
+    plannerDishes=s.dishes||[];
+    if(s.base&&((s.base.buildings||[]).length||(s.base.crew||[]).length)){ BASE=s.base; baseDirty=!!s.dirty; }
+    collapsedGroups=new Set(s.collapsed||[]);
+  }catch(e){}
+}
+function resetPlannerState(){ try{ localStorage.removeItem(PSTORE); }catch(e){} location.reload(); }
+
 let plannerDishes=[]; // [{dish, rate}] — несколько рецептов для еда-хаба
 function addDish(){
   const d=document.getElementById("pdish").value, r=+document.getElementById("pdishrate").value||30;
@@ -921,6 +952,7 @@ function drawDishChips(){
 
 function drawBase(){
   const out=document.getElementById("bout"); if(!out) return;
+  if(typeof savePlannerState==="function") setTimeout(savePlannerState,0);
   const slots=+document.getElementById("pslots").value||50;
   const crewTotal=BASE.crew.reduce((a,c)=>a+c.count,0);
   const structs=Object.fromEntries(D.bb.structures.map(s=>[s.name,s]));
