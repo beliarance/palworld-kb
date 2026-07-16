@@ -266,3 +266,11 @@
   кольца палов) — SkyIsland Treasure (~2.4%) / SkyIsland02 (~0.2%) / Lv60 Oilrig
   Greater Chest (~1%) / фикс. Ancient Ruin. 11 старых — тех-дерево (tech_level).
   Night Vision Goggles и Quadruple-боты: источник на paldb не указан (gap).
+
+## 2026-07-16 — Panthalus как мировой босс (исправление атрибуции арены)
+- Морская арена с цунами относится к бою с Panthalus (#203), НЕ к Zanara & Astralym
+  (моя ошибка атрибуции player-report'а — исправлено).
+- bosses.json: raid_bosses += Panthalus (Water, каунтер Electric, Lv. 70 Ocean King,
+  arena: открытое море — swim обязателен, flyer от цунами; player-reported 2026-07-16).
+  У Zanara & Astralym поле arena удалено.
+- pal_locations.json: локация альфы Panthalus уточнена (был gap «location not listed»).

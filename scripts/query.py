@@ -795,15 +795,31 @@ def cmd_party(db, args):
             sys.exit(f"стихии {fe} нет. Есть: {', '.join(tc)}")
         if not enemy:
             enemy = (tc[fe]["strong_vs"] or [None])[0]
-        f1 = top_fighter(fe)
-        add(f1, f"⚔ боец {fe} (выпускаешь его)")
+        def fe_pool(mount=None):
+            pool = [p for p in db.values() if p.get("hp") and p["name"] not in used and fe in p["elements"]]
+            if mount:
+                pool = [p for p in pool if p.get("mount_type") in mount]
+            pool.sort(key=lambda p: -(attack(p) * 2 + p["hp"] + p["defense"]))
+            return pool
+        f1p = (fe_pool(("flying", "swim")) or fe_pool())[0] if args.sea else fe_pool()[0]
+        f1 = f1p["name"]
+        add(f1, f"⚔ боец {fe} (выпускаешь его)"
+            + (f" — {'летающий' if f1p.get('mount_type') == 'flying' else 'плавающий'} маунт"
+               if args.sea and f1p.get("mount_type") else ""))
         fighter_skills[f1] = best_skills(f1, enemy)
         pick(f"аура: +15~30% атаки {fe}-палам", f"elem_team_atk:{fe}", f"weak_point:{fe}", "weak_point:any")
         pick("стак с пуль: +ATK/DEF активному палу (до x30)", "bullet_stack", "cd_support")
         pick(f"бафф игрока: атаки становятся {fe}", f"attack_type:{fe}:active", "player_atk_unique",
              f"attack_type:{fe}:mount", "player_atk")
         if args.two_fighters:
-            n = pick("2-й боец: гибрид (сам дерётся + стак-аура)", f"stack_atk:{fe}")
+            n = None
+            if args.sea:
+                cand = fe_pool(("swim",)) or fe_pool(("flying",))
+                if cand:
+                    n = cand[0]["name"]
+                    add(n, f"2-й боец — {'плавающий' if cand[0].get('mount_type') == 'swim' else 'летающий'} маунт (свап)")
+            if not n:
+                n = pick("2-й боец: гибрид (сам дерётся + стак-аура)", f"stack_atk:{fe}")
             if not n:
                 n = top_fighter(fe)
                 add(n, "2-й боец (запасной)")
@@ -811,6 +827,8 @@ def cmd_party(db, args):
                 fighter_skills[n] = best_skills(n, enemy)
         else:
             pick(f"аура: резист от {enemy} (стихия врага)", f"resist:{enemy}", f"elem_team_def:{fe}", "survival")
+        if args.sea:
+            notes.append("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами (player-reported)")
         notes.append(f"Пати против {enemy}-врагов ({fe} бьёт {', '.join(tc[fe]['strong_vs']) or '—'}); "
                      f"сам {fe} каунтерится {', '.join(tc[fe]['weak_to']) or '—'}")
         if any("Orserk" == n for n, _, _ in picks):

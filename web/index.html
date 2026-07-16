@@ -303,7 +303,7 @@ render.counter = () => {
     if(fe&&enemy){
       party=`<h3 style="margin-top:12px">Боевая пати под босса</h3>
       <div class="sub" style="margin-bottom:6px">2 бойца (свапаешь, если первый падает) + 3 ауры; скиллы с ×2 — то, к чему босс слаб</div>`
-      +(()=>{const C=buildCombatParty(fe, enemy, true); return partyCardsHTML(C.picks, C.notes, enemy)+accessoryCardHTML(accessoriesFor("combat", fe, enemy));})();
+      +(()=>{const C=buildCombatParty(fe, enemy, true, sea); return partyCardsHTML(C.picks, C.notes, enemy)+accessoryCardHTML(accessoriesFor("combat", fe, enemy));})();
     } else {
       party=`<h3 style="margin-top:12px">Боевая пати под босса (каунтера нет — топ по статам)</h3>
       <div class="sub" style="margin-bottom:6px">${esc(b.arena||"")}</div>`
@@ -544,21 +544,28 @@ function partyBuilder(){
   return B;
 }
 /* боевая пати: боец стихии fe против врага enemy (общая для вкладок Пати и Каунтеры) */
-function buildCombatParty(fe, enemy, two){
+function buildCombatParty(fe, enemy, two, sea){
   const chart=D.chart.chart, B=partyBuilder();
-  const f1=B.topFighter(fe);
-  B.add(f1,`⚔ боец ${fe} (выпускаешь его)`,
-    Object.values(P).filter(p=>p.hp&&p.elements.includes(fe)&&p.name!==f1)
-      .sort((a,b)=>(atk(b)*2+b.hp+b.def)-(atk(a)*2+a.hp+a.def)).slice(0,3).map(p=>p.name));
+  const score=p=>atk(p)*2+p.hp+p.def;
+  const fePool=()=>Object.values(P).filter(p=>p.hp&&!B.used.has(p.name)&&p.elements.includes(fe)).sort((a,b)=>score(b)-score(a));
+  let f1p=sea?fePool().find(p=>p.mount==="flying"||p.mount==="swim"):null;
+  if(!f1p) f1p=fePool()[0];
+  const f1=f1p&&f1p.name;
+  B.add(f1,`⚔ боец ${fe} (выпускаешь его)`+(sea&&f1p.mount?` — ${f1p.mount==="flying"?"летающий":"плавающий"} маунт`:""),
+    fePool().filter(p=>p.name!==f1).slice(0,3).map(p=>p.name));
   B.picks[0].fighter=true;
   B.pick(`аура: +15~30% атаки ${fe}-палам`,`elem_team_atk:${fe}`,`weak_point:${fe}`,"weak_point:any");
   B.pick("стак с пуль: +ATK/DEF активному палу (до x30)","bullet_stack","cd_support");
   B.pick(`бафф игрока: атаки становятся ${fe}`,`attack_type:${fe}:active`,"player_atk_unique",`attack_type:${fe}:mount`,"player_atk");
   if(two){
-    const n=B.pick("2-й боец: гибрид (сам дерётся + стак-аура)",`stack_atk:${fe}`);
+    let n=null;
+    if(sea){ const c=fePool().find(p=>p.mount==="swim")||fePool().find(p=>p.mount==="flying");
+      if(c){ B.add(c.name, `2-й боец — ${c.mount==="swim"?"плавающий":"летающий"} маунт (свап)`); n=c.name; } }
+    if(!n) n=B.pick("2-й боец: гибрид (сам дерётся + стак-аура)",`stack_atk:${fe}`);
     if(!n) B.add(B.topFighter(fe),"2-й боец (запасной)");
     B.picks[B.picks.length-1].fighter=true;
   } else B.pick(`аура: резист от ${enemy} (стихия врага)`,`resist:${enemy}`,`elem_team_def:${fe}`,"survival");
+  if(sea) B.notes.push("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами <span class='dim'>(player-reported)</span>");
   B.notes.push(`Пати против <b>${enemy}</b>-врагов (${fe} бьёт ${(chart[fe].strong_vs||[]).join(", ")||"—"}); сам ${fe} каунтерится ${(chart[fe].weak_to||[]).join(", ")||"—"}`);
   if(B.picks.some(p=>p.n==="Orserk")) B.notes.push("Orserk (#187): стаки дают ПУЛИ — стреляй очередями; Drone Launcher (tech 77, 9 дронов, без патронов) набивает стаки сам, в руках держи Mechanical Bow (tech 67) под сингл-таргет <span class='dim'>(мета-гайды июля 2026, PRELIMINARY)</span>");
   if(B.picks.some(p=>p.n==="Solenne")) B.notes.push("Solenne: +30~80% атаки игрока ТОЛЬКО если все 5 палов разных видов — не бери дублей");

@@ -145,8 +145,7 @@
    "elements": [],
    "counter_elements": [],
    "tactics": "Typeless - no elemental weakness. ~420k HP, immune phases, wing-charge. Bring Awakened pals + endgame gear. Unlocked via Sealed Calamity questline after all 8 towers. Not catchable.",
-   "preliminary": true,
-   "arena": "Open sea arena: a swimming pal is MANDATORY to move; a flying mount helps survive the tsunami waves (player-reported, 2026-07-16)"
+   "preliminary": true
   }
  ],
  "raid_bosses": [
@@ -199,6 +198,18 @@
    "elements": [],
    "counter_elements": [],
    "notes": "Additional 1.0 raid boss; data thin.",
+   "preliminary": true
+  },
+  {
+   "pal": "Panthalus",
+   "elements": [
+    "Water"
+   ],
+   "counter_elements": [
+    "Electric"
+   ],
+   "notes": "Legendary Ocean King (Lv. 70), world boss fought on the open sea. No regular wild spawn.",
+   "arena": "Open sea arena: swimming pal MANDATORY to move; flying mount helps survive the tsunami waves (player-reported, 2026-07-16)",
    "preliminary": true
   }
  ]
