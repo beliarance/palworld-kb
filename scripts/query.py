@@ -761,7 +761,28 @@ def cmd_party(db, args):
             used.add(n)
             picks.append((n, role, eff(n)))
 
-    if goal == "combat":
+    if goal == "combat" and args.raw:
+        # босс без стихийного каунтера (Zanara & Astralym): топ по статам
+        def fpool(mount=None):
+            pool = [p for p in db.values() if p.get("hp") and p["name"] not in used
+                    and p["name"] != "Astralym"]  # сам босс — Not catchable
+            if mount:
+                pool = [p for p in pool if p.get("mount_type") == mount]
+            pool.sort(key=lambda p: -(attack(p) * 2 + p["hp"] + p["defense"]))
+            return pool
+        f1 = (fpool("flying") if args.sea else fpool())[0]["name"]
+        add(f1, "⚔ боец-флаер: топ статов + пережить цунами верхом" if args.sea else "⚔ боец (топ по статам)")
+        fighter_skills[f1] = best_skills(f1, None)
+        f2 = (fpool("swim") or fpool())[0]["name"] if args.sea else fpool()[0]["name"]
+        add(f2, "⚔ 2-й боец + плавающий маунт (морская арена) — свап" if args.sea else "⚔ 2-й боец (свап)")
+        fighter_skills[f2] = best_skills(f2, None)
+        pick("стак с пуль: +ATK/DEF активному палу (до x30)", "bullet_stack", "cd_support")
+        pick("бафф игрока: +Attack", "player_atk_unique", "player_atk")
+        pick("выживание: хил/реген (бой долгий)", "survival")
+        notes.append("Стихийного каунтера НЕТ — решают голые статы: Awakening, 4★, пассивки (Legend/Musclehead), уровень")
+        if args.sea:
+            notes.append("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами (player-reported)")
+    elif goal == "combat":
         fe = args.element and args.element.capitalize()
         enemy = args.vs and args.vs.capitalize()
         if enemy and enemy not in tc:
@@ -936,6 +957,8 @@ def main(argv=None):
     p.add_argument("--element", help="(combat) стихия твоего бойца")
     p.add_argument("--vs", help="(combat/loot) стихия врага")
     p.add_argument("--two-fighters", action="store_true", help="(combat) 2 бойца + 3 ауры вместо 1+4")
+    p.add_argument("--raw", action="store_true", help="(combat) босс без стихийного каунтера: топ по статам")
+    p.add_argument("--sea", action="store_true", help="(combat --raw) морская арена: swim обязателен, флаер от цунами")
     p.add_argument("--biome", help="(explore) cold | heat | desert")
 
     args = ap.parse_args(argv)

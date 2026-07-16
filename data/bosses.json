@@ -1,23 +1,205 @@
 {
-  "game_version": "1.0",
-  "updated": "2026-07-14",
-  "source": "docs/boss_tower_counters.md (compiled from game8.co, nexttier.pro, thepalprofessor.com, palworld.fandom.com)",
-  "tower_bosses": [
-    { "order": 1, "leader": "Zoe", "pal": "Grizzbolt", "faction": "Rayne Syndicate", "boss_pal_level": 10, "recommended_player_level": 10, "elements": ["Electric"], "counter_elements": ["Ground"], "tactics": "Smallest HP pool. Dodge Lightning Claw behind pillars. Ground pals: Gumoss, Rushoar, Fuddler, Direhowl.", "preliminary": false },
-    { "order": 2, "leader": "Lily", "pal": "Lyleen", "faction": "Free Pal Alliance", "boss_pal_level": 25, "recommended_player_level": 20, "elements": ["Grass"], "counter_elements": ["Fire"], "tactics": "Lyleen heals - out-DPS the regen with Fire. Burn/poison heavily reduced vs tower bosses. Watch Poison Fog.", "preliminary": false },
-    { "order": 3, "leader": "Axel", "pal": "Orserk", "faction": "Brothers of the Eternal Pyre", "boss_pal_level": 40, "recommended_player_level": 30, "elements": ["Electric", "Dragon"], "counter_elements": ["Ice", "Ground"], "tactics": "Double weakness. Volcano biome - heat armor. Glass cannon; punish after big casts.", "preliminary": false },
-    { "order": 4, "leader": "Marcus", "pal": "Faleris", "faction": "PIDF", "boss_pal_level": 45, "recommended_player_level": 40, "elements": ["Fire"], "counter_elements": ["Water"], "tactics": "Desert biome - heat armor. Weak to Holy Burst / Hydro Slicer. Phoenix Flare can redirect at you on early recall.", "preliminary": false },
-    { "order": 5, "leader": "Victor", "pal": "Shadowbeak", "faction": "PAL Genetic Research Unit", "boss_pal_level": 50, "recommended_player_level": 50, "elements": ["Dark"], "counter_elements": ["Dragon"], "tactics": "Snow biome - cold armor. Huge hitbox: Beam Slicer / Blast Cannon shine. Uses Ice attacks to punish Dragon pals.", "preliminary": false },
-    { "order": 6, "leader": "Saya", "pal": "Selyne", "faction": "Moonflower (Sakurajima)", "boss_pal_level": 55, "recommended_player_level": 55, "elements": ["Dark"], "counter_elements": ["Dragon"], "tactics": "Same Dragon team as Shadowbeak. Run counter-clockwise; dodge Starlight Beam with right roll. Very high attack.", "preliminary": false },
-    { "order": 7, "leader": "Bjorn", "pal": "Bastigor", "faction": "Feybreak", "boss_pal_level": 58, "recommended_player_level": 60, "elements": ["Ice"], "counter_elements": ["Fire"], "tactics": "Uses Water attacks to punish Fire pals - avoid Faleris/Jormuntide Ignis. Highest-HP normal tower boss. Grapple + Triple Jump Boots help.", "preliminary": false },
-    { "order": 8, "leader": "Auri", "pal": "Shaolong", "faction": "Azure Covenant (Sunreach, Sky Islands)", "boss_pal_level": 68, "recommended_player_level": 68, "elements": ["Water", "Dragon"], "counter_elements": ["Electric", "Ice"], "tactics": "Disable 6 defense modules around Sunreach first. Requires beating Bjorn. Ranged burst.", "preliminary": true },
-    { "order": 9, "leader": "Zanara", "pal": "Astralym", "faction": "World Tree (final boss)", "boss_pal_level": 80, "recommended_player_level": 80, "elements": [], "counter_elements": [], "tactics": "Typeless - no elemental weakness. ~420k HP, immune phases, wing-charge. Bring Awakened pals + endgame gear. Unlocked via Sealed Calamity questline after all 8 towers. Not catchable.", "preliminary": true }
-  ],
-  "raid_bosses": [
-    { "pal": "Bellanoir / Bellanoir Libero", "elements": ["Dark"], "counter_elements": ["Dragon"], "notes": "Summoning Altar + slab. Drops its own egg (not catchable directly).", "preliminary": false },
-    { "pal": "Blazamut Ryu", "elements": ["Fire", "Dragon"], "counter_elements": ["Water", "Ice"], "notes": "Top-tier S-rank pal, obtained via raid egg.", "preliminary": true },
-    { "pal": "Xenolord", "elements": ["Dragon", "Dark"], "counter_elements": ["Ice", "Dragon"], "notes": "Lv 60 raid, ~1,316,000 HP. Slab fragments from Feybreak dungeons.", "preliminary": false },
-    { "pal": "Moon Lord", "elements": [], "counter_elements": [], "notes": "Terraria crossover raid boss.", "preliminary": true },
-    { "pal": "Hartalis", "elements": [], "counter_elements": [], "notes": "Additional 1.0 raid boss; data thin.", "preliminary": true }
-  ]
+ "game_version": "1.0",
+ "updated": "2026-07-14",
+ "source": "docs/boss_tower_counters.md (compiled from game8.co, nexttier.pro, thepalprofessor.com, palworld.fandom.com)",
+ "tower_bosses": [
+  {
+   "order": 1,
+   "leader": "Zoe",
+   "pal": "Grizzbolt",
+   "faction": "Rayne Syndicate",
+   "boss_pal_level": 10,
+   "recommended_player_level": 10,
+   "elements": [
+    "Electric"
+   ],
+   "counter_elements": [
+    "Ground"
+   ],
+   "tactics": "Smallest HP pool. Dodge Lightning Claw behind pillars. Ground pals: Gumoss, Rushoar, Fuddler, Direhowl.",
+   "preliminary": false
+  },
+  {
+   "order": 2,
+   "leader": "Lily",
+   "pal": "Lyleen",
+   "faction": "Free Pal Alliance",
+   "boss_pal_level": 25,
+   "recommended_player_level": 20,
+   "elements": [
+    "Grass"
+   ],
+   "counter_elements": [
+    "Fire"
+   ],
+   "tactics": "Lyleen heals - out-DPS the regen with Fire. Burn/poison heavily reduced vs tower bosses. Watch Poison Fog.",
+   "preliminary": false
+  },
+  {
+   "order": 3,
+   "leader": "Axel",
+   "pal": "Orserk",
+   "faction": "Brothers of the Eternal Pyre",
+   "boss_pal_level": 40,
+   "recommended_player_level": 30,
+   "elements": [
+    "Electric",
+    "Dragon"
+   ],
+   "counter_elements": [
+    "Ice",
+    "Ground"
+   ],
+   "tactics": "Double weakness. Volcano biome - heat armor. Glass cannon; punish after big casts.",
+   "preliminary": false
+  },
+  {
+   "order": 4,
+   "leader": "Marcus",
+   "pal": "Faleris",
+   "faction": "PIDF",
+   "boss_pal_level": 45,
+   "recommended_player_level": 40,
+   "elements": [
+    "Fire"
+   ],
+   "counter_elements": [
+    "Water"
+   ],
+   "tactics": "Desert biome - heat armor. Weak to Holy Burst / Hydro Slicer. Phoenix Flare can redirect at you on early recall.",
+   "preliminary": false
+  },
+  {
+   "order": 5,
+   "leader": "Victor",
+   "pal": "Shadowbeak",
+   "faction": "PAL Genetic Research Unit",
+   "boss_pal_level": 50,
+   "recommended_player_level": 50,
+   "elements": [
+    "Dark"
+   ],
+   "counter_elements": [
+    "Dragon"
+   ],
+   "tactics": "Snow biome - cold armor. Huge hitbox: Beam Slicer / Blast Cannon shine. Uses Ice attacks to punish Dragon pals.",
+   "preliminary": false
+  },
+  {
+   "order": 6,
+   "leader": "Saya",
+   "pal": "Selyne",
+   "faction": "Moonflower (Sakurajima)",
+   "boss_pal_level": 55,
+   "recommended_player_level": 55,
+   "elements": [
+    "Dark"
+   ],
+   "counter_elements": [
+    "Dragon"
+   ],
+   "tactics": "Same Dragon team as Shadowbeak. Run counter-clockwise; dodge Starlight Beam with right roll. Very high attack.",
+   "preliminary": false
+  },
+  {
+   "order": 7,
+   "leader": "Bjorn",
+   "pal": "Bastigor",
+   "faction": "Feybreak",
+   "boss_pal_level": 58,
+   "recommended_player_level": 60,
+   "elements": [
+    "Ice"
+   ],
+   "counter_elements": [
+    "Fire"
+   ],
+   "tactics": "Uses Water attacks to punish Fire pals - avoid Faleris/Jormuntide Ignis. Highest-HP normal tower boss. Grapple + Triple Jump Boots help.",
+   "preliminary": false
+  },
+  {
+   "order": 8,
+   "leader": "Auri",
+   "pal": "Shaolong",
+   "faction": "Azure Covenant (Sunreach, Sky Islands)",
+   "boss_pal_level": 68,
+   "recommended_player_level": 68,
+   "elements": [
+    "Water",
+    "Dragon"
+   ],
+   "counter_elements": [
+    "Electric",
+    "Ice"
+   ],
+   "tactics": "Disable 6 defense modules around Sunreach first. Requires beating Bjorn. Ranged burst.",
+   "preliminary": true
+  },
+  {
+   "order": 9,
+   "leader": "Zanara",
+   "pal": "Astralym",
+   "faction": "World Tree (final boss)",
+   "boss_pal_level": 80,
+   "recommended_player_level": 80,
+   "elements": [],
+   "counter_elements": [],
+   "tactics": "Typeless - no elemental weakness. ~420k HP, immune phases, wing-charge. Bring Awakened pals + endgame gear. Unlocked via Sealed Calamity questline after all 8 towers. Not catchable.",
+   "preliminary": true,
+   "arena": "Open sea arena: a swimming pal is MANDATORY to move; a flying mount helps survive the tsunami waves (player-reported, 2026-07-16)"
+  }
+ ],
+ "raid_bosses": [
+  {
+   "pal": "Bellanoir / Bellanoir Libero",
+   "elements": [
+    "Dark"
+   ],
+   "counter_elements": [
+    "Dragon"
+   ],
+   "notes": "Summoning Altar + slab. Drops its own egg (not catchable directly).",
+   "preliminary": false
+  },
+  {
+   "pal": "Blazamut Ryu",
+   "elements": [
+    "Fire",
+    "Dragon"
+   ],
+   "counter_elements": [
+    "Water",
+    "Ice"
+   ],
+   "notes": "Top-tier S-rank pal, obtained via raid egg.",
+   "preliminary": true
+  },
+  {
+   "pal": "Xenolord",
+   "elements": [
+    "Dragon",
+    "Dark"
+   ],
+   "counter_elements": [
+    "Ice",
+    "Dragon"
+   ],
+   "notes": "Lv 60 raid, ~1,316,000 HP. Slab fragments from Feybreak dungeons.",
+   "preliminary": false
+  },
+  {
+   "pal": "Moon Lord",
+   "elements": [],
+   "counter_elements": [],
+   "notes": "Terraria crossover raid boss.",
+   "preliminary": true
+  },
+  {
+   "pal": "Hartalis",
+   "elements": [],
+   "counter_elements": [],
+   "notes": "Additional 1.0 raid boss; data thin.",
+   "preliminary": true
+  }
+ ]
 }

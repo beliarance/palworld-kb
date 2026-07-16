@@ -298,9 +298,20 @@ render.counter = () => {
       const top=Object.values(P).filter(p=>p.elements.includes(el)&&p.hp).sort((a,c)=>atk(c)-atk(a)).slice(0,5);
       return `<div>Топ ${el}: ${top.map(p=>palLink(p.name)).join(", ")}</div>`;}).join("");
     const fe=b.counter_elements[0], enemy=b.elements[0]||((D.chart.chart[fe]||{}).strong_vs||[])[0];
-    const party=fe&&enemy?`<h3 style="margin-top:12px">Боевая пати под босса</h3>
+    const sea=/sea arena|swimming pal/i.test(b.arena||"");
+    let party;
+    if(fe&&enemy){
+      party=`<h3 style="margin-top:12px">Боевая пати под босса</h3>
       <div class="sub" style="margin-bottom:6px">2 бойца (свапаешь, если первый падает) + 3 ауры; скиллы с ×2 — то, к чему босс слаб</div>`
-      +(()=>{const C=buildCombatParty(fe, enemy, true); return partyCardsHTML(C.picks, C.notes, enemy)+accessoryCardHTML(accessoriesFor("combat", fe, enemy));})():"";
+      +(()=>{const C=buildCombatParty(fe, enemy, true); return partyCardsHTML(C.picks, C.notes, enemy)+accessoryCardHTML(accessoriesFor("combat", fe, enemy));})();
+    } else {
+      party=`<h3 style="margin-top:12px">Боевая пати под босса (каунтера нет — топ по статам)</h3>
+      <div class="sub" style="margin-bottom:6px">${esc(b.arena||"")}</div>`
+      +(()=>{const C=buildRawParty([b.pal], sea); return partyCardsHTML(C.picks, C.notes, null)
+        +accessoryCardHTML([{n:"Dogen Emblem",why:"тебе и палу: +атака",eff:(itemByName["Dogen Emblem"]||{}).effect||""},
+                            {n:"Warsect Terra's Belt",why:"тебе: +защита и +HP (пережить фазы)",eff:(itemByName["Warsect Terra's Belt"]||{}).effect||""},
+                            {n:"Life Pendant",why:"тебе: +HP",eff:(itemByName["Life Pendant"]||{}).effect||""}]);})();
+    }
     document.getElementById("bout").innerHTML=`
       <div class="big">${esc(b.leader?b.leader+" & ":"")}${esc(b.pal)} ${b.elements.map(e=>`<span class="el el-${e}">${e}</span>`).join("")||'<span class="dim">без стихии</span>'}</div>
       <div style="margin:6px 0">Бить: ${b.counter_elements.map(e=>`<span class="el el-${e}">${e}</span>`).join("")||'<span class="dim">нет элементного каунтера</span>'} ${b.preliminary?'<span class="warn">(PRELIMINARY 1.0)</span>':''}</div>
@@ -602,6 +613,34 @@ function accessoryCardHTML(accs){
     return `<div style="margin-top:6px">${itemLink(a.n)} <span class="dim">— ${a.why}</span>
      <div class="sub">${esc(a.eff.replace(/\n/g," "))}</div>
      <div class="sub">📥 ${esc(accObtain(it))}</div></div>`;}).join("")}</div>`;
+}
+/* raw-пати: босс без стихийного каунтера — топ по статам, наименее уязвимая обвязка.
+   exclude: сам босс (Not catchable); sea: морская арена (swim обязателен, flyer от цунами) */
+function buildRawParty(exclude, sea){
+  const B=partyBuilder();
+  (exclude||[]).forEach(n=>B.used.add(n));
+  const score=p=>atk(p)*2+p.hp+p.def;
+  const pool=()=>Object.values(P).filter(p=>p.hp&&!B.used.has(p.name)).sort((a,b)=>score(b)-score(a));
+  let f1;
+  if(sea){ f1=pool().find(p=>p.mount==="flying"); }
+  if(!f1) f1=pool()[0];
+  const alts1=pool().filter(p=>p.mount==="flying"&&p.name!==f1.name).slice(0,3).map(p=>p.name);
+  B.add(f1.name, sea?"⚔ боец-флаер: топ статов + пережить цунами верхом":"⚔ боец (топ по статам)", alts1);
+  B.picks[0].fighter=true;
+  let f2;
+  if(sea){ f2=pool().find(p=>p.mount==="swim"); }
+  if(!f2) f2=pool()[0];
+  const alts2=(sea?pool().filter(p=>p.mount==="swim"):pool()).filter(p=>p.name!==f2.name).slice(0,3).map(p=>p.name);
+  B.add(f2.name, sea?"⚔ 2-й боец + плавающий маунт (морская арена) — свап":"⚔ 2-й боец (свап)", alts2);
+  B.picks[1].fighter=true;
+  B.pick("стак с пуль: +ATK/DEF активному палу (до x30)","bullet_stack","cd_support");
+  B.pick("бафф игрока: +Attack","player_atk_unique","player_atk");
+  B.pick("выживание: хил/реген (бой долгий)","survival");
+  B.notes.push("Стихийного каунтера НЕТ — решают голые статы: Awakening, 4★, пассивки (Legend/Musclehead), уровень");
+  if(sea) B.notes.push("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами <span class='dim'>(player-reported)</span>");
+  if(B.picks.some(p=>p.n==="Orserk")) B.notes.push("Orserk (#187): стаки дают ПУЛИ — Drone Launcher (tech 77) набивает их сам, в руках Mechanical Bow (tech 67) <span class='dim'>(мета-гайды июля 2026, PRELIMINARY)</span>");
+  if(B.picks.some(p=>p.n==="Solenne")) B.notes.push("Solenne: +30~80% атаки игрока ТОЛЬКО если все 5 палов разных видов");
+  return B;
 }
 /* общий рендер карточек пати; enemy задаёт скиллы (бойцам — подробно, остальным — топ-3) */
 function partyCardsHTML(picks, notes, enemy){
