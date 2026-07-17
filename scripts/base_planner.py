@@ -210,8 +210,9 @@ class Planner:
                 n_af += k
             note = (f"Ancient Farm x{n_af} (по культурам) вместо раздельных плантаций: компактнее, "
                     "4 места, Watering+Planting+Gathering 6+")
-            note += (f". Принято ×{self.args.ancient_farm_yield:g} к выработке (калибровка по игроку: "
-                     "4 древние фермы кормят 50 палов с избытком; точной цифры в данных нет — --ancient-farm-yield)")
+            note += (f". Выработка принята ×{self.args.ancient_farm_yield:g} к обычной грядке "
+                     "(по игроку 'быстрее ли — сложно сказать', дефолт =1; точной цифры в данных нет — "
+                     "--ancient-farm-yield). Число ферм режут yield-саппорты (Lullu/Prunelia, от звёзд)")
             self.notes.append(note)
             return total
         else:
@@ -770,14 +771,14 @@ def main():
                     help="макс ресёрч Pal Labor Research Lab (account-wide): Work Speed +45%, урожай +50% — меньше рабочих/грядок")
     ap.add_argument("--stars", action="store_true",
                     help="рабочие сконденсированы до 4★ (+1 ур. работы ≈ ×1.55 скорости; цена — 116 дублей на пала)")
-    ap.add_argument("--ancient-farm-yield", type=float, default=4,
-                    help="во сколько раз Ancient Farm производительнее обычной грядки (дефолт 4 — калибровка по игроку: "
-                         "4 фермы кормят 50 палов с избытком И 4 фермы = Extravagant торт на 1 хатчери; точной выработки нет)")
+    ap.add_argument("--ancient-farm-yield", type=float, default=1,
+                    help="во сколько раз Ancient Farm производительнее обычной грядки (дефолт 1 = как плантация: "
+                         "по игроку 'сложно сказать, быстрее ли'; точной выработки в данных нет — подними, если по игре быстрее)")
     ap.add_argument("--food-buff", type=float, default=30,
                     help="бонус Work Speed от кормёжки buff-едой: Salad +30 (по умолч.), Minestrone +40, 0 = без буффа")
-    ap.add_argument("--food-per-plot", type=float, default=110,
-                    help="аппетит-единиц (Σ FoodAmount), которые кормит одна грядка (дефолт 110 — калибровка по игроку: "
-                         "6 грядок Tomato/Lettuce = сильный перебор еды; абсолютной скорости голода в данных нет)")
+    ap.add_argument("--food-per-plot", type=float, default=80,
+                    help="аппетит-единиц (Σ FoodAmount), которые кормит одна грядка (дефолт 80 — калибровка по игроку: "
+                         "4 плантации кормят 50 палов на mining-craft базе с избытком; абсолютной скорости голода в данных нет)")
     ap.add_argument("--per-station", type=int, default=1,
                     help="(mine-craft) палов на добывающую станцию 1..3 (у шахт 3 места; больше = быстрее добыча)")
     ap.add_argument("--cake", default="Cake",
