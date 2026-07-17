@@ -159,16 +159,18 @@ def cmd_workers(db, args):
     join = " И ".join(cols)
     is_t = "Transporting" in cols
     other = any(c != "Transporting" for c in cols)
+    up = "Insomnia (работает НОЧЬЮ, не спит) / Workaholic (SAN −15%) / Diet Lover (голод −15%)"
     if is_t and not other:
-        trait = "🏃 Трейты: СКОРОСТЬ ДВИЖЕНИЯ (work-speed НЕ помогает): Swift +30% / Runner +20% / Legend +20% / Nimble +10% + сытость/SAN"
+        trait = ("🏃 СКОРОСТЬ ДВИЖЕНИЯ (work-speed НЕ помогает): Swift +30% / Runner +20% / Legend +20%. "
+                 f"4-й слот — лучше УПТАЙМ, чем слабый Nimble +10%: {up}")
     elif not is_t:
-        trait = "⚙️ Трейты: WORK SPEED: Artisan +50% / Remarkable Craftsmanship +75% / Serious +20% / Lucky + уптайм (Workaholic SAN, Diet Lover голод)"
+        trait = f"⚙️ WORK SPEED: Artisan +50% / Remarkable Craftsmanship +75% / Serious +20% / Lucky. + уптайм: {up}"
     else:
         trait = "⚠️ Транспорт+работа вместе — трейты разные (транспорт: move-speed; работа: work-speed), под одну роль не оптимизировать"
     print(f"Лучшие для: {join}" + (" (условие И)" if len(cols) > 1 else "")
           + f" — {len(pals)} палов. Уровень качается книгами/4★ (= сколько несёт) → для транспорта смотри «перенос» (перенос/бег):")
     print("  " + trait)
-    print("  Особенная профа только транспорт (move-speed); остальные — work-speed. Профа = уровень work suitability.")
+    print("  Особенная профа только транспорт (move-speed); остальные — work-speed. Уптайм (Insomnia/Workaholic) полезен всем.")
     for p in pals[: args.top]:
         lv = " ".join(f"{c}{p['work'][c]}" for c in cols)
         others = ", ".join(f"{k} {v}" for k, v in sorted(p["work"].items(), key=lambda x: -x[1]) if k not in cols)
