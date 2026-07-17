@@ -107,6 +107,7 @@ The **Pal Essence Condenser** ranks up a base Pal by sacrificing **duplicates of
 
 - **Total to reach 4★ = 116 material Pals** (117 copies including the base Pal being upgraded).
 - **Already-condensed Pals count as their full sacrifice value** when fed in — e.g. a 1★ Pal counts as 5 copies (itself + its 4). This lets you feed condensed Pals to reach higher tiers more efficiently.
+- **1.0: количество НЕ уменьшили** (те же 4/16/32/64 = 116). Переделали ЧТО даёт звезда: каждая +1 к work suitability (сверху вниз по списку работ), 4★ = +1 ко ВСЕМ работам сразу + прирост боевых статов. Мутант стартует с 2★.
 - **Note on older guides:** some pre-patch guides list different per-tier counts (e.g. 8 at 1★, or a 1/2/4/8/16 doubling scheme). Those are **outdated (pre-1.0 guide)** — the **4/16/32/64 (=116 total)** figures are the current game8 numbers. Verify in-game if precision matters.
 
 ---
@@ -116,6 +117,7 @@ The **Pal Essence Condenser** ranks up a base Pal by sacrificing **duplicates of
 **(PRELIMINARY 1.0 — datamined/community figures; verify)**
 
 - **What it is:** every breed has a **low chance** the egg hatches as a **mutated** Pal instead of the normal result.
+- **Мутант-яйцо = премиум-фундамент (1.0):** сразу **2★ конденсации + IV 91–100 + 2–4 «радужные» пассивки** независимо от родителей. Поэтому мутанта выгодно ловить РАНЬШЕ вложений.
 - **Effect:** a mutated Pal has **higher base stats** than the standard version of its species **PLUS one unique "mutation passive"** that cannot be obtained any other way (five mutation-exclusive passives reported).
 - Some sources say a mutated egg can even hatch a **different species** than the parent pair normally produces (verify).
 - **Base chance ≈ 1%** per egg, rising to **≈3%** with the right cake (community datamine — PRELIMINARY). Practical expectation: **~1–3 mutations per 100 eggs**.
@@ -258,3 +260,15 @@ Legend/Lucky/«эмперор»-серии наследуются (chain-breedin
 
 Источники: palworld.wiki.gg/Breeding, allthings.how (1.0 trait inheritance, 2026-07), thepalprofessor
 breeding guide, switchbladegaming, boostmatch (mutation-exclusive пассивки), game8.
+
+## 10. Порядок бридинга и лайфхаки (PRELIMINARY 1.0)
+
+**Порядок:** 1) вид → 2) мутация (если нужны радужные пассивки/2★-фундамент — на стабильной паре, объём на Extravagant Vegetable Cake) → 3) пассивки (chain-breeding, «ровно 4», Special Cake) → 4) IV (однопородные + IV Fruit) → 5) активки (Skill Fruit на готовом пале) → 6) звёзды → 7) Awakening.
+Гайды расходятся: мутацию одни ловят РАНЬШЕ пассивок (мутант = готовый 2★/IV-фундамент), другие в конце. «Всё сразу» множит RNG.
+
+**Лайфхаки:** объём > оптимизации одного яйца (несколько ферм, лимита нет; Vegetable Cake = 2 яйца);
+**Babysitter** на брид-базе ускоряет кладку/инкубацию → больше попыток мутации (самоусиление);
+**альфы** чаще с высокими IV — хорошие стартовые родители; правило «ровно 4» пассивки (больше → мусор в слоты);
+бафф-торты держать в сундуке фермы (рабочие едят); **Yakumo** («Birds of a Feather») даёт диким палам шанс иметь его пассивку (с радужными не комбинируется).
+
+Источники: nexttier.pro, allthings.how (мутации 1.0), xgamingserver, boostmatch, switchbladegaming, palworld.fandom (Condenser) — июль 2026.
