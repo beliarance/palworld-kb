@@ -791,8 +791,14 @@ function drawParty(){
     while(B.picks.length<5&&m.length) B.add(m.shift().name,"летающий маунт");
   }
   if(weightless&&["loot","fishing","eggs"].includes(goal)){
-    B.backfill(5);
-    B.notes.push("Настройка мира «без веса»: слоты грузоподъёмности убраны, заменены на сустейн/атаку");
+    if(goal==="fishing"){  // рыбалка — не бой: быстрый маунт до точек лова вместо сустейна
+      const fm=Object.values(P).filter(p=>p.mount==="flying"&&!B.used.has(p.name)).sort((a,b)=>(b.mv.sprint||0)-(a.mv.sprint||0));
+      if(fm.length) B.add(fm[0].name,"быстрый летающий маунт — добраться до точек лова");
+      B.notes.push("Настройка мира «без веса»: слот грузоподъёмности заменён на быстрый маунт (до точек лова)");
+    } else {
+      B.backfill(5);
+      B.notes.push("Настройка мира «без веса»: слоты грузоподъёмности убраны, заменены на сустейн/атаку");
+    }
   }
   out.innerHTML=partyCardsHTML(B.picks, B.notes, enemyForSkills)+accessoryCardHTML(accessoriesFor(goal, null, enemyForSkills, weightless));
 }

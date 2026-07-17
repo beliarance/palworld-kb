@@ -983,8 +983,15 @@ def cmd_party(db, args):
         sys.exit(f"Неизвестная цель '{goal}'. Цели: {', '.join(PARTY_GOALS)}")
 
     if getattr(args, "weightless", False) and goal in ("loot", "fishing", "eggs"):
-        backfill(5)
-        notes.append("Настройка мира «без веса»: слоты грузоподъёмности убраны, заменены на сустейн/атаку")
+        if goal == "fishing":  # рыбалка — не бой: быстрый маунт до точек лова вместо сустейна
+            fm = sorted((p for p in db.values() if p.get("mount_type") == "flying" and p["name"] not in used),
+                        key=lambda p: -((p.get("movement") or {}).get("sprint") or 0))
+            if fm:
+                add(fm[0]["name"], "быстрый летающий маунт — добраться до точек лова")
+            notes.append("Настройка мира «без веса»: слот грузоподъёмности заменён на быстрый маунт (до точек лова)")
+        else:
+            backfill(5)
+            notes.append("Настройка мира «без веса»: слоты грузоподъёмности убраны, заменены на сустейн/атаку")
 
     title = {"combat": "боя", "openworld": "опенворлда", "catch": "ловли палов", "fishing": "рыбалки",
              "loot": "лут-рана", "eggs": "сбора яиц", "explore": "исследования", "xp": "прокачки палов"}[goal]
