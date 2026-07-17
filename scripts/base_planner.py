@@ -770,9 +770,9 @@ def main():
                     help="макс ресёрч Pal Labor Research Lab (account-wide): Work Speed +45%, урожай +50% — меньше рабочих/грядок")
     ap.add_argument("--stars", action="store_true",
                     help="рабочие сконденсированы до 4★ (+1 ур. работы ≈ ×1.55 скорости; цена — 116 дублей на пала)")
-    ap.add_argument("--ancient-farm-yield", type=float, default=3,
-                    help="во сколько раз Ancient Farm производительнее обычной грядки (дефолт 3 — калибровка по игроку: "
-                         "4 древние фермы кормят базу 50 палов с избытком; точной выработки в данных нет)")
+    ap.add_argument("--ancient-farm-yield", type=float, default=4,
+                    help="во сколько раз Ancient Farm производительнее обычной грядки (дефолт 4 — калибровка по игроку: "
+                         "4 фермы кормят 50 палов с избытком И 4 фермы = Extravagant торт на 1 хатчери; точной выработки нет)")
     ap.add_argument("--food-buff", type=float, default=30,
                     help="бонус Work Speed от кормёжки buff-едой: Salad +30 (по умолч.), Minestrone +40, 0 = без буффа")
     ap.add_argument("--food-per-plot", type=float, default=110,
