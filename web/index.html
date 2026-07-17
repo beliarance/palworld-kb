@@ -836,6 +836,7 @@ function partyBuilder(){
 /* боевая пати: боец стихии fe против врага enemy (общая для вкладок Пати и Каунтеры) */
 function buildCombatParty(fe, enemy, two, sea){
   const chart=D.chart.chart, B=partyBuilder();
+  const CAP=5, room=()=>B.picks.length<CAP;
   const fePool=()=>Object.values(P).filter(p=>p.hp&&!B.used.has(p.name)&&p.elements.includes(fe)).sort(fighterCmp);
   let f1p=sea?fePool().find(p=>p.mount==="flying"||p.mount==="swim"):null;
   if(!f1p) f1p=fePool()[0];
@@ -843,20 +844,25 @@ function buildCombatParty(fe, enemy, two, sea){
   B.add(f1,`⚔ боец ${fe} (выпускаешь его)`+(sea&&f1p.mount?` — ${f1p.mount==="flying"?"летающий":"плавающий"} маунт`:""),
     fePool().filter(p=>p.name!==f1).slice(0,3).map(p=>p.name));
   B.picks[0].fighter=true;
-  B.pick(`аура: +15~30% атаки ${fe}-палам`,`elem_team_atk:${fe}`,`weak_point:${fe}`,"weak_point:any");
-  B.pick("стак с пуль: +ATK/DEF активному палу (до x30)","bullet_stack","cd_support");
-  // усиление твоей атаки: смена стихии (метка верна) ИЛИ, если такого пала нет, просто +Attack
-  if(!B.pick(`бафф игрока: атаки становятся ${fe}`,`attack_type:${fe}:active`,`attack_type:${fe}:mount`))
+  // приоритет аур: дамаг-множитель бойцу → РЕГЕН/сустейн (пассивно из пати) → бафф твоей атаки
+  if(room()) B.pick(`аура: +15~30% атаки ${fe}-палам`,`elem_team_atk:${fe}`,`weak_point:${fe}`,"weak_point:any");
+  const regen=room()?B.pick("реген/сустейн: HP пассивно, пока в ПАТИ (не выпускать)","regen"):null;
+  if(room()&&!B.pick(`бафф игрока: атаки становятся ${fe}`,`attack_type:${fe}:active`,`attack_type:${fe}:mount`))
     B.pick("бафф игрока: +Attack","player_atk_unique","player_atk");
+  // последний слот: 2-й боец (свап) при two, иначе резист/живучесть
   if(two){
     let n=null;
     if(sea){ const c=fePool().find(p=>p.mount==="swim")||fePool().find(p=>p.mount==="flying");
-      if(c){ B.add(c.name, `2-й боец — ${c.mount==="swim"?"плавающий":"летающий"} маунт (свап)`); n=c.name; } }
-    if(!n) n=B.pick("2-й боец: гибрид (сам дерётся + стак-аура)",`stack_atk:${fe}`);
-    if(!n) B.add(B.topFighter(fe),"2-й боец (запасной)");
-    B.picks[B.picks.length-1].fighter=true;
-  } else if(enemy) B.pick(`аура: резист от ${enemy} (стихия врага)`,`resist:${enemy}`,`elem_team_def:${fe}`,"survival");
-  else B.pick(`аура: живучесть (${fe} без стихийного бонуса)`,`elem_team_def:${fe}`,"survival");
+      if(c&&room()){ B.add(c.name, `2-й боец — ${c.mount==="swim"?"плавающий":"летающий"} маунт (свап)`); n=c.name; } }
+    if(!n&&room()) n=B.pick("2-й боец: гибрид (сам дерётся + стак-аура)",`stack_atk:${fe}`);
+    if(!n&&room()){ const t=B.topFighter(fe); if(t){ B.add(t,"2-й боец (запасной)"); n=t; } }
+    if(n) B.picks[B.picks.length-1].fighter=true;
+  } else if(room()){ if(enemy) B.pick(`аура: резист от ${enemy} (стихия врага)`,`resist:${enemy}`,`elem_team_def:${fe}`,"survival");
+    else B.pick(`аура: живучесть (${fe} без стихийного бонуса)`,`elem_team_def:${fe}`,"survival"); }
+  if(room()) B.pick("стак с пуль: +ATK/DEF активному палу (до x30)","bullet_stack","cd_support");  // если остался слот
+  if(regen) B.notes.push("🌿 Сустейн: <b>"+regen+"</b> лечит ПАССИВНО, пока просто сидит в пати — выпускать не надо (в отличие от Petallia/Lyleen). Celesdir (#157) — непрерывный реген в бою; лайфстил (Felbat/Lovander) масштабируется от твоего урона");
+  else B.notes.push("🌿 Реген-аура не влезла/занята — для долгого босса можно вручную добавить Celesdir (#157, непрерывный хил из пати)");
+  B.notes.push("Gun-билд: если бьёшь очередями, замени одну ауру на Orserk (bullet-stack, +ATK/DEF за пули)");
   if(sea) B.notes.push("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами <span class='dim'>(player-reported)</span>");
   B.notes.push("⚡ скиллы у карточек — оценка по ОДИНОЧНОЙ цели (урон × 60/кулдаун). По большому боссу решает мульти-хит → смотри блок «🎯 Мета-скиллы» ниже (замеренный DPS)");
   if(enemy) B.notes.push(`Пати против <b>${enemy}</b>-врагов (${fe} бьёт ${(chart[fe].strong_vs||[]).join(", ")||"—"}); сам ${fe} каунтерится ${(chart[fe].weak_to||[]).join(", ")||"—"}`);
@@ -941,10 +947,11 @@ function buildRawParty(exclude, sea){
   const alts2=(sea?pool().filter(p=>p.mount==="swim"):pool()).filter(p=>p.name!==f2.name).slice(0,3).map(p=>p.name);
   B.add(f2.name, sea?"⚔ 2-й боец + плавающий маунт (морская арена) — свап":"⚔ 2-й боец (свап)", alts2);
   B.picks[1].fighter=true;
-  B.pick("стак с пуль: +ATK/DEF активному палу (до x30)","bullet_stack","cd_support");
+  const rraw=B.pick("реген/сустейн: HP пассивно, пока в ПАТИ (не выпускать)","regen","survival");
   B.pick("бафф игрока: +Attack","player_atk_unique","player_atk");
-  B.pick("выживание: хил/реген (бой долгий)","survival");
+  B.pick("стак с пуль: +ATK/DEF активному палу (до x30)","bullet_stack","cd_support");
   B.notes.push("Стихийного каунтера НЕТ — бойцы по консенсусу тир-листов 1.0; решают Awakening, 4★, пассивки (Legend/Musclehead), уровень");
+  if(rraw) B.notes.push("🌿 Сустейн: <b>"+rraw+"</b> лечит ПАССИВНО из пати (выпускать не надо, в отличие от Petallia). Бой долгий — реген важнее");
   if(sea) B.notes.push("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами <span class='dim'>(player-reported)</span>");
   if(B.picks.some(p=>p.n==="Orserk")) B.notes.push("Orserk (#187): стаки дают ПУЛИ — Drone Launcher (tech 77) набивает их сам, в руках Mechanical Bow (tech 67) <span class='dim'>(мета-гайды июля 2026, PRELIMINARY)</span>");
   if(B.picks.some(p=>p.n==="Solenne")) B.notes.push("Solenne: +30~80% атаки игрока ТОЛЬКО если все 5 палов разных видов");

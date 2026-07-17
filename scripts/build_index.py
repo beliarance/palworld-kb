@@ -157,6 +157,13 @@ def main():
         if re.search(r"restores? .*player'?s Health|recovers Health of the player"
                      r"|player'?s Defense increases|increases the player'?s Defense|reduces shield", eff, re.I):
             party.append("survival")
+        # реген HP пока пал СИДИТ В ПАТИ (пассивно) — без активных «when activated» (Petallia/Lyleen).
+        # Для сустейна в долгих боях/боссах: непрерывный per-second, лайфстил, аварийный порог.
+        if not re.search(r"when activated", eff, re.I) and (
+                re.search(r"recovers? Health of the player.*per second", eff, re.I)
+                or re.search(r"life steal effect that restores", eff, re.I)
+                or re.search(r"restores? \d+~\d+% of the player'?s (?:Max )?Health when", eff, re.I)):
+            party.append("regen")
         if re.search(r"carrying capacity increases|max carrying capacity", eff, re.I):
             party.append("weight")   # универсальная грузоподъёмность
         elif re.search(r"reduces (?:the )?weight of", eff, re.I):
@@ -240,8 +247,23 @@ def main():
         # (напр. Whalaska Ignis чуть сильнее Whalaska), затем номер
         combat = -((e.get("atk") or 0) + (e.get("hp") or 0) + (e.get("def") or 0))
         return (power, is_collab, combat, e.get("number") or "999")
+    def regen_rank(n):
+        eff = index[n]["partner_effect"] or ""
+        if re.search(r"per second", eff, re.I) and not re.search(r"outside of combat", eff, re.I):
+            p = 0  # непрерывный реген В БОЮ (Celesdir) — лучший для босса
+        elif re.search(r"life steal", eff, re.I):
+            p = 1  # лайфстил — масштабируется от твоего урона
+        elif re.search(r"when Health falls below|incapacitated", eff, re.I):
+            p = 2  # аварийный авто-хил по порогу
+        elif re.search(r"per second", eff, re.I):
+            p = 3  # непрерывный, но только ВНЕ боя (Flambelle)
+        else:
+            p = 4
+        return (p, index[n].get("number") or "999")
     for tag, names in tags_inv.items():
-        if tag.startswith("party:") or tag.startswith("egg_"):
+        if tag == "party:regen":
+            names.sort(key=regen_rank)
+        elif tag.startswith("party:") or tag.startswith("egg_"):
             names.sort(key=sort_key)
     work_inv = {}
     for w in WORK_COLS:

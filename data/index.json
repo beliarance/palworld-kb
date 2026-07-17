@@ -1949,7 +1949,8 @@
    ],
    "party_roles": [
     "stack_atk:Neutral",
-    "survival"
+    "survival",
+    "regen"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -4279,7 +4280,9 @@
    "partner_skill": "Life Steal",
    "partner_effect": "While fighting together, grants the player and Felbat a life steal effect that restores 5~9% of damage dealt as Health.",
    "partner_tags": [],
-   "party_roles": [],
+   "party_roles": [
+    "regen"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -4557,7 +4560,8 @@
     "base_work"
    ],
    "party_roles": [
-    "survival"
+    "survival",
+    "regen"
    ],
    "ranch_produce": [
     "Flame Organ"
@@ -6284,7 +6288,9 @@
    "partner_skill": "Herbil Pulse",
    "partner_effect": "While in party, Herbil uses its healing powers to restore 30~60% of the player's Max Health when incapacitated.",
    "partner_tags": [],
-   "party_roles": [],
+   "party_roles": [
+    "regen"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -8255,7 +8261,9 @@
    "partner_skill": "Heart Drain",
    "partner_effect": "While fighting together, grants the player and Lovander a life steal effect that restores 5~9% of damage dealt as Health.",
    "partner_tags": [],
-   "party_roles": [],
+   "party_roles": [
+    "regen"
+   ],
    "ranch_produce": [],
    "base_support": null,
    "drops": [
@@ -14249,7 +14257,8 @@
    "partner_effect": "While in party, restores 20~40% of the player's Health when Health falls below 30%. (Does not stack) (120-second cooldown after activation)",
    "partner_tags": [],
    "party_roles": [
-    "survival"
+    "survival",
+    "regen"
    ],
    "ranch_produce": [],
    "base_support": null,
@@ -20597,6 +20606,14 @@
     "Lapiron",
     "Teafant",
     "Celesdir",
+    "Flambelle"
+   ],
+   "party:regen": [
+    "Celesdir",
+    "Felbat",
+    "Lovander",
+    "Herbil",
+    "Teafant",
     "Flambelle"
    ],
    "party:attack_type:Dragon:mount": [

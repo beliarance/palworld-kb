@@ -908,10 +908,12 @@ def cmd_party(db, args):
         f2 = (fpool("swim") or fpool())[0]["name"] if args.sea else fpool()[0]["name"]
         add(f2, "⚔ 2-й боец + плавающий маунт (морская арена) — свап" if args.sea else "⚔ 2-й боец (свап)")
         fighter_skills[f2] = best_skills(f2, None)
-        pick("стак с пуль: +ATK/DEF активному палу (до x30)", "bullet_stack", "cd_support")
+        rraw = pick("реген/сустейн: HP пассивно, пока в ПАТИ (не выпускать)", "regen", "survival")
         pick("бафф игрока: +Attack", "player_atk_unique", "player_atk")
-        pick("выживание: хил/реген (бой долгий)", "survival")
+        pick("стак с пуль: +ATK/DEF активному палу (до x30)", "bullet_stack", "cd_support")
         notes.append("Стихийного каунтера НЕТ — бойцы по консенсусу тир-листов 1.0; решают Awakening, 4★, пассивки (Legend/Musclehead), уровень")
+        if rraw:
+            notes.append(f"🌿 Сустейн: {rraw} лечит ПАССИВНО из пати (выпускать не надо, в отличие от Petallia). Бой долгий — реген важнее")
         if args.sea:
             notes.append("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами (player-reported)")
         notes.append("⚡ скиллы у бойцов — оценка по одиночной цели. По большому боссу решает мульти-хит → см. блок 🎯 Мета-скиллы")
@@ -940,30 +942,43 @@ def cmd_party(db, args):
             + (f" — {'летающий' if f1p.get('mount_type') == 'flying' else 'плавающий'} маунт"
                if args.sea and f1p.get("mount_type") else ""))
         fighter_skills[f1] = best_skills(f1, enemy)
-        pick(f"аура: +15~30% атаки {fe}-палам", f"elem_team_atk:{fe}", f"weak_point:{fe}", "weak_point:any")
-        pick("стак с пуль: +ATK/DEF активному палу (до x30)", "bullet_stack", "cd_support")
+
+        def room():
+            return len(picks) < 5
+        # приоритет аур: дамаг-множитель бойцу → РЕГЕН/сустейн (пассивно) → бафф твоей атаки
+        if room():
+            pick(f"аура: +15~30% атаки {fe}-палам", f"elem_team_atk:{fe}", f"weak_point:{fe}", "weak_point:any")
+        regen_pick = pick("реген/сустейн: HP пассивно, пока в ПАТИ (не выпускать)", "regen") if room() else None
         # усиление твоей атаки: смена стихии (метка верна) ИЛИ, если такого пала нет, просто +Attack
-        if not pick(f"бафф игрока: атаки становятся {fe}", f"attack_type:{fe}:active", f"attack_type:{fe}:mount"):
+        if room() and not pick(f"бафф игрока: атаки становятся {fe}", f"attack_type:{fe}:active", f"attack_type:{fe}:mount"):
             pick("бафф игрока: +Attack", "player_atk_unique", "player_atk")
+        # последний слот: 2-й боец (свап) при --two-fighters, иначе резист/живучесть
         if args.two_fighters:
             n = None
-            if args.sea:
+            if args.sea and room():
                 cand = fe_pool(("swim",)) or fe_pool(("flying",))
                 if cand:
                     n = cand[0]["name"]
                     add(n, f"2-й боец — {'плавающий' if cand[0].get('mount_type') == 'swim' else 'летающий'} маунт (свап)")
-            if not n:
+            if not n and room():
                 n = pick("2-й боец: гибрид (сам дерётся + стак-аура)", f"stack_atk:{fe}")
-            if not n:
+            if not n and room():
                 n = top_fighter(fe)
-                add(n, "2-й боец (запасной)")
+                if n:
+                    add(n, "2-й боец (запасной)")
             if n:
                 fighter_skills[n] = best_skills(n, enemy)
-        else:
+        elif room():
             if enemy:
                 pick(f"аура: резист от {enemy} (стихия врага)", f"resist:{enemy}", f"elem_team_def:{fe}", "survival")
             else:  # Neutral-боец: конкретного врага нет — даём живучесть
                 pick(f"аура: живучесть ({fe} без стихийного бонуса)", f"elem_team_def:{fe}", "survival")
+        if room():  # остался слот — стак с пуль (gun-билд)
+            pick("стак с пуль: +ATK/DEF активному палу (до x30)", "bullet_stack", "cd_support")
+        if regen_pick:
+            notes.append(f"🌿 Сустейн: {regen_pick} лечит ПАССИВНО, пока сидит в пати — выпускать не надо (в отличие от Petallia/Lyleen). "
+                         "Celesdir (#157) — непрерывный реген в бою; лайфстил (Felbat/Lovander) масштабируется от твоего урона")
+        notes.append("Gun-билд: если бьёшь очередями, замени ауру на Orserk (bullet-stack, +ATK/DEF за пули)")
         if args.sea:
             notes.append("Арена — открытое море: плавающий пал ОБЯЗАТЕЛЕН; летающий маунт помогает пережить цунами (player-reported)")
         if enemy:
