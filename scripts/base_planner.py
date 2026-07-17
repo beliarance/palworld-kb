@@ -524,23 +524,24 @@ class Planner:
                     self.add(s, 1)
         n_hands = max(4, round(10 / self.q()))
         self.hire_best("Handiwork", 6, n_hands, "сборочные линии/верстаки")
-        # крафт-ранч: пал-материалы для компонентов (Computer/AI Core/Cement/Coolant)
+        # крафт-ранч: пал-материалы для компонентов (Computer/AI Core/Cement/Coolant).
+        # Flame/Electric Organ — узкое место под Computer, поэтому по 2; Pal Oil тоже x2.
         if a.tech >= 45:
-            producers = [("Flambelle", "Flame Organ (Computer, Carbon Fiber, Bio Battery)"),
-                         ("Sparkit", "Electric Organ (Computer, AI Core, Bio Battery)"),
-                         ("Depresso", "Venom Gland 🌙 ночной, работает 24/7 (AI Core, Solvent, Thermal Core)"),
-                         ("Dumud Gild", "High Quality Pal Oil — Farming 4, x4 к скорости Dumud (Polymer, Circuit Board)"),
-                         ("Kelpsea", "Aquatic Pal Fluids (Cement, Cryogenic Coolant)"),
-                         ("Foxcicle", "Ice Organ — Farming 3 (Cryogenic Coolant)")]
+            producers = [("Flambelle", 2, "Flame Organ (Computer, Carbon Fiber, Bio Battery) — x2, узкое место"),
+                         ("Sparkit", 2, "Electric Organ (Computer, AI Core, Bio Battery) — x2, узкое место"),
+                         ("Dumud Gild", 2, "High Quality Pal Oil — Farming 4, x4 к скорости Dumud (Polymer, Circuit Board) — x2"),
+                         ("Depresso", 1, "Venom Gland 🌙 ночной, работает 24/7 (AI Core, Solvent, Thermal Core)"),
+                         ("Kelpsea", 1, "Aquatic Pal Fluids (Cement, Cryogenic Coolant)"),
+                         ("Foxcicle", 1, "Ice Organ — Farming 3 (Cryogenic Coolant)")]
         else:
-            producers = [("Surfent", "Leather (броня)"), ("Cremis", "Wool (Cloth)"),
-                         ("Sootseer", "Bone 🌙 ночной, Farming 2 (Cement)"),
-                         ("Kelpsea", "Aquatic Pal Fluids (Cement)"), ("Foxcicle", "Ice Organ — Farming 3 (Coolant)")]
-        for sp, why in producers:
-            self.hire(sp, 1, f"крафт-ранч: {why}")
-        self.add("Ranch", -(-len(producers) // 4))
-        self.notes.append("Крафт-ранч: пал-материалы для компонентов на месте; масштабируй +1 пала на узкое место "
-                          "(обычно Flame/Electric Organ под Computer). 🌙 = ночной, работает без сна; "
+            producers = [("Surfent", 1, "Leather (броня)"), ("Cremis", 1, "Wool (Cloth)"),
+                         ("Sootseer", 1, "Bone 🌙 ночной, Farming 2 (Cement)"),
+                         ("Kelpsea", 1, "Aquatic Pal Fluids (Cement)"), ("Foxcicle", 1, "Ice Organ — Farming 3 (Coolant)")]
+        for sp, cnt, why in producers:
+            self.hire(sp, cnt, f"крафт-ранч: {why}")
+        self.add("Ranch", -(-sum(c for _, c, _ in producers) // 4))
+        self.notes.append("Крафт-ранч: пал-материалы на месте. Flame/Electric Organ и Pal Oil — по 2 пала "
+                          "(узкое место под Computer/Polymer); при нехватке добавь ещё. 🌙 = ночной, работает без сна; "
                           "ДОПУЩЕНИЕ: скорость ранча ~ уровню Farming")
         self.hire("Ribbuny Botan", 1, "оружейный верстак (+200~400% на нём)")
         self.hire("Anubis", 2, "верстаки (Handiwork 6) — пара с Sekhmet")

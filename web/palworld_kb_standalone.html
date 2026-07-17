@@ -1050,15 +1050,16 @@ class BasePlan {
       this.notes.push(`${ext}: без палов, только ⚡${this.structs[ext].energy_per_sec}/с`+
         (ext.includes("High-Pressure")?"; в любой точке":"; нужна нефтяная точка")); }
     this.hireBest("Handiwork",6,Math.max(4,Math.round(10/this.q())),"сборочные линии");
+    // Flame/Electric Organ — узкое место под Computer, поэтому по 2; Pal Oil тоже x2
     const producers = o.tech>=45
-      ? [["Flambelle","Flame Organ (Computer, Carbon Fiber, Bio Battery)"],["Sparkit","Electric Organ (Computer, AI Core)"],
-         ["Depresso","Venom Gland 🌙 24/7 (AI Core, Solvent, Thermal Core)"],["Dumud Gild","High Quality Pal Oil — Farming 4 (Polymer, Circuit Board)"],
-         ["Kelpsea","Aquatic Pal Fluids (Cement, Coolant)"],["Foxcicle","Ice Organ — Farming 3 (Coolant)"]]
-      : [["Surfent","Leather (броня)"],["Cremis","Wool (Cloth)"],["Sootseer","Bone 🌙 24/7 (Cement)"],
-         ["Kelpsea","Aquatic Pal Fluids (Cement)"],["Foxcicle","Ice Organ (Coolant)"]];
-    for(const [sp,why] of producers) this.hire(sp,1,`крафт-ранч: ${why}`);
-    this.add("Ranch",Math.ceil(producers.length/4));
-    this.notes.push("Крафт-ранч: пал-материалы для компонентов на месте; узкое место обычно Flame/Electric Organ под Computer — масштабируй их");
+      ? [["Flambelle",2,"Flame Organ (Computer, Carbon Fiber, Bio Battery) — x2, узкое место"],["Sparkit",2,"Electric Organ (Computer, AI Core) — x2, узкое место"],
+         ["Dumud Gild",2,"High Quality Pal Oil — Farming 4 (Polymer, Circuit Board) — x2"],["Depresso",1,"Venom Gland 🌙 24/7 (AI Core, Solvent, Thermal Core)"],
+         ["Kelpsea",1,"Aquatic Pal Fluids (Cement, Coolant)"],["Foxcicle",1,"Ice Organ — Farming 3 (Coolant)"]]
+      : [["Surfent",1,"Leather (броня)"],["Cremis",1,"Wool (Cloth)"],["Sootseer",1,"Bone 🌙 24/7 (Cement)"],
+         ["Kelpsea",1,"Aquatic Pal Fluids (Cement)"],["Foxcicle",1,"Ice Organ (Coolant)"]];
+    for(const [sp,cnt,why] of producers) this.hire(sp,cnt,`крафт-ранч: ${why}`);
+    this.add("Ranch",Math.ceil(producers.reduce((a,[,c])=>a+c,0)/4));
+    this.notes.push("Крафт-ранч: пал-материалы на месте. Flame/Electric Organ и Pal Oil — по 2 пала (узкое место под Computer/Polymer); при нехватке добавь ещё");
     this.hire("Ribbuny Botan",1,"оружейный верстак (+200~400%)");
     this.hire("Anubis",2,"верстаки — пара с Sekhmet"); this.hire("Sekhmet",1,"буст Anubis +20~40%");
     this.hireTransport();
