@@ -328,6 +328,28 @@ function childInfo(n){
   const work=Object.entries(p.work||{}).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([w,l])=>`${WORK_COLS[w]} ${l}`).join(", ");
   return `<div class="sub" style="margin-top:6px">${els(p)} ранг ${r??"—"}${work?" · "+work:""}${wildCatch(n)?" · 🎯 ловится в дикой природе":""}</div>`;
 }
+function breedFaqHtml(){
+  const q=(t,b)=>`<details style="margin-top:6px"><summary class="clicky" style="font-weight:600">${t}</summary><div class="sub" style="margin-top:6px;line-height:1.55">${b}</div></details>`;
+  return `<div class="card"><div class="big">📖 Как работает бридинг (FAQ)</div>
+  ${q("Основы: ферма, торт, вид потомка",
+    "На <b>Breeding Farm</b> ставишь <b>самца + самку</b> любых разводимых палов и держишь <b>торт</b> — пара периодически кладёт яйцо. <b>Торт тратится на каждое яйцо</b> (главный лимит). Вид потомка задан фиксированной таблицей комбинаций (в 1.0 её перебалансили) — считается по рангам: ребёнок = вид с рангом ближайшим к <b>floor((ранг_A + ранг_B + 1)/2)</b>; особые комбинации переопределяют формулу; одинаковая пара → тот же вид. Инкубация — в инкубаторе (в новых мирах 1.0 время инкубации вдвое меньше). <b>Ranch</b> — отдельное здание: там палы делают ингредиенты для торта (молоко/яйца/мёд), он не разводит.")}
+  ${q("Что наследуется: пассивки",
+    "У пала <b>4 слота пассивок</b>. Потомок берёт до 4 из общего пула обоих родителей (макс 8 кандидатов). Шансы на КАЖДУЮ пассивку (выборка ~100 яиц, game8): от <b>самца 24%</b>, от <b>самки 20%</b>, <b>ничего не унаследовано — 34%</b> (самый частый исход). Вывод: вешай нужную пассивку на <b>самца</b> — проходит надёжнее. Даже если пассивка есть у ОБОИХ родителей — она передаётся лишь ~46% (и ~33% что вообще ничего). Пустые слоты могут добиться случайной пассивкой.")}
+  ${q("Что наследуется: активные скиллы и IV",
+    "<b>Активные скиллы (1.0):</b> потомку случайно достаются из трёх слотов активок родителей. <b>IV (0–100 на HP/Attack/Defense</b>, до ~+30% к стату на максимуме): хотя бы один IV всегда наследуется от родителя, ~30% на стат — от конкретного родителя, ~40% — случайный ролл. Разводя однопородных с высокими IV, концентрируешь их в потомстве.")}
+  ${q("Как собрать пала с 4 нужными пассивками (chain-breeding)",
+    "Идея: свести 4 целевые пассивки на двух «родителей-носителей» за несколько поколений. ① Раздобудь каждую пассивку на отдельном пале (редкие — Legend, Lucky — <b>только от палов, у кого они уже есть</b>, не роллятся и не продаются). ② Комбинируй по 2: A(пасс.1) × B(пасс.2) → оставляй потомка с обеими; повторяй, наращивая по одной на «супер-родителя». ③ Самую труднопроходимую вешай на <b>самца</b>. ④ Спарь двух загруженных родителей и выбраковывай, пока не выпадет ровно нужный набор без мусора. <b>Special Cake</b> повышает шанс унаследовать несколько пассивок; <b>Vegetable Cake</b> = 2 яйца/цикл для объёма. Режим «🧬 Цепочка» выше строит видовую цепочку под перенос дроп-онли трейта.")}
+  ${q("Мутации (новое в 1.0)",
+    "Низкий шанс, что яйцо вылупится <b>мутантом</b>: <b>выше базовые статы</b> + <b>1 уникальная мутационная пассивка</b> (её не получить иначе; сообщается о 5 таких). Шанс <b>~1%</b> за яйцо, до <b>~3%</b> с правильным тортом (~1–3 мутации на 100 яиц). Бустят: <b>Extravagant Vegetable Cake</b> (шанс мутации + рост статов — лучший), Vegetable Cake (2 яйца), Mushroom Cake (выше статы новорождённых). Игра на объём. <span class='dim'>(PRELIMINARY 1.0)</span>")}
+  ${q("Звёзды: Pal Essence Condenser",
+    "Конденсер повышает ранг пала, поедая <b>дубликаты того же вида</b> (пойманные/скрещённые копии). Стоимость по тирам: <b>1★=4, 2★=16, 3★=32, 4★=64</b> дубля → <b>всего 116</b> до 4★. Уже сконденсированные палы засчитываются полной стоимостью (1★ = 5 копий), так их выгодно скармливать выше. Даёт прирост статов за звезду. <span class='dim'>(старые гайды с 8/1-2-4-8-16 — устарели)</span>")}
+  ${q("Awakening (эндгейм, поверх всего)",
+    "Отдельное усиление <b>готового</b> пала после вылупления — <b>стакается со звёздами и Pal Souls</b>. Даёт значимый прирост общих статов (точный % не опубликован). Работает на <b>Radiant Gems</b> из глубин <b>World Tree</b>: гемы каждой стихии комбинируются в Awakening Gem и тратятся на пала <b>той же стихии</b> (вложение по стихиям). Порядок: бридинг чистых пассивок → поймать мутацию → уровень+Condenser+Souls → Awakening последним (гемы дефицитны). <span class='dim'>(PRELIMINARY 1.0)</span>")}
+  ${q("Какой торт под какую задачу",
+    "<b>Cake</b> — базовый (просто включает бридинг). <b>Special Cake</b> — стакать пассивки. <b>Extravagant Vegetable Cake</b> — ловить мутации. <b>Vegetable Cake</b> — объём (2 яйца/цикл). <b>Mushroom Cake</b> — рост статов/IV. Рецепт обычного торта (Cooking Pot, tech 17): Flour 5 + Red Berries 8 + Milk 7 + Egg 8 + Honey 2.")}
+  <div class="sub" style="margin-top:8px">Источники и детали — docs/breeding_mechanics.md. Часть цифр — из EA-гайдов (проценты наследования/IV), актуальны, но перепроверяются; блоки с пометкой PRELIMINARY 1.0 сообщество ещё уточняет.</div>
+  </div>`;
+}
 render.breed = () => {
   const names=Object.keys(P).sort();
   const MODES=[
@@ -341,7 +363,8 @@ render.breed = () => {
     <div class="sub" id="bmodehelp" style="margin-top:6px"></div>
     <div id="binputs" style="margin-top:8px"></div>
   </div>
-  <div id="bout"></div>`;
+  <div id="bout"></div>
+  ${breedFaqHtml()}`;
   const val=id=>{const el=document.getElementById(id);return el?el.value.trim():"";};
   const draw=()=>{
     const out=document.getElementById("bout"); if(!out) return;
@@ -1642,8 +1665,9 @@ function ranchPickerHtml(i){
     <input type="text" placeholder="поиск по палу или продукту (milk, wool…)" value="${esc(q)}" id="rpq"
       oninput="ranchPick.q=this.value;drawBase();(function(){const e=document.getElementById('rpq');if(e){e.focus();e.setSelectionRange(e.value.length,e.value.length);}})();"
       style="margin:6px 0">
-    <div style="max-height:260px;overflow-y:auto"><table>${producers.map(([n,p])=>
+    <div style="max-height:300px;overflow-y:auto"><table>${producers.map(([n,p])=>
       `<tr><td>${palIcon(n)}${palLink(n)}${sizeBadge(n)}${p.nocturnal?" 🌙":""}</td>
+       <td>${els(P[n]||{})}</td>
        <td class="dim">${esc((p.ranch_produce||[]).join(", "))}</td>
        <td class="mono">F${p.work.Farming||"-"}</td>
        <td class="dim">${plan.easyGet(n)?"":"🔒"}</td>
@@ -1689,8 +1713,9 @@ function palPickerHtml(){
         <option value="">размер: любой</option>
         ${["XS","S","M","L","XL"].map(z=>`<option ${size===z?"selected":""}>${z}</option>`).join("")}</select>
       ${minLv>1?`<span class="warn">здание требует уровень ${minLv}+</span>`:""}</div>
-    <div style="max-height:260px;overflow-y:auto"><table>${list.slice(0,60).map(([nm,lv])=>
+    <div style="max-height:300px;overflow-y:auto"><table>${list.slice(0,60).map(([nm,lv])=>
       `<tr${lv<minLv?' style="opacity:.45"':''}><td>${palIcon(nm)}${palLink(nm)}${sizeBadge(nm)}${(D.idx.pals[nm]||{}).nocturnal?" 🌙":""}</td>
+       <td>${els(P[nm]||{})}</td>
        <td class="mono">${lv}</td>
        <td class="dim">${plan.easyGet(nm)?"дикий спавн":"сложный"}</td>
        <td><span class="tag clicky" onclick="builderHire('${nm.replace(/'/g,"\\'")}','${task}','${forB.replace(/'/g,"\\'")}')">нанять</span></td></tr>`).join("")}
