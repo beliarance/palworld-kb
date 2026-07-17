@@ -69,7 +69,7 @@ if tc:
 # --- bosses.json
 bosses = load("bosses.json")
 if bosses and tc:
-    for b in bosses["tower_bosses"] + bosses["raid_bosses"]:
+    for b in bosses["tower_bosses"] + bosses["raid_bosses"] + bosses.get("world_bosses", []):
         for el in b["elements"] + b["counter_elements"]:
             if el not in tc["elements"]:
                 errors.append(f"bosses.json: {b['pal']} has unknown element '{el}'")

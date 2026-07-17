@@ -1,7 +1,8 @@
 {
  "game_version": "1.0",
- "updated": "2026-07-14",
+ "updated": "2026-07-17",
  "source": "docs/boss_tower_counters.md (compiled from game8.co, nexttier.pro, thepalprofessor.com, palworld.fandom.com)",
+ "categories_note": "tower_bosses = боссы башен (пати из 5). raid_bosses = АЛТАРНЫЕ РЕЙДЫ: призываются Summoning Altar на ТВОЕЙ БАЗЕ, в защите участвуют назначенные базовые палы (до ~лимита базы) + ты; уровень рейдеров скейлится под палов базы. world_bosses = мировые/квестовые боссы (напр. призыв флейтой) — дерёшься ПАТИ из 5, база НЕ участвует (это НЕ рейд).",
  "tower_bosses": [
   {
    "order": 1,
@@ -199,7 +200,9 @@
    "counter_elements": [],
    "notes": "Additional 1.0 raid boss; data thin.",
    "preliminary": true
-  },
+  }
+ ],
+ "world_bosses": [
   {
    "pal": "Panthalus",
    "elements": [
@@ -208,7 +211,7 @@
    "counter_elements": [
     "Electric"
    ],
-   "notes": "Legendary Ocean King (Lv. 70). Summoned with the Echoing Flute (main questline); the summon teleports you to a water arena. No regular wild spawn. (player-reported, 2026-07-16)",
+   "notes": "Legendary Ocean King (Lv. 70). Summoned with the Echoing Flute (main questline); the summon teleports you to a water arena — это МИРОВОЙ БОСС, дерёшься ПАТИ из 5, НЕ рейд (база не участвует). No regular wild spawn. (player-reported, 2026-07-16)",
    "arena": "Open sea arena: swimming pal MANDATORY to move; flying mount helps survive the tsunami waves (player-reported, 2026-07-16)",
    "preliminary": true
   }

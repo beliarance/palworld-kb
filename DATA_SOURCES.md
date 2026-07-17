@@ -1,6 +1,22 @@
 # Источники данных
 
-Версия игры: **Palworld 1.0** (релиз 10 июля 2026). Дата актуализации базы: **2026-07-14**.
+Версия игры: **Palworld 1.0** (релиз 10 июля 2026). Дата актуализации базы: **2026-07-17**.
+
+## docs/boss_fighting.md + bosses.json world_bosses (2026-07-17)
+
+- **Различие рейд/босс:** алтарные рейды (Summoning Altar) идут НА БАЗЕ — бьются
+  назначенные базовые палы + турели; башенные/мировые боссы — пати из 5. **Panthalus**
+  перенесён из `raid_bosses` в новую категорию `world_bosses` (призыв Echoing Flute, арена-море).
+- **Рейд-база (1.0 wave-rework):** xgamingserver.com (Wave-Based Base Defense), palmods.gg
+  (Base & Raids rework), 4netplayers.com (Raid Bosses Guide — каунтеры боссов, пороги уровней).
+  Турели не жгут патроны; уровень рейдеров скейлится под палов базы; воронка + Homing Missile
+  Turret. Точное число одновременных базовых палов источники не называют → PRELIMINARY.
+- **Топ-бойцы боссов:** gamerant.com (Best Combat Pals 1.0: Bellanoir Libero/Frostallion/
+  Necromus/Jetragon/Xenolord — S+), nexttier.pro (combat tier list). Идеальные скиллы —
+  сверены с локальными `data/skill_dps_meta.json` (Necromus Twin Spears — топ по большому хитбоксу).
+- **Боевые пассивки:** game8.co (Musclehead/Ferocious/Legend), allthings.how (Best Passives 1.0:
+  God of Destruction, Twin-Edged Holy Blade, Immortality). Цифры эффектов взяты из локального
+  `data/passives.json` (авторитетный). Все — PRELIMINARY 1.0.
 
 Пометки: `(pre-1.0 guide)` — данные Early-Access-эпохи, не перепроверены под 1.0;
 `(PRELIMINARY 1.0)` — данные 1.0, ещё стабилизируются.

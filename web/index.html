@@ -122,7 +122,7 @@ function palCombo(input, onPick){
   const wrap=document.createElement("div"); wrap.className="pc-wrap";
   input.parentNode.insertBefore(wrap,input); wrap.appendChild(input);
   const dd=document.createElement("div"); dd.className="pc-dd"; dd.style.display="none"; wrap.appendChild(dd);
-  let items=[], active=-1;
+  let items=[], active=-1, justPicked=false;
   const render=()=>{
     const q=input.value.trim().toLowerCase();
     const m=_palNamesSorted.filter(n=>n.toLowerCase().includes(q)||String(P[n].number||"").includes(q));  // порядок по номеру сохраняется
@@ -135,10 +135,11 @@ function palCombo(input, onPick){
   };
   const hl=()=>{[...dd.querySelectorAll(".pc-row")].forEach((r,i)=>r.classList.toggle("on",i===active));
     const el=dd.querySelector(`.pc-row.on`); if(el) el.scrollIntoView({block:"nearest"});};
-  const pick=i=>{ if(i<0||i>=items.length) return; input.value=items[i]; dd.style.display="none";
-    if(onPick) onPick(items[i]); input.dispatchEvent(new Event("input",{bubbles:true})); };
+  const pick=i=>{ if(i<0||i>=items.length) return; justPicked=true; input.value=items[i]; dd.style.display="none";
+    if(onPick) onPick(items[i]); input.dispatchEvent(new Event("input",{bubbles:true})); input.blur(); };
   input.addEventListener("focus",render);
-  input.addEventListener("input",()=>{ if(document.activeElement===input) render(); });  // не открывать при программном restore
+  // после выбора диспатчится input (для потребителей) — но НЕ переоткрывать им список
+  input.addEventListener("input",()=>{ if(justPicked){ justPicked=false; return; } if(document.activeElement===input) render(); });
   input.addEventListener("keydown",e=>{
     if(dd.style.display==="none") return;
     if(e.key==="ArrowDown"){active=Math.min(active+1,items.length-1);hl();e.preventDefault();}
@@ -493,6 +494,26 @@ render.breed = () => {
 };
 
 /* --- Каунтеры --- */
+function bossFightersCardHTML(){
+  const row=(rank,name,num,el,why,skill)=>`<tr><td class="mono">${rank}</td><td>${palLink(name)} <span class="dim mono">#${num}</span></td><td><span class="el el-${el}">${el}</span></td><td>${why}</td><td><b>${skill}</b></td></tr>`;
+  return `<details class="card"><summary style="cursor:pointer;font-weight:600">🏆 Топ-3 пала для файтинга боссов + идеальные скиллы/трейты</summary>
+  <div class="sub" style="margin:8px 0">Под конкретного босса свапай стихию бойца на его слабость (×2). Голая power/cd врёт — важен мульти-хит по большому хитбоксу (см. «Мета-скиллы»).</div>
+  <div style="overflow-x:auto"><table><thead><tr><th>#</th><th>Пал</th><th>Стихия</th><th>Почему</th><th>Идеальный скилл</th></tr></thead><tbody>
+    ${row(1,"Necromus",199,"Dark","Лучший замеренный DPS по боссу: Twin Spears мульти-хит 128 (×5.6 к мелкому хитбоксу)","Twin Spears (эксклюзив)")}
+    ${row(2,"Bellanoir Libero","195B","Dark","Топ атака выстрелом (150), эксклюзив-нюки, «шреддер» боссов; из рейд-яйца","Nightmare Bloom / Flame Waltz")}
+    ${row(3,"Frostallion",200,"Ice","ATK 140 + живучесть; контрит Dragon-боссов (Xenolord, Blazamut Ryu, Jetragon)","лучший Ice-нюк по DPM")}
+  </tbody></table></div>
+  <div class="sub" style="margin-top:6px">Ещё: <b>Jetragon (#202)</b> Dragon — Beam Comet + самый быстрый маунт (кайт AoE); <b>Xenolord (#196)</b> Dark/Dragon — эндгейм (Cosmic Meteor/Omega Laser), но адский бридинг.</div>
+  <h4 style="margin:12px 0 4px">Идеальные трейты (мета-стак DPS)</h4>
+  <div class="sub">Флэт-атака складывается аддитивно, элемент-бустер множит поверх → берут максимум флэт-атаки + 1 бустер под стихию:</div>
+  <ul style="margin:6px 0 0 0;padding-left:18px;line-height:1.7">
+    <li><b>Musclehead</b> +30% атака (−50% work — для бойца неважно) · <b>Ferocious</b> +20% · <b>Legend</b> +20% атака/деф/мув (легендарки)</li>
+    <li><b>Элемент-бустер +30%</b>: Lord of the Underworld (Dark), Divine Dragon (Dragon), Celestial Emperor (Neutral)… — множится на суммарную атаку</li>
+    <li>1.0-стекло-пушка (World Tree, тир-5): <b>God of Destruction</b> +40% атака/−50% HP · <b>Twin-Edged Holy Blade</b> +50% атака/−30% деф · сустейн: <b>Immortality</b> +15% атака +реген+лайфстил (мутационная)</li>
+  </ul>
+  <div class="dim" style="margin-top:6px">Трейты и мануал-апгрейды НЕ наследуются потомком — фиксируй бридингом однопородных с высокими IV (вкладка «Бридинг» → FAQ). Полный гайд: docs/boss_fighting.md</div>
+  </details>`;
+}
 render.counter = () => {
   const elems=D.chart.elements;
   V().innerHTML = `<div class="card"><h3>Против стихии</h3><div class="row" id="elbtns">
@@ -500,20 +521,35 @@ render.counter = () => {
   </div><div id="cout" style="margin-top:10px"></div></div>
   <div class="card"><h3>Против босса</h3><div class="row">
     <select id="bosssel"><option value="">— выбери босса —</option>
-    ${D.bosses.tower_bosses.map(b=>`<option value="t${b.order}">${b.leader} & ${b.pal} (башня, ур ${b.boss_pal_level})</option>`).join("")}
-    ${D.bosses.raid_bosses.map((b,i)=>`<option value="r${i}">${b.pal} (рейд)</option>`).join("")}
-  </select></div><div id="bout" style="margin-top:10px"></div></div>`;
+    <optgroup label="Башни (пати из 5)">${D.bosses.tower_bosses.map(b=>`<option value="t${b.order}">${b.leader} & ${b.pal} (ур ${b.boss_pal_level})</option>`).join("")}</optgroup>
+    <optgroup label="Алтарные РЕЙДЫ (на базе, до 50 палов)">${D.bosses.raid_bosses.map((b,i)=>`<option value="r${i}">${b.pal}</option>`).join("")}</optgroup>
+    <optgroup label="Мировые/квестовые боссы (пати из 5)">${(D.bosses.world_bosses||[]).map((b,i)=>`<option value="w${i}">${b.pal}</option>`).join("")}</optgroup>
+  </select></div>
+  <div class="sub" style="margin-top:6px">⚔️ <b>Башни / мировые боссы</b> — дерёшься активной <b>пати из 5</b> (+ты). 🏰 <b>Алтарные рейды</b> (Bellanoir, Xenolord…) идут <b>на твоей базе</b>: в защите бьются назначенные <b>базовые палы (до лимита базы, до 50)</b> + турели — тут решает боевая база, а не пати. Панталус — мировой босс, НЕ рейд.</div>
+  <div id="bout" style="margin-top:10px"></div></div>
+  ${bossFightersCardHTML()}`;
   document.getElementById("bosssel").addEventListener("change",e=>{
     const v=e.target.value; if(!v) return;
-    const b=v[0]==="t"?D.bosses.tower_bosses.find(x=>x.order==v.slice(1)):D.bosses.raid_bosses[+v.slice(1)];
+    const b=v[0]==="t"?D.bosses.tower_bosses.find(x=>x.order==v.slice(1)):v[0]==="w"?(D.bosses.world_bosses||[])[+v.slice(1)]:D.bosses.raid_bosses[+v.slice(1)];
+    const isRaid=v[0]==="r";
     const picks=b.counter_elements.map(el=>{
       const top=Object.values(P).filter(p=>p.elements.includes(el)&&p.hp).sort((a,c)=>atk(c)-atk(a)).slice(0,5);
       return `<div>Топ ${el}: ${top.map(p=>palLink(p.name)).join(", ")}</div>`;}).join("");
     const fe=b.counter_elements[0], enemy=b.elements[0]||((D.chart.chart[fe]||{}).strong_vs||[])[0];
     const sea=/sea arena|swimming pal/i.test(b.arena||"");
+    const raidCard=isRaid?`<div class="card" style="background:var(--bg2);border-color:var(--accent)">
+      <h3>🏰 Это АЛТАРНЫЙ РЕЙД — бой идёт НА БАЗЕ</h3>
+      <div class="sub">Призываешь Summoning Altar (Tech Lv 33) слабом прямо на своей базе. В защите бьёшься ты + <b>назначенные базовые палы (до лимита базы, до 50 через World Settings)</b> + турели. Решает боевая БАЗА, а не только пати. <span class="dim">(точное число одновременных базовых палов источники не называют — PRELIMINARY)</span></div>
+      <ul style="margin:8px 0 0 0;padding-left:18px;line-height:1.7">
+        <li><b>Воронка:</b> стены + ворота гонят волну в один чокпоинт, где палы и турели фокусят.</li>
+        <li><b>Турели по бокам ворот</b>, стволами вдоль коридора (не в ворота); для воздуха — Homing Missile Turret. В 1.0 турели/ловушки <b>не жгут патроны</b> — активны всегда.</li>
+        <li><b>Уровень рейдеров скейлится под уровень палов базы</b> — не задирай защитников выше, чем прикроешь.</li>
+        <li>Слаб <b>и</b> алтарь расходуются за призыв — держи запас; первый рейд с игрока Lv 40+, летающий маунт для уворотов.</li>
+      </ul>
+      <div class="dim" style="margin-top:6px">Полный гайд: docs/boss_fighting.md</div></div>`:"";
     let party;
     if(fe&&enemy){
-      party=`<h3 style="margin-top:12px">Боевая пати под босса</h3>
+      party=`<h3 style="margin-top:12px">${isRaid?"Твоя пати (плюс базовые палы держат остальное)":"Боевая пати под босса"}</h3>
       <div class="sub" style="margin-bottom:6px">2 бойца (свапаешь, если первый падает) + 3 ауры; скиллы с ×2 — то, к чему босс слаб</div>`
       +(()=>{const C=buildCombatParty(fe, enemy, true, sea); return partyCardsHTML(C.picks, C.notes, enemy)+metaSkillsCardHTML(fe, enemy)+accessoryCardHTML(accessoriesFor("combat", fe, enemy));})();
     } else {
@@ -527,7 +563,7 @@ render.counter = () => {
     document.getElementById("bout").innerHTML=`
       <div class="big">${esc(b.leader?b.leader+" & ":"")}${esc(b.pal)} ${b.elements.map(e=>`<span class="el el-${e}">${e}</span>`).join("")||'<span class="dim">без стихии</span>'}</div>
       <div style="margin:6px 0">Бить: ${b.counter_elements.map(e=>`<span class="el el-${e}">${e}</span>`).join("")||'<span class="dim">нет элементного каунтера</span>'} ${b.preliminary?'<span class="warn">(PRELIMINARY 1.0)</span>':''}</div>
-      ${picks}<div class="dim" style="margin-top:6px">${esc(b.tactics||b.notes||"")}</div>${party}`;
+      ${picks}<div class="dim" style="margin-top:6px">${esc(b.tactics||b.notes||"")}</div>${raidCard}${party}`;
   });
 };
 function showCounter(el){
@@ -1248,8 +1284,9 @@ class BasePlan {
     this.infra(o.slots); if(hatch||(kit&&this.structs[kit]?.power)) this.power(hatch);
     this.notes.push(`${farm} x${farms}: ~${L.eggs.toFixed(0)} яиц/час (${(L.eggs*24).toFixed(0)}/сутки), тортов ${L.cakes.toFixed(0)}/час; буст x${this._bralohaOn?(o.eggBoost||1.0):1.0} ${this._bralohaOn?"(Braloha без простоев)":"(без Braloha)"}`+(o.cake==="Vegetable Cake"?" — Vegetable Cake: 2 яйца за цикл!":""));
     this.notes.push("Торты — НЕ линейные тиры, у каждого свой эффект и станция: <b>Cake</b> базовый (Cooking Pot); <b>Mushroom</b> — рост статов/IV; <b>Vegetable</b> — 2 ЯЙЦА/цикл, объём (Electric Kitchen, Tomato+Lettuce); <b>Extravagant Vegetable</b> — шанс МУТАЦИИ + статы (Large-Scale Stone Oven); <b>Special</b> — стак ПАССИВОК (Ancient Kitchen). Vegetable даёт 2 яйца, чего Special НЕ даёт — они ситуативны, не «лучше/хуже»");
-    if(hatch) this.notes.push("Ancient Hatchery: инкубация ~10с (почти мгновенная, отдельные инкубаторы не нужны). Кладка ограничена тортом. Яйца сыплются быстрее, чем разбираешь потомство → узкое место = сортировка, не производство");
-    this.notes.push(`Ферм: ${farms} (по умолчанию 1 — обычно достаточно; 2 = параллельно РАЗНЫЕ пары; больше редко нужно из-за разбора потомства). В ${o.slots} слотов влезло бы до ${this._fitFarms||farms} — задай число в «брид-ферм», если гонишь объём`);
+    if(hatch) this.notes.push("Ancient Hatchery = брид-ферма + ВСТРОЕННЫЙ инкубатор в одном: инкубация ~10с (почти мгновенная), отдельные Egg Incubator не нужны. Кладка ограничена тортом. Яйца сыплются быстрее, чем разбираешь потомство → узкое место = сортировка, не производство");
+    if(hatch) this.notes.push(`Ферм: ${farms}. При Ancient Hatchery (встроенный инкубатор + мгновенная инкубация) держать больше 1 практически бессмысленно: одна и так сыплет яйца быстрее, чем разбираешь потомство. 2-ю — ТОЛЬКО если реально гоняешь 2 РАЗНЫЕ пары одновременно`);
+    else this.notes.push(`Ферм: ${farms} (по умолчанию 1 — обычно достаточно; 2 = параллельно РАЗНЫЕ пары; больше редко нужно из-за разбора потомства). В ${o.slots} слотов влезло бы до ${this._fitFarms||farms} — задай число в «брид-ферм», если гонишь объём`);
     this.notes.push("СБОР ЯИЦ — носи В ПАТИ (это ауры «While in party», назначать на базу их бесполезно): <b>Broncherry Aqua (#108B)</b> — 45~55% что подобранное яйцо станет АЛЬФА-яйцом; <b>Grintale (#70)</b> — 50~75% подобрать лишнее яйцо. Потомство собираешь сам → держи их в активной пати");
     this.assume.push(`Грядки ${o.plantYield}/час × yield-саппорты (партнёрки, СИЛА ОТ ЗВЁЗД): Lullu рост ×${o.stars?1.70:1.50} + Prunelia урожай ×${o.stars?1.35:1.18} (${o.stars?"4★":"0★"})${o.research?" × ресёрч +50%":""} → меньше грядок`);
     this.assume.push(`Ранч ${o.ranchRate} дропов/час x качество (звёзды/пассивки/ресёрч; при пассивках +Ranch Master +2 Farming/handbook ×1.5), кухня ${o.cookRate} тортов/час на повара`);

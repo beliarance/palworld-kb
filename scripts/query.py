@@ -193,7 +193,7 @@ def cmd_boss(db, args):
     if not bosses:
         sys.exit("data/bosses.json missing.")
     q = args.name.lower()
-    all_bosses = bosses["tower_bosses"] + bosses["raid_bosses"]
+    all_bosses = bosses["tower_bosses"] + bosses["raid_bosses"] + bosses.get("world_bosses", [])
     hits = [b for b in all_bosses if q in b.get("pal", "").lower() or q in b.get("leader", "").lower()]
     if not hits:
         sys.exit(f"Boss '{args.name}' not found. Known: " + ", ".join(b["pal"] for b in all_bosses))
