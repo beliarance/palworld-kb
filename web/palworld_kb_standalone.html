@@ -38,6 +38,11 @@
   .mono{font-variant-numeric:tabular-nums}
   .sub{font-size:12px;color:var(--dim)}
   .indent{margin-left:16px}
+  .pc-wrap{position:relative;flex:1 1 220px;min-width:220px}
+  .pc-wrap input{width:100%;min-width:0;box-sizing:border-box}
+  .pc-dd{position:absolute;z-index:50;left:0;right:0;top:100%;margin-top:3px;max-height:340px;overflow:auto;background:var(--panel2);border:1px solid var(--border);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+  .pc-row{display:flex;align-items:center;gap:8px;padding:5px 9px;cursor:pointer;white-space:nowrap}
+  .pc-row:hover,.pc-row.on{background:var(--border)}
 </style>
 </head>
 <body>
@@ -100,6 +105,44 @@ const structIcon = n => { const k=(D.icons?.structures?.[n])?n:n.split(" (")[0];
 const itemIcon = n => (D.icons?.items?.[n]) ? `<img src="${D.icons.items[n]}" loading="lazy" style="width:20px;height:20px;vertical-align:-4px;margin-right:2px">` : "";
 const palLink = n => `<span class="clicky" onclick="showPal('${n.replace(/'/g,"\\'")}')">${esc(n)}${P[n]?.number?` <span class="dim">(#${P[n].number})</span>`:""}</span>`;
 const itemLink = n => itemByName[n] ? `<span class="clicky" onclick="showItem('${n.replace(/'/g,"\\'")}')">${esc(n)}</span>` : esc(n);
+
+/* Кастомный пал-пикер: иконка + номер + стихии, поиск по подстроке (имя/номер),
+   стрелки/Enter/Esc, клик. Заменяет нативный <datalist>. onPick(name) — колбэк выбора. */
+let _palNamesSorted=null;
+function palCombo(input, onPick){
+  if(!input||input.dataset.pc) return; input.dataset.pc="1";
+  input.setAttribute("autocomplete","off"); input.removeAttribute("list");
+  if(!_palNamesSorted) _palNamesSorted=Object.keys(P).sort();
+  const wrap=document.createElement("div"); wrap.className="pc-wrap";
+  input.parentNode.insertBefore(wrap,input); wrap.appendChild(input);
+  const dd=document.createElement("div"); dd.className="pc-dd"; dd.style.display="none"; wrap.appendChild(dd);
+  let items=[], active=-1;
+  const render=()=>{
+    const q=input.value.trim().toLowerCase();
+    let m=_palNamesSorted.filter(n=>n.toLowerCase().includes(q)||String(P[n].number||"").includes(q));
+    m.sort((a,b)=>((a.toLowerCase().startsWith(q)?0:1)-(b.toLowerCase().startsWith(q)?0:1))||a.localeCompare(b));
+    items=m.slice(0,40); active=-1;
+    dd.innerHTML=items.map((n,i)=>{const p=P[n];
+      return `<div class="pc-row" data-i="${i}">${palIcon(n)||'<span style="display:inline-block;width:22px"></span>'}<span>${esc(n)}</span><span class="dim mono">#${p.number??"—"}</span><span style="margin-left:auto">${els(p)}</span></div>`;
+    }).join("")||`<div class="dim" style="padding:6px 9px">нет совпадений</div>`;
+    dd.style.display="";
+  };
+  const hl=()=>{[...dd.querySelectorAll(".pc-row")].forEach((r,i)=>r.classList.toggle("on",i===active));
+    const el=dd.querySelector(`.pc-row.on`); if(el) el.scrollIntoView({block:"nearest"});};
+  const pick=i=>{ if(i<0||i>=items.length) return; input.value=items[i]; dd.style.display="none";
+    if(onPick) onPick(items[i]); input.dispatchEvent(new Event("input",{bubbles:true})); };
+  input.addEventListener("focus",render);
+  input.addEventListener("input",()=>{ if(document.activeElement===input) render(); });  // не открывать при программном restore
+  input.addEventListener("keydown",e=>{
+    if(dd.style.display==="none") return;
+    if(e.key==="ArrowDown"){active=Math.min(active+1,items.length-1);hl();e.preventDefault();}
+    else if(e.key==="ArrowUp"){active=Math.max(active-1,0);hl();e.preventDefault();}
+    else if(e.key==="Enter"){ if(active>=0){pick(active);e.preventDefault();} else if(items.length===1){pick(0);e.preventDefault();} }
+    else if(e.key==="Escape") dd.style.display="none";
+  });
+  dd.addEventListener("mousedown",e=>{const r=e.target.closest(".pc-row"); if(r){e.preventDefault();pick(+r.dataset.i);}});
+  document.addEventListener("click",e=>{ if(!wrap.contains(e.target)) dd.style.display="none"; });
+}
 
 /* ---------------- бридинг (порт scripts/query.py) ---------------- */
 let rankArr=null, _specialPair=null, _nrCache=null;
@@ -208,9 +251,11 @@ const render = {};
 /* --- Палы --- */
 render.pal = () => {
   V().innerHTML = `<div class="card"><div class="row">
-    <input type="text" id="palq" list="palnames" placeholder="Имя пала… (например Anubis)" autofocus>
-    </div>${datalist("palnames",Object.keys(P).sort())}</div><div id="palout"></div>`;
-  document.getElementById("palq").addEventListener("input",e=>{ if(P[e.target.value]) showPal(e.target.value,false); });
+    <input type="text" id="palq" placeholder="Имя пала… (например Anubis)" autofocus>
+    </div></div><div id="palout"></div>`;
+  const q=document.getElementById("palq");
+  q.addEventListener("input",e=>{ if(P[e.target.value]) showPal(e.target.value,false); });
+  palCombo(q,n=>showPal(n,false));
 };
 function showPal(name, push=true){
   const p=P[name]; if(!p) return;
@@ -284,7 +329,7 @@ render.breed = () => {
     ["target","🎯 Кого хочу → пары","Укажи желаемого пала — все пары, дающие его за 1 скрещивание (пары из легкодоступных палов — выше)."],
     ["chain","🧬 Цепочка (привить трейт)","Старт-родитель (носитель дроп-онли трейта, напр. Craftsmanship/Legend) + цель → цепочка скрещиваний. На каждом шаге держи трейт-носителя одним родителем и оставляй потомка, унаследовавшего трейт."]];
   const help=Object.fromEntries(MODES.map(m=>[m[0],m[2]]));
-  V().innerHTML = `${datalist("palnames2",names)}
+  V().innerHTML = `
   <div class="card">
     <div class="row" id="bmode">${MODES.map(([m,t])=>`<button data-m="${m}" class="bmbtn" style="border:1px solid transparent;border-radius:8px;padding:6px 12px;cursor:pointer;font-size:13px;background:none;color:var(--dim)">${t}</button>`).join("")}</div>
     <div class="sub" id="bmodehelp" style="margin-top:6px"></div>
@@ -342,7 +387,7 @@ render.breed = () => {
     if(m==="pair") inp.innerHTML=`<div class="row"><input type="text" id="bp_a" list="palnames2" placeholder="Родитель A"><span>+</span><input type="text" id="bp_b" list="palnames2" placeholder="Родитель B"></div>`;
     else if(m==="target") inp.innerHTML=`<div class="row"><input type="text" id="bt_target" list="palnames2" placeholder="Кого хочу получить"><input type="text" id="bt_with" list="palnames2" placeholder="(опц.) один из родителей…"></div>`;
     else inp.innerHTML=`<div class="row"><input type="text" id="bc_start" list="palnames2" placeholder="Старт: носитель трейта"><span>→</span><input type="text" id="bc_target" list="palnames2" placeholder="Финальный вид"></div>`;
-    inp.querySelectorAll("input").forEach(el=>el.addEventListener("input",draw));
+    inp.querySelectorAll("input").forEach(el=>{ el.addEventListener("input",draw); palCombo(el,draw); });
     if(typeof restoreTabState==="function") restoreTabState("breed");
     draw();
   };
