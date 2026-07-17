@@ -375,7 +375,9 @@ class Planner:
         support_kinds = [("base_defense", "ПВО базы от рейдов")]
         if a.braloha:
             support_kinds.insert(0, ("egg_speed", "яйца +20~50%"))
-        if a.incubation > 0:
+        if hatchery:
+            self.notes.append("Инкубация у Ancient Hatchery ~мгновенная (~10с) — Dynamoff и отдельные инкубаторы не нужны")
+        elif a.incubation > 0:
             support_kinds.append(("incubation", "инкубация -20~40%"))
         else:
             self.notes.append("Инкубация мгновенная (настройка мира = 0): инкубаторы и Dynamoff не нужны — слот сэкономлен")
@@ -434,29 +436,27 @@ class Planner:
 
     def preset_breeding(self):
         a = self.args
-        # решатель: максимум ферм, чей ПОЛНЫЙ план (с транспортом/едой/саппортом) влезает в слоты
-        if a.farms:
-            self._breeding_build(a.farms)
-            farms = a.farms
-        else:
-            farms = 1
-            self._breeding_build(1)
-            while farms < 40:
-                if self._breeding_build(farms + 1) <= a.slots:
-                    farms += 1
-                else:
-                    self._breeding_build(farms)  # откат к последнему влезающему
-                    break
+        # по умолчанию 1 ферма: у Ancient Hatchery инкубация ~10с — яйца сыплются быстрее,
+        # чем успеваешь разбирать потомство; узкое место не производство, а сортировка.
+        # 2 фермы имеет смысл для параллельного бридинга РАЗНЫХ пар. --farms задаёт вручную.
+        farms = a.farms or 1
+        self._breeding_build(farms)
+        # справочно: сколько ферм ещё влезло бы в слоты (не строим — просто подсказка)
+        fit = farms
+        while fit < 20 and self._breeding_build(fit + 1) <= a.slots:
+            fit += 1
+        self._breeding_build(farms)  # вернуть план к выбранному числу ферм
+        self._fit_farms = fit
         farm_name, hatchery, line = self._breed_summary
         self.notes.append(f"{farm_name} x{farms}: ~{line['eggs_h']:.0f} яиц/час = {line['eggs_h']*24:.0f}/сутки, тортов {line['cakes_h']:.0f}/час "
                           + (f"— линия рассчитана под буст Braloha x{a.egg_boost}" if a.braloha
                              else f"— без Braloha (x{a.egg_boost}), яйца на базовой скорости")
                           + (" (авто-инкубация, 10 слотов яиц)" if hatchery else ""))
         if hatchery:
-            self.notes.append("⚠ Ancient Hatchery: скорость производства яиц принята как у обычной фермы "
-                              f"({a.egg_interval or 5} мин/яйцо). Гайды говорят про '~10 сек/цикл' (PRELIMINARY) — "
-                              "если это про кладку, а не инкубацию, спрос на торты кратно выше. "
-                              "Замерь в игре и задай --egg-interval")
+            self.notes.append("Ancient Hatchery: инкубация ~10 сек (почти мгновенная, отдельные инкубаторы не нужны). "
+                              f"Кладка ограничена тортом (принято {a.egg_interval or 5} мин/яйцо — под смету линии). "
+                              "Яйца сыплются быстрее, чем успеваешь разбирать потомство → узкое место = сортировка, "
+                              "а не производство.")
         self.notes.append(
             "Торты — НЕ линейные тиры, у каждого свой эффект и станция (выбирай под цель батча): "
             "Cake — базовый (Cooking Pot); Mushroom Cake — рост статов/IV; "
@@ -464,8 +464,9 @@ class Planner:
             "Extravagant Vegetable Cake — шанс МУТАЦИИ + статы (Large-Scale Stone Oven); "
             "Special Cake — стак ПАССИВОК потомству (Ancient Kitchen). "
             "Напр. Vegetable даёт 2 яйца, чего Special НЕ даёт — они ситуативны, а не «лучше/хуже»")
-        self.notes.append(f"Потолок {farms} ферм для {a.slots} слотов при этих настройках "
-                          f"(еда {a.food}, рабочие {a.workforce}); больше = вторая брид-база или --food shipped")
+        self.notes.append(f"Ферм: {farms} (по умолчанию 1 — обычно достаточно; 2 = параллельно РАЗНЫЕ пары; "
+                          f"больше редко нужно из-за разбора потомства). В {a.slots} слотов влезло бы до {self._fit_farms} "
+                          f"при этих настройках — задай число в --farms, если гонишь объём")
         self.notes.append("В пати при сборе яиц: Broncherry Aqua (45~55% альфа-яйца) + Grintale (50~75% лишнее яйцо)")
         self.assumptions.append(
             f"Грядки: {a.plant_yield}/час × yield-саппорты (партнёрки, СИЛА ОТ ЗВЁЗД): Lullu рост "

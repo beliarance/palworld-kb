@@ -1180,10 +1180,12 @@ class BasePlan {
     return {cakes,eggs:cakes*eggsPerCake,acc,ranch,plantsN,trio,cooks,mills,heads}; }
   presetBreeding(){
     const o=this.o;
-    // решатель: макс. ферм, чей ПОЛНЫЙ план (с транспортом/едой/саппортом) влезает в слоты
-    if(o.farms){ this._breedingBuild(o.farms); return; }
-    let farms=1; this._breedingBuild(1);
-    while(farms<40){ if(this._breedingBuild(farms+1)<=o.slots) farms++; else { this._breedingBuild(farms); break; } }
+    // по умолчанию 1 ферма: инкубация ~10с, узкое место — разбор потомства, не производство.
+    // 2 = параллельно РАЗНЫЕ пары; --farms/поле «брид-ферм» задаёт вручную.
+    const farms=o.farms||1;
+    this._breedingBuild(farms);
+    let fit=farms; while(fit<20 && this._breedingBuild(fit+1)<=o.slots) fit++;
+    this._breedingBuild(farms); this._fitFarms=fit;  // вернуть план к выбранному числу
   }
   _breedingBuild(farms){
     const o=this.o, hatch=o.tech>=76&&this.structs["Ancient Hatchery"], farm=hatch?"Ancient Hatchery":"Breeding Farm";
@@ -1191,7 +1193,8 @@ class BasePlan {
     const L=this.breedingStaffFor(farms);
     const sup=[["base_defense","ПВО базы от рейдов"]];
     if(o.braloha!==false) sup.unshift(["egg_speed","яйца +20~50%"]);
-    if(o.incubation>0) sup.push(["incubation","инкубация -20~40%"]);
+    if(hatch) this.notes.push("Инкубация у Ancient Hatchery ~мгновенная (~10с) — Dynamoff и отдельные инкубаторы не нужны");
+    else if(o.incubation>0) sup.push(["incubation","инкубация -20~40%"]);
     else this.notes.push("Инкубация мгновенная (мир = 0): инкубаторы и Dynamoff не нужны");
     this.supportCore(sup.concat([["crop_growth","рост культур +50~70%"],
       ["crop_yield","урожай +18~35%"],["sanity_save","SAN -10~15% утечка"],
@@ -1230,8 +1233,8 @@ class BasePlan {
     this.infra(o.slots); if(hatch||(kit&&this.structs[kit]?.power)) this.power(hatch);
     this.notes.push(`${farm} x${farms}: ~${L.eggs.toFixed(0)} яиц/час (${(L.eggs*24).toFixed(0)}/сутки), тортов ${L.cakes.toFixed(0)}/час; буст x${o.eggBoost||1.0} (1.0 = торты лимитируют, Braloha просто без простоев)`+(o.cake==="Vegetable Cake"?" — Vegetable Cake: 2 яйца за цикл!":""));
     this.notes.push("Торты — НЕ линейные тиры, у каждого свой эффект и станция: <b>Cake</b> базовый (Cooking Pot); <b>Mushroom</b> — рост статов/IV; <b>Vegetable</b> — 2 ЯЙЦА/цикл, объём (Electric Kitchen, Tomato+Lettuce); <b>Extravagant Vegetable</b> — шанс МУТАЦИИ + статы (Large-Scale Stone Oven); <b>Special</b> — стак ПАССИВОК (Ancient Kitchen). Vegetable даёт 2 яйца, чего Special НЕ даёт — они ситуативны, не «лучше/хуже»");
-    if(hatch) this.notes.push("⚠ Ancient Hatchery: скорость кладки принята как у фермы (5 мин/яйцо); гайды говорят '~10 сек/цикл' (PRELIMINARY) — замерь и впиши в «яйцо, мин»");
-    this.notes.push(`Потолок ${farms} ферм для ${o.slots} слотов при этих настройках (еда ${o.food}, рабочие ${o.workforce}); больше = вторая брид-база или еда привозная`);
+    if(hatch) this.notes.push("Ancient Hatchery: инкубация ~10с (почти мгновенная, отдельные инкубаторы не нужны). Кладка ограничена тортом. Яйца сыплются быстрее, чем разбираешь потомство → узкое место = сортировка, не производство");
+    this.notes.push(`Ферм: ${farms} (по умолчанию 1 — обычно достаточно; 2 = параллельно РАЗНЫЕ пары; больше редко нужно из-за разбора потомства). В ${o.slots} слотов влезло бы до ${this._fitFarms||farms} — задай число в «брид-ферм», если гонишь объём`);
     this.notes.push("В пати при сборе яиц: Broncherry Aqua (альфа-яйца 45~55%) + Grintale (лишнее яйцо 50~75%)");
     this.assume.push(`Грядки ${o.plantYield}/час × yield-саппорты (партнёрки, СИЛА ОТ ЗВЁЗД): Lullu рост ×${o.stars?1.70:1.50} + Prunelia урожай ×${o.stars?1.35:1.18} (${o.stars?"4★":"0★"})${o.research?" × ресёрч +50%":""} → меньше грядок`);
     this.assume.push(`Ранч ${o.ranchRate} дропов/час x качество (звёзды/пассивки/ресёрч; при пассивках +Ranch Master +2 Farming/handbook ×1.5), кухня ${o.cookRate} тортов/час на повара`);
