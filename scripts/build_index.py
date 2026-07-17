@@ -232,10 +232,14 @@ def main():
     # при равном эффекте обычный (номерной) пал идёт раньше коллаб-пала без палдекс-номера
     # (Terraria-коллаб: слаймы/Demon Eye/…) — тот уходит в «замены»
     def sort_key(n):
-        pcts = re.findall(r"\d+~(\d+)%?", index[n]["partner_effect"] or "")
+        e = index[n]
+        pcts = re.findall(r"\d+~(\d+)%?", e["partner_effect"] or "")
         power = -max((int(x) for x in pcts), default=0)
-        is_collab = 0 if index[n].get("number") else 1
-        return (power, is_collab)
+        is_collab = 0 if e.get("number") else 1
+        # тай-брейк при равном эффекте: сильнейший по статам вариант вперёд
+        # (напр. Whalaska Ignis чуть сильнее Whalaska), затем номер
+        combat = -((e.get("atk") or 0) + (e.get("hp") or 0) + (e.get("def") or 0))
+        return (power, is_collab, combat, e.get("number") or "999")
     for tag, names in tags_inv.items():
         if tag.startswith("party:") or tag.startswith("egg_"):
             names.sort(key=sort_key)

@@ -1003,9 +1003,19 @@ def cmd_party(db, args):
                 picks[[x[0] for x in picks].index(nn)] = (nn, "шкала миниигры медленнее падает", eff(nn))
             elif nn:
                 picks[[x[0] for x in picks].index(nn)] = (nn, "старт шкалы выше + быстрее растёт", eff(nn))
-        pick("+55~95% предметов с рыбалки", "fishing_loot")
         pick("чаще талантливые палы + водный маунт", "fishing_talent")
-        pick_weight("вес улова (грузоподъёмность)", "weight")
+        if args.fish == "pals":
+            pick("ещё шанс талантливых палов", "fishing_talent")  # Solmora Lux — 2-й талант
+            fm = sorted((p for p in db.values() if p.get("mount_type") == "flying" and p["name"] not in used),
+                        key=lambda p: -((p.get("movement") or {}).get("sprint") or 0))
+            if fm:
+                add(fm[0]["name"], "быстрый маунт до точек лова")
+            notes.append("Рыбалка на ПАЛОВ: Jelliette (+предметы) НЕ нужна — важны шкала миниигры + "
+                         "шанс талантливых (Solmora); выуженного пала ловишь как обычного")
+        else:
+            pick("+55~95% предметов с рыбалки (Jelliette)", "fishing_loot")
+            pick_weight("вес улова (грузоподъёмность)", "weight")
+            notes.append("Рыбалка на РЕСУРСЫ: Jelliette +55~95% предметов — ключевая")
         notes.append("Места фарма рыбы/Coralum — query.py resource <название>")
     elif goal == "loot":
         enemy = (args.vs or "Neutral").capitalize()
@@ -1141,6 +1151,8 @@ def main(argv=None):
     p.add_argument("--raw", action="store_true", help="(combat) босс без стихийного каунтера: топ по статам")
     p.add_argument("--sea", action="store_true", help="(combat --raw) морская арена: swim обязателен, флаер от цунами")
     p.add_argument("--biome", help="(explore) cold | heat | desert")
+    p.add_argument("--fish", choices=["loot", "pals"], default="loot",
+                   help="(fishing) loot = ради ресурсов (Jelliette); pals = выуживать палов (без Jelliette)")
     p.add_argument("--weightless", action="store_true", help="настройка мира «без веса»: убрать весовые ауры")
 
     args = ap.parse_args(argv)

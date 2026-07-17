@@ -20591,9 +20591,9 @@
    "party:survival": [
     "Petallia Ignis",
     "Petallia",
-    "Menasting",
-    "Menasting Terra",
     "Silvegis",
+    "Menasting Terra",
+    "Menasting",
     "Lapiron",
     "Teafant",
     "Celesdir",
@@ -20603,9 +20603,9 @@
     "Chillet"
    ],
    "party:attack_type:Fire:mount": [
-    "Chillet Ignis",
+    "Ragnahawk",
     "Pyrin",
-    "Ragnahawk"
+    "Chillet Ignis"
    ],
    "base_support:suitability:Farming": [
     "Cinnamoth"
@@ -20614,8 +20614,8 @@
     "Clovee"
    ],
    "party:elem_team_atk:Neutral": [
-    "Cremis",
-    "Ribbuny"
+    "Ribbuny",
+    "Cremis"
    ],
    "party:loot:Dragon": [
     "Cryolinx"
@@ -20692,13 +20692,13 @@
     "Ghangler"
    ],
    "party:stack_speed:Water": [
-    "Ghangler",
+    "Suzaku Aqua",
     "Ghangler Ignis",
-    "Suzaku Aqua"
+    "Ghangler"
    ],
    "party:stack_speed:Fire": [
-    "Ghangler Ignis",
-    "Suzaku"
+    "Suzaku",
+    "Ghangler Ignis"
    ],
    "party:attack_type:Ground:mount": [
     "Gildane"
@@ -20740,9 +20740,9 @@
    "party:weight_cargo": [
     "Turtacle Terra",
     "Reptyro Cryst",
-    "Gumoss",
+    "Reptyro",
     "Munchill",
-    "Reptyro"
+    "Gumoss"
    ],
    "party:attack_type:Ice:active": [
     "Icelyn"
@@ -20792,8 +20792,8 @@
     "Lunaris"
    ],
    "party:loot:Electric": [
-    "Menasting",
-    "Menasting Terra"
+    "Menasting Terra",
+    "Menasting"
    ],
    "party:treasure_open": [
     "Mimog"

@@ -327,7 +327,8 @@ class Planner:
         """Подсчёт голов тортовой линии на `farms` ферм (без найма). Возвращает словарь."""
         a = self.args
         interval = a.egg_interval or self.bb["rates"]["breeding_egg_interval_minutes"]
-        cakes_h = farms * 60 / interval * a.egg_boost
+        boost = a.egg_boost if getattr(self, "_braloha_on", a.braloha) else 1.0
+        cakes_h = farms * 60 / interval * boost
         cake = a.cake
         eggs_per_cake = 2 if cake == "Vegetable Cake" else 1
         # цепочка по рецепту выбранного торта (как в food-пресете)
@@ -370,13 +371,20 @@ class Planner:
         self.buildings, self.pals, self.notes, self.assumptions = {}, [], [], []
         hatchery = a.tech >= 76 and "Ancient Hatchery" in self.structs
         farm_name = "Ancient Hatchery" if hatchery else "Breeding Farm"
+        # Braloha ускоряет КЛАДКУ. При Ancient Hatchery узкое место — разбор потомства,
+        # а не скорость яиц → ускорять кладку бессмысленно (лишь раздувает тортовую линию).
+        self._braloha_on = a.braloha and not hatchery
         line = self.breeding_staff_for(farms)
 
         support_kinds = [("base_defense", "ПВО базы от рейдов")]
-        if a.braloha:
+        if self._braloha_on:
             support_kinds.insert(0, ("egg_speed", "яйца +20~50%"))
         if hatchery:
             self.notes.append("Инкубация у Ancient Hatchery ~мгновенная (~10с) — Dynamoff и отдельные инкубаторы не нужны")
+            if a.braloha:
+                self.notes.append("Braloha (скорость кладки) при Ancient Hatchery ИЗБЫТОЧНА — узкое место разбор "
+                                  "потомства, а не скорость яиц; исключена из состава, тортовая линия ужата "
+                                  "(она была бы нужна только на медленной Breeding Farm)")
         elif a.incubation > 0:
             support_kinds.append(("incubation", "инкубация -20~40%"))
         else:
@@ -449,8 +457,8 @@ class Planner:
         self._fit_farms = fit
         farm_name, hatchery, line = self._breed_summary
         self.notes.append(f"{farm_name} x{farms}: ~{line['eggs_h']:.0f} яиц/час = {line['eggs_h']*24:.0f}/сутки, тортов {line['cakes_h']:.0f}/час "
-                          + (f"— линия рассчитана под буст Braloha x{a.egg_boost}" if a.braloha
-                             else f"— без Braloha (x{a.egg_boost}), яйца на базовой скорости")
+                          + (f"— линия рассчитана под буст Braloha x{a.egg_boost}" if self._braloha_on
+                             else "— без Braloha (x1.0), яйца на базовой скорости")
                           + (" (авто-инкубация, 10 слотов яиц)" if hatchery else ""))
         if hatchery:
             self.notes.append("Ancient Hatchery: инкубация ~10 сек (почти мгновенная, отдельные инкубаторы не нужны). "
@@ -467,7 +475,9 @@ class Planner:
         self.notes.append(f"Ферм: {farms} (по умолчанию 1 — обычно достаточно; 2 = параллельно РАЗНЫЕ пары; "
                           f"больше редко нужно из-за разбора потомства). В {a.slots} слотов влезло бы до {self._fit_farms} "
                           f"при этих настройках — задай число в --farms, если гонишь объём")
-        self.notes.append("В пати при сборе яиц: Broncherry Aqua (45~55% альфа-яйца) + Grintale (50~75% лишнее яйцо)")
+        self.notes.append("СБОР ЯИЦ — носи В ПАТИ (это ауры «While in party», на базу их назначать бесполезно): "
+                          "Broncherry Aqua (#108B) — 45~55% что подобранное яйцо станет АЛЬФА-яйцом; "
+                          "Grintale (#70) — 50~75% подобрать лишнее яйцо. Собираешь потомство сам → держи их в активной пати")
         self.assumptions.append(
             f"Грядки: {a.plant_yield}/час × yield-саппорты (партнёрки, СИЛА ОТ ЗВЁЗД): Lullu рост "
             f"×{1.70 if a.stars else 1.50:g} + Prunelia урожай ×{1.35 if a.stars else 1.18:g} "
@@ -475,8 +485,8 @@ class Planner:
         self.assumptions.append(f"Ранч: {a.ranch_rate} дропов/час x качество (звёзды --stars, пассивки --workforce, "
                                 f"ресёрч; при пассивках +Ranch Master +2 Farming/handbook ×1.5); "
                                 f"кухня: {a.cook_rate} тортов/час на повара (--cook-rate); "
-                                f"яйцо {a.egg_interval or 5} мин x буст {a.egg_boost} "
-                                f"({'Braloha в составе' if a.braloha else 'без Braloha, --no-braloha'}; --egg-interval/--egg-boost)")
+                                f"яйцо {a.egg_interval or 5} мин x буст {a.egg_boost if self._braloha_on else 1.0} "
+                                f"({'Braloha в составе' if self._braloha_on else 'без Braloha (хатчери/--no-braloha)'}; --egg-interval/--egg-boost)")
 
     def preset_mine_craft(self):
         a = self.args

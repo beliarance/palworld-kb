@@ -696,13 +696,14 @@ render.party = () => {
       <span class="pf pf-combat pf-loot"><select id="pven" title="стихия врага: боец подберётся каунтером, резист-аура — от неё"><option value="">враг: авто</option>${PARTY_ELEMS.map(e=>`<option>${e}</option>`).join("")}</select></span>
       <span class="pf pf-combat"><label title="слот резиста уходит под второго бойца (гибрид со стак-аурой, если есть)"><input type="checkbox" id="ptwo"> 2 бойца</label></span>
       <span class="pf pf-explore"><select id="pbiome"><option value="">биом: обычный</option><option value="cold">холод</option><option value="heat">жара / пустыня</option></select></span>
+      <span class="pf pf-fishing"><select id="pfishmode" title="ресурсы: Jelliette +предметы; палы: выуживаешь палов, Jelliette не нужна"><option value="loot">рыбалка: ресурсы</option><option value="pals">рыбалка: палы</option></select></span>
       <label title="настройка мира: если вес отключён, ауры грузоподъёмности бесполезны — уберу их (лут/рыбалка/яйца)"><input type="checkbox" id="pweightless"> ⚖️ без веса (настройка мира)</label>
     </div>
     <div class="sub" style="margin-top:6px">В бою дерётся 1 выпущенный пал + ты; остальные дают ауры «While in party» (не стакаются) — поэтому дефолт 1 боец + 4 ауры.</div>
     </div><div id="partyout"></div>`;
   const updVis=()=>{ const g=document.getElementById("pgoal").value;
     document.querySelectorAll(".pf").forEach(el=>{ el.style.display=el.classList.contains("pf-"+g)?"":"none"; }); };
-  for(const id of ["pgoal","pfel","pven","ptwo","pbiome","pweightless"])
+  for(const id of ["pgoal","pfel","pven","ptwo","pbiome","pweightless","pfishmode"])
     document.getElementById(id).addEventListener(id==="ptwo"||id==="pweightless"?"change":"input",()=>{ updVis(); drawParty(); });
   updVis(); drawParty();
 };
@@ -958,12 +959,21 @@ function drawParty(){
     else if(st) B.add(B.topFighter("Grass"),"боец-статусник: Ivy-Covered");
     B.notes.push("Порядок: статусник вешает Freeze/Ivy → капча-бонус Muffly/Souffline срабатывает");
   } else if(goal==="fishing"){
+    const fishMode=document.getElementById("pfishmode")?.value||"loot";
     const g1=B.pick("бафф шкалы миниигры","fishing_gauge"), g2=B.pick("бафф шкалы миниигры","fishing_gauge");
     for(const nn of [g1,g2]) if(nn){ const i=B.picks.findIndex(p=>p.n===nn);
       B.picks[i].role=effOf(nn).includes("more slowly")?"шкала миниигры медленнее падает":"старт шкалы выше + быстрее растёт"; }
-    B.pick("+55~95% предметов с рыбалки","fishing_loot");
     B.pick("чаще талантливые палы + водный маунт","fishing_talent");
-    B.pickWeight("вес улова (грузоподъёмность)","weight");
+    if(fishMode==="pals"){
+      B.pick("ещё шанс талантливых палов","fishing_talent");  // Solmora Lux — 2-й талант
+      const fm=Object.values(P).filter(p=>p.mount==="flying"&&!B.used.has(p.name)).sort((a,b)=>(b.mv.sprint||0)-(a.mv.sprint||0));
+      if(fm.length) B.add(fm[0].name,"быстрый маунт до точек лова");
+      B.notes.push("Рыбалка на ПАЛОВ: Jelliette (+предметы) НЕ нужна — важны шкала миниигры + шанс талантливых (Solmora). Выуженного пала ловишь как обычного");
+    } else {
+      B.pick("+55~95% предметов с рыбалки (Jelliette)","fishing_loot");
+      B.pickWeight("вес улова (грузоподъёмность)","weight");
+      B.notes.push("Рыбалка на РЕСУРСЫ: Jelliette +55~95% предметов — ключевая");
+    }
     B.notes.push("Места фарма рыбы/Coralum — вкладка «Ресурсы»");
   } else if(goal==="loot"){
     const enemy=document.getElementById("pven").value||"Neutral";
@@ -1000,8 +1010,9 @@ function drawParty(){
     const m=Object.values(P).filter(p=>p.mount==="flying"&&!B.used.has(p.name)).sort((a,b)=>(b.mv.sprint||0)-(a.mv.sprint||0));
     while(B.picks.length<5&&m.length) B.add(m.shift().name,"летающий маунт");
   }
-  if(weightless&&["loot","fishing","eggs"].includes(goal)){
-    if(goal==="fishing"){  // рыбалка — не бой: быстрый маунт до точек лова вместо сустейна
+  const fishMode2=document.getElementById("pfishmode")?.value||"loot";
+  if(weightless&&["loot","fishing","eggs"].includes(goal)&&!(goal==="fishing"&&fishMode2==="pals")){
+    if(goal==="fishing"){  // рыбалка на ресурсы — не бой: быстрый маунт до точек лова вместо веса
       const fm=Object.values(P).filter(p=>p.mount==="flying"&&!B.used.has(p.name)).sort((a,b)=>(b.mv.sprint||0)-(a.mv.sprint||0));
       if(fm.length) B.add(fm[0].name,"быстрый летающий маунт — добраться до точек лова");
       B.notes.push("Настройка мира «без веса»: слот грузоподъёмности заменён на быстрый маунт (до точек лова)");
@@ -1164,7 +1175,8 @@ class BasePlan {
   breedingStaffFor(farms){
     const o=this.o, cake=o.cake||"Cake";
     const eggsPerCake=cake==="Vegetable Cake"?2:1;
-    const cakes=farms*60/(o.eggInterval||D.bb.rates.breeding_egg_interval_minutes)*(o.eggBoost||1.0);
+    const boost=(this._bralohaOn??(o.braloha!==false))?(o.eggBoost||1.0):1.0;
+    const cakes=farms*60/(o.eggInterval||D.bb.rates.breeding_egg_interval_minutes)*boost;
     const acc=this.chainCalc(cake,cakes,{plants:{},ranch:{},imports:{},crafts:{}});
     const rr=o.ranchRate*this.ranchMult(), ranchMap=D.idx.inverted.ranch_produce;
     const ranch={};
@@ -1189,10 +1201,14 @@ class BasePlan {
   _breedingBuild(farms){
     const o=this.o, hatch=o.tech>=76&&this.structs["Ancient Hatchery"], farm=hatch?"Ancient Hatchery":"Breeding Farm";
     this.buildings={}; this.crew=[]; this.notes=[]; this.assume=[];
+    // Braloha ускоряет КЛАДКУ. При Ancient Hatchery узкое место — разбор потомства,
+    // а не скорость яиц → ускорять кладку бессмысленно (лишь раздувает тортовую линию).
+    this._bralohaOn=(o.braloha!==false)&&!hatch;
     const L=this.breedingStaffFor(farms);
     const sup=[["base_defense","ПВО базы от рейдов"]];
-    if(o.braloha!==false) sup.unshift(["egg_speed","яйца +20~50%"]);
-    if(hatch) this.notes.push("Инкубация у Ancient Hatchery ~мгновенная (~10с) — Dynamoff и отдельные инкубаторы не нужны");
+    if(this._bralohaOn) sup.unshift(["egg_speed","яйца +20~50%"]);
+    if(hatch){ this.notes.push("Инкубация у Ancient Hatchery ~мгновенная (~10с) — Dynamoff и отдельные инкубаторы не нужны");
+      if(o.braloha!==false) this.notes.push("Braloha (скорость кладки) при Ancient Hatchery ИЗБЫТОЧНА — узкое место разбор потомства, а не скорость яиц; исключена из состава, тортовая линия ужата (нужна была бы только на медленной Breeding Farm)"); }
     else if(o.incubation>0) sup.push(["incubation","инкубация -20~40%"]);
     else this.notes.push("Инкубация мгновенная (мир = 0): инкубаторы и Dynamoff не нужны");
     this.supportCore(sup.concat([["crop_growth","рост культур +50~70%"],
@@ -1230,11 +1246,11 @@ class BasePlan {
         const nI=Math.max(1,Math.min(Math.ceil(farms*2*o.incubation/cap),12)); this.add(inc,nI);
         this.assume.push(`Инкубаторы: ${nI} = фермы x2 x мир ${o.incubation} / вместимость ${cap}`); } }
     this.infra(o.slots); if(hatch||(kit&&this.structs[kit]?.power)) this.power(hatch);
-    this.notes.push(`${farm} x${farms}: ~${L.eggs.toFixed(0)} яиц/час (${(L.eggs*24).toFixed(0)}/сутки), тортов ${L.cakes.toFixed(0)}/час; буст x${o.eggBoost||1.0} (1.0 = торты лимитируют, Braloha просто без простоев)`+(o.cake==="Vegetable Cake"?" — Vegetable Cake: 2 яйца за цикл!":""));
+    this.notes.push(`${farm} x${farms}: ~${L.eggs.toFixed(0)} яиц/час (${(L.eggs*24).toFixed(0)}/сутки), тортов ${L.cakes.toFixed(0)}/час; буст x${this._bralohaOn?(o.eggBoost||1.0):1.0} ${this._bralohaOn?"(Braloha без простоев)":"(без Braloha)"}`+(o.cake==="Vegetable Cake"?" — Vegetable Cake: 2 яйца за цикл!":""));
     this.notes.push("Торты — НЕ линейные тиры, у каждого свой эффект и станция: <b>Cake</b> базовый (Cooking Pot); <b>Mushroom</b> — рост статов/IV; <b>Vegetable</b> — 2 ЯЙЦА/цикл, объём (Electric Kitchen, Tomato+Lettuce); <b>Extravagant Vegetable</b> — шанс МУТАЦИИ + статы (Large-Scale Stone Oven); <b>Special</b> — стак ПАССИВОК (Ancient Kitchen). Vegetable даёт 2 яйца, чего Special НЕ даёт — они ситуативны, не «лучше/хуже»");
     if(hatch) this.notes.push("Ancient Hatchery: инкубация ~10с (почти мгновенная, отдельные инкубаторы не нужны). Кладка ограничена тортом. Яйца сыплются быстрее, чем разбираешь потомство → узкое место = сортировка, не производство");
     this.notes.push(`Ферм: ${farms} (по умолчанию 1 — обычно достаточно; 2 = параллельно РАЗНЫЕ пары; больше редко нужно из-за разбора потомства). В ${o.slots} слотов влезло бы до ${this._fitFarms||farms} — задай число в «брид-ферм», если гонишь объём`);
-    this.notes.push("В пати при сборе яиц: Broncherry Aqua (альфа-яйца 45~55%) + Grintale (лишнее яйцо 50~75%)");
+    this.notes.push("СБОР ЯИЦ — носи В ПАТИ (это ауры «While in party», назначать на базу их бесполезно): <b>Broncherry Aqua (#108B)</b> — 45~55% что подобранное яйцо станет АЛЬФА-яйцом; <b>Grintale (#70)</b> — 50~75% подобрать лишнее яйцо. Потомство собираешь сам → держи их в активной пати");
     this.assume.push(`Грядки ${o.plantYield}/час × yield-саппорты (партнёрки, СИЛА ОТ ЗВЁЗД): Lullu рост ×${o.stars?1.70:1.50} + Prunelia урожай ×${o.stars?1.35:1.18} (${o.stars?"4★":"0★"})${o.research?" × ресёрч +50%":""} → меньше грядок`);
     this.assume.push(`Ранч ${o.ranchRate} дропов/час x качество (звёзды/пассивки/ресёрч; при пассивках +Ranch Master +2 Farming/handbook ×1.5), кухня ${o.cookRate} тортов/час на повара`);
     return this.crew.reduce((a,c)=>a+c[1],0); }
