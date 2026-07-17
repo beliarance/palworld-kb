@@ -1047,8 +1047,8 @@ class BasePlan {
     return (70*QUALITY[this.o.workforce]+this.foodWs())/70*star*research; }
   // ранч = q() × бонус Ranch Master(+2 Farming)/handbook при палах с пассивками (×1.5)
   ranchMult(){ return this.q()*(this.o.workforce!=="baseline"?1.5:1.0); }
-  // выработка грядки/час: базовая × yield-саппорты (Lullu рост ×1.6 × Prunelia урожай ×1.26 ≈ ×2, они в пресете) × ресёрч Harvest +50%
-  plantYieldEff(){ return (this.o.plantYield||60)*(1.6*1.26)*(this.o.research?1.5:1.0); }
+  // грядка/час: yield-саппорты — ПАРТНЁРКИ, сила от звёзд (диапазон = 0★…4★): Lullu рост +50/70%, Prunelia урожай +18/35%; × ресёрч Harvest +50%
+  plantYieldEff(){ const g=this.o.stars?1.70:1.50, y=this.o.stars?1.35:1.18; return (this.o.plantYield||60)*g*y*(this.o.research?1.5:1.0); }
   best(cands){ const a=cands.filter(c=>this.structs[c]&&(this.structs[c].tech_level||0)<=this.o.tech); return a[a.length-1]||null; }
   add(n,c=1){ if(n&&c>0) this.buildings[n]=(this.buildings[n]||0)+c; }
   hire(sp,c,role,task){ if(c>0) this.crew.push([sp,Math.ceil(c),role,task||null]); }
@@ -1228,7 +1228,7 @@ class BasePlan {
     if(hatch) this.notes.push("⚠ Ancient Hatchery: скорость кладки принята как у фермы (5 мин/яйцо); гайды говорят '~10 сек/цикл' (PRELIMINARY) — замерь и впиши в «яйцо, мин»");
     this.notes.push(`Потолок ${farms} ферм для ${o.slots} слотов при этих настройках (еда ${o.food}, рабочие ${o.workforce}); больше = вторая брид-база или еда привозная`);
     this.notes.push("В пати при сборе яиц: Broncherry Aqua (альфа-яйца 45~55%) + Grintale (лишнее яйцо 50~75%)");
-    this.assume.push(`Грядки ${o.plantYield}/час × yield-саппорты (Lullu рост ×1.6 + Prunelia урожай ×1.26 ≈ ×2, они в составе)${o.research?" × ресёрч +50%":""} → меньше грядок`);
+    this.assume.push(`Грядки ${o.plantYield}/час × yield-саппорты (партнёрки, СИЛА ОТ ЗВЁЗД): Lullu рост ×${o.stars?1.70:1.50} + Prunelia урожай ×${o.stars?1.35:1.18} (${o.stars?"4★":"0★"})${o.research?" × ресёрч +50%":""} → меньше грядок`);
     this.assume.push(`Ранч ${o.ranchRate} дропов/час x качество (звёзды/пассивки/ресёрч; при пассивках +Ranch Master +2 Farming/handbook ×1.5), кухня ${o.cookRate} тортов/час на повара`);
     return this.crew.reduce((a,c)=>a+c[1],0); }
   presetMineCraft(){
@@ -1432,7 +1432,8 @@ function builderOpts(){
     ranchRate:+val("pranch")||12,plantYield:+val("pyield")||60,cookRate:+val("pcook")||30,
     plantsPerWorker:3,farms:+val("pfarms")||null,dish:val("pdish")||"Salad",dishRate:+val("pdishrate")||30,
     eggInterval:+val("peggint")||5,braloha:document.getElementById("pbraloha").checked,
-    eggBoost:document.getElementById("pbraloha").checked?1.35:1.0,
+    // Braloha egg speed +20~50% — партнёрка, растёт от звёзд: 4★ ×1.5, 0★ ×1.2
+    eggBoost:document.getElementById("pbraloha").checked?(document.getElementById("pstars").checked?1.5:1.2):1.0,
     incubation:val("pincub")===""?1:+val("pincub"),cake:val("pcake")||"Cake",
     perStation:+val("ppers")||1,spoilage:document.getElementById("pspoil").checked,
     foodPerPlot:+val("pfpp")||110,foodBuff:val("pfbuff")===""?30:+val("pfbuff"),

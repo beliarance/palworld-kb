@@ -106,10 +106,11 @@ class Planner:
 
     def plant_yield_eff(self):
         """Выработка грядки/час с учётом ресёрча и yield-саппортов базы.
-        Пресеты ставят Lullu (crop growth +50~70% → быстрее циклы) и Prunelia (harvest +18~35%
-        → больше за сбор) — оба множат выработку/час: ×1.6 × 1.26 ≈ ×2. Ресёрч Harvest +50% сверху."""
-        crop_support = 1.6 * 1.26  # Lullu (рост) × Prunelia (урожай), средние значения
-        return self.args.plant_yield * crop_support * (1.5 if self.args.research else 1.0)
+        Lullu (crop growth) и Prunelia (harvest) — ПАРТНЁРСКИЕ скиллы, их сила растёт от ЗВЁЗД
+        конденсации: диапазоны +50~70% / +18~35% = 0★…4★. Тумблер 4★ → верх, иначе низ."""
+        growth = 1.70 if self.args.stars else 1.50   # Lullu crop growth +70% (4★) / +50% (0★)
+        yld = 1.35 if self.args.stars else 1.18      # Prunelia harvest +35% (4★) / +18% (0★)
+        return self.args.plant_yield * growth * yld * (1.5 if self.args.research else 1.0)
 
     # ---------- общие модули ----------
     def infra(self, slots):
@@ -458,9 +459,10 @@ class Planner:
         self.notes.append(f"Потолок {farms} ферм для {a.slots} слотов при этих настройках "
                           f"(еда {a.food}, рабочие {a.workforce}); больше = вторая брид-база или --food shipped")
         self.notes.append("В пати при сборе яиц: Broncherry Aqua (45~55% альфа-яйца) + Grintale (50~75% лишнее яйцо)")
-        self.assumptions.append(f"Грядки: {a.plant_yield}/час × yield-саппорты базы "
-                                f"(Lullu рост ×1.6 + Prunelia урожай ×1.26 ≈ ×2, они в составе)"
-                                + (" × ресёрч Harvest +50%" if a.research else "") + " → меньше грядок")
+        self.assumptions.append(
+            f"Грядки: {a.plant_yield}/час × yield-саппорты (партнёрки, СИЛА ОТ ЗВЁЗД): Lullu рост "
+            f"×{1.70 if a.stars else 1.50:g} + Prunelia урожай ×{1.35 if a.stars else 1.18:g} "
+            f"({'4★' if a.stars else '0★'})" + (" × ресёрч +50%" if a.research else "") + " → меньше грядок")
         self.assumptions.append(f"Ранч: {a.ranch_rate} дропов/час x качество (звёзды --stars, пассивки --workforce, "
                                 f"ресёрч; при пассивках +Ranch Master +2 Farming/handbook ×1.5); "
                                 f"кухня: {a.cook_rate} тортов/час на повара (--cook-rate); "
@@ -786,7 +788,8 @@ def main():
     ap.add_argument("--plants-per-worker", type=float, default=3, help="плантаций на 1 троицу рабочих при baseline")
     args = ap.parse_args()
     if args.egg_boost is None:
-        args.egg_boost = 1.35 if args.braloha else 1.0
+        # Braloha egg speed +20~50% — партнёрка, растёт от звёзд: 4★ = +50% (×1.5), 0★ = +20% (×1.2)
+        args.egg_boost = (1.5 if args.stars else 1.2) if args.braloha else 1.0
     if args.metal:
         args.tech = METALS[args.metal]
     pl = Planner(args)
