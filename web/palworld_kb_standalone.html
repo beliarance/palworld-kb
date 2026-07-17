@@ -1048,7 +1048,8 @@ class BasePlan {
     return (70*QUALITY[this.o.workforce]+this.foodWs())/70*star*research; }
   // ранч = q() × бонус Ranch Master(+2 Farming)/handbook при палах с пассивками (×1.5)
   ranchMult(){ return this.q()*(this.o.workforce!=="baseline"?1.5:1.0); }
-  plantYieldEff(){ return (this.o.plantYield||55)*(this.o.research?1.5:1.0); }  // Harvest Yield +50%
+  // выработка грядки/час: базовая × yield-саппорты (Lullu рост ×1.6 × Prunelia урожай ×1.26 ≈ ×2, они в пресете) × ресёрч Harvest +50%
+  plantYieldEff(){ return (this.o.plantYield||60)*(1.6*1.26)*(this.o.research?1.5:1.0); }
   best(cands){ const a=cands.filter(c=>this.structs[c]&&(this.structs[c].tech_level||0)<=this.o.tech); return a[a.length-1]||null; }
   add(n,c=1){ if(n&&c>0) this.buildings[n]=(this.buildings[n]||0)+c; }
   hire(sp,c,role,task){ if(c>0) this.crew.push([sp,Math.ceil(c),role,task||null]); }
@@ -1228,6 +1229,7 @@ class BasePlan {
     if(hatch) this.notes.push("⚠ Ancient Hatchery: скорость кладки принята как у фермы (5 мин/яйцо); гайды говорят '~10 сек/цикл' (PRELIMINARY) — замерь и впиши в «яйцо, мин»");
     this.notes.push(`Потолок ${farms} ферм для ${o.slots} слотов при этих настройках (еда ${o.food}, рабочие ${o.workforce}); больше = вторая брид-база или еда привозная`);
     this.notes.push("В пати при сборе яиц: Broncherry Aqua (альфа-яйца 45~55%) + Grintale (лишнее яйцо 50~75%)");
+    this.assume.push(`Грядки ${o.plantYield}/час × yield-саппорты (Lullu рост ×1.6 + Prunelia урожай ×1.26 ≈ ×2, они в составе)${o.research?" × ресёрч +50%":""} → меньше грядок`);
     this.assume.push(`Ранч ${o.ranchRate} дропов/час x качество (звёзды/пассивки/ресёрч; при пассивках +Ranch Master +2 Farming/handbook ×1.5), кухня ${o.cookRate} тортов/час на повара`);
     return this.crew.reduce((a,c)=>a+c[1],0); }
   presetMineCraft(){

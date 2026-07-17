@@ -105,8 +105,11 @@ class Planner:
         return self.q() * rm
 
     def plant_yield_eff(self):
-        """Выработка грядки с учётом ресёрча (Harvest Yield +50% на максе)."""
-        return self.args.plant_yield * (1.5 if self.args.research else 1.0)
+        """Выработка грядки/час с учётом ресёрча и yield-саппортов базы.
+        Пресеты ставят Lullu (crop growth +50~70% → быстрее циклы) и Prunelia (harvest +18~35%
+        → больше за сбор) — оба множат выработку/час: ×1.6 × 1.26 ≈ ×2. Ресёрч Harvest +50% сверху."""
+        crop_support = 1.6 * 1.26  # Lullu (рост) × Prunelia (урожай), средние значения
+        return self.args.plant_yield * crop_support * (1.5 if self.args.research else 1.0)
 
     # ---------- общие модули ----------
     def infra(self, slots):
@@ -455,6 +458,9 @@ class Planner:
         self.notes.append(f"Потолок {farms} ферм для {a.slots} слотов при этих настройках "
                           f"(еда {a.food}, рабочие {a.workforce}); больше = вторая брид-база или --food shipped")
         self.notes.append("В пати при сборе яиц: Broncherry Aqua (45~55% альфа-яйца) + Grintale (50~75% лишнее яйцо)")
+        self.assumptions.append(f"Грядки: {a.plant_yield}/час × yield-саппорты базы "
+                                f"(Lullu рост ×1.6 + Prunelia урожай ×1.26 ≈ ×2, они в составе)"
+                                + (" × ресёрч Harvest +50%" if a.research else "") + " → меньше грядок")
         self.assumptions.append(f"Ранч: {a.ranch_rate} дропов/час x качество (звёзды --stars, пассивки --workforce, "
                                 f"ресёрч; при пассивках +Ranch Master +2 Farming/handbook ×1.5); "
                                 f"кухня: {a.cook_rate} тортов/час на повара (--cook-rate); "

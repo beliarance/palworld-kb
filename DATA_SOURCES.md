@@ -407,3 +407,10 @@
   Добавлен трейт **Ranch Master (+2 Farming, tier 4)** / Farmhand (+1) / Applied Technique
   Handbook: при палах с пассивками ранч-множитель ×1.5 (ranch_mult/ranchMult) → меньше ранч-палов.
   Трейт есть в data/passives.json (Ranch Master, Farmhand).
+
+## 2026-07-17 — Планер учитывает yield-саппортов в выработке грядок
+- Раньше пресеты НАНИМАЛИ Lullu (crop growth +50~70%) и Prunelia (harvest +18~35%), но их
+  бонус НЕ входил в plant_yield_eff → число грядок завышалось. Теперь plant_yield_eff/
+  plantYieldEff × (1.6 рост × 1.26 урожай ≈ ×2). Брид-база макс-тир: древних ферм ~6 → ~4-5.
+  Оба саппорта — базовые ауры «Does not stack», уже в support_core пресетов. Средние
+  значения диапазонов; помечено в допущениях (веб+CLI).
