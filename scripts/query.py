@@ -149,17 +149,21 @@ def cmd_workers(db, args):
 
     def run(p):
         return (p.get("movement") or {}).get("run") or 0
+
+    def walk(p):
+        return (p.get("movement") or {}).get("walk") or 0
     if args.speed:  # уровень качается книгами → для транспорта важнее скорость бега
         pals.sort(key=lambda p: (-run(p), -sum(p["work"][c] for c in cols)))
     else:
         pals.sort(key=lambda p: (-sum(p["work"][c] for c in cols), -run(p)))
     join = " И ".join(cols)
     print(f"Лучшие для: {join}" + (" (условие И)" if len(cols) > 1 else "")
-          + f" — {len(pals)} палов. Уровень качается книгами/4★ → для транспорта смотри «бег»:")
+          + f" — {len(pals)} палов. Уровень качается книгами/4★ → для транспорта смотри «бег» (скорость бег/ход):")
     for p in pals[: args.top]:
         lv = " ".join(f"{c}{p['work'][c]}" for c in cols)
         others = ", ".join(f"{k} {v}" for k, v in sorted(p["work"].items(), key=lambda x: -x[1]) if k not in cols)
-        print(f"  [{lv}] {label(p):<26} разм={p.get('size') or '?':<2} бег={run(p) or '—':<5} [{'/'.join(p['elements'])}]"
+        spd = f"{run(p) or '—'}/{walk(p) or '—'}"
+        print(f"  [{lv}] {label(p):<26} разм={p.get('size') or '?':<2} бег/ход={spd:<9} [{'/'.join(p['elements'])}]"
               + (f"  ещё: {others}" if others else ""))
 
 
