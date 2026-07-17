@@ -319,6 +319,17 @@ render.workers = () => {
   </div><div id="wout"></div>`;
   const runOf=n=>(P[n]?.mv?.run)||(D.idx.pals[n]||{}).run||0;
   const tsOf=n=>(P[n]?.ts)??(D.idx.pals[n]||{}).transport_speed??0;  // скорость ПЕРЕНОСКИ (отд. стат)
+  const TR_MOVE="<b>Swift +30%</b> · Runner +20% · Legend +20% (+бой) · Nimble +10% · Dimensional Leap +50% (но +голод)";
+  const TR_WORK="<b>Artisan +50%</b> / Remarkable Craftsmanship +75% (топ) · Serious +20% · Lucky +20% (+atk/def) · Work Slave +30% (−атака)";
+  const TR_UP="уптайм ЛЮБОГО рабочего: Workaholic (SAN −15%) · Positive Thinker (SAN) · Diet Lover (голод −15%)";
+  const traitHint=cols=>{
+    const t=cols.includes("Transporting"), other=cols.some(c=>c!=="Transporting");
+    let body;
+    if(t&&!other) body=`🏃 <b>ТРАНСПОРТ → трейты на СКОРОСТЬ ДВИЖЕНИЯ</b> (work-speed НЕ помогает переноске!): ${TR_MOVE}. + ${TR_UP}.`;
+    else if(!t) body=`⚙️ <b>Обычная профа → трейты на WORK SPEED</b>: ${TR_WORK}. + ${TR_UP}.`;
+    else body=`⚠️ <b>Транспорт + обычная работа вместе</b> — трейты РАЗНЫЕ, под одну роль не оптимизировать. Транспорт: ${TR_MOVE}. Работа: ${TR_WORK}.`;
+    return `<div class="card" style="border-color:var(--acc)">${body}<div class="sub" style="margin-top:5px">Особенная профа только одна — <b>транспорт</b> (move-speed). Все прочие (крафт/добыча/готовка/ферма/полив/сбор/…) — work-speed; отдельных «по-профессии» пассивок нет — сама профа это <b>уровень work suitability</b> (качается книгами/4★).</div></div>`;
+  };
   const draw=()=>{
     const cols=[...workSel];
     const out=document.getElementById("wout");
@@ -328,7 +339,7 @@ render.workers = () => {
       .sort((a,b)=> workSort==="speed" ? tsOf(b.name)-tsOf(a.name)||runOf(b.name)-runOf(a.name)
                                        : sumSel(b)-sumSel(a)||tsOf(b.name)-tsOf(a.name)||runOf(b.name)-runOf(a.name));
     const hdr=cols.map(c=>`<th>${WORK_COLS[c]}</th>`).join("");
-    out.innerHTML=`<div class="card">
+    out.innerHTML=traitHint(cols)+`<div class="card">
       <div class="sub" style="margin-bottom:6px">${rows.length} палов · ${cols.map(c=>WORK_COLS[c]).join(" <b>И</b> ")}. Уровень качается книгами (+1) и 4★-конденсом (= сколько несёт за раз) → для транспорта смотри на <b>скорость переноски</b>, а не на уровень. <b>Перенос</b> = отдельный стат переноски груза (главный), <b>бег</b> = общая скорость.</div>
       <div style="overflow-x:auto"><table><tr>${hdr}<th>Пал</th><th title="скорость ПЕРЕНОСКИ груза (главный стат) / общий бег">Перенос / бег</th><th>Разм.</th><th>Стихии</th><th>Др. работы</th></tr>
       ${rows.slice(0,40).map(p=>{
