@@ -158,7 +158,7 @@ function specialChild(a,b){  // ребёнок особой комбинации
     _specialPair[c.parent_a+"|"+c.parent_b]=c.child; _specialPair[c.parent_b+"|"+c.parent_a]=c.child; } }
   return _specialPair[a+"|"+b]||null;
 }
-function nearestByRank(t){  // вид с рангом, ближайшим к t (tie→меньший ранг); дети спец-комбо исключены
+function nearestByRank(t){  // вид с рангом, ближайшим к t (tie→БÓЛЬШИЙ ранг, 1.0); дети спец-комбо исключены
   if(!rankArr){
     const spc=new Set(D.breeding.special_combos.map(c=>c.child));
     rankArr = Object.entries(D.breeding.combi_ranks).filter(([n])=>!spc.has(n))
@@ -167,7 +167,7 @@ function nearestByRank(t){  // вид с рангом, ближайшим к t (
   }
   if(t in _nrCache) return _nrCache[t];
   let best=null;
-  for(const c of rankArr){ const d=Math.abs(c.r-t); if(!best||d<best.d||(d===best.d&&c.r<best.r)) best={...c,d}; }
+  for(const c of rankArr){ const d=Math.abs(c.r-t); if(!best||d<best.d||(d===best.d&&c.r>best.r)) best={...c,d}; }
   return _nrCache[t]=(best?best.n:null);
 }
 function breedChild(a,b){
@@ -340,7 +340,7 @@ function breedFaqHtml(){
   ${q("Основы: ферма, торт, вид потомка",[
     "<b>Breeding Farm</b>: ставишь <b>самца + самку</b> любых разводимых палов + <b>торт</b> → пара периодически кладёт яйцо.",
     "<b>Торт тратится на каждое яйцо</b> — это главный лимит скорости.",
-    "Вид потомка задан таблицей комбинаций (в 1.0 перебалансили): по рангам ребёнок ≈ <b>floor((ранг_A + ранг_B + 1)/2)</b>; особые комбо переопределяют; одинаковая пара → тот же вид.",
+    "Вид потомка задан таблицей комбинаций (в 1.0 перебалансили): по рангам ребёнок ≈ <b>floor((ранг_A + ранг_B + 1)/2)</b>, берётся вид с ближайшим рангом. При <b>равном расстоянии до двух видов (ничья) в 1.0 побеждает БÓЛЬШИЙ ранг</b> (напр. Turtacle 2410 + Aegidron 30 → 1220, поровну между Quivern 1210 и Nitemary 1230 → выходит <b>Nitemary</b>). Особые комбо переопределяют формулу; одинаковая пара → тот же вид.",
     "Инкубация — в инкубаторе под температуру яйца (в новых мирах 1.0 время вдвое меньше).",
     "<b>Ranch</b> — отдельное здание: делает ингредиенты торта (молоко/яйца/мёд), сам не разводит.",
   ], "не давай ферме простаивать (держи запас торта), а вид пары заранее проверяй в калькуляторе выше — режим «🍳 Пара → потомок»." )}

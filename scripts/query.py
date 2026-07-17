@@ -236,7 +236,8 @@ def breed_child(br, a, b):
     special_children = {c["child"] for c in br["special_combos"]}
     # pals that only come from special combos can't appear as rank-formula results
     candidates = {n: r for n, r in ranks.items() if n not in special_children}
-    child = min(candidates, key=lambda n: (abs(candidates[n] - target), candidates[n]))
+    # тай-брейк 1.0: при равном расстоянии побеждает БÓЛЬШИЙ CombiRank (-rank)
+    child = min(candidates, key=lambda n: (abs(candidates[n] - target), -candidates[n]))
     return child, f"rank formula: floor(({ranks[a]}+{ranks[b]}+1)/2)={target}, closest rank {candidates[child]}"
 
 
@@ -306,7 +307,8 @@ def breed_chain(br, start, target):
 
     def nearest(t):
         if t not in nr_cache:
-            nr_cache[t] = min(candidates, key=lambda c: (abs(c[1] - t), c[1]))[0]
+            # тай-брейк 1.0: больший CombiRank выигрывает (-c[1])
+            nr_cache[t] = min(candidates, key=lambda c: (abs(c[1] - t), -c[1]))[0]
         return nr_cache[t]
 
     def child_of(a, b):
