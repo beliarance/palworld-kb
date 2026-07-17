@@ -329,11 +329,11 @@ render.workers = () => {
     const hdr=cols.map(c=>`<th>${WORK_COLS[c]}</th>`).join("");
     out.innerHTML=`<div class="card">
       <div class="sub" style="margin-bottom:6px">${rows.length} палов · ${cols.map(c=>WORK_COLS[c]).join(" <b>И</b> ")}. Уровень качается книгами (+1) и 4★-конденсом → для транспорта смотри на <b>скорость</b> и размер, а не на стартовый уровень (уровень = сколько несёт за раз, но НЕ скорость).</div>
-      <div style="overflow-x:auto"><table><tr>${hdr}<th>Пал</th><th>Разм.</th><th>Бег</th><th>Стихии</th><th>Др. работы</th></tr>
+      <div style="overflow-x:auto"><table><tr>${hdr}<th>Пал</th><th>Скорость</th><th>Разм.</th><th>Стихии</th><th>Др. работы</th></tr>
       ${rows.slice(0,40).map(p=>{
         const lvls=cols.map(c=>`<td class="mono big">${p.work[c]}</td>`).join("");
         const other=Object.entries(p.work).filter(([w])=>!workSel.has(w)).sort((a,b)=>b[1]-a[1]).map(([w,l])=>`${WORK_COLS[w]} ${l}`).join(", ");
-        return `<tr>${lvls}<td>${palLink(p.name)}</td><td class="dim mono">${(D.idx.pals[p.name]||{}).size||"?"}</td><td class="mono dim">${runOf(p.name)||"—"}</td><td>${els(p)}</td><td class="dim">${other}</td></tr>`;
+        return `<tr>${lvls}<td>${palLink(p.name)}</td><td class="mono big">${runOf(p.name)||"—"}</td><td class="dim mono">${(D.idx.pals[p.name]||{}).size||"?"}</td><td>${els(p)}</td><td class="dim">${other}</td></tr>`;
       }).join("")}</table></div>
       ${rows.length>40?`<div class="dim" style="margin-top:6px">…показаны 40 из ${rows.length}</div>`:""}</div>`;
   };
