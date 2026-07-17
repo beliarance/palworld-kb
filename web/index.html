@@ -304,21 +304,45 @@ function showPal(name, push=true){
 }
 
 /* --- Рабочие --- */
+const workSel = new Set(["Transporting"]);   // мультивыбор работ, условие И (сохраняется между заходами)
+let workSort = "level";                       // level | speed
 render.workers = () => {
-  V().innerHTML = `<div class="card"><div class="row">
-    <select id="wtask">${Object.entries(WORK_COLS).map(([k,v])=>`<option value="${k}">${v}</option>`).join("")}</select>
-  </div></div><div id="wout"></div>`;
+  const chipStyle=on=>`border:1px solid ${on?"var(--border)":"transparent"};border-radius:8px;padding:5px 11px;cursor:pointer;font-size:13px;background:${on?"var(--panel2)":"none"};color:${on?"var(--acc)":"var(--dim)"}`;
+  const chip=k=>`<button class="wchip" data-w="${k}" style="${chipStyle(workSel.has(k))}">${WORK_COLS[k]}</button>`;
+  V().innerHTML = `<div class="card">
+    <div class="sub" style="margin-bottom:6px">Выбери работы (можно несколько). Покажу палов, у кого есть <b>ВСЕ</b> выбранные — условие <b>И</b>, не ИЛИ.</div>
+    <div class="row" id="wchips" style="flex-wrap:wrap;gap:5px">${Object.keys(WORK_COLS).map(chip).join("")}</div>
+    <div class="row" style="margin-top:8px;gap:12px;font-size:12px">
+      <label class="clicky"><input type="radio" name="wsort" value="level"${workSort==="level"?" checked":""}> по сумме уровней</label>
+      <label class="clicky"><input type="radio" name="wsort" value="speed"${workSort==="speed"?" checked":""}> по скорости бега (важно для транспорта)</label>
+    </div>
+  </div><div id="wout"></div>`;
+  const runOf=n=>(P[n]?.mv?.run)||(D.idx.pals[n]||{}).run||0;
   const draw=()=>{
-    const col=document.getElementById("wtask").value;
-    const rows=Object.values(P).filter(p=>p.work[col])
-      .sort((a,b)=>b.work[col]-a.work[col]||Object.values(b.work).reduce((s,x)=>s+x,0)-Object.values(a.work).reduce((s,x)=>s+x,0));
-    document.getElementById("wout").innerHTML=`<div class="card"><table>
-      <tr><th>Ур.</th><th>Пал</th><th>Стихии</th><th>Другие работы</th></tr>
-      ${rows.slice(0,30).map(p=>`<tr><td class="mono big">${p.work[col]}</td><td>${palLink(p.name)}</td><td>${els(p)}</td>
-        <td class="dim">${Object.entries(p.work).filter(([w])=>w!==col).sort((a,b)=>b[1]-a[1]).map(([w,l])=>`${WORK_COLS[w]} ${l}`).join(", ")}</td></tr>`).join("")}
-    </table></div>`;
+    const cols=[...workSel];
+    const out=document.getElementById("wout");
+    if(!cols.length){ out.innerHTML=`<div class="card dim">Выбери хотя бы одну работу.</div>`; return; }
+    const sumSel=p=>cols.reduce((s,c)=>s+(p.work[c]||0),0);
+    const rows=Object.values(P).filter(p=>cols.every(c=>p.work[c]))   // И: есть ВСЕ выбранные
+      .sort((a,b)=> workSort==="speed" ? runOf(b.name)-runOf(a.name)||sumSel(b)-sumSel(a)
+                                       : sumSel(b)-sumSel(a)||runOf(b.name)-runOf(a.name));
+    const hdr=cols.map(c=>`<th>${WORK_COLS[c]}</th>`).join("");
+    out.innerHTML=`<div class="card">
+      <div class="sub" style="margin-bottom:6px">${rows.length} палов · ${cols.map(c=>WORK_COLS[c]).join(" <b>И</b> ")}. Уровень качается книгами (+1) и 4★-конденсом → для транспорта смотри на <b>скорость</b> и размер, а не на стартовый уровень (уровень = сколько несёт за раз, но НЕ скорость).</div>
+      <div style="overflow-x:auto"><table><tr>${hdr}<th>Пал</th><th>Разм.</th><th>Бег</th><th>Стихии</th><th>Др. работы</th></tr>
+      ${rows.slice(0,40).map(p=>{
+        const lvls=cols.map(c=>`<td class="mono big">${p.work[c]}</td>`).join("");
+        const other=Object.entries(p.work).filter(([w])=>!workSel.has(w)).sort((a,b)=>b[1]-a[1]).map(([w,l])=>`${WORK_COLS[w]} ${l}`).join(", ");
+        return `<tr>${lvls}<td>${palLink(p.name)}</td><td class="dim mono">${(D.idx.pals[p.name]||{}).size||"?"}</td><td class="mono dim">${runOf(p.name)||"—"}</td><td>${els(p)}</td><td class="dim">${other}</td></tr>`;
+      }).join("")}</table></div>
+      ${rows.length>40?`<div class="dim" style="margin-top:6px">…показаны 40 из ${rows.length}</div>`:""}</div>`;
   };
-  document.getElementById("wtask").addEventListener("change",draw); draw();
+  document.getElementById("wchips").addEventListener("click",e=>{const b=e.target.closest(".wchip"); if(!b)return;
+    const w=b.dataset.w;
+    if(workSel.has(w)){ if(workSel.size>1) workSel.delete(w); } else workSel.add(w);   // минимум 1
+    b.setAttribute("style",chipStyle(workSel.has(w))); draw(); });
+  V().querySelectorAll('input[name=wsort]').forEach(r=>r.addEventListener('change',e=>{workSort=e.target.value;draw();}));
+  draw();
 };
 
 /* --- Бридинг --- */

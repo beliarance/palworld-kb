@@ -68,6 +68,7 @@ def load_db():
             "melee_attack": c.get("melee_attack"), "shot_attack": c.get("shot_attack"),
             "defense": c.get("defense"), "ride": c.get("ride"),
             "mount_type": c.get("mount_type"), "movement": c.get("movement") or {},
+            "size": c.get("size"),
             "partner_skill": c.get("partner_skill") or {},
             "notable_drops": c.get("notable_drops") or [],
             "role_tags": c.get("role_tags") or [],
@@ -134,11 +135,32 @@ def rank_workers(db, task, element=None):
 
 
 def cmd_workers(db, args):
-    col, pals = rank_workers(db, args.task, args.element)
-    print(f"Best pals for {col} (level {'1-8'}, higher = faster):")
+    # можно несколько задач через запятую → условие И (пал должен уметь ВСЕ)
+    tasks = [t.strip() for t in args.task.split(",") if t.strip()]
+    cols = []
+    for t in tasks:
+        c = WORK_TASKS.get(t.lower())
+        if not c:
+            sys.exit(f"Unknown task '{t}'. Tasks: {', '.join(sorted(set(WORK_TASKS)))}")
+        cols.append(c)
+    pals = [p for p in db.values() if all(p["work"].get(c) for c in cols)]
+    if args.element:
+        pals = [p for p in pals if args.element.capitalize() in p["elements"]]
+
+    def run(p):
+        return (p.get("movement") or {}).get("run") or 0
+    if args.speed:  # уровень качается книгами → для транспорта важнее скорость бега
+        pals.sort(key=lambda p: (-run(p), -sum(p["work"][c] for c in cols)))
+    else:
+        pals.sort(key=lambda p: (-sum(p["work"][c] for c in cols), -run(p)))
+    join = " И ".join(cols)
+    print(f"Лучшие для: {join}" + (" (условие И)" if len(cols) > 1 else "")
+          + f" — {len(pals)} палов. Уровень качается книгами/4★ → для транспорта смотри «бег»:")
     for p in pals[: args.top]:
-        others = ", ".join(f"{k} {v}" for k, v in sorted(p["work"].items(), key=lambda x: -x[1]) if k != col)
-        print(f"  {col} {p['work'][col]}  {label(p):<28} [{'/'.join(p['elements'])}]" + (f"  also: {others}" if others else ""))
+        lv = " ".join(f"{c}{p['work'][c]}" for c in cols)
+        others = ", ".join(f"{k} {v}" for k, v in sorted(p["work"].items(), key=lambda x: -x[1]) if k not in cols)
+        print(f"  [{lv}] {label(p):<26} разм={p.get('size') or '?':<2} бег={run(p) or '—':<5} [{'/'.join(p['elements'])}]"
+              + (f"  ещё: {others}" if others else ""))
 
 
 def cmd_mounts(db, args):
@@ -1141,7 +1163,9 @@ def main(argv=None):
     sub = ap.add_subparsers(dest="cmd", required=True)
 
     p = sub.add_parser("pal"); p.add_argument("name")
-    p = sub.add_parser("workers"); p.add_argument("task"); p.add_argument("--top", type=int, default=10); p.add_argument("--element")
+    p = sub.add_parser("workers"); p.add_argument("task", help="задача или НЕСКОЛЬКО через запятую (условие И): planting,watering")
+    p.add_argument("--top", type=int, default=10); p.add_argument("--element")
+    p.add_argument("--speed", action="store_true", help="сортировать по скорости бега (для транспорта: уровень качается книгами)")
     p = sub.add_parser("mounts"); p.add_argument("kind", choices=["ground", "flying", "swim"]); p.add_argument("--top", type=int, default=10)
     p = sub.add_parser("fighters"); p.add_argument("--top", type=int, default=10); p.add_argument("--element")
     p = sub.add_parser("counter"); p.add_argument("element")

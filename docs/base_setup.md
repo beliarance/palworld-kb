@@ -137,7 +137,36 @@ Frostallion Noct (Gathering), Wumpo (Transporting), Frostallion (Cooling), Bella
 
 ---
 
+## Выбор палов: транспорт и ферма (1.0)
+
+**Транспортники.** Уровень Transporting = сколько предметов пал несёт за раз из стопки;
+**на скорость передвижения уровень НЕ влияет** (game8). Уровень легко добить книгами (+1
+Applied Handbook) и 4★-конденсом (до 10) — поэтому при выборе транспортника смотри на
+**скорость бега и размер**, а не на стартовый уровень. Быстрейшие (по run-скорости, из данных):
+- **XS:** **Mimog (#144)** run 2000 — самый быстрый транспортник в игре (стартовый T2 → книги).
+- **M:** **Dandilord (#194)** run 1000; Anubis (#139) run 800 T4.
+- **L:** **Eidrolon / Eidrolon Ignis (#171)** run 1400, стартовый **T6** — топ-выбор (game8).
+- Faleris (#188), Selyne (#190) — run 1000. Wumpo — базовая аура **+1 Transporting всем**.
+
+**Трейты транспортника** — только **скорость передвижения**, НЕ work-speed: work-бонусы
+(Workaholic/Serious/Artisan) на переноску **не влияют** (game8). Стак: **Swift +30% ·
+Runner +20% · Legend +20% (легендарки) · Nimble +10%** (складываются). `Dimensional Leap`
++50% — но +15% к голоду (корми чаще). Ещё полезно `Diet Lover`/сытость, т.к. транспортник
+много бегает.
+
+**Один пал на всю плантацию?** Плантация требует 3 навыка — **Planting + Watering +
+Gathering**. Палов со всеми 3 сразу **нет ни одного** (299/299), а **книги добавить
+недостающий навык НЕ могут** — только поднимают уже имеющийся (game8). Максимум близко:
+**Ophydia (#175)** — **единственный** пал с Planting **И** Watering (P7 W5). Сбор при этом
+подхватывают простаивающие палы (авто-сбор), либо ставь отдельного гатерера. Так что «одним
+палом» реально закрыть только посадку+полив (Ophydia), но не все три.
+(Мультивыбор работ с условием «И» — во вкладке «Рабочие».)
+
+---
+
 ## Sources
+- Game8 Work Suitability / Transporting / passives — https://game8.co/games/Palworld/archives/440216 , /439560 , /440414
+- thepalprofessor.com — Transporter Pals table
 - Game8 Palworld Base Building Guide — https://game8.co/games/Palworld/archives/440240
 - Game8 Feed Box / Base Level Rewards — https://game8.co/games/Palworld/archives/441175 , /440428
 - palworld.wiki.gg station pages: Primitive Furnace, Ranch, Breeding Farm, Cooking Pot, Crusher, Mill,
