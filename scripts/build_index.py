@@ -207,6 +207,7 @@ def main():
             "def": c.get("defense"),
             "mount": c.get("mount_type"), "sprint": (c.get("movement") or {}).get("sprint"),
             "walk": (c.get("movement") or {}).get("walk"), "run": (c.get("movement") or {}).get("run"),
+            "transport_speed": c.get("transport_speed"),
             "partner_skill": ps_name, "partner_effect": eff,
             "partner_tags": tags, "party_roles": party, "ranch_produce": produce,
             "base_support": base_support or None,

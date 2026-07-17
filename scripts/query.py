@@ -68,7 +68,7 @@ def load_db():
             "melee_attack": c.get("melee_attack"), "shot_attack": c.get("shot_attack"),
             "defense": c.get("defense"), "ride": c.get("ride"),
             "mount_type": c.get("mount_type"), "movement": c.get("movement") or {},
-            "size": c.get("size"),
+            "size": c.get("size"), "transport_speed": c.get("transport_speed"),
             "partner_skill": c.get("partner_skill") or {},
             "notable_drops": c.get("notable_drops") or [],
             "role_tags": c.get("role_tags") or [],
@@ -150,20 +150,20 @@ def cmd_workers(db, args):
     def run(p):
         return (p.get("movement") or {}).get("run") or 0
 
-    def walk(p):
-        return (p.get("movement") or {}).get("walk") or 0
-    if args.speed:  # уровень качается книгами → для транспорта важнее скорость бега
-        pals.sort(key=lambda p: (-run(p), -sum(p["work"][c] for c in cols)))
+    def ts(p):  # transport_speed — отдельный стат ПЕРЕНОСКИ (главный для транспорта)
+        return p.get("transport_speed") or 0
+    if args.speed:  # уровень качается книгами → для транспорта важна скорость ПЕРЕНОСКИ
+        pals.sort(key=lambda p: (-ts(p), -run(p)))
     else:
-        pals.sort(key=lambda p: (-sum(p["work"][c] for c in cols), -run(p)))
+        pals.sort(key=lambda p: (-sum(p["work"][c] for c in cols), -ts(p), -run(p)))
     join = " И ".join(cols)
     print(f"Лучшие для: {join}" + (" (условие И)" if len(cols) > 1 else "")
-          + f" — {len(pals)} палов. Уровень качается книгами/4★ → для транспорта смотри «бег» (скорость бег/ход):")
+          + f" — {len(pals)} палов. Уровень качается книгами/4★ (= сколько несёт) → для транспорта смотри «перенос» (перенос/бег):")
     for p in pals[: args.top]:
         lv = " ".join(f"{c}{p['work'][c]}" for c in cols)
         others = ", ".join(f"{k} {v}" for k, v in sorted(p["work"].items(), key=lambda x: -x[1]) if k not in cols)
-        spd = f"{run(p) or '—'}/{walk(p) or '—'}"
-        print(f"  [{lv}] {label(p):<26} разм={p.get('size') or '?':<2} бег/ход={spd:<9} [{'/'.join(p['elements'])}]"
+        spd = f"{ts(p) or '—'}/{run(p) or '—'}"
+        print(f"  [{lv}] {label(p):<26} разм={p.get('size') or '?':<2} перенос/бег={spd:<10} [{'/'.join(p['elements'])}]"
               + (f"  ещё: {others}" if others else ""))
 
 

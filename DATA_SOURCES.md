@@ -2,6 +2,14 @@
 
 Версия игры: **Palworld 1.0** (релиз 10 июля 2026). Дата актуализации базы: **2026-07-17**.
 
+## pals_combat.json transport_speed (2026-07-18)
+
+- **paldb.cc/en/Transporting** — стат `Transport Speed` (скорость переноски груза, отдельный
+  от Run Speed) для 147 транспортников. Сборщик: `scripts/collectors/fetch_transport_speed.py`.
+  Важно: высокий run ≠ хороший транспортник (Mimog run 2000 / TS 450; Eye of Cthulhu TS 600).
+  Механику подтвердили game8 (уровень = carry, не скорость; скорость переноски — отдельный стат)
+  и paldb (обе колонки на странице Transporting).
+
 ## docs/boss_fighting.md + bosses.json world_bosses (2026-07-17)
 
 - **Различие рейд/босс:** алтарные рейды (Summoning Altar) идут НА БАЗЕ — бьются

@@ -94,7 +94,7 @@ async function loadAll(){
   for (const c of D.combat){
     const p = P[c.name] || (P[c.name]={name:c.name,elements:c.elements,work:{}});
     Object.assign(p,{rarity:c.rarity,hp:c.hp,melee:c.melee_attack,shot:c.shot_attack,def:c.defense,
-      ride:c.ride,mount:c.mount_type,mv:c.movement||{},ps:c.partner_skill||{},drops:c.notable_drops||[]});
+      ride:c.ride,mount:c.mount_type,mv:c.movement||{},ts:c.transport_speed,ps:c.partner_skill||{},drops:c.notable_drops||[]});
   }
   itemByName = Object.fromEntries(D.items.items.map(i=>[i.name,i]));
 }
@@ -314,27 +314,27 @@ render.workers = () => {
     <div class="row" id="wchips" style="flex-wrap:wrap;gap:5px">${Object.keys(WORK_COLS).map(chip).join("")}</div>
     <div class="row" style="margin-top:8px;gap:12px;font-size:12px">
       <label class="clicky"><input type="radio" name="wsort" value="level"${workSort==="level"?" checked":""}> по сумме уровней</label>
-      <label class="clicky"><input type="radio" name="wsort" value="speed"${workSort==="speed"?" checked":""}> по скорости бега (важно для транспорта)</label>
+      <label class="clicky"><input type="radio" name="wsort" value="speed"${workSort==="speed"?" checked":""}> по скорости ПЕРЕНОСКИ (важно для транспорта)</label>
     </div>
   </div><div id="wout"></div>`;
   const runOf=n=>(P[n]?.mv?.run)||(D.idx.pals[n]||{}).run||0;
-  const walkOf=n=>(P[n]?.mv?.walk)||(D.idx.pals[n]||{}).walk||0;
+  const tsOf=n=>(P[n]?.ts)??(D.idx.pals[n]||{}).transport_speed??0;  // скорость ПЕРЕНОСКИ (отд. стат)
   const draw=()=>{
     const cols=[...workSel];
     const out=document.getElementById("wout");
     if(!cols.length){ out.innerHTML=`<div class="card dim">Выбери хотя бы одну работу.</div>`; return; }
     const sumSel=p=>cols.reduce((s,c)=>s+(p.work[c]||0),0);
     const rows=Object.values(P).filter(p=>cols.every(c=>p.work[c]))   // И: есть ВСЕ выбранные
-      .sort((a,b)=> workSort==="speed" ? runOf(b.name)-runOf(a.name)||sumSel(b)-sumSel(a)
-                                       : sumSel(b)-sumSel(a)||runOf(b.name)-runOf(a.name));
+      .sort((a,b)=> workSort==="speed" ? tsOf(b.name)-tsOf(a.name)||runOf(b.name)-runOf(a.name)
+                                       : sumSel(b)-sumSel(a)||tsOf(b.name)-tsOf(a.name)||runOf(b.name)-runOf(a.name));
     const hdr=cols.map(c=>`<th>${WORK_COLS[c]}</th>`).join("");
     out.innerHTML=`<div class="card">
-      <div class="sub" style="margin-bottom:6px">${rows.length} палов · ${cols.map(c=>WORK_COLS[c]).join(" <b>И</b> ")}. Уровень качается книгами (+1) и 4★-конденсом → для транспорта смотри на <b>скорость</b> и размер, а не на стартовый уровень (уровень = сколько несёт за раз, но НЕ скорость).</div>
-      <div style="overflow-x:auto"><table><tr>${hdr}<th>Пал</th><th title="скорость передвижения: бег / ход">Скор. бег/ход</th><th>Разм.</th><th>Стихии</th><th>Др. работы</th></tr>
+      <div class="sub" style="margin-bottom:6px">${rows.length} палов · ${cols.map(c=>WORK_COLS[c]).join(" <b>И</b> ")}. Уровень качается книгами (+1) и 4★-конденсом (= сколько несёт за раз) → для транспорта смотри на <b>скорость переноски</b>, а не на уровень. <b>Перенос</b> = отдельный стат переноски груза (главный), <b>бег</b> = общая скорость.</div>
+      <div style="overflow-x:auto"><table><tr>${hdr}<th>Пал</th><th title="скорость ПЕРЕНОСКИ груза (главный стат) / общий бег">Перенос / бег</th><th>Разм.</th><th>Стихии</th><th>Др. работы</th></tr>
       ${rows.slice(0,40).map(p=>{
         const lvls=cols.map(c=>`<td class="mono big">${p.work[c]}</td>`).join("");
         const other=Object.entries(p.work).filter(([w])=>!workSel.has(w)).sort((a,b)=>b[1]-a[1]).map(([w,l])=>`${WORK_COLS[w]} ${l}`).join(", ");
-        return `<tr>${lvls}<td>${palLink(p.name)}</td><td class="mono"><b>${runOf(p.name)||"—"}</b> <span class="dim">/ ${walkOf(p.name)||"—"}</span></td><td class="dim mono">${(D.idx.pals[p.name]||{}).size||"?"}</td><td>${els(p)}</td><td class="dim">${other}</td></tr>`;
+        return `<tr>${lvls}<td>${palLink(p.name)}</td><td class="mono"><b>${tsOf(p.name)||"—"}</b> <span class="dim">/ ${runOf(p.name)||"—"}</span></td><td class="dim mono">${(D.idx.pals[p.name]||{}).size||"?"}</td><td>${els(p)}</td><td class="dim">${other}</td></tr>`;
       }).join("")}</table></div>
       ${rows.length>40?`<div class="dim" style="margin-top:6px">…показаны 40 из ${rows.length}</div>`:""}</div>`;
   };
