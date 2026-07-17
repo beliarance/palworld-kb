@@ -38,11 +38,13 @@
   .mono{font-variant-numeric:tabular-nums}
   .sub{font-size:12px;color:var(--dim)}
   .indent{margin-left:16px}
-  .pc-wrap{position:relative;flex:1 1 220px;min-width:220px}
+  .pc-wrap{position:relative;flex:1 1 240px;min-width:240px}
   .pc-wrap input{width:100%;min-width:0;box-sizing:border-box}
-  .pc-dd{position:absolute;z-index:50;left:0;right:0;top:100%;margin-top:3px;max-height:340px;overflow:auto;background:var(--panel2);border:1px solid var(--border);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.45)}
-  .pc-row{display:flex;align-items:center;gap:8px;padding:5px 9px;cursor:pointer;white-space:nowrap}
+  .pc-dd{position:absolute;z-index:50;left:0;right:0;top:100%;margin-top:3px;max-height:460px;overflow:auto;background:var(--panel2);border:1px solid var(--border);border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.5)}
+  .pc-row{display:flex;align-items:center;gap:10px;padding:8px 12px;cursor:pointer;white-space:nowrap;font-size:15px;border-bottom:1px solid rgba(255,255,255,.04)}
   .pc-row:hover,.pc-row.on{background:var(--border)}
+  .pc-row img{width:34px;height:34px;border-radius:50%;flex:0 0 auto}
+  .pc-foot{padding:6px 12px;font-size:12px;color:var(--dim);border-top:1px solid var(--border)}
 </style>
 </head>
 <body>
@@ -111,19 +113,24 @@ let _palNamesSorted=null;
 function palCombo(input, onPick){
   if(!input||input.dataset.pc) return; input.dataset.pc="1";
   input.setAttribute("autocomplete","off"); input.removeAttribute("list");
-  if(!_palNamesSorted) _palNamesSorted=Object.keys(P).sort();
+  if(!_palNamesSorted){  // порядок как в паледексе: по номеру (вариант B после базового), безномерные — в конец
+    const key=n=>{const s=P[n].number||"";const m=/^(\d+)/.exec(s);return [m?+m[1]:9999,s];};
+    _palNamesSorted=Object.keys(P).sort((a,b)=>{const ka=key(a),kb=key(b);return ka[0]-kb[0]||(ka[1]<kb[1]?-1:ka[1]>kb[1]?1:0);});
+  }
+  const CAP=60;
+  const comboIcon=n=>D.icons?.pals?.[n]?`<img src="${D.icons.pals[n]}" loading="lazy">`:`<span style="display:inline-block;width:34px;height:34px;border-radius:50%;background:var(--border);flex:0 0 auto"></span>`;
   const wrap=document.createElement("div"); wrap.className="pc-wrap";
   input.parentNode.insertBefore(wrap,input); wrap.appendChild(input);
   const dd=document.createElement("div"); dd.className="pc-dd"; dd.style.display="none"; wrap.appendChild(dd);
   let items=[], active=-1;
   const render=()=>{
     const q=input.value.trim().toLowerCase();
-    let m=_palNamesSorted.filter(n=>n.toLowerCase().includes(q)||String(P[n].number||"").includes(q));
-    m.sort((a,b)=>((a.toLowerCase().startsWith(q)?0:1)-(b.toLowerCase().startsWith(q)?0:1))||a.localeCompare(b));
-    items=m.slice(0,40); active=-1;
-    dd.innerHTML=items.map((n,i)=>{const p=P[n];
-      return `<div class="pc-row" data-i="${i}">${palIcon(n)||'<span style="display:inline-block;width:22px"></span>'}<span>${esc(n)}</span><span class="dim mono">#${p.number??"—"}</span><span style="margin-left:auto">${els(p)}</span></div>`;
-    }).join("")||`<div class="dim" style="padding:6px 9px">нет совпадений</div>`;
+    const m=_palNamesSorted.filter(n=>n.toLowerCase().includes(q)||String(P[n].number||"").includes(q));  // порядок по номеру сохраняется
+    items=m.slice(0,CAP); active=-1;
+    dd.innerHTML=(items.map((n,i)=>{const p=P[n];
+      return `<div class="pc-row" data-i="${i}">${comboIcon(n)}<span>${esc(n)}</span><span class="dim mono">#${p.number??"—"}</span><span style="margin-left:auto">${els(p)}</span></div>`;
+    }).join("")||`<div class="dim" style="padding:8px 12px">нет совпадений</div>`)
+      +(m.length>CAP?`<div class="pc-foot">…ещё ${m.length-CAP} — уточни имя или номер</div>`:"");
     dd.style.display="";
   };
   const hl=()=>{[...dd.querySelectorAll(".pc-row")].forEach((r,i)=>r.classList.toggle("on",i===active));
