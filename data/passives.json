@@ -215,18 +215,20 @@
   {
    "name": "Babysitter",
    "tier": 4,
-   "effects": "While at a base, increases egg production speed by +30% and incubation speed by +30% for Pals assigned to a Breeding Farm.",
+   "effects": "While at a base, increases egg production speed by +30% and incubation speed by +30% for Pals assigned to a Breeding Farm. — Мутационно-эксклюзивная: надёжно только через мутацию при бридинге (редко «протекает» из ловли); из обычного пула родителей не наследуется.",
    "category": "work",
    "exclusive_source": null,
-   "breedable": null
+   "breedable": false,
+   "mutation_exclusive": true
   },
   {
    "name": "Idiosyncratic",
    "tier": 4,
-   "effects": "Pal and Player Auto Health Regeneration Rate +50%, Defense +25%, Immune to Poison Damage, Immune to Burn Damage",
+   "effects": "Pal and Player Auto Health Regeneration Rate +50%, Defense +25%, Immune to Poison Damage, Immune to Burn Damage — Мутационно-эксклюзивная: надёжно только через мутацию при бридинге (редко «протекает» из ловли); из обычного пула родителей не наследуется.",
    "category": "combat",
    "exclusive_source": null,
-   "breedable": null
+   "breedable": false,
+   "mutation_exclusive": true
   },
   {
    "name": "Lavish Hospitality",
@@ -247,18 +249,20 @@
   {
    "name": "Immortality",
    "tier": 4,
-   "effects": "Life Steal +5%, Pal Auto Health Regeneration Rate +100%, Attack +15%",
+   "effects": "Life Steal +5%, Pal Auto Health Regeneration Rate +100%, Attack +15% — Мутационно-эксклюзивная: надёжно только через мутацию при бридинге (редко «протекает» из ловли); из обычного пула родителей не наследуется.",
    "category": "combat",
    "exclusive_source": null,
-   "breedable": null
+   "breedable": false,
+   "mutation_exclusive": true
   },
   {
    "name": "Heavily Armored",
    "tier": 4,
-   "effects": "Immune to Explosion Damage",
+   "effects": "Immune to Explosion Damage — Мутационно-эксклюзивная: надёжно только через мутацию при бридинге (редко «протекает» из ловли); из обычного пула родителей не наследуется.",
    "category": "combat",
    "exclusive_source": null,
-   "breedable": null
+   "breedable": false,
+   "mutation_exclusive": true
   },
   {
    "name": "Lightfooted",
@@ -1009,6 +1013,15 @@
    "category": "detrimental",
    "exclusive_source": null,
    "breedable": true
+  },
+  {
+   "name": "Skirmisher",
+   "tier": 4,
+   "effects": "Мутационно-эксклюзивная пассивка (детали эффекта не собраны). Наследуется только через мутацию.",
+   "category": "combat",
+   "exclusive_source": null,
+   "breedable": false,
+   "mutation_exclusive": true
   }
  ],
  "notes": [
@@ -1025,7 +1038,8 @@
   "Legend is native to 6 pals in 1.0: Paladius, Necromus, Frostallion, Frostallion Noct, Jetragon, and new legendary Neptilius (which also has exclusive Lunker). Hartalis has exclusive Savior; Xenolord has Invader; Otherworldly Cells is native to the Xeno line (Xenovader/Xenogard/Xenolord).",
   "The seven tier-5 'World Tree' passives (Twin-Edged Holy Blade, Sanctified Meat Shield, Demon's Hand, World Tree Seedbed, Hermit Sage, Dimensional Leap, God of Destruction) all carry 'World Tree resources will not vanish when approached' and Weight 5, and are NOT in the wild pool. These are the best candidates for the 'mutation-exclusive' passives mentioned in docs/breeding_mechanics.md section 7 (which says FIVE) - count and acquisition method unconfirmed.",
   "Mercy Hit is granted by items (Ring of Mercy, Pal Tamers Glasses) per paldb's source links, though it is also tagged as being in the pal pool.",
-  "palworld.gg cross-check: 54 of its 58 listed pal passives overlap this set; 0 numeric conflicts. Its remaining 4 (Aerial Dash +1..+4) are gear effects."
+  "palworld.gg cross-check: 54 of its 58 listed pal passives overlap this set; 0 numeric conflicts. Its remaining 4 (Aerial Dash +1..+4) are gear effects.",
+  "Мутационно-эксклюзивные пассивки (breedable=false, mutation_exclusive=true): Babysitter, Idiosyncratic, Immortality, Heavily Armored, Skirmisher — из обычного пула родителей не наследуются, только через мутацию (PRELIMINARY 1.0)."
  ],
  "gaps": [
   "Mutation-exclusive passive names unconfirmed: docs say five unique mutation passives exist; paldb does not label any passive as mutation-sourced. The seven tier-5 World Tree passives are the likely set (breedable=null on them).",

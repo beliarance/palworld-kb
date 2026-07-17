@@ -224,3 +224,37 @@ The **Pal Essence Condenser** ranks up a base Pal by sacrificing **duplicates of
 - xgamingserver — Awakening & Radiant Gems (1.0): https://xgamingserver.com/blog/palworld-awakening-radiant-gems/
 - hostedgg — Awakening & Mutation (1.0): https://hostedgg.com/blog/palworld-awakening-mutation-guide
 - Fandom — Pal Essence Condenser: https://palworld.fandom.com/wiki/Pal_Essence_Condenser
+
+
+## 9. Наследование: что переходит, а что НЕТ (сводка)
+
+**(1.0 + EA-числа; альфа-% и мутационные пассивки — PRELIMINARY, комьюнити)**
+
+**Переходит потомку:** вид (по ранговой формуле / спец-комбо), пассивки (из пула обоих
+родителей, самец 24% / самка 20% / ничего 34% на слот), IV (30% от каждого родителя,
+40% рандом; ≥1 всегда), одна атака из пула родителей.
+
+**НЕ переходит (навешивается на потомка заново):**
+- **Альфа-статус** — не наследуется; пара альфа+альфа не гарантирует. У яйца бридинга
+  лишь ~5% (комьюнити) вылупить альфу независимо от родителей; раздутые статы альфы не идут.
+- **Звёзды Condenser** — потомок всегда 0★, конденсировать заново (снова 116 дублей).
+- **Уровень** — вылупляется 1-го уровня.
+- **Рарность** — не наследуется напрямую: у потомка рарность его ВИДА; ранги/рарность
+  родителей лишь определяют вид по формуле.
+- **Work-апгрейды мануалом** (Applied Technique Handbook), **апгрейд активок**, **Awakening**
+  — все per-pal, не наследуются.
+
+**Статы потомка:** база ВИДА-потомка × вклад IV (до ~+30%) × уровень × звёзды × Pal Souls ×
+Awakening. Сырые статы родителей НЕ усредняются — переходят только IV.
+
+**Активные скиллы:** бридинг не задаёт мувсет; потомок наследует какую-то атаку из пула
+родителей, конкретный набор ставится **Skill Fruit**'ами уже на потомке.
+
+**Пассивки, которые НЕ вывести бридингом:** мутационно-эксклюзивные — **Babysitter,
+Idiosyncratic, Immortality, Heavily Armored, Skirmisher** (из слота мутации, не из пула
+родителей; редко «протекают» из ловли) → в data/passives.json помечены `breedable:false,
+mutation_exclusive:true`. Партнёрский/сигнатурный скилл пала — не наследуемая пассивка.
+Legend/Lucky/«эмперор»-серии наследуются (chain-breeding), но зарождаются только у конкретных палов.
+
+Источники: palworld.wiki.gg/Breeding, allthings.how (1.0 trait inheritance, 2026-07), thepalprofessor
+breeding guide, switchbladegaming, boostmatch (mutation-exclusive пассивки), game8.

@@ -367,3 +367,15 @@
   Всё PRELIMINARY; конфликты координат/чисел нод отмечены в §5 гайда.
 - Источники: nexttier.pro, drawpie.com, powerupgaming.co.uk, allthings.how,
   game8.co, pindrop.gg (июль 2026); thegameslayer.com (2025-01, пред-1.0).
+
+## 2026-07-17 — Детали наследования при бридинге (альфа/звёзды/рарность/мутационные пассивки)
+- WebSearch/WebFetch (palworld.wiki.gg, allthings.how, thepalprofessor, switchbladegaming,
+  boostmatch, game8): альфа-статус/звёзды Condenser/уровень/рарность/work-апгрейды/Awakening
+  НЕ наследуются (навешиваются на потомка заново); статы = база вида × IV, сырые статы
+  родителей не усредняются; активки ставятся Skill Fruit'ами; мутационно-эксклюзивные
+  пассивки (Babysitter, Idiosyncratic, Immortality, Heavily Armored, Skirmisher) из пула
+  родителей не выводятся. Всё PRELIMINARY (альфа-% ~5% — комьюнити).
+- data/passives.json: эти 5 помечены breedable=false + mutation_exclusive=true (добавлен
+  Skirmisher). docs/breeding_mechanics.md §9 «Наследование: что переходит, а что НЕТ».
+  Веб-FAQ бридинга дополнен 3 разделами (статы-формула, что НЕ переходит, какие пассивки
+  не вывести) + активки/фрукт/мануал.
