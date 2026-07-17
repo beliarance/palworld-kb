@@ -1046,6 +1046,8 @@ class BasePlan {
   q(){ const star=this.o.stars?1.55:1.0, research=this.o.research?1.45:1.0;
     // 4★ ≈ ×1.55; ресёрч (Pal Labor Research Lab макс) Work Speed +45%
     return (70*QUALITY[this.o.workforce]+this.foodWs())/70*star*research; }
+  // ранч = q() × бонус Ranch Master(+2 Farming)/handbook при палах с пассивками (×1.5)
+  ranchMult(){ return this.q()*(this.o.workforce!=="baseline"?1.5:1.0); }
   plantYieldEff(){ return (this.o.plantYield||55)*(this.o.research?1.5:1.0); }  // Harvest Yield +50%
   best(cands){ const a=cands.filter(c=>this.structs[c]&&(this.structs[c].tech_level||0)<=this.o.tech); return a[a.length-1]||null; }
   add(n,c=1){ if(n&&c>0) this.buildings[n]=(this.buildings[n]||0)+c; }
@@ -1095,7 +1097,7 @@ class BasePlan {
     return this.crew.reduce((a,c)=>a+c[1]*(fa[c[0]]||5),0); }
   foodModule(slots, shareCrew){
     // спрос = Σ FoodAmount реального ростера (крупные едят больше); скорости голода в данных нет
-    const perPlot=(this.o.foodPerPlot||55)*(this.o.research?1.5:1.0);
+    const perPlot=(this.o.foodPerPlot||110)*(this.o.research?1.5:1.0);
     let appetite=this.rosterAppetite();
     appetite+=Math.max(0,slots-this.crew.reduce((a,c)=>a+c[1],0))*4.6;
     const plots=Math.max(2,Math.ceil(appetite/perPlot));
@@ -1122,8 +1124,8 @@ class BasePlan {
         sps=["Hot Spring","High Quality Hot Spring","Ancient Hot Spring"];
     if(!this.o.lux){ beds=beds.slice(0,2); sps=sps.slice(0,2); }
     this.add(this.best(beds),slots);
-    const sp=this.best(sps), nsp=Math.ceil(slots/6);
-    this.add(sp,nsp); this.assume.push(`${sp} x${nsp}: ~1 на 6 палов — подстрой по факту SAN`);
+    const sp=this.best(sps), nsp=Math.max(1,Math.ceil(slots/25));
+    this.add(sp,nsp); this.assume.push(`${sp} x${nsp}: ~1 на 25 палов (SAN падает медленно, палы по очереди) — подстрой по факту SAN`);
     this.add("Feed Box",Math.max(2,Math.floor(slots/20))); this.add("Palbox",1);
     this.add(this.best(["Medieval Medicine Workbench","Medicine Workbench","Electric Medicine Workbench"]),1);
     const cl=this.best(["Clinic","Ancient Clinic"]); if(cl) this.add(cl,1);
@@ -1162,7 +1164,7 @@ class BasePlan {
     const eggsPerCake=cake==="Vegetable Cake"?2:1;
     const cakes=farms*60/(o.eggInterval||D.bb.rates.breeding_egg_interval_minutes)*(o.eggBoost||1.0);
     const acc=this.chainCalc(cake,cakes,{plants:{},ranch:{},imports:{},crafts:{}});
-    const rr=o.ranchRate*this.q(), ranchMap=D.idx.inverted.ranch_produce;
+    const rr=o.ranchRate*this.ranchMult(), ranchMap=D.idx.inverted.ranch_produce;
     const ranch={};
     for(const [prod,perH] of Object.entries(acc.ranch)) ranch[ranchMap[prod][0]]=Math.ceil(perH/rr);
     const plantsN={}; let totPl=0;
@@ -1226,7 +1228,7 @@ class BasePlan {
     if(hatch) this.notes.push("⚠ Ancient Hatchery: скорость кладки принята как у фермы (5 мин/яйцо); гайды говорят '~10 сек/цикл' (PRELIMINARY) — замерь и впиши в «яйцо, мин»");
     this.notes.push(`Потолок ${farms} ферм для ${o.slots} слотов при этих настройках (еда ${o.food}, рабочие ${o.workforce}); больше = вторая брид-база или еда привозная`);
     this.notes.push("В пати при сборе яиц: Broncherry Aqua (альфа-яйца 45~55%) + Grintale (лишнее яйцо 50~75%)");
-    this.assume.push(`Ранч ${o.ranchRate} дропов/час, кухня ${o.cookRate} тортов/час на повара — x качество`);
+    this.assume.push(`Ранч ${o.ranchRate} дропов/час x качество (звёзды/пассивки/ресёрч; при пассивках +Ranch Master +2 Farming/handbook ×1.5), кухня ${o.cookRate} тортов/час на повара`);
     return this.crew.reduce((a,c)=>a+c[1],0); }
   presetMineCraft(){
     const o=this.o;
@@ -1323,7 +1325,7 @@ class BasePlan {
       this.supportCore([["crop_growth","Lullu"],["crop_yield","Prunelia"],["suitability:Planting","+1 Planting"],["suitability:Watering","+1 Watering"]]); }
     let ranchers=0;
     for(const [prod,perH] of Object.entries(ranch)){
-      const sp=ranchMap[prod][0], n=Math.ceil(perH/(o.ranchRate*this.q()));
+      const sp=ranchMap[prod][0], n=Math.ceil(perH/(o.ranchRate*this.ranchMult()));
       this.hire(sp,n,`ранч: ${prod} (${perH.toFixed(0)}/час)`); ranchers+=n; }
     if(ranchers){ this.add("Ranch",Math.ceil(ranchers/4)); this.supportCore([["suitability:Farming","+1 Farming всем"]]); }
     if(plants["Wheat"]||crafts["Flour"]){ this.add("Mill",Math.max(1,Math.ceil((crafts["Flour"]||0)/60))); this.hireBest("Watering",4,1,"мельница"); }
@@ -1432,7 +1434,7 @@ function builderOpts(){
     eggBoost:document.getElementById("pbraloha").checked?1.35:1.0,
     incubation:val("pincub")===""?1:+val("pincub"),cake:val("pcake")||"Cake",
     perStation:+val("ppers")||1,spoilage:document.getElementById("pspoil").checked,
-    foodPerPlot:+val("pfpp")||55,foodBuff:val("pfbuff")===""?30:+val("pfbuff"),
+    foodPerPlot:+val("pfpp")||110,foodBuff:val("pfbuff")===""?30:+val("pfbuff"),
     ancientFarmYield:+val("pafy")||3,dishes:plannerDishes.length?plannerDishes:null};
 }
 
@@ -1482,7 +1484,7 @@ render.planner = () => {
     <label class="dim">ранч дроп/час <input type="number" id="pranch" value="12" style="width:60px;min-width:60px"></label>
     <label class="dim">плантация ед/час <input type="number" id="pyield" value="60" style="width:60px;min-width:60px"></label>
     <label class="dim">готовок/час на повара <input type="number" id="pcook" value="30" style="width:60px;min-width:60px"></label>
-    <label class="dim" title="аппетит-единиц (Σ FoodAmount) на грядку; скорости голода в данных нет">аппетита/грядку <input type="number" id="pfpp" value="55" style="width:70px;min-width:70px"></label>
+    <label class="dim" title="аппетит-единиц (Σ FoodAmount) на грядку; скорости голода в данных нет">аппетита/грядку <input type="number" id="pfpp" value="110" style="width:70px;min-width:70px"></label>
     <label class="dim" title="бонус Work Speed от кормёжки buff-едой: Salad +30, Minestrone +40, 0 = без">WS от еды <input type="number" id="pfbuff" value="30" style="width:60px;min-width:60px"></label>
     <label class="dim" title="во сколько раз Ancient Farm производительнее обычной грядки (дефолт 3 — калибровка по игроку: 4 древние фермы кормят 50 палов с избытком; точной выработки в данных нет)">Ancient Farm × <input type="number" id="pafy" value="3" step="0.5" style="width:60px;min-width:60px"></label>
     <label class="dim" title="как часто брид-ферма делает яйцо. 5 мин — из данных paldb, менять НЕ нужно; только если замеришь, что Ancient Hatchery кладёт быстрее">яйцо раз в, мин <input type="number" id="peggint" value="5" step="0.1" style="width:60px;min-width:60px"></label>

@@ -97,6 +97,13 @@ class Planner:
         research = 1.45 if self.args.research else 1.0
         return (70 * QUALITY[self.args.workforce] + self.food_ws()) / 70 * star * research
 
+    def ranch_mult(self):
+        """Множитель ранча = q() (звёзды/пассивки/ресёрч) × бонус Ranch Master/handbook.
+        Ranch Master (+2 Farming) и Applied Technique Handbook (+1) поднимают уровень Farming
+        → выше выработка. При палах с пассивками/max закладываем, что ранч-палы их несут (×1.5)."""
+        rm = 1.5 if self.args.workforce != "baseline" else 1.0
+        return self.q() * rm
+
     def plant_yield_eff(self):
         """Выработка грядки с учётом ресёрча (Harvest Yield +50% на максе)."""
         return self.args.plant_yield * (1.5 if self.args.research else 1.0)
@@ -111,9 +118,9 @@ class Planner:
         bed = self.best(beds)
         self.add(bed, slots)
         spring = self.best(springs)
-        springs = math.ceil(slots / 6)  # вместимость 1-2 пала; ~1 на 6 палов очереди
+        springs = max(1, math.ceil(slots / 25))  # SAN падает медленно и восстанавливается быстро; палы ротируются
         self.add(spring, springs)
-        self.assumptions.append(f"{spring} x{springs}: ~1 источник на 6 палов (вместимость 1-2, очередь) — подстрой по факту SAN")
+        self.assumptions.append(f"{spring} x{springs}: ~1 на 25 палов (SAN падает медленно, палы по очереди) — подстрой по факту SAN")
         self.add("Feed Box", max(2, slots // 20))
         self.add("Palbox", 1)
         med = self.best(["Medieval Medicine Workbench", "Medicine Workbench", "Electric Medicine Workbench"])
@@ -334,7 +341,7 @@ class Planner:
 
         for m, q in (self.items.get(cake, {}).get("recipe") or {"materials": {}})["materials"].items():
             expand(m, q * cakes_h)
-        rr = a.ranch_rate * self.q()
+        rr = a.ranch_rate * self.ranch_mult()
         ranch = {ranch_map[p][0]: math.ceil(v / rr) for p, v in ranch_prod.items()}
         plants_n = {c: math.ceil(v / self.plant_yield_eff()) for c, v in plants.items()}
         trio = 3 * math.ceil(sum(plants_n.values()) / (a.plants_per_worker * self.q())) if plants_n else 0
@@ -448,7 +455,8 @@ class Planner:
         self.notes.append(f"Потолок {farms} ферм для {a.slots} слотов при этих настройках "
                           f"(еда {a.food}, рабочие {a.workforce}); больше = вторая брид-база или --food shipped")
         self.notes.append("В пати при сборе яиц: Broncherry Aqua (45~55% альфа-яйца) + Grintale (50~75% лишнее яйцо)")
-        self.assumptions.append(f"Ранч: {a.ranch_rate} дропов/час на пала (--ranch-rate) x качество; "
+        self.assumptions.append(f"Ранч: {a.ranch_rate} дропов/час x качество (звёзды --stars, пассивки --workforce, "
+                                f"ресёрч; при пассивках +Ranch Master +2 Farming/handbook ×1.5); "
                                 f"кухня: {a.cook_rate} тортов/час на повара (--cook-rate); "
                                 f"яйцо {a.egg_interval or 5} мин x буст {a.egg_boost} "
                                 f"({'Braloha в составе' if a.braloha else 'без Braloha, --no-braloha'}; --egg-interval/--egg-boost)")
@@ -615,9 +623,9 @@ class Planner:
                                ("suitability:Planting", "+1 Planting"), ("suitability:Watering", "+1 Watering")])
         for prod, per_h in need_ranch.items():
             sp = ranch_map[prod][0]
-            self.hire(sp, math.ceil(per_h / (a.ranch_rate * self.q())), f"ранч: {prod} ({per_h:.0f}/час)")
+            self.hire(sp, math.ceil(per_h / (a.ranch_rate * self.ranch_mult())), f"ранч: {prod} ({per_h:.0f}/час)")
         if need_ranch:
-            ranchers = sum(math.ceil(v / (a.ranch_rate * self.q())) for v in need_ranch.values())
+            ranchers = sum(math.ceil(v / (a.ranch_rate * self.ranch_mult())) for v in need_ranch.values())
             self.add("Ranch", math.ceil(ranchers / 4))
             self.support_core([("suitability:Farming", "+1 Farming всем")])
         if "Wheat" in need_plants or "Flour" in crafts:
@@ -751,9 +759,9 @@ def main():
                          "4 древние фермы кормят базу 50 палов с избытком; точной выработки в данных нет)")
     ap.add_argument("--food-buff", type=float, default=30,
                     help="бонус Work Speed от кормёжки buff-едой: Salad +30 (по умолч.), Minestrone +40, 0 = без буффа")
-    ap.add_argument("--food-per-plot", type=float, default=55,
-                    help="аппетит-единиц (Σ FoodAmount) на грядку (~55, калибр. по гайду dungeonpath 2 Berry+1 Wheat→17 палов; "
-                         "абсолютной скорости голода в данных нет)")
+    ap.add_argument("--food-per-plot", type=float, default=110,
+                    help="аппетит-единиц (Σ FoodAmount), которые кормит одна грядка (дефолт 110 — калибровка по игроку: "
+                         "6 грядок Tomato/Lettuce = сильный перебор еды; абсолютной скорости голода в данных нет)")
     ap.add_argument("--per-station", type=int, default=1,
                     help="(mine-craft) палов на добывающую станцию 1..3 (у шахт 3 места; больше = быстрее добыча)")
     ap.add_argument("--cake", default="Cake",
