@@ -1048,6 +1048,8 @@ class BasePlan {
     return (70*QUALITY[this.o.workforce]+this.foodWs())/70*star*research; }
   // ранч = q() × бонус Ranch Master(+2 Farming)/handbook при палах с пассивками (×1.5)
   ranchMult(){ return this.q()*(this.o.workforce!=="baseline"?1.5:1.0); }
+  // садовая тройка = q() × суитабилити-саппорты (Petallia +1 Planting, Amione +1 Watering — в брид-пресете) ≈ ×1.35
+  gardenMult(){ return this.q()*1.35; }
   // грядка/час: yield-саппорты — ПАРТНЁРКИ, сила от звёзд (диапазон = 0★…4★): Lullu рост +50/70%, Prunelia урожай +18/35%; × ресёрч Harvest +50%
   plantYieldEff(){ const g=this.o.stars?1.70:1.50, y=this.o.stars?1.35:1.18; return (this.o.plantYield||60)*g*y*(this.o.research?1.5:1.0); }
   best(cands){ const a=cands.filter(c=>this.structs[c]&&(this.structs[c].tech_level||0)<=this.o.tech); return a[a.length-1]||null; }
@@ -1170,7 +1172,7 @@ class BasePlan {
     for(const [prod,perH] of Object.entries(acc.ranch)) ranch[ranchMap[prod][0]]=Math.ceil(perH/rr);
     const plantsN={}; let totPl=0;
     for(const [crop,perH] of Object.entries(acc.plants)){ plantsN[crop]=Math.ceil(perH/this.plantYieldEff()); totPl+=plantsN[crop]; }
-    const trio=3*Math.ceil(totPl/(o.plantsPerWorker*this.q()));
+    const trio=3*Math.ceil(totPl/(o.plantsPerWorker*this.gardenMult()));
     const ops=cakes+Object.values(acc.crafts).reduce((a,b)=>a+b,0)-(acc.crafts.Flour||0);
     const cooks=Math.max(1,Math.ceil(ops/(o.cookRate*this.q())));
     const mills=acc.crafts.Flour?Math.max(1,Math.ceil(acc.crafts.Flour/60)):0;
@@ -1192,7 +1194,9 @@ class BasePlan {
     if(o.incubation>0) sup.push(["incubation","инкубация -20~40%"]);
     else this.notes.push("Инкубация мгновенная (мир = 0): инкубаторы и Dynamoff не нужны");
     this.supportCore(sup.concat([["crop_growth","рост культур +50~70%"],
-      ["crop_yield","урожай +18~35%"],["sanity_save","SAN -10~15% утечка"],["suitability:Watering","+1 Watering всем"],["suitability:Planting","+1 Planting всем"]]));
+      ["crop_yield","урожай +18~35%"],["sanity_save","SAN -10~15% утечка"],
+      ["suitability:Watering","+1 Watering всем (Amione)"],["suitability:Planting","+1 Planting всем (Petallia)"],
+      ["suitability:Gathering","+1 Gathering всем (Clovee) — тройка"],["suitability:Farming","+1 Farming всем (Cinnamoth) — ранч"]]));
     this.hire("Woolipop Terra",1,"саппорт: голод -15~25% + Caramel Cotton Candy");
     this.add(farm,farms); this.hire("(пары родителей)",2*farms,`в ${farm} x${farms}`);
     const rm=D.idx.inverted.ranch_produce;
@@ -1214,7 +1218,7 @@ class BasePlan {
     const foodPlots=o.food==="self"?this.foodModule(o.slots,true):0;
     if(o.food!=="self") this.notes.push("Еда привозная — вози Salad/Pizza guild chest'ом");
     const cakePlots=Object.values(L.plantsN).reduce((a,b)=>a+b,0);
-    const tr=Math.max(1,Math.ceil((cakePlots+foodPlots)/(o.plantsPerWorker*this.q())));
+    const tr=Math.max(1,Math.ceil((cakePlots+foodPlots)/(o.plantsPerWorker*this.gardenMult())));
     this.hireBest("Planting",3,tr,`посадка (все ${cakePlots+foodPlots} грядок)`);
     this.hireBest("Watering",3,tr,"полив (все грядки)"); this.hireBest("Gathering",3,tr,"сбор (все грядки)");
     this.hireTransport();
@@ -1248,8 +1252,8 @@ class BasePlan {
         this.notes.push("Ore Mining Site I даёт ту же руду — можно доставить для второго потока");
     }
     this.notes.push(`Добыча (${sites.length} станций, по 1 на базу): ${sites.join(", ")}`);
-    this.supportCore([["suitability:Mining","+1 Mining всем"],["base_defense","ПВО базы от рейдов"],["suitability:Handiwork","+1 Handiwork всем"],
-      ["suitability:Transporting","+1 Transport всем"],["sanity_save","SAN базы"]]);
+    this.supportCore([["suitability:Mining","+1 Mining всем (Tetroise)"],["base_defense","ПВО базы от рейдов"],["suitability:Handiwork","+1 Handiwork всем (Ribbuny)"],
+      ["suitability:Transporting","+1 Transport всем (Wumpo)"],["suitability:Kindling","+1 Kindling всем (Katress Ignis) — печи/плавка"],["sanity_save","SAN базы"]]);
     const structsW=Object.fromEntries(D.bb.structures.map(x=>[x.name,x]));
     const mSites=sites.filter(x=>(structsW[x].workers||"")==="Mining"), lSites=sites.filter(x=>(structsW[x].workers||"")==="Lumbering");
     const perSt=o.perStation||1;

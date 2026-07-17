@@ -97,6 +97,11 @@ class Planner:
         research = 1.45 if self.args.research else 1.0
         return (70 * QUALITY[self.args.workforce] + self.food_ws()) / 70 * star * research
 
+    def garden_mult(self):
+        """Множитель садовой тройки = q() × суитабилити-саппорты (Petallia +1 Planting,
+        Amione +1 Watering — в брид-пресете; +1 к уровню работы всех палов базы ≈ ×1.35)."""
+        return self.q() * 1.35
+
     def ranch_mult(self):
         """Множитель ранча = q() (звёзды/пассивки/ресёрч) × бонус Ranch Master/handbook.
         Ranch Master (+2 Farming) и Applied Technique Handbook (+1) поднимают уровень Farming
@@ -348,7 +353,7 @@ class Planner:
         rr = a.ranch_rate * self.ranch_mult()
         ranch = {ranch_map[p][0]: math.ceil(v / rr) for p, v in ranch_prod.items()}
         plants_n = {c: math.ceil(v / self.plant_yield_eff()) for c, v in plants.items()}
-        trio = 3 * math.ceil(sum(plants_n.values()) / (a.plants_per_worker * self.q())) if plants_n else 0
+        trio = 3 * math.ceil(sum(plants_n.values()) / (a.plants_per_worker * self.garden_mult())) if plants_n else 0
         ops = cakes_h + sum(crafts.values()) - crafts.get("Flour", 0)
         cooks = max(1, math.ceil(ops / (a.cook_rate * self.q())))
         mills = max(1, math.ceil(crafts.get("Flour", 0) / 60)) if crafts.get("Flour") else 0
@@ -375,8 +380,10 @@ class Planner:
             self.notes.append("Инкубация мгновенная (настройка мира = 0): инкубаторы и Dynamoff не нужны — слот сэкономлен")
         self.support_core(support_kinds + [("crop_growth", "рост культур +50~70%"), ("crop_yield", "урожай +18~35%"),
                            ("sanity_save", "SAN базы -10~15% утечка"),
-                           ("suitability:Watering", "+1 Watering всем"),
-                           ("suitability:Planting", "+1 Planting всем")])
+                           ("suitability:Watering", "+1 Watering всем (Amione)"),
+                           ("suitability:Planting", "+1 Planting всем (Petallia)"),
+                           ("suitability:Gathering", "+1 Gathering всем (Clovee) — тройка"),
+                           ("suitability:Farming", "+1 Farming всем (Cinnamoth) — ранч")])
         self.hire("Woolipop Terra", 1, "саппорт: голод базы -15~25% + Caramel Cotton Candy на ранче")
 
         self.add(farm_name, farms)
@@ -401,7 +408,7 @@ class Planner:
         if a.food != "self":
             self.notes.append("Еда привозная (--food shipped): вози Salad/Pizza guild chest'ом")
         cake_plots = sum(line["plants_n"].values())
-        n_trio = max(1, math.ceil((cake_plots + food_plots) / (a.plants_per_worker * self.q())))
+        n_trio = max(1, math.ceil((cake_plots + food_plots) / (a.plants_per_worker * self.garden_mult())))
         self.hire_best("Planting", 3, n_trio, f"посадка (все {cake_plots + food_plots} грядок)")
         self.hire_best("Watering", 3, n_trio, "полив (все грядки)")
         self.hire_best("Gathering", 3, n_trio, "сбор (все грядки)")
@@ -510,6 +517,7 @@ class Planner:
                            ("base_defense", "ПВО базы от рейдов (Panthalus)"),
                            ("suitability:Handiwork", "+1 Handiwork всем (Ribbuny)"),
                            ("suitability:Transporting", "+1 Transport всем (Wumpo)"),
+                           ("suitability:Kindling", "+1 Kindling всем (Katress Ignis) — печи/плавка"),
                            ("sanity_save", "SAN базы (Shroomer Noct)")])
         mining_sites = [x for x in sites if self.structs[x].get("workers") == "Mining"]
         lumber_sites = [x for x in sites if self.structs[x].get("workers") == "Lumbering"]

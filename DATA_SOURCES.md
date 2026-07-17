@@ -423,3 +423,16 @@
 - Замечено (вне этой правки): веб-солвер бридинга пакует больше ферм под слоты, чем CLI
   (tech40: веб 3 фермы/43 пала, CLI 1) — расхождение fit-to-slots логики, не переполняет лимит;
   кандидат на сверку солверов.
+
+## 2026-07-17 — +1-суитабилити-саппорты по ВСЕМ 12 работам добавлены в пресеты
+- Проверено: у каждой из 12 работ есть пал-саппорт «+1 к этому навыку всем палам базы»
+  (Does not stack): Kindling→Katress Ignis, Watering→Amione, Planting→Petallia,
+  Generating Electricity→Puffolt, Handiwork→Ribbuny, Gathering→Clovee, Lumbering→Eikthyrdeer
+  Terra, Mining→Tetroise, Medicine→Mycora, Cooling→Smokie Cryst, Transporting→Wumpo,
+  Farming→Cinnamoth (уже в index base_support:suitability:*).
+- Добавлены в пресеты под реальные рабочие группы: breeding +Clovee (тройка Gathering)
+  +Cinnamoth (ранч Farming) [Amione/Petallia уже были]; mine-craft +Katress Ignis (печи
+  Kindling) [Tetroise/Ribbuny/Wumpo уже были]. Эффект +1 кредитуется в счёте рабочих:
+  тройка — garden_mult ×1.35, ранч — ranch_mult; 4★ (+1 ко всем навыкам) — через q() ×1.55.
+  Веб+CLI. Верифицировано: солверы бридинга веб==CLI (38/61/84 голов), расхождение было
+  из-за разного workforce, не бага.
