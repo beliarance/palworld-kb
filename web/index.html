@@ -101,28 +101,60 @@ const palLink = n => `<span class="clicky" onclick="showPal('${n.replace(/'/g,"\
 const itemLink = n => itemByName[n] ? `<span class="clicky" onclick="showItem('${n.replace(/'/g,"\\'")}')">${esc(n)}</span>` : esc(n);
 
 /* ---------------- бридинг (порт scripts/query.py) ---------------- */
-let rankArr=null, specialChildren=null;
+let rankArr=null, _specialPair=null, _nrCache=null;
+function specialChild(a,b){  // ребёнок особой комбинации (O(1)), либо null
+  if(!_specialPair){ _specialPair={}; for(const c of D.breeding.special_combos){
+    _specialPair[c.parent_a+"|"+c.parent_b]=c.child; _specialPair[c.parent_b+"|"+c.parent_a]=c.child; } }
+  return _specialPair[a+"|"+b]||null;
+}
+function nearestByRank(t){  // вид с рангом, ближайшим к t (tie→меньший ранг); дети спец-комбо исключены
+  if(!rankArr){
+    const spc=new Set(D.breeding.special_combos.map(c=>c.child));
+    rankArr = Object.entries(D.breeding.combi_ranks).filter(([n])=>!spc.has(n))
+      .map(([n,r])=>({n,r})).sort((x,y)=>x.r-y.r||(x.n<y.n?-1:1));
+    _nrCache={};
+  }
+  if(t in _nrCache) return _nrCache[t];
+  let best=null;
+  for(const c of rankArr){ const d=Math.abs(c.r-t); if(!best||d<best.d||(d===best.d&&c.r<best.r)) best={...c,d}; }
+  return _nrCache[t]=(best?best.n:null);
+}
 function breedChild(a,b){
   const br = D.breeding;
   if(a===b) return {child:a, why:"одинаковые родители → тот же вид"};
-  for(const c of br.special_combos){
-    if((c.parent_a===a&&c.parent_b===b)||(c.parent_a===b&&c.parent_b===a))
-      return {child:c.child, why:"особая комбинация (переопределяет формулу)"};
-  }
+  const sc=specialChild(a,b);
+  if(sc) return {child:sc, why:"особая комбинация (переопределяет формулу)"};
   const R = br.combi_ranks;
   if(!(a in R)||!(b in R)) return {child:null, why:"нет ранга для одного из родителей"};
-  if(!rankArr){
-    specialChildren = new Set(br.special_combos.map(c=>c.child));
-    rankArr = Object.entries(R).filter(([n])=>!specialChildren.has(n))
-      .map(([n,r])=>({n,r})).sort((x,y)=>x.r-y.r||(x.n<y.n?-1:1));
-  }
   const target = Math.floor((R[a]+R[b]+1)/2);
-  let best=null;
-  for(const c of rankArr){
-    const d=Math.abs(c.r-target);
-    if(!best||d<best.d||(d===best.d&&c.r<best.r)) best={...c,d};
+  return {child:nearestByRank(target), why:`формула: floor((${R[a]}+${R[b]}+1)/2)=${target}, ближайший ранг`};
+}
+/* Кратчайшая цепочка бридинга от одного родителя `start` к виду `target` (BFS по видам).
+   Используется, чтобы перенести дроп-онли трейт: держишь трейт-носителя одним родителем
+   на каждом шаге, оставляешь потомка, унаследовавшего трейт. */
+function breedChain(start, target){
+  const R = D.breeding.combi_ranks;
+  if(start===target) return {steps:[]};
+  if(!(start in R)) return null;
+  const partners = Object.keys(R);
+  const prev={}; prev[start]=null; const via={};
+  const q=[start];
+  while(q.length){
+    const cur=q.shift();
+    for(const b of partners){
+      if(b===cur) continue;
+      const child=breedChild(cur,b).child;
+      if(!child||child in prev) continue;
+      prev[child]=cur; via[child]=b;
+      if(child===target){
+        const steps=[]; let c=target;
+        while(prev[c]){ steps.unshift({from:prev[c], partner:via[c], child:c}); c=prev[c]; }
+        return {steps};
+      }
+      q.push(child);
+    }
   }
-  return {child:best.n, why:`формула: floor((${R[a]}+${R[b]}+1)/2)=${target}, ближайший ранг ${best.r}`};
+  return null;  // недостижим ранговой формулой
 }
 
 /* ---------------- вкладки ---------------- */
@@ -237,48 +269,84 @@ render.workers = () => {
 };
 
 /* --- Бридинг --- */
+let breedMode="pair";
+const wildCatch=n=>((D.loc.pals[n]||{}).regions||[]).length>0;  // есть дикий спавн = проще достать
+function childInfo(n){
+  const p=P[n]||{}, r=D.breeding.combi_ranks[n];
+  const work=Object.entries(p.work||{}).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([w,l])=>`${WORK_COLS[w]} ${l}`).join(", ");
+  return `<div class="sub" style="margin-top:6px">${els(p)} ранг ${r??"—"}${work?" · "+work:""}${wildCatch(n)?" · 🎯 ловится в дикой природе":""}</div>`;
+}
 render.breed = () => {
   const names=Object.keys(P).sort();
+  const MODES=[
+    ["pair","🍳 Пара → потомок","Укажи двух родителей — покажу, кто родится."],
+    ["target","🎯 Кого хочу → пары","Укажи желаемого пала — все пары, дающие его за 1 скрещивание (пары из легкодоступных палов — выше)."],
+    ["chain","🧬 Цепочка (привить трейт)","Старт-родитель (носитель дроп-онли трейта, напр. Craftsmanship/Legend) + цель → цепочка скрещиваний. На каждом шаге держи трейт-носителя одним родителем и оставляй потомка, унаследовавшего трейт."]];
+  const help=Object.fromEntries(MODES.map(m=>[m[0],m[2]]));
   V().innerHTML = `${datalist("palnames2",names)}
-  <div class="card"><h3>Что получится из пары</h3><div class="row">
-    <input type="text" id="ba" list="palnames2" placeholder="Родитель A">
-    <span>+</span><input type="text" id="bb" list="palnames2" placeholder="Родитель B">
-  </div><div id="bres" style="margin-top:10px"></div></div>
-  <div class="card"><h3>Как получить пала X</h3><div class="row">
-    <input type="text" id="bt" list="palnames2" placeholder="Целевой пал">
-    <input type="text" id="bw" list="palnames2" placeholder="(опц.) с участием…">
-  </div><div id="btres" style="margin-top:10px"></div></div>`;
-  const upd=()=>{
-    const a=document.getElementById("ba").value, b=document.getElementById("bb").value;
-    if(P[a]&&P[b]){ const r=breedChild(a,b);
-      document.getElementById("bres").innerHTML = r.child
-        ? `<div class="big">${palLink(a)} + ${palLink(b)} = <span class="ok">${palLink(r.child)}</span></div><div class="sub">${esc(r.why)}</div>`
-        : `<span class="bad">${esc(r.why)}</span>`; }
-  };
-  const updT=()=>{
-    const t=document.getElementById("bt").value, w=document.getElementById("bw").value;
-    if(!P[t]) return;
-    const combos=D.breeding.special_combos.filter(c=>c.child===t&&c.parent_a!==c.parent_b);
-    let html=combos.map(c=>`<div>⚗️ ${palLink(c.parent_a)} + ${palLink(c.parent_b)} <span class="dim">(особая комбинация)</span></div>`).join("");
-    html+=`<div>👥 ${esc(t)} + ${esc(t)} <span class="dim">(одинаковая пара всегда работает)</span></div>`;
-    const spc=new Set(D.breeding.special_combos.map(c=>c.child));
-    if(spc.has(t)&&!combos.length) html+=`<div class="dim">Особый вид: ранговой формулой не получается.</div>`;
-    else if(!spc.has(t)){
-      const R=D.breeding.combi_ranks, names=Object.keys(R);
-      const pairs=[];
-      const As = P[w] ? [w] : names;
-      outer: for(const a of As){ for(const b of names){
-        if(!P[w] && a>b) continue;
-        if(a===t||b===t) continue;
-        if(breedChild(a,b).child===t){ pairs.push([a,b]); if(pairs.length>=400) break outer; }
-      }}
-      if(pairs.length) html+=`<div style="margin-top:6px">Пары по формуле (${pairs.length>=400?"400+":pairs.length}${P[w]?`, с ${esc(w)}`:", примеры"}):</div>
-        <div>${pairs.slice(0,30).map(([a,b])=>`<span class="tag">${palLink(a)} + ${palLink(b)}</span>`).join("")}</div>`;
+  <div class="card">
+    <div class="row" id="bmode">${MODES.map(([m,t])=>`<button data-m="${m}" class="bmbtn" style="border:1px solid transparent;border-radius:8px;padding:6px 12px;cursor:pointer;font-size:13px;background:none;color:var(--dim)">${t}</button>`).join("")}</div>
+    <div class="sub" id="bmodehelp" style="margin-top:6px"></div>
+    <div id="binputs" style="margin-top:8px"></div>
+  </div>
+  <div id="bout"></div>`;
+  const val=id=>{const el=document.getElementById(id);return el?el.value.trim():"";};
+  const draw=()=>{
+    const out=document.getElementById("bout"); if(!out) return;
+    if(breedMode==="pair"){
+      const a=val("bp_a"), b=val("bp_b");
+      if(!P[a]||!P[b]){ out.innerHTML=`<div class="card dim">Введи двух родителей.</div>`; return; }
+      const r=breedChild(a,b);
+      out.innerHTML=`<div class="card"><div class="big">${palIcon(a)}${palLink(a)} + ${palIcon(b)}${palLink(b)} = ${r.child?`<span class="ok">${palIcon(r.child)}${palLink(r.child)}</span>`:'<span class="bad">—</span>'}</div>
+        <div class="sub">${esc(r.why)}</div>${r.child?childInfo(r.child):""}</div>`;
+    } else if(breedMode==="target"){
+      const t=val("bt_target"), w=val("bt_with");
+      if(!P[t]){ out.innerHTML=`<div class="card dim">Введи, кого хочешь получить.</div>`; return; }
+      const combos=D.breeding.special_combos.filter(c=>c.child===t&&c.parent_a!==c.parent_b);
+      const spc=new Set(D.breeding.special_combos.map(c=>c.child));
+      let html=`<div class="card"><div class="big">🎯 Как получить ${palIcon(t)}${palLink(t)}</div>${childInfo(t)}`;
+      if(combos.length) html+=`<div style="margin-top:8px">⚗️ Особые комбинации:</div>`+combos.map(c=>`<div>${palLink(c.parent_a)} + ${palLink(c.parent_b)}</div>`).join("");
+      html+=`<div style="margin-top:8px">👥 ${palLink(t)} + ${palLink(t)} <span class="dim">(одинаковая пара всегда даёт тот же вид)</span></div>`;
+      if(spc.has(t)&&!combos.length){ html+=`<div class="dim" style="margin-top:6px">Особый вид — ранговой формулой не выводится, только спец-комбо/одинаковой парой.</div>`; }
+      else if(!spc.has(t)){
+        const R=D.breeding.combi_ranks, ns=Object.keys(R), pairs=[];
+        const As=P[w]?[w]:ns;
+        outer: for(const a of As){ for(const b of ns){
+          if(!P[w]&&a>=b) continue; if(a===t||b===t) continue;
+          if(breedChild(a,b).child===t){ pairs.push([a,b]); if(pairs.length>=600) break outer; } } }
+        pairs.sort((x,y)=>(wildCatch(y[0])+wildCatch(y[1]))-(wildCatch(x[0])+wildCatch(x[1])));
+        if(pairs.length) html+=`<div style="margin-top:8px">🍳 Пары по формуле (${pairs.length>=600?"600+":pairs.length}${P[w]?`, с ${esc(w)}`:""}, легкодоступные выше):</div>
+          <div style="margin-top:4px">${pairs.slice(0,40).map(([a,b])=>`<span class="tag">${palLink(a)} + ${palLink(b)}${wildCatch(a)&&wildCatch(b)?" 🎯":""}</span>`).join("")}</div>
+          ${pairs.length>40?`<div class="sub">…показаны 40 из ${pairs.length>=600?"600+":pairs.length}</div>`:""}`;
+      }
+      out.innerHTML=html+`</div>`;
+    } else {  // chain
+      const s=val("bc_start"), t=val("bc_target");
+      if(!P[s]||!P[t]){ out.innerHTML=`<div class="card dim">Введи стартового родителя (носителя трейта) и финальный вид.</div>`; return; }
+      if(s===t){ out.innerHTML=`<div class="card">${palLink(s)} — уже нужный вид. Разводи парой ${palLink(t)} + ${palLink(t)}, оставляя потомка с трейтом.</div>`; return; }
+      const res=breedChain(s,t);
+      if(!res){ out.innerHTML=`<div class="card"><span class="bad">Цепочку ${esc(s)} → ${esc(t)} ранговой формулой не построить</span> <span class="dim">(вероятно, цель — особый вид только из спец-комбо; см. режим «🎯 Кого хочу»).</span></div>`; return; }
+      let html=`<div class="card"><div class="big">🧬 ${palIcon(s)}${palLink(s)} → ${palIcon(t)}${palLink(t)} <span class="dim">(${res.steps.length} шаг${res.steps.length===1?"":res.steps.length<5?"а":"ов"})</span></div>`;
+      res.steps.forEach((st,i)=>{ html+=`<div style="margin-top:6px">${i+1}. ${palLink(st.from)} + ${palLink(st.partner)} → <b>${palIcon(st.child)}${palLink(st.child)}</b></div>`; });
+      html+=`<div class="sub" style="margin-top:10px">💡 Как переносится трейт: на каждом шаге ОДИН родитель — носитель нужного трейта (стартовый ${esc(s)} или его потомок, унаследовавший трейт), второй — партнёр для смены вида. Потомок берёт до 3 пассивок из общего пула обоих родителей — оставляй яйцо, где трейт унаследовался (может уйти несколько яиц на шаг). Так дроп-онли/эксклюзивные трейты попадают на вид, который сам их не даёт.</div></div>`;
+      out.innerHTML=html;
     }
-    document.getElementById("btres").innerHTML=html;
   };
-  for(const id of ["ba","bb"]) document.getElementById(id).addEventListener("input",upd);
-  for(const id of ["bt","bw"]) document.getElementById(id).addEventListener("input",updT);
+  const setMode=(m)=>{
+    breedMode=m;
+    document.querySelectorAll(".bmbtn").forEach(b=>{const on=b.dataset.m===m;
+      b.style.background=on?"var(--panel2)":"none"; b.style.color=on?"var(--acc)":"var(--dim)"; b.style.borderColor=on?"var(--border)":"transparent";});
+    document.getElementById("bmodehelp").textContent=help[m];
+    const inp=document.getElementById("binputs");
+    if(m==="pair") inp.innerHTML=`<div class="row"><input type="text" id="bp_a" list="palnames2" placeholder="Родитель A"><span>+</span><input type="text" id="bp_b" list="palnames2" placeholder="Родитель B"></div>`;
+    else if(m==="target") inp.innerHTML=`<div class="row"><input type="text" id="bt_target" list="palnames2" placeholder="Кого хочу получить"><input type="text" id="bt_with" list="palnames2" placeholder="(опц.) один из родителей…"></div>`;
+    else inp.innerHTML=`<div class="row"><input type="text" id="bc_start" list="palnames2" placeholder="Старт: носитель трейта"><span>→</span><input type="text" id="bc_target" list="palnames2" placeholder="Финальный вид"></div>`;
+    inp.querySelectorAll("input").forEach(el=>el.addEventListener("input",draw));
+    if(typeof restoreTabState==="function") restoreTabState("breed");
+    draw();
+  };
+  document.getElementById("bmode").addEventListener("click",e=>{const b=e.target.closest(".bmbtn"); if(b) setMode(b.dataset.m);});
+  setMode(breedMode);
 };
 
 /* --- Каунтеры --- */

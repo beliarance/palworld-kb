@@ -20,6 +20,7 @@ import csv
 import json
 import re
 import sys
+from collections import deque
 from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
@@ -285,6 +286,76 @@ def cmd_breed_to(db, args):
             print(f"    {label_name(db, a)} + {label_name(db, b)}")
     elif not combos:
         print("  No rank-formula pairs found (pal may be catch-only or data incomplete).")
+
+
+def breed_chain(br, start, target):
+    """Кратчайшая цепочка бридинга start → target (BFS по видам).
+    Для переноса дроп-онли трейта: держишь трейт-носителя одним родителем на каждом шаге."""
+    if start == target:
+        return []
+    ranks = br["combi_ranks"]
+    if start not in ranks:
+        return None
+    special_children = {c["child"] for c in br["special_combos"]}
+    special_pair = {}
+    for c in br["special_combos"]:
+        special_pair[(c["parent_a"], c["parent_b"])] = c["child"]
+        special_pair[(c["parent_b"], c["parent_a"])] = c["child"]
+    candidates = sorted(((n, r) for n, r in ranks.items() if n not in special_children), key=lambda x: x[1])
+    nr_cache = {}
+
+    def nearest(t):
+        if t not in nr_cache:
+            nr_cache[t] = min(candidates, key=lambda c: (abs(c[1] - t), c[1]))[0]
+        return nr_cache[t]
+
+    def child_of(a, b):
+        if a == b:
+            return a
+        if (a, b) in special_pair:
+            return special_pair[(a, b)]
+        if a not in ranks or b not in ranks:
+            return None
+        return nearest((ranks[a] + ranks[b] + 1) // 2)
+
+    partners = list(ranks.keys())
+    prev, via, q = {start: None}, {}, deque([start])
+    while q:
+        cur = q.popleft()
+        for b in partners:
+            if b == cur:
+                continue
+            ch = child_of(cur, b)
+            if not ch or ch in prev:
+                continue
+            prev[ch], via[ch] = cur, b
+            if ch == target:
+                steps, c = [], target
+                while prev[c]:
+                    steps.append((prev[c], via[c], c))
+                    c = prev[c]
+                return list(reversed(steps))
+            q.append(ch)
+    return None
+
+
+def cmd_breed_chain(db, args):
+    br = load_breeding()
+    start = find_pal(db, args.start)["name"]
+    target = find_pal(db, args.target)["name"]
+    if start == target:
+        print(f"{label_name(db, start)} — уже нужный вид; разводи парой {start} + {start}, оставляя потомка с трейтом.")
+        return
+    chain = breed_chain(br, start, target)
+    if chain is None:
+        sys.exit(f"Цепочку {start} → {target} ранговой формулой не построить "
+                 f"(цель может быть особым видом только из спец-комбо).")
+    print(f"Цепочка {label_name(db, start)} → {label_name(db, target)} ({len(chain)} шаг.):")
+    for i, (frm, partner, child) in enumerate(chain, 1):
+        print(f"  {i}. {label_name(db, frm)} + {label_name(db, partner)} → {label_name(db, child)}")
+    print("  💡 На каждом шаге один родитель — носитель трейта (старт или его потомок с трейтом), "
+          "второй — партнёр для смены вида; потомок берёт до 3 пассивок из пула обоих — оставляй "
+          "яйцо с нужным трейтом. Так дроп-онли/эксклюзивный трейт попадает на вид, который сам его не даёт.")
 
 
 # ---------------------------------------------------------------- items
@@ -1050,6 +1121,7 @@ def main(argv=None):
     p = sub.add_parser("boss"); p.add_argument("name")
     p = sub.add_parser("breed"); p.add_argument("parent_a"); p.add_argument("parent_b")
     p = sub.add_parser("breed-to"); p.add_argument("target"); p.add_argument("--with", dest="with_pal"); p.add_argument("--top", type=int, default=15)
+    p = sub.add_parser("breed-chain"); p.add_argument("start"); p.add_argument("target")
     p = sub.add_parser("team"); p.add_argument("task")
     p = sub.add_parser("tiers"); p.add_argument("category")
     p = sub.add_parser("item"); p.add_argument("name")
@@ -1076,7 +1148,8 @@ def main(argv=None):
     {
         "pal": cmd_pal, "workers": cmd_workers, "mounts": cmd_mounts,
         "fighters": cmd_fighters, "counter": cmd_counter, "boss": cmd_boss,
-        "breed": cmd_breed, "breed-to": cmd_breed_to, "team": cmd_team, "tiers": cmd_tiers,
+        "breed": cmd_breed, "breed-to": cmd_breed_to, "breed-chain": cmd_breed_chain,
+        "team": cmd_team, "tiers": cmd_tiers,
         "item": cmd_item, "craft": cmd_craft, "drops": cmd_drops,
         "skills": cmd_skills, "skill": cmd_skill, "passive": cmd_passive,
         "where": cmd_where, "resource": cmd_resource, "expeditions": cmd_expeditions,
