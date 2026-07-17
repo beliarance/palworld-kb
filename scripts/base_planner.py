@@ -194,12 +194,8 @@ class Planner:
                 n_af += k
             note = (f"Ancient Farm x{n_af} (по культурам) вместо раздельных плантаций: компактнее, "
                     "4 места, Watering+Planting+Gathering 6+")
-            if self.args.ancient_farm_yield == 1:
-                note += ". Выработка в данных НЕ указана (paldb «same cultivation process» = всё так же " \
-                        "надо поливать/сажать/собирать, про скорость молчит). Принято ×1 осторожно — " \
-                        "если по игре быстрее, задай --ancient-farm-yield N (тогда ферм и рабочих меньше)"
-            else:
-                note += f". Принято ×{self.args.ancient_farm_yield} к выработке грядки"
+            note += (f". Принято ×{self.args.ancient_farm_yield:g} к выработке (калибровка по игроку: "
+                     "4 древние фермы кормят 50 палов с избытком; точной цифры в данных нет — --ancient-farm-yield)")
             self.notes.append(note)
             return total
         else:
@@ -274,7 +270,10 @@ class Planner:
             station = self.best(["Cooking Pot", "Electric Kitchen", "Large-Scale Stone Oven", "Ancient Kitchen"])
             self.add(station, 1)
             self.hire_best("Kindling", 3, 1, "ЕДА: повар салатов")
-            self.notes.append(f"ЕДА (self): Salad — {pairs}x Tomato + {pairs}x Lettuce, повар на {station}")
+            af = self.args.tech >= 78 and "Ancient Farm" in self.structs
+            per = max(1, math.ceil(pairs / self.args.ancient_farm_yield)) if af else pairs
+            self.notes.append(f"ЕДА (self): Salad — {per}x Tomato + {per}x Lettuce "
+                              f"({'Ancient Farm' if af else 'плантаций'}), повар на {station}")
         else:
             food_plants = {"Red Berries": plots}
             self.add_plantations(food_plants, {"Red Berries": "Berry Plantation"})
@@ -439,10 +438,13 @@ class Planner:
                               f"({a.egg_interval or 5} мин/яйцо). Гайды говорят про '~10 сек/цикл' (PRELIMINARY) — "
                               "если это про кладку, а не инкубацию, спрос на торты кратно выше. "
                               "Замерь в игре и задай --egg-interval")
-        if a.cake == "Vegetable Cake":
-            self.notes.append("Vegetable Cake: 2 яйца за цикл")
-        elif a.cake == "Special Cake":
-            self.notes.append("Special Cake — для стакания пассивок у потомства")
+        self.notes.append(
+            "Торты — НЕ линейные тиры, у каждого свой эффект и станция (выбирай под цель батча): "
+            "Cake — базовый (Cooking Pot); Mushroom Cake — рост статов/IV; "
+            "Vegetable Cake — 2 ЯЙЦА за цикл, объём (Electric Kitchen, Tomato+Lettuce); "
+            "Extravagant Vegetable Cake — шанс МУТАЦИИ + статы (Large-Scale Stone Oven); "
+            "Special Cake — стак ПАССИВОК потомству (Ancient Kitchen). "
+            "Напр. Vegetable даёт 2 яйца, чего Special НЕ даёт — они ситуативны, а не «лучше/хуже»")
         self.notes.append(f"Потолок {farms} ферм для {a.slots} слотов при этих настройках "
                           f"(еда {a.food}, рабочие {a.workforce}); больше = вторая брид-база или --food shipped")
         self.notes.append("В пати при сборе яиц: Broncherry Aqua (45~55% альфа-яйца) + Grintale (50~75% лишнее яйцо)")
@@ -744,8 +746,9 @@ def main():
                     help="макс ресёрч Pal Labor Research Lab (account-wide): Work Speed +45%, урожай +50% — меньше рабочих/грядок")
     ap.add_argument("--stars", action="store_true",
                     help="рабочие сконденсированы до 4★ (+1 ур. работы ≈ ×1.55 скорости; цена — 116 дублей на пала)")
-    ap.add_argument("--ancient-farm-yield", type=float, default=1,
-                    help="во сколько раз Ancient Farm производительнее обычной грядки (paldb: 1 = как обычная; подними, если по игре быстрее)")
+    ap.add_argument("--ancient-farm-yield", type=float, default=3,
+                    help="во сколько раз Ancient Farm производительнее обычной грядки (дефолт 3 — калибровка по игроку: "
+                         "4 древние фермы кормят базу 50 палов с избытком; точной выработки в данных нет)")
     ap.add_argument("--food-buff", type=float, default=30,
                     help="бонус Work Speed от кормёжки buff-едой: Salad +30 (по умолч.), Minestrone +40, 0 = без буффа")
     ap.add_argument("--food-per-plot", type=float, default=55,

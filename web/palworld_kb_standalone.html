@@ -1059,10 +1059,10 @@ class BasePlan {
   addPlantations(plantsN, PL){
     const total=Object.values(plantsN).reduce((a,b)=>a+b,0);
     if(this.o.tech>=78&&this.structs["Ancient Farm"]&&total){
-      const afy=this.o.ancientFarmYield||1; let nAf=0;
+      const afy=this.o.ancientFarmYield||3; let nAf=0;
       for(const [crop,n] of Object.entries(plantsN)){ const k=Math.max(1,Math.ceil(n/afy)); this.add(`Ancient Farm (${crop})`,k); nAf+=k; }
-      this.notes.push(`Ancient Farm x${nAf} (по культурам) вместо раздельных плантаций: компактнее, 4 места, Watering+Planting+Gathering 6+`+
-        (afy===1?". Выработка в данных НЕ указана (×1 осторожно — если по игре быстрее, подними «Ancient Farm ×»)":` (×${afy} к выработке)`));
+      this.notes.push(`Ancient Farm x${nAf} (по культурам) вместо раздельных плантаций: компактнее, 4 места, Watering+Planting+Gathering 6+. `+
+        `Принято ×${afy} к выработке (калибровка по игроку: 4 древние фермы кормят 50 палов с избытком; точной цифры нет — поле «Ancient Farm ×»)`);
     } else for(const [crop,n] of Object.entries(plantsN)){ const pl=this.best([PL[crop]]); if(pl) this.add(pl,n); }
     return total;
   }
@@ -1106,7 +1106,9 @@ class BasePlan {
       this.addPlantations({Tomato:pairs,Lettuce:pairs},{Tomato:"Tomato Plantation",Lettuce:"Lettuce Plantation"});
       this.add(st,1); n=pairs*2;
       this.hireBest("Kindling",3,1,"ЕДА: повар салатов");
-      this.notes.push(`ЕДА (self): Salad — ${pairs}x Tomato + ${pairs}x Lettuce, повар на ${st}`);
+      const af=this.o.tech>=78&&this.structs["Ancient Farm"];
+      const per=af?Math.max(1,Math.ceil(pairs/(this.o.ancientFarmYield||3))):pairs;
+      this.notes.push(`ЕДА (self): Salad — ${per}x Tomato + ${per}x Lettuce (${af?"Ancient Farm":"плантаций"}), повар на ${st}`);
     } else { this.addPlantations({"Red Berries":plots},{"Red Berries":"Berry Plantation"}); this.add("Campfire",1); n=plots;
       this.hireBest("Kindling",2,1,"ЕДА: жарка ягод");
       this.notes.push(`ЕДА (self): Baked Berries — ${plots}x Berry Plantation (апгрейд до Salad на tech 25)`); }
@@ -1220,6 +1222,7 @@ class BasePlan {
         this.assume.push(`Инкубаторы: ${nI} = фермы x2 x мир ${o.incubation} / вместимость ${cap}`); } }
     this.infra(o.slots); if(hatch||(kit&&this.structs[kit]?.power)) this.power(hatch);
     this.notes.push(`${farm} x${farms}: ~${L.eggs.toFixed(0)} яиц/час (${(L.eggs*24).toFixed(0)}/сутки), тортов ${L.cakes.toFixed(0)}/час; буст x${o.eggBoost||1.0} (1.0 = торты лимитируют, Braloha просто без простоев)`+(o.cake==="Vegetable Cake"?" — Vegetable Cake: 2 яйца за цикл!":""));
+    this.notes.push("Торты — НЕ линейные тиры, у каждого свой эффект и станция: <b>Cake</b> базовый (Cooking Pot); <b>Mushroom</b> — рост статов/IV; <b>Vegetable</b> — 2 ЯЙЦА/цикл, объём (Electric Kitchen, Tomato+Lettuce); <b>Extravagant Vegetable</b> — шанс МУТАЦИИ + статы (Large-Scale Stone Oven); <b>Special</b> — стак ПАССИВОК (Ancient Kitchen). Vegetable даёт 2 яйца, чего Special НЕ даёт — они ситуативны, не «лучше/хуже»");
     if(hatch) this.notes.push("⚠ Ancient Hatchery: скорость кладки принята как у фермы (5 мин/яйцо); гайды говорят '~10 сек/цикл' (PRELIMINARY) — замерь и впиши в «яйцо, мин»");
     this.notes.push(`Потолок ${farms} ферм для ${o.slots} слотов при этих настройках (еда ${o.food}, рабочие ${o.workforce}); больше = вторая брид-база или еда привозная`);
     this.notes.push("В пати при сборе яиц: Broncherry Aqua (альфа-яйца 45~55%) + Grintale (лишнее яйцо 50~75%)");
@@ -1430,7 +1433,7 @@ function builderOpts(){
     incubation:val("pincub")===""?1:+val("pincub"),cake:val("pcake")||"Cake",
     perStation:+val("ppers")||1,spoilage:document.getElementById("pspoil").checked,
     foodPerPlot:+val("pfpp")||55,foodBuff:val("pfbuff")===""?30:+val("pfbuff"),
-    ancientFarmYield:+val("pafy")||1,dishes:plannerDishes.length?plannerDishes:null};
+    ancientFarmYield:+val("pafy")||3,dishes:plannerDishes.length?plannerDishes:null};
 }
 
 render.planner = () => {
@@ -1481,7 +1484,7 @@ render.planner = () => {
     <label class="dim">готовок/час на повара <input type="number" id="pcook" value="30" style="width:60px;min-width:60px"></label>
     <label class="dim" title="аппетит-единиц (Σ FoodAmount) на грядку; скорости голода в данных нет">аппетита/грядку <input type="number" id="pfpp" value="55" style="width:70px;min-width:70px"></label>
     <label class="dim" title="бонус Work Speed от кормёжки buff-едой: Salad +30, Minestrone +40, 0 = без">WS от еды <input type="number" id="pfbuff" value="30" style="width:60px;min-width:60px"></label>
-    <label class="dim" title="во сколько раз Ancient Farm производительнее обычной грядки (paldb: 1 = как обычная)">Ancient Farm × <input type="number" id="pafy" value="1" step="0.5" style="width:60px;min-width:60px"></label>
+    <label class="dim" title="во сколько раз Ancient Farm производительнее обычной грядки (дефолт 3 — калибровка по игроку: 4 древние фермы кормят 50 палов с избытком; точной выработки в данных нет)">Ancient Farm × <input type="number" id="pafy" value="3" step="0.5" style="width:60px;min-width:60px"></label>
     <label class="dim" title="как часто брид-ферма делает яйцо. 5 мин — из данных paldb, менять НЕ нужно; только если замеришь, что Ancient Hatchery кладёт быстрее">яйцо раз в, мин <input type="number" id="peggint" value="5" step="0.1" style="width:60px;min-width:60px"></label>
   </div></details></div>
   <div id="bout"></div>`;
