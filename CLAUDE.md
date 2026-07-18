@@ -112,7 +112,7 @@ resource <name>               лучшие места фарма ресурса 
 
 **Конструктор баз** — `python3 scripts/base_planner.py <preset> [опции]`:
 пресеты `breeding | mine-craft | food | starter` (нефть — 1 экстрактор внутри mine-craft, работает без палов); опции `--slots N --tech N
---food self|shipped --workforce baseline|passives|max --roster top|easy --farms N --raw --lux
+--food self|shipped --workforce baseline|passives|max (эффективный Work Speed рабочих: ~100 базовый / 255 макс WS-трейты / 357 те же+4★ — замер игрока Menasting; 4★ рабочих ВШИТ в тир max, отдельно не считается) --soul (Pal Souls +20 ≈ +60% WS → 572) --stars (теперь только 4★ САППОРТОВ: Lullu/Prunelia yield, Braloha яйца) --roster top|easy --farms N --raw --lux
 --metal ingot|refined|pal-metal|coralum|soralite|paloxite` (задаёт тир вместо --tech)
 `--extra "Statue of Power:1,..."` (необязательные здания в смету).
 `--roster top` — лучшие палы с альтернативой «проще достать»; `--roster easy` — наоборот.

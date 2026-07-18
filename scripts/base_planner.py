@@ -9,8 +9,8 @@
   --slots N            рабочих слотов на базе (по умолчанию 50)
   --tech N             доступный уровень технологий (по умолчанию 60) — здания выбираются по нему
   --food self|shipped  кормовой модуль на месте / еда привозная (по умолчанию self)
-  --workforce baseline|passives|max   Work Speed рабочих: 70 (дикие) / 154 (+пассивки) / 192 (макс-стек);
-                                      база WS 70 растёт от пассивок (Artisan/Serious) и еды
+  --workforce baseline|passives|max   Work Speed рабочих: ~100 (базовый) / 255 (макс WS-трейты) /
+                                      357 (4★ + макс WS-трейты; замер игрока). +--soul → 572, +--research → ×1.45
   --farms N            (breeding) фиксировать число брид-ферм вместо авто
   --raw                смету материалов развернуть до сырья (по items.json)
 
@@ -30,7 +30,10 @@ DATA = Path(__file__).resolve().parent.parent / "data"
 # скорость работы по уровню навыка 1-10 (paldb, work_speed_by_level)
 CRAFT_SPEED = [50, 80, 140, 240, 400, 680, 1100, 1900, 3200, 5400]
 FIELD_SPEED = [50, 70, 100, 140, 190, 260, 370, 510, 720, 1000]
-QUALITY = {"baseline": 1.0, "passives": 2.2, "max": 2.75}
+# Эффективный Work Speed / 100 (реф. — базовый пал WS 100). Замеры игрока (Menasting 4★):
+#   baseline 100 (базовый пал) · passives 255 (макс WS-трейты Artisan+Rem.Craftsmanship+Work Slave, ×2.55)
+#   max 357 (те же трейты + 4★, замер WS 357) · +душа (+20) ×1.6 → 572 (флаг --soul)
+QUALITY = {"baseline": 1.0, "passives": 2.55, "max": 3.57}
 
 # доступный металл -> потолок tech (по печам: следующая печь минус 1)
 METALS = {
@@ -89,13 +92,16 @@ class Planner:
         return 0
 
     def q(self):
-        """Эффективный множитель работы = (база 70 × пассивки + бонус еды)/70 × звёзды × ресёрч.
-        Звёзды (конденсер): 4★ = +1 ур. работы (ур.8→9 ≈ ×1.68 крафт/×1.41 поле, среднее ×1.55).
-        Ресёрч (Pal Labor Research Lab, макс): Work Speed +45% на большинстве работ (×1.45).
-        Оговорка: у Gathering/Transporting/Farming ресёрча нет — для ранча/сбора реальный буст меньше."""
-        star = 1.55 if self.args.stars else 1.0
+        """Эффективный множитель работы = (база 100 × тир + бонус еды)/100 × душа × ресёрч.
+        Тир (--workforce) уже включает трейты И 4★ рабочего (max = замер WS 357 у 4★+трейты).
+        Душа (--soul): +20 Pal Souls ≈ +60% WS (замер 357→572) → ×1.6.
+        Ресёрч (Pal Labor Research Lab, макс): Work Speed +45% (×1.45) — отдельный лаб-бонус.
+        Оговорка: у Gathering/Transporting/Farming ресёрча нет — для ранча/сбора буст меньше.
+        4★ рабочих НЕ множим отдельно (--stars) — он зашит в тир 'max'; --stars теперь только для
+        саппортов (Lullu/Prunelia — yield, Braloha — яйца)."""
+        soul = 1.6 if self.args.soul else 1.0
         research = 1.45 if self.args.research else 1.0
-        return (70 * QUALITY[self.args.workforce] + self.food_ws()) / 70 * star * research
+        return (100 * QUALITY[self.args.workforce] + self.food_ws()) / 100 * soul * research
 
     def garden_mult(self):
         """Множитель садовой тройки = q() × суитабилити-саппорты (Petallia +1 Planting,
@@ -705,15 +711,15 @@ class Planner:
         parts = [f"{a.workforce}"]
         if fw:
             parts.append(f"еда +{fw:.0f}")
-        if a.stars:
-            parts.append("4★ ×1.55")
+        if a.soul:
+            parts.append("душа ×1.6")
         if a.research:
             parts.append("ресёрч ×1.45")
-        ws_txt = f"Work Speed {int(70 * self.q())} ({', '.join(parts)})"
+        ws_txt = f"Work Speed ~{int(100 * self.q())} ({', '.join(parts)})"
         print(f"═══ База: {a.preset}  |  слоты {a.slots}  |  tech {a.tech}  |  еда: {a.food}  |  {ws_txt} ═══\n")
-        if a.stars:
-            self.notes.append("Рабочие 4★: +1 ур. работы (≈×1.55). Цена: 116 дублей вида на каждого пала — "
-                              "оправдано для постоянного ядра базы, не для одноразовых")
+        self.notes.append(f"Work Speed рабочих ~{int(100 * self.q())} (--workforce {a.workforce}: baseline 100 / "
+                          "passives 255 / max 357 = 4★+макс WS-трейты, замер игрока; --soul +60%; --research +45%). "
+                          "Число рабочих обратно пропорционально WS — чем вложеннее палы, тем их меньше нужно")
         print("ПАЛЫ".ljust(60) + f"[{total_pals}/{a.slots} слотов]")
         num = lambda s: (self.idx["pals"].get(s) or {}).get("number")
         for sp, c, role in self.pals:
@@ -786,8 +792,11 @@ def main():
                     help="настройка мира «еда не портится»: без холодильника и Cooling-пала, хватит Feed Box")
     ap.add_argument("--research", action="store_true",
                     help="макс ресёрч Pal Labor Research Lab (account-wide): Work Speed +45%, урожай +50% — меньше рабочих/грядок")
+    ap.add_argument("--soul", action="store_true",
+                    help="рабочим прокачаны Pal Souls (+20 ≈ +60%% Work Speed; замер игрока WS 357→572) — меньше рабочих")
     ap.add_argument("--stars", action="store_true",
-                    help="рабочие сконденсированы до 4★ (+1 ур. работы ≈ ×1.55 скорости; цена — 116 дублей на пала)")
+                    help="4★ у САППОРТ-палов (Lullu/Prunelia — yield грядок, Braloha — яйца): усиливает их партнёрки. "
+                         "4★ рабочих уже в тире --workforce max (WS 357), отдельно не считается")
     ap.add_argument("--ancient-farm-yield", type=float, default=1,
                     help="во сколько раз Ancient Farm производительнее обычной грядки (дефолт 1 = как плантация: "
                          "по игроку 'сложно сказать, быстрее ли'; точной выработки в данных нет — подними, если по игре быстрее)")

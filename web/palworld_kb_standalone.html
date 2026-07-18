@@ -1106,7 +1106,9 @@ function drawParty(){
 }
 
 /* --- Конструктор баз (порт scripts/base_planner.py) --- */
-const QUALITY = {baseline:1.0, passives:2.2, max:2.75};
+// Эффективный Work Speed / 100 (реф. базовый пал WS 100). Замер игрока (Menasting 4★):
+// baseline 100 · passives 255 (макс WS-трейты ×2.55) · max 357 (те же +4★). Душа (+20) ×1.6 → 572.
+const QUALITY = {baseline:1.0, passives:2.55, max:3.57};
 const METALS = {"ingot":33,"refined":43,"pal-metal":57,"coralum":65,"soralite":73,"paloxite":99};
 const TRANS_CAP = {1:2,2:5,3:10,4:20,5:40,6:70,7:120,8:200,9:320,10:500};
 const sizeBadge = n => { const sz=(D.idx.pals[n]||{}).size; return sz?` <span class="tag" style="padding:0 5px;font-size:10.5px">${sz}</span>`:""; };
@@ -1134,9 +1136,10 @@ class BasePlan {
   foodWs(){ const b=this.o.foodBuff??30;
     if(b<=0) return 0;
     return this.o.tech>=((this.structs["Tomato Plantation"]||{}).tech_level||25)?b:0; }
-  q(){ const star=this.o.stars?1.55:1.0, research=this.o.research?1.45:1.0;
-    // 4★ ≈ ×1.55; ресёрч (Pal Labor Research Lab макс) Work Speed +45%
-    return (70*QUALITY[this.o.workforce]+this.foodWs())/70*star*research; }
+  q(){ const soul=this.o.soul?1.6:1.0, research=this.o.research?1.45:1.0;
+    // тир --workforce уже включает трейты И 4★ рабочего (max = замер WS 357). Душа +20 ≈ +60%; ресёрч +45%.
+    // 4★ рабочих отдельно (--stars) НЕ множим — он в тире 'max'; stars теперь только для саппортов.
+    return (100*QUALITY[this.o.workforce]+this.foodWs())/100*soul*research; }
   // ранч = q() × бонус Ranch Master(+2 Farming)/handbook при палах с пассивками (×1.5)
   ranchMult(){ return this.q()*(this.o.workforce!=="baseline"?1.5:1.0); }
   // садовая тройка = q() × суитабилити-саппорты (Petallia +1 Planting, Amione +1 Watering — в брид-пресете) ≈ ×1.35
@@ -1534,6 +1537,7 @@ function builderOpts(){
   return {preset:val("pp"),slots:+val("pslots")||50,tech:+val("ptech")||60,food:val("pfood"),
     workforce:val("pwf"),roster:val("proster"),lux:document.getElementById("plux").checked,
     stars:document.getElementById("pstars").checked,research:document.getElementById("presearch").checked,
+    soul:document.getElementById("psoul").checked,
     ranchRate:+val("pranch")||12,plantYield:+val("pyield")||60,cookRate:+val("pcook")||30,
     plantsPerWorker:3,farms:+val("pfarms")||null,dish:val("pdish")||"Salad",dishRate:+val("pdishrate")||30,
     eggInterval:+val("peggint")||5,braloha:document.getElementById("pbraloha").checked,
@@ -1561,12 +1565,13 @@ render.planner = () => {
     </select>
     <label>Tech <input type="number" id="ptech" value="60" min="1" max="99" style="width:70px;min-width:70px"></label>
     <select id="pfood"><option value="self">Еда: на месте</option><option value="shipped">Еда: привозная</option></select>
-    <select id="pwf" title="базовый Work Speed пала = 70; растёт от пассивок и еды">
-      <option value="baseline">WS 70 — дикие (без пассивок)</option>
-      <option value="passives" selected>WS 154 — +пассивки (Artisan/Serious/Work Slave)</option>
-      <option value="max">WS 192 — макс (Remarkable Craftsmanship-стек)</option></select>
+    <select id="pwf" title="эффективный Work Speed пала (замер игрока Menasting 4★); растёт от еды/души/ресёрча">
+      <option value="baseline">WS ~100 — базовый пал (без WS-трейтов)</option>
+      <option value="passives" selected>WS ~255 — макс WS-трейты (Artisan+Rem.Craftsmanship+Work Slave)</option>
+      <option value="max">WS ~357 — те же трейты + 4★ (замер игрока)</option></select>
     <select id="proster"><option value="top">Ростер: топ</option><option value="easy">Ростер: легко достать</option></select>
-    <label title="конденсер 4★: +1 ур. работы ≈ ×1.55; цена 116 дублей/пал"><input type="checkbox" id="pstars"> 4★ рабочие</label>
+    <label title="4★ у САППОРТ-палов (Lullu/Prunelia — yield грядок, Braloha — яйца). 4★ рабочих уже в тире 'max' (WS 357)"><input type="checkbox" id="pstars"> 4★ саппорты</label>
+    <label title="рабочим прокачаны Pal Souls (+20 ≈ +60% Work Speed; замер 357→572) — меньше рабочих"><input type="checkbox" id="psoul"> душа рабочих</label>
     <label title="макс ресёрч Pal Labor Research Lab (account-wide): Work Speed +45%, урожай +50%, инкубация +60%, нефть +90%"><input type="checkbox" id="presearch"> макс ресёрч</label>
     <label><input type="checkbox" id="plux"> люкс</label>
   </div>
@@ -1603,7 +1608,7 @@ render.planner = () => {
   };
   document.getElementById("pp").addEventListener("input",updateVis);
   window._updateVis=updateVis;
-  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","pincub","pcake","ppers","pspoil","pfpp","pfbuff","pstars","pafy","presearch"]){
+  for(const id of ["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","pincub","pcake","ppers","pspoil","pfpp","pfbuff","pstars","psoul","pafy","presearch"]){
     document.getElementById(id).addEventListener("input",()=>{
       if(!baseDirty && BASE.buildings.length) seedFromPreset();
       else if(baseDirty){ const el=document.getElementById("rebuild-hint"); if(el) el.style.display=""; }
@@ -1635,7 +1640,7 @@ render.planner = () => {
 
 /* --- персист настроек и базы (localStorage) --- */
 const PSTORE="palkb_planner_v1";
-const PFIELDS=["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pstars","presearch",
+const PFIELDS=["pp","pslots","pmetal","ptech","pfood","pwf","proster","plux","pstars","psoul","presearch",
   "pranch","pyield","pcook","pfarms","pdish","pdishrate","peggint","pbraloha","pincub","pcake",
   "ppers","pspoil","pfpp","pfbuff","pafy"];
 function savePlannerState(){
@@ -1796,8 +1801,8 @@ function drawBase(){
   <div class="card"><div class="big">${crewTotal}/${slots} слотов
     ${crewTotal>slots?`<span class="bad">перебор на ${crewTotal-slots}</span>`:`<span class="ok">свободно ${slots-crewTotal}</span>`}
     ${(()=>{const o=builderOpts();const p=new BasePlan(o);const fw=p.foodWs();
-      const bits=[o.workforce]; if(fw) bits.push("еда +"+fw); if(o.stars) bits.push("4★ ×1.55"); if(o.research) bits.push("ресёрч ×1.45");
-      return `<span class="tag" title="база 70 × пассивки + еда × звёзды">WS ${Math.floor(70*p.q())} (${bits.join(", ")})</span>`;})()}
+      const bits=[o.workforce]; if(fw) bits.push("еда +"+fw); if(o.soul) bits.push("душа ×1.6"); if(o.research) bits.push("ресёрч ×1.45");
+      return `<span class="tag" title="эффективный Work Speed: base 100 × тир (baseline 100/passives 255/max 357) × душа × ресёрч + еда">WS ~${Math.floor(100*p.q())} (${bits.join(", ")})</span>`;})()}
     ${power?`<span class="tag">⚡ ${power.toLocaleString()}/с</span>`:""}</div></div>
   <div class="grid" style="grid-template-columns:1fr 1fr;align-items:start">
     <div><h3>Здания (клик — сменить тир)</h3>
