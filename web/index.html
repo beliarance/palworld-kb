@@ -64,7 +64,7 @@ const DATA_FILES = {
   exp:"expeditions.json", skills:"active_skills.json", passives:"passives.json",
   loc:"pal_locations.json", res:"resource_nodes.json", idx:"index.json",
   bb:"base_building.json", regions:"regions.json", icons:"icons.json",
-  skillmeta:"skill_dps_meta.json"
+  skillmeta:"skill_dps_meta.json", traits:"combat_traits.json"
 };
 const WORK_COLS = {Kindling:"Разжигание",Watering:"Полив",Planting:"Посадка",Generating_Electricity:"Электричество",
   Handiwork:"Ручной труд",Gathering:"Сбор",Lumbering:"Лесозаготовка",Mining:"Добыча",Medicine:"Медицина",
@@ -589,11 +589,12 @@ render.counter = () => {
     if(fe&&enemy){
       party=`<h3 style="margin-top:12px">${isRaid?"Твоя пати (плюс базовые палы держат остальное)":"Боевая пати под босса"}</h3>
       <div class="sub" style="margin-bottom:6px">2 бойца (свапаешь, если первый падает) + 3 ауры; скиллы с ×2 — то, к чему босс слаб</div>`
-      +(()=>{const C=buildCombatParty(fe, enemy, true, sea); return partyCardsHTML(C.picks, C.notes, enemy)+metaSkillsCardHTML(fe, enemy)+accessoryCardHTML(accessoriesFor("combat", fe, enemy));})();
+      +(()=>{const C=buildCombatParty(fe, enemy, true, sea); return partyCardsHTML(C.picks, C.notes, enemy)+metaSkillsCardHTML(fe, enemy)+traitsCardHTML(isRaid?"raid":"party")+accessoryCardHTML(accessoriesFor("combat", fe, enemy));})();
     } else {
       party=`<h3 style="margin-top:12px">Боевая пати под босса (каунтера нет — топ бойцов)</h3>
       <div class="sub" style="margin-bottom:6px">${esc(b.arena||"")}</div>`
       +(()=>{const C=buildRawParty([b.pal], sea); return partyCardsHTML(C.picks, C.notes, null, true)+metaSkillsCardHTML(null, null)
+        +traitsCardHTML(isRaid?"raid":"party")
         +accessoryCardHTML([{n:"Dogen Emblem",why:"тебе и палу: +атака",eff:(itemByName["Dogen Emblem"]||{}).effect||""},
                             {n:"Warsect Terra's Belt",why:"тебе: +защита и +HP (пережить фазы)",eff:(itemByName["Warsect Terra's Belt"]||{}).effect||""},
                             {n:"Life Pendant",why:"тебе: +HP",eff:(itemByName["Life Pendant"]||{}).effect||""}]);})();
@@ -796,6 +797,22 @@ function bestSkillsFor(name, enemy, n=3){
 }
 /* мета-скиллы под босса: замеренный сообществом DPS (skill_dps_meta.json).
    fe = стихия каунтера (если есть слабость), иначе null → показываем универсальный топ */
+/* Трейты (пассивки) бойца: простой (графт на Pal Surgery Table) + сложный (радужные World Tree)
+   + альтернативы. mode='party' (ты управляешь → офенс) | 'raid' (база дерётся сама → выживаемость) */
+function traitsCardHTML(mode){
+  const T=D.traits; if(!T||!T[mode]) return ""; const S=T[mode];
+  const row=t=>`<div style="margin:3px 0">${t.trait.startsWith("<")?`<b>${esc(t.trait.replace(/[<>]/g,""))}</b>`:`<b>${esc(t.trait)}</b>`} — ${esc(t.eff)} <span class="dim">· ${esc(t.get)}</span></div>`;
+  const alts=Object.entries(S.alternatives||{}).map(([k,v])=>
+    `<div style="margin:3px 0">${k==="НЕ бери"?'<span class="warn">⛔ НЕ бери</span>':`<span class="dim">вместо <b>${esc(k)}</b>:</span>`} ${esc(v)}</div>`).join("");
+  return `<div class="card"><div class="big">🧬 Трейты бойца — ${mode==="raid"?"базовый РЕЙД":"ПАТИ"}</div>
+    <div class="sub" style="margin-bottom:8px">${esc(S.role)}</div>
+    <div><b>🟢 Простой</b> <span class="dim">— графт на Pal Surgery Table (Surgery Chip) или легко фармится</span></div>
+    ${S.simple.map(row).join("")}
+    <div style="margin-top:10px"><b>🌈 Сложный</b> <span class="dim">— фул радужные (World Tree t5) / мутационные</span></div>
+    ${S.complex.map(row).join("")}
+    <div style="margin-top:10px"><b>🔁 Альтернативы радужным</b> <span class="dim">(если World Tree/мутации недоступны)</span></div>${alts}
+    <div class="sub" style="margin-top:8px">${esc(T.surgery_table)}</div></div>`;
+}
 function metaSkillsCardHTML(fe, enemy){
   const meta=D.skillmeta; if(!meta||!meta.skills) return "";
   const learned=Object.keys(D.skills.learnsets);
@@ -1022,7 +1039,7 @@ function drawParty(){
     if(!fe) fe=chart[enemy].weak_to[0];
     if(!enemy) enemy=(chart[fe].strong_vs||[])[0]||"";
     const C=buildCombatParty(fe, enemy, document.getElementById("ptwo").checked);
-    out.innerHTML=partyCardsHTML(C.picks, C.notes, enemy)+metaSkillsCardHTML(fe, enemy)+accessoryCardHTML(accessoriesFor("combat", fe, enemy));
+    out.innerHTML=partyCardsHTML(C.picks, C.notes, enemy)+metaSkillsCardHTML(fe, enemy)+traitsCardHTML("party")+accessoryCardHTML(accessoriesFor("combat", fe, enemy));
     return;
   } else if(goal==="openworld"){
     B.pick("маунт + бафф атак игрока","attack_type:Electric:mount","attack_type:Fire:mount","attack_type:Ice:mount");

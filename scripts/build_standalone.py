@@ -19,6 +19,7 @@ FILES = {
     "exp": "expeditions.json", "skills": "active_skills.json", "passives": "passives.json",
     "loc": "pal_locations.json", "res": "resource_nodes.json", "idx": "index.json",
     "bb": "base_building.json", "regions": "regions.json",
+    "skillmeta": "skill_dps_meta.json", "traits": "combat_traits.json",
 }
 
 

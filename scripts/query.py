@@ -234,6 +234,7 @@ def cmd_boss(db, args):
     hits = [b for b in all_bosses if q in b.get("pal", "").lower() or q in b.get("leader", "").lower()]
     if not hits:
         sys.exit(f"Boss '{args.name}' not found. Known: " + ", ".join(b["pal"] for b in all_bosses))
+    raid_set = {rb["pal"] for rb in bosses["raid_bosses"]}  # алтарные рейды → трейты на выживаемость
     for b in hits:
         title = f"{b.get('leader', '')} & {b['pal']}".strip(" &")
         prelim = "  (PRELIMINARY 1.0)" if b.get("preliminary") else ""
@@ -246,6 +247,10 @@ def cmd_boss(db, args):
         for el in b["counter_elements"]:
             pals = sorted((p for p in db.values() if el in p["elements"] and p.get("hp")), key=lambda p: -attack(p))
             print(f"  Top {el} picks: " + ", ".join(label(p) for p in pals[:5]))
+        is_raid = b["pal"] in raid_set
+        if is_raid:
+            print("  🏰 Алтарный РЕЙД — бой на базе, назначенные палы дерутся САМИ → трейты на выживаемость:")
+        _print_combat_traits("raid" if is_raid else "party")
 
 
 # ---------------------------------------------------------------- breeding
@@ -809,6 +814,26 @@ def _party_accessories(goal, fe=None, enemy=None, weightless=False):
     return out
 
 
+def _print_combat_traits(mode):
+    """Трейты бойца: простой (графт на Pal Surgery Table) + сложный (радужные) + альтернативы.
+    mode='party' (управляешь → офенс) | 'raid' (база дерётся сама → выживаемость)."""
+    T = _load_json("combat_traits.json")
+    if not T or mode not in T:
+        return
+    S = T[mode]
+    print(f"  🧬 Трейты бойца — {'базовый РЕЙД' if mode == 'raid' else 'ПАТИ'}: {S['role']}")
+    print("    🟢 Простой (графт на Pal Surgery Table / легко фармится):")
+    for t in S["simple"]:
+        print(f"      {t['trait'].strip('<>')} — {t['eff']}  ({t['get']})")
+    print("    🌈 Сложный (радужные World Tree t5 / мутации):")
+    for t in S["complex"]:
+        print(f"      {t['trait'].strip('<>')} — {t['eff']}  ({t['get']})")
+    print("    🔁 Альтернативы радужным:")
+    for k, v in S.get("alternatives", {}).items():
+        print(f"      {'⛔ ' + k if k == 'НЕ бери' else 'вместо ' + k}: {v}")
+    print(f"    ℹ {T['surgery_table']}")
+
+
 def cmd_party(db, args):
     """Пати из 5 под цель: активен 1 выпущенный пал, остальные дают ауры 'While in party'
     (ключевые не стакаются) — поэтому дефолт: 1 боец + 4 ауры."""
@@ -1147,6 +1172,8 @@ def cmd_party(db, args):
             meta = _load_json("skill_dps_meta.json") or {}
             for g in (meta.get("guidance") or [])[:2]:
                 print(f"    · {g}")
+    if goal == "combat":
+        _print_combat_traits("party")
     accs = _party_accessories(goal, locals().get("fe"), locals().get("enemy"), getattr(args, "weightless", False))
     if accs:
         print("  🎗 Аксессуары:")

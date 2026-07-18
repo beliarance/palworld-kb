@@ -2,6 +2,18 @@
 
 Версия игры: **Palworld 1.0** (релиз 10 июля 2026). Дата актуализации базы: **2026-07-17**.
 
+## combat_traits.json — трейты бойца party/raid (2026-07-18)
+
+- **Пати vs база-рейд:** allthings.how (мета-стек пассивок 1.0), xmodhub (combat vs base
+  traits). Пати (управляешь) = офенс/стекло-пушка; базовый рейд (палы дерутся сами) =
+  выживаемость (Idiosyncratic/Immortality/Vampiric/Diamond Body), БЕЗ −HP стеклопушек.
+- **Простой = вживляемый:** bisecthosting / palworld.fandom Pal Surgery Table — Surgery Chip
+  (Implant) вживляет обычные пассивки (~10–50k золота/чип). **World Tree (t5) грефтить нельзя**
+  (playerauctions) — только ловля в биоме World Tree / Large Ominous Egg (после Panthalus).
+- **Новые 1.0 пассивки:** gamerant (All New Passive Skills), 7 World Tree (God of Destruction,
+  Twin-Edged Holy Blade, Sanctified Meat Shield, Demon's Hand и т.д.) — все уже в passives.json
+  с эффектами. Эффекты/имена в combat_traits.json сверены с локальным passives.json.
+
 ## pals_combat.json transport_speed (2026-07-18)
 
 - **paldb.cc/en/Transporting** — стат `Transport Speed` (скорость переноски груза, отдельный
