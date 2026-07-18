@@ -215,20 +215,22 @@
   {
    "name": "Babysitter",
    "tier": 4,
-   "effects": "While at a base, increases egg production speed by +30% and incubation speed by +30% for Pals assigned to a Breeding Farm. — Мутационно-эксклюзивная: надёжно только через мутацию при бридинге (редко «протекает» из ловли); из обычного пула родителей не наследуется.",
+   "effects": "While at a base, increases egg production speed by +30% and incubation speed by +30% for Pals assigned to a Breeding Farm.",
    "category": "work",
    "exclusive_source": null,
-   "breedable": false,
-   "mutation_exclusive": true
+   "breedable": true,
+   "mutation_exclusive": true,
+   "notes": "Мутационная (радужная): первично — только из МУТАЦИОННОГО яйца (шанс: Cake 1% / Vegetable Cake 2% / Extravagant Vegetable Cake 3%). Дальше НАСЛЕДУЕТСЯ обычным бридингом как пассивка родителя (Special Cake повышает шанс передачи). С Yakumo «Birds of a Feather» не работает."
   },
   {
    "name": "Idiosyncratic",
    "tier": 4,
-   "effects": "Pal and Player Auto Health Regeneration Rate +50%, Defense +25%, Immune to Poison Damage, Immune to Burn Damage — Мутационно-эксклюзивная: надёжно только через мутацию при бридинге (редко «протекает» из ловли); из обычного пула родителей не наследуется.",
+   "effects": "Pal and Player Auto Health Regeneration Rate +50%, Defense +25%, Immune to Poison Damage, Immune to Burn Damage",
    "category": "combat",
    "exclusive_source": null,
-   "breedable": false,
-   "mutation_exclusive": true
+   "breedable": true,
+   "mutation_exclusive": true,
+   "notes": "Мутационная (радужная): первично — только из МУТАЦИОННОГО яйца (шанс: Cake 1% / Vegetable Cake 2% / Extravagant Vegetable Cake 3%). Дальше НАСЛЕДУЕТСЯ обычным бридингом как пассивка родителя (Special Cake повышает шанс передачи). С Yakumo «Birds of a Feather» не работает."
   },
   {
    "name": "Lavish Hospitality",
@@ -249,20 +251,22 @@
   {
    "name": "Immortality",
    "tier": 4,
-   "effects": "Life Steal +5%, Pal Auto Health Regeneration Rate +100%, Attack +15% — Мутационно-эксклюзивная: надёжно только через мутацию при бридинге (редко «протекает» из ловли); из обычного пула родителей не наследуется.",
+   "effects": "Life Steal +5%, Pal Auto Health Regeneration Rate +100%, Attack +15%",
    "category": "combat",
    "exclusive_source": null,
-   "breedable": false,
-   "mutation_exclusive": true
+   "breedable": true,
+   "mutation_exclusive": true,
+   "notes": "Мутационная (радужная): первично — только из МУТАЦИОННОГО яйца (шанс: Cake 1% / Vegetable Cake 2% / Extravagant Vegetable Cake 3%). Дальше НАСЛЕДУЕТСЯ обычным бридингом как пассивка родителя (Special Cake повышает шанс передачи). С Yakumo «Birds of a Feather» не работает."
   },
   {
    "name": "Heavily Armored",
    "tier": 4,
-   "effects": "Immune to Explosion Damage — Мутационно-эксклюзивная: надёжно только через мутацию при бридинге (редко «протекает» из ловли); из обычного пула родителей не наследуется.",
+   "effects": "Immune to Explosion Damage",
    "category": "combat",
    "exclusive_source": null,
-   "breedable": false,
-   "mutation_exclusive": true
+   "breedable": true,
+   "mutation_exclusive": true,
+   "notes": "Мутационная (радужная): первично — только из МУТАЦИОННОГО яйца (шанс: Cake 1% / Vegetable Cake 2% / Extravagant Vegetable Cake 3%). Дальше НАСЛЕДУЕТСЯ обычным бридингом как пассивка родителя (Special Cake повышает шанс передачи). С Yakumo «Birds of a Feather» не работает."
   },
   {
    "name": "Lightfooted",
@@ -278,7 +282,9 @@
    "effects": "Mounted Jump Count +2",
    "category": "mount",
    "exclusive_source": null,
-   "breedable": null
+   "breedable": true,
+   "mutation_exclusive": true,
+   "notes": "Мутационная (радужная): первично — только из МУТАЦИОННОГО яйца (шанс: Cake 1% / Vegetable Cake 2% / Extravagant Vegetable Cake 3%). Дальше НАСЛЕДУЕТСЯ обычным бридингом как пассивка родителя (Special Cake повышает шанс передачи). С Yakumo «Birds of a Feather» не работает."
   },
   {
    "name": "Artisan",
@@ -1013,15 +1019,6 @@
    "category": "detrimental",
    "exclusive_source": null,
    "breedable": true
-  },
-  {
-   "name": "Skirmisher",
-   "tier": 4,
-   "effects": "Мутационно-эксклюзивная пассивка (детали эффекта не собраны). Наследуется только через мутацию.",
-   "category": "combat",
-   "exclusive_source": null,
-   "breedable": false,
-   "mutation_exclusive": true
   }
  ],
  "notes": [

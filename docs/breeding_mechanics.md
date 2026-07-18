@@ -252,14 +252,18 @@ Awakening. Сырые статы родителей НЕ усредняются 
 **Активные скиллы:** бридинг не задаёт мувсет; потомок наследует какую-то атаку из пула
 родителей, конкретный набор ставится **Skill Fruit**'ами уже на потомке.
 
-**Пассивки, которые НЕ вывести бридингом:** мутационно-эксклюзивные — **Babysitter,
-Idiosyncratic, Immortality, Heavily Armored, Skirmisher** (из слота мутации, не из пула
-родителей; редко «протекают» из ловли) → в data/passives.json помечены `breedable:false,
-mutation_exclusive:true`. Партнёрский/сигнатурный скилл пала — не наследуемая пассивка.
+**Мутационные (радужные) пассивки — 5 штук:** **Immortality, Idiosyncratic, Babysitter,
+Heavily Armored, Skymarcher** (список по paldb /Mutation; «Skirmisher» не существует — ошибка
+ранних сводок). **Первично** выпадают ТОЛЬКО из мутационного яйца (шанс: Cake 1% / Vegetable 2% /
+Extravagant Vegetable 3%). **Дальше — наследуются обычным бридингом**: родитель с радужной
+пассивкой передаёт её как обычный трейт, Special Cake повышает шанс передачи; один мутант =
+источник трейта для всей линии. С Yakumo «Birds of a Feather» радужные не работают.
+В data/passives.json: `mutation_exclusive:true, breedable:true` (breedable = наследуется, когда
+родитель уже имеет). Партнёрский/сигнатурный скилл пала — не наследуемая пассивка.
 Legend/Lucky/«эмперор»-серии наследуются (chain-breeding), но зарождаются только у конкретных палов.
 
-Источники: palworld.wiki.gg/Breeding, allthings.how (1.0 trait inheritance, 2026-07), thepalprofessor
-breeding guide, switchbladegaming, boostmatch (mutation-exclusive пассивки), game8.
+Источники: paldb.cc/en/Mutation (список 5 + наследуемость + шансы тортов, 2026-07-18),
+twoaveragegamers/nexttier (mutation breeding), palworld.wiki.gg/Breeding, allthings.how, game8.
 
 ## 10. Порядок бридинга и лайфхаки (PRELIMINARY 1.0)
 

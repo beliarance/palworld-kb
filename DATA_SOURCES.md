@@ -2,6 +2,18 @@
 
 Версия игры: **Palworld 1.0** (релиз 10 июля 2026). Дата актуализации базы: **2026-07-17**.
 
+## passives.json — мутационные пассивки: список и наследуемость (2026-07-18)
+
+- **paldb.cc/en/Mutation** — мутационных (радужных) пассивок ровно **5**: Immortality,
+  Idiosyncratic, Babysitter, Heavily Armored, **Skymarcher**. «Skirmisher» НЕ существует —
+  удалён из passives.json (фантом ранних сводок). Шансы мутационного яйца: Cake 1% /
+  Vegetable Cake 2% / Extravagant Vegetable Cake 3%.
+- **Наследуемость** (paldb + twoaveragegamers/nexttier mutation breeding): первично — только
+  из мутационного яйца, но затем **наследуются обычным бридингом** как пассивка родителя
+  (Special Cake повышает шанс передачи); с Yakumo «Birds of a Feather» не работают.
+  В passives.json: `mutation_exclusive:true, breedable:true` + `notes`. Обновлены web-FAQ
+  бридинга, docs/breeding_mechanics.md §9, combat_traits.json.
+
 ## combat_traits.json — трейты бойца party/raid (2026-07-18)
 
 - **Пати vs база-рейд:** allthings.how (мета-стек пассивок 1.0), xmodhub (combat vs base

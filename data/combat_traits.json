@@ -2,26 +2,79 @@
  "game_version": "1.0",
  "updated": "2026-07-18",
  "note": "Боевые ТРЕЙТЫ (пассивки) для бойца — отдельно для активной ПАТИ и для БАЗОВОГО РЕЙДА. Флэт-атака складывается аддитивно, элемент-бустер умножает поверх. Названия сверены с data/passives.json.",
- "surgery_table": "«Простой» вариант можно ВЖИВИТЬ на Pal Surgery Table (Surgery Chip / Implant, ~10–50k золота за чип; жёлтые/легендарные дороже) — не нужно выбивать бридингом. РАДУЖНЫЕ World Tree (t5) вживить НЕЛЬЗЯ: только ловля в биоме World Tree или вылупление Large Ominous Egg (после поимки Panthalus). Мутационные (Immortality/Idiosyncratic) — из Extravagant-торта/мутации, графт только если добыл чип.",
+ "surgery_table": "«Простой» вариант можно ВЖИВИТЬ на Pal Surgery Table (Surgery Chip / Implant, ~10–50k золота за чип; жёлтые/легендарные дороже) — не нужно выбивать бридингом. РАДУЖНЫЕ World Tree (t5) вживить НЕЛЬЗЯ: только ловля в биоме World Tree или вылупление Large Ominous Egg (после поимки Panthalus). МУТАЦИОННЫЕ (Immortality/Idiosyncratic/Babysitter/Heavily Armored/Skymarcher): первично — из мутационного яйца (Cake 1% / Vegetable 2% / Extravagant 3%), но дальше НАСЛЕДУЮТСЯ обычным бридингом (Special Cake повышает шанс) — один мутант = источник для всей линии.",
  "sources": [
-  {"url": "https://allthings.how/palworld-1-0-best-passives-tier-list/", "what": "мета-стек боевых пассивок 1.0, World Tree трейты", "fetched": "2026-07-18"},
-  {"url": "https://www.playerauctions.com/palworld-guide/tips-tricks/all-world-tree-passive-skills-and-how-to-get-them/", "what": "World Tree пассивки + нельзя графтить", "fetched": "2026-07-18"},
-  {"url": "https://www.bisecthosting.com/blog/palworld-pal-surgery-table-implant-module-best-passive-skills", "what": "Pal Surgery Table / Surgery Chip — вживление трейтов, цена", "fetched": "2026-07-18"},
-  {"url": "https://gamerant.com/palworld-all-new-passive-skills/", "what": "новые пассивки 1.0", "fetched": "2026-07-18"}
+  {
+   "url": "https://allthings.how/palworld-1-0-best-passives-tier-list/",
+   "what": "мета-стек боевых пассивок 1.0, World Tree трейты",
+   "fetched": "2026-07-18"
+  },
+  {
+   "url": "https://www.playerauctions.com/palworld-guide/tips-tricks/all-world-tree-passive-skills-and-how-to-get-them/",
+   "what": "World Tree пассивки + нельзя графтить",
+   "fetched": "2026-07-18"
+  },
+  {
+   "url": "https://www.bisecthosting.com/blog/palworld-pal-surgery-table-implant-module-best-passive-skills",
+   "what": "Pal Surgery Table / Surgery Chip — вживление трейтов, цена",
+   "fetched": "2026-07-18"
+  },
+  {
+   "url": "https://gamerant.com/palworld-all-new-passive-skills/",
+   "what": "новые пассивки 1.0",
+   "fetched": "2026-07-18"
+  }
  ],
  "party": {
   "role": "АКТИВНЫЙ боец (ты им управляешь и уворачиваешься) → чистый офенс, стекло-пушка допустима",
   "simple": [
-   {"trait": "Musclehead", "eff": "Attack +30% (Work Speed −50% — бойцу неважно)", "get": "графт (Surgery Chip) или ловля"},
-   {"trait": "Ferocious", "eff": "Attack +20%", "get": "графт / ловля / бридинг"},
-   {"trait": "Serenity", "eff": "КД активных скиллов −30%, Attack +10% (больше кастов = больше DPS)", "get": "графт / ловля"},
-   {"trait": "<элемент-бустер>", "eff": "+30% урона стихией бойца: Lord of the Underworld (Dark) · Divine Dragon (Dragon) · Celestial Emperor (Neutral) и т.п. (множится на суммарную атаку)", "get": "графт / бридинг"}
+   {
+    "trait": "Musclehead",
+    "eff": "Attack +30% (Work Speed −50% — бойцу неважно)",
+    "get": "графт (Surgery Chip) или ловля"
+   },
+   {
+    "trait": "Ferocious",
+    "eff": "Attack +20%",
+    "get": "графт / ловля / бридинг"
+   },
+   {
+    "trait": "Serenity",
+    "eff": "КД активных скиллов −30%, Attack +10% (больше кастов = больше DPS)",
+    "get": "графт / ловля"
+   },
+   {
+    "trait": "<элемент-бустер>",
+    "eff": "+30% урона стихией бойца: Lord of the Underworld (Dark) · Divine Dragon (Dragon) · Celestial Emperor (Neutral) и т.п. (множится на суммарную атаку)",
+    "get": "графт / бридинг"
+   }
   ],
   "complex": [
-   {"trait": "Legend", "eff": "Attack +20%, Defense +20%, Move +20%", "get": "бридинг (легендарки)"},
-   {"trait": "God of Destruction", "eff": "Attack +40%, Defense +20%, Max HP −50% (макс бурст, но хрупко)", "get": "🌳 World Tree — НЕ графтится"},
-   {"trait": "Twin-Edged Holy Blade", "eff": "Attack +50%, Defense −30%", "get": "🌳 World Tree — НЕ графтится"},
-   {"trait": "<элемент-бустер>", "eff": "+30% урона стихией (или дуал-бустер: Siren of the Void Dark+Ice, Eternal Flame Fire+Lightning, Invader Dark+Dragon)", "get": "графт / ловля"}
+   {
+    "trait": "Legend",
+    "eff": "Attack +20%, Defense +20%, Move +20%",
+    "get": "бридинг (легендарки)"
+   },
+   {
+    "trait": "God of Destruction",
+    "eff": "Attack +40%, Defense +20%, Max HP −50% (макс бурст, но хрупко)",
+    "get": "🌳 World Tree — НЕ графтится"
+   },
+   {
+    "trait": "Twin-Edged Holy Blade",
+    "eff": "Attack +50%, Defense −30%",
+    "get": "🌳 World Tree — НЕ графтится"
+   },
+   {
+    "trait": "<элемент-бустер>",
+    "eff": "+30% урона стихией (или дуал-бустер: Siren of the Void Dark+Ice, Eternal Flame Fire+Lightning, Invader Dark+Dragon)",
+    "get": "графт / ловля"
+   },
+   {
+    "trait": "Immortality",
+    "eff": "Attack +15%, авто-реген HP +100%, лайфстил +5% — сустейн-вариант вместо стекло-пушки (мутационная)",
+    "get": "мутация (Extravagant торт 3%) → дальше наследуется бридингом (Special Cake)"
+   }
   ],
   "alternatives": {
    "God of Destruction": "Demon God (Attack +30%, Defense +5% — почти без минуса) ИЛИ Musclehead (Atk +30%) — оба графтятся",
@@ -32,16 +85,48 @@
  "raid": {
   "role": "БАЗОВЫЙ защитник в алтарном рейде (дерётся САМ, ты не управляешь → НЕ уворачивается) → упор на выживаемость + сустейн, БЕЗ стекло-пушек",
   "simple": [
-   {"trait": "Ferocious", "eff": "Attack +20% (немного урона, без минусов)", "get": "графт / ловля"},
-   {"trait": "Burly Body", "eff": "Defense +20%, иммун к флинчу (не сбивают с каста)", "get": "графт / ловля"},
-   {"trait": "Diamond Body", "eff": "Defense +30%, иммун к флинчу И нокбеку", "get": "графт / ловля / бридинг"},
-   {"trait": "<элемент-бустер>", "eff": "+30% урона стихией (если рейд-босс к ней слаб)", "get": "графт / бридинг"}
+   {
+    "trait": "Ferocious",
+    "eff": "Attack +20% (немного урона, без минусов)",
+    "get": "графт / ловля"
+   },
+   {
+    "trait": "Burly Body",
+    "eff": "Defense +20%, иммун к флинчу (не сбивают с каста)",
+    "get": "графт / ловля"
+   },
+   {
+    "trait": "Diamond Body",
+    "eff": "Defense +30%, иммун к флинчу И нокбеку",
+    "get": "графт / ловля / бридинг"
+   },
+   {
+    "trait": "<элемент-бустер>",
+    "eff": "+30% урона стихией (если рейд-босс к ней слаб)",
+    "get": "графт / бридинг"
+   }
   ],
   "complex": [
-   {"trait": "Idiosyncratic", "eff": "авто-реген HP +50%, Defense +25%, иммун к яду/ожогу — ТОП выживания автономного пала", "get": "мутация (Extravagant торт)"},
-   {"trait": "Immortality", "eff": "лайфстил +5%, авто-реген HP +100%, Attack +15% (сустейн без минуса)", "get": "мутация (Extravagant торт)"},
-   {"trait": "Vampiric", "eff": "лайфстил от урона + не спит (постоянный сустейн)", "get": "ловля / бридинг (t4)"},
-   {"trait": "Legend", "eff": "Attack +20%, Defense +20%, Move +20% (баланс атаки/защиты)", "get": "бридинг"}
+   {
+    "trait": "Idiosyncratic",
+    "eff": "авто-реген HP +50%, Defense +25%, иммун к яду/ожогу — ТОП выживания автономного пала",
+    "get": "мутация (Extravagant торт 3%) → дальше наследуется бридингом (Special Cake)"
+   },
+   {
+    "trait": "Immortality",
+    "eff": "лайфстил +5%, авто-реген HP +100%, Attack +15% (сустейн без минуса)",
+    "get": "мутация (Extravagant торт 3%) → дальше наследуется бридингом (Special Cake)"
+   },
+   {
+    "trait": "Vampiric",
+    "eff": "лайфстил от урона + не спит (постоянный сустейн)",
+    "get": "ловля / бридинг (t4)"
+   },
+   {
+    "trait": "Legend",
+    "eff": "Attack +20%, Defense +20%, Move +20% (баланс атаки/защиты)",
+    "get": "бридинг"
+   }
   ],
   "alternatives": {
    "Idiosyncratic": "Vampiric (лайфстил, ловится) ИЛИ Burly Body + Diamond Body (чистая защита, графтятся)",

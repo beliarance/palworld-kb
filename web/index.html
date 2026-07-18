@@ -406,11 +406,14 @@ function breedFaqHtml(){
     "<b>Рарность:</b> напрямую не наследуется — у потомка рарность его <b>вида</b>; ранги/рарность родителей лишь определяют, какой вид получится по формуле.",
     "<b>Work-апгрейды</b> (handbook), <b>Awakening</b> — тоже per-pal, не наследуются. <span class='dim'>(альфа-% и детали — комьюнити, PRELIMINARY 1.0)</span>",
   ], "считай, что из яйца получаешь только <b>вид + пассивки + IV + пул атак</b>; звёзды, уровень, альфу, handbook и Awakening навешиваешь на потомка заново — не жди их «по наследству»." )}
-  ${q("Какие пассивки НЕ вывести бридингом",[
-    "<b>Мутационно-эксклюзивные</b> (Babysitter, Idiosyncratic, Immortality, Heavily Armored, Skirmisher) — идут из слота <b>мутации</b>, не из обычного пула родителей (редко «протекают» из ловли). Надёжно — только через мутацию.",
+  ${q("Мутационные (радужные) пассивки — как получить и наследуются ли",[
+    "Их <b>5</b>: <b>Immortality</b> (лайфстил+реген+атака), <b>Idiosyncratic</b> (реген/деф/иммун яд-ожог), <b>Babysitter</b> (яйца/инкубация +30%), <b>Heavily Armored</b> (иммун к взрывам), <b>Skymarcher</b> (+2 прыжка верхом).",
+    "<b>Первично</b> — только из <b>МУТАЦИОННОГО яйца</b> (случайный ролл при бридинге): шанс <b>Cake 1% / Vegetable 2% / Extravagant Vegetable 3%</b>. Мутант = 2★ + IV 91–100 + радужные пассивки.",
+    "<b>Дальше — ДА, наследуются обычным бридингом</b>: родитель с радужной пассивкой передаёт её как обычный трейт; <b>Special Cake</b> повышает шанс передачи. Один мутант = источник трейта для всей линии.",
+    "⚠️ С <b>Yakumo</b> («Birds of a Feather» — дикие с пассивкой носителя) радужные <b>не работают</b>.",
     "<b>Партнёрский/сигнатурный скилл</b> пала — это не наследуемая пассивка.",
-    "А вот <b>Legend, Lucky</b> и «эмперор/лорд»-серии — наследуются (chain-breeding), просто зарождаются только у конкретных палов и не роллятся случайно.",
-  ], "мутационные лови на <b>Extravagant Vegetable Cake</b> (шанс мутации), а Legend/Lucky протаскивай <b>chain-breeding</b>'ом от носителя на нужный вид." )}
+    "<b>Legend, Lucky</b> и «эмперор/лорд»-серии — тоже наследуются (chain-breeding), просто зарождаются только у конкретных палов.",
+  ], "выбей мутанта на <b>Extravagant Vegetable Cake</b> (3%), затем разноси его радужный трейт по линии обычным бридингом на <b>Special Cake</b>; Legend/Lucky протаскивай chain-breeding'ом." )}
   ${q("Порядок бридинга (пошагово)",[
     "<b>1. Вид.</b> Доберись до нужного вида (режимы «🎯 Кого хочу» / «🧬 Цепочка» выше).",
     "<b>2. Мутация (если нужна).</b> На стабильной паре гоняй объём на <b>Extravagant Vegetable Cake</b>, пока не выпадет мутант — он даёт <b>2★ + IV 91–100 + радужные пассивки</b> задаром, это премиум-база. Не нужна мутация — пропусти шаг.",
@@ -435,8 +438,8 @@ function breedFaqHtml(){
   ], "добавляй по <b>одной</b> пассивке за поколение (не пытайся собрать все 4 сразу), корми <b>Special Cake</b> + объём; для переноса дроп-онли трейта на нужный вид используй режим «🧬 Цепочка» выше." )}
   ${q("Мутации (новое в 1.0)",[
     "Низкий шанс, что яйцо вылупится <b>мутантом</b>. Мутант-яйцо сразу даёт <b>премиум-фундамент</b>: <b>2★ конденсации</b>, <b>IV 91–100</b> и <b>2–4 «радужные» пассивки</b> — независимо от родителей.",
-    "Радужные пассивки — из пула из 5 мутационных (Babysitter и др.), их иначе не выбить.",
-    "Шанс <b>~1%</b> за яйцо, до <b>~3–5%</b> с правильным тортом → ~1–5 мутантов на 100 яиц.",
+    "Радужные пассивки — из пула 5 мутационных (Immortality, Idiosyncratic, Babysitter, Heavily Armored, Skymarcher). Первично — только из мутации, но <b>дальше наследуются обычным бридингом</b> (см. вопрос выше).",
+    "Шанс мутации: <b>Cake 1% / Vegetable Cake 2% / Extravagant Vegetable Cake 3%</b> → ~1–3 мутанта на 100 яиц.",
     "Бустят: <b>Extravagant Vegetable Cake</b> (шанс + рост статов, лучший), Vegetable Cake (2 яйца), Mushroom Cake (статы). <span class='dim'>(PRELIMINARY 1.0)</span>",
   ], "это игра на объём: гоняй ферму на <b>Extravagant Vegetable Cake</b>. Мутант — это готовая база (2★ + IV 91–100), поэтому ловить его выгодно РАНЬШЕ, а уже в него вбивать нужные пассивки Special Cake'ом." )}
   ${q("Звёзды: Pal Essence Condenser (в 1.0 кол-во НЕ уменьшили)",[
@@ -731,8 +734,8 @@ render.passives = () => {
     const list=D.passives.passives.filter(p=>(!q||p.name.toLowerCase().includes(q)||(p.effects||"").toLowerCase().includes(q))&&(!c||p.category===c))
       .sort((a,b)=>(b.tier??-9)-(a.tier??-9));
     document.getElementById("pout").innerHTML=`<div class="card"><table><tr><th>Тир</th><th>Пассивка</th><th>Эффект</th><th>Категория</th><th>Источник</th></tr>
-      ${list.map(p=>`<tr><td class="mono ${p.tier>0?"ok":p.tier<0?"bad":""}">${p.tier??""}</td><td><b>${esc(p.name)}</b></td>
-      <td>${esc(p.effects||"")}</td><td class="dim">${esc(p.category)}</td>
+      ${list.map(p=>`<tr><td class="mono ${p.tier>0?"ok":p.tier<0?"bad":""}">${p.tier??""}</td><td><b>${esc(p.name)}</b>${p.mutation_exclusive?' <span class="tag" style="padding:0 5px" title="радужная мутационная: первично из мутационного яйца, дальше наследуется бридингом">🌈мут</span>':''}</td>
+      <td>${esc(p.effects||"")}${p.notes?`<div class="sub">${esc(p.notes)}</div>`:""}</td><td class="dim">${esc(p.category)}</td>
       <td class="dim">${(p.exclusive_source||[]).map(s=>P[s]?palLink(s):esc(s)).join(", ")}</td></tr>`).join("")}</table></div>`;
   };
   for(const id of ["pq","pcat"]) document.getElementById(id).addEventListener("input",draw); draw();

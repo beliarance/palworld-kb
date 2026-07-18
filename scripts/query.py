@@ -546,7 +546,10 @@ def cmd_passive(db, args):
         sys.exit(f"Passive '{args.name}' not found.")
     for p in matches[:10]:
         tier = f"  tier {p['tier']}" if p.get("tier") is not None else ""
-        print(f"{p['name']}  [{p.get('category')}]{tier} — {p.get('effects')}")
+        mut = "  🌈МУТАЦИОННАЯ" if p.get("mutation_exclusive") else ""
+        print(f"{p['name']}  [{p.get('category')}]{tier}{mut} — {p.get('effects')}")
+        if p.get("notes"):
+            print(f"  {p['notes']}")
         if p.get("exclusive_source"):
             print(f"  Source: {', '.join(p['exclusive_source'])}")
 
