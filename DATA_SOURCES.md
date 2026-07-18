@@ -2,6 +2,18 @@
 
 Версия игры: **Palworld 1.0** (релиз 10 июля 2026). Дата актуализации базы: **2026-07-17**.
 
+## combat_traits.json — EHP-математика рейд-билда + торты (2026-07-19)
+
+- **Формула защиты** (game8 Defense Stat Explained): 100 DEF = 0% редукции, 200 DEF = половина
+  урона, 300 = треть → урон ∝ 100/DEF → **EHP = HP × (1+ΣDEF%)**, +HP%-пассивок в игре нет.
+  Пересчитан рейд-стек: Idiosyncratic+Immortality+**Diamond Body**+Legend = EHP ×1.75 / ATK +35%
+  (Vampiric заменён: −30% DEF ради дублирующего лайфстила; макс-стена ×2.25 отвергнута — таймер).
+- **Торты** (описания из карточек предметов paldb, 2026-07-19): Mushroom «talents grow slightly
+  more easily» (talents = IV), Vegetable «lay eggs twice at once», Extravagant «mutations more
+  likely + talents», Special «more likely inherit multiple passive skills». Шансы мутации
+  Cake 1%/Vegetable 2%/Extravagant 3% — paldb /Mutation; Mushroom/Special % не указан.
+  FAQ-вопрос «Торты: что какой делает» в web-бридинге; таблица в docs/breeding_mechanics.md §2.
+
 ## passives.json — мутационные пассивки: список и наследуемость (2026-07-18)
 
 - **paldb.cc/en/Mutation** — мутационных (радужных) пассивок ровно **5**: Immortality,

@@ -41,15 +41,18 @@ Recipes: см. `items.json` (Cake/Mushroom Cake @ Cooking Pot, Vegetable Cake @ 
 Extravagant Vegetable Cake @ Large-Scale Stone Oven, Special Cake @ Ancient Kitchen).
 Nutrition/SAN всех тортов — в `data/base_building.json`.
 
-| Cake | Effect (paldb 1.0 text) |
-|---|---|
-| **Cake** | Enables breeding (baseline requirement), no bonus. |
-| **Mushroom Cake** | "The talents of the resulting Pals will grow slightly more easily" (стат-рост/IV). |
-| **Vegetable Cake** | "Lay eggs twice at once" — **two eggs per cycle**, doubles throughput / mutation rolls. |
-| **Extravagant Vegetable Cake** | "Mutations are more likely to occur, and talents will grow more easily" — **best mutation cake**. В EA-гайдах ошибочно звался "Deluxe Vegetable Cake" — такого предмета в 1.0 нет. |
-| **Special Cake** | "More likely inherit multiple passive skills from their parents". |
+| Cake | Effect (paldb 1.0 text) | Мутация | Tech / станция |
+|---|---|---|---|
+| **Cake** | Enables breeding (baseline requirement), no bonus. | ~1% | 17 / Cooking Pot |
+| **Mushroom Cake** | "The talents of the resulting Pals will grow slightly more easily" — **talents = IV**, потомки со слегка лучшими IV. | n/a (не указан) | 30 / Cooking Pot |
+| **Vegetable Cake** | "Lay eggs twice at once" — **two eggs per cycle**, doubles throughput / mutation rolls. | ~2% | 47 / Electric Kitchen |
+| **Extravagant Vegetable Cake** | "Mutations are more likely to occur, and talents will grow more easily" — **best mutation cake** + буст IV. В EA-гайдах ошибочно звался "Deluxe Vegetable Cake" — такого предмета в 1.0 нет. | **~3% (макс)** | 60 / Large-Scale Stone Oven |
+| **Special Cake** | "More likely inherit multiple passive skills from their parents" — потомок берёт **больше пассивок** родителей (фиксация набора, в т.ч. радужных). | n/a (не указан) | 74 / Ancient Kitchen |
 
-> Match the cake to the batch goal: **Special Cake** for stacking passives, **Extravagant Vegetable Cake** for chasing mutations, **Vegetable Cake** for raw egg volume.
+Шансы мутации по тортам — paldb.cc/en/Mutation (2026-07-18); для Mushroom/Special точный % в источнике не указан.
+
+> Match the cake to the batch goal / фаза: объём видов — **Vegetable** (2 яйца); охота на мутанта —
+> **Extravagant** (~3%); фиксация собранного набора трейтов — **Special**; полировка IV — **Mushroom**.
 
 ---
 

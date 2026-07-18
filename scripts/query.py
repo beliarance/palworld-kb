@@ -834,6 +834,8 @@ def _print_combat_traits(mode):
     print("    🔁 Альтернативы радужным:")
     for k, v in S.get("alternatives", {}).items():
         print(f"      {'⛔ ' + k if k == 'НЕ бери' else 'вместо ' + k}: {v}")
+    if S.get("ehp_math"):
+        print(f"    📐 {S['ehp_math']}")
     print(f"    ℹ {T['surgery_table']}")
 
 

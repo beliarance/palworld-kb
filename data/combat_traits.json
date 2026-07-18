@@ -109,29 +109,31 @@
   "complex": [
    {
     "trait": "Idiosyncratic",
-    "eff": "авто-реген HP +50%, Defense +25%, иммун к яду/ожогу — ТОП выживания автономного пала",
+    "eff": "авто-реген HP +50%, Defense +25%, иммун к яду/ожогу",
     "get": "мутация (Extravagant торт 3%) → дальше наследуется бридингом (Special Cake)"
    },
    {
     "trait": "Immortality",
-    "eff": "лайфстил +5%, авто-реген HP +100%, Attack +15% (сустейн без минуса)",
+    "eff": "лайфстил +5%, авто-реген HP +100%, Attack +15% (сустейн + урон под таймер)",
     "get": "мутация (Extravagant торт 3%) → дальше наследуется бридингом (Special Cake)"
    },
    {
-    "trait": "Vampiric",
-    "eff": "лайфстил от урона + не спит (постоянный сустейн)",
-    "get": "ловля / бридинг (t4)"
+    "trait": "Diamond Body",
+    "eff": "Defense +30%, иммун к флинчу И нокбеку (не сбивают атаки)",
+    "get": "графт / ловля / бридинг"
    },
    {
     "trait": "Legend",
-    "eff": "Attack +20%, Defense +20%, Move +20% (баланс атаки/защиты)",
-    "get": "бридинг"
+    "eff": "Attack +20%, Defense +20%, Move +20%",
+    "get": "бридинг (легендарки)"
    }
   ],
   "alternatives": {
-   "Idiosyncratic": "Vampiric (лайфстил, ловится) ИЛИ Burly Body + Diamond Body (чистая защита, графтятся)",
-   "Immortality": "Vampiric (лайфстил) или Healing Coach + Diamond Body",
-   "НЕ бери": "стекло-пушки (God of Destruction −50% HP, Twin-Edged Holy Blade −30% Def) на автономного защитника — он не уворачивается и умрёт; для базы защита > бурста"
-  }
+   "Idiosyncratic": "Burly Body (Def +20%, иммун флинч — графтится) или Vampiric (лайфстил+не спит, ловится)",
+   "Immortality": "Vampiric (лайфстил) — но потеряешь +15% ATK и реген",
+   "Legend": "Sanctified Meat Shield (🌳 Def +50%/Atk −30%) — если совсем в танка; или Heavyweight (Def +20%, графтится)",
+   "НЕ бери": "стекло-пушки (God of Destruction −50% HP, Twin-Edged Holy Blade −30% Def) на автономного защитника — он не уворачивается; и не уходи в чистую стену без атаки (EHP ×2.25, но таймер рейда не прощает нулевой урон)"
+  },
+  "ehp_math": "EHP-математика (урон ∝ 100/DEF → EHP = HP × (1+ΣDEF%); +HP%-трейтов в игре нет): рекомендуемый стек Idiosyncratic+Immortality+Diamond Body+Legend = DEF +75% → EHP ×1.75, ATK +35%, реген +150%, лайфстил 5%, иммун флинч/нокбек/яд/ожог. Замена Diamond Body на Vampiric теряет 30% DEF (EHP ×1.45, −21%) ради лайфстила, который уже даёт Immortality — не стоит. Макс-стена Idio+Diamond+Burly+Sanctified Meat Shield = EHP ×2.25, но ATK −30% — опасно: у рейда ТАЙМЕР, урон базовых палов тоже нужен. Простой стек Ferocious+Burly+Diamond+бустер = EHP ×1.50 при +20% ATK."
  }
 }

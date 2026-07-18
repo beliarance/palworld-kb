@@ -442,6 +442,14 @@ function breedFaqHtml(){
     "Шанс мутации: <b>Cake 1% / Vegetable Cake 2% / Extravagant Vegetable Cake 3%</b> → ~1–3 мутанта на 100 яиц.",
     "Бустят: <b>Extravagant Vegetable Cake</b> (шанс + рост статов, лучший), Vegetable Cake (2 яйца), Mushroom Cake (статы). <span class='dim'>(PRELIMINARY 1.0)</span>",
   ], "это игра на объём: гоняй ферму на <b>Extravagant Vegetable Cake</b>. Мутант — это готовая база (2★ + IV 91–100), поэтому ловить его выгодно РАНЬШЕ, а уже в него вбивать нужные пассивки Special Cake'ом." )}
+  ${q("Торты: что какой делает (в игре описано мутно)",[
+    "Торты — НЕ линейные тиры «лучше/хуже», у каждого свой эффект под цель батча. Кладёшь в сундук брид-фермы. Игровые описания + расшифровка:",
+    "🎂 <b>Cake</b> <span class='dim'>(Cooking Pot, база)</span> — «make Pals lay a particularly healthy egg»: просто топливо бридинга, без бонусов. Мутация ~1%.",
+    "🍄 <b>Mushroom Cake</b> <span class='dim'>(tech 30, Cooking Pot)</span> — «talents… will grow slightly more easily»: <b>«talents» = IV</b> → потомки со слегка ЛУЧШИМИ IV (статы). Под откорм статов линии.",
+    "🥬 <b>Vegetable Cake</b> <span class='dim'>(tech 47, Electric Kitchen)</span> — «lay eggs TWICE at once»: <b>2 яйца за цикл</b> → двойной объём попыток. Мутация ~2%. Лучший на массовую выбраковку.",
+    "💎 <b>Extravagant Vegetable Cake</b> <span class='dim'>(tech 60, Large-Scale Stone Oven)</span> — «MUTATIONS are more likely + talents grow more easily»: <b>шанс мутации ~3%</b> (макс) И буст IV. Под охоту на мутанта.",
+    "⭐ <b>Special Cake</b> <span class='dim'>(tech 74, Ancient Kitchen)</span> — «more likely inherit MULTIPLE passive skills from parents»: <b>потомок берёт больше пассивок родителей</b> → под фиксацию собранного набора трейтов (в т.ч. радужных).",
+  ], "подбирай торт под ФАЗУ: объём видов — <b>Vegetable</b> (2 яйца); охота на мутанта — <b>Extravagant</b> (3%); собрал родителей с нужными трейтами и фиксируешь набор — <b>Special</b>; полировка IV — <b>Mushroom</b>. Обычный Cake — только пока нет лучших." )}
   ${q("Звёзды: Pal Essence Condenser (в 1.0 кол-во НЕ уменьшили)",[
     "Повышает ранг пала, поедая <b>дубликаты того же вида</b>. Стоимость в 1.0 <b>та же</b>: <b>1★=4, 2★=16, 3★=32, 4★=64</b> → <b>всего 116</b> дублей до 4★.",
     "В 1.0 переделали не количество, а <b>что даёт звезда</b>: каждая +1 к work suitability (сверху вниз по списку работ), <b>4★ = +1 ко всем</b> работам сразу (плюс прирост боевых статов).",
@@ -814,6 +822,7 @@ function traitsCardHTML(mode){
     <div style="margin-top:10px"><b>🌈 Сложный</b> <span class="dim">— фул радужные (World Tree t5) / мутационные</span></div>
     ${S.complex.map(row).join("")}
     <div style="margin-top:10px"><b>🔁 Альтернативы радужным</b> <span class="dim">(если World Tree/мутации недоступны)</span></div>${alts}
+    ${S.ehp_math?`<div class="sub" style="margin-top:8px;border-left:2px solid var(--acc);padding-left:8px">📐 ${esc(S.ehp_math)}</div>`:""}
     <div class="sub" style="margin-top:8px">${esc(T.surgery_table)}</div></div>`;
 }
 function metaSkillsCardHTML(fe, enemy){
