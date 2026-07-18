@@ -319,17 +319,17 @@ render.workers = () => {
   </div><div id="wout"></div>`;
   const runOf=n=>(P[n]?.mv?.run)||(D.idx.pals[n]||{}).run||0;
   const tsOf=n=>(P[n]?.ts)??(D.idx.pals[n]||{}).transport_speed??0;  // скорость ПЕРЕНОСКИ (отд. стат)
-  const TR_MOVE="<b>Swift +30% · Runner +20% · Legend +20%</b> (+бой); Dimensional Leap +50% (но +голод)";
-  const TR_WORK="<b>Artisan +50%</b> / Remarkable Craftsmanship +75% (топ) · Serious +20% · Lucky +20% (+atk/def) · Work Slave +30% (−атака)";
-  // Insomnia = работает ночью (не спит) → добавляет рабочие ЧАСЫ, часто ценнее слабого Nimble +10%
-  const TR_UP="<b>Insomnia</b> (работает НОЧЬЮ, не спит — макс аптайм) · Workaholic (SAN −15%) · Diet Lover (голод −15%)";
+  const TR_MOVE="<b>Swift +30% · Runner +20% · Legend +20%</b> (+бой); Dimensional Leap +50% (но +голод). Nimble +10% — слабо";
+  const TR_WORK="<b>Artisan +50% · Remarkable Craftsmanship +75%</b> · Serious +20% · Lucky +20% (+atk/def) · Work Slave +30% (−атака) — полный WS-стек ≈ <b>×2.5</b> (это МНОГО, режет число рабочих)";
+  // Аптайм 24/7 = НЕ трейт, а стихия: Dark-палы ночные, не спят, работают на базе круглосуточно
+  const TR_UP="🌙 бери <b>Dark (ночных)</b> палов — работают 24/7 без сна и кроватей. Минус: не отдыхают → быстрее тратят SAN/голод, поэтому дай им <b>Workaholic</b> (SAN −15%) / <b>Diet Lover</b> (голод −15%) + Hot Spring. Insomnia-трейт нужен ТОЛЬКО чтобы заставить не-Dark пала работать ночью";
   const traitHint=cols=>{
     const t=cols.includes("Transporting"), other=cols.some(c=>c!=="Transporting");
     let body;
-    if(t&&!other) body=`🏃 <b>ТРАНСПОРТ → СКОРОСТЬ ДВИЖЕНИЯ</b> (work-speed НЕ помогает переноске!): ${TR_MOVE}. <b>4-й слот — лучше УПТАЙМ, чем слабый Nimble +10%</b>: ${TR_UP} (пал не стоит без дела → это больше выхлопа, чем +10% скорости).`;
-    else if(!t) body=`⚙️ <b>Обычная профа → WORK SPEED</b>: ${TR_WORK}. + <b>УПТАЙМ</b> (важен всем): ${TR_UP}.`;
-    else body=`⚠️ <b>Транспорт + обычная работа вместе</b> — трейты РАЗНЫЕ, под одну роль не оптимизировать. Транспорт: ${TR_MOVE}. Работа: ${TR_WORK}. Обоим — уптайм: ${TR_UP}.`;
-    return `<div class="card" style="border-color:var(--acc)">${body}<div class="sub" style="margin-top:5px">Особенная профа только одна — <b>транспорт</b> (move-speed). Все прочие — work-speed; отдельных «по-профессии» пассивок нет (профа = уровень work suitability, качается книгами/4★). Уптайм-трейты (Insomnia/Workaholic) полезны ЛЮБОМУ рабочему.</div></div>`;
+    if(t&&!other) body=`🏃 <b>ТРАНСПОРТ → СКОРОСТЬ ДВИЖЕНИЯ</b> (work-speed НЕ помогает переноске!): ${TR_MOVE}. Аптайм: ${TR_UP}.`;
+    else if(!t) body=`⚙️ <b>Обычная профа → WORK SPEED</b>: ${TR_WORK}. Аптайм: ${TR_UP}.`;
+    else body=`⚠️ <b>Транспорт + обычная работа вместе</b> — трейты РАЗНЫЕ, под одну роль не оптимизировать. Транспорт: ${TR_MOVE}. Работа: ${TR_WORK}. Аптайм обоим: ${TR_UP}.`;
+    return `<div class="card" style="border-color:var(--acc)">${body}<div class="sub" style="margin-top:5px">Особенная профа только одна — <b>транспорт</b> (move-speed). Все прочие — work-speed. <b>Аптайм 24/7 = стихия, а не трейт</b>: <b>🌙 Dark</b>-палы (в колонке «Стихии») ночные — работают без сна. Трейты дают много (WS-стек ≈ ×2.5) — их и качай в первую очередь.</div></div>`;
   };
   const draw=()=>{
     const cols=[...workSel];
@@ -346,7 +346,8 @@ render.workers = () => {
       ${rows.slice(0,40).map(p=>{
         const lvls=cols.map(c=>`<td class="mono big">${p.work[c]}</td>`).join("");
         const other=Object.entries(p.work).filter(([w])=>!workSel.has(w)).sort((a,b)=>b[1]-a[1]).map(([w,l])=>`${WORK_COLS[w]} ${l}`).join(", ");
-        return `<tr>${lvls}<td>${palLink(p.name)}</td><td class="mono"><b>${tsOf(p.name)||"—"}</b> <span class="dim">/ ${runOf(p.name)||"—"}</span></td><td class="dim mono">${(D.idx.pals[p.name]||{}).size||"?"}</td><td>${els(p)}</td><td class="dim">${other}</td></tr>`;
+        const noc=(D.idx.pals[p.name]||{}).nocturnal?' <span class="tag" style="padding:0 4px" title="ночной (Dark) — работает на базе 24/7 без сна и кроватей">🌙24/7</span>':'';
+        return `<tr>${lvls}<td>${palLink(p.name)}</td><td class="mono"><b>${tsOf(p.name)||"—"}</b> <span class="dim">/ ${runOf(p.name)||"—"}</span></td><td class="dim mono">${(D.idx.pals[p.name]||{}).size||"?"}</td><td>${els(p)}${noc}</td><td class="dim">${other}</td></tr>`;
       }).join("")}</table></div>
       ${rows.length>40?`<div class="dim" style="margin-top:6px">…показаны 40 из ${rows.length}</div>`:""}</div>`;
   };
