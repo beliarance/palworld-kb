@@ -99,19 +99,20 @@ Goal: produce a Pal with an exact set of **4 desired passives** (e.g. Legend + F
 
 ## 6. Pal Essence Condenser (Star Ranks)
 
-The **Pal Essence Condenser** ranks up a base Pal by sacrificing **duplicates of the same species** (butchered/caught copies act as "Pal essence"). Boosts stats per star. (game8, current numbers)
+The **Pal Essence Condenser** ranks up a base Pal by sacrificing **duplicates of the same species** (butchered/caught copies act as "Pal essence"). Boosts stats per star.
 
-| Star rank | Duplicates consumed at THIS tier | Cumulative duplicates (material Pals) |
-|---|---|---|
-| **1★** | 4 | 4 |
-| **2★** | 16 | 20 |
-| **3★** | 32 | 52 |
-| **4★** | 64 | 116 |
-
-- **Total to reach 4★ = 116 material Pals** (117 copies including the base Pal being upgraded).
-- **Already-condensed Pals count as their full sacrifice value** when fed in — e.g. a 1★ Pal counts as 5 copies (itself + its 4). This lets you feed condensed Pals to reach higher tiers more efficiently.
-- **1.0: количество НЕ уменьшили** (те же 4/16/32/64 = 116). Переделали ЧТО даёт звезда: каждая +1 к work suitability (сверху вниз по списку работ), 4★ = +1 ко ВСЕМ работам сразу + прирост боевых статов. Мутант стартует с 2★.
-- **Note on older guides:** some pre-patch guides list different per-tier counts (e.g. 8 at 1★, or a 1/2/4/8/16 doubling scheme). Those are **outdated (pre-1.0 guide)** — the **4/16/32/64 (=116 total)** figures are the current game8 numbers. Verify in-game if precision matters.
+- **1.0 REDUCED the cost: 116 → 48 total** — one keeper + **47 fodder copies** to reach 4★
+  (palmods.gg 1.0 dataset «verified constant»; nexttier 1.0 patch notes). The old EA breakdown
+  **4/16/32/64 (=116)** is obsolete; a per-star breakdown of the new 47 has not been published
+  by Pocketpair.
+- **Max rank in a single synthesis** is now possible, and **condensation progress accumulates
+  in the individual Pal** — feeding copies in batches loses nothing.
+- **What stars grant (1.0 rework):** each rank-up raises **one** Work Suitability level
+  (top-down through the Pal's job list); **4★ raises ALL of them** (+ combat stat growth).
+  Official notes don't specify which job is picked at intermediate ranks for multi-job Pals.
+- **Mutant eggs hatch at 2★** — a large head start on fodder.
+- **Note on older guides:** pre-1.0 sources (incl. wiki.gg, dungeonpath) still list 4/16/32/64=116
+  or other schemes — **outdated (pre-1.0 guide)**. Verify in-game if precision matters.
 
 ---
 
@@ -242,7 +243,7 @@ The **Pal Essence Condenser** ranks up a base Pal by sacrificing **duplicates of
 **НЕ переходит (навешивается на потомка заново):**
 - **Альфа-статус** — не наследуется; пара альфа+альфа не гарантирует. У яйца бридинга
   лишь ~5% (комьюнити) вылупить альфу независимо от родителей; раздутые статы альфы не идут.
-- **Звёзды Condenser** — потомок всегда 0★, конденсировать заново (снова 116 дублей).
+- **Звёзды Condenser** — потомок всегда 0★, конденсировать заново (48 копий в 1.0).
 - **Уровень** — вылупляется 1-го уровня.
 - **Рарность** — не наследуется напрямую: у потомка рарность его ВИДА; ранги/рарность
   родителей лишь определяют вид по формуле.
