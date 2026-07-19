@@ -326,7 +326,9 @@
   ],
   "nocturnal": false,
   "size": "L",
-  "transport_speed": null
+  "transport_speed": null,
+  "swim_speed": 920,
+  "swim_dash_speed": 1000
  },
  {
   "name": "Azurobe Cryst",
@@ -370,7 +372,9 @@
   ],
   "nocturnal": false,
   "size": "L",
-  "transport_speed": null
+  "transport_speed": null,
+  "swim_speed": 920,
+  "swim_dash_speed": 1000
  },
  {
   "name": "Bakemi",
@@ -3944,7 +3948,9 @@
   ],
   "nocturnal": true,
   "size": "M",
-  "transport_speed": 300
+  "transport_speed": 300,
+  "swim_speed": 1200,
+  "swim_dash_speed": 1350
  },
  {
   "name": "Ghangler Ignis",
@@ -3987,7 +3993,9 @@
   ],
   "nocturnal": false,
   "size": "M",
-  "transport_speed": 300
+  "transport_speed": 300,
+  "swim_speed": 1200,
+  "swim_dash_speed": 1350
  },
  {
   "name": "Gildane",
@@ -5198,7 +5206,9 @@
   ],
   "nocturnal": false,
   "size": "XL",
-  "transport_speed": null
+  "transport_speed": null,
+  "swim_speed": 1080,
+  "swim_dash_speed": 1800
  },
  {
   "name": "Jormuntide Ignis",
@@ -7218,7 +7228,9 @@
   ],
   "nocturnal": false,
   "size": "XL",
-  "transport_speed": null
+  "transport_speed": null,
+  "swim_speed": 1800,
+  "swim_dash_speed": 2000
  },
  {
   "name": "Nitemary",
@@ -9999,7 +10011,9 @@
   ],
   "nocturnal": false,
   "size": "M",
-  "transport_speed": null
+  "transport_speed": null,
+  "swim_speed": 1100,
+  "swim_dash_speed": 1300
  },
  {
   "name": "Solmora Lux",
@@ -10045,7 +10059,9 @@
   ],
   "nocturnal": false,
   "size": "M",
-  "transport_speed": null
+  "transport_speed": null,
+  "swim_speed": 1100,
+  "swim_dash_speed": 1300
  },
  {
   "name": "Sootseer",
@@ -10325,7 +10341,9 @@
   ],
   "nocturnal": false,
   "size": "M",
-  "transport_speed": null
+  "transport_speed": null,
+  "swim_speed": 900,
+  "swim_dash_speed": 1440
  },
  {
   "name": "Surfent Terra",

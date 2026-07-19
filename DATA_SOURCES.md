@@ -2,6 +2,13 @@
 
 Версия игры: **Palworld 1.0** (релиз 10 июля 2026). Дата актуализации базы: **2026-07-17**.
 
+## pals_combat.json swim_speed (2026-07-19)
+
+- **paldb.cc** (карточки палов, статы SwimSpeed/SwimDashSpeed) — скорость плавания и рывка
+  вплавь для 9 плавательных маунтов. Сборщик: `scripts/collectors/fetch_swim_speed.py`.
+  В воде ранжирует dash: Neptilius 2000 > Jormuntide 1800 > Surfent 1440 (по суше порядок иной).
+  CLI `mounts swim` сортирует по swim_dash_speed; web показывает 🌊 в списке и карточке.
+
 ## combat_traits.json — EHP-математика рейд-билда + торты (2026-07-19)
 
 - **Формула защиты** (game8 Defense Stat Explained): 100 DEF = 0% редукции, 200 DEF = половина

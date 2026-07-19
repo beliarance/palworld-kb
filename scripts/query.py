@@ -69,6 +69,7 @@ def load_db():
             "defense": c.get("defense"), "ride": c.get("ride"),
             "mount_type": c.get("mount_type"), "movement": c.get("movement") or {},
             "size": c.get("size"), "transport_speed": c.get("transport_speed"),
+            "swim_speed": c.get("swim_speed"), "swim_dash_speed": c.get("swim_dash_speed"),
             "partner_skill": c.get("partner_skill") or {},
             "notable_drops": c.get("notable_drops") or [],
             "role_tags": c.get("role_tags") or [],
@@ -112,7 +113,8 @@ def cmd_pal(db, args):
         print("  Work: " + ", ".join(f"{k} {v}" for k, v in sorted(p["work"].items(), key=lambda x: -x[1])))
     if p.get("ride"):
         mv = p.get("movement") or {}
-        print(f"  Mount: {p.get('mount_type')}  (run {mv.get('run')}, sprint {mv.get('sprint')})")
+        swim = f", плавание {p['swim_speed']}/рывок {p['swim_dash_speed']}" if p.get("swim_dash_speed") else ""
+        print(f"  Mount: {p.get('mount_type')}  (run {mv.get('run')}, sprint {mv.get('sprint')}{swim})")
     ps = p.get("partner_skill") or {}
     if ps.get("name"):
         print(f"  Partner skill: {ps['name']} — {ps.get('effect', '')}")
@@ -181,6 +183,14 @@ def cmd_workers(db, args):
 def cmd_mounts(db, args):
     kind = args.kind.lower()
     pals = [p for p in db.values() if p.get("ride") and p.get("mount_type") == kind]
+    if kind == "swim":
+        # в воде решает скорость ПЛАВАНИЯ (SwimDashSpeed = рывок верхом), не сухопутный спринт
+        pals.sort(key=lambda p: -(p.get("swim_dash_speed") or 0))
+        print("Best swim mounts (by swim dash speed — рывок вплавь):")
+        for p in pals[: args.top]:
+            print(f"  🌊 {p.get('swim_dash_speed', '?'):>5} (плавание {p.get('swim_speed', '?')})  {label(p):<28} "
+                  f"[{'/'.join(p['elements'])}]  ATK {attack(p)}")
+        return
     pals.sort(key=lambda p: -((p.get("movement") or {}).get("sprint") or (p.get("movement") or {}).get("run") or 0))
     print(f"Best {kind} mounts (by sprint speed):")
     for p in pals[: args.top]:

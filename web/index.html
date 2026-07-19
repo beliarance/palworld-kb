@@ -94,7 +94,8 @@ async function loadAll(){
   for (const c of D.combat){
     const p = P[c.name] || (P[c.name]={name:c.name,elements:c.elements,work:{}});
     Object.assign(p,{rarity:c.rarity,hp:c.hp,melee:c.melee_attack,shot:c.shot_attack,def:c.defense,
-      ride:c.ride,mount:c.mount_type,mv:c.movement||{},ts:c.transport_speed,ps:c.partner_skill||{},drops:c.notable_drops||[]});
+      ride:c.ride,mount:c.mount_type,mv:c.movement||{},ts:c.transport_speed,
+      ss:c.swim_speed,sd:c.swim_dash_speed,ps:c.partner_skill||{},drops:c.notable_drops||[]});
   }
   itemByName = Object.fromEntries(D.items.items.map(i=>[i.name,i]));
 }
@@ -344,13 +345,13 @@ render.pal = () => {
     const fpNote=sort==="fp"?`<div class="sub">🔥 Firepower на пала = (ATK + DEF + HP/5) × (звёзды+1)² — в таблице базовое 0★; 4★ даёт ×25. Экспедиции берут до 100 палов, авто-подбор — по максимальному FP.</div>`:"";
     document.getElementById("palout").innerHTML=(cols.length?traitHint(cols):"")+`<div class="card">
       <div class="sub" style="margin-bottom:6px">${rows.length} палов${cols.length?` · работы: ${cols.map(c=>WORK_COLS[c]).join(" <b>И</b> ")}`:""} · клик по имени — карточка пала · клик по заголовку — сортировка (повторный — реверс)</div>${fpNote}
-      <div style="overflow-x:auto"><table><tr>${TH("number","№")}${TH("name","Пал")}${hdr}<th>Стихии</th>${TH("size","Разм")}${TH("hp","HP")}${TH("atk","ATK")}${TH("def","DEF")}${TH("fp","🔥FP","Firepower экспедиций (0★) = ATK+DEF+HP/5")}${TH("run","Бег/спр","бег / спринт верхом")}${TH("ts","Перенос","скорость ПЕРЕНОСКИ груза (транспорт)")}<th>Работы</th></tr>
+      <div style="overflow-x:auto"><table><tr>${TH("number","№")}${TH("name","Пал")}${hdr}<th>Стихии</th>${TH("size","Разм")}${TH("hp","HP")}${TH("atk","ATK")}${TH("def","DEF")}${TH("fp","🔥FP","Firepower экспедиций (0★) = ATK+DEF+HP/5")}${TH("run","Бег/спр","бег / спринт верхом; 🌊 = плавание/рывок вплавь (плавательные маунты)")}${TH("ts","Перенос","скорость ПЕРЕНОСКИ груза (транспорт)")}<th>Работы</th></tr>
       ${rows.slice(0,60).map(p=>{
         const card=D.idx.pals[p.name]||{};
         const lvls=cols.map(c=>`<td class="mono big">${p.work[c]}</td>`).join("");
         const wsum=Object.entries(p.work).filter(([w])=>!F.work.has(w)).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([w,l])=>`${WORK_COLS[w]} ${l}`).join(", ");
         const noct=card.nocturnal?' <span class="tag" style="padding:0 4px" title="ночной (Dark) — работает на базе 24/7">🌙</span>':'';
-        return `<tr><td class="dim mono">${p.number??"—"}</td><td>${palIcon(p.name)}${palLink(p.name)}</td>${lvls}<td>${els(p)}${noct}</td><td class="dim mono">${card.size||"?"}</td><td class="mono">${p.hp??"—"}</td><td class="mono">${atkOf(p)||"—"}</td><td class="mono">${p.def??"—"}</td><td class="mono"><b>${fpOf(p)||"—"}</b></td><td class="mono dim">${runOf(p.name)||"—"}/${sprOf(p.name)||"—"}</td><td class="mono">${tsOf(p.name)||"—"}</td><td class="dim" style="font-size:12px">${wsum}</td></tr>`;
+        return `<tr><td class="dim mono">${p.number??"—"}</td><td>${palIcon(p.name)}${palLink(p.name)}</td>${lvls}<td>${els(p)}${noct}</td><td class="dim mono">${card.size||"?"}</td><td class="mono">${p.hp??"—"}</td><td class="mono">${atkOf(p)||"—"}</td><td class="mono">${p.def??"—"}</td><td class="mono"><b>${fpOf(p)||"—"}</b></td><td class="mono dim">${runOf(p.name)||"—"}/${sprOf(p.name)||"—"}${p.mount==="swim"&&p.sd?`<br>🌊${p.ss||"?"}/${p.sd}`:""}</td><td class="mono">${tsOf(p.name)||"—"}</td><td class="dim" style="font-size:12px">${wsum}</td></tr>`;
       }).join("")}</table></div>
       ${rows.length>60?`<div class="dim" style="margin-top:6px">…показаны 60 из ${rows.length} — сузь фильтрами/поиском</div>`:""}</div>`;
   };
@@ -396,7 +397,7 @@ function showPal(name, push=true){
   <div style="margin-bottom:8px"><button onclick="go('pal',false)" style="border:1px solid var(--border);border-radius:8px;padding:5px 12px;cursor:pointer;background:var(--panel2);color:var(--acc);font-size:13px">← к списку палов</button></div>
   <div class="card"><div class="big">${palIcon(name)}#${p.number??"?"} ${esc(name)} ${els(p)} <span class="dim">${esc(p.rarity??"")}</span></div>
     <div class="row" style="margin:8px 0"><span class="tag mono">HP ${p.hp}</span><span class="tag mono">ATK ${p.melee}/${p.shot}</span>
-    <span class="tag mono">DEF ${p.def}</span>${p.ride?`<span class="tag">🏇 ${p.mount??""} · спринт ${p.mv.sprint??"?"}</span>`:""}</div>
+    <span class="tag mono">DEF ${p.def}</span>${p.ride?`<span class="tag">🏇 ${p.mount??""} · спринт ${p.mv.sprint??"?"}</span>`:""}${p.mount==="swim"&&p.sd?`<span class="tag">🌊 плавание ${p.ss??"?"} · рывок ${p.sd}</span>`:""}</div>
     <div>Работы: ${work}</div>
     ${p.ps.name?`<div style="margin-top:8px"><b>${esc(p.ps.name)}</b>: <span class="dim">${esc(p.ps.effect)}</span></div>`:""}
     ${p.drops.length?`<div style="margin-top:8px">Дропает: ${p.drops.map(itemLink).join(", ")}</div>`:""}
