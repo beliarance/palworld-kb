@@ -262,7 +262,10 @@ const render = {};
 const _palF = {els:new Set(), work:new Set()};   // чипы-фильтры переживают переключение вкладок
 render.pal = () => {
   const F=_palF;
-  const chipStyle=on=>`border:1px solid ${on?"var(--border)":"transparent"};border-radius:8px;padding:4px 10px;cursor:pointer;font-size:12.5px;background:${on?"var(--panel2)":"none"};color:${on?"var(--acc)":"var(--dim)"}`;
+  // чипы-тумблеры: всегда видны как кнопки; выбранный — акцентная рамка + ✓
+  const chipStyle=on=>`border:1.5px solid ${on?"var(--acc)":"var(--border)"};border-radius:20px;padding:5px 13px;cursor:pointer;font-size:13px;background:${on?"rgba(94,177,255,.16)":"var(--panel2)"};color:${on?"var(--acc)":"var(--text)"};font-weight:${on?"600":"400"}`;
+  const W_ICO={Kindling:"🔥",Watering:"💧",Planting:"🌱",Generating_Electricity:"⚡",Handiwork:"✋",Gathering:"🧺",Lumbering:"🪓",Mining:"⛏️",Medicine:"💊",Cooling:"❄️",Transporting:"📦",Farming:"🐄"};
+  const wchipHTML=k=>`${F.work.has(k)?"✓ ":""}${W_ICO[k]} ${WORK_COLS[k]}`;
   const elBtn=e=>`<button class="pel el el-${e}" data-e="${e}" style="cursor:pointer;border:2px solid ${F.els.has(e)?"#fff":"transparent"};opacity:${F.els.size&&!F.els.has(e)?".45":"1"}">${e}</button>`;
   V().innerHTML = `<div class="card">
     <div class="row" style="flex-wrap:wrap;gap:8px">
@@ -283,9 +286,9 @@ render.pal = () => {
     </div>
     <div class="row" style="flex-wrap:wrap;gap:5px;margin-top:8px" id="pfel">
       <span class="dim" style="font-size:12px;align-self:center">стихии:</span>${D.chart.elements.map(elBtn).join("")}</div>
-    <div class="row" style="flex-wrap:wrap;gap:5px;margin-top:6px" id="pfwork">
-      <span class="dim" style="font-size:12px;align-self:center">работы (условие И):</span>
-      ${Object.keys(WORK_COLS).map(k=>`<button class="wchip" data-w="${k}" style="${chipStyle(F.work.has(k))}">${WORK_COLS[k]}</button>`).join("")}
+    <div class="row" style="flex-wrap:wrap;gap:6px;margin-top:8px" id="pfwork">
+      <span class="dim" style="font-size:12px;align-self:center" title="выбери сколько угодно работ — покажу палов, умеющих ВСЕ выбранные">работы (жми, любое кол-во; условие И):</span>
+      ${Object.keys(WORK_COLS).map(k=>`<button class="wchip" data-w="${k}" style="${chipStyle(F.work.has(k))}">${wchipHTML(k)}</button>`).join("")}
     </div>
   </div><div id="palout"></div>`;
   const runOf=n=>(P[n]?.mv?.run)||(D.idx.pals[n]||{}).run||0;
@@ -348,7 +351,7 @@ render.pal = () => {
       x.style.border=`2px solid ${on?"#fff":"transparent"}`; x.style.opacity=F.els.size&&!on?".45":"1";}); draw(); });
   document.getElementById("pfwork").addEventListener("click",e=>{const b=e.target.closest(".wchip"); if(!b)return;
     const w=b.dataset.w; F.work.has(w)?F.work.delete(w):F.work.add(w);
-    b.setAttribute("style",chipStyle(F.work.has(w))); draw(); });
+    b.setAttribute("style",chipStyle(F.work.has(w))); b.innerHTML=wchipHTML(w); draw(); });
   document.getElementById("pfreset").addEventListener("click",()=>{
     F.els.clear(); F.work.clear();
     for(const id of ["palq","pfsize","pfmount"]) document.getElementById(id).value="";
