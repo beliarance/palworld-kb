@@ -131,7 +131,20 @@ The **Pal Essence Condenser** ranks up a base Pal by sacrificing **duplicates of
 - **What it is:** every breed has a **low chance** the egg hatches as a **mutated** Pal instead of the normal result.
 - **Мутант-яйцо = премиум-фундамент (1.0):** сразу **2★ конденсации + IV 91–100 + 2–4 «радужные» пассивки** независимо от родителей. Поэтому мутанта выгодно ловить РАНЬШЕ вложений.
 - **Effect:** a mutated Pal has **higher base stats** than the standard version of its species **PLUS one unique "mutation passive"** that cannot be obtained any other way (five mutation-exclusive passives reported).
-- Some sources say a mutated egg can even hatch a **different species** than the parent pair normally produces (verify).
+- **Species of the mutant CAN DIFFER from the pair's normal child** — the client uses a separate
+  mutation species-selection branch (palmods.gg; exact rule NOT datamined). Documented pattern
+  (community + player-verified, PRELIMINARY):
+  - mutant's combi rank is **at least as strong** as the pair's normal child (zero exceptions so far);
+  - the species comes from the **generic breeding pool** (special-combo-only species excluded);
+  - **Orserk×Orserk → always Aegidron** (player-verified 2026-07-20): between Orserk (rank 120)
+    and the top, the ONLY generic-pool species is Aegidron (rank 30) — every other stronger
+    species (Astralym 10 … Frostallion Noct 110) is special-combo-only, so nothing else can roll;
+  - **top-rank pairs mutate into the ALPHA of their own species** (documented: Aegidron pair →
+    Alpha Aegidron ×10; maxed Whalaska pair → Alpha Whalaska) — no stronger generic species exists.
+  - Consequence: **same-species-only pals (Orserk, Jetragon, legendaries) can NEVER get rainbow
+    passives via mutation** — their mutant hatches as another species and can't be bred back in.
+    For a rainbow-capable universal raid attacker breed **Aegidron** instead (cross-combo breedable,
+    its own mutation stays in-species as an Alpha).
 - **Base chance ≈ 1%** per egg, rising to **≈3%** with the right cake (community datamine — PRELIMINARY). Practical expectation: **~1–3 mutations per 100 eggs**.
 - **How to boost it:**
   - **Extravagant Vegetable Cake** — directly raises mutation chance + stat growth (best cake).

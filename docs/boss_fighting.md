@@ -116,8 +116,14 @@ Kerauno/Polykeraunos/Lightning Streak (Electric) + Dragon Breath/Meteorain (Drag
 
 **Трейты (прививаются):** простые — **Surgery Chip** на любом пале: Musclehead + Ferocious +
 Serenity/элемент-бустер (**Divine Dragon** +30% Dragon или **Eternal Flame** +30% Fire И
-Lightning — бустит электро-кит Orserk). Радужные (Immortality) — мутация в same-species паре
-(яйца Orserk+Orserk тоже мутируют) → дальше наследуется. У Jetragon Legend уже врождённый.
+Lightning — бустит электро-кит Orserk). У Jetragon Legend врождённый.
+⚠️ **Радужные (Immortality) на Orserk/Jetragon НЕ занести**: мутация их same-species пары
+вылупляется ДРУГИМ видом (player-verified: **Orserk×Orserk → всегда Aegidron** — единственный
+вид генерик-пула сильнее ранга 120), а чужого родителя в same-species линию не подставить.
+Хочешь универсала С радужными — бридь **Aegidron (#184)** (Dragon/Ground, ATK 125, ранг 30):
+трейты заносятся кросс-комбами, а его собственная мутация даёт **Alpha Aegidron того же вида**
+(радужные остаются в линии). Dragon-покрытие рейдов то же; минус — Grass-атаки Hartalis ф.1
+бьют Ground ×2.
 
 **Оговорка:** лёд-атаки 2-й фазы Bellanoir Libero бьют Dragon ×2 — на этой фазе кайти/свапни;
 Blazamut Ryu там ×1 (Fire-половина гасит лёд).
