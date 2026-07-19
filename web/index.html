@@ -311,9 +311,11 @@ render.pal = () => {
     const size=val("pfsize"), mount=val("pfmount"), noc=document.getElementById("pfnoc").checked;
     const cols=[...F.work];
     const rows=Object.values(P).filter(p=>{
+      const card=D.idx.pals[p.name]||{};
+      // только получаемые палы: Astralym (#204) — сюжетный босс, «not obtainable in 1.0» (палдекс-запись без поимки)
+      if((card.get_via||[]).some(s=>/not obtainable|cannot be caught/i.test(s))) return false;
       if(q && !(p.name.toLowerCase().includes(q)||String(p.number||"").toLowerCase().includes(q.replace(/^#/,"")))) return false;
       if(F.els.size && ![...F.els].every(e=>(p.elements||[]).includes(e))) return false;
-      const card=D.idx.pals[p.name]||{};
       if(size && card.size!==size) return false;
       if(mount==="none" ? p.mount : (mount && p.mount!==mount)) return false;
       if(noc && !card.nocturnal) return false;
