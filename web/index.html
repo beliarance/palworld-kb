@@ -258,7 +258,7 @@ const render = {};
 /* --- Палы --- */
 /* Единый браузер палов: поиск (живой фильтр) + фильтры (стихии-И, размер, маунт, 🌙,
    работы-И — бывшая вкладка «Рабочие») + сортировки (№/FP/статы/скорости/работы). */
-const _palF = {els:new Set(), work:new Set()};   // чипы-фильтры переживают переключение вкладок
+const _palF = {els:new Set(), work:new Set(), sortKey:"number", dir:1};   // фильтры/сортировка переживают переключение вкладок
 render.pal = () => {
   const F=_palF;
   // чипы-тумблеры: всегда видны как кнопки; выбранный — акцентная рамка + ✓
@@ -269,7 +269,8 @@ render.pal = () => {
   V().innerHTML = `<div class="card">
     <div class="row" style="flex-wrap:wrap;gap:8px">
       <input type="text" id="palq" placeholder="Поиск: имя или #номер…" style="min-width:230px">
-      <select id="pfsort" title="сортировка списка">
+      <select id="pfsort" title="сортировка списка (или кликай по заголовкам таблицы)">
+        <option value="" hidden>сорт: по колонке ⇅</option>
         <option value="number">сорт: № палдекса</option>
         <option value="fp">сорт: 🔥 Firepower (экспедиции)</option>
         <option value="hp">сорт: HP</option><option value="atk">сорт: Атака</option><option value="def">сорт: Защита</option>
@@ -309,8 +310,9 @@ render.pal = () => {
     return `<div class="card" style="border-color:var(--acc)">${body}<div class="sub" style="margin-top:5px">Особенная профа только одна — <b>транспорт</b> (move-speed). Все прочие — work-speed. <b>Аптайм 24/7 = стихия, а не трейт</b>: <b>🌙 Dark</b>-палы ночные — работают без сна. Трейты дают много (WS-стек ≈ ×2.5) — их и качай в первую очередь.</div></div>`;
   };
   const val=id=>document.getElementById(id)?.value||"";
+  const DEFDIR={number:1,name:1,rank:1};   // возрастание по умолчанию; статы/скорости — убывание
   const draw=()=>{
-    const q=val("palq").trim().toLowerCase(), sort=val("pfsort")||"number";
+    const q=val("palq").trim().toLowerCase(), sort=F.sortKey||"number";
     const size=val("pfsize"), mount=val("pfmount"), noc=document.getElementById("pfnoc").checked;
     const cols=[...F.work];
     const rows=Object.values(P).filter(p=>{
@@ -326,15 +328,23 @@ render.pal = () => {
       return true;
     });
     const sumSel=p=>cols.reduce((s,c)=>s+(p.work[c]||0),0);
-    const key={number:p=>-(+String(p.number||"9999").replace(/\D/g,"")||9999), fp:fpOf, hp:p=>p.hp||0,
+    const numOf=p=>+String(p.number||"9999").replace(/\D/g,"")||9999;
+    const keyMap={number:numOf, fp:fpOf, hp:p=>p.hp||0,
       atk:atkOf, def:p=>p.def||0, run:p=>runOf(p.name), sprint:p=>sprOf(p.name), ts:p=>tsOf(p.name),
-      work:sumSel, size:p=>SZ[(D.idx.pals[p.name]||{}).size]||0, rank:p=>-(D.breeding.combi_ranks[p.name]??99999)}[sort]||(p=>0);
-    rows.sort((a,b)=>key(b)-key(a)||fpOf(b)-fpOf(a));
-    const hdr=cols.map(c=>`<th>${WORK_COLS[c]}</th>`).join("");
+      work:sumSel, size:p=>SZ[(D.idx.pals[p.name]||{}).size]||0, rank:p=>D.breeding.combi_ranks[p.name]??99999};
+    const key=sort.startsWith("work:")?(p=>p.work[sort.slice(5)]||0):(sort==="name"?(p=>p.name):(keyMap[sort]||numOf));
+    const dir=F.dir||(DEFDIR[sort]??-1);   // 1 = возрастание, -1 = убывание
+    rows.sort((a,b)=>{const x=key(a),y=key(b);
+      const c=typeof x==="string"?x.localeCompare(y):x-y;
+      return dir*c || fpOf(b)-fpOf(a) || numOf(a)-numOf(b);});
+    // кликабельные заголовки: data-k = ключ сортировки; стрелка на активном
+    const arr=k=>sort===k?(dir<0?" ▼":" ▲"):"";
+    const TH=(k,label,title)=>`<th data-k="${k}" style="cursor:pointer;user-select:none;white-space:nowrap"${title?` title="${title} — клик: сортировка"`:` title="клик: сортировка"`}>${label}${arr(k)}</th>`;
+    const hdr=cols.map(c=>TH("work:"+c,WORK_COLS[c])).join("");
     const fpNote=sort==="fp"?`<div class="sub">🔥 Firepower на пала = (ATK + DEF + HP/5) × (звёзды+1)² — в таблице базовое 0★; 4★ даёт ×25. Экспедиции берут до 100 палов, авто-подбор — по максимальному FP.</div>`:"";
     document.getElementById("palout").innerHTML=(cols.length?traitHint(cols):"")+`<div class="card">
-      <div class="sub" style="margin-bottom:6px">${rows.length} палов${cols.length?` · работы: ${cols.map(c=>WORK_COLS[c]).join(" <b>И</b> ")}`:""} · клик по имени — карточка пала</div>${fpNote}
-      <div style="overflow-x:auto"><table><tr><th>№</th><th>Пал</th>${hdr}<th>Стихии</th><th>Разм</th><th>HP</th><th>ATK</th><th>DEF</th><th title="Firepower экспедиций (0★) = ATK+DEF+HP/5">🔥FP</th><th title="бег / спринт верхом">Бег/спр</th><th title="скорость ПЕРЕНОСКИ груза (транспорт)">Перенос</th><th>Работы</th></tr>
+      <div class="sub" style="margin-bottom:6px">${rows.length} палов${cols.length?` · работы: ${cols.map(c=>WORK_COLS[c]).join(" <b>И</b> ")}`:""} · клик по имени — карточка пала · клик по заголовку — сортировка (повторный — реверс)</div>${fpNote}
+      <div style="overflow-x:auto"><table><tr>${TH("number","№")}${TH("name","Пал")}${hdr}<th>Стихии</th>${TH("size","Разм")}${TH("hp","HP")}${TH("atk","ATK")}${TH("def","DEF")}${TH("fp","🔥FP","Firepower экспедиций (0★) = ATK+DEF+HP/5")}${TH("run","Бег/спр","бег / спринт верхом")}${TH("ts","Перенос","скорость ПЕРЕНОСКИ груза (транспорт)")}<th>Работы</th></tr>
       ${rows.slice(0,60).map(p=>{
         const card=D.idx.pals[p.name]||{};
         const lvls=cols.map(c=>`<td class="mono big">${p.work[c]}</td>`).join("");
@@ -352,11 +362,23 @@ render.pal = () => {
     const w=b.dataset.w; F.work.has(w)?F.work.delete(w):F.work.add(w);
     b.setAttribute("style",chipStyle(F.work.has(w))); b.innerHTML=wchipHTML(w); draw(); });
   document.getElementById("pfreset").addEventListener("click",()=>{
-    F.els.clear(); F.work.clear();
+    F.els.clear(); F.work.clear(); F.sortKey="number"; F.dir=1;
     for(const id of ["palq","pfsize","pfmount"]) document.getElementById(id).value="";
     document.getElementById("pfsort").value="number"; document.getElementById("pfnoc").checked=false;
     render.pal(); });
-  for(const id of ["palq","pfsort","pfsize","pfmount","pfnoc"])
+  // клик по заголовку таблицы = сортировка по колонке; повторный клик — реверс
+  document.getElementById("palout").addEventListener("click",e=>{
+    const th=e.target.closest("th[data-k]"); if(!th) return;
+    const k=th.dataset.k;
+    if(F.sortKey===k) F.dir=-F.dir;
+    else { F.sortKey=k; F.dir=DEFDIR[k]??-1; }
+    const opt=document.querySelector(`#pfsort option[value="${k}"]`);
+    document.getElementById("pfsort").value=opt?k:"";   // синк с селектом (нет опции — пусто)
+    draw(); });
+  document.getElementById("pfsort").addEventListener("input",()=>{
+    const v=val("pfsort"); if(!v) return;
+    F.sortKey=v; F.dir=DEFDIR[v]??-1; draw(); });
+  for(const id of ["palq","pfsize","pfmount","pfnoc"])
     document.getElementById(id).addEventListener(id==="pfnoc"?"change":"input",draw);
   draw();
 };
