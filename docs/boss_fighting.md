@@ -84,7 +84,43 @@
 | **Bellanoir Libero** (Lv 50) | Dark → **Ice в фазе 2** (лечится, меняет атаки) | Dragon, затем **Fire** во 2-й фазе | двухфазный — бери оба каунтера |
 | **Blazamut Ryu** (Lv 55) | Fire/Dragon | **Ice/Water** (Jormuntide, Neptunilius), + **Ground** (Knocklem) в электро-фазе | |
 | **Xenolord** (Lv 60) | Dark/Dragon | **Ice** (Frostallion), Neptunilius, Bastigor | палы на макс. уровне |
+| **Hartalis** (Lv 65, ~909k HP) | Water/Grass → **Neutral в фазе 2** (лечится в фулл) | **Electric** ф.1, **Dark** ф.2 | барьеры: Grass←Fire, Water←Electric, Neutral←Dark; не сломал за 15с — рейд-вайп |
 | **Panthalus** (Lv 70, мировой босс) | Water | **Electric** | арена — **море**: плавательный пал обязателен, летающий помогает пережить цунами |
+
+## 5. Один пал на ВСЕ рейды (универсальный атакер)
+
+Механика: **STAB +20%** — скилл стихии самого пала бьёт на 20% сильнее, множится с уязвимостью
+(thepalprofessor: STAB × слабость перемножаются). Уязвимость/резист: атака ×2 по слабости,
+×0.5 если защитник силён против стихии атаки. Матрица «атака своей стихией → / получает ←»
+по рейд-боссам (0★, базовые статы):
+
+| Кандидат | Bellanoir/Libero | Blazamut Ryu | Xenolord | Hartalis | Итог |
+|---|---|---|---|---|---|
+| **Orserk (#187)** Dragon/Electric, ATK 130 | **×2→ / ←×0.5** | ×1 / ×1 | **×2→** / ×1 | **×2→ (ф.1)** / ×1 | 🥇 ×2 на ТРИ рейда, ни от кого не ловит ×2 |
+| **Jetragon (#202)** Dragon, ATK 140 | **×2→ / ←×0.5** | ×1 / ×1 | **×2→** / ×1 | ×1 / ×1 | 🥈 та же дракон-двойка, выше ATK, врождённый Legend, быстрейший маунт |
+| Blazamut Ryu Dragon/Fire, ATK 150 | **×2→ / ←×0.5** | — (сам босс) | **×2→** / ×1 | ×1 / ←×2 (ф.1 Water) | жирный; резистит лёд-фазу Libero (×1 вместо ×2) |
+| Necromus Dark, ATK 145 | ×1 / ×1 | ←×0.5→ / ←×2 | ←×0.5→ / ←×2 | ×1 / ×1 (×2→ ф.2) | ❌ как универсал: минус-матчапы с двумя эндгейм-рейдами |
+
+**Вывод: Orserk (#187)** — лучший «один на все рейды»: Dragon-скиллы (+STAB) дают ×2 по
+Bellanoir/Libero и Xenolord, Electric (+STAB) — ×2 по Hartalis ф.1 и Panthalus/Shaolong заодно;
+от Bellanoir получает половину урона, ни от кого — ×2. Ловится диким у World Tree (Lv 74–80),
+вылупляется из Huge Dragon Egg. **Jetragon** — премиум-альтернатива (ATK 140, врождённый
+Legend, уворот скоростью), но без электро-покрытия Hartalis ф.1.
+
+**Скиллы (прививаются):** активки — **Skill Fruit работает на любом пале**. Orserk нативно:
+Kerauno/Polykeraunos/Lightning Streak (Electric) + Dragon Breath/Meteorain (Dragon); фруктами
+добить под конкретный рейд: **Blizzard Spike 4★/Hydro Slicer** (лёд/вода — Blazamut Ryu),
+**Apocalypse** (Dark мульти-хит 50 по большому телу — Hartalis ф.2). NB: breeding-only скиллы
+(Thunder Rail) на Orserk/Jetragon НЕ занести — оба бридятся только same-species парой,
+чужой мувсет в линию не заходит.
+
+**Трейты (прививаются):** простые — **Surgery Chip** на любом пале: Musclehead + Ferocious +
+Serenity/элемент-бустер (**Divine Dragon** +30% Dragon или **Eternal Flame** +30% Fire И
+Lightning — бустит электро-кит Orserk). Радужные (Immortality) — мутация в same-species паре
+(яйца Orserk+Orserk тоже мутируют) → дальше наследуется. У Jetragon Legend уже врождённый.
+
+**Оговорка:** лёд-атаки 2-й фазы Bellanoir Libero бьют Dragon ×2 — на этой фазе кайти/свапни;
+Blazamut Ryu там ×1 (Fire-половина гасит лёд).
 
 ## Источники
 - xgamingserver.com — Palworld 1.0 Raids: Wave-Based Base Defense (2026); Base Raid Defense Guide

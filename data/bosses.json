@@ -196,10 +196,16 @@
   },
   {
    "pal": "Hartalis",
-   "elements": [],
-   "counter_elements": [],
-   "notes": "Additional 1.0 raid boss; data thin.",
-   "preliminary": true
+   "elements": [
+    "Water",
+    "Grass"
+   ],
+   "counter_elements": [
+    "Electric",
+    "Dark"
+   ],
+   "notes": "Lv 65 raid, ~909,000 HP, TWO phases: phase 1 Water/Grass (counter Electric), phase 2 heals to full and becomes NEUTRAL (counter Dark). Barrier mechanic: Grass barrier breaks with Fire, Water barrier with Electric, Neutral barrier with Dark - break within 15s or raid-wide wipe damage. (game8/bisecthosting, 2026-07-19)",
+   "preliminary": false
   }
  ],
  "world_bosses": [

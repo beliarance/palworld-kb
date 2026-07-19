@@ -2,6 +2,19 @@
 
 Версия игры: **Palworld 1.0** (релиз 10 июля 2026). Дата актуализации базы: **2026-07-17**.
 
+## bosses.json Hartalis + STAB + универсальный рейд-атакер (2026-07-19)
+
+- **Hartalis** (game8 /571689 + bisecthosting): Lv 65, ~909k HP, ДВЕ фазы — ф.1 Water/Grass
+  (каунтер Electric), ф.2 лечится в фулл и становится Neutral (каунтер Dark); барьеры
+  Grass←Fire / Water←Electric / Neutral←Dark, 15 сек или рейд-вайп. Было elements[] (thin).
+- **STAB подтверждён** (thepalprofessor combat-mechanics + стим-обсуждения): скилл стихии
+  самого пала +20% урона, перемножается с уязвимостью. Уязвимость ×2 / резист ×0.5
+  (резист = защитник strong_vs стихии атаки).
+- **Анализ «один пал на все рейды»** (матрица тайп-чарт × raid_bosses, скрипт-разово):
+  Orserk (Dragon/Electric) — ×2 на Bellanoir/Libero + Xenolord + Hartalis ф.1, ни от кого
+  не получает ×2, от Bellanoir ×0.5. Jetragon — премиум-альтернатива. Necromus как универсал
+  проваливается (×0.5→/←×2 с Xenolord и Blazamut Ryu). Итог — docs/boss_fighting.md §5.
+
 ## pals_combat.json swim_speed (2026-07-19)
 
 - **paldb.cc** (карточки палов, статы SwimSpeed/SwimDashSpeed) — скорость плавания и рывка
