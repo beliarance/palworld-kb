@@ -1,102 +1,96 @@
-# Palworld 1.0 — База знаний
+# Palworld 1.0 Knowledge Base
 
-**Онлайн:** https://beliarance.github.io/palworld-kb/web/ — веб-интерфейс с любого устройства
-(обновляется при каждом `git push`).
+**Live:** https://beliarance.github.io/palworld-kb/web/ — web UI, works on any device
+(redeployed on every `git push`).
 
-База знаний по игре **Palworld версии 1.0** (полный релиз 10 июля 2026): структурированные
-данные о всех 299 палах + гайды по механикам + CLI-инструмент для ответов на игровые вопросы.
+A knowledge base for **Palworld 1.0** (full release, July 10 2026): structured data on all
+299 pals + mechanics guides + a CLI tool + a dependency-free web app that answer practical
+in-game questions.
 
-## Что умеет
+> ⚠️ UI/docs are currently a Russian/English mix — full translation to English is planned,
+> see [TODO.md](TODO.md).
 
-- **Роли**: лучшие палы для любой работы на базе (kindling, mining, handiwork, … — 12 работ),
-  рыбалки, боя, маунты (наземные/летающие/водные).
-- **Бридинг**: «кого с кем скрестить, чтобы получить X» и «что получится из A + B» —
-  через combi ranks, формулу и special combos; плюс гайд по пассивкам/IV/Condenser/Mutation/Awakening.
-- **Стихии**: полная таблица каунтеров 9 элементов, включая рекомендации под каждого
-  башенного и рейдового босса.
-- **Команды**: сборка отряда из 5 палов под задачу (рыбалка, бой, руда, лес, производство).
-- **База**: станции, материалы стартового сетапа, раскладка рабочих (`docs/base_setup.md`).
-- **Хранение**: что шарится между базами (только Guild Chest) — `docs/guild_stash_and_storage.md`.
-- **Предметы**: 1195 предметов — рецепты, станции, разложение крафта до сырья, кто дропает.
-- **Скиллы и пассивки**: 328 активных скиллов с ленсетами палов, 114 пассивок с точными цифрами.
-- **Локации**: где найти/поймать каждого пала (дикие спавны, альфы с координатами, яйца) и
-  лучшие точки фарма ресурсов на карте.
-- **Экспедиции**: все 18 миссий с полными пулами наград и формулой Firepower — `docs/expeditions.md`.
+## What it can do
 
-## Веб-интерфейс
+- **Pal browser**: search + filters (elements, size, mount type, nocturnal, work suitability
+  with AND-condition) + sortable columns — paldex #, HP/ATK/DEF, expedition Firepower
+  (`(ATK + DEF + HP/5) × (stars+1)²`), run/sprint, transport speed, swim speed, combi rank.
+  Only obtainable pals are listed.
+- **Breeding**: three modes — pair → child, target → parent pairs, and shortest
+  trait-carrying chain (BFS); exact 1.0 combi-rank formula (ties break to the HIGHER rank,
+  verified in-game) + special combos; breeding FAQ (IV, passives, mutations, cakes, condenser).
+- **Counters**: element chart, tower bosses, altar raids (fought AT YOUR BASE by assigned
+  pals + turrets) vs world bosses, full combat parties with best-DPM skills, measured
+  boss-DPS meta skills (multi-hit vs large hitbox), combat trait builds (simple grafted /
+  rainbow with alternatives, raid EHP math), accessories with sources.
+- **Party creator**: 5-pal parties per goal — combat (element/vs-enemy/2-fighters),
+  open world, catching, fishing (resources vs pal-fishing), loot runs, egg collecting,
+  exploration (cold/heat), XP; passive in-party regen aura included for boss fights.
+- **Base planner**: presets (breeding / mine-craft / food hub / starter) with building
+  bills of materials, worker rosters, Work Speed model calibrated to real measurements
+  (baseline 100 / traits 255 / traits+4★ 357 / +souls 572), yield supports, food module.
+- **Items**: 1195 items — recipes, stations, raw-material crafting breakdown, drop sources,
+  84 accessories with effects and schematic drop locations.
+- **Skills & passives**: 328 active skills with per-pal learnsets, 114 passives with exact
+  numbers, 5 rainbow mutation passives (obtainable via mutation eggs, then inheritable).
+- **Locations**: where to find/catch every pal (wild spawns, alphas with coordinates, eggs)
+  and best resource farming spots; 38 merchant shops.
+- **Expeditions**: all 18 missions with reward pools and the Firepower formula.
+
+## Web UI
 
 ```bash
-python3 -m http.server 8842        # из корня проекта
+python3 -m http.server 8842        # from the repo root
 # → http://localhost:8842/web/
 ```
 
-**Автономная версия** (для другого компа, без Python/сервера):
-`python3 scripts/build_standalone.py` → `web/palworld_kb_standalone.html` (~1.5 МБ,
-все данные вшиты) — скопируй файл куда угодно и открой двойным кликом.
-Пересобирать после обновления данных.
+**Standalone build** (single file, no server needed):
+`python3 scripts/build_standalone.py` → `web/palworld_kb_standalone.html` (~1.8 MB, all data
+embedded) — copy anywhere, open by double-click. Rebuild after changing `data/` or `web/index.html`.
 
-Вкладки: Палы (полный профиль + где найти + скиллы), Рабочие, Бридинг-калькулятор
-(A+B → ребёнок и «как получить X»), Каунтеры (стихии и боссы), Предметы (рецепт +
-разложение до сырья), Тир-листы, Экспедиции (награды по миссиям), Ресурсы (координаты),
-Пассивки, Скиллы, Пати (сборка отряда из 5 под цель: бой по стихии, опенворлд, ловля, рыбалка, лут, яйца, исследование), Конструктор баз. Всё работает локально, без зависимостей — страница читает JSON из `data/`.
+Tabs: Pals (browser + full profile), Breeding (calculator + FAQ), Counters (elements & bosses),
+Items, Tier lists, Expeditions, Resources, Passives, Skills, Party, Base planner.
+No dependencies — the page reads JSON straight from `data/`.
 
-## Быстрый старт (CLI)
+## Quick start (CLI)
 
 ```bash
-python3 scripts/query.py workers mining          # лучшие шахтёры
-python3 scripts/query.py mounts flying           # лучшие летающие маунты
-python3 scripts/query.py counter dark            # чем бить Dark
-python3 scripts/query.py boss shadowbeak         # каунтер под башню Виктора
-python3 scripts/query.py breed Anubis Penking    # кто родится
-python3 scripts/query.py breed-to Anubis         # как получить Анубиса
-python3 scripts/query.py team production         # 5 палов под производство
-python3 scripts/query.py where Anubis            # где найти/поймать пала
-python3 scripts/query.py skills Anubis           # активные скиллы пала
-python3 scripts/query.py passive Legend          # эффект пассивки
-python3 scripts/query.py item "Pal Sphere"       # рецепт и источники предмета
-python3 scripts/query.py craft "Rocket Launcher" # разложение крафта до сырья
-python3 scripts/query.py resource coal           # лучшие точки фарма (координаты)
-python3 scripts/query.py expeditions             # список экспедиций и наград
+python3 scripts/query.py workers mining              # best miners
+python3 scripts/query.py workers planting,watering   # multi-task AND filter
+python3 scripts/query.py workers transporting --speed # sort by transport speed
+python3 scripts/query.py mounts swim                 # swim mounts by swim-dash speed
+python3 scripts/query.py counter dark                # what beats Dark
+python3 scripts/query.py boss hartalis               # raid boss counter + traits
+python3 scripts/query.py breed Anubis Penking        # breeding result
+python3 scripts/query.py breed-to Anubis             # how to get Anubis
+python3 scripts/query.py breed-chain Turtacle Menasting  # trait-carrying chain
+python3 scripts/query.py party combat --vs water     # 5-pal party vs Water enemies
+python3 scripts/query.py party fishing --fish pals   # fishing party (pal-fishing mode)
+python3 scripts/query.py where Anubis                # spawns / alphas / eggs
+python3 scripts/query.py item "Pal Sphere"           # recipe and sources
+python3 scripts/query.py craft "Rocket Launcher"     # raw-material breakdown
+python3 scripts/base_planner.py breeding --tech 80   # breeding base blueprint
 ```
 
-Зависимостей нет — только Python 3 из коробки.
+No dependencies — plain Python 3.
 
-## Структура
+## Layout
 
 ```
-data/     — машиночитаемые данные (csv/json) — единый источник правды
-docs/     — гайды по механикам (markdown, на английском)
-scripts/  — query.py (CLI), validate_data.py, collectors/ (сборщики)
-tests/    — тесты (python3 -m unittest discover tests)
+data/     — machine-readable data (csv/json), single source of truth
+docs/     — mechanics guides (markdown)
+scripts/  — query.py (CLI), base_planner.py, validate_data.py, collectors/
+tests/    — python3 -m unittest discover tests
+web/      — dependency-free SPA (reads data/*.json)
 ```
 
-Схемы всех файлов данных описаны в [CLAUDE.md](CLAUDE.md), источники — в
-[DATA_SOURCES.md](DATA_SOURCES.md).
+Data schemas are described in [CLAUDE.md](CLAUDE.md); every data update is logged with its
+source in [DATA_SOURCES.md](DATA_SOURCES.md). Breeding/planner logic is intentionally
+duplicated in Python (`scripts/`) and JS (`web/index.html`) — change both.
 
-## Статус данных
+## Data status
 
-Игра вышла 4 дня назад; часть данных сообщества ещё стабилизируется. Пометки:
-`(pre-1.0 guide)` — данные раннего доступа, не перепроверены; `(PRELIMINARY 1.0)` —
-свежие данные 1.0, могут уточняться. При конфликте доверять источникам, явно
-обновлённым под 1.0. Пробелы перечислены в полях `gaps`/`notes` внутри JSON.
-
-## План развития в приложение (не реализовано — только план)
-
-Данные в `data/` — единый источник правды и для CLI, и для будущего фронтенда.
-
-**Вариант A — локальное приложение**: FastAPI (Python) поверх существующих функций
-`scripts/query.py` (они уже разделены на «загрузку» и «логику», их можно импортировать
-как библиотеку). Эндпоинты 1-в-1 к командам CLI (`/workers/{task}`, `/breed?a=&b=`, …) +
-простой фронт (HTMX или React) или Telegram-бот тем же слоем.
-
-**Вариант B — статический сайт**: JSON-файлы из `data/` кладутся как есть в
-`public/data/`, вся логика (та же ранговая формула бридинга, фильтры, каунтеры)
-переписывается на JS и выполняется в браузере — хостинг бесплатный (GitHub Pages),
-сервер не нужен. Поиск — по имени пала на клиенте (данных мало, индекс не нужен).
-
-**Общее для обоих**: не дублировать данные — фронтенд читает те же файлы; логику
-бридинга держать в одном месте на язык (Python: `query.py`; JS: один модуль
-`breeding.js`), покрыть теми же тест-кейсами; версию игры и дату данных показывать в UI.
-
-Рекомендация: начать с варианта B — данные статичны, обновляются редко, интерактив
-(калькулятор бридинга, фильтры) целиком клиентский.
+The game shipped days ago; some community data is still settling. Markers:
+`(pre-1.0 guide)` — early-access data, not re-verified; `(PRELIMINARY 1.0)` — fresh 1.0 data
+that may change. On conflicts, trust sources explicitly updated for 1.0. Known gaps live in
+`gaps`/`notes` fields inside the JSON files.
