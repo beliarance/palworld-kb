@@ -101,16 +101,24 @@ Goal: produce a Pal with an exact set of **4 desired passives** (e.g. Legend + F
 
 The **Pal Essence Condenser** ranks up a base Pal by sacrificing **duplicates of the same species** (butchered/caught copies act as "Pal essence"). Boosts stats per star.
 
-- **1.0 REDUCED the cost: 116 → 48 total** — one keeper + **47 fodder copies** to reach 4★
-  (palmods.gg 1.0 dataset «verified constant»; nexttier 1.0 patch notes). The old EA breakdown
-  **4/16/32/64 (=116)** is obsolete; a per-star breakdown of the new 47 has not been published
-  by Pocketpair.
+- **1.0 REDUCED the cost: 116 → 48 fodder total.** Per-star breakdown (player-verified in-game,
+  2026-07-20; sum matches the patch-note constant 48):
+
+  | Star rank | Copies consumed at THIS tier | Cumulative |
+  |---|---|---|
+  | **1★** | 4 | 4 |
+  | **2★** | 8 | 12 |
+  | **3★** | 12 | 24 |
+  | **4★** | 24 | **48** |
+
+  The old EA breakdown **4/16/32/64 (=116)** is obsolete. (palmods.gg phrased 48 as "one keeper
+  + 47 fodder" — their own gloss; the in-game numbers show 48 is the fodder count, keeper separate.)
 - **Max rank in a single synthesis** is now possible, and **condensation progress accumulates
   in the individual Pal** — feeding copies in batches loses nothing.
 - **What stars grant (1.0 rework):** each rank-up raises **one** Work Suitability level
   (top-down through the Pal's job list); **4★ raises ALL of them** (+ combat stat growth).
   Official notes don't specify which job is picked at intermediate ranks for multi-job Pals.
-- **Mutant eggs hatch at 2★** — a large head start on fodder.
+- **Mutant eggs hatch at 2★** — only 3★+4★ left: 12+24 = **36 copies** instead of 48.
 - **Note on older guides:** pre-1.0 sources (incl. wiki.gg, dungeonpath) still list 4/16/32/64=116
   or other schemes — **outdated (pre-1.0 guide)**. Verify in-game if precision matters.
 
